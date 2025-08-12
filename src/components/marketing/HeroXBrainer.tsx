@@ -28,7 +28,7 @@ const HeroXBrainer = () => {
       </div>
       
       {/* Brain image */}
-      <div className="absolute right-0 top-1/2 translate-y-16 w-1/2 h-[70vh] z-5">
+      <div className="absolute right-0 top-1/2 translate-y-8 w-1/2 h-[70vh] z-5">
         <img
           src={brainTopSection}
           alt="Top section of brain with neural pathways"
