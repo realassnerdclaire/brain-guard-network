@@ -15,6 +15,16 @@ const HeroXBrainer = () => {
         />
       </div>
       
+      {/* XBrainer AI logo and company name - top left */}
+      <div className="absolute top-8 left-8 z-20 flex items-center gap-3">
+        <img 
+          src="/lovable-uploads/fb4d581a-fd58-4277-baca-adfd88467402.png" 
+          alt="XBrainer AI logo" 
+          className="h-8 w-auto" 
+        />
+        <span className="text-white text-lg font-medium">XBrainer AI</span>
+      </div>
+      
       <div className="container relative z-10 flex items-center min-h-screen py-24">
         <div className="max-w-2xl">
           <h1 className="text-5xl leading-[1.1] font-normal text-white sm:text-6xl lg:text-7xl">
