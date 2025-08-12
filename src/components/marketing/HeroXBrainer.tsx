@@ -29,7 +29,7 @@ const HeroXBrainer = () => {
       <div className="container relative z-10 flex items-center min-h-screen py-24">
         <div className="max-w-2xl">
           <h1 className="text-5xl leading-[1.1] font-normal text-white sm:text-6xl lg:text-7xl">
-            HTTPS for your brain.
+            Secure Neural Data Before It's Too Late
           </h1>
           <p className="mt-6 text-lg text-white/80 max-w-xl">
             XBrainer provides an end-to-end encrypted pipeline for EEG headsets—authenticates every packet, enforces user consent in microseconds, and writes an immutable audit log.
