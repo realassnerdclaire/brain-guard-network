@@ -17,55 +17,17 @@ const HeroXBrainer = () => {
       
       {/* XBrainer AI logo and company name - top left */}
       <div className="absolute top-8 left-8 z-20 flex items-center gap-4">
-        {/* SVG recreated logo with neon effect */}
-        <div className="relative">
-          <svg width="48" height="36" viewBox="0 0 48 36" className="drop-shadow-lg">
-            <defs>
-              <filter id="neonGlow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge> 
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            {/* Three flowing wave shapes */}
-            <path 
-              d="M4,8 Q12,4 20,8 Q28,12 36,8 Q40,6 44,8" 
-              stroke="#00d4ff" 
-              strokeWidth="2.5" 
-              fill="none" 
-              filter="url(#neonGlow)"
-              className="animate-pulse"
-            />
-            <path 
-              d="M4,18 Q12,14 20,18 Q28,22 36,18 Q40,16 44,18" 
-              stroke="#00d4ff" 
-              strokeWidth="2.5" 
-              fill="none" 
-              filter="url(#neonGlow)"
-              className="animate-pulse"
-              style={{animationDelay: '0.3s'}}
-            />
-            <path 
-              d="M4,28 Q12,24 20,28 Q28,32 36,28 Q40,26 44,28" 
-              stroke="#00d4ff" 
-              strokeWidth="2.5" 
-              fill="none" 
-              filter="url(#neonGlow)"
-              className="animate-pulse"
-              style={{animationDelay: '0.6s'}}
-            />
-          </svg>
-        </div>
+        <img 
+          src="/lovable-uploads/fb4d581a-fd58-4277-baca-adfd88467402.png" 
+          alt="XBrainer AI logo" 
+          className="h-12 w-auto rounded-lg bg-gradient-to-br from-transparent to-transparent mix-blend-screen opacity-90" 
+        />
         <div className="flex flex-col">
-          <span className="text-white text-2xl font-bold tracking-tight" style={{
-            textShadow: '0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #00d4ff'
-          }}>
+          <span className="text-white text-2xl font-bold tracking-tight">
             XBrainer AI
           </span>
-          <span className="text-white/60 text-xs font-medium tracking-widest uppercase">
-            Neural Security
+          <span className="text-white/70 text-sm font-medium">
+            The firewall for your brain
           </span>
         </div>
       </div>
