@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 const HeroXBrainer = () => {
+  console.log("HeroXBrainer rendering - should have NO background images or components");
   return (
     <section className="relative min-h-screen bg-black">
       {/* XBrainer AI logo and company name - top left */}
