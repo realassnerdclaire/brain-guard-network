@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 
 const HeroXBrainer = () => {
   return (
-    <section className="relative overflow-hidden min-h-screen bg-black">
+    <section className="relative min-h-screen bg-black">
       {/* XBrainer AI logo and company name - top left */}
       <div className="absolute top-8 left-8 z-20 flex items-center gap-6">
         <img 
-          src="/lovable-uploads/fb4d581a-fd58-4277-baca-adfd88467402.png" 
+          src="/lovable-uploads/fc51b862-b697-4586-8c7d-acfdf5648e63.png" 
           alt="XBrainer AI logo" 
-          className="h-16 w-auto mix-blend-screen opacity-90" 
+          className="h-16 w-auto" 
         />
         <div className="flex flex-col">
           <span className="text-white text-4xl font-bold tracking-tight">
