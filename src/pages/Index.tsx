@@ -1,31 +1,29 @@
-import NavbarXBrainer from "@/components/marketing/NavbarXBrainer";
+
+import AppSidebar from "@/components/AppSidebar";
 import HeroXBrainer from "@/components/marketing/HeroXBrainer";
-import FeatureCards from "@/components/marketing/FeatureCards";
-import HowItWorks from "@/components/marketing/HowItWorks";
-import FAQ from "@/components/marketing/FAQ";
-import CTASection from "@/components/marketing/CTASection";
-import FooterXBrainer from "@/components/marketing/FooterXBrainer";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+
 
 const Index = () => {
   return (
     <div className="dark min-h-screen bg-background text-foreground">
-      <NavbarXBrainer />
-      <main>
-        <HeroXBrainer />
-        <section id="vision" className="container py-16 md:py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-semibold sm:text-4xl">A real-time shield for neural data</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Today’s consumer EEG headsets broadcast raw neural signals with zero guardrails. XBrainer is the missing HTTPS layer—encrypts every packet, checks permissions before a read, authenticates with your brainprint, and writes an immutable audit log.
-            </p>
-          </div>
-        </section>
-        <FeatureCards />
-        <HowItWorks />
-        <FAQ />
-        <CTASection />
-      </main>
-      <FooterXBrainer />
+      <SidebarProvider>
+        <div className="flex min-h-screen w-full">
+          <AppSidebar />
+          <main className="flex-1 relative">
+            <header className="absolute left-0 right-0 top-0 z-20">
+              <div className="container flex items-center justify-between py-6">
+                <div className="flex items-center gap-3">
+                  <img src="/lovable-uploads/b7273a3c-537a-4f84-b0d1-b8e729fe82ec.png" alt="XBrainer AI logo" className="h-7 w-auto" />
+                  <span className="sr-only">XBrainer AI</span>
+                </div>
+                <SidebarTrigger className="rounded-full border border-foreground/20 bg-foreground/5 backdrop-blur-sm hover:bg-foreground/10" />
+              </div>
+            </header>
+            <HeroXBrainer />
+          </main>
+        </div>
+      </SidebarProvider>
     </div>
   );
 };
