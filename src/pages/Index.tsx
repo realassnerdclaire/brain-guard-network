@@ -1,30 +1,60 @@
 
+import { useState } from "react";
 import AppSidebar from "@/components/AppSidebar";
 import HeroXBrainer from "@/components/marketing/HeroXBrainer";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
-
 const Index = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuItems = [
+    { label: "ABOUT", href: "#about" },
+    { label: "RESEARCH", href: "#research" },
+    { label: "TECHNOLOGY", href: "#technology" },
+    { label: "CAREER", href: "#career" },
+    { label: "BRIEFING REQUEST", href: "#briefing" },
+    { label: "VISION", href: "#vision" },
+    { label: "FEATURE", href: "#features" },
+    { label: "HOW IT WORKS", href: "#how" },
+    { label: "FAQ", href: "#faq" },
+    { label: "CONTACT", href: "#contact" },
+  ];
+
   return (
     <div className="dark min-h-screen bg-background text-foreground">
       <SidebarProvider>
         <div className="flex min-h-screen w-full">
           <main className="flex-1 relative">
-            {/* Top navigation menu */}
+            {/* Menu button in top right */}
             <header className="absolute left-0 right-0 top-0 z-30">
               <div className="container flex items-center justify-end py-6">
-                <nav className="flex items-center gap-8 text-white/80 text-sm font-medium">
-                  <a href="#about" className="hover:text-white transition-colors">ABOUT</a>
-                  <a href="#research" className="hover:text-white transition-colors">RESEARCH</a>
-                  <a href="#technology" className="hover:text-white transition-colors">TECHNOLOGY</a>
-                  <a href="#career" className="hover:text-white transition-colors">CAREER</a>
-                  <a href="#briefing" className="hover:text-white transition-colors">BRIEFING REQUEST</a>
-                  <a href="#vision" className="hover:text-white transition-colors">VISION</a>
-                  <a href="#features" className="hover:text-white transition-colors">FEATURE</a>
-                  <a href="#how" className="hover:text-white transition-colors">HOW IT WORKS</a>
-                  <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
-                  <a href="#contact" className="hover:text-white transition-colors">CONTACT</a>
-                </nav>
+                <div className="relative">
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="text-white text-lg font-medium tracking-widest hover:text-white/80 transition-colors"
+                  >
+                    MENU
+                  </button>
+                  
+                  {/* Dropdown menu */}
+                  {isMenuOpen && (
+                    <div className="absolute top-full right-0 mt-2 w-64 bg-black/90 backdrop-blur-sm border border-white/20 rounded-lg shadow-lg z-50">
+                      <ul className="py-2">
+                        {menuItems.map((item) => (
+                          <li key={item.label}>
+                            <a
+                              href={item.href}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="block px-6 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
+                            >
+                              {item.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </div>
             </header>
             <HeroXBrainer />
