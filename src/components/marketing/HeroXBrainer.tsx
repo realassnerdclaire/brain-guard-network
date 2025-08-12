@@ -117,14 +117,15 @@ const HeroXBrainer = () => {
         <img
           src={futuristicBrain}
           alt="Futuristic translucent brain with neural pathways"
-          className="w-full h-full object-cover opacity-40 animate-pulse"
+          className="w-full h-full object-cover opacity-90 animate-pulse"
           loading="eager"
           decoding="async"
           style={{
-            filter: 'blur(1px)',
+            filter: 'drop-shadow(0 0 30px #00d4ff) drop-shadow(0 0 60px #a855f7) brightness(1.4) contrast(1.3) saturate(1.2)',
             maskImage: 'radial-gradient(ellipse 80% 90% at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)',
             WebkitMaskImage: 'radial-gradient(ellipse 80% 90% at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)',
-            animation: 'float 6s ease-in-out infinite'
+            animation: 'float 6s ease-in-out infinite, neon-pulse 3s ease-in-out infinite alternate',
+            mixBlendMode: 'screen'
           }}
         />
       </div>
