@@ -121,9 +121,9 @@ const HeroXBrainer = () => {
           loading="eager"
           decoding="async"
           style={{
-            filter: 'drop-shadow(0 0 15px #00d4ff) drop-shadow(0 0 25px #a855f7) brightness(1.1) contrast(1.1)',
-            maskImage: 'radial-gradient(ellipse 80% 90% at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 80% 90% at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)',
+            filter: 'drop-shadow(0 0 15px #00d4ff) drop-shadow(0 0 25px #a855f7) brightness(1.1) contrast(1.1) blur(2px)',
+            maskImage: 'radial-gradient(ellipse 70% 80% at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 85%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 70% 80% at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 85%)',
             animation: 'float 6s ease-in-out infinite',
             mixBlendMode: 'screen'
           }}
