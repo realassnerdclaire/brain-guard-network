@@ -1,15 +1,15 @@
-import { CircuitBoard, LockKeyhole, Fingerprint, Timer } from "lucide-react";
+import { CircuitBoard, Brain, Activity, Timer } from "lucide-react";
 
 const STEPS = [
   {
     title: "Authenticate",
     description: "Establish session-specific keys and verify device + user identity.",
-    Icon: Fingerprint,
+    Icon: Brain,
   },
   {
     title: "Encrypt",
     description: "Stream EEG with low-latency end‑to‑end encryption.",
-    Icon: LockKeyhole,
+    Icon: Activity,
   },
   {
     title: "Enforce consent",

@@ -1,17 +1,17 @@
-import { ShieldCheck, KeyRound, ReceiptText } from "lucide-react";
+import { Brain, Activity, ReceiptText } from "lucide-react";
 
 const FEATURES = [
   {
     title: "Encrypt every packet",
     description:
       "Session-specific keys and streaming encryption protect raw EEG at the source and in motion.",
-    Icon: ShieldCheck,
+    Icon: Brain,
   },
   {
     title: "Consent at wire speed",
     description:
       "User-driven policies are enforced before reads—grant, revoke, and scope access in microseconds.",
-    Icon: KeyRound,
+    Icon: Activity,
   },
   {
     title: "Immutable audit ledger",

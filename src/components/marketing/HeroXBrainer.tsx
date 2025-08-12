@@ -15,11 +15,11 @@ const HeroXBrainer = () => {
         </div>
       </div>
       {/* Subtle brain visual on the right */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-[52%] hidden sm:block">
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-[70%]">
         <img
           src={heroImage}
           alt="Abstract brain mesh with neon EEG particles"
-          className="h-full w-full object-cover opacity-80 mix-blend-screen"
+          className="h-full w-full object-cover opacity-90 mix-blend-screen"
           loading="eager"
           decoding="async"
         />
