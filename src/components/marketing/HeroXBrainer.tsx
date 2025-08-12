@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import futuristicBrain from "@/assets/futuristic-brain-correct.png";
 
 const HeroXBrainer = () => {
   console.log("HeroXBrainer rendering - should have NO background images or components");
@@ -71,8 +72,8 @@ const HeroXBrainer = () => {
       {/* Enhanced futuristic neon brain */}
       <div className="absolute right-0 top-1/2 -translate-y-4 w-3/5 h-[80vh] z-5">
         <img
-          src="/lovable-uploads/b0e025d9-5bcf-42be-aa8e-5743e557df92.png"
-          alt="Translucent brain section with flowing neural pathways"
+          src={futuristicBrain}
+          alt="Futuristic translucent brain with neural pathways"
           className="w-full h-full object-cover opacity-80"
           loading="eager"
           decoding="async"
