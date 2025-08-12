@@ -1,32 +1,20 @@
-import brainMesh from "@/assets/brain-mesh-motif.jpg";
 import { Button } from "@/components/ui/button";
 
 const HeroXBrainer = () => {
   return (
     <section className="relative overflow-hidden min-h-screen bg-black">
-      {/* Background brain mesh */}
-      <div className="absolute inset-0">
-        <img
-          src={brainMesh}
-          alt="Translucent brain mesh with neural particles"
-          className="w-full h-full object-cover opacity-90"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
-      
       {/* XBrainer AI logo and company name - top left */}
-      <div className="absolute top-8 left-8 z-20 flex items-center gap-4">
+      <div className="absolute top-8 left-8 z-20 flex items-center gap-6">
         <img 
           src="/lovable-uploads/fb4d581a-fd58-4277-baca-adfd88467402.png" 
           alt="XBrainer AI logo" 
-          className="h-12 w-auto rounded-lg bg-gradient-to-br from-transparent to-transparent mix-blend-screen opacity-90" 
+          className="h-16 w-auto mix-blend-screen opacity-90" 
         />
         <div className="flex flex-col">
-          <span className="text-white text-2xl font-bold tracking-tight">
+          <span className="text-white text-4xl font-bold tracking-tight">
             XBrainer AI
           </span>
-          <span className="text-white/70 text-sm font-medium">
+          <span className="text-white/70 text-lg font-medium">
             The firewall for your brain
           </span>
         </div>
