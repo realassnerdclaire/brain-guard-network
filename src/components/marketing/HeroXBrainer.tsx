@@ -1,4 +1,4 @@
-import heroBrain from "@/assets/hero-brain-mesh.jpg";
+import heroLogoShape from "@/assets/hero-logo-shape.jpg";
 import NeuralBackdrop from "./NeuralBackdrop";
 import AnimatedEEG from "./AnimatedEEG";
 
@@ -17,8 +17,8 @@ const HeroXBrainer = () => {
       {/* Subtle brain visual on the right */}
       <div className="pointer-events-none absolute inset-y-0 right-0 w-[70%]">
         <img
-          src={heroBrain}
-          alt="Large neon brain mesh with animated EEG waves"
+          src={heroLogoShape}
+          alt="Large neon XBrainer logo shape with flowing EEG waves"
           className="h-full w-full object-cover opacity-90 mix-blend-screen"
           loading="eager"
           decoding="async"
