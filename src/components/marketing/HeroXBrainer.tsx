@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import brainTopSection from "@/assets/brain-top-section.jpg";
 
 const HeroXBrainer = () => {
   console.log("HeroXBrainer rendering - should have NO background images or components");
@@ -26,8 +27,19 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
+      {/* Brain image */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[70vh] z-5">
+        <img
+          src={brainTopSection}
+          alt="Top section of brain with neural pathways"
+          className="w-full h-full object-cover opacity-60"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      
       <div className="container relative z-10 flex items-center min-h-screen py-24">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl relative z-15">
           <h1 className="text-5xl leading-[1.1] font-normal text-white sm:text-6xl lg:text-7xl">
             Secure Neural Data Before It's Too Late
           </h1>
