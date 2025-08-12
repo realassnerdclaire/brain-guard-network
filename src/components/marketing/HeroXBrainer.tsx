@@ -28,9 +28,9 @@ const HeroXBrainer = () => {
       </div>
       
       
-      {/* EEG stream signals across entire page */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <svg className="w-full h-full opacity-30" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+      {/* EEG stream signals across entire page - background layer */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <svg className="w-full h-full opacity-20" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="eegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" style={{stopColor: '#00d4ff', stopOpacity: 0.8}} />
@@ -109,11 +109,40 @@ const HeroXBrainer = () => {
                 fill="none" 
                 className="animate-pulse" 
                 style={{animation: 'reverse-flow 6s ease-in-out infinite', animationDelay: '3.5s'}} />
+                
+          {/* Background data streams outside brain area */}
+          <path d="M0,100 Q200,80 400,100 Q600,120 800,100 Q1000,80 1200,100" 
+                stroke="url(#eegGradient)" 
+                strokeWidth="1" 
+                fill="none" 
+                className="animate-pulse" 
+                style={{animation: 'wave-drift 10s ease-in-out infinite', animationDelay: '4s'}} />
+                
+          <path d="M0,900 Q300,880 600,900 Q900,920 1200,900 Q1500,880 1920,900" 
+                stroke="url(#eegGradient2)" 
+                strokeWidth="1" 
+                fill="none" 
+                className="animate-pulse" 
+                style={{animation: 'wave-drift 12s ease-in-out infinite', animationDelay: '5s'}} />
+                
+          <path d="M0,50 Q400,30 800,50 Q1200,70 1920,50" 
+                stroke="url(#eegGradient)" 
+                strokeWidth="0.8" 
+                fill="none" 
+                className="animate-pulse" 
+                style={{animation: 'wave-flow 8s ease-in-out infinite', animationDelay: '6s'}} />
+                
+          <path d="M0,950 Q500,930 1000,950 Q1500,970 1920,950" 
+                stroke="url(#eegGradient2)" 
+                strokeWidth="0.8" 
+                fill="none" 
+                className="animate-pulse" 
+                style={{animation: 'wave-flow 9s ease-in-out infinite', animationDelay: '7s'}} />
         </svg>
       </div>
 
-      {/* Enhanced futuristic neon brain */}
-      <div className="absolute right-0 top-1/2 -translate-y-4 w-3/5 h-[80vh] z-5 animate-pulse">
+      {/* Enhanced futuristic neon brain - foreground layer */}
+      <div className="absolute right-0 top-1/2 -translate-y-4 w-3/5 h-[80vh] z-10 animate-pulse">
         <img
           src={futuristicBrain}
           alt="Futuristic translucent brain with neural pathways"
