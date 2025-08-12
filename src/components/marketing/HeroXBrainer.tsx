@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import brainTopSection from "@/assets/brain-top-section.jpg";
 
 const HeroXBrainer = () => {
   console.log("HeroXBrainer rendering - should have NO background images or components");
@@ -30,8 +29,8 @@ const HeroXBrainer = () => {
       {/* Brain image */}
       <div className="absolute right-0 top-1/2 -translate-y-4 w-3/5 h-[80vh] z-5">
         <img
-          src={brainTopSection}
-          alt="Top section of brain with neural pathways"
+          src="/lovable-uploads/b0e025d9-5bcf-42be-aa8e-5743e557df92.png"
+          alt="Translucent brain section with flowing neural pathways"
           className="w-full h-full object-cover opacity-60"
           loading="eager"
           decoding="async"
