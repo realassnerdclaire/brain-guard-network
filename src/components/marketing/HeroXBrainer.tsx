@@ -26,14 +26,60 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Brain image */}
+      
+      {/* EEG stream signals across entire page */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <svg className="w-full h-full opacity-30" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="eegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: '#00d4ff', stopOpacity: 0.8}} />
+              <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#00d4ff', stopOpacity: 0.8}} />
+            </linearGradient>
+          </defs>
+          
+          {/* Multiple EEG wave lines spreading across page */}
+          <path d="M0,200 Q300,150 600,200 Q900,250 1200,200 Q1500,150 1920,200" 
+                stroke="url(#eegGradient)" 
+                strokeWidth="2" 
+                fill="none" 
+                className="animate-pulse" />
+          
+          <path d="M0,400 Q400,350 800,400 Q1200,450 1600,400 Q1800,350 1920,400" 
+                stroke="url(#eegGradient)" 
+                strokeWidth="2" 
+                fill="none" 
+                className="animate-pulse" 
+                style={{animationDelay: '0.5s'}} />
+          
+          <path d="M0,600 Q350,550 700,600 Q1050,650 1400,600 Q1650,550 1920,600" 
+                stroke="url(#eegGradient)" 
+                strokeWidth="2" 
+                fill="none" 
+                className="animate-pulse" 
+                style={{animationDelay: '1s'}} />
+                
+          <path d="M0,800 Q250,750 500,800 Q750,850 1000,800 Q1250,750 1500,800 Q1700,850 1920,800" 
+                stroke="url(#eegGradient)" 
+                strokeWidth="2" 
+                fill="none" 
+                className="animate-pulse" 
+                style={{animationDelay: '1.5s'}} />
+        </svg>
+      </div>
+
+      {/* Enhanced futuristic neon brain */}
       <div className="absolute right-0 top-1/2 -translate-y-4 w-3/5 h-[80vh] z-5">
         <img
           src="/lovable-uploads/b0e025d9-5bcf-42be-aa8e-5743e557df92.png"
           alt="Translucent brain section with flowing neural pathways"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-80"
           loading="eager"
           decoding="async"
+          style={{
+            filter: 'drop-shadow(0 0 20px #00d4ff) drop-shadow(0 0 40px #a855f7) brightness(1.2) contrast(1.1)',
+            mixBlendMode: 'screen'
+          }}
         />
       </div>
       
