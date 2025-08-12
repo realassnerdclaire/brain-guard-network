@@ -17,12 +17,12 @@ import HowItWorks from "@/components/marketing/HowItWorks";
 import FAQ from "@/components/marketing/FAQ";
 import CTASection from "@/components/marketing/CTASection";
 
-// Off-canvas sidebar that holds all sections content
+// Sidebar showing a ladder-style menu on the right with content
 export default function AppSidebar() {
   return (
-    <Sidebar variant="floating" collapsible="offcanvas" className="backdrop-blur bg-sidebar/90">
+    <Sidebar side="right" collapsible="none" className="w-56 border-l bg-sidebar/90 backdrop-blur">
       <SidebarHeader>
-        <SidebarGroupLabel className="text-sm">XBrainer Menu</SidebarGroupLabel>
+        <SidebarGroupLabel className="text-sm">Menu</SidebarGroupLabel>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
@@ -30,8 +30,28 @@ export default function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton>
-                  <Brain className="h-4 w-4" /> Vision
+                <SidebarMenuButton asChild>
+                  <a href="#vision"><Brain className="h-4 w-4" /> Vision</a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href="#features"><Activity className="h-4 w-4" /> Features</a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href="#how"><ListChecks className="h-4 w-4" /> How it works</a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href="#faq"><HelpCircle className="h-4 w-4" /> FAQ</a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href="#cta"><Mail className="h-4 w-4" /> Contact</a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
