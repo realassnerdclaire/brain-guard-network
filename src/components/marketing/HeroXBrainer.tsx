@@ -4,8 +4,18 @@ const HeroXBrainer = () => {
   console.log("HeroXBrainer rendering - should have NO background images or components");
   return (
     <section className="relative min-h-screen bg-black">
-      {/* XBrainer AI company name - top left */}
+      {/* XBrainer AI logo and company name - top left */}
       <div className="absolute top-8 left-8 z-20 flex items-center gap-6">
+        <img 
+          src="/lovable-uploads/a84358e6-b8f3-4172-a059-3c05cad36874.png" 
+          alt="XBrainer AI logo" 
+          className="h-16 w-auto mix-blend-screen opacity-90 rounded-lg" 
+          style={{
+            filter: 'blur(0.5px)',
+            maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)'
+          }}
+        />
         <div className="flex flex-col">
           <span className="text-white text-4xl font-bold tracking-tight">
             XBrainer AI
