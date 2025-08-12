@@ -4,7 +4,7 @@ import futuristicBrain from "@/assets/futuristic-brain-correct.png";
 const HeroXBrainer = () => {
   console.log("HeroXBrainer rendering - should have NO background images or components");
   return (
-    <section className="relative min-h-screen bg-black">
+    <section className="relative h-screen bg-black overflow-hidden">
       {/* XBrainer AI logo and company name - top left */}
       <div className="absolute top-8 left-8 z-20 flex items-center gap-6">
         <img 
@@ -84,7 +84,7 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 flex items-center min-h-screen py-24">
+      <div className="container relative z-10 flex items-center h-screen py-24">
         <div className="max-w-2xl relative z-15">
           <h1 className="text-5xl leading-[1.1] font-normal text-white sm:text-6xl lg:text-7xl">
             Secure Neural Data Before It's Too Late
@@ -94,7 +94,7 @@ const HeroXBrainer = () => {
           </p>
         </div>
         
-        <div className="absolute bottom-32 right-16">
+        <div className="absolute bottom-40 right-16">
           <Button 
             size="lg" 
             variant="outline" 
@@ -107,7 +107,7 @@ const HeroXBrainer = () => {
       </div>
       
       {/* Press logos at bottom */}
-      <div className="absolute bottom-8 left-0 right-0">
+      <div className="absolute bottom-16 left-0 right-0">
         <div className="container">
           <div className="flex items-center justify-center gap-12 opacity-60">
             <div className="text-white/60 text-sm font-medium">TECHCRUNCH</div>
@@ -117,6 +117,9 @@ const HeroXBrainer = () => {
           </div>
         </div>
       </div>
+      
+      {/* Subtle bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
     </section>
   );
 };
