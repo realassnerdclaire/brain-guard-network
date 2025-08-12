@@ -1,4 +1,4 @@
-import heroCorrectLogo from "@/assets/hero-correct-logo.jpg";
+import heroThreeLines from "@/assets/hero-three-lines.jpg";
 import NeuralBackdrop from "./NeuralBackdrop";
 import AnimatedEEG from "./AnimatedEEG";
 
@@ -17,8 +17,8 @@ const HeroXBrainer = () => {
       {/* Subtle brain visual on the right */}
       <div className="pointer-events-none absolute inset-y-0 right-0 w-[70%]">
         <img
-          src={heroCorrectLogo}
-          alt="Large XBrainer flowing logo with neon EEG effects"
+          src={heroThreeLines}
+          alt="XBrainer three horizontal wave lines with neon effects"
           className="h-full w-full object-cover opacity-90 mix-blend-screen"
           loading="eager"
           decoding="async"
