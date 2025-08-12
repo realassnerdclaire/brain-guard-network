@@ -32,7 +32,7 @@ const HeroXBrainer = () => {
             Secure Neural Data Before It's Too Late
           </h1>
           <p className="mt-6 text-lg text-white/80 max-w-xl">
-            XBrainer provides an end-to-end encrypted pipeline for EEG headsets—authenticates every packet, enforces user consent in microseconds, and writes an immutable audit log.
+            As brain-computer devices become more common, the risk of brain data being stolen or changed is growing. XBrainer AI make stools to keep this data safe.
           </p>
         </div>
         
