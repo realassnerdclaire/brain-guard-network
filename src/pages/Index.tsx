@@ -8,7 +8,7 @@ import FooterXBrainer from "@/components/marketing/FooterXBrainer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="dark min-h-screen bg-background text-foreground">
       <NavbarXBrainer />
       <main>
         <HeroXBrainer />
