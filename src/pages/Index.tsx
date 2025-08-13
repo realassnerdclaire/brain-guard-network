@@ -340,10 +340,10 @@ const Index = () => {
                     <span className="text-[#a855f7] font-medium text-sm uppercase tracking-wider">Critical Gap</span>
                   </div>
                   <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-4">
-                    BCI devices stream raw EEG/IMU. Most systems lack four basics: <span className="text-[#a855f7] font-semibold">encrypted transport</span>, <span className="text-[#a855f7] font-semibold">packet checks</span> (timing, range, artifacts), <span className="text-[#a855f7] font-semibold">consent-based access</span>, and a <span className="text-[#a855f7] font-semibold">write-once audit log</span>.
+                    BCI devices stream raw EEG/IMU. Most systems lack four basics: <span className="text-[#c084fc] font-semibold">encrypted transport</span>, <span className="text-[#c084fc] font-semibold">packet checks</span> (timing, range, artifacts), <span className="text-[#c084fc] font-semibold">consent-based access</span>, and a <span className="text-[#c084fc] font-semibold">write-once audit log</span>.
                   </p>
                   <p className="text-lg text-white/80">
-                    Without these, <span className="text-[#a855f7] font-semibold">corrupted data</span> reaches apps, <span className="text-[#a855f7] font-semibold">unauthorized reads</span> occur, and <span className="text-[#a855f7] font-semibold">deployments stall</span> as adoption expands beyond labs.
+                    Without these, <span className="text-[#c084fc] font-semibold">corrupted data</span> reaches apps, <span className="text-[#c084fc] font-semibold">unauthorized reads</span> occur, and <span className="text-[#c084fc] font-semibold">deployments stall</span> as adoption expands beyond labs.
                   </p>
                 </div>
               </div>
