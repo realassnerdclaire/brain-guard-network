@@ -147,8 +147,9 @@ const Index = () => {
                     contain: 'layout style',
                     willChange: 'transform',
                     isolation: 'isolate',
-                    animation: 'menuBorderCycle 0.35s linear infinite',
-                    borderWidth: '3px'
+                    animation: 'menuBorderCycle 1.4s linear infinite',
+                    borderWidth: '4px',
+                    borderColor: '#ffffff'
                   }}
                 >
                       <ul className="py-1">
