@@ -10,6 +10,9 @@ const Index = () => {
   const menuItems = [
     { label: "ABOUT", href: "#about" },
     { label: "PROBLEM", href: "#problem" },
+    { label: "URGENCY", href: "#urgency" },
+    { label: "SOLUTION", href: "#solution" },
+    { label: "OUR EDGE", href: "#edge" },
     { label: "TECHNOLOGY", href: "#technology" },
     { label: "CAREER", href: "#career" },
     { label: "BRIEFING REQUEST", href: "#briefing" },
@@ -180,7 +183,11 @@ const Index = () => {
                                 // Navigate after animation
                                 setTimeout(() => {
                                   setIsMenuOpen(false);
-                                  window.location.href = item.href;
+                                  // Smooth scroll to section
+                                  const targetElement = document.querySelector(item.href);
+                                  if (targetElement) {
+                                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                  }
                                 }, 200);
                               }, letters.length * 50 + colors.length * 300 + 1000);
                             }}
@@ -451,15 +458,15 @@ const Index = () => {
                 <div className="w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-16 animate-pulse" />
                 
                 <div className="space-y-8 text-left max-w-4xl mx-auto">
-                  <div className="bg-gradient-to-r from-[#7C3AED]/40 to-[#4338CA]/40 border-2 border-[#A855F7]/50 rounded-2xl p-8 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
+                  <div className="bg-gradient-to-r from-[#EC4899]/40 to-[#F472B6]/40 border-2 border-[#EC4899]/50 rounded-2xl p-8 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
                     <div className="flex items-center gap-4 mb-4">
                       <span className="text-4xl animate-pulse">📈</span>
                       <h3 className="text-2xl font-bold text-white">Market Explosion</h3>
                     </div>
                     <p className="text-xl text-white/90 leading-relaxed mb-4">
-                      The market is scaling fast — <span className="text-[#6C63FF] font-semibold bg-[#4338CA]/30 px-2 py-1 rounded animate-pulse">3M+ EEG devices expected in North America by 2026</span>.
+                      The market is scaling fast — <span className="text-[#F472B6] font-semibold bg-[#EC4899]/30 px-2 py-1 rounded animate-pulse">3M+ EEG devices expected in North America by 2026</span>.
                     </p>
-                    <div className="flex items-center gap-2 text-lg text-[#9333EA] font-semibold">
+                    <div className="flex items-center gap-2 text-lg text-[#EC4899] font-semibold">
                       <span className="animate-pulse">⚡</span>
                       <span>More devices = more attack surfaces = higher compliance risk</span>
                     </div>
@@ -471,21 +478,21 @@ const Index = () => {
                       Key regulatory milestones:
                     </h3>
                     <div className="space-y-6">
-                      <div className="border-l-4 border-[#6C63FF] pl-6 bg-[#4F46E5]/10 p-4 rounded-r-lg hover:bg-[#4F46E5]/20 transition-all duration-300 hover-scale">
+                      <div className="border-l-4 border-[#EC4899] pl-6 bg-[#EC4899]/10 p-4 rounded-r-lg hover:bg-[#EC4899]/20 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">🎯</span>
                           <h4 className="text-lg font-semibold text-white">2025:</h4>
                         </div>
                         <p className="text-white/80">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
                       </div>
-                      <div className="border-l-4 border-[#7C3AED] pl-6 bg-[#7C3AED]/10 p-4 rounded-r-lg hover:bg-[#7C3AED]/20 transition-all duration-300 hover-scale">
+                      <div className="border-l-4 border-[#F472B6] pl-6 bg-[#F472B6]/10 p-4 rounded-r-lg hover:bg-[#F472B6]/20 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">⚖️</span>
                           <h4 className="text-lg font-semibold text-white">2026:</h4>
                         </div>
                         <p className="text-white/80">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
                       </div>
-                      <div className="border-l-4 border-[#A855F7] pl-6 bg-[#A855F7]/10 p-4 rounded-r-lg hover:bg-[#A855F7]/20 transition-all duration-300 hover-scale">
+                      <div className="border-l-4 border-[#BE185D] pl-6 bg-[#BE185D]/10 p-4 rounded-r-lg hover:bg-[#BE185D]/20 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">🚫</span>
                           <h4 className="text-lg font-semibold text-white">2027+:</h4>
@@ -495,15 +502,15 @@ const Index = () => {
                     </div>
                   </div>
                   
-                  <div className="bg-[#A855F7]/20 border-2 border-[#9333EA]/50 rounded-2xl p-8 text-center animate-scale-in relative overflow-hidden" style={{animationDelay: '0.6s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#A855F7]/10 to-transparent animate-pulse"></div>
+                  <div className="bg-[#EC4899]/20 border-2 border-[#F472B6]/50 rounded-2xl p-8 text-center animate-scale-in relative overflow-hidden" style={{animationDelay: '0.6s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#EC4899]/10 to-transparent animate-pulse"></div>
                     <div className="relative z-10">
                       <div className="flex items-center justify-center gap-3 mb-4">
                         <span className="text-4xl animate-pulse">🚨</span>
                         <span className="text-4xl animate-pulse">⏰</span>
                       </div>
                       <p className="text-xl text-white font-semibold">
-                        Companies that wait risk being <span className="text-[#A855F7] bg-[#9333EA]/50 px-3 py-1 rounded-lg animate-pulse">locked out</span> of clinical and consumer markets.
+                        Companies that wait risk being <span className="text-[#EC4899] bg-[#F472B6]/50 px-3 py-1 rounded-lg animate-pulse">locked out</span> of clinical and consumer markets.
                       </p>
                     </div>
                   </div>
@@ -947,7 +954,19 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* Brain Pattern - Bottom Left Corner */}
+                {/* Brain Texture Pattern - Bottom Left Corner */}
+                <div className="absolute bottom-10 left-10 w-48 h-48 opacity-30">
+                  <div 
+                    className="w-full h-full bg-cover bg-center rounded-full border-2 border-[#3B82F6]/40"
+                    style={{
+                      backgroundImage: `url('/lovable-uploads/87a1debc-930a-4fd1-9357-9f8c74604c7b.png')`,
+                      filter: 'hue-rotate(220deg) saturate(1.2) brightness(0.8)',
+                      animation: 'brainGlow 4s ease-in-out infinite alternate'
+                    }}
+                  >
+                    <div className="w-full h-full bg-gradient-to-br from-[#3B82F6]/20 to-[#2563EB]/20 rounded-full"></div>
+                  </div>
+                </div>
                 <g transform="translate(50, 750)" filter="url(#neonGlow)">
                   {/* Brain hemisphere outline */}
                   <path
