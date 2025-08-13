@@ -46,6 +46,7 @@ const Index = () => {
                 <button
                   id="menu-btn"
                   onClick={(e) => {
+                    e.preventDefault();
                     console.log('🚀 MENU CLICKED - Starting letter animation');
                     
                     const btn = e.currentTarget;
@@ -91,39 +92,6 @@ const Index = () => {
                       stopHoverAnimation(btn, (btn as any).hoverInterval);
                       (btn as any).hoverInterval = null;
                     }
-                  }}
-                  onTouchStart={() => {
-                    console.log('📱 MENU TOUCHED - Starting letter animation');
-                    
-                    const btn = document.getElementById('menu-btn');
-                    if (btn) {
-                      const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                      const letters = ['M', 'E', 'N', 'U'];
-                      
-                      const textSpan = btn.querySelector('.menu-text');
-                      if (textSpan) {
-                        textSpan.innerHTML = letters.map((letter, i) => 
-                          `<span id="menu-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter}</span>`
-                        ).join('');
-                        
-                        letters.forEach((letter, letterIndex) => {
-                          colors.forEach((color, colorIndex) => {
-                            setTimeout(() => {
-                              const letterSpan = document.getElementById(`menu-letter-touch-${letterIndex}`);
-                              if (letterSpan) {
-                                letterSpan.style.color = color;
-                              }
-                            }, letterIndex * 100 + colorIndex * 300);
-                          });
-                        });
-                        
-                        setTimeout(() => {
-                          textSpan.innerHTML = 'MENU';
-                        }, letters.length * 100 + colors.length * 300 + 1000);
-                      }
-                    }
-                    
-                    setIsMenuOpen(!isMenuOpen);
                   }}
                   className="text-white text-base sm:text-lg font-medium tracking-widest hover:text-white/80 transition-colors touch-manipulation min-h-[44px] flex items-center gap-2"
                 >
