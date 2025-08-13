@@ -673,199 +673,86 @@ const Index = () => {
             id="edge" 
             className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden"
           >
-            {/* Futuristic neural network background for Our Edge section */}
-            <div className="absolute inset-0 opacity-100">
+            {/* Brain and EEG waves background like the reference image */}
+            <div className="absolute inset-0 opacity-40">
+              {/* Background grid pattern */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-blue-800/20"></div>
+              
+              {/* EEG wave patterns */}
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
-                  <linearGradient id="edgeFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.9}} />
-                    <stop offset="50%" style={{stopColor: '#1D4ED8', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.9}} />
+                  <linearGradient id="eegWave1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#60A5FA', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
                   </linearGradient>
-                  <linearGradient id="edgeFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#1E40AF', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#2563EB', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#1E40AF', stopOpacity: 0.8}} />
+                  <linearGradient id="eegWave2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#1D4ED8', stopOpacity: 0.7}} />
+                    <stop offset="50%" style={{stopColor: '#2563EB', stopOpacity: 0.9}} />
+                    <stop offset="100%" style={{stopColor: '#1D4ED8', stopOpacity: 0.7}} />
                   </linearGradient>
-                  <radialGradient id="neuralNode" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.3}} />
-                  </radialGradient>
-                  <radialGradient id="brainGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" style={{stopColor: '#2563EB', stopOpacity: 1.0}} />
-                    <stop offset="50%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
-                    <stop offset="100%" style={{stopColor: '#1D4ED8', stopOpacity: 0.2}} />
-                  </radialGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                    <feMerge> 
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                  <filter id="neonGlow">
-                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                    <feMerge> 
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
                 </defs>
                 
-                {/* Copy exact EEG patterns from Problem section */}
+                {/* Multiple EEG wave lines */}
                 <path
-                  d="M-50,380 L0,375 L20,390 L40,365 L60,385 L80,370 L120,395 L140,360 L180,390 L220,375 L260,400 L300,350 L340,385 L380,370 L420,395 L460,355 L500,380 L540,375 L580,390 L620,365 L660,385 L700,370 L740,395 L780,360 L820,390 L860,375 L900,400 L940,350 L980,385 L1020,370 L1060,395 L1100,355 L1140,380 L1180,375 L1220,390 L1260,365 L1300,385 L1340,370 L1380,395 L1420,360 L1460,390 L1500,375 L1540,400 L1580,350 L1620,385 L1660,370 L1700,395 L1740,355 L1780,380 L1820,375 L1860,390 L1900,365 L1940,385 L1980,370"
-                  stroke="url(#edgeFlow1)"
+                  d="M0,200 L50,195 L100,210 L150,180 L200,205 L250,175 L300,200 L350,185 L400,215 L450,170 L500,195 L550,220 L600,175 L650,200 L700,190 L750,210 L800,165 L850,195 L900,225 L950,180 L1000,200 L1050,185 L1100,215 L1150,170 L1200,195 L1250,220 L1300,175 L1350,200 L1400,190 L1450,210 L1500,165 L1550,195 L1600,225 L1650,180 L1700,200 L1750,185 L1800,215 L1850,170 L1900,195"
+                  stroke="url(#eegWave1)"
                   strokeWidth="2"
                   fill="none"
                   opacity="0.9"
-                  style={{
-                    animation: 'edgeFlow 12s linear infinite'
-                  }}
-                />
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 20,0; 0,0"
+                    dur="4s"
+                    repeatCount="indefinite"
+                  />
+                </path>
                 
                 <path
-                  d="M-50,480 L0,485 L25,460 L50,495 L75,470 L100,490 L130,465 L160,500 L190,475 L220,485 L250,460 L280,495 L310,470 L340,490 L370,465 L400,500 L430,475 L460,485 L490,460 L520,495 L550,470 L580,490 L610,465 L640,500 L670,475 L700,485 L730,460 L760,495 L790,470 L820,490 L850,465 L880,500 L910,475 L940,485 L970,460 L1000,495 L1030,470 L1060,490 L1090,465 L1120,500 L1150,475 L1180,485 L1210,460 L1240,495 L1270,470 L1300,490 L1330,465 L1360,500 L1390,475 L1420,485 L1450,460 L1480,495 L1510,470 L1540,490 L1570,465 L1600,500 L1630,475 L1660,485 L1690,460 L1720,495 L1750,470 L1780,490 L1810,465 L1840,500 L1870,475 L1900,485 L1930,460 L1960,495 L1990,470"
-                  stroke="url(#edgeFlow2)"
+                  d="M0,300 L50,310 L100,285 L150,315 L200,290 L250,320 L300,295 L350,325 L400,280 L450,310 L500,305 L550,275 L600,320 L650,295 L700,325 L750,280 L800,310 L850,305 L900,275 L950,320 L1000,295 L1050,325 L1100,280 L1150,310 L1200,305 L1250,275 L1300,320 L1350,295 L1400,325 L1450,280 L1500,310 L1550,305 L1600,275 L1650,320 L1700,295 L1750,325 L1800,280 L1850,310 L1900,305"
+                  stroke="url(#eegWave2)"
                   strokeWidth="1.5"
                   fill="none"
                   opacity="0.7"
-                  style={{
-                    animation: 'edgeFlow 15s linear infinite reverse'
-                  }}
-                />
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; -15,0; 0,0"
+                    dur="6s"
+                    repeatCount="indefinite"
+                  />
+                </path>
                 
                 <path
-                  d="M-50,580 L0,575 L15,590 L30,565 L45,585 L60,570 L80,595 L100,560 L125,590 L150,575 L175,600 L200,555 L225,585 L250,570 L275,595 L300,560 L325,590 L350,575 L375,600 L400,555 L425,585 L450,570 L475,595 L500,560 L525,590 L550,575 L575,600 L600,555 L625,585 L650,570 L675,595 L700,560 L725,590 L750,575 L775,600 L800,555 L825,585 L850,570 L875,595 L900,560 L925,590 L950,575 L975,600 L1000,555 L1025,585 L1050,570 L1075,595 L1100,560 L1125,590 L1150,575 L1175,600 L1200,555 L1225,585 L1250,570 L1275,595 L1300,560 L1325,590 L1350,575 L1375,600 L1400,555 L1425,585 L1450,570 L1475,595 L1500,560 L1525,590 L1550,575 L1575,600 L1600,555 L1625,585 L1650,570 L1675,595 L1700,560 L1725,590 L1750,575 L1775,600 L1800,555 L1825,585 L1850,570 L1875,595 L1900,560 L1925,590 L1950,575 L1975,600"
-                  stroke="#1D4ED8"
+                  d="M0,500 L30,495 L60,510 L90,485 L120,505 L150,480 L180,500 L210,495 L240,515 L270,475 L300,495 L330,520 L360,480 L390,500 L420,495 L450,515 L480,475 L510,495 L540,520 L570,480 L600,500 L630,495 L660,515 L690,475 L720,495 L750,520 L780,480 L810,500 L840,495 L870,515 L900,475 L930,495 L960,520 L990,480 L1020,500 L1050,495 L1080,515 L1110,475 L1140,495 L1170,520 L1200,480 L1230,500 L1260,495 L1290,515 L1320,475 L1350,495 L1380,520 L1410,480 L1440,500 L1470,495 L1500,515 L1530,475 L1560,495 L1590,520 L1620,480 L1650,500 L1680,495 L1710,515 L1740,475 L1770,495 L1800,520 L1830,480 L1860,500 L1890,495"
+                  stroke="#3B82F6"
                   strokeWidth="1"
                   fill="none"
                   opacity="0.6"
-                  style={{
-                    animation: 'edgeFlow 18s linear infinite'
-                  }}
-                />
-                
-                {/* Additional EEG spikes for edge effect */}
-                <path
-                  d="M-50,420 L0,415 L10,440 L20,405 L30,435 L40,410 L50,445 L60,400 L70,430 L80,415 L90,450 L100,395 L110,425 L120,410 L130,445 L140,400 L150,430 L160,415 L170,450 L180,395 L190,425 L200,410"
-                  stroke="#2563EB"
-                  strokeWidth="1.5"
-                  fill="none"
-                  opacity="0.8"
-                  style={{
-                    animation: 'edgeFlow 8s linear infinite'
-                  }}
-                />
-                
-                {/* Quantum connection pathways */}
-                <g stroke="#3B82F6" strokeWidth="1.5" opacity="0.8" filter="url(#glow)">
-                  <path d="M300,250 L600,400 L900,650" strokeDasharray="8,4">
-                    <animate attributeName="stroke-dashoffset" values="0;24;0" dur="6s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;1;0.5" dur="6s" repeatCount="indefinite"/>
-                  </path>
-                  <path d="M600,400 L1200,250 L1500,400" strokeDasharray="6,3">
-                    <animate attributeName="stroke-dashoffset" values="0;18;0" dur="5s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" repeatCount="indefinite"/>
-                  </path>
-                  <path d="M900,650 L1200,250" strokeDasharray="10,5">
-                    <animate attributeName="stroke-dashoffset" values="0;30;0" dur="7s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;1;0.5" dur="7s" repeatCount="indefinite"/>
-                  </path>
-                  <path d="M1200,250 L1500,400" strokeDasharray="4,2">
-                    <animate attributeName="stroke-dashoffset" values="0;12;0" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
-                  </path>
-                </g>
-
-                {/* Neon Brain Pattern - Bottom Left Corner */}
-                <g transform="translate(50, 750)" filter="url(#neonGlow)">
-                  {/* Brain hemisphere outline */}
-                  <path
-                    d="M0,200 Q50,150 100,160 Q150,140 200,150 Q250,130 300,140 Q350,120 400,130 Q450,110 500,120 Q500,170 480,200 Q460,230 430,250 Q400,270 360,280 Q320,290 280,285 Q240,280 200,275 Q160,270 120,260 Q80,250 40,230 Q0,210 0,200Z"
-                    stroke="#6C63FF"
-                    strokeWidth="2"
-                    fill="none"
-                    opacity="0.8"
-                  >
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
-                  </path>
-                  
-                  {/* Brain neural networks spreading outward */}
-                  <g stroke="#A855F7" strokeWidth="1" opacity="0.7">
-                    {/* Central neural hub */}
-                    <circle cx="250" cy="200" r="8" fill="#A855F7" opacity="0.9">
-                      <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    
-                    {/* Neural pathways spreading */}
-                    <path d="M250,200 L200,180 L150,160 L100,140" strokeDasharray="4,2">
-                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="4s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L300,170 L350,150 L400,130" strokeDasharray="4,2">
-                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="3.5s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L220,240 L180,270 L140,300" strokeDasharray="4,2">
-                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="4.5s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L290,230 L330,260 L370,290" strokeDasharray="4,2">
-                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="3s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L180,220 L120,240 L60,260" strokeDasharray="4,2">
-                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="5s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L320,220 L380,240 L440,260" strokeDasharray="4,2">
-                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="2.5s" repeatCount="indefinite"/>
-                    </path>
-                  </g>
-                  
-                  {/* Synaptic nodes */}
-                  <g fill="url(#brainGlow)">
-                    <circle cx="150" cy="160" r="3">
-                      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="350" cy="150" r="3">
-                      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="180" cy="270" r="3">
-                      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="330" cy="260" r="3">
-                      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="120" cy="240" r="3">
-                      <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="380" cy="240" r="3">
-                      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
-                    </circle>
-                  </g>
-                  
-                  {/* Electrical impulses */}
-                  <g stroke="#4F46E5" strokeWidth="1.5" opacity="0.8">
-                    <circle cx="200" cy="180" r="15" fill="none" strokeDasharray="8,4">
-                      <animate attributeName="r" values="10;25;10" dur="3s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="300" cy="170" r="18" fill="none" strokeDasharray="6,3">
-                      <animate attributeName="r" values="12;30;12" dur="2.5s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                  </g>
-                  
-                  {/* Spreading neural activity */}
-                  <g stroke="#9333EA" strokeWidth="0.8" opacity="0.6">
-                    <circle cx="250" cy="200" r="40" fill="none" strokeDasharray="12,8">
-                      <animate attributeName="r" values="30;80;30" dur="6s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="6s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="250" cy="200" r="60" fill="none" strokeDasharray="16,12">
-                      <animate attributeName="r" values="50;120;50" dur="8s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.5;0.05;0.5" dur="8s" repeatCount="indefinite"/>
-                    </circle>
-                  </g>
-                </g>
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 25,0; 0,0"
+                    dur="8s"
+                    repeatCount="indefinite"
+                  />
+                </path>
               </svg>
+              
+              {/* Brain image positioned on the right side */}
+              <div className="absolute right-20 top-1/2 transform -translate-y-1/2 w-96 h-64 opacity-60">
+                <div 
+                  className="w-full h-full bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('/lovable-uploads/416842ac-517e-4626-aa5f-14fa248df4cf.png')`,
+                    filter: 'hue-rotate(220deg) saturate(1.1) brightness(0.7)',
+                  }}
+                ></div>
+              </div>
             </div>
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
@@ -875,166 +762,49 @@ const Index = () => {
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-16 animate-pulse" />
                 
-                {/* Patent pending innovation */}
+                {/* Feature items with original text content */}
                 <div className="space-y-8 max-w-5xl mx-auto">
                   <div className="relative group animate-scale-in" style={{animationDelay: '0.1s'}}>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/20 to-[#1D4ED8]/20 transform skew-x-3 group-hover:skew-x-6 transition-transform duration-700 rounded-3xl"></div>
                     <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#3B82F6]/40 rounded-3xl p-8 hover:border-[#3B82F6]/70 transition-all duration-500 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6]/5 via-transparent to-[#1D4ED8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#3B82F6]/20 to-[#2563EB]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-3xl">🎯</span>
-                        </div>
-                        <div className="text-left flex-1">
-                          <h3 className="text-xl font-bold text-white mb-3">Patent Pending Signal-Security Pipeline</h3>
-                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
-                            Innovative approach designed specifically for neural data protection
-                          </p>
-                        </div>
+                      <div className="relative z-10 text-left">
+                        <h3 className="text-xl font-bold text-white mb-3">Patent pending signal-security pipeline</h3>
                       </div>
                     </div>
                   </div>
 
-                  {/* Standards-first architecture */}
                   <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.2s'}}>
                     <div className="absolute inset-0 bg-gradient-to-bl from-[#2563EB]/20 to-[#3B82F6]/20 transform -skew-y-2 group-hover:-skew-y-4 transition-transform duration-700 rounded-full"></div>
                     <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#2563EB]/40 rounded-full p-8 hover:border-[#2563EB]/70 transition-all duration-500 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-l from-[#2563EB]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-3xl">🛡️</span>
-                        </div>
-                        <div className="text-left flex-1">
-                          <h3 className="text-xl font-bold text-white mb-3">Standards-first Architecture</h3>
-                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
-                            HIPAA, GDPR, ISO 27001, FDA guidance
-                          </p>
-                        </div>
+                      <div className="relative z-10 text-left">
+                        <h3 className="text-xl font-bold text-white mb-3">Standards-first architecture: HIPAA, GDPR, ISO 27001, FDA guidance</h3>
                       </div>
                     </div>
                   </div>
 
-                  {/* Adaptive intrusion detection */}
                   <div className="relative group animate-scale-in w-5/6" style={{animationDelay: '0.3s'}}>
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/20 to-[#3B82F6]/20 transform rotate-1 group-hover:rotate-3 transition-transform duration-700"></div>
                     <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1E40AF]/40 p-8 hover:border-[#1E40AF]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
                       <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#1E40AF]/20 to-[#3B82F6]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-3xl">🤖</span>
-                        </div>
-                        <div className="text-left flex-1">
-                          <h3 className="text-xl font-bold text-white mb-3">Adaptive Intrusion Detection</h3>
-                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
-                            Powered by AI models tuned for BCI signal patterns
-                          </p>
-                        </div>
+                      <div className="relative z-10 text-left">
+                        <h3 className="text-xl font-bold text-white mb-3">Adaptive intrusion detection powered by AI models tuned for BCI signal patterns</h3>
                       </div>
                     </div>
                   </div>
 
-                  {/* Flexible SDK integration */}
                   <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.4s'}}>
                     <div className="absolute inset-0 bg-gradient-to-bl from-[#1D4ED8]/20 to-[#2563EB]/20 transform -rotate-2 group-hover:-rotate-4 transition-transform duration-700 rounded-[3rem]"></div>
                     <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1D4ED8]/40 rounded-[3rem] p-8 hover:border-[#1D4ED8]/70 transition-all duration-500 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-l from-[#1D4ED8]/5 via-transparent to-[#2563EB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#1D4ED8]/20 to-[#2563EB]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-3xl">🔧</span>
-                        </div>
-                        <div className="text-left flex-1">
-                          <h3 className="text-xl font-bold text-white mb-3">Flexible SDK Integration</h3>
-                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
-                            For device manufacturers and research platforms
-                          </p>
-                        </div>
+                      <div className="relative z-10 text-left">
+                        <h3 className="text-xl font-bold text-white mb-3">Flexible SDK integration for device manufacturers and research platforms</h3>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Brain Texture Pattern - Bottom Left Corner */}
-                <div className="absolute bottom-10 left-10 w-48 h-48 opacity-30">
-                  <div 
-                    className="w-full h-full bg-cover bg-center rounded-full border-2 border-[#3B82F6]/40"
-                    style={{
-                      backgroundImage: `url('/lovable-uploads/87a1debc-930a-4fd1-9357-9f8c74604c7b.png')`,
-                      filter: 'hue-rotate(220deg) saturate(1.2) brightness(0.8)',
-                      animation: 'brainGlow 4s ease-in-out infinite alternate'
-                    }}
-                  >
-                    <div className="w-full h-full bg-gradient-to-br from-[#3B82F6]/20 to-[#2563EB]/20 rounded-full"></div>
-                  </div>
-                </div>
-                <g transform="translate(50, 750)" filter="url(#neonGlow)">
-                  {/* Brain hemisphere outline */}
-                  <path
-                    d="M0,200 Q50,150 100,160 Q150,140 200,150 Q250,130 300,140 Q350,120 400,130 Q450,110 500,120 Q500,170 480,200 Q460,230 430,250 Q400,270 360,280 Q320,290 280,285 Q240,280 200,275 Q160,270 120,260 Q80,250 40,230 Q0,210 0,200Z"
-                    stroke="#2563EB"
-                    strokeWidth="3"
-                    fill="none"
-                    opacity="1.0"
-                  >
-                    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-                    <animate attributeName="stroke-width" values="2;4;2" dur="3s" repeatCount="indefinite"/>
-                  </path>
-                  
-                  {/* Brain neural networks spreading outward */}
-                  <g stroke="#3B82F6" strokeWidth="2" opacity="1.0">
-                    {/* Central neural hub */}
-                    <circle cx="250" cy="200" r="12" fill="#3B82F6" opacity="1.0">
-                      <animate attributeName="r" values="8;16;8" dur="2s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    
-                    {/* Neural pathways spreading */}
-                    <path d="M250,200 L200,180 L150,160 L100,140" strokeDasharray="6,3" opacity="0.9">
-                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="3s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L300,170 L350,150 L400,130" strokeDasharray="6,3" opacity="0.9">
-                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="2.5s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L220,240 L180,270 L140,300" strokeDasharray="6,3" opacity="0.9">
-                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="3.5s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L290,230 L330,260 L370,290" strokeDasharray="6,3" opacity="0.9">
-                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="2s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L180,220 L120,240 L60,260" strokeDasharray="6,3" opacity="0.9">
-                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="4s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M250,200 L320,220 L380,240 L440,260" strokeDasharray="6,3" opacity="0.9">
-                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="1.5s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
-                    </path>
-                  </g>
-                  
-                  {/* Synaptic nodes */}
-                  <g fill="url(#brainGlow)">
-                    <circle cx="150" cy="160" r="5" opacity="1.0">
-                      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
-                      <animate attributeName="r" values="3;7;3" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="350" cy="150" r="5" opacity="1.0">
-                      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
-                      <animate attributeName="r" values="3;7;3" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="180" cy="270" r="5" opacity="1.0">
-                      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
-                      <animate attributeName="r" values="3;7;3" dur="1.8s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="330" cy="260" r="5" opacity="1.0">
-                      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
-                      <animate attributeName="r" values="3;7;3" dur="3s" repeatCount="indefinite"/>
-                    </circle>
-                  </g>
-                </g>
               </div>
             </div>
           </section>
