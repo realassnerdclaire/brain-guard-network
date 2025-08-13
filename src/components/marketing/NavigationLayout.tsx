@@ -42,35 +42,54 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/30 z-10" />
 
-      {/* Back Button */}
-      <button
-        onClick={onBack}
-        className="fixed top-8 left-8 z-50 flex items-center gap-2 text-white bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 hover:bg-black/40 transition-all"
-      >
-        <ArrowLeft size={20} />
-        <span className="text-lg font-medium tracking-widest">BACK</span>
-      </button>
+      {/* Logo and Company Info - Same as first landing page */}
+      <div className="fixed top-8 left-8 z-50 flex items-center gap-4">
+        <img 
+          src="/lovable-uploads/a84358e6-b8f3-4172-a059-3c05cad36874.png" 
+          alt="XBrainer AI logo" 
+          className="h-12 w-auto mix-blend-screen opacity-90 rounded-lg" 
+          style={{
+            filter: 'blur(0.1px)',
+            maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)'
+          }}
+        />
+        <div className="flex flex-col">
+          <span className="text-2xl font-bold tracking-tight leading-tight text-white">
+            XBrainer AI
+          </span>
+          <span className="text-sm font-medium text-white/70">
+            Securing Neural Data in Real Time
+          </span>
+        </div>
+      </div>
 
       {/* Menu Button */}
       <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="fixed top-8 right-8 z-50 flex items-center gap-2 text-white bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 hover:bg-black/40 transition-all"
+        onClick={() => {
+          if (isMenuOpen) {
+            onBack?.(); // Go back to first landing page when closing menu
+          } else {
+            setIsMenuOpen(true);
+          }
+        }}
+        className="fixed top-8 right-8 z-50 flex items-center gap-2 text-white bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 hover:bg-black/40 transition-all"
       >
-        {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-        <span className="text-lg font-medium tracking-widest">MENU</span>
+        {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
+        <span className="text-sm font-medium tracking-widest">MENU</span>
       </button>
 
-      {/* Side Navigation Menu - Made smaller */}
-      <div className={`fixed top-0 right-0 h-full w-64 bg-black/80 backdrop-blur-md border-l border-white/20 z-40 transform transition-transform duration-300 ${
+      {/* Side Navigation Menu - Even smaller */}
+      <div className={`fixed top-0 right-0 h-full w-56 bg-black/80 backdrop-blur-md border-l border-white/20 z-40 transform transition-transform duration-300 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
-        <div className="p-6 pt-20">
+        <div className="p-4 pt-16">
           <nav>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {menuItems.map((item, index) => (
                 <li key={item}>
                   <button
-                    className="block w-full text-left text-white/80 hover:text-white py-2 px-2 text-base font-medium transition-colors hover:bg-white/5 rounded"
+                    className="block w-full text-left text-white/80 hover:text-white py-1.5 px-2 text-sm font-medium transition-colors hover:bg-white/5 rounded"
                     style={{ animationDelay: `${index * 0.1}s` }}
                     onClick={(e) => {
                       console.log(`🚀 ${item} CLICKED - Starting letter animation`);
@@ -79,12 +98,12 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
                       const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                       const letters = item.split('');
                       
-                      // Create letter spans - same as navigation buttons
+                      // Create letter spans
                       btn.innerHTML = letters.map((letter, i) => 
-                        `<span id="nav-menu-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                        `<span id="nav-menu-letter-${i}" style="display: inline-block; transition: color 0.05s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
                       ).join('');
                       
-                      // Same fast animation as navigation buttons
+                      // Much faster animation
                       letters.forEach((letter, letterIndex) => {
                         colors.forEach((color, colorIndex) => {
                           setTimeout(() => {
@@ -92,7 +111,7 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
                             if (letterSpan && letter !== ' ') {
                               letterSpan.style.color = color;
                             }
-                          }, letterIndex * 10 + colorIndex * 30);
+                          }, letterIndex * 5 + colorIndex * 15); // Much faster timing
                         });
                       });
                       
@@ -100,7 +119,7 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
                       setTimeout(() => {
                         btn.innerHTML = item;
                         btn.style.color = 'white';
-                      }, letters.length * 10 + colors.length * 30 + 50);
+                      }, letters.length * 5 + colors.length * 15 + 25); // Faster reset
                     }}
                     onMouseEnter={(e) => {
                       const btn = e.currentTarget;
@@ -137,10 +156,10 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
           </div>
         </div>
 
-        {/* Bottom Navigation with color animations */}
+        {/* Bottom Navigation with faster color animations */}
         <div className="pb-12">
           <nav className="flex justify-center">
-            <div className="flex items-center gap-6 bg-black/30 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
+            <div className="flex items-center gap-4 bg-black/30 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5">
               {bottomNavItems.map((item) => (
                 <button
                   key={item}
@@ -153,10 +172,10 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
                     
                     // Create letter spans
                     btn.innerHTML = letters.map((letter, i) => 
-                      `<span id="bottom-nav-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      `<span id="bottom-nav-letter-${i}" style="display: inline-block; transition: color 0.05s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
                     ).join('');
                     
-                    // Color animation
+                    // Much faster color animation
                     letters.forEach((letter, letterIndex) => {
                       colors.forEach((color, colorIndex) => {
                         setTimeout(() => {
@@ -164,7 +183,7 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
                           if (letterSpan && letter !== ' ') {
                             letterSpan.style.color = color;
                           }
-                        }, letterIndex * 10 + colorIndex * 30);
+                        }, letterIndex * 5 + colorIndex * 15); // Much faster timing
                       });
                     });
                     
@@ -173,7 +192,7 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
                       btn.innerHTML = item;
                       btn.style.color = 'white';
                       setActiveSection(item);
-                    }, letters.length * 10 + colors.length * 30 + 50);
+                    }, letters.length * 5 + colors.length * 15 + 25); // Faster reset
                   }}
                   onMouseEnter={(e) => {
                     const btn = e.currentTarget;
@@ -187,7 +206,7 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
                       (btn as any).hoverInterval = null;
                     }
                   }}
-                  className={`text-base font-medium tracking-wide transition-all hover:text-white ${
+                  className={`text-sm font-medium tracking-wide transition-all hover:text-white ${
                     activeSection === item 
                       ? 'text-white border-b-2 border-white pb-1' 
                       : 'text-white/60'
