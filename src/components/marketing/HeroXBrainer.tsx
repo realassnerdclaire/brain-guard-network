@@ -210,10 +210,10 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Press logos at bottom */}
-      <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0">
-        <div className="container px-4">
-          <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap">
+      {/* Interactive navigation labels at bottom */}
+      <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0 z-50 pointer-events-none">
+        <div className="container px-4 pointer-events-none">
+          <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap pointer-events-auto">
             <div 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group"
               onClick={(e) => {
@@ -314,8 +314,8 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Subtle bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+      {/* Subtle bottom fade - lowered z-index */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent pointer-events-none z-0"></div>
     </section>
   );
 };
