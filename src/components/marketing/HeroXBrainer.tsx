@@ -5,12 +5,12 @@ const HeroXBrainer = () => {
   console.log("HeroXBrainer rendering - should have NO background images or components");
   return (
     <section className="relative h-screen bg-black overflow-hidden">
-      {/* XBrainer AI logo and company name - top left */}
-      <div className="absolute top-8 left-8 z-20 flex items-center gap-6">
+      {/* XBrainer AI logo and company name - responsive positioning */}
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-20 flex items-center gap-3 sm:gap-4 lg:gap-6">
         <img 
           src="/lovable-uploads/a84358e6-b8f3-4172-a059-3c05cad36874.png" 
           alt="XBrainer AI logo" 
-          className="h-16 w-auto mix-blend-screen opacity-90 rounded-lg" 
+          className="h-10 sm:h-12 lg:h-16 w-auto mix-blend-screen opacity-90 rounded-lg" 
           style={{
             filter: 'blur(0.5px)',
             maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
@@ -18,10 +18,10 @@ const HeroXBrainer = () => {
           }}
         />
         <div className="flex flex-col">
-          <span className="text-white text-4xl font-bold tracking-tight">
+          <span className="text-white text-xl sm:text-2xl lg:text-4xl font-bold tracking-tight">
             XBrainer AI
           </span>
-          <span className="text-white/70 text-lg font-medium">
+          <span className="text-white/70 text-sm sm:text-base lg:text-lg font-medium">
             The firewall for your brain
           </span>
         </div>
@@ -30,7 +30,7 @@ const HeroXBrainer = () => {
       
       {/* EEG stream signals across entire page - background layer */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <svg className="w-full h-full opacity-40" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <svg className="w-full h-full opacity-40 sm:opacity-40" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="eegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" style={{stopColor: '#00d4ff', stopOpacity: 1}} />
@@ -180,21 +180,21 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 flex items-center h-screen py-24">
+      <div className="container relative z-10 flex items-center h-screen py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-2xl relative z-15">
-          <h1 className="text-5xl leading-[1.1] font-normal text-white sm:text-6xl lg:text-7xl">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] font-normal text-white">
             Secure Neural Data Before It's Too Late
           </h1>
-          <p className="mt-6 text-lg text-white/80 max-w-xl">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-white/80 max-w-xl">
             As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
           </p>
         </div>
         
-        <div className="absolute bottom-40 right-16">
+        <div className="absolute bottom-24 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16">
           <Button 
             size="lg" 
             variant="outline" 
-            className="rounded-full border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-8 py-3"
+            className="rounded-full border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-6 sm:px-8 py-2 sm:py-3 touch-manipulation text-sm sm:text-base"
             asChild
           >
             <a href="#cta">JOIN THE WAITLIST +</a>
@@ -203,13 +203,15 @@ const HeroXBrainer = () => {
       </div>
       
       {/* Press logos at bottom */}
-      <div className="absolute bottom-16 left-0 right-0">
-        <div className="container">
-          <div className="flex items-center justify-center gap-12">
-            <div className="text-white text-sm font-medium">PROBLEM</div>
-            <div className="text-white text-sm font-medium">URGENCY</div>
-            <div className="text-white text-sm font-medium">TECHNICAL ADVANTAGE</div>
-            <div className="text-white text-sm font-medium">COMPLIANCE AND STANDARDS</div>
+      <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0">
+        <div className="container px-4">
+          <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap">
+            <div className="text-white text-xs sm:text-sm font-medium">PROBLEM</div>
+            <div className="text-white text-xs sm:text-sm font-medium">URGENCY</div>
+            <div className="text-white text-xs sm:text-sm font-medium hidden sm:block">TECHNICAL ADVANTAGE</div>
+            <div className="text-white text-xs sm:text-sm font-medium sm:hidden">TECH ADVANTAGE</div>
+            <div className="text-white text-xs sm:text-sm font-medium hidden sm:block">COMPLIANCE AND STANDARDS</div>
+            <div className="text-white text-xs sm:text-sm font-medium sm:hidden">COMPLIANCE</div>
           </div>
         </div>
       </div>
