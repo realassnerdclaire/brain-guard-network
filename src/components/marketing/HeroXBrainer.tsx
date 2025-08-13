@@ -217,50 +217,66 @@ const HeroXBrainer = () => {
           <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap pointer-events-auto">
             <button 
               id="problem-btn"
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer bg-red-500 border-2 border-yellow-500 p-4 hover:bg-red-700 rounded z-[99999] relative"
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer bg-transparent border-none p-4 hover:bg-white/10 rounded z-[99999] relative"
               style={{
                 pointerEvents: 'auto',
                 position: 'relative',
                 zIndex: 99999
               }}
               onClick={() => {
-                alert('CLICK WORKS!');
-                console.log('🚀 BUTTON CLICKED - TEST SUCCESSFUL');
+                console.log('🚀 PROBLEM CLICKED - Starting letter animation');
                 
-                // Simple color test first
                 const btn = document.getElementById('problem-btn');
-                if (btn) {
-                  btn.style.color = '#ff1493'; // Hot pink
-                  console.log('✅ Color changed to hot pink');
-                  
-                  setTimeout(() => {
-                    btn.style.color = '#a855f7'; // Purple
-                    console.log('✅ Color changed to purple');
-                  }, 500);
-                  
-                  setTimeout(() => {
-                    btn.style.color = '#3b82f6'; // Blue
-                    console.log('✅ Color changed to blue');
-                  }, 1000);
-                  
-                  setTimeout(() => {
-                    btn.style.color = 'white'; // Reset
-                    console.log('✅ Color reset to white');
-                  }, 1500);
-                }
+                if (!btn) return;
+                
+                // Color sequence: light pink → pink → darker pink → purple → blue → light blue
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['P', 'R', 'O', 'B', 'L', 'E', 'M'];
+                
+                // Create letter spans
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="letter-${i}" style="display: inline-block; transition: all 0.3s ease; padding: 2px; margin: 0 1px; border-radius: 4px; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1);">${letter}</span>`
+                ).join('');
+                
+                console.log('✅ Letter spans created');
+                
+                // Animate each letter through color sequence
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`letter-${letterIndex}`);
+                      if (letterSpan) {
+                        // Extract RGB values
+                        const r = parseInt(color.slice(1,3), 16);
+                        const g = parseInt(color.slice(3,5), 16);
+                        const b = parseInt(color.slice(5,7), 16);
+                        
+                        letterSpan.style.color = color;
+                        letterSpan.style.textShadow = `0 0 ${15 + colorIndex * 10}px ${color}, 0 0 ${30 + colorIndex * 20}px ${color}`;
+                        letterSpan.style.transform = `scale(${1.1 + colorIndex * 0.1})`;
+                        letterSpan.style.background = `rgba(${r}, ${g}, ${b}, 0.2)`;
+                        letterSpan.style.boxShadow = `0 0 ${20 + colorIndex * 10}px rgba(${r}, ${g}, ${b}, 0.5)`;
+                        letterSpan.style.backdropFilter = `blur(${10 + colorIndex * 5}px)`;
+                        letterSpan.style.border = `1px solid rgba(${r}, ${g}, ${b}, 0.5)`;
+                        letterSpan.style.borderRadius = `${6 + colorIndex * 2}px`;
+                        
+                        console.log(`Letter ${letter} (${letterIndex}) -> Phase ${colorIndex + 1}: ${color}`);
+                      }
+                    }, letterIndex * 100 + colorIndex * 300);
+                  });
+                });
+                
+                // Reset after animation
+                setTimeout(() => {
+                  btn.innerHTML = 'PROBLEM';
+                  console.log('🔄 Animation complete - reset to PROBLEM');
+                }, letters.length * 100 + colors.length * 300 + 1000);
                 
                 // Scroll to problem section
-                console.log('🎯 Scrolling to problem section...');
                 const problemSection = document.getElementById('problem');
                 if (problemSection) {
-                  problemSection.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start',
-                    inline: 'nearest'
-                  });
+                  problemSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   console.log('✅ Scrolled to problem section');
-                } else {
-                  console.log('❌ Problem section not found');
                 }
               }}
             >
