@@ -104,6 +104,13 @@ export default {
 				'slide-out-right': {
 					'0%': { transform: 'translateX(0)' },
 					'100%': { transform: 'translateX(100%)' }
+				},
+				'color-cycle': {
+					'0%': { color: '#ffffff' },
+					'25%': { color: '#ffb3d9' },
+					'50%': { color: '#c084fc' },
+					'75%': { color: '#60a5fa' },
+					'100%': { color: '#ffffff' }
 				}
 			},
 			animation: {
@@ -116,7 +123,8 @@ export default {
 				'slide-in-right': 'slide-in-right 0.3s ease-out',
 				'slide-out-right': 'slide-out-right 0.3s ease-out',
 				'enter': 'fade-in 0.3s ease-out, scale-in 0.2s ease-out',
-				'exit': 'fade-out 0.3s ease-out, scale-out 0.2s ease-out'
+				'exit': 'fade-out 0.3s ease-out, scale-out 0.2s ease-out',
+				'color-cycle': 'color-cycle 4s ease-in-out infinite'
 			}
 		}
 	},
