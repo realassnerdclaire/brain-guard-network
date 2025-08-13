@@ -5,7 +5,7 @@ import { animateLetters, startHoverAnimation, stopHoverAnimation } from "@/utils
 const HeroXBrainer = () => {
   console.log("🎨 HeroXBrainer component rendering with color animation!");
   return (
-    <section className="relative min-h-screen h-screen bg-black overflow-hidden flex flex-col">
+    <section className="relative min-h-screen h-screen bg-black overflow-hidden flex flex-col justify-center sm:justify-start">
       {/* XBrainer AI logo and company name - responsive positioning */}
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-20 flex items-center gap-2 sm:gap-4 lg:gap-6">
         <img 
@@ -181,9 +181,9 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 flex-1 flex items-center justify-start py-6 sm:py-12 lg:py-24 px-4 sm:px-6">
+      <div className="container relative z-10 flex-1 flex items-center justify-start py-4 sm:py-12 lg:py-24 px-4 sm:px-6 mt-16 sm:mt-0">
         <div className="max-w-2xl lg:max-w-3xl relative z-15">
-          <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.1] font-normal text-white mb-4 sm:mb-6" id="hero-title">
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.1] font-normal text-white mb-3 sm:mb-6" id="hero-title">
             <span className="inline-block">Secure Neural Data Before It's Too Late</span>
           </h1>
           <p className="text-sm sm:text-base lg:text-lg text-white/80 max-w-lg lg:max-w-xl leading-relaxed">
@@ -191,8 +191,8 @@ const HeroXBrainer = () => {
           </p>
         </div>
         
-        {/* Action buttons - improved mobile positioning */}
-        <div className="absolute bottom-20 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-3 sm:gap-4">
+        {/* Action buttons - better mobile positioning */}
+        <div className="absolute bottom-16 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-3 sm:gap-4">
           <button 
             className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-4 sm:px-6 lg:px-8 py-2 sm:py-3 touch-manipulation text-xs sm:text-sm lg:text-base font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
@@ -242,8 +242,8 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Interactive navigation labels at bottom - improved mobile spacing */}
-      <div className="absolute bottom-4 sm:bottom-8 lg:bottom-12 left-0 right-0 z-[9999] pointer-events-none">
+      {/* Interactive navigation labels at bottom - optimized mobile spacing */}
+      <div className="absolute bottom-2 sm:bottom-8 lg:bottom-12 left-0 right-0 z-[9999] pointer-events-none">
         <div className="container px-3 sm:px-4 pointer-events-none">
           <div className="flex items-center justify-center gap-2 sm:gap-4 lg:gap-8 xl:gap-12 flex-wrap pointer-events-auto">
             <button 
