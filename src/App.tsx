@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import Vision from "./pages/Vision";
@@ -26,23 +27,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/vision" element={<Vision />} />
-          <Route path="/overview" element={<Overview />} />
-          <Route path="/compliance" element={<Compliance />} />
-          <Route path="/usecases" element={<UseCases />} />
-          <Route path="/security" element={<Security />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/waitlist" element={<Waitlist />} />
-          <Route path="/demo" element={<Demo />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/vision" element={<Vision />} />
+            <Route path="/overview" element={<Overview />} />
+            <Route path="/compliance" element={<Compliance />} />
+            <Route path="/usecases" element={<UseCases />} />
+            <Route path="/security" element={<Security />} />
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/waitlist" element={<Waitlist />} />
+            <Route path="/demo" element={<Demo />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
