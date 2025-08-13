@@ -164,7 +164,7 @@ const HeroXBrainer = () => {
       </div>
 
       {/* Enhanced futuristic neon brain - foreground layer */}
-      <div className="absolute right-0 top-1/2 -translate-y-4 w-3/5 h-[80vh] z-10 animate-pulse">
+      <div className="absolute right-0 sm:right-0 top-1/2 -translate-y-4 w-4/5 sm:w-3/5 h-[70vh] sm:h-[80vh] z-10 animate-pulse">
         <img
           src={futuristicBrain}
           alt="Futuristic translucent brain with neural pathways"
@@ -172,9 +172,9 @@ const HeroXBrainer = () => {
           loading="eager"
           decoding="async"
           style={{
-            filter: 'drop-shadow(0 0 15px #00d4ff) drop-shadow(0 0 25px #a855f7) brightness(1.1) contrast(1.1) blur(2px)',
-            maskImage: 'radial-gradient(ellipse 70% 80% at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 85%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 70% 80% at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 85%)',
+            filter: 'drop-shadow(0 0 15px #00d4ff) drop-shadow(0 0 25px #a855f7) brightness(1.1) contrast(1.1) blur(1px)',
+            maskImage: 'radial-gradient(ellipse 80% 90% at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0) 95%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 80% 90% at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0) 95%)',
             animation: 'float 6s ease-in-out infinite',
             mixBlendMode: 'screen'
           }}
@@ -352,6 +352,13 @@ const HeroXBrainer = () => {
                   btn.style.color = 'white';
                   console.log('🔄 Reset to normal URGENCY');
                 }, letters.length * 100 + colors.length * 300 + 1000);
+                
+                // Scroll to urgency section
+                const urgencySection = document.getElementById('urgency');
+                if (urgencySection) {
+                  urgencySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  console.log('✅ Scrolled to urgency section');
+                }
               }}
               id="urgency-btn"
               onMouseEnter={(e) => {
