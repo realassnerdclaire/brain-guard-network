@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import futuristicBrain from "@/assets/futuristic-brain-correct.png";
+import { animateLetters } from "@/utils/letterAnimation";
 
 const HeroXBrainer = () => {
   console.log("HeroXBrainer rendering - should have NO background images or components");
@@ -215,76 +216,20 @@ const HeroXBrainer = () => {
         <div className="container px-4 pointer-events-none">
           <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap pointer-events-auto">
             <button 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group bg-transparent border-none p-4 hover:bg-white/10 rounded pointer-events-auto relative z-[999999]"
-              onClick={(e) => {
-                alert('BUTTON CLICKED!');
-                console.log('PROBLEM clicked - animating each letter with color sequence!');
-                const element = document.getElementById('problem');
-                if (element) {
-                  const target = e.currentTarget as HTMLElement;
-                  
-                  // Split PROBLEM into individual letters
-                  const letters = ['P', 'R', 'O', 'B', 'L', 'E', 'M'];
-                  const colorSequence = [
-                    '#ffb3d9', // light pink
-                    '#ff80c7', // pink
-                    '#ff4db6', // darker pink
-                    '#a855f7', // purple
-                    '#3b82f6', // blue
-                    '#60a5fa'  // light blue
-                  ];
-                  
-                  // Create letter spans with edge blending
-                  target.innerHTML = letters.map((letter, index) => 
-                    `<span class="letter-${index}" style="display: inline-block; transition: all 0.3s ease; filter: blur(0px); text-shadow: none; border-radius: 4px; padding: 2px; background: rgba(255,255,255,0.05); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);">${letter}</span>`
-                  ).join('');
-                  
-                  // Animate each letter through the color sequence
-                  letters.forEach((letter, letterIndex) => {
-                    const letterSpan = target.querySelector(`.letter-${letterIndex}`) as HTMLElement;
-                    if (letterSpan) {
-                      colorSequence.forEach((color, colorIndex) => {
-                        setTimeout(() => {
-                          letterSpan.style.color = color;
-                          letterSpan.style.textShadow = `0 0 ${20 + colorIndex * 10}px ${color}, 0 0 ${40 + colorIndex * 20}px ${color}`;
-                          letterSpan.style.transform = `scale(${1.1 + colorIndex * 0.05})`;
-                          letterSpan.style.filter = `brightness(${1.2 + colorIndex * 0.1}) saturate(${1.5 + colorIndex * 0.1}) blur(${colorIndex * 0.5}px)`;
-                          letterSpan.style.background = `rgba(${parseInt(color.slice(1,3), 16)}, ${parseInt(color.slice(3,5), 16)}, ${parseInt(color.slice(5,7), 16)}, 0.15)`;
-                          letterSpan.style.boxShadow = `0 0 ${15 + colorIndex * 5}px rgba(${parseInt(color.slice(1,3), 16)}, ${parseInt(color.slice(3,5), 16)}, ${parseInt(color.slice(5,7), 16)}, 0.4), inset 0 0 ${10 + colorIndex * 5}px rgba(${parseInt(color.slice(1,3), 16)}, ${parseInt(color.slice(3,5), 16)}, ${parseInt(color.slice(5,7), 16)}, 0.2)`;
-                          letterSpan.style.backdropFilter = `blur(${5 + colorIndex * 3}px)`;
-                          letterSpan.style.borderRadius = `${6 + colorIndex * 2}px`;
-                          letterSpan.style.border = `1px solid rgba(${parseInt(color.slice(1,3), 16)}, ${parseInt(color.slice(3,5), 16)}, ${parseInt(color.slice(5,7), 16)}, 0.3)`;
-                          console.log(`Letter ${letter} -> Color ${colorIndex + 1}: ${color}`);
-                        }, letterIndex * 150 + colorIndex * 200);
-                      });
-                    }
-                  });
-                  
-                  // Reset after animation
-                  setTimeout(() => {
-                    target.innerHTML = 'PROBLEM';
-                    target.style.color = 'white';
-                    target.style.textShadow = 'none';
-                    target.style.transform = 'scale(1)';
-                    target.style.filter = 'none';
-                    target.style.background = 'transparent';
-                    target.style.boxShadow = 'none';
-                    target.style.backdropFilter = 'none';
-                    target.style.borderRadius = '';
-                    target.style.border = '';
-                    console.log('🔄 Reset to original PROBLEM text');
-                  }, letters.length * 150 + colorSequence.length * 200 + 500);
-                  
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              id="problem-btn"
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              onClick={() => {
+                console.log('🚀 PROBLEM button clicked - starting animation');
+                const btn = document.getElementById('problem-btn');
+                if (btn) {
+                  animateLetters(btn, 'PROBLEM');
                 }
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#a855f7';
-                e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = '';
-                e.currentTarget.style.textShadow = '';
+                
+                // Scroll to problem section
+                const problemSection = document.getElementById('problem');
+                if (problemSection) {
+                  problemSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
               }}
             >
               PROBLEM
