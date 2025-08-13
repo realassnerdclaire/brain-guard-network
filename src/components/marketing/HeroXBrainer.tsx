@@ -44,18 +44,47 @@ const HeroXBrainer = () => {
             </linearGradient>
           </defs>
           
-          {/* Simplified EEG waves - balanced visibility */}
+          {/* Flowing neon EEG waves */}
           <path d="M0,200 L40,180 L80,220 L120,180 L160,200 L200,190 L240,210 L280,180 L320,220 L360,190 L400,200 L440,180 L480,210 L520,190 L560,200 L600,180 L640,210 L680,190 L720,200 L760,180 L800,210 L840,190 L880,200 L920,180 L960,210 L1000,190 L1040,200 L1080,180 L1120,210 L1160,190 L1200,200 L1240,180 L1280,210 L1320,190 L1360,200 L1400,180 L1440,210 L1480,190 L1520,200 L1560,180 L1600,210 L1640,190 L1680,200 L1720,180 L1760,210 L1800,190 L1840,200 L1880,180 L1920,210"
                 stroke="url(#eegGradient)" 
-                strokeWidth="2" 
+                strokeWidth="3" 
                 fill="none" 
-                style={{opacity: 0.7}} />
+                className="animate-pulse"
+                style={{
+                  opacity: 0.8,
+                  animation: 'eeg-flow 3s ease-in-out infinite',
+                  filter: 'drop-shadow(0 0 10px #00d4ff) drop-shadow(0 0 20px #00d4ff50)',
+                  strokeDasharray: '8 4',
+                  strokeLinecap: 'round'
+                }} />
           
-          <path d="M0,600 L40,580 L80,620 L120,580 L160,600 L200,590 L240,610 L280,580 L320,620 L360,590 L400,600 L440,580 L480,610 L520,590 L560,600 L600,580 L640,610 L680,590 L720,600 L760,580 L800,610 L840,590 L880,600 L920,580 L960,610 L1000,590 L1040,600 L1080,580 L1120,610 L1160,590 L1200,600 L1240,580 L1280,610 L1320,590 L1360,600 L1400,580 L1440,610 L1480,590 L1520,600 L1560,580 L1600,610 L1640,590 L1680,600 L1720,580 L1760,610 L1800,590 L1840,600 L1880,580 L1920,610"
+          <path d="M0,400 L35,380 L70,420 L105,375 L140,425 L175,370 L210,430 L245,380 L280,400 L315,390 L350,410 L385,385 L420,415 L455,375 L490,425 L525,390 L560,430 L595,370 L630,435 L665,385 L700,420 L735,375 L770,430 L805,380 L840,425 L875,375 L910,435 L945,380 L980,430 L1015,375 L1050,440 L1085,380 L1120,435 L1155,375 L1190,445 L1225,380 L1260,440 L1295,375 L1330,450 L1365,380 L1400,445 L1435,375 L1470,455 L1505,380 L1540,450 L1575,375 L1610,460 L1645,380 L1680,455 L1715,375 L1750,465 L1785,380 L1820,460 L1855,375 L1890,470 L1920,380"
                 stroke="url(#eegGradient2)" 
                 strokeWidth="2" 
                 fill="none" 
-                style={{opacity: 0.6}} />
+                className="animate-pulse"
+                style={{
+                  opacity: 0.7,
+                  animation: 'eeg-flow 4s ease-in-out infinite',
+                  animationDelay: '1s',
+                  filter: 'drop-shadow(0 0 8px #a855f7) drop-shadow(0 0 16px #a855f750)',
+                  strokeDasharray: '6 3',
+                  strokeLinecap: 'round'
+                }} />
+          
+          <path d="M0,600 L40,580 L80,620 L120,580 L160,600 L200,590 L240,610 L280,580 L320,620 L360,590 L400,600 L440,580 L480,610 L520,590 L560,600 L600,580 L640,610 L680,590 L720,600 L760,580 L800,610 L840,590 L880,600 L920,580 L960,610 L1000,590 L1040,600 L1080,580 L1120,610 L1160,590 L1200,600 L1240,580 L1280,610 L1320,590 L1360,600 L1400,580 L1440,610 L1480,590 L1520,600 L1560,580 L1600,610 L1640,590 L1680,600 L1720,580 L1760,610 L1800,590 L1840,600 L1880,580 L1920,610"
+                stroke="url(#eegGradient)" 
+                strokeWidth="2" 
+                fill="none" 
+                className="animate-pulse"
+                style={{
+                  opacity: 0.6,
+                  animation: 'eeg-flow 5s ease-in-out infinite',
+                  animationDelay: '2s',
+                  filter: 'drop-shadow(0 0 6px #00d4ff)',
+                  strokeDasharray: '4 2',
+                  strokeLinecap: 'round'
+                }} />
                 
           {/* EEG waves spreading across entire page - graph style */}
           <path d="M0,200 L20,180 L40,220 L60,170 L80,230 L100,160 L120,240 L140,180 L160,200 L180,190 L200,210 L220,185 L240,215 L260,175 L280,225 L300,190 L320,230 L340,170 L360,240 L380,185 L400,220 L420,160 L440,250 L460,190 L480,210 L500,180 L520,230 L540,170 L560,240 L580,185 L600,220 L620,175 L640,235 L660,190 L680,215 L700,180 L720,225 L740,175 L760,235 L780,190 L800,215 L820,180 L840,225 L860,175 L880,235 L900,190 L920,215 L940,180 L960,225 L980,175 L1000,235 L1020,190 L1040,215 L1060,180 L1080,225 L1100,175 L1120,235 L1140,190 L1160,215 L1180,180 L1200,225" 
