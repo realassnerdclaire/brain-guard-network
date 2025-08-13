@@ -328,15 +328,15 @@ const Index = () => {
                     <div className="space-y-2 md:space-y-4">
                       <div className="flex items-start gap-2 md:gap-4 p-2 md:p-4 bg-[#7C3AED]/20 rounded-lg border border-[#7C3AED]/20 hover:border-[#7C3AED]/40 transition-all duration-300 hover-scale">
                         <span className="text-[#6C63FF] text-base md:text-xl animate-pulse">🔓</span>
-                        <span className="text-sm md:text-lg text-white/90">Data breaches exposing neurological health information</span>
+                        <span className="text-sm md:text-lg text-white/90"><strong>Data breaches</strong> exposing neurological health information</span>
                       </div>
                       <div className="flex items-start gap-2 md:gap-4 p-2 md:p-4 bg-[#9333EA]/20 rounded-lg border border-[#9333EA]/20 hover:border-[#9333EA]/40 transition-all duration-300 hover-scale">
                         <span className="text-[#9333EA] text-base md:text-xl animate-pulse">⏸️</span>
-                        <span className="text-sm md:text-lg text-white/90">Regulatory delays blocking clinical trials and market launches</span>
+                        <span className="text-sm md:text-lg text-white/90"><strong>Regulatory delays</strong> that stall trials and market approvals</span>
                       </div>
                       <div className="flex items-start gap-2 md:gap-4 p-2 md:p-4 bg-[#4338CA]/20 rounded-lg border border-[#4338CA]/20 hover:border-[#4338CA]/40 transition-all duration-300 hover-scale">
                         <span className="text-[#4338CA] text-base md:text-xl animate-pulse">📊</span>
-                        <span className="text-sm md:text-lg text-white/90">Loss of research integrity due to tampering or unauthorized access</span>
+                        <span className="text-sm md:text-lg text-white/90"><strong>Research integrity</strong> loss from tampering or unauthorized access</span>
                       </div>
                     </div>
                   </div>
