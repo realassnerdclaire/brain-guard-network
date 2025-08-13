@@ -220,10 +220,20 @@ All colors MUST be HSL.
     100% { color: #ffffff; } /* white */
   }
   
-  /* New flowing EEG animations for each section */
+  /* New flowing EEG animations for each section - increased visibility */
   @keyframes problemFlow {
-    0% { transform: translateX(-100px); }
-    100% { transform: translateX(2000px); }
+    0% { 
+      transform: translateX(-200px); 
+      opacity: 0.3;
+    }
+    50% { 
+      transform: translateX(960px); 
+      opacity: 0.8;
+    }
+    100% { 
+      transform: translateX(2120px); 
+      opacity: 0.3;
+    }
   }
   
   @keyframes urgencyPulse {

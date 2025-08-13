@@ -252,7 +252,7 @@ const Index = () => {
           >
             {/* Subtle flowing EEG background for Problem section */}
             <div 
-              className="absolute inset-0 pointer-events-none overflow-hidden z-0" 
+              className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-30" 
               style={{
                 willChange: 'transform',
                 transform: 'translateZ(0)',
@@ -260,7 +260,7 @@ const Index = () => {
               }}
             >
               <svg 
-                className="w-full h-full opacity-20" 
+                className="w-full h-full opacity-80" 
                 viewBox="0 0 1920 1080" 
                 preserveAspectRatio="xMidYMid slice"
                 style={{
