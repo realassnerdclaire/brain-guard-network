@@ -206,10 +206,10 @@ const HeroXBrainer = () => {
       <div className="absolute bottom-16 left-0 right-0">
         <div className="container">
           <div className="flex items-center justify-center gap-12 opacity-60">
-            <div className="text-white/60 text-sm font-medium">PROBLEM</div>
-            <div className="text-white/60 text-sm font-medium">URGENCY</div>
-            <div className="text-white/60 text-sm font-medium">TECHNICAL ADVANTAGE</div>
-            <div className="text-white/60 text-sm font-medium">COMPLIANCE AND STANDARDS</div>
+            <div className="text-white text-sm font-medium">PROBLEM</div>
+            <div className="text-white text-sm font-medium">URGENCY</div>
+            <div className="text-white text-sm font-medium">TECHNICAL ADVANTAGE</div>
+            <div className="text-white text-sm font-medium">COMPLIANCE AND STANDARDS</div>
           </div>
         </div>
       </div>
