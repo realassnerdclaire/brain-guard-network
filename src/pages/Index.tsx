@@ -738,30 +738,30 @@ const Index = () => {
 
                   <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.2s'}}>
                     <div className="absolute inset-0 bg-gradient-to-bl from-[#2563EB]/20 to-[#3B82F6]/20 transform -skew-y-2 group-hover:-skew-y-4 transition-transform duration-700 rounded-full"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#2563EB]/40 rounded-full p-8 hover:border-[#2563EB]/70 transition-all duration-500 overflow-hidden">
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#2563EB]/40 rounded-full p-4 md:p-8 hover:border-[#2563EB]/70 transition-all duration-500 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-l from-[#2563EB]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 text-left">
-                        <h3 className="text-xl font-bold text-white mb-3">Standards-first architecture: HIPAA, GDPR, ISO 27001, FDA guidance</h3>
+                        <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-3">Standards-first architecture: HIPAA, GDPR, ISO 27001, FDA guidance</h3>
                       </div>
                     </div>
                   </div>
 
                   <div className="relative group animate-scale-in w-5/6" style={{animationDelay: '0.3s'}}>
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/20 to-[#3B82F6]/20 transform rotate-1 group-hover:rotate-3 transition-transform duration-700"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1E40AF]/40 p-8 hover:border-[#1E40AF]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1E40AF]/40 p-4 md:p-8 hover:border-[#1E40AF]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
                       <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 text-left">
-                        <h3 className="text-xl font-bold text-white mb-3">Adaptive intrusion detection powered by AI models tuned for BCI signal patterns</h3>
+                        <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-3">Adaptive intrusion detection powered by AI models tuned for BCI signal patterns</h3>
                       </div>
                     </div>
                   </div>
 
                   <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.4s'}}>
                     <div className="absolute inset-0 bg-gradient-to-bl from-[#1D4ED8]/20 to-[#2563EB]/20 transform -rotate-2 group-hover:-rotate-4 transition-transform duration-700 rounded-[3rem]"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1D4ED8]/40 rounded-[3rem] p-8 hover:border-[#1D4ED8]/70 transition-all duration-500 overflow-hidden">
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1D4ED8]/40 rounded-[3rem] p-4 md:p-8 hover:border-[#1D4ED8]/70 transition-all duration-500 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-l from-[#1D4ED8]/5 via-transparent to-[#2563EB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 text-left">
-                        <h3 className="text-xl font-bold text-white mb-3">Flexible SDK integration for device manufacturers and research platforms</h3>
+                        <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-3">Flexible SDK integration for device manufacturers and research platforms</h3>
                       </div>
                     </div>
                   </div>
