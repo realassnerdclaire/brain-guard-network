@@ -100,17 +100,18 @@ const Index = () => {
                 {/* Dropdown menu with backdrop */}
                 {isMenuOpen && (
                   <>
-                    {/* Full screen backdrop */}
+                    {/* Full screen backdrop with highest priority */}
                     <div 
-                      className="fixed inset-0 bg-black/60 z-[99999]"
+                      className="fixed inset-0 bg-black/70 z-[9999999]"
                       onClick={() => setIsMenuOpen(false)}
                     />
-                    {/* Menu dropdown - positioned fixed to avoid stacking context issues */}
+                    {/* Menu dropdown - positioned with maximum z-index */}
                     <div 
-                      className="fixed top-16 right-4 w-56 sm:w-64 bg-black border border-white/30 rounded-lg shadow-2xl z-[999999]"
+                      className="fixed top-16 right-4 w-56 sm:w-64 bg-black/95 backdrop-blur-md border border-white/40 rounded-lg shadow-2xl z-[99999999]"
                       style={{
                         contain: 'layout style',
-                        willChange: 'transform'
+                        willChange: 'transform',
+                        isolation: 'isolate'
                       }}
                     >
                     <ul className="py-2">
