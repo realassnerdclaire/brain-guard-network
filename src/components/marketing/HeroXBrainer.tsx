@@ -220,9 +220,9 @@ const HeroXBrainer = () => {
                 e.preventDefault();
                 const element = document.getElementById('problem');
                 if (element) {
-                  // Add pink neon flash effect
-                  e.currentTarget.style.color = '#ff1493';
-                  e.currentTarget.style.textShadow = '0 0 20px #ff1493, 0 0 40px #ff1493, 0 0 60px #ff1493';
+                  // Add lighter pink neon flash effect
+                  e.currentTarget.style.color = '#ff69b4';
+                  e.currentTarget.style.textShadow = '0 0 20px #ff69b4, 0 0 40px #ff69b4, 0 0 60px #ff69b4';
                   e.currentTarget.style.transform = 'scale(1.1)';
                   
                   setTimeout(() => {
