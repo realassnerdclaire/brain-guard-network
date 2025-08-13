@@ -142,12 +142,13 @@ const Index = () => {
                     
                 {/* Menu dropdown - smaller and more compact for mobile */}
                 <div 
-                  className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm border border-white/60 rounded-lg shadow-2xl z-[99999999]"
+                  className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm border rounded-lg shadow-2xl z-[99999999]"
                   style={{
                     contain: 'layout style',
                     willChange: 'transform',
                     isolation: 'isolate',
-                    animation: 'menuBorderCycle 4s ease-in-out infinite'
+                    animation: 'menuBorderCycle 4s ease-in-out infinite',
+                    borderWidth: '1px'
                   }}
                 >
                       <ul className="py-1">
