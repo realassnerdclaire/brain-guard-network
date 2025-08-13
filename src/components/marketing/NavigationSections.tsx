@@ -6,73 +6,75 @@ const ProblemSection = () => {
       {/* Neural network background pattern */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat opacity-40"
+          className="w-full h-full bg-cover bg-center bg-no-repeat opacity-50"
           style={{
             backgroundImage: `url('/lovable-uploads/e289f332-67c8-4420-919d-c7146bb726d9.png')`,
-            filter: 'blur(0.3px) brightness(0.7)'
+            filter: 'blur(0.3px) brightness(0.8)'
           }}
         />
       </div>
       
       {/* Content overlay */}
-      <div className="relative z-10 container px-6 md:px-12 max-w-4xl">
+      <div className="relative z-10 container px-6 md:px-12 max-w-6xl">
         <div className="text-center text-white">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
             The Problem
           </h1>
-          <div className="w-20 h-1 bg-blue-500 mx-auto mb-12"></div>
+          <div className="w-20 h-1 bg-blue-500 mx-auto mb-16"></div>
           
-          <div className="space-y-8 text-lg md:text-xl leading-relaxed mb-16 max-w-3xl mx-auto">
-            <p>
+          {/* Main content text */}
+          <div className="space-y-8 text-xl md:text-2xl leading-relaxed mb-20 max-w-5xl mx-auto">
+            <p className="font-light">
               EEG and BCI devices are moving from research labs to clinics, homes, and hybrid environments.
             </p>
-            <p>
+            <p className="font-light">
               But raw brain data is highly sensitive, and current security measures fail to protect it in real-time.
             </p>
           </div>
 
-          {/* Warning section with exact styling from screenshot */}
-          <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <div className="w-8 h-8 rounded-full bg-yellow-500/30 flex items-center justify-center">
-                <AlertTriangle className="w-5 h-5 text-yellow-400" />
+          {/* Warning section - full width container */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10 max-w-5xl mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-12">
+              <div className="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 text-yellow-400" />
               </div>
-              <h2 className="text-xl font-medium text-yellow-400">Unsecured pipelines risk:</h2>
+              <h2 className="text-2xl md:text-3xl font-medium text-yellow-400">Unsecured pipelines risk:</h2>
             </div>
             
-            <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 bg-purple-900/30 rounded-xl border border-purple-400/30">
-                <div className="w-8 h-8 rounded-lg bg-purple-500/30 flex items-center justify-center flex-shrink-0 mt-1">
-                  <Shield className="w-4 h-4 text-purple-300" />
+            {/* Risk items - stacked vertically with full width */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-6 p-6 bg-purple-900/40 rounded-2xl border border-purple-400/30 w-full">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/30 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-purple-300" />
                 </div>
-                <div className="text-left">
-                  <h3 className="font-normal text-white text-sm leading-relaxed">
+                <div className="text-left flex-1">
+                  <h3 className="font-normal text-white text-lg md:text-xl leading-relaxed">
                     Data breaches that could expose neurological health information
                   </h3>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4 p-4 bg-blue-900/30 rounded-xl border border-blue-400/30">
-                <div className="w-8 h-8 rounded-lg bg-blue-500/30 flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg className="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-6 p-6 bg-blue-900/40 rounded-2xl border border-blue-400/30 w-full">
+                <div className="w-12 h-12 rounded-xl bg-blue-500/30 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <div className="text-left">
-                  <h3 className="font-normal text-white text-sm leading-relaxed">
+                <div className="text-left flex-1">
+                  <h3 className="font-normal text-white text-lg md:text-xl leading-relaxed">
                     Regulatory delays blocking clinical trials and market launches
                   </h3>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4 p-4 bg-green-900/30 rounded-xl border border-green-400/30">
-                <div className="w-8 h-8 rounded-lg bg-green-500/30 flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg className="w-4 h-4 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-6 p-6 bg-green-900/40 rounded-2xl border border-green-400/30 w-full">
+                <div className="w-12 h-12 rounded-xl bg-green-500/30 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                   </svg>
                 </div>
-                <div className="text-left">
-                  <h3 className="font-normal text-white text-sm leading-relaxed">
+                <div className="text-left flex-1">
+                  <h3 className="font-normal text-white text-lg md:text-xl leading-relaxed">
                     Loss of research integrity due to tampering or unauthorized access
                   </h3>
                 </div>
