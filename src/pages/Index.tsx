@@ -113,10 +113,12 @@ const Index = () => {
                       />
                     </div>
                     
-                    {/* Text overlay on top */}
-                    <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                      <p className="text-white text-sm sm:text-xl md:text-2xl lg:text-3xl font-light text-center px-4 sm:px-8 max-w-4xl leading-relaxed">
-                        Your brain data deserves the same protection as your bank account.
+                    {/* Text overlay on top - mobile optimized */}
+                    <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none px-4">
+                      <p className="text-white text-center font-light leading-relaxed max-w-4xl">
+                        <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl">Your brain data deserves</span>
+                        <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl">the same protection as</span>
+                        <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl">your bank account.</span>
                       </p>
                     </div>
                     
