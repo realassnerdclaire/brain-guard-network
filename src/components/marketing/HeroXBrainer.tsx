@@ -220,16 +220,34 @@ const HeroXBrainer = () => {
                 e.preventDefault();
                 const element = document.getElementById('problem');
                 if (element) {
-                  // Add lighter pink neon flash effect
-                  e.currentTarget.style.color = '#ff69b4';
-                  e.currentTarget.style.textShadow = '0 0 20px #ff69b4, 0 0 40px #ff69b4, 0 0 60px #ff69b4';
-                  e.currentTarget.style.transform = 'scale(1.1)';
+                  // Gradient animation: light pink -> purple -> blue
+                  const target = e.currentTarget;
+                  
+                  // Phase 1: Light Pink (0-100ms)
+                  target.style.color = '#ffb3e6';
+                  target.style.textShadow = '0 0 20px #ffb3e6, 0 0 40px #ffb3e6, 0 0 60px #ffb3e6';
+                  target.style.transform = 'scale(1.05)';
                   
                   setTimeout(() => {
-                    e.currentTarget.style.color = '';
-                    e.currentTarget.style.textShadow = '';
-                    e.currentTarget.style.transform = '';
-                  }, 300);
+                    // Phase 2: Purple (100-200ms)
+                    target.style.color = '#a855f7';
+                    target.style.textShadow = '0 0 25px #a855f7, 0 0 50px #a855f7, 0 0 75px #a855f7';
+                    target.style.transform = 'scale(1.1)';
+                  }, 100);
+                  
+                  setTimeout(() => {
+                    // Phase 3: Blue (200-300ms)
+                    target.style.color = '#00d4ff';
+                    target.style.textShadow = '0 0 30px #00d4ff, 0 0 60px #00d4ff, 0 0 90px #00d4ff';
+                    target.style.transform = 'scale(1.15)';
+                  }, 200);
+                  
+                  setTimeout(() => {
+                    // Reset (300ms+)
+                    target.style.color = '';
+                    target.style.textShadow = '';
+                    target.style.transform = '';
+                  }, 500);
                   
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
