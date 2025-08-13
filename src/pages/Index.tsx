@@ -252,7 +252,7 @@ const Index = () => {
           >
             {/* Subtle flowing EEG background for Problem section */}
             <div 
-              className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-30" 
+              className="absolute inset-0 pointer-events-none overflow-hidden z-0" 
               style={{
                 willChange: 'transform',
                 transform: 'translateZ(0)',
@@ -260,7 +260,7 @@ const Index = () => {
               }}
             >
               <svg 
-                className="w-full h-full opacity-80" 
+                className="w-full h-full" 
                 viewBox="0 0 1920 1080" 
                 preserveAspectRatio="xMidYMid slice"
                 style={{
@@ -270,14 +270,14 @@ const Index = () => {
               >
                 <defs>
                   <linearGradient id="problemFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#ff4444', stopOpacity: 0.3}} />
-                    <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 0.5}} />
-                    <stop offset="100%" style={{stopColor: '#ff4444', stopOpacity: 0.3}} />
+                    <stop offset="0%" style={{stopColor: '#ff4444', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#ff4444', stopOpacity: 0.8}} />
                   </linearGradient>
                   <linearGradient id="problemFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.2}} />
-                    <stop offset="50%" style={{stopColor: '#ff4444', stopOpacity: 0.4}} />
-                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0.2}} />
+                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.7}} />
+                    <stop offset="50%" style={{stopColor: '#ff4444', stopOpacity: 0.9}} />
+                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0.7}} />
                   </linearGradient>
                 </defs>
                 
@@ -287,7 +287,7 @@ const Index = () => {
                   stroke="url(#problemFlow1)"
                   strokeWidth="2"
                   fill="none"
-                  opacity="0.6"
+                  opacity="1.0"
                   style={{
                     animation: 'problemFlow 15s linear infinite'
                   }}
@@ -298,7 +298,7 @@ const Index = () => {
                   stroke="url(#problemFlow2)"
                   strokeWidth="1.5"
                   fill="none"
-                  opacity="0.4"
+                  opacity="0.8"
                   style={{
                     animation: 'problemFlow 18s linear infinite reverse'
                   }}
@@ -309,7 +309,7 @@ const Index = () => {
                   stroke="url(#problemFlow1)"
                   strokeWidth="1"
                   fill="none"
-                  opacity="0.3"
+                  opacity="0.6"
                   style={{
                     animation: 'problemFlow 20s linear infinite'
                   }}
@@ -368,18 +368,18 @@ const Index = () => {
             className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-16 relative overflow-hidden"
           >
             {/* Flowing EEG background for Urgency section */}
-            <div className="absolute inset-0 opacity-15">
+            <div className="absolute inset-0">
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
                   <linearGradient id="urgencyFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#ff4db6', stopOpacity: 0.4}} />
-                    <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 0.6}} />
-                    <stop offset="100%" style={{stopColor: '#ff4db6', stopOpacity: 0.4}} />
+                    <stop offset="0%" style={{stopColor: '#ff4db6', stopOpacity: 0.9}} />
+                    <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#ff4db6', stopOpacity: 0.9}} />
                   </linearGradient>
                   <linearGradient id="urgencyFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.3}} />
-                    <stop offset="50%" style={{stopColor: '#00d4ff', stopOpacity: 0.5}} />
-                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0.3}} />
+                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#00d4ff', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0.8}} />
                   </linearGradient>
                 </defs>
                 
