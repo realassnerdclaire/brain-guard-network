@@ -566,48 +566,48 @@ const Index = () => {
                   {/* Futuristic neural shield container */}
                   <div className="relative group animate-scale-in" style={{animationDelay: '0.2s'}}>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/20 to-[#9333EA]/20 rounded-[2rem] transform -rotate-1 group-hover:-rotate-2 transition-transform duration-700"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#7C3AED]/40 rounded-[2rem] p-4 md:p-8 hover:border-[#7C3AED]/70 transition-all duration-500">
-                      <div className="flex items-center gap-2 md:gap-4 mb-3 md:mb-6">
-                        <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#EC4899]/20 to-[#F472B6]/20 rounded-full flex items-center justify-center">
-                          <span className="text-xl md:text-3xl animate-pulse">🛡️</span>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#7C3AED]/40 rounded-[2rem] p-4 md:p-4 hover:border-[#7C3AED]/70 transition-all duration-500">
+                      <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-3">
+                        <div className="w-12 h-12 md:w-12 md:h-12 bg-gradient-to-br from-[#EC4899]/20 to-[#F472B6]/20 rounded-full flex items-center justify-center">
+                          <span className="text-xl md:text-xl animate-pulse">🛡️</span>
                         </div>
-                        <h3 className="text-lg md:text-2xl font-bold text-white">
+                        <h3 className="text-lg md:text-lg font-bold text-white">
                         XBrainer AI builds a neural intrusion prevention system that:
                         </h3>
                       </div>
                       
                       {/* Organic feature circles */}
-                      <div className="grid gap-3 md:gap-6 md:grid-cols-3">
+                      <div className="grid gap-3 md:gap-3 md:grid-cols-3">
                         <div className="relative group/feature">
                           <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/10 to-[#7C3AED]/5 rounded-[1.5rem] transform rotate-3 group-hover/feature:rotate-6 transition-transform duration-300"></div>
-                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#7C3AED]/30 rounded-[1.5rem] p-3 md:p-6 text-center hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5 transition-all duration-300 hover-scale">
-                            <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#7C3AED]/20 to-[#7C3AED]/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover/feature:scale-110 transition-transform duration-300">
-                              <span className="text-[#7C3AED] text-lg md:text-2xl">🔒</span>
+                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#7C3AED]/30 rounded-[1.5rem] p-3 md:p-3 text-center hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5 transition-all duration-300 hover-scale">
+                            <div className="w-12 h-12 md:w-12 md:h-12 bg-gradient-to-br from-[#7C3AED]/20 to-[#7C3AED]/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-2 group-hover/feature:scale-110 transition-transform duration-300">
+                              <span className="text-[#7C3AED] text-lg md:text-lg">🔒</span>
                             </div>
-                            <h4 className="text-white font-bold mb-2 md:mb-3 text-sm md:text-lg">Real-time Encryption</h4>
-                            <p className="text-white/70 text-xs md:text-base">Encrypts and authenticates EEG streams in real time</p>
+                            <h4 className="text-white font-bold mb-2 md:mb-2 text-sm md:text-sm">Real-time Encryption</h4>
+                            <p className="text-white/70 text-xs md:text-xs">Encrypts and authenticates EEG streams in real time</p>
                           </div>
                         </div>
                         
                         <div className="relative group/feature">
                           <div className="absolute inset-0 bg-gradient-to-br from-[#9333EA]/10 to-[#9333EA]/5 rounded-[1.5rem] transform -rotate-2 group-hover/feature:-rotate-4 transition-transform duration-300"></div>
-                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#9333EA]/30 rounded-[1.5rem] p-6 text-center hover:border-[#9333EA]/60 hover:bg-[#9333EA]/5 transition-all duration-300 hover-scale">
-                            <div className="w-16 h-16 bg-gradient-to-br from-[#9333EA]/20 to-[#9333EA]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
-                              <span className="text-[#9333EA] text-2xl">👤</span>
+                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#9333EA]/30 rounded-[1.5rem] p-3 md:p-3 text-center hover:border-[#9333EA]/60 hover:bg-[#9333EA]/5 transition-all duration-300 hover-scale">
+                            <div className="w-12 h-12 md:w-12 md:h-12 bg-gradient-to-br from-[#9333EA]/20 to-[#9333EA]/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-2 group-hover/feature:scale-110 transition-transform duration-300">
+                              <span className="text-[#9333EA] text-lg md:text-lg">👤</span>
                             </div>
-                            <h4 className="text-white font-bold mb-3 text-lg">Access Controls</h4>
-                            <p className="text-white/70">Applies consent-based access controls for each data request</p>
+                            <h4 className="text-white font-bold mb-2 md:mb-2 text-sm md:text-sm">Access Controls</h4>
+                            <p className="text-white/70 text-xs md:text-xs">Applies consent-based access controls for each data request</p>
                           </div>
                         </div>
                         
                         <div className="relative group/feature">
                           <div className="absolute inset-0 bg-gradient-to-br from-[#6B21A8]/10 to-[#6B21A8]/5 rounded-[1.5rem] transform rotate-1 group-hover/feature:rotate-3 transition-transform duration-300"></div>
-                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#6B21A8]/30 rounded-[1.5rem] p-6 text-center hover:border-[#6B21A8]/60 hover:bg-[#6B21A8]/5 transition-all duration-300 hover-scale">
-                            <div className="w-16 h-16 bg-gradient-to-br from-[#6B21A8]/20 to-[#6B21A8]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
-                              <span className="text-[#6B21A8] text-2xl">📝</span>
+                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#6B21A8]/30 rounded-[1.5rem] p-3 md:p-3 text-center hover:border-[#6B21A8]/60 hover:bg-[#6B21A8]/5 transition-all duration-300 hover-scale">
+                            <div className="w-12 h-12 md:w-12 md:h-12 bg-gradient-to-br from-[#6B21A8]/20 to-[#6B21A8]/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-2 group-hover/feature:scale-110 transition-transform duration-300">
+                              <span className="text-[#6B21A8] text-lg md:text-lg">📝</span>
                             </div>
-                            <h4 className="text-white font-bold mb-3 text-lg">Audit Trails</h4>
-                            <p className="text-white/70">Maintains full audit trails to meet HIPAA, GDPR, and emerging BCI standards</p>
+                            <h4 className="text-white font-bold mb-2 md:mb-2 text-sm md:text-sm">Audit Trails</h4>
+                            <p className="text-white/70 text-xs md:text-xs">Maintains full audit trails to meet HIPAA, GDPR, and emerging BCI standards</p>
                           </div>
                         </div>
                       </div>
@@ -617,15 +617,15 @@ const Index = () => {
                   {/* Flowing benefit capsule */}
                   <div className="relative group animate-fade-in" style={{animationDelay: '0.4s'}}>
                     <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/10 to-[#9333EA]/10 rounded-full transform scale-105 group-hover:scale-110 transition-transform duration-500"></div>
-                    <div className="relative bg-black/80 backdrop-blur-md border-2 border-[#7C3AED]/40 rounded-full p-8 text-center overflow-hidden hover:border-[#7C3AED]/70 transition-all duration-500">
+                    <div className="relative bg-black/80 backdrop-blur-md border-2 border-[#7C3AED]/40 rounded-full p-4 md:p-4 text-center overflow-hidden hover:border-[#7C3AED]/70 transition-all duration-500">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/5 to-transparent animate-pulse"></div>
                       <div className="relative z-10">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                          <span className="text-4xl animate-pulse">⚡</span>
-                          <span className="text-4xl animate-pulse">🚀</span>
+                        <div className="flex items-center justify-center gap-3 mb-2 md:mb-2">
+                          <span className="text-2xl md:text-2xl animate-pulse">⚡</span>
+                          <span className="text-2xl md:text-2xl animate-pulse">🚀</span>
                         </div>
-                        <p className="text-xl text-white leading-relaxed">
-                          Our approach not only reduces security and compliance risk — it <span className="text-[#7C3AED] font-semibold bg-[#9333EA]/30 px-4 py-2 rounded-full animate-pulse">shortens time-to-market</span> for device makers and researchers.
+                        <p className="text-base md:text-base text-white leading-relaxed">
+                          Our approach not only reduces security and compliance risk — it <span className="text-[#7C3AED] font-semibold bg-[#9333EA]/30 px-3 py-1 rounded-full animate-pulse">shortens time-to-market</span> for device makers and researchers.
                         </p>
                       </div>
                     </div>
@@ -638,7 +638,7 @@ const Index = () => {
           {/* 4. Our Edge Section */}
           <section 
             id="edge" 
-            className="min-h-screen bg-black flex items-center justify-center py-8 md:py-16 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-black flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
           >
             {/* Large cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8">
@@ -682,50 +682,50 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-8 animate-fade-in">
+                <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-white mb-4 md:mb-4 animate-fade-in">
                   Our Edge
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-8 md:mb-16 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-8 md:mb-6 animate-pulse" />
                 
                 {/* Feature items with original text content */}
-                <div className="space-y-4 md:space-y-8 max-w-5xl mx-auto">
+                <div className="space-y-4 md:space-y-3 max-w-5xl mx-auto">
                   <div className="relative group animate-scale-in" style={{animationDelay: '0.1s'}}>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/20 to-[#1D4ED8]/20 transform skew-x-3 group-hover:skew-x-6 transition-transform duration-700 rounded-3xl"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#3B82F6]/40 rounded-3xl p-4 md:p-8 hover:border-[#3B82F6]/70 transition-all duration-500 overflow-hidden">
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#3B82F6]/40 rounded-3xl p-4 md:p-4 hover:border-[#3B82F6]/70 transition-all duration-500 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6]/5 via-transparent to-[#1D4ED8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 text-left">
-                        <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-3">Patent pending signal-security pipeline</h3>
+                        <h3 className="text-base md:text-base font-bold text-white mb-1 md:mb-1">Patent pending signal-security pipeline</h3>
                       </div>
                     </div>
                   </div>
 
                   <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.2s'}}>
                     <div className="absolute inset-0 bg-gradient-to-bl from-[#2563EB]/20 to-[#3B82F6]/20 transform -skew-y-2 group-hover:-skew-y-4 transition-transform duration-700 rounded-full"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#2563EB]/40 rounded-full p-4 md:p-8 hover:border-[#2563EB]/70 transition-all duration-500 overflow-hidden">
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#2563EB]/40 rounded-full p-4 md:p-4 hover:border-[#2563EB]/70 transition-all duration-500 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-l from-[#2563EB]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 text-left">
-                        <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-3">Standards-first architecture: HIPAA, GDPR, ISO 27001, FDA guidance</h3>
+                        <h3 className="text-base md:text-base font-bold text-white mb-1 md:mb-1">Standards-first architecture: HIPAA, GDPR, ISO 27001, FDA guidance</h3>
                       </div>
                     </div>
                   </div>
 
                   <div className="relative group animate-scale-in w-5/6" style={{animationDelay: '0.3s'}}>
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/20 to-[#3B82F6]/20 transform rotate-1 group-hover:rotate-3 transition-transform duration-700"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1E40AF]/40 p-4 md:p-8 hover:border-[#1E40AF]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1E40AF]/40 p-4 md:p-4 hover:border-[#1E40AF]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
                       <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 text-left">
-                        <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-3">Adaptive intrusion detection powered by AI models tuned for BCI signal patterns</h3>
+                        <h3 className="text-base md:text-base font-bold text-white mb-1 md:mb-1">Adaptive intrusion detection powered by AI models tuned for BCI signal patterns</h3>
                       </div>
                     </div>
                   </div>
 
                   <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.4s'}}>
                     <div className="absolute inset-0 bg-gradient-to-bl from-[#1D4ED8]/20 to-[#2563EB]/20 transform -rotate-2 group-hover:-rotate-4 transition-transform duration-700 rounded-[3rem]"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1D4ED8]/40 rounded-[3rem] p-4 md:p-8 hover:border-[#1D4ED8]/70 transition-all duration-500 overflow-hidden">
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1D4ED8]/40 rounded-[3rem] p-4 md:p-4 hover:border-[#1D4ED8]/70 transition-all duration-500 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-l from-[#1D4ED8]/5 via-transparent to-[#2563EB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 text-left">
-                        <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-3">Flexible SDK integration for device manufacturers and research platforms</h3>
+                        <h3 className="text-base md:text-base font-bold text-white mb-1 md:mb-1">Flexible SDK integration for device manufacturers and research platforms</h3>
                       </div>
                     </div>
                   </div>
