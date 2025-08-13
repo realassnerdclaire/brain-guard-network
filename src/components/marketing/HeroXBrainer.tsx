@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import futuristicBrain from "@/assets/futuristic-brain-correct.png";
 import { animateLetters, startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 const HeroXBrainer = () => {
+  const navigate = useNavigate();
   console.log("🎨 HeroXBrainer component rendering with color animation!");
   return (
     <section className="relative h-screen bg-black overflow-hidden flex flex-col justify-center sm:justify-start">
@@ -206,12 +208,7 @@ const HeroXBrainer = () => {
                   (btn as any).hoverInterval = null;
                 }
               }}
-              onClick={() => {
-                const ctaSection = document.getElementById('cta');
-                if (ctaSection) {
-                  ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
+              onClick={() => navigate('/waitlist')}
             >
               JOIN THE WAITLIST
             </button>
@@ -229,12 +226,7 @@ const HeroXBrainer = () => {
                   (btn as any).hoverInterval = null;
                 }
               }}
-              onClick={() => {
-                const demoSection = document.getElementById('demo');
-                if (demoSection) {
-                  demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
+              onClick={() => navigate('/demo')}
             >
               SEE THE DEMO
             </button>
@@ -257,12 +249,7 @@ const HeroXBrainer = () => {
                 (btn as any).hoverInterval = null;
               }
             }}
-            onClick={() => {
-              const ctaSection = document.getElementById('cta');
-              if (ctaSection) {
-                ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }}
+            onClick={() => navigate('/waitlist')}
           >
             JOIN THE WAITLIST
           </button>
@@ -280,12 +267,7 @@ const HeroXBrainer = () => {
                 (btn as any).hoverInterval = null;
               }
             }}
-            onClick={() => {
-              const demoSection = document.getElementById('demo');
-              if (demoSection) {
-                demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }}
+            onClick={() => navigate('/demo')}
           >
             SEE THE DEMO
           </button>

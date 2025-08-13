@@ -1,23 +1,25 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import HeroXBrainer from "@/components/marketing/HeroXBrainer";
 import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const menuItems = [
-    { label: "HOME", href: "#home" },
-    { label: "ABOUT US", href: "#about" },
-    { label: "VISION", href: "#vision" },
-    { label: "OVERVIEW", href: "#overview" },
-    { label: "COMPLIANCE & STANDARDS", href: "#compliance" },
-    { label: "USE CASES", href: "#usecases" },
-    { label: "SECURITY & PRIVACY", href: "#security" },
-    { label: "PARTNERS & COLLABORATORS", href: "#partners" },
-    { label: "RESOURCES", href: "#resources" },
-    { label: "CAREERS", href: "#careers" },
-    { label: "FAQ", href: "#faq" },
+    { label: "HOME", href: "/" },
+    { label: "ABOUT US", href: "/about" },
+    { label: "VISION", href: "/vision" },
+    { label: "OVERVIEW", href: "/overview" },
+    { label: "COMPLIANCE & STANDARDS", href: "/compliance" },
+    { label: "USE CASES", href: "/usecases" },
+    { label: "SECURITY & PRIVACY", href: "/security" },
+    { label: "PARTNERS & COLLABORATORS", href: "/partners" },
+    { label: "RESOURCES", href: "/resources" },
+    { label: "CAREERS", href: "/careers" },
+    { label: "FAQ", href: "/faq" },
   ];
 
   return (
@@ -184,20 +186,11 @@ const Index = () => {
                                   btn.style.color = 'white !important';
                                   btn.style.setProperty('color', 'white', 'important');
                                   
-                                  // Navigate after animation
-                                  setTimeout(() => {
-                                    setIsMenuOpen(false);
-                                    
-                                    // Special handling for HOME button
-                                    if (item.label === "HOME") {
-                                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    } else {
-                                      const targetElement = document.querySelector(item.href);
-                                      if (targetElement) {
-                                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                      }
-                                    }
-                                  }, 100);
+                                // Navigate after animation
+                                setTimeout(() => {
+                                  setIsMenuOpen(false);
+                                  navigate(item.href);
+                                }, 100);
                                 }, letters.length * 10 + colors.length * 30 + 50);
                               }}
                               onMouseEnter={(e) => {
