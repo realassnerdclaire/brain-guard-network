@@ -349,23 +349,44 @@ const Index = () => {
                     </p>
                   </div>
                   
-                  <div className="bg-black/40 border border-[#7C3AED]/30 rounded-2xl p-8 animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.6s'}}>
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                      <span className="text-[#6C63FF] text-3xl animate-pulse">⚠️</span>
-                      Unsecured pipelines risk:
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4 p-4 bg-[#7C3AED]/20 rounded-lg border border-[#7C3AED]/20 hover:border-[#7C3AED]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#6C63FF] text-xl animate-pulse">🔓</span>
-                        <span className="text-lg text-white/90">Data breaches that could expose neurological health information</span>
+                  {/* Futuristic hexagonal risk cards */}
+                  <div className="grid gap-6 md:grid-cols-3 animate-scale-in" style={{animationDelay: '0.6s'}}>
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#6C63FF]/20 to-[#7C3AED]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
+                      <div className="relative bg-black/60 backdrop-blur-sm border border-[#6C63FF]/30 rounded-2xl p-6 hover:border-[#6C63FF]/60 transition-all duration-300 hover-scale">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-12 h-12 bg-[#6C63FF]/20 rounded-full flex items-center justify-center">
+                            <span className="text-[#6C63FF] text-xl animate-pulse">🔓</span>
+                          </div>
+                          <h3 className="text-lg font-semibold text-white">Data Breaches</h3>
+                        </div>
+                        <p className="text-white/80 text-sm leading-relaxed">Exposure of neurological health information through unsecured pipelines</p>
                       </div>
-                      <div className="flex items-start gap-4 p-4 bg-[#9333EA]/20 rounded-lg border border-[#9333EA]/20 hover:border-[#9333EA]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#9333EA] text-xl animate-pulse">⏸️</span>
-                        <span className="text-lg text-white/90">Regulatory delays blocking clinical trials and market launches</span>
+                    </div>
+                    
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#9333EA]/20 to-[#A855F7]/20 rounded-2xl transform -rotate-1 group-hover:-rotate-2 transition-transform duration-300"></div>
+                      <div className="relative bg-black/60 backdrop-blur-sm border border-[#9333EA]/30 rounded-2xl p-6 hover:border-[#9333EA]/60 transition-all duration-300 hover-scale">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-12 h-12 bg-[#9333EA]/20 rounded-full flex items-center justify-center">
+                            <span className="text-[#9333EA] text-xl animate-pulse">⏸️</span>
+                          </div>
+                          <h3 className="text-lg font-semibold text-white">Regulatory Delays</h3>
+                        </div>
+                        <p className="text-white/80 text-sm leading-relaxed">Blocked clinical trials and market launches due to compliance gaps</p>
                       </div>
-                      <div className="flex items-start gap-4 p-4 bg-[#4338CA]/20 rounded-lg border border-[#4338CA]/20 hover:border-[#4338CA]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#4338CA] text-xl animate-pulse">📊</span>
-                        <span className="text-lg text-white/90">Loss of research integrity due to tampering or unauthorized access</span>
+                    </div>
+                    
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#4338CA]/20 to-[#4F46E5]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
+                      <div className="relative bg-black/60 backdrop-blur-sm border border-[#4338CA]/30 rounded-2xl p-6 hover:border-[#4338CA]/60 transition-all duration-300 hover-scale">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-12 h-12 bg-[#4338CA]/20 rounded-full flex items-center justify-center">
+                            <span className="text-[#4338CA] text-xl animate-pulse">📊</span>
+                          </div>
+                          <h3 className="text-lg font-semibold text-white">Research Integrity</h3>
+                        </div>
+                        <p className="text-white/80 text-sm leading-relaxed">Loss of data integrity due to tampering or unauthorized access</p>
                       </div>
                     </div>
                   </div>
@@ -503,7 +524,7 @@ const Index = () => {
             className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex items-center justify-center py-16 relative overflow-hidden"
           >
             {/* Smooth flowing EEG background for Solution section */}
-            <div className="absolute inset-0 opacity-15">
+            <div className="absolute inset-0 opacity-80">
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
                   <linearGradient id="solutionFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -570,51 +591,71 @@ const Index = () => {
                 <div className="w-24 h-1 bg-gradient-to-r from-[#6C63FF] to-[#A855F7] mx-auto mb-16 animate-pulse" />
                 
                 <div className="space-y-8 text-left max-w-4xl mx-auto">
-                  <div className="bg-gradient-to-r from-[#7C3AED]/40 to-[#9333EA]/40 border border-[#A855F7]/30 rounded-2xl p-8 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
-                    <div className="flex items-center gap-4 mb-6">
-                      <span className="text-4xl animate-pulse">🛡️</span>
-                      <h3 className="text-2xl font-bold text-white">
-                        XBrainer AI builds a neural intrusion prevention system that:
-                      </h3>
-                    </div>
-                    
-                    <div className="grid gap-6 md:grid-cols-3">
-                      <button className="bg-black/40 border border-[#6C63FF]/20 rounded-xl p-6 text-center hover:border-[#6C63FF]/60 hover:bg-[#6C63FF]/5 transition-all duration-300 hover-scale group">
-                        <div className="w-16 h-16 bg-[#6C63FF]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#6C63FF]/30 transition-all duration-300">
-                          <span className="text-[#6C63FF] text-2xl group-hover:scale-110 transition-transform duration-300">🔒</span>
+                  {/* Futuristic neural shield container */}
+                  <div className="relative group animate-scale-in" style={{animationDelay: '0.2s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/20 to-[#9333EA]/20 rounded-[2rem] transform -rotate-1 group-hover:-rotate-2 transition-transform duration-700"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#A855F7]/40 rounded-[2rem] p-8 hover:border-[#A855F7]/70 transition-all duration-500">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#6C63FF]/20 to-[#A855F7]/20 rounded-full flex items-center justify-center">
+                          <span className="text-3xl animate-pulse">🛡️</span>
                         </div>
-                        <h4 className="text-white font-bold mb-3 text-lg">Real-time Encryption</h4>
-                        <p className="text-white/70">Encrypts and authenticates EEG streams in real time</p>
-                      </button>
+                        <h3 className="text-2xl font-bold text-white">
+                          XBrainer AI builds a neural intrusion prevention system that:
+                        </h3>
+                      </div>
                       
-                      <button className="bg-black/40 border border-[#A855F7]/20 rounded-xl p-6 text-center hover:border-[#A855F7]/60 hover:bg-[#A855F7]/5 transition-all duration-300 hover-scale group">
-                        <div className="w-16 h-16 bg-[#A855F7]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#A855F7]/30 transition-all duration-300">
-                          <span className="text-[#A855F7] text-2xl group-hover:scale-110 transition-transform duration-300">👤</span>
+                      {/* Organic feature circles */}
+                      <div className="grid gap-6 md:grid-cols-3">
+                        <div className="relative group/feature">
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#6C63FF]/10 to-[#6C63FF]/5 rounded-[1.5rem] transform rotate-3 group-hover/feature:rotate-6 transition-transform duration-300"></div>
+                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#6C63FF]/30 rounded-[1.5rem] p-6 text-center hover:border-[#6C63FF]/60 hover:bg-[#6C63FF]/5 transition-all duration-300 hover-scale">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#6C63FF]/20 to-[#6C63FF]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
+                              <span className="text-[#6C63FF] text-2xl">🔒</span>
+                            </div>
+                            <h4 className="text-white font-bold mb-3 text-lg">Real-time Encryption</h4>
+                            <p className="text-white/70">Encrypts and authenticates EEG streams in real time</p>
+                          </div>
                         </div>
-                        <h4 className="text-white font-bold mb-3 text-lg">Access Controls</h4>
-                        <p className="text-white/70">Applies consent-based access controls for each data request</p>
-                      </button>
-                      
-                      <button className="bg-black/40 border border-[#4338CA]/20 rounded-xl p-6 text-center hover:border-[#4338CA]/60 hover:bg-[#4338CA]/5 transition-all duration-300 hover-scale group">
-                        <div className="w-16 h-16 bg-[#4338CA]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#4338CA]/30 transition-all duration-300">
-                          <span className="text-[#4338CA] text-2xl group-hover:scale-110 transition-transform duration-300">📝</span>
+                        
+                        <div className="relative group/feature">
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#A855F7]/10 to-[#A855F7]/5 rounded-[1.5rem] transform -rotate-2 group-hover/feature:-rotate-4 transition-transform duration-300"></div>
+                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#A855F7]/30 rounded-[1.5rem] p-6 text-center hover:border-[#A855F7]/60 hover:bg-[#A855F7]/5 transition-all duration-300 hover-scale">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#A855F7]/20 to-[#A855F7]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
+                              <span className="text-[#A855F7] text-2xl">👤</span>
+                            </div>
+                            <h4 className="text-white font-bold mb-3 text-lg">Access Controls</h4>
+                            <p className="text-white/70">Applies consent-based access controls for each data request</p>
+                          </div>
                         </div>
-                        <h4 className="text-white font-bold mb-3 text-lg">Audit Trails</h4>
-                        <p className="text-white/70">Maintains full audit trails to meet HIPAA, GDPR, and emerging BCI standards</p>
-                      </button>
+                        
+                        <div className="relative group/feature">
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#4338CA]/10 to-[#4338CA]/5 rounded-[1.5rem] transform rotate-1 group-hover/feature:rotate-3 transition-transform duration-300"></div>
+                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#4338CA]/30 rounded-[1.5rem] p-6 text-center hover:border-[#4338CA]/60 hover:bg-[#4338CA]/5 transition-all duration-300 hover-scale">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#4338CA]/20 to-[#4338CA]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
+                              <span className="text-[#4338CA] text-2xl">📝</span>
+                            </div>
+                            <h4 className="text-white font-bold mb-3 text-lg">Audit Trails</h4>
+                            <p className="text-white/70">Maintains full audit trails to meet HIPAA, GDPR, and emerging BCI standards</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="bg-[#4F46E5]/20 border-2 border-[#6C63FF]/50 rounded-2xl p-8 text-center animate-fade-in relative overflow-hidden" style={{animationDelay: '0.4s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#4F46E5]/10 to-transparent animate-pulse"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center justify-center gap-3 mb-4">
-                        <span className="text-4xl animate-pulse">⚡</span>
-                        <span className="text-4xl animate-pulse">🚀</span>
+                  {/* Flowing benefit capsule */}
+                  <div className="relative group animate-fade-in" style={{animationDelay: '0.4s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#4F46E5]/10 to-[#6C63FF]/10 rounded-full transform scale-105 group-hover:scale-110 transition-transform duration-500"></div>
+                    <div className="relative bg-black/80 backdrop-blur-md border-2 border-[#6C63FF]/40 rounded-full p-8 text-center overflow-hidden hover:border-[#6C63FF]/70 transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#4F46E5]/5 to-transparent animate-pulse"></div>
+                      <div className="relative z-10">
+                        <div className="flex items-center justify-center gap-3 mb-4">
+                          <span className="text-4xl animate-pulse">⚡</span>
+                          <span className="text-4xl animate-pulse">🚀</span>
+                        </div>
+                        <p className="text-xl text-white leading-relaxed">
+                          Our approach not only reduces security and compliance risk — it <span className="text-[#4F46E5] font-semibold bg-[#6C63FF]/30 px-4 py-2 rounded-full animate-pulse">shortens time-to-market</span> for device makers and researchers.
+                        </p>
                       </div>
-                      <p className="text-xl text-white leading-relaxed">
-                        Our approach not only reduces security and compliance risk — it <span className="text-[#4F46E5] font-semibold bg-[#6C63FF]/30 px-3 py-1 rounded-lg animate-pulse">shortens time-to-market</span> for device makers and researchers.
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -628,7 +669,7 @@ const Index = () => {
             className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden"
           >
             {/* Futuristic neural network background for Our Edge section */}
-            <div className="absolute inset-0 opacity-12">
+            <div className="absolute inset-0 opacity-60">
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
                   <linearGradient id="edgeFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -732,51 +773,84 @@ const Index = () => {
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#A855F7] to-[#9333EA] mx-auto mb-16 animate-pulse" />
                 
-                <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
-                  <button className="bg-gradient-to-br from-[#7C3AED]/40 to-[#9333EA]/40 border border-[#A855F7]/30 rounded-2xl p-8 hover:border-[#A855F7]/60 transition-all duration-500 hover-scale group animate-scale-in relative overflow-hidden" style={{animationDelay: '0.1s'}}>
-                    {/* Futuristic holographic effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#A855F7]/5 via-transparent to-[#9333EA]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#6C63FF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center gap-4 mb-6">
-                        <span className="text-4xl group-hover:scale-110 transition-transform duration-300">🎯</span>
-                        <h3 className="text-xl font-bold text-white">Patent Pending Innovation</h3>
+                {/* Futuristic asymmetric layout */}
+                <div className="space-y-8 max-w-5xl mx-auto">
+                  {/* First edge - Morphing shape */}
+                  <div className="relative group animate-scale-in" style={{animationDelay: '0.1s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/20 to-[#9333EA]/20 transform skew-x-3 group-hover:skew-x-6 transition-transform duration-700 rounded-3xl"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#A855F7]/40 rounded-3xl p-8 hover:border-[#A855F7]/70 transition-all duration-500 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#A855F7]/5 via-transparent to-[#9333EA]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#6C63FF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative z-10 flex items-center gap-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#6C63FF]/20 to-[#A855F7]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-3xl">🎯</span>
+                        </div>
+                        <div className="text-left flex-1">
+                          <h3 className="text-xl font-bold text-white mb-3">Patent Pending Innovation</h3>
+                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
+                            Patent pending signal-security pipeline designed specifically for neural data protection.
+                          </p>
+                        </div>
                       </div>
-                      <p className="text-white/80 text-left group-hover:text-white/90 transition-colors duration-300">
-                        Patent pending signal-security pipeline designed specifically for neural data protection.
-                      </p>
                     </div>
-                  </button>
-                  
-                  <button className="bg-gradient-to-br from-[#4338CA]/40 to-[#7C3AED]/40 border border-[#6C63FF]/30 rounded-2xl p-8 hover:border-[#6C63FF]/60 transition-all duration-500 hover-scale group animate-scale-in" style={{animationDelay: '0.2s'}}>
-                    <div className="flex items-center gap-4 mb-6">
-                      <span className="text-4xl group-hover:scale-110 transition-transform duration-300">⚖️</span>
-                      <h3 className="text-xl font-bold text-white">Standards-First Architecture</h3>
+                  </div>
+
+                  {/* Second edge - Floating capsule */}
+                  <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.2s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-bl from-[#4F46E5]/20 to-[#6C63FF]/20 transform -skew-y-2 group-hover:-skew-y-4 transition-transform duration-700 rounded-full"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#6C63FF]/40 rounded-full p-8 hover:border-[#6C63FF]/70 transition-all duration-500 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-l from-[#6C63FF]/5 via-transparent to-[#4F46E5]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative z-10 flex items-center gap-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#4F46E5]/20 to-[#6C63FF]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-3xl">⚡</span>
+                        </div>
+                        <div className="text-left flex-1">
+                          <h3 className="text-xl font-bold text-white mb-3">Real-time Performance</h3>
+                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
+                            Zero-latency encryption that doesn't compromise EEG signal quality or research accuracy.
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-white/80 text-left group-hover:text-white/90 transition-colors duration-300">
-                      HIPAA, GDPR, ISO 27001, FDA guidance compliance built into the core architecture.
-                    </p>
-                  </button>
-                  
-                  <button className="bg-gradient-to-br from-[#4F46E5]/40 to-[#4338CA]/40 border border-[#9333EA]/30 rounded-2xl p-8 hover:border-[#9333EA]/60 transition-all duration-500 hover-scale group animate-scale-in" style={{animationDelay: '0.3s'}}>
-                    <div className="flex items-center gap-4 mb-6">
-                      <span className="text-4xl group-hover:scale-110 transition-transform duration-300">🤖</span>
-                      <h3 className="text-xl font-bold text-white">AI-Powered Detection</h3>
+                  </div>
+
+                  {/* Third edge - Angular design */}
+                  <div className="relative group animate-scale-in w-5/6" style={{animationDelay: '0.3s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#9333EA]/20 to-[#A855F7]/20 transform rotate-1 group-hover:rotate-3 transition-transform duration-700"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#9333EA]/40 p-8 hover:border-[#9333EA]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-[#9333EA]/5 via-transparent to-[#A855F7]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative z-10 flex items-center gap-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#9333EA]/20 to-[#A855F7]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-3xl">🏆</span>
+                        </div>
+                        <div className="text-left flex-1">
+                          <h3 className="text-xl font-bold text-white mb-3">Compliance Leadership</h3>
+                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
+                            First neural security solution built to exceed emerging BCI regulatory standards.
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-white/80 text-left group-hover:text-white/90 transition-colors duration-300">
-                      Adaptive intrusion detection powered by AI models tuned for BCI signal patterns.
-                    </p>
-                  </button>
-                  
-                   <button className="bg-gradient-to-br from-[#6C63FF]/40 to-[#A855F7]/40 border border-[#7C3AED]/30 rounded-2xl p-8 hover:border-[#7C3AED]/60 transition-all duration-500 hover-scale group animate-scale-in" style={{animationDelay: '0.4s'}}>
-                     <div className="flex items-center gap-4 mb-6">
-                       <span className="text-4xl group-hover:scale-110 transition-transform duration-300">🔧</span>
-                       <h3 className="text-xl font-bold text-white">Flexible Integration</h3>
-                     </div>
-                     <p className="text-white/80 text-left group-hover:text-white/90 transition-colors duration-300">
-                       Flexible SDK integration for device manufacturers and research platforms.
-                     </p>
-                   </button>
+                  </div>
+
+                  {/* Fourth edge - Organic blob */}
+                  <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.4s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-bl from-[#4338CA]/20 to-[#7C3AED]/20 transform -rotate-2 group-hover:-rotate-4 transition-transform duration-700 rounded-[3rem]"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#4338CA]/40 rounded-[3rem] p-8 hover:border-[#4338CA]/70 transition-all duration-500 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-l from-[#4338CA]/5 via-transparent to-[#7C3AED]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative z-10 flex items-center gap-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#4338CA]/20 to-[#7C3AED]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-3xl">🚀</span>
+                        </div>
+                        <div className="text-left flex-1">
+                          <h3 className="text-xl font-bold text-white mb-3">Market Ready</h3>
+                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
+                            Deployable solution ready for immediate integration with existing EEG hardware and software.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
