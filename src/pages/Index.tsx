@@ -214,7 +214,7 @@ const Index = () => {
           {/* 1. Problem Section */}
           <section 
             id="problem" 
-            className="min-h-screen md:min-h-screen bg-black flex items-center justify-center py-8 md:py-16 relative overflow-hidden"
+            className="min-h-screen md:min-h-[80vh] bg-black flex items-center justify-center py-8 md:py-12 relative overflow-hidden"
             style={{
               contain: 'layout style paint',
               willChange: 'transform',
@@ -348,7 +348,7 @@ const Index = () => {
           {/* 2. Urgency Section */}
           <section 
             id="urgency" 
-            className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-8 md:py-16 relative overflow-hidden"
+            className="min-h-screen md:min-h-[80vh] bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-8 md:py-12 relative overflow-hidden"
           >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">

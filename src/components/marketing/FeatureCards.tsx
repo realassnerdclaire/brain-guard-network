@@ -23,7 +23,7 @@ const FEATURES = [
 
 const FeatureCards = () => {
   return (
-    <section id="features" className="container py-20 md:py-32 lg:py-40 px-6 sm:px-8 lg:px-12">
+    <section id="features" className="container py-20 md:py-24 lg:py-28 px-6 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-3xl font-semibold sm:text-4xl">Security baked into the signal flow</h2>
         <p className="mt-3 text-muted-foreground">

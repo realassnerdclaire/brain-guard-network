@@ -26,7 +26,7 @@ const STEPS = [
 const HowItWorks = () => {
   return (
     <section id="how" className="border-t bg-muted/40">
-      <div className="container py-16 md:py-24">
+      <div className="container py-16 md:py-20">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold sm:text-4xl">How it works</h2>
           <p className="mt-3 text-muted-foreground">A thin but unbreakable layer between headsets and apps.</p>
