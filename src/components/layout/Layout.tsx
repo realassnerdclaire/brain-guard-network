@@ -48,6 +48,7 @@ const Layout = ({ children }: LayoutProps) => {
                 id="menu-btn"
                 onClick={(e) => {
                   e.preventDefault();
+                  e.stopPropagation();
                   console.log('🚀 MENU CLICKED - Starting letter animation');
                   
                   const btn = e.currentTarget;
@@ -134,6 +135,7 @@ const Layout = ({ children }: LayoutProps) => {
                   <div className="absolute top-0 right-0 z-[99999999] p-6 sm:p-8 lg:p-10 px-6 sm:px-8 lg:px-12">
                     <button
                       onClick={(e) => {
+                        e.preventDefault();
                         e.stopPropagation();
                         setIsMenuOpen(false);
                       }}
