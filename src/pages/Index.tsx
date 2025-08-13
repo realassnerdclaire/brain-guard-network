@@ -340,12 +340,10 @@ const Index = () => {
                     <span className="text-[#a855f7] font-medium text-sm uppercase tracking-wider">Critical Gap</span>
                   </div>
                   <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-4">
-                    Brain-computer devices send raw EEG data through <span className="text-white font-semibold">unprotected pipelines</span>. 
-                    Missing foundational security creates immediate enterprise barriers.
+                    BCI devices stream raw EEG/IMU. Most systems lack four basics: encrypted transport, packet checks (timing, range, artifacts), consent-based access, and a write-once audit log.
                   </p>
                   <p className="text-lg text-white/80">
-                    <span className="text-[#a855f7] font-semibold">Enterprise blocker</span>: bad data reaches apps, unauthorized access occurs, compliance fails. 
-                    <span className="text-white font-semibold">Market timing</span>: headsets moving from labs to production.
+                    Without these, corrupted data reaches apps, unauthorized reads occur, and deployments stall as adoption expands beyond labs.
                   </p>
                 </div>
               </div>
