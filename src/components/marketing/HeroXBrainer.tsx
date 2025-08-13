@@ -1,13 +1,32 @@
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
 import futuristicBrain from "@/assets/futuristic-brain-correct.png";
 import { animateLetters, startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 const HeroXBrainer = () => {
-  const navigate = useNavigate();
   console.log("🎨 HeroXBrainer component rendering with color animation!");
   return (
     <section className="relative h-screen bg-black overflow-hidden flex flex-col justify-center sm:justify-start">
+      {/* XBrainer AI logo and company name - responsive positioning */}
+      <div className="absolute top-2 left-2 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-20 flex items-center gap-1 sm:gap-4 lg:gap-6">
+        <img 
+          src="/lovable-uploads/a84358e6-b8f3-4172-a059-3c05cad36874.png" 
+          alt="XBrainer AI logo" 
+          className="h-10 sm:h-12 lg:h-16 w-auto mix-blend-screen opacity-90 rounded-lg sm:rounded-2xl" 
+          style={{
+            filter: 'blur(0.1px)',
+            maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)'
+          }}
+        />
+        <div className="flex flex-col">
+          <span className="text-xl sm:text-3xl lg:text-5xl font-bold tracking-tight leading-tight" style={{color: '#ffffff'}}>
+            XBrainer AI
+          </span>
+          <span className="text-sm sm:text-base lg:text-xl font-medium" style={{color: 'rgba(255, 255, 255, 0.7)'}}>
+            Securing Neural Data in Real Time
+          </span>
+        </div>
+      </div>
       
       
       {/* EEG stream signals across entire page - background layer */}
@@ -145,11 +164,11 @@ const HeroXBrainer = () => {
       </div>
 
       {/* Enhanced futuristic neon brain - foreground layer */}
-      <div className="absolute right-2 sm:right-0 top-1/2 -translate-y-4 w-3/5 sm:w-2/5 h-[65vh] z-10">
+      <div className="absolute right-0 sm:right-0 top-1/3 sm:top-1/2 -translate-y-4 w-3/5 sm:w-2/5 h-[50vh] sm:h-[65vh] z-10">
         <img
           src={futuristicBrain}
           alt="Futuristic translucent brain with neural pathways"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-35 sm:opacity-40"
           loading="eager"
           decoding="async"
           style={{
@@ -162,60 +181,20 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-32 sm:py-0 px-3 sm:px-8 lg:px-12 xl:px-16">
+      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-48 sm:py-0 px-3 sm:px-8 lg:px-12 xl:px-16">
         <div className="max-w-2xl lg:max-w-4xl xl:max-w-5xl relative z-15 mt-0 sm:mt-16 lg:mt-0">
           <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-2 sm:mb-8 lg:mb-12" id="hero-title">
             <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/80 max-w-xs lg:max-w-xl xl:max-w-2xl leading-tight mb-6 sm:mb-12 lg:mb-16 mt-4 sm:mt-8">
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/80 max-w-xs lg:max-w-xl xl:max-w-2xl leading-tight mb-3 sm:mb-12 lg:mb-16 mt-8">
             As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
           </p>
-          
-          {/* Action buttons - mobile inline with content, desktop separate */}
-          <div className="flex flex-col gap-2 sm:hidden items-end">
-            <button 
-              className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-4 py-2 touch-manipulation text-xs font-medium cursor-pointer transition-all duration-300 whitespace-nowrap w-fit"
-              onMouseEnter={(e) => {
-                const btn = e.currentTarget;
-                const interval = startHoverAnimation(btn);
-                (btn as any).hoverInterval = interval;
-              }}
-              onMouseLeave={(e) => {
-                const btn = e.currentTarget;
-                if ((btn as any).hoverInterval) {
-                  stopHoverAnimation(btn, (btn as any).hoverInterval);
-                  (btn as any).hoverInterval = null;
-                }
-              }}
-              onClick={() => navigate('/waitlist')}
-            >
-              JOIN THE WAITLIST
-            </button>
-            <button 
-              className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-4 py-2 touch-manipulation text-xs font-medium cursor-pointer transition-all duration-300 whitespace-nowrap w-fit"
-              onMouseEnter={(e) => {
-                const btn = e.currentTarget;
-                const interval = startHoverAnimation(btn);
-                (btn as any).hoverInterval = interval;
-              }}
-              onMouseLeave={(e) => {
-                const btn = e.currentTarget;
-                if ((btn as any).hoverInterval) {
-                  stopHoverAnimation(btn, (btn as any).hoverInterval);
-                  (btn as any).hoverInterval = null;
-                }
-              }}
-              onClick={() => navigate('/demo')}
-            >
-              SEE THE DEMO
-            </button>
-          </div>
         </div>
         
-        {/* Action buttons - desktop only (hidden on mobile) */}
-        <div className="absolute bottom-80 left-1/2 -translate-x-1/2 sm:bottom-40 sm:left-auto sm:translate-x-0 sm:right-8 lg:bottom-48 lg:right-16 xl:bottom-52 xl:right-20 hidden sm:flex flex-col gap-2 sm:gap-4 lg:gap-6">
+        {/* Action buttons - brought significantly up */}
+        <div className="absolute bottom-52 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-3 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-1 sm:gap-4 lg:gap-6">
           <button 
-            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-2 sm:px-8 lg:px-10 xl:px-12 py-1 sm:py-4 lg:py-5 touch-manipulation text-[10px] sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 whitespace-nowrap"
+            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-3 sm:px-8 lg:px-10 xl:px-12 py-1.5 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
               const btn = e.currentTarget;
               const interval = startHoverAnimation(btn);
@@ -228,12 +207,17 @@ const HeroXBrainer = () => {
                 (btn as any).hoverInterval = null;
               }
             }}
-            onClick={() => navigate('/waitlist')}
+            onClick={() => {
+              const ctaSection = document.getElementById('cta');
+              if (ctaSection) {
+                ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
           >
             JOIN THE WAITLIST
           </button>
           <button 
-            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-2 sm:px-8 lg:px-10 xl:px-12 py-1 sm:py-4 lg:py-5 touch-manipulation text-[10px] sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 whitespace-nowrap"
+            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-3 sm:px-8 lg:px-10 xl:px-12 py-1.5 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
               const btn = e.currentTarget;
               const interval = startHoverAnimation(btn);
@@ -246,7 +230,12 @@ const HeroXBrainer = () => {
                 (btn as any).hoverInterval = null;
               }
             }}
-            onClick={() => navigate('/demo')}
+            onClick={() => {
+              const demoSection = document.getElementById('demo');
+              if (demoSection) {
+                demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
           >
             SEE THE DEMO
           </button>

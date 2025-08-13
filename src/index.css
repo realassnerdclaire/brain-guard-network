@@ -322,14 +322,5 @@ All colors MUST be HSL.
       transform: scale(1);
     }
   }
-  
-  .white-neon-border {
-    border: 3px solid #ffffff;
-    box-shadow: 
-      0 0 10px #ffffff,
-      0 0 20px #ffffff,
-      0 0 30px #ffffff,
-      inset 0 0 10px rgba(255,255,255,0.2);
-  }
   }
 }
