@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ArrowLeft } from "lucide-react";
+import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 interface NavigationLayoutProps {
   onBack?: () => void;
@@ -59,18 +60,60 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
         <span className="text-lg font-medium tracking-widest">MENU</span>
       </button>
 
-      {/* Side Navigation Menu */}
-      <div className={`fixed top-0 right-0 h-full w-80 bg-black/90 backdrop-blur-md border-l border-white/20 z-40 transform transition-transform duration-300 ${
+      {/* Side Navigation Menu - Made smaller */}
+      <div className={`fixed top-0 right-0 h-full w-64 bg-black/80 backdrop-blur-md border-l border-white/20 z-40 transform transition-transform duration-300 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
-        <div className="p-8 pt-20">
+        <div className="p-6 pt-20">
           <nav>
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               {menuItems.map((item, index) => (
                 <li key={item}>
                   <button
-                    className="block w-full text-left text-white/80 hover:text-white py-3 px-2 text-lg font-medium transition-colors hover:bg-white/5 rounded"
+                    className="block w-full text-left text-white/80 hover:text-white py-2 px-2 text-base font-medium transition-colors hover:bg-white/5 rounded"
                     style={{ animationDelay: `${index * 0.1}s` }}
+                    onClick={(e) => {
+                      console.log(`🚀 ${item} CLICKED - Starting letter animation`);
+                      
+                      const btn = e.currentTarget as HTMLElement;
+                      const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                      const letters = item.split('');
+                      
+                      // Create letter spans - same as navigation buttons
+                      btn.innerHTML = letters.map((letter, i) => 
+                        `<span id="nav-menu-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      ).join('');
+                      
+                      // Same fast animation as navigation buttons
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`nav-menu-letter-${letterIndex}`);
+                            if (letterSpan && letter !== ' ') {
+                              letterSpan.style.color = color;
+                            }
+                          }, letterIndex * 10 + colorIndex * 30);
+                        });
+                      });
+                      
+                      // Reset after animation
+                      setTimeout(() => {
+                        btn.innerHTML = item;
+                        btn.style.color = 'white';
+                      }, letters.length * 10 + colors.length * 30 + 50);
+                    }}
+                    onMouseEnter={(e) => {
+                      const btn = e.currentTarget;
+                      const interval = startHoverAnimation(btn);
+                      (btn as any).hoverInterval = interval;
+                    }}
+                    onMouseLeave={(e) => {
+                      const btn = e.currentTarget;
+                      if ((btn as any).hoverInterval) {
+                        stopHoverAnimation(btn, (btn as any).hoverInterval);
+                        (btn as any).hoverInterval = null;
+                      }
+                    }}
                   >
                     {item}
                   </button>
@@ -94,15 +137,57 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
           </div>
         </div>
 
-        {/* Bottom Navigation */}
+        {/* Bottom Navigation with color animations */}
         <div className="pb-12">
           <nav className="flex justify-center">
-            <div className="flex items-center gap-8 bg-black/30 backdrop-blur-sm border border-white/20 rounded-full px-8 py-4">
+            <div className="flex items-center gap-6 bg-black/30 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
               {bottomNavItems.map((item) => (
                 <button
                   key={item}
-                  onClick={() => setActiveSection(item)}
-                  className={`text-lg font-medium tracking-wide transition-all hover:text-white ${
+                  onClick={(e) => {
+                    console.log(`🚀 ${item} CLICKED - Starting letter animation`);
+                    
+                    const btn = e.currentTarget as HTMLElement;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = item.split('');
+                    
+                    // Create letter spans
+                    btn.innerHTML = letters.map((letter, i) => 
+                      `<span id="bottom-nav-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                    ).join('');
+                    
+                    // Color animation
+                    letters.forEach((letter, letterIndex) => {
+                      colors.forEach((color, colorIndex) => {
+                        setTimeout(() => {
+                          const letterSpan = document.getElementById(`bottom-nav-letter-${letterIndex}`);
+                          if (letterSpan && letter !== ' ') {
+                            letterSpan.style.color = color;
+                          }
+                        }, letterIndex * 10 + colorIndex * 30);
+                      });
+                    });
+                    
+                    // Reset and set active
+                    setTimeout(() => {
+                      btn.innerHTML = item;
+                      btn.style.color = 'white';
+                      setActiveSection(item);
+                    }, letters.length * 10 + colors.length * 30 + 50);
+                  }}
+                  onMouseEnter={(e) => {
+                    const btn = e.currentTarget;
+                    const interval = startHoverAnimation(btn);
+                    (btn as any).hoverInterval = interval;
+                  }}
+                  onMouseLeave={(e) => {
+                    const btn = e.currentTarget;
+                    if ((btn as any).hoverInterval) {
+                      stopHoverAnimation(btn, (btn as any).hoverInterval);
+                      (btn as any).hoverInterval = null;
+                    }
+                  }}
+                  className={`text-base font-medium tracking-wide transition-all hover:text-white ${
                     activeSection === item 
                       ? 'text-white border-b-2 border-white pb-1' 
                       : 'text-white/60'
