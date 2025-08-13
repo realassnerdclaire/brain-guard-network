@@ -405,14 +405,14 @@ const Index = () => {
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
                   <linearGradient id="urgencyFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#4F46E5', stopOpacity: 0.9}} />
-                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#4F46E5', stopOpacity: 0.9}} />
+                    <stop offset="0%" style={{stopColor: '#EC4899', stopOpacity: 0.9}} />
+                    <stop offset="50%" style={{stopColor: '#F472B6', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#EC4899', stopOpacity: 0.9}} />
                   </linearGradient>
                   <linearGradient id="urgencyFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#6C63FF', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
+                    <stop offset="0%" style={{stopColor: '#BE185D', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#DB2777', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#BE185D', stopOpacity: 0.8}} />
                   </linearGradient>
                 </defs>
                 
@@ -439,7 +439,7 @@ const Index = () => {
                 
                 <path
                   d="M-50,680 L0,675 L12,695 L24,665 L36,690 L48,670 L60,700 L72,660 L84,685 L96,675 L108,705 L120,655 L132,680 L144,670 L156,700 L168,660 L180,685 L192,675 L204,705 L216,655 L228,680 L240,670 L252,700 L264,660 L276,685 L288,675 L300,705 L312,655 L324,680 L336,670 L348,700 L360,660 L372,685 L384,675 L396,705 L408,655 L420,680 L432,670 L444,700 L456,660 L468,685 L480,675 L492,705 L504,655 L516,680 L528,670 L540,700 L552,660 L564,685 L576,675 L588,705 L600,655 L612,680 L624,670 L636,700 L648,660 L660,685 L672,675 L684,705 L696,655 L708,680 L720,670 L732,700 L744,660 L756,685 L768,675 L780,705 L792,655 L804,680 L816,670 L828,700 L840,660 L852,685 L864,675 L876,705 L888,655 L900,680 L912,670 L924,700 L936,660 L948,685 L960,675 L972,705 L984,655 L996,680 L1008,670 L1020,700 L1032,660 L1044,685 L1056,675 L1068,705 L1080,655 L1092,680 L1104,670 L1116,700 L1128,660 L1140,685 L1152,675 L1164,705 L1176,655 L1188,680 L1200,670 L1212,700 L1224,660 L1236,685 L1248,675 L1260,705 L1272,655 L1284,680 L1296,670 L1308,700 L1320,660 L1332,685 L1344,675 L1356,705 L1368,655 L1380,680 L1392,670 L1404,700 L1416,660 L1428,685 L1440,675 L1452,705 L1464,655 L1476,680 L1488,670 L1500,700 L1512,660 L1524,685 L1536,675 L1548,705 L1560,655 L1572,680 L1584,670 L1596,700 L1608,660 L1620,685 L1632,675 L1644,705 L1656,655 L1668,680 L1680,670 L1692,700 L1704,660 L1716,685 L1728,675 L1740,705 L1752,655 L1764,680 L1776,670 L1788,700 L1800,660 L1812,685 L1824,675 L1836,705 L1848,655 L1860,680 L1872,670 L1884,700 L1896,660 L1908,685 L1920,675 L1932,705 L1944,655 L1956,680 L1968,670 L1980,700"
-                  stroke="#9333EA"
+                  stroke="#F97316"
                   strokeWidth="1"
                   fill="none"
                   style={{
@@ -454,7 +454,7 @@ const Index = () => {
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 animate-fade-in">
                   The Urgency
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#4F46E5] to-[#A855F7] mx-auto mb-16 animate-pulse" />
+                <div className="w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-16 animate-pulse" />
                 
                 <div className="space-y-8 text-left max-w-4xl mx-auto">
                   <div className="bg-gradient-to-r from-[#7C3AED]/40 to-[#4338CA]/40 border-2 border-[#A855F7]/50 rounded-2xl p-8 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
@@ -593,15 +593,15 @@ const Index = () => {
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 animate-fade-in">
                   The Solution
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#6C63FF] to-[#A855F7] mx-auto mb-16 animate-pulse" />
+                <div className="w-24 h-1 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] mx-auto mb-16 animate-pulse" />
                 
                 <div className="space-y-8 text-left max-w-4xl mx-auto">
                   {/* Futuristic neural shield container */}
                   <div className="relative group animate-scale-in" style={{animationDelay: '0.2s'}}>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/20 to-[#9333EA]/20 rounded-[2rem] transform -rotate-1 group-hover:-rotate-2 transition-transform duration-700"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#A855F7]/40 rounded-[2rem] p-8 hover:border-[#A855F7]/70 transition-all duration-500">
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#7C3AED]/40 rounded-[2rem] p-8 hover:border-[#7C3AED]/70 transition-all duration-500">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#6C63FF]/20 to-[#A855F7]/20 rounded-full flex items-center justify-center">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#EC4899]/20 to-[#F472B6]/20 rounded-full flex items-center justify-center">
                           <span className="text-3xl animate-pulse">🛡️</span>
                         </div>
                         <h3 className="text-2xl font-bold text-white">
@@ -612,10 +612,10 @@ const Index = () => {
                       {/* Organic feature circles */}
                       <div className="grid gap-6 md:grid-cols-3">
                         <div className="relative group/feature">
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#6C63FF]/10 to-[#6C63FF]/5 rounded-[1.5rem] transform rotate-3 group-hover/feature:rotate-6 transition-transform duration-300"></div>
-                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#6C63FF]/30 rounded-[1.5rem] p-6 text-center hover:border-[#6C63FF]/60 hover:bg-[#6C63FF]/5 transition-all duration-300 hover-scale">
-                            <div className="w-16 h-16 bg-gradient-to-br from-[#6C63FF]/20 to-[#6C63FF]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
-                              <span className="text-[#6C63FF] text-2xl">🔒</span>
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/10 to-[#7C3AED]/5 rounded-[1.5rem] transform rotate-3 group-hover/feature:rotate-6 transition-transform duration-300"></div>
+                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#7C3AED]/30 rounded-[1.5rem] p-6 text-center hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5 transition-all duration-300 hover-scale">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#7C3AED]/20 to-[#7C3AED]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
+                              <span className="text-[#7C3AED] text-2xl">🔒</span>
                             </div>
                             <h4 className="text-white font-bold mb-3 text-lg">Real-time Encryption</h4>
                             <p className="text-white/70">Encrypts and authenticates EEG streams in real time</p>
@@ -623,10 +623,10 @@ const Index = () => {
                         </div>
                         
                         <div className="relative group/feature">
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#A855F7]/10 to-[#A855F7]/5 rounded-[1.5rem] transform -rotate-2 group-hover/feature:-rotate-4 transition-transform duration-300"></div>
-                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#A855F7]/30 rounded-[1.5rem] p-6 text-center hover:border-[#A855F7]/60 hover:bg-[#A855F7]/5 transition-all duration-300 hover-scale">
-                            <div className="w-16 h-16 bg-gradient-to-br from-[#A855F7]/20 to-[#A855F7]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
-                              <span className="text-[#A855F7] text-2xl">👤</span>
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#9333EA]/10 to-[#9333EA]/5 rounded-[1.5rem] transform -rotate-2 group-hover/feature:-rotate-4 transition-transform duration-300"></div>
+                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#9333EA]/30 rounded-[1.5rem] p-6 text-center hover:border-[#9333EA]/60 hover:bg-[#9333EA]/5 transition-all duration-300 hover-scale">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#9333EA]/20 to-[#9333EA]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
+                              <span className="text-[#9333EA] text-2xl">👤</span>
                             </div>
                             <h4 className="text-white font-bold mb-3 text-lg">Access Controls</h4>
                             <p className="text-white/70">Applies consent-based access controls for each data request</p>
@@ -634,10 +634,10 @@ const Index = () => {
                         </div>
                         
                         <div className="relative group/feature">
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#4338CA]/10 to-[#4338CA]/5 rounded-[1.5rem] transform rotate-1 group-hover/feature:rotate-3 transition-transform duration-300"></div>
-                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#4338CA]/30 rounded-[1.5rem] p-6 text-center hover:border-[#4338CA]/60 hover:bg-[#4338CA]/5 transition-all duration-300 hover-scale">
-                            <div className="w-16 h-16 bg-gradient-to-br from-[#4338CA]/20 to-[#4338CA]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
-                              <span className="text-[#4338CA] text-2xl">📝</span>
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#6B21A8]/10 to-[#6B21A8]/5 rounded-[1.5rem] transform rotate-1 group-hover/feature:rotate-3 transition-transform duration-300"></div>
+                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#6B21A8]/30 rounded-[1.5rem] p-6 text-center hover:border-[#6B21A8]/60 hover:bg-[#6B21A8]/5 transition-all duration-300 hover-scale">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#6B21A8]/20 to-[#6B21A8]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover/feature:scale-110 transition-transform duration-300">
+                              <span className="text-[#6B21A8] text-2xl">📝</span>
                             </div>
                             <h4 className="text-white font-bold mb-3 text-lg">Audit Trails</h4>
                             <p className="text-white/70">Maintains full audit trails to meet HIPAA, GDPR, and emerging BCI standards</p>
@@ -649,16 +649,16 @@ const Index = () => {
                   
                   {/* Flowing benefit capsule */}
                   <div className="relative group animate-fade-in" style={{animationDelay: '0.4s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#4F46E5]/10 to-[#6C63FF]/10 rounded-full transform scale-105 group-hover:scale-110 transition-transform duration-500"></div>
-                    <div className="relative bg-black/80 backdrop-blur-md border-2 border-[#6C63FF]/40 rounded-full p-8 text-center overflow-hidden hover:border-[#6C63FF]/70 transition-all duration-500">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#4F46E5]/5 to-transparent animate-pulse"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/10 to-[#9333EA]/10 rounded-full transform scale-105 group-hover:scale-110 transition-transform duration-500"></div>
+                    <div className="relative bg-black/80 backdrop-blur-md border-2 border-[#7C3AED]/40 rounded-full p-8 text-center overflow-hidden hover:border-[#7C3AED]/70 transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/5 to-transparent animate-pulse"></div>
                       <div className="relative z-10">
                         <div className="flex items-center justify-center gap-3 mb-4">
                           <span className="text-4xl animate-pulse">⚡</span>
                           <span className="text-4xl animate-pulse">🚀</span>
                         </div>
                         <p className="text-xl text-white leading-relaxed">
-                          Our approach not only reduces security and compliance risk — it <span className="text-[#4F46E5] font-semibold bg-[#6C63FF]/30 px-4 py-2 rounded-full animate-pulse">shortens time-to-market</span> for device makers and researchers.
+                          Our approach not only reduces security and compliance risk — it <span className="text-[#7C3AED] font-semibold bg-[#9333EA]/30 px-4 py-2 rounded-full animate-pulse">shortens time-to-market</span> for device makers and researchers.
                         </p>
                       </div>
                     </div>
@@ -678,23 +678,23 @@ const Index = () => {
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
                   <linearGradient id="edgeFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 0.9}} />
-                    <stop offset="50%" style={{stopColor: '#9333EA', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0.9}} />
+                    <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.9}} />
+                    <stop offset="50%" style={{stopColor: '#1D4ED8', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.9}} />
                   </linearGradient>
                   <linearGradient id="edgeFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#6C63FF', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
+                    <stop offset="0%" style={{stopColor: '#1E40AF', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#2563EB', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#1E40AF', stopOpacity: 0.8}} />
                   </linearGradient>
                   <radialGradient id="neuralNode" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0.3}} />
+                    <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.3}} />
                   </radialGradient>
                   <radialGradient id="brainGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 1.0}} />
-                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
-                    <stop offset="100%" style={{stopColor: '#4F46E5', stopOpacity: 0.2}} />
+                    <stop offset="0%" style={{stopColor: '#2563EB', stopOpacity: 1.0}} />
+                    <stop offset="50%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
+                    <stop offset="100%" style={{stopColor: '#1D4ED8', stopOpacity: 0.2}} />
                   </radialGradient>
                   <filter id="glow">
                     <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -774,7 +774,7 @@ const Index = () => {
                 </g>
                 
                 {/* Quantum connection pathways */}
-                <g stroke="#A855F7" strokeWidth="1.5" opacity="0.8" filter="url(#glow)">
+                <g stroke="#3B82F6" strokeWidth="1.5" opacity="0.8" filter="url(#glow)">
                   <path d="M300,250 L600,400 L900,650" strokeDasharray="8,4">
                     <animate attributeName="stroke-dashoffset" values="0;24;0" dur="6s" repeatCount="indefinite"/>
                     <animate attributeName="opacity" values="0.5;1;0.5" dur="6s" repeatCount="indefinite"/>
@@ -888,18 +888,18 @@ const Index = () => {
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 animate-fade-in">
                   Our Edge
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#A855F7] to-[#9333EA] mx-auto mb-16 animate-pulse" />
+                <div className="w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-16 animate-pulse" />
                 
                 {/* Futuristic asymmetric layout */}
                 <div className="space-y-8 max-w-5xl mx-auto">
                   {/* First edge - Morphing shape */}
                   <div className="relative group animate-scale-in" style={{animationDelay: '0.1s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/20 to-[#9333EA]/20 transform skew-x-3 group-hover:skew-x-6 transition-transform duration-700 rounded-3xl"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#A855F7]/40 rounded-3xl p-8 hover:border-[#A855F7]/70 transition-all duration-500 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#A855F7]/5 via-transparent to-[#9333EA]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#6C63FF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/20 to-[#1D4ED8]/20 transform skew-x-3 group-hover:skew-x-6 transition-transform duration-700 rounded-3xl"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#3B82F6]/40 rounded-3xl p-8 hover:border-[#3B82F6]/70 transition-all duration-500 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6]/5 via-transparent to-[#1D4ED8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#6C63FF]/20 to-[#A855F7]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#3B82F6]/20 to-[#2563EB]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <span className="text-3xl">🎯</span>
                         </div>
                         <div className="text-left flex-1">
