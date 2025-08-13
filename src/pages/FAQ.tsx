@@ -22,36 +22,44 @@ const FAQ = () => {
 
   const faqData = [
     {
-      question: "What is XBrainer AI?",
-      answer: "XBrainer AI is a comprehensive neural data security platform that provides real-time protection for EEG and BCI devices, ensuring your brain data receives the same level of protection as your most sensitive financial information."
+      question: "How fast does your system secure brain data?",
+      answer: "We protect EEG and BCI streams in milliseconds, ensuring that even fleeting neural signals are never exposed to unauthorized access."
     },
     {
-      question: "How does real-time neural data protection work?",
-      answer: "Our platform continuously monitors neural data streams using advanced AI algorithms to detect anomalies and threats in real-time, with sub-millisecond response times that don't interfere with your device's performance."
+      question: "What types of devices can integrate with your system?",
+      answer: "From consumer-grade EEG headsets to clinical-grade BCI implantables — our adapters and SDKs enable plug-and-play integration."
     },
     {
-      question: "Is XBrainer AI compliant with privacy regulations?",
-      answer: "Yes, our platform is designed to comply with HIPAA, GDPR, and other major privacy regulations. We implement privacy by design principles and provide comprehensive audit trails for regulatory compliance."
+      question: "Does your security layer affect signal quality or latency?",
+      answer: "No — encryption and intrusion detection run in parallel, with zero signal degradation and negligible added latency."
     },
     {
-      question: "What types of neural devices does XBrainer AI support?",
-      answer: "We support a wide range of EEG devices, brain-computer interfaces (BCIs), and other neural monitoring equipment used in clinical, research, and consumer applications."
+      question: "Can your platform detect tampering in real time?",
+      answer: "Yes — our system instantly flags abnormal patterns, blocks malicious requests, and logs attempts for compliance audits."
     },
     {
-      question: "How do you ensure data privacy and user control?",
-      answer: "We implement end-to-end encryption, zero-trust architecture, and granular privacy controls that give users complete sovereignty over their neural data. Users can control what data is collected, how it's processed, and who has access."
+      question: "Is your solution future-proof for emerging neurotech standards?",
+      answer: "Absolutely — our modular architecture enables fast updates for new encryption methods, device protocols, and regulations."
     },
     {
-      question: "What is the latency impact on neural devices?",
-      answer: "Our security layer is designed for ultra-low latency with sub-millisecond processing times, ensuring that security measures don't interfere with real-time neural applications or user experience."
+      question: "Do you provide APIs for developers?",
+      answer: "Yes — REST and WebSocket APIs allow developers to build secure neurotech apps without reinventing core security infrastructure."
     },
     {
-      question: "Can XBrainer AI integrate with existing systems?",
-      answer: "Yes, our platform is designed for easy integration with existing neural device ecosystems, research platforms, and clinical systems through standardized APIs and protocols."
+      question: "How do you handle device interoperability issues?",
+      answer: "Our cross-device validation pipeline normalizes all incoming streams, ensuring consistent performance across manufacturers and formats."
     },
     {
-      question: "What makes neural data security different from traditional data security?",
-      answer: "Neural data is uniquely sensitive as it represents thoughts, intentions, and cognitive patterns. It requires specialized protection against new types of attacks and unprecedented privacy controls that traditional security solutions weren't designed to handle."
+      question: "What happens if the network drops mid-stream?",
+      answer: "We buffer encrypted data locally and auto-sync when the connection is restored — with full integrity maintained."
+    },
+    {
+      question: "Can organizations self-host your system?",
+      answer: "Yes — deployment options include cloud, on-premise, or hybrid to meet varied compliance and control needs."
+    },
+    {
+      question: "How is XBrainer AI different from traditional cybersecurity?",
+      answer: "We specialize in neuro-specific threats, securing cognitive data at the raw-signal level — before breaches can even occur."
     }
   ];
 
@@ -127,7 +135,15 @@ const FAQ = () => {
       {/* Main Content */}
       <div className="relative z-20 min-h-screen flex flex-col pt-32 px-8 pb-16">
         <div className="max-w-4xl mx-auto w-full">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Frequently Asked Questions</h1>
+          {/* Hero Section */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Protecting Brain Data at the Speed of Thought</h1>
+            <p className="text-xl text-white/80 mb-6">Real-time EEG & BCI security — preventing leaks before they happen.</p>
+            <div className="flex justify-center mb-8">
+              <div className="text-white/60 text-2xl tracking-widest">⸻</div>
+            </div>
+            <h2 className="text-2xl font-bold text-[#6C63FF]">FAQ – XBrainer AI</h2>
+          </div>
           
           <div className="space-y-4">
             {faqData.map((faq, index) => (
@@ -136,16 +152,21 @@ const FAQ = () => {
                   onClick={() => setOpenQuestion(openQuestion === index ? null : index)}
                   className="w-full text-left p-6 hover:bg-white/5 transition-colors"
                 >
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
-                    <span className={`text-2xl text-[#6C63FF] transition-transform duration-200 ${
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1 pr-4">
+                      <span className="text-[#6C63FF] font-bold text-lg">{index + 1}. </span>
+                      <span className="text-lg font-semibold text-white">{faq.question}</span>
+                    </div>
+                    <span className={`text-2xl text-[#6C63FF] transition-transform duration-200 flex-shrink-0 ${
                       openQuestion === index ? 'rotate-45' : ''
                     }`}>+</span>
                   </div>
                 </button>
                 {openQuestion === index && (
                   <div className="px-6 pb-6">
-                    <p className="text-white/80 leading-relaxed">{faq.answer}</p>
+                    <div className="pl-8">
+                      <p className="text-white/80 leading-relaxed">{faq.answer}</p>
+                    </div>
                   </div>
                 )}
               </div>
