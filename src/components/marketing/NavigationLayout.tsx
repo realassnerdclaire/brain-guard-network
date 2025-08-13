@@ -149,7 +149,7 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
         {/* Central Content - Adjusted positioning to avoid menu overlap */}
         <div className="flex-1 flex items-center justify-center px-8 pt-20 pb-20">
           <div className="text-center max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-8">
               Your brain data deserves<br />
               the same protection as<br />
               your bank account.
