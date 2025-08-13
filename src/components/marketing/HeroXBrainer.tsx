@@ -221,7 +221,20 @@ const HeroXBrainer = () => {
               style={{
                 pointerEvents: 'auto',
                 position: 'relative',
-                zIndex: 99999
+                zIndex: 99999,
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                console.log('🐭 Mouse entered PROBLEM button');
+                e.currentTarget.style.color = '#a855f7';
+                e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
+                e.currentTarget.style.transform = 'scale(1.05)'; // Small scale, not too big
+              }}
+              onMouseLeave={(e) => {
+                console.log('🐭 Mouse left PROBLEM button');
+                e.currentTarget.style.color = 'white';
+                e.currentTarget.style.textShadow = 'none';
+                e.currentTarget.style.transform = 'scale(1)'; // Reset scale
               }}
               onClick={() => {
                 console.log('🚀 PROBLEM CLICKED - Starting letter animation');
@@ -253,7 +266,7 @@ const HeroXBrainer = () => {
                         
                         letterSpan.style.color = color;
                         letterSpan.style.textShadow = `0 0 ${15 + colorIndex * 10}px ${color}, 0 0 ${30 + colorIndex * 20}px ${color}`;
-                        letterSpan.style.transform = `scale(${1.1 + colorIndex * 0.1})`;
+                        letterSpan.style.transform = `scale(${1.05 + colorIndex * 0.05})`; // Smaller scaling
                         letterSpan.style.background = `rgba(${r}, ${g}, ${b}, 0.2)`;
                         letterSpan.style.boxShadow = `0 0 ${20 + colorIndex * 10}px rgba(${r}, ${g}, ${b}, 0.5)`;
                         letterSpan.style.backdropFilter = `blur(${10 + colorIndex * 5}px)`;
@@ -266,9 +279,12 @@ const HeroXBrainer = () => {
                   });
                 });
                 
-                // Reset after animation
+                // Reset after animation with proper hover state restoration
                 setTimeout(() => {
                   btn.innerHTML = 'PROBLEM';
+                  btn.style.color = 'white';
+                  btn.style.textShadow = 'none';
+                  btn.style.transform = 'scale(1)';
                   console.log('🔄 Animation complete - reset to PROBLEM');
                 }, letters.length * 100 + colors.length * 300 + 1000);
                 
