@@ -114,7 +114,7 @@ const Index = () => {
                     </div>
                     
                     {/* Text overlay on top - mobile optimized */}
-                    <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none px-4">
+                    <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none px-4 -translate-x-8">
                       <p className="text-white text-center font-light leading-relaxed max-w-4xl">
                         <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl">Your brain data deserves</span>
                         <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl">the same protection as</span>
