@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Menu } from "lucide-react";
 import HeroXBrainer from "@/components/marketing/HeroXBrainer";
 
 const Index = () => {
@@ -28,8 +29,9 @@ const Index = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-white text-base sm:text-lg font-medium tracking-widest hover:text-white/80 transition-colors touch-manipulation min-h-[44px] flex items-center"
+                  className="text-white text-base sm:text-lg font-medium tracking-widest hover:text-white/80 transition-colors touch-manipulation min-h-[44px] flex items-center gap-2"
                 >
+                  <Menu size={20} />
                   MENU
                 </button>
                 

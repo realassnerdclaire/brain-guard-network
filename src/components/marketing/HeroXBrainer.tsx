@@ -190,7 +190,7 @@ const HeroXBrainer = () => {
           </p>
         </div>
         
-        <div className="absolute bottom-24 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16">
+        <div className="absolute bottom-24 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-4">
           <Button 
             size="lg" 
             variant="outline" 
@@ -198,6 +198,14 @@ const HeroXBrainer = () => {
             asChild
           >
             <a href="#cta">JOIN THE WAITLIST +</a>
+          </Button>
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="rounded-full border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-6 sm:px-8 py-2 sm:py-3 touch-manipulation text-sm sm:text-base"
+            asChild
+          >
+            <a href="#demo">SEE THE DEMO</a>
           </Button>
         </div>
       </div>
