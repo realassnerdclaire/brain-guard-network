@@ -172,9 +172,9 @@ const HeroXBrainer = () => {
           loading="eager"
           decoding="async"
           style={{
-            filter: 'drop-shadow(0 0 15px #00d4ff) drop-shadow(0 0 25px #a855f7) brightness(1.1) contrast(1.1) blur(1px)',
-            maskImage: 'radial-gradient(ellipse 80% 90% at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0) 95%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 80% 90% at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0) 95%)',
+            filter: 'drop-shadow(0 0 20px #00d4ff) drop-shadow(0 0 30px #a855f7) brightness(1.1) contrast(1.1) blur(0.5px)',
+            maskImage: 'radial-gradient(ellipse 90% 95% at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 90% 95% at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0) 100%)',
             animation: 'float 6s ease-in-out infinite',
             mixBlendMode: 'screen'
           }}
@@ -443,6 +443,13 @@ const HeroXBrainer = () => {
                   btn.style.color = 'white';
                   console.log('🔄 Reset to normal SOLUTION');
                 }, letters.length * 50 + colors.length * 300 + 1000);
+                
+                // Scroll to solution section
+                const solutionSection = document.getElementById('solution');
+                if (solutionSection) {
+                  solutionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  console.log('✅ Scrolled to solution section');
+                }
               }}
               id="tech-adv-btn"
               onMouseEnter={(e) => {
@@ -527,6 +534,13 @@ const HeroXBrainer = () => {
                   btn.style.color = 'white';
                   console.log('🔄 Reset to normal TECH ADVANTAGE (mobile)');
                 }, letters.length * 80 + colors.length * 300 + 1000);
+                
+                // Scroll to solution section
+                const solutionSection = document.getElementById('solution');
+                if (solutionSection) {
+                  solutionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  console.log('✅ Scrolled to solution section (mobile)');
+                }
               }}
               id="tech-adv-mobile-btn"
               onMouseEnter={(e) => {
@@ -582,6 +596,13 @@ const HeroXBrainer = () => {
                   btn.style.color = 'white';
                   console.log('🔄 Reset to normal OUR EDGE');
                 }, letters.length * 40 + colors.length * 300 + 1000);
+                
+                // Scroll to edge section
+                const edgeSection = document.getElementById('edge');
+                if (edgeSection) {
+                  edgeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  console.log('✅ Scrolled to edge section');
+                }
               }}
               id="compliance-btn"
               onMouseEnter={(e) => {
@@ -637,6 +658,13 @@ const HeroXBrainer = () => {
                   btn.style.color = 'white';
                   console.log('🔄 Reset to normal OUR EDGE (mobile)');
                 }, letters.length * 100 + colors.length * 300 + 1000);
+                
+                // Scroll to edge section
+                const edgeSection = document.getElementById('edge');
+                if (edgeSection) {
+                  edgeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  console.log('✅ Scrolled to edge section (mobile)');
+                }
               }}
               id="compliance-mobile-btn"
               onMouseEnter={(e) => {
