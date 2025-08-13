@@ -102,98 +102,15 @@ const Index = () => {
                     className="fixed inset-0 bg-black z-[9999999]"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {/* Neural animations layer */}
+                    {/* Brain backdrop */}
                     <div className="absolute inset-0 z-0">
-                      <svg className="w-full h-full" viewBox="0 0 1920 1080">
-                        <defs>
-                          <linearGradient id="neuralFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 1.0}} />
-                            <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 1.0}} />
-                            <stop offset="100%" style={{stopColor: '#6C63FF', stopOpacity: 1.0}} />
-                          </linearGradient>
-                          <linearGradient id="neuralFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style={{stopColor: '#EC4899', stopOpacity: 1.0}} />
-                            <stop offset="50%" style={{stopColor: '#F472B6', stopOpacity: 1.0}} />
-                            <stop offset="100%" style={{stopColor: '#EC4899', stopOpacity: 1.0}} />
-                          </linearGradient>
-                          <linearGradient id="neuralFlow3" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 1.0}} />
-                            <stop offset="50%" style={{stopColor: '#60A5FA', stopOpacity: 1.0}} />
-                            <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 1.0}} />
-                          </linearGradient>
-                        </defs>
-                        
-                        {/* Bold flowing EEG waves */}
-                        <path
-                          d="M-50,200 L100,190 L200,220 L300,180 L400,210 L500,185 L600,225 L700,175 L800,215 L900,190 L1000,230 L1100,170 L1200,205 L1300,185 L1400,220 L1500,180 L1600,210 L1700,185 L1800,225 L1900,175 L2000,200"
-                          stroke="url(#neuralFlow1)"
-                          strokeWidth="6"
-                          fill="none"
-                          opacity="0.8"
-                        >
-                          <animateTransform
-                            attributeName="transform"
-                            type="translate"
-                            values="-200,0; 200,0; -200,0"
-                            dur="6s"
-                            repeatCount="indefinite"
-                          />
-                        </path>
-                        
-                        <path
-                          d="M-50,400 L100,420 L200,380 L300,430 L400,390 L500,425 L600,385 L700,440 L800,395 L900,420 L1000,380 L1100,435 L1200,390 L1300,425 L1400,385 L1500,440 L1600,395 L1700,420 L1800,380 L1900,435 L2000,400"
-                          stroke="url(#neuralFlow2)"
-                          strokeWidth="5"
-                          fill="none"
-                          opacity="0.7"
-                        >
-                          <animateTransform
-                            attributeName="transform"
-                            type="translate"
-                            values="200,0; -200,0; 200,0"
-                            dur="8s"
-                            repeatCount="indefinite"
-                          />
-                        </path>
-                        
-                        <path
-                          d="M-50,600 L100,590 L200,620 L300,580 L400,610 L500,585 L600,625 L700,575 L800,615 L900,590 L1000,630 L1100,570 L1200,605 L1300,585 L1400,620 L1500,580 L1600,610 L1700,585 L1800,625 L1900,575 L2000,600"
-                          stroke="url(#neuralFlow3)"
-                          strokeWidth="4"
-                          fill="none"
-                          opacity="0.6"
-                        >
-                          <animateTransform
-                            attributeName="transform"
-                            type="translate"
-                            values="0,0; 100,0; 0,0"
-                            dur="10s"
-                            repeatCount="indefinite"
-                          />
-                        </path>
-                        
-                        {/* Large pulsing neural nodes */}
-                        <circle cx="300" cy="300" r="8" fill="#6C63FF" opacity="0.8">
-                          <animate attributeName="r" values="6;12;6" dur="4s" repeatCount="indefinite" />
-                          <animate attributeName="opacity" values="0.6;1.0;0.6" dur="4s" repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="800" cy="450" r="7" fill="#EC4899" opacity="0.7">
-                          <animate attributeName="r" values="5;10;5" dur="5s" repeatCount="indefinite" />
-                          <animate attributeName="opacity" values="0.5;1.0;0.5" dur="5s" repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="1300" cy="250" r="9" fill="#3B82F6" opacity="0.8">
-                          <animate attributeName="r" values="7;14;7" dur="6s" repeatCount="indefinite" />
-                          <animate attributeName="opacity" values="0.6;1.0;0.6" dur="6s" repeatCount="indefinite" />
-                        </circle>
-                        
-                        {/* Connecting pathways */}
-                        <line x1="300" y1="300" x2="800" y2="450" stroke="#A855F7" strokeWidth="3" opacity="0.6">
-                          <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite" />
-                        </line>
-                        <line x1="800" y1="450" x2="1300" y2="250" stroke="#F472B6" strokeWidth="3" opacity="0.6">
-                          <animate attributeName="opacity" values="0.3;0.9;0.3" dur="4s" repeatCount="indefinite" />
-                        </line>
-                      </svg>
+                      <div 
+                        className="w-full h-full bg-cover bg-center bg-no-repeat opacity-20"
+                        style={{
+                          backgroundImage: `url('/lovable-uploads/e289f332-67c8-4420-919d-c7146bb726d9.png')`,
+                          filter: 'blur(1px) brightness(0.7) saturate(0.8)'
+                        }}
+                      />
                     </div>
                     
                     {/* Text overlay on top */}
@@ -203,20 +120,20 @@ const Index = () => {
                       </p>
                     </div>
                     
-                    {/* Menu dropdown - smaller and more compact */}
-                    <div 
-                      className="fixed top-16 right-4 w-48 sm:w-52 bg-black border border-white/60 rounded-lg shadow-2xl z-[99999999]"
-                      style={{
-                        contain: 'layout style',
-                        willChange: 'transform',
-                        isolation: 'isolate'
-                      }}
-                    >
+                {/* Menu dropdown - smaller and more compact for mobile */}
+                <div 
+                  className="fixed top-16 right-4 w-40 sm:w-48 md:w-52 bg-black border border-white/60 rounded-lg shadow-2xl z-[99999999]"
+                  style={{
+                    contain: 'layout style',
+                    willChange: 'transform',
+                    isolation: 'isolate'
+                  }}
+                >
                       <ul className="py-1">
                         {menuItems.map((item) => (
                           <li key={item.label}>
                             <button
-                              className="w-full text-left block px-3 sm:px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium touch-manipulation"
+                              className="w-full text-left block px-2 sm:px-3 md:px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-xs sm:text-sm font-medium touch-manipulation"
                               onClick={(e) => {
                                 console.log(`🚀 ${item.label} CLICKED - Starting letter animation`);
                                 
