@@ -181,7 +181,7 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 h-full flex items-center justify-start py-0 px-2 sm:px-8 lg:px-12 xl:px-16">
+      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-16 sm:py-0 px-2 sm:px-8 lg:px-12 xl:px-16">
         <div className="max-w-2xl lg:max-w-4xl xl:max-w-5xl relative z-15 mt-0 sm:mt-16 lg:mt-0">
           <h1 className="text-base sm:text-4xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-1 sm:mb-8 lg:mb-12" id="hero-title">
             <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
