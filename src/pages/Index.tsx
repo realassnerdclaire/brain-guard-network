@@ -90,7 +90,11 @@ const Index = () => {
                       (btn as any).hoverInterval = null;
                     }
                   }}
-                  className="text-white text-base sm:text-lg font-medium tracking-widest hover:text-white/80 transition-colors touch-manipulation min-h-[44px] flex items-center gap-2"
+                  className="text-white text-base sm:text-lg font-medium tracking-widest hover:text-white/80 transition-colors touch-manipulation min-h-[44px] flex items-center gap-2 border border-transparent rounded px-2 py-1"
+                  style={{
+                    borderColor: 'white',
+                    animation: 'menuBorderCycle 4s ease-in-out infinite'
+                  }}
                 >
                   <Menu size={20} />
                   <span className="menu-text">MENU</span>

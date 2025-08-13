@@ -322,5 +322,16 @@ All colors MUST be HSL.
       transform: scale(1);
     }
   }
+  
+  @keyframes menuBorderCycle {
+    0% { border-color: white; }
+    14.28% { border-color: #ffb3d9; } /* light pink */
+    28.56% { border-color: #ff80c7; } /* pink */
+    42.84% { border-color: #a855f7; } /* purple */
+    57.12% { border-color: #c4b5fd; } /* light purple */
+    71.4% { border-color: #93c5fd; } /* light blue */
+    85.68% { border-color: #3b82f6; } /* blue */
+    100% { border-color: white; }
+  }
   }
 }
