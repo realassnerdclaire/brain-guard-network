@@ -294,34 +294,251 @@ const Index = () => {
                 <p className="text-white/60 text-sm uppercase tracking-wider">What current pipelines lack</p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                <div className="border border-[#a855f7]/20 bg-[#a855f7]/5 rounded-xl p-6 text-center animate-fade-in">
+                <button 
+                  id="secure-transport-card"
+                  className="border border-[#a855f7]/20 bg-[#a855f7]/5 rounded-xl p-6 text-center animate-fade-in hover:border-[#a855f7]/40 hover:bg-[#a855f7]/10 transition-all duration-300 cursor-pointer hover:scale-105"
+                  onClick={(e) => {
+                    // Secure Transport click animation with popup
+                    console.log('🚀 SECURE TRANSPORT CLICKED - Starting letter animation with popup');
+                    
+                    const card = e.currentTarget;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = ['S', 'E', 'C', 'U', 'R', 'E', ' ', 'T', 'R', 'A', 'N', 'S', 'P', 'O', 'R', 'T'];
+                    
+                    // Add popup scale animation
+                    card.style.transform = 'scale(1.1)';
+                    card.style.zIndex = '50';
+                    card.style.transition = 'all 0.3s ease-out';
+                    card.style.boxShadow = '0 20px 60px rgba(168, 85, 247, 0.3)';
+                    
+                    const titleElement = card.querySelector('h3');
+                    if (titleElement) {
+                      titleElement.innerHTML = letters.map((letter, i) => 
+                        `<span id="secure-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      ).join('');
+                      
+                      // Animate each letter - ONLY COLOR CHANGE
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`secure-letter-${letterIndex}`);
+                            if (letterSpan && letter !== ' ') {
+                              letterSpan.style.color = color;
+                              console.log(`SECURE TRANSPORT Letter ${letter} -> ${color}`);
+                            }
+                          }, letterIndex * 50 + colorIndex * 300);
+                        });
+                      });
+                      
+                      // Reset card and title
+                      setTimeout(() => {
+                        titleElement.innerHTML = 'Secure Transport';
+                        card.style.transform = 'scale(1)';
+                        card.style.zIndex = '';
+                        card.style.boxShadow = '';
+                        console.log('🔄 Reset SECURE TRANSPORT card');
+                      }, letters.length * 50 + colors.length * 300 + 1000);
+                    }
+                  }}
+                  onMouseEnter={(e) => {
+                    const card = e.currentTarget;
+                    const interval = startHoverAnimation(card);
+                    (card as any).hoverInterval = interval;
+                  }}
+                  onMouseLeave={(e) => {
+                    const card = e.currentTarget;
+                    if ((card as any).hoverInterval) {
+                      stopHoverAnimation(card, (card as any).hoverInterval);
+                      (card as any).hoverInterval = null;
+                    }
+                  }}
+                >
                   <div className="w-12 h-12 bg-[#a855f7]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-[#a855f7] text-xl">🔒</span>
                   </div>
                   <h3 className="text-white font-bold mb-2">Secure Transport</h3>
                   <p className="text-white/60 text-sm">Missing encryption</p>
-                </div>
-                <div className="border border-[#a855f7]/20 bg-[#a855f7]/5 rounded-xl p-6 text-center animate-fade-in">
+                </button>
+                
+                <button 
+                  id="packet-checks-card"
+                  className="border border-[#a855f7]/20 bg-[#a855f7]/5 rounded-xl p-6 text-center animate-fade-in hover:border-[#a855f7]/40 hover:bg-[#a855f7]/10 transition-all duration-300 cursor-pointer hover:scale-105"
+                  onClick={(e) => {
+                    // Packet Checks click animation with popup
+                    console.log('🚀 PACKET CHECKS CLICKED - Starting letter animation with popup');
+                    
+                    const card = e.currentTarget;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = ['P', 'A', 'C', 'K', 'E', 'T', ' ', 'C', 'H', 'E', 'C', 'K', 'S'];
+                    
+                    // Add popup scale animation
+                    card.style.transform = 'scale(1.1)';
+                    card.style.zIndex = '50';
+                    card.style.transition = 'all 0.3s ease-out';
+                    card.style.boxShadow = '0 20px 60px rgba(168, 85, 247, 0.3)';
+                    
+                    const titleElement = card.querySelector('h3');
+                    if (titleElement) {
+                      titleElement.innerHTML = letters.map((letter, i) => 
+                        `<span id="packet-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      ).join('');
+                      
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`packet-letter-${letterIndex}`);
+                            if (letterSpan && letter !== ' ') {
+                              letterSpan.style.color = color;
+                            }
+                          }, letterIndex * 50 + colorIndex * 300);
+                        });
+                      });
+                      
+                      setTimeout(() => {
+                        titleElement.innerHTML = 'Packet Checks';
+                        card.style.transform = 'scale(1)';
+                        card.style.zIndex = '';
+                        card.style.boxShadow = '';
+                      }, letters.length * 50 + colors.length * 300 + 1000);
+                    }
+                  }}
+                  onMouseEnter={(e) => {
+                    const interval = startHoverAnimation(e.currentTarget);
+                    (e.currentTarget as any).hoverInterval = interval;
+                  }}
+                  onMouseLeave={(e) => {
+                    if ((e.currentTarget as any).hoverInterval) {
+                      stopHoverAnimation(e.currentTarget, (e.currentTarget as any).hoverInterval);
+                      (e.currentTarget as any).hoverInterval = null;
+                    }
+                  }}
+                >
                   <div className="w-12 h-12 bg-[#a855f7]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-[#a855f7] text-xl">📊</span>
                   </div>
                   <h3 className="text-white font-bold mb-2">Packet Checks</h3>
                   <p className="text-white/60 text-sm">Timing & signal errors</p>
-                </div>
-                <div className="border border-[#a855f7]/20 bg-[#a855f7]/5 rounded-xl p-6 text-center animate-fade-in">
+                </button>
+                
+                <button 
+                  id="access-control-card"
+                  className="border border-[#a855f7]/20 bg-[#a855f7]/5 rounded-xl p-6 text-center animate-fade-in hover:border-[#a855f7]/40 hover:bg-[#a855f7]/10 transition-all duration-300 cursor-pointer hover:scale-105"
+                  onClick={(e) => {
+                    // Access Control click animation with popup
+                    console.log('🚀 ACCESS CONTROL CLICKED - Starting letter animation with popup');
+                    
+                    const card = e.currentTarget;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = ['A', 'C', 'C', 'E', 'S', 'S', ' ', 'C', 'O', 'N', 'T', 'R', 'O', 'L'];
+                    
+                    // Add popup scale animation
+                    card.style.transform = 'scale(1.1)';
+                    card.style.zIndex = '50';
+                    card.style.transition = 'all 0.3s ease-out';
+                    card.style.boxShadow = '0 20px 60px rgba(168, 85, 247, 0.3)';
+                    
+                    const titleElement = card.querySelector('h3');
+                    if (titleElement) {
+                      titleElement.innerHTML = letters.map((letter, i) => 
+                        `<span id="access-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      ).join('');
+                      
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`access-letter-${letterIndex}`);
+                            if (letterSpan && letter !== ' ') {
+                              letterSpan.style.color = color;
+                            }
+                          }, letterIndex * 50 + colorIndex * 300);
+                        });
+                      });
+                      
+                      setTimeout(() => {
+                        titleElement.innerHTML = 'Access Control';
+                        card.style.transform = 'scale(1)';
+                        card.style.zIndex = '';
+                        card.style.boxShadow = '';
+                      }, letters.length * 50 + colors.length * 300 + 1000);
+                    }
+                  }}
+                  onMouseEnter={(e) => {
+                    const interval = startHoverAnimation(e.currentTarget);
+                    (e.currentTarget as any).hoverInterval = interval;
+                  }}
+                  onMouseLeave={(e) => {
+                    if ((e.currentTarget as any).hoverInterval) {
+                      stopHoverAnimation(e.currentTarget, (e.currentTarget as any).hoverInterval);
+                      (e.currentTarget as any).hoverInterval = null;
+                    }
+                  }}
+                >
                   <div className="w-12 h-12 bg-[#a855f7]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-[#a855f7] text-xl">👤</span>
                   </div>
                   <h3 className="text-white font-bold mb-2">Access Control</h3>
                   <p className="text-white/60 text-sm">Tied to user consent</p>
-                </div>
-                <div className="border border-[#a855f7]/20 bg-[#a855f7]/5 rounded-xl p-6 text-center animate-fade-in">
+                </button>
+                
+                <button 
+                  id="access-log-card"
+                  className="border border-[#a855f7]/20 bg-[#a855f7]/5 rounded-xl p-6 text-center animate-fade-in hover:border-[#a855f7]/40 hover:bg-[#a855f7]/10 transition-all duration-300 cursor-pointer hover:scale-105"
+                  onClick={(e) => {
+                    // Access Log click animation with popup
+                    console.log('🚀 ACCESS LOG CLICKED - Starting letter animation with popup');
+                    
+                    const card = e.currentTarget;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = ['A', 'C', 'C', 'E', 'S', 'S', ' ', 'L', 'O', 'G'];
+                    
+                    // Add popup scale animation
+                    card.style.transform = 'scale(1.1)';
+                    card.style.zIndex = '50';
+                    card.style.transition = 'all 0.3s ease-out';
+                    card.style.boxShadow = '0 20px 60px rgba(168, 85, 247, 0.3)';
+                    
+                    const titleElement = card.querySelector('h3');
+                    if (titleElement) {
+                      titleElement.innerHTML = letters.map((letter, i) => 
+                        `<span id="log-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      ).join('');
+                      
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`log-letter-${letterIndex}`);
+                            if (letterSpan && letter !== ' ') {
+                              letterSpan.style.color = color;
+                            }
+                          }, letterIndex * 50 + colorIndex * 300);
+                        });
+                      });
+                      
+                      setTimeout(() => {
+                        titleElement.innerHTML = 'Access Log';
+                        card.style.transform = 'scale(1)';
+                        card.style.zIndex = '';
+                        card.style.boxShadow = '';
+                      }, letters.length * 50 + colors.length * 300 + 1000);
+                    }
+                  }}
+                  onMouseEnter={(e) => {
+                    const interval = startHoverAnimation(e.currentTarget);
+                    (e.currentTarget as any).hoverInterval = interval;
+                  }}
+                  onMouseLeave={(e) => {
+                    if ((e.currentTarget as any).hoverInterval) {
+                      stopHoverAnimation(e.currentTarget, (e.currentTarget as any).hoverInterval);
+                      (e.currentTarget as any).hoverInterval = null;
+                    }
+                  }}
+                >
                   <div className="w-12 h-12 bg-[#a855f7]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-[#a855f7] text-xl">📝</span>
                   </div>
                   <h3 className="text-white font-bold mb-2">Access Log</h3>
                   <p className="text-white/60 text-sm">Permanent recording</p>
-                </div>
+                </button>
               </div>
 
               {/* Solution */}
