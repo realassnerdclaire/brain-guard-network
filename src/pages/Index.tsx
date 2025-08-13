@@ -142,13 +142,11 @@ const Index = () => {
                     
                 {/* Menu dropdown - smaller and more compact for mobile */}
                 <div 
-                  className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm rounded-lg shadow-2xl z-[99999999] menu-border-cycle"
+                  className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm rounded-lg shadow-2xl z-[99999999] white-neon-border"
                   style={{
                     contain: 'layout style',
                     willChange: 'transform',
-                    isolation: 'isolate',
-                    borderWidth: '4px',
-                    borderStyle: 'solid'
+                    isolation: 'isolate'
                   }}
                 >
                       <ul className="py-1">

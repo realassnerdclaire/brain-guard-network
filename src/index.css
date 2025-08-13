@@ -323,44 +323,13 @@ All colors MUST be HSL.
     }
   }
   
-  .menu-border-cycle {
-    animation: menuBorderCycle 1.4s linear infinite;
-    border-color: #ffffff;
-  }
-  
-  @keyframes menuBorderCycle {
-    0% { 
-      border-color: #ffffff; 
-      box-shadow: 0 0 20px #ffffff, inset 0 0 10px rgba(255,255,255,0.3);
-    }
-    14% { 
-      border-color: #ffb3d9; 
-      box-shadow: 0 0 20px #ffb3d9, inset 0 0 10px rgba(255,179,217,0.3);
-    }
-    28% { 
-      border-color: #ff80c7; 
-      box-shadow: 0 0 25px #ff80c7, inset 0 0 10px rgba(255,128,199,0.3);
-    }
-    42% { 
-      border-color: #a855f7; 
-      box-shadow: 0 0 30px #a855f7, inset 0 0 10px rgba(168,85,247,0.3);
-    }
-    57% { 
-      border-color: #c4b5fd; 
-      box-shadow: 0 0 25px #c4b5fd, inset 0 0 10px rgba(196,181,253,0.3);
-    }
-    71% { 
-      border-color: #60a5fa; 
-      box-shadow: 0 0 30px #60a5fa, inset 0 0 10px rgba(96,165,250,0.3);
-    }
-    85% { 
-      border-color: #0ea5e9; 
-      box-shadow: 0 0 35px #0ea5e9, inset 0 0 10px rgba(14,165,233,0.3);
-    }
-    100% { 
-      border-color: #ffffff; 
-      box-shadow: 0 0 20px #ffffff, inset 0 0 10px rgba(255,255,255,0.3);
-    }
+  .white-neon-border {
+    border: 3px solid #ffffff;
+    box-shadow: 
+      0 0 10px #ffffff,
+      0 0 20px #ffffff,
+      0 0 30px #ffffff,
+      inset 0 0 10px rgba(255,255,255,0.2);
   }
   }
 }
