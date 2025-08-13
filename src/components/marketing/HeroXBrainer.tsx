@@ -181,7 +181,7 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-20 sm:py-0 px-3 sm:px-8 lg:px-12 xl:px-16">
+      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-32 sm:py-0 px-3 sm:px-8 lg:px-12 xl:px-16">
         <div className="max-w-2xl lg:max-w-4xl xl:max-w-5xl relative z-15 mt-0 sm:mt-16 lg:mt-0">
           <h1 className="text-lg sm:text-4xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-2 sm:mb-8 lg:mb-12" id="hero-title">
             <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
@@ -191,8 +191,8 @@ const HeroXBrainer = () => {
           </p>
         </div>
         
-        {/* Action buttons - closer to content for better proportions */}
-        <div className="absolute bottom-32 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-3 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-1 sm:gap-4 lg:gap-6">
+        {/* Action buttons - brought significantly up */}
+        <div className="absolute bottom-52 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-3 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-1 sm:gap-4 lg:gap-6">
           <button 
             className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-3 sm:px-8 lg:px-10 xl:px-12 py-1.5 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
@@ -242,8 +242,8 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Interactive navigation labels at bottom - adjusted for better proportions */}
-      <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 xl:bottom-28 left-0 right-0 z-[9999] pointer-events-none">
+      {/* Interactive navigation labels - brought significantly up */}
+      <div className="absolute bottom-32 sm:bottom-20 lg:bottom-24 xl:bottom-28 left-0 right-0 z-[9999] pointer-events-none">
         <div className="container px-2 sm:px-8 lg:px-12 xl:px-16 pointer-events-none">
           <div className="flex items-center justify-center gap-1 sm:gap-6 lg:gap-10 xl:gap-16 flex-wrap pointer-events-auto">
             <button 
