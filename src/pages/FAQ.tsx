@@ -143,7 +143,7 @@ const FAQ = () => {
       </div>
 
       {/* Main Content - Futuristic design */}
-      <div className="relative z-20 min-h-screen flex flex-col pt-32 px-8 pb-16">
+      <div className="relative z-20 min-h-screen flex flex-col pt-48 px-8 pb-16">
         <div className="max-w-4xl mx-auto w-full">
           {/* Hero Section - Smaller headline */}
           <div className="text-center mb-12">
