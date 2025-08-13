@@ -218,36 +218,42 @@ const HeroXBrainer = () => {
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group"
               onClick={(e) => {
                 e.preventDefault();
+                console.log('PROBLEM clicked!'); // Debug log
                 const element = document.getElementById('problem');
                 if (element) {
-                  // Gradient animation: light pink -> purple -> blue
                   const target = e.currentTarget;
                   
-                  // Phase 1: Light Pink (0-100ms)
-                  target.style.color = '#ffb3e6';
-                  target.style.textShadow = '0 0 20px #ffb3e6, 0 0 40px #ffb3e6, 0 0 60px #ffb3e6';
-                  target.style.transform = 'scale(1.05)';
+                  // Phase 1: Bright Light Pink
+                  target.style.transition = 'all 0.2s ease';
+                  target.style.color = '#ff80d4';
+                  target.style.textShadow = '0 0 30px #ff80d4, 0 0 60px #ff80d4, 0 0 90px #ff80d4';
+                  target.style.transform = 'scale(1.2)';
+                  console.log('Phase 1: Light Pink');
                   
                   setTimeout(() => {
-                    // Phase 2: Purple (100-200ms)
-                    target.style.color = '#a855f7';
-                    target.style.textShadow = '0 0 25px #a855f7, 0 0 50px #a855f7, 0 0 75px #a855f7';
-                    target.style.transform = 'scale(1.1)';
-                  }, 100);
-                  
-                  setTimeout(() => {
-                    // Phase 3: Blue (200-300ms)
-                    target.style.color = '#00d4ff';
-                    target.style.textShadow = '0 0 30px #00d4ff, 0 0 60px #00d4ff, 0 0 90px #00d4ff';
-                    target.style.transform = 'scale(1.15)';
+                    // Phase 2: Bright Purple
+                    target.style.color = '#9d4edd';
+                    target.style.textShadow = '0 0 35px #9d4edd, 0 0 70px #9d4edd, 0 0 105px #9d4edd';
+                    target.style.transform = 'scale(1.3)';
+                    console.log('Phase 2: Purple');
                   }, 200);
                   
                   setTimeout(() => {
-                    // Reset (300ms+)
+                    // Phase 3: Bright Cyan Blue
+                    target.style.color = '#00ffff';
+                    target.style.textShadow = '0 0 40px #00ffff, 0 0 80px #00ffff, 0 0 120px #00ffff';
+                    target.style.transform = 'scale(1.4)';
+                    console.log('Phase 3: Cyan Blue');
+                  }, 400);
+                  
+                  setTimeout(() => {
+                    // Reset with smooth transition
+                    target.style.transition = 'all 0.5s ease';
                     target.style.color = '';
                     target.style.textShadow = '';
                     target.style.transform = '';
-                  }, 500);
+                    console.log('Reset');
+                  }, 800);
                   
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
