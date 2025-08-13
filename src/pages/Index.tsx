@@ -97,15 +97,22 @@ const Index = () => {
                   <span className="menu-text">MENU</span>
                 </button>
                 
-                {/* Dropdown menu */}
+                {/* Dropdown menu with backdrop */}
                 {isMenuOpen && (
-                  <div 
-                    className="absolute top-full right-0 mt-2 w-56 sm:w-64 bg-black/95 border border-white/20 rounded-lg shadow-xl z-[9999] backdrop-blur-sm"
-                    style={{
-                      contain: 'layout style',
-                      willChange: 'transform'
-                    }}
-                  >
+                  <>
+                    {/* Backdrop to cover all content */}
+                    <div 
+                      className="fixed inset-0 bg-black/50 z-[9998]"
+                      onClick={() => setIsMenuOpen(false)}
+                    />
+                    {/* Menu dropdown */}
+                    <div 
+                      className="absolute top-full right-0 mt-2 w-56 sm:w-64 bg-black border border-white/20 rounded-lg shadow-xl z-[9999]"
+                      style={{
+                        contain: 'layout style',
+                        willChange: 'transform'
+                      }}
+                    >
                     <ul className="py-2">
                       {menuItems.map((item) => (
                         <li key={item.label}>
@@ -201,8 +208,9 @@ const Index = () => {
                           </button>
                         </li>
                       ))}
-                    </ul>
-                  </div>
+                     </ul>
+                    </div>
+                  </>
                 )}
               </div>
             </div>
