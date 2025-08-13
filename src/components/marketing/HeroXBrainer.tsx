@@ -276,51 +276,32 @@ const HeroXBrainer = () => {
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['P', 'R', 'O', 'B', 'L', 'E', 'M'];
                 
-                // Create letter spans with NO EDGES - pure blur effect
+                // Create letter spans - LETTERS ONLY, no containers
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="letter-${i}" style="display: inline-block; transition: all 0.4s ease; padding: 0; margin: 0 1px; border: none; background: none; border-radius: 0;">${letter}</span>`
+                  `<span id="letter-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter}</span>`
                 ).join('');
                 
-                console.log('✅ Letter spans created with NO edges');
+                console.log('✅ Letter spans created - letters only');
                 
-                // Animate each letter through color sequence with PURE BLUR - no backgrounds or borders
+                // Animate each letter - ONLY COLOR CHANGE
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
                       const letterSpan = document.getElementById(`letter-${letterIndex}`);
                       if (letterSpan) {
+                        // ONLY change color - nothing else
                         letterSpan.style.color = color;
-                        letterSpan.style.textShadow = `0 0 ${20 + colorIndex * 15}px ${color}, 0 0 ${40 + colorIndex * 25}px ${color}, 0 0 ${60 + colorIndex * 35}px ${color}`;
-                        letterSpan.style.transform = `scale(${1.05 + colorIndex * 0.05})`;
-                        letterSpan.style.filter = `blur(${colorIndex * 0.8}px) brightness(${1.2 + colorIndex * 0.2})`;
-                        // NO background, NO borders, NO box-shadow - pure glow effect only
-                        letterSpan.style.background = 'none';
-                        letterSpan.style.border = 'none';
-                        letterSpan.style.boxShadow = 'none';
-                        letterSpan.style.backdropFilter = 'none';
-                        letterSpan.style.borderRadius = '0';
-                        
-                        console.log(`Letter ${letter} (${letterIndex}) -> Phase ${colorIndex + 1}: ${color}`);
+                        console.log(`Letter ${letter} -> ${color}`);
                       }
                     }, letterIndex * 100 + colorIndex * 300);
                   });
                 });
                 
-                // COMPLETE RESET - remove ALL styling to prevent leftover edges
+                // Reset - back to normal white letters
                 setTimeout(() => {
                   btn.innerHTML = 'PROBLEM';
-                  btn.style.cssText = ''; // Complete style reset
                   btn.style.color = 'white';
-                  btn.style.textShadow = 'none';
-                  btn.style.transform = 'scale(1)';
-                  btn.style.filter = 'none';
-                  btn.style.background = 'transparent';
-                  btn.style.border = 'none';
-                  btn.style.boxShadow = 'none';
-                  btn.style.backdropFilter = 'none';
-                  btn.style.borderRadius = '';
-                  btn.className = 'text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer bg-transparent border-none p-4 hover:bg-white/10 rounded z-[99999] relative';
-                  console.log('🔄 COMPLETE reset - all styles cleared');
+                  console.log('🔄 Reset to normal PROBLEM');
                 }, letters.length * 100 + colors.length * 300 + 1000);
                 
                 // Scroll to problem section
