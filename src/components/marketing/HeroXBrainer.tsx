@@ -227,47 +227,55 @@ const HeroXBrainer = () => {
                   target.classList.remove('animate-pulse');
                   target.style.animation = 'none';
                   
-                  // PHASE 1: DRAMATIC Light Pink + Edge blur
-                  target.style.transition = 'all 0.4s ease-out';
-                  target.style.color = '#ff1493'; // Hot pink - much more dramatic
-                  target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
-                  target.style.transform = 'scale(1.3)';
-                  target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
-                  target.style.borderRadius = '8px';
-                  target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
-                  console.log('🌸 PHASE 1: DRAMATIC Hot Pink with edge blur applied');
+                  // PHASE 1: Start with LIGHT PINK
+                  target.style.transition = 'all 0.5s ease-out';
+                  target.style.color = '#ffb3d9'; // Light pink first
+                  target.style.textShadow = '0 0 30px #ffb3d9, 0 0 60px #ffb3d9, 0 0 90px #ffb3d9';
+                  target.style.transform = 'scale(1.2)';
+                  target.style.filter = 'brightness(1.4) saturate(1.6)';
+                  target.style.borderRadius = '12px';
+                  target.style.background = 'rgba(255, 179, 217, 0.1)';
+                  target.style.boxShadow = '0 0 40px rgba(255, 179, 217, 0.3), inset 0 0 30px rgba(255, 179, 217, 0.2)';
+                  target.style.backdropFilter = 'blur(10px)';
+                  console.log('🌸 PHASE 1: Light Pink applied');
                   
                   setTimeout(() => {
-                    // PHASE 2: DRAMATIC Purple + stronger blur
-                    target.style.color = '#8a2be2'; // Blue violet - more dramatic
-                    target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
-                    target.style.transform = 'scale(1.4)';
-                    target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
-                    target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
-                    console.log('💜 PHASE 2: DRAMATIC Purple with stronger blur applied');
-                  }, 400);
+                    // PHASE 2: Transition to PURPLE  
+                    target.style.color = '#a855f7'; // Purple transition
+                    target.style.textShadow = '0 0 40px #a855f7, 0 0 80px #a855f7, 0 0 120px #a855f7';
+                    target.style.transform = 'scale(1.35)';
+                    target.style.filter = 'brightness(1.5) saturate(1.8)';
+                    target.style.background = 'rgba(168, 85, 247, 0.15)';
+                    target.style.boxShadow = '0 0 50px rgba(168, 85, 247, 0.4), inset 0 0 40px rgba(168, 85, 247, 0.25)';
+                    target.style.backdropFilter = 'blur(15px)';
+                    console.log('💜 PHASE 2: Purple transition applied');
+                  }, 500);
                   
                   setTimeout(() => {
-                    // PHASE 3: DRAMATIC Electric Blue + max blur
-                    target.style.color = '#0080ff'; // Electric blue - super dramatic
-                    target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
-                    target.style.transform = 'scale(1.5)';
-                    target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
-                    target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
-                    console.log('💙 PHASE 3: DRAMATIC Electric Blue with max blur applied');
-                  }, 800);
+                    // PHASE 3: Final BLUE (optional third phase)
+                    target.style.color = '#3b82f6'; // Blue
+                    target.style.textShadow = '0 0 50px #3b82f6, 0 0 100px #3b82f6, 0 0 150px #3b82f6';
+                    target.style.transform = 'scale(1.45)';
+                    target.style.filter = 'brightness(1.6) saturate(2.0)';
+                    target.style.background = 'rgba(59, 130, 246, 0.15)';
+                    target.style.boxShadow = '0 0 60px rgba(59, 130, 246, 0.5), inset 0 0 50px rgba(59, 130, 246, 0.3)';
+                    target.style.backdropFilter = 'blur(20px)';
+                    console.log('💙 PHASE 3: Blue applied');
+                  }, 1000);
                   
                   setTimeout(() => {
-                    // Reset
-                    target.style.transition = 'all 0.8s ease-out';
+                    // Reset with smooth transition
+                    target.style.transition = 'all 1s ease-out';
                     target.style.color = 'white';
                     target.style.textShadow = 'none';
                     target.style.transform = 'scale(1)';
                     target.style.filter = 'none';
+                    target.style.background = 'transparent';
                     target.style.boxShadow = 'none';
+                    target.style.backdropFilter = 'none';
                     target.style.borderRadius = '';
-                    console.log('🔄 Reset to white with clear edges');
-                  }, 1600);
+                    console.log('🔄 Reset to white with smooth edges');
+                  }, 2000);
                   
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
