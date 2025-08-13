@@ -214,7 +214,7 @@ const Index = () => {
           {/* 1. Problem Section */}
           <section 
             id="problem" 
-            className="min-h-screen md:min-h-[70vh] bg-black flex items-center justify-center py-8 md:py-8 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-black flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
             style={{
               contain: 'layout style paint',
               willChange: 'transform',
@@ -302,41 +302,41 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-6 sm:px-8 lg:px-12">
               <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 animate-fade-in">
+                <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-white mb-4 md:mb-4 animate-fade-in">
                   The Problem
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#6C63FF] to-[#A855F7] mx-auto mb-8 md:mb-12 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#6C63FF] to-[#A855F7] mx-auto mb-8 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-8 text-left max-w-4xl mx-auto">
+                <div className="space-y-4 md:space-y-4 text-left max-w-4xl mx-auto">
                   <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-                    <p className="text-base md:text-lg text-white/90 leading-relaxed mb-3 md:mb-4">
+                    <p className="text-base md:text-base text-white/90 leading-relaxed mb-3 md:mb-2">
                       EEG and BCI devices are leaving the lab for clinics, homes, and consumer environments.
                     </p>
                   </div>
                   
                   <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
-                    <p className="text-base md:text-lg text-white/90 leading-relaxed mb-4 md:mb-6">
+                    <p className="text-base md:text-base text-white/90 leading-relaxed mb-4 md:mb-3">
                       But raw brain data is among the most sensitive personal information. And today's security measures fail to protect it in real time.
                     </p>
                   </div>
                   
-                  <div className="bg-black/40 border border-[#7C3AED]/30 rounded-2xl p-4 md:p-6 animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.6s'}}>
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 flex items-center gap-3">
-                      <span className="text-[#6C63FF] text-xl md:text-2xl animate-pulse">⚠️</span>
+                  <div className="bg-black/40 border border-[#7C3AED]/30 rounded-2xl p-4 md:p-4 animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.6s'}}>
+                    <h3 className="text-lg md:text-lg font-bold text-white mb-3 md:mb-3 flex items-center gap-3">
+                      <span className="text-[#6C63FF] text-xl md:text-xl animate-pulse">⚠️</span>
                       Unsecured pipelines risk:
                     </h3>
-                    <div className="space-y-2 md:space-y-3">
-                      <div className="flex items-start gap-2 md:gap-4 p-2 md:p-3 bg-[#7C3AED]/20 rounded-lg border border-[#7C3AED]/20 hover:border-[#7C3AED]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#6C63FF] text-base md:text-lg animate-pulse">🔓</span>
-                        <span className="text-sm md:text-base text-white/90"><strong>Data breaches</strong> exposing neurological health information</span>
+                    <div className="space-y-2 md:space-y-2">
+                      <div className="flex items-start gap-2 md:gap-3 p-2 md:p-2 bg-[#7C3AED]/20 rounded-lg border border-[#7C3AED]/20 hover:border-[#7C3AED]/40 transition-all duration-300 hover-scale">
+                        <span className="text-[#6C63FF] text-base md:text-base animate-pulse">🔓</span>
+                        <span className="text-sm md:text-sm text-white/90"><strong>Data breaches</strong> exposing neurological health information</span>
                       </div>
-                      <div className="flex items-start gap-2 md:gap-4 p-2 md:p-3 bg-[#9333EA]/20 rounded-lg border border-[#9333EA]/20 hover:border-[#9333EA]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#9333EA] text-base md:text-lg animate-pulse">⏸️</span>
-                        <span className="text-sm md:text-base text-white/90"><strong>Regulatory delays</strong> that stall trials and market approvals</span>
+                      <div className="flex items-start gap-2 md:gap-3 p-2 md:p-2 bg-[#9333EA]/20 rounded-lg border border-[#9333EA]/20 hover:border-[#9333EA]/40 transition-all duration-300 hover-scale">
+                        <span className="text-[#9333EA] text-base md:text-base animate-pulse">⏸️</span>
+                        <span className="text-sm md:text-sm text-white/90"><strong>Regulatory delays</strong> that stall trials and market approvals</span>
                       </div>
-                      <div className="flex items-start gap-2 md:gap-4 p-2 md:p-3 bg-[#4338CA]/20 rounded-lg border border-[#4338CA]/20 hover:border-[#4338CA]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#4338CA] text-base md:text-lg animate-pulse">📊</span>
-                        <span className="text-sm md:text-base text-white/90"><strong>Research integrity</strong> loss from tampering or unauthorized access</span>
+                      <div className="flex items-start gap-2 md:gap-3 p-2 md:p-2 bg-[#4338CA]/20 rounded-lg border border-[#4338CA]/20 hover:border-[#4338CA]/40 transition-all duration-300 hover-scale">
+                        <span className="text-[#4338CA] text-base md:text-base animate-pulse">📊</span>
+                        <span className="text-sm md:text-sm text-white/90"><strong>Research integrity</strong> loss from tampering or unauthorized access</span>
                       </div>
                     </div>
                   </div>
@@ -489,7 +489,7 @@ const Index = () => {
           {/* 3. Solution Section */}
           <section 
             id="solution" 
-            className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex items-center justify-center py-8 md:py-16 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-gradient-to-b from-gray-900 to-black flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
           >
             {/* Smooth flowing EEG background for Solution section */}
             <div className="absolute inset-0 opacity-100">
@@ -557,12 +557,12 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-8 animate-fade-in">
+                <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-white mb-4 md:mb-4 animate-fade-in">
                   The Solution
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] mx-auto mb-8 md:mb-16 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] mx-auto mb-8 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-8 text-left max-w-4xl mx-auto">
+                <div className="space-y-4 md:space-y-4 text-left max-w-4xl mx-auto">
                   {/* Futuristic neural shield container */}
                   <div className="relative group animate-scale-in" style={{animationDelay: '0.2s'}}>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/20 to-[#9333EA]/20 rounded-[2rem] transform -rotate-1 group-hover:-rotate-2 transition-transform duration-700"></div>

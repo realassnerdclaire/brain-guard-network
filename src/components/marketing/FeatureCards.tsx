@@ -23,16 +23,16 @@ const FEATURES = [
 
 const FeatureCards = () => {
   return (
-    <section id="features" className="container py-20 md:py-20 lg:py-24 px-6 sm:px-8 lg:px-12">
+    <section id="features" className="container py-20 md:py-12 lg:py-16 px-6 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-3xl font-semibold sm:text-4xl md:text-3xl lg:text-4xl">Security baked into the signal flow</h2>
+        <h2 className="text-3xl font-semibold sm:text-4xl md:text-3xl lg:text-3xl">Security baked into the signal flow</h2>
         <p className="mt-3 text-muted-foreground">
-          We don’t decode thoughts—we defend them. XBrainer turns raw brainwaves into a trusted asset.
+          We don't decode thoughts—we defend them. XBrainer turns raw brainwaves into a trusted asset.
         </p>
       </div>
-      <div className="mt-16 md:mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+      <div className="mt-16 md:mt-8 grid gap-8 md:gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {FEATURES.map(({ title, description, Icon }) => (
-          <article key={title} className="rounded-xl border bg-card p-8 md:p-6 lg:p-8 shadow-elegant hover-scale">
+          <article key={title} className="rounded-xl border bg-card p-8 md:p-4 lg:p-6 shadow-elegant hover-scale">
             <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-md bg-gradient-primary text-primary-foreground shadow-glow">
               <Icon className="h-5 w-5" />
             </div>
