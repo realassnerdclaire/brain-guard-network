@@ -32,52 +32,49 @@ const ProblemSection = () => {
             </p>
           </div>
 
-          {/* Warning section - full width container */}
-          <div className="bg-black/30 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10 max-w-5xl mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-12">
-              <div className="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-yellow-400" />
+          {/* Warning section - exactly matching the screenshot */}
+          <div className="bg-black/50 backdrop-blur-sm rounded-3xl p-10 border border-white/20 max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-10">
+              <div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                <AlertTriangle className="w-5 h-5 text-yellow-400" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-medium text-yellow-400">Unsecured pipelines risk:</h2>
+              <h2 className="text-2xl font-semibold text-yellow-400">Unsecured pipelines risk:</h2>
             </div>
             
-            {/* Risk items - stacked vertically with full width */}
+            {/* Risk items - exactly as shown in screenshot */}
             <div className="space-y-6">
-              <div className="flex items-center gap-6 p-6 bg-purple-900/40 rounded-2xl border border-purple-400/30 w-full">
-                <div className="w-12 h-12 rounded-xl bg-purple-500/30 flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-6 h-6 text-purple-300" />
+              {/* Purple box with shield icon */}
+              <div className="bg-purple-900/60 rounded-2xl p-6 border border-purple-500/30 flex items-center gap-6">
+                <div className="w-16 h-16 bg-purple-600/40 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-8 h-8 text-purple-200" />
                 </div>
-                <div className="text-left flex-1">
-                  <h3 className="font-normal text-white text-lg md:text-xl leading-relaxed">
-                    Data breaches that could expose neurological health information
-                  </h3>
-                </div>
+                <p className="text-white text-lg font-medium">
+                  Data breaches that could expose neurological health information
+                </p>
               </div>
               
-              <div className="flex items-center gap-6 p-6 bg-blue-900/40 rounded-2xl border border-blue-400/30 w-full">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/30 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+              {/* Blue box with X icon */}
+              <div className="bg-blue-900/60 rounded-2xl p-6 border border-blue-500/30 flex items-center gap-6">
+                <div className="w-16 h-16 bg-blue-600/40 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-8 h-8 text-blue-200" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <div className="text-left flex-1">
-                  <h3 className="font-normal text-white text-lg md:text-xl leading-relaxed">
-                    Regulatory delays blocking clinical trials and market launches
-                  </h3>
-                </div>
+                <p className="text-white text-lg font-medium">
+                  Regulatory delays blocking clinical trials and market launches
+                </p>
               </div>
               
-              <div className="flex items-center gap-6 p-6 bg-green-900/40 rounded-2xl border border-green-400/30 w-full">
-                <div className="w-12 h-12 rounded-xl bg-green-500/30 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              {/* Green box with chart icon */}
+              <div className="bg-green-900/60 rounded-2xl p-6 border border-green-500/30 flex items-center gap-6">
+                <div className="w-16 h-16 bg-green-600/40 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-8 h-8 text-green-200" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                   </svg>
                 </div>
-                <div className="text-left flex-1">
-                  <h3 className="font-normal text-white text-lg md:text-xl leading-relaxed">
-                    Loss of research integrity due to tampering or unauthorized access
-                  </h3>
-                </div>
+                <p className="text-white text-lg font-medium">
+                  Loss of research integrity due to tampering or unauthorized access
+                </p>
               </div>
             </div>
           </div>
