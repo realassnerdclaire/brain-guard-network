@@ -79,6 +79,25 @@ const Layout = ({ children }: LayoutProps) => {
                   const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                   const letters = ['M', 'E', 'N', 'U'];
                   
+                  // Animate the menu icon
+                  const menuIcon = btn.querySelector('svg');
+                  if (menuIcon) {
+                    colors.forEach((color, colorIndex) => {
+                      setTimeout(() => {
+                        if (menuIcon) {
+                          menuIcon.style.color = color;
+                        }
+                      }, colorIndex * 30);
+                    });
+                    
+                    // Reset icon color after animation
+                    setTimeout(() => {
+                      if (menuIcon) {
+                        menuIcon.style.color = 'white';
+                      }
+                    }, colors.length * 30 + 100);
+                  }
+                  
                   // Create letter spans - same as navigation buttons
                   const textSpan = btn.querySelector('.menu-text');
                   if (textSpan) {
