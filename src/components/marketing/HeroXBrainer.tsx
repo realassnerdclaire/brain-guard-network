@@ -164,11 +164,11 @@ const HeroXBrainer = () => {
       </div>
 
       {/* Enhanced futuristic neon brain - foreground layer */}
-      <div className="absolute right-0 sm:right-0 top-1/3 sm:top-1/2 -translate-y-4 w-3/5 sm:w-2/5 h-[50vh] sm:h-[65vh] z-10">
+      <div className="absolute right-0 top-1/2 -translate-y-4 w-2/5 h-[65vh] z-10">
         <img
           src={futuristicBrain}
           alt="Futuristic translucent brain with neural pathways"
-          className="w-full h-full object-cover opacity-35 sm:opacity-40"
+          className="w-full h-full object-cover opacity-40"
           loading="eager"
           decoding="async"
           style={{
