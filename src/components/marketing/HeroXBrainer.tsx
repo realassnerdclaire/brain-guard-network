@@ -8,27 +8,6 @@ const HeroXBrainer = () => {
   console.log("🎨 HeroXBrainer component rendering with color animation!");
   return (
     <section className="relative h-screen bg-black overflow-hidden flex flex-col justify-center sm:justify-start">
-      {/* XBrainer AI logo and company name - responsive positioning */}
-      <div className="absolute top-2 left-2 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-20 flex items-center gap-1 sm:gap-4 lg:gap-6">
-        <img 
-          src="/lovable-uploads/a84358e6-b8f3-4172-a059-3c05cad36874.png" 
-          alt="XBrainer AI logo" 
-          className="h-10 sm:h-12 lg:h-16 w-auto mix-blend-screen opacity-90 rounded-lg sm:rounded-2xl" 
-          style={{
-            filter: 'blur(0.1px)',
-            maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
-            WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)'
-          }}
-        />
-        <div className="flex flex-col">
-          <span className="text-xl sm:text-3xl lg:text-5xl font-bold tracking-tight leading-tight" style={{color: '#ffffff'}}>
-            XBrainer AI
-          </span>
-          <span className="text-sm sm:text-base lg:text-xl font-medium" style={{color: 'rgba(255, 255, 255, 0.7)'}}>
-            Securing Neural Data in Real Time
-          </span>
-        </div>
-      </div>
       
       
       {/* EEG stream signals across entire page - background layer */}
