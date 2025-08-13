@@ -190,7 +190,7 @@ const HeroXBrainer = () => {
           </p>
         </div>
         
-        <div className="absolute bottom-24 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-4">
+        <div className="absolute bottom-32 sm:bottom-40 lg:bottom-48 right-4 sm:right-8 lg:right-16 flex flex-col gap-4">
           <Button 
             size="lg" 
             variant="outline" 
