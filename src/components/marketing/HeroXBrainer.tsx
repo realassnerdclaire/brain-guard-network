@@ -215,24 +215,35 @@ const HeroXBrainer = () => {
         <div className="container px-4">
           <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap">
             <div 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer hover:text-white/80 transition-all duration-300 group"
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group"
               onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById('problem');
                 if (element) {
+                  // Add pink neon flash effect
+                  e.currentTarget.style.color = '#ff1493';
+                  e.currentTarget.style.textShadow = '0 0 20px #ff1493, 0 0 40px #ff1493, 0 0 60px #ff1493';
+                  e.currentTarget.style.transform = 'scale(1.1)';
+                  
+                  setTimeout(() => {
+                    e.currentTarget.style.color = '';
+                    e.currentTarget.style.textShadow = '';
+                    e.currentTarget.style.transform = '';
+                  }, 300);
+                  
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#a855f7';
+                e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '';
+                e.currentTarget.style.textShadow = '';
+              }}
             >
-              <span 
-                className="relative inline-block transition-all duration-500 hover:text-[#a855f7] hover:drop-shadow-[0_0_10px_#a855f7] active:text-[#ff1493] active:drop-shadow-[0_0_20px_#ff1493] active:scale-110"
-                style={{
-                  textShadow: '0 0 0 transparent',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                }}
-              >
-                PROBLEM
-              </span>
+              PROBLEM
             </div>
             <div className="text-white text-sm sm:text-base lg:text-lg font-medium">URGENCY</div>
             <div className="text-white text-sm sm:text-base lg:text-lg font-medium hidden sm:block">TECHNICAL ADVANTAGE</div>
