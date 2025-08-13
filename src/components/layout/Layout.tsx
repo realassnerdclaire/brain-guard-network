@@ -85,7 +85,7 @@ const Layout = ({ children }: LayoutProps) => {
                       `<span id="menu-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter}</span>`
                     ).join('');
                     
-                    // Same fast animation as navigation buttons
+                    // Same fast animation as navigation buttons - ONE cycle only
                     letters.forEach((letter, letterIndex) => {
                       colors.forEach((color, colorIndex) => {
                         setTimeout(() => {
@@ -93,15 +93,17 @@ const Layout = ({ children }: LayoutProps) => {
                           if (letterSpan) {
                             letterSpan.style.color = color;
                           }
-                        }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM button
+                        }, letterIndex * 10 + colorIndex * 30);
                       });
                     });
                     
-                    // Reset - same timing as navigation buttons
+                    // Reset after ONE complete cycle
                     setTimeout(() => {
-                      textSpan.innerHTML = 'MENU';
-                      (textSpan as HTMLElement).style.color = 'white !important';
-                    }, letters.length * 10 + colors.length * 30 + 50);
+                      if (textSpan) {
+                        textSpan.innerHTML = 'MENU';
+                        (textSpan as HTMLElement).style.color = 'white';
+                      }
+                    }, letters.length * 10 + colors.length * 30 + 100);
                   }
                   
                   setIsMenuOpen(!isMenuOpen);
