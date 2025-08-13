@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import futuristicBrain from "@/assets/futuristic-brain-correct.png";
-import { animateLetters } from "@/utils/letterAnimation";
+import { animateLetters, startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 const HeroXBrainer = () => {
   console.log("HeroXBrainer rendering - should have NO background images or components");
@@ -192,22 +192,52 @@ const HeroXBrainer = () => {
         </div>
         
         <div className="absolute bottom-32 sm:bottom-40 lg:bottom-48 right-4 sm:right-8 lg:right-16 flex flex-col gap-4">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="rounded-full border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-6 sm:px-8 py-2 sm:py-3 touch-manipulation text-sm sm:text-base"
-            asChild
+          <button 
+            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-6 sm:px-8 py-2 sm:py-3 touch-manipulation text-sm sm:text-base font-medium cursor-pointer transition-all duration-300"
+            onMouseEnter={(e) => {
+              const btn = e.currentTarget;
+              const interval = startHoverAnimation(btn);
+              (btn as any).hoverInterval = interval;
+            }}
+            onMouseLeave={(e) => {
+              const btn = e.currentTarget;
+              if ((btn as any).hoverInterval) {
+                stopHoverAnimation(btn, (btn as any).hoverInterval);
+                (btn as any).hoverInterval = null;
+              }
+            }}
+            onClick={() => {
+              const ctaSection = document.getElementById('cta');
+              if (ctaSection) {
+                ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
           >
-            <a href="#cta">JOIN THE WAITLIST</a>
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="rounded-full border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-6 sm:px-8 py-2 sm:py-3 touch-manipulation text-sm sm:text-base"
-            asChild
+            JOIN THE WAITLIST
+          </button>
+          <button 
+            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-6 sm:px-8 py-2 sm:py-3 touch-manipulation text-sm sm:text-base font-medium cursor-pointer transition-all duration-300"
+            onMouseEnter={(e) => {
+              const btn = e.currentTarget;
+              const interval = startHoverAnimation(btn);
+              (btn as any).hoverInterval = interval;
+            }}
+            onMouseLeave={(e) => {
+              const btn = e.currentTarget;
+              if ((btn as any).hoverInterval) {
+                stopHoverAnimation(btn, (btn as any).hoverInterval);
+                (btn as any).hoverInterval = null;
+              }
+            }}
+            onClick={() => {
+              const demoSection = document.getElementById('demo');
+              if (demoSection) {
+                demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
           >
-            <a href="#demo">SEE THE DEMO</a>
-          </Button>
+            SEE THE DEMO
+          </button>
         </div>
       </div>
       
@@ -225,52 +255,16 @@ const HeroXBrainer = () => {
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
-                console.log('🐭 Mouse entered PROBLEM button - starting color cycle');
                 const btn = e.currentTarget;
-                
-                // Color sequence for hover: white -> light pink -> pink -> dark pink -> purple -> light purple -> blue
-                const hoverColors = [
-                  '#ffffff', // white
-                  '#ffb3d9', // light pink
-                  '#ff80c7', // pink  
-                  '#ff4db6', // dark pink
-                  '#a855f7', // purple
-                  '#c084fc', // light purple
-                  '#3b82f6'  // blue
-                ];
-                
-                let colorIndex = 0;
-                const hoverInterval = setInterval(() => {
-                  if (colorIndex < hoverColors.length) {
-                    const color = hoverColors[colorIndex];
-                    btn.style.color = color;
-                    btn.style.textShadow = `0 0 15px ${color}, 0 0 30px ${color}`;
-                    btn.style.transform = 'scale(1.05)';
-                    console.log(`Hover color ${colorIndex + 1}: ${color}`);
-                    colorIndex++;
-                  } else {
-                    // Reset and restart the cycle
-                    colorIndex = 0;
-                  }
-                }, 300); // Change color every 300ms
-                
-                // Store interval ID on the button for cleanup
-                (btn as any).hoverInterval = hoverInterval;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
               }}
               onMouseLeave={(e) => {
-                console.log('🐭 Mouse left PROBLEM button - stopping color cycle');
                 const btn = e.currentTarget;
-                
-                // Clear the color cycling interval
                 if ((btn as any).hoverInterval) {
-                  clearInterval((btn as any).hoverInterval);
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
                   (btn as any).hoverInterval = null;
                 }
-                
-                // Reset to white
-                btn.style.color = 'white';
-                btn.style.textShadow = 'none';
-                btn.style.transform = 'scale(1)';
               }}
               onClick={() => {
                 console.log('🚀 PROBLEM CLICKED - Starting letter animation');
@@ -282,14 +276,14 @@ const HeroXBrainer = () => {
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['P', 'R', 'O', 'B', 'L', 'E', 'M'];
                 
-                // Create letter spans
+                // Create letter spans with better edge blending
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="letter-${i}" style="display: inline-block; transition: all 0.3s ease; padding: 2px; margin: 0 1px; border-radius: 4px; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1);">${letter}</span>`
+                  `<span id="letter-${i}" style="display: inline-block; transition: all 0.4s ease; padding: 4px 2px; margin: 0 1px; border-radius: 12px; background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)); backdrop-filter: blur(15px); border: none; box-shadow: 0 0 20px rgba(255,255,255,0.1);">${letter}</span>`
                 ).join('');
                 
-                console.log('✅ Letter spans created');
+                console.log('✅ Letter spans created with blended edges');
                 
-                // Animate each letter through color sequence
+                // Animate each letter through color sequence with smoother blending
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
@@ -302,12 +296,12 @@ const HeroXBrainer = () => {
                         
                         letterSpan.style.color = color;
                         letterSpan.style.textShadow = `0 0 ${15 + colorIndex * 10}px ${color}, 0 0 ${30 + colorIndex * 20}px ${color}`;
-                        letterSpan.style.transform = `scale(${1.05 + colorIndex * 0.05})`; // Smaller scaling
-                        letterSpan.style.background = `rgba(${r}, ${g}, ${b}, 0.2)`;
-                        letterSpan.style.boxShadow = `0 0 ${20 + colorIndex * 10}px rgba(${r}, ${g}, ${b}, 0.5)`;
-                        letterSpan.style.backdropFilter = `blur(${10 + colorIndex * 5}px)`;
-                        letterSpan.style.border = `1px solid rgba(${r}, ${g}, ${b}, 0.5)`;
-                        letterSpan.style.borderRadius = `${6 + colorIndex * 2}px`;
+                        letterSpan.style.transform = `scale(${1.05 + colorIndex * 0.05})`;
+                        letterSpan.style.background = `linear-gradient(145deg, rgba(${r}, ${g}, ${b}, 0.25), rgba(${r}, ${g}, ${b}, 0.1))`;
+                        letterSpan.style.boxShadow = `0 0 ${25 + colorIndex * 15}px rgba(${r}, ${g}, ${b}, 0.6), inset 0 0 15px rgba(${r}, ${g}, ${b}, 0.2)`;
+                        letterSpan.style.backdropFilter = `blur(${15 + colorIndex * 8}px)`;
+                        letterSpan.style.border = 'none'; // Remove borders for seamless blending
+                        letterSpan.style.borderRadius = `${12 + colorIndex * 3}px`;
                         
                         console.log(`Letter ${letter} (${letterIndex}) -> Phase ${colorIndex + 1}: ${color}`);
                       }
@@ -374,12 +368,16 @@ const HeroXBrainer = () => {
                 }, 1600);
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#00d4ff';
-                e.currentTarget.style.textShadow = '0 0 15px #00d4ff, 0 0 30px #00d4ff';
+                const btn = e.currentTarget;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = '';
-                e.currentTarget.style.textShadow = '';
+                const btn = e.currentTarget;
+                if ((btn as any).hoverInterval) {
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
               }}
             >
               URGENCY
@@ -424,12 +422,16 @@ const HeroXBrainer = () => {
                 }, 1600);
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#a855f7';
-                e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
+                const btn = e.currentTarget;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = '';
-                e.currentTarget.style.textShadow = '';
+                const btn = e.currentTarget;
+                if ((btn as any).hoverInterval) {
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
               }}
             >
               TECHNICAL ADVANTAGE
@@ -474,12 +476,16 @@ const HeroXBrainer = () => {
                 }, 1600);
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#a855f7';
-                e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
+                const btn = e.currentTarget;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = '';
-                e.currentTarget.style.textShadow = '';
+                const btn = e.currentTarget;
+                if ((btn as any).hoverInterval) {
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
               }}
             >
               TECH ADVANTAGE
@@ -524,12 +530,16 @@ const HeroXBrainer = () => {
                 }, 1600);
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#00d4ff';
-                e.currentTarget.style.textShadow = '0 0 15px #00d4ff, 0 0 30px #00d4ff';
+                const btn = e.currentTarget;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = '';
-                e.currentTarget.style.textShadow = '';
+                const btn = e.currentTarget;
+                if ((btn as any).hoverInterval) {
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
               }}
             >
               COMPLIANCE AND STANDARDS
@@ -574,12 +584,16 @@ const HeroXBrainer = () => {
                 }, 1600);
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#00d4ff';
-                e.currentTarget.style.textShadow = '0 0 15px #00d4ff, 0 0 30px #00d4ff';
+                const btn = e.currentTarget;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = '';
-                e.currentTarget.style.textShadow = '';
+                const btn = e.currentTarget;
+                if ((btn as any).hoverInterval) {
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
               }}
             >
               COMPLIANCE

@@ -1,3 +1,43 @@
+// Hover color cycling animation
+export const startHoverAnimation = (element: HTMLElement) => {
+  console.log('🐭 Starting hover color cycle');
+  
+  // Color sequence: white -> light pink -> pink -> dark pink -> purple -> light purple -> blue
+  const hoverColors = [
+    '#ffffff', // white
+    '#ffb3d9', // light pink
+    '#ff80c7', // pink  
+    '#ff4db6', // dark pink
+    '#a855f7', // purple
+    '#c084fc', // light purple
+    '#3b82f6'  // blue
+  ];
+  
+  let colorIndex = 0;
+  const hoverInterval = setInterval(() => {
+    if (colorIndex < hoverColors.length) {
+      const color = hoverColors[colorIndex];
+      element.style.color = color;
+      element.style.textShadow = `0 0 15px ${color}, 0 0 30px ${color}`;
+      element.style.transform = 'scale(1.05)';
+      colorIndex++;
+    } else {
+      // Reset and restart the cycle
+      colorIndex = 0;
+    }
+  }, 300);
+  
+  return hoverInterval;
+};
+
+export const stopHoverAnimation = (element: HTMLElement, interval: number) => {
+  console.log('🐭 Stopping hover color cycle');
+  clearInterval(interval);
+  element.style.color = 'white';
+  element.style.textShadow = 'none';
+  element.style.transform = 'scale(1)';
+};
+
 export const animateLetters = (element: HTMLElement, word: string) => {
   console.log('🎬 Starting letter animation for:', word);
   
