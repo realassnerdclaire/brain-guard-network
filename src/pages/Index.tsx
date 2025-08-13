@@ -674,7 +674,7 @@ const Index = () => {
             className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden"
           >
             {/* Brain and EEG waves background like the reference image */}
-            <div className="absolute inset-0 opacity-40">
+            <div className="absolute inset-0 opacity-80">
               {/* Background grid pattern */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-blue-800/20"></div>
               
@@ -744,12 +744,12 @@ const Index = () => {
               </svg>
               
               {/* Brain image positioned on the right side */}
-              <div className="absolute right-20 top-1/2 transform -translate-y-1/2 w-96 h-64 opacity-60">
+              <div className="absolute right-20 top-1/2 transform -translate-y-1/2 w-96 h-64 opacity-90">
                 <div 
                   className="w-full h-full bg-cover bg-center"
                   style={{
                     backgroundImage: `url('/lovable-uploads/416842ac-517e-4626-aa5f-14fa248df4cf.png')`,
-                    filter: 'hue-rotate(220deg) saturate(1.1) brightness(0.7)',
+                    filter: 'hue-rotate(220deg) saturate(1.3) brightness(1.0)',
                   }}
                 ></div>
               </div>

@@ -293,4 +293,19 @@ All colors MUST be HSL.
       filter: blur(0px);
     }
   }
+  
+  @keyframes brainGlow {
+    0% { 
+      filter: hue-rotate(220deg) saturate(1.3) brightness(1.0) drop-shadow(0 0 20px #3B82F6);
+      transform: scale(1);
+    }
+    50% { 
+      filter: hue-rotate(230deg) saturate(1.5) brightness(1.2) drop-shadow(0 0 40px #60A5FA);
+      transform: scale(1.05);
+    }
+    100% { 
+      filter: hue-rotate(220deg) saturate(1.3) brightness(1.0) drop-shadow(0 0 20px #3B82F6);
+      transform: scale(1);
+    }
+  }
 }
