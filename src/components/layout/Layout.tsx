@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import futuristicBrain from "@/assets/futuristic-brain-correct.png";
 import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 interface LayoutProps {
@@ -44,22 +43,25 @@ const Layout = ({ children }: LayoutProps) => {
         {/* Logo, company name and menu in header */}
         <header className="absolute left-0 right-0 top-0 z-30">
           <div className="container flex items-center justify-between py-6 sm:py-8 lg:py-10 px-6 sm:px-8 lg:px-12">
-            {/* Logo and company name */}
+            {/* Logo and company name - exactly same as landing page */}
             <div className="flex items-center gap-1 sm:gap-4 lg:gap-6">
-              <div className="w-6 h-6 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full overflow-hidden flex-shrink-0">
-                <img 
-                  src={futuristicBrain} 
-                  alt="XBrainer AI Logo" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <img 
+                src="/lovable-uploads/a84358e6-b8f3-4172-a059-3c05cad36874.png" 
+                alt="XBrainer AI logo" 
+                className="h-10 sm:h-12 lg:h-16 w-auto mix-blend-screen opacity-90 rounded-lg sm:rounded-2xl" 
+                style={{
+                  filter: 'blur(0.1px)',
+                  maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
+                  WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)'
+                }}
+              />
               <div className="flex flex-col">
-                <h1 className="text-white text-xs sm:text-xl lg:text-2xl xl:text-3xl font-bold tracking-wider">
-                  XBRAINER AI
-                </h1>
-                <p className="text-white/70 text-[8px] sm:text-xs lg:text-sm font-light tracking-widest mt-0 sm:mt-1">
-                  NEURAL FIREWALL TECHNOLOGY
-                </p>
+                <span className="text-xl sm:text-3xl lg:text-5xl font-bold tracking-tight leading-tight" style={{color: '#ffffff'}}>
+                  XBrainer AI
+                </span>
+                <span className="text-sm sm:text-base lg:text-xl font-medium" style={{color: 'rgba(255, 255, 255, 0.7)'}}>
+                  Securing Neural Data in Real Time
+                </span>
               </div>
             </div>
             
