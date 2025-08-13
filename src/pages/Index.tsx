@@ -59,11 +59,28 @@ const Index = () => {
           <HeroXBrainer />
           
           {/* Problem Section */}
-          <section id="problem" className="min-h-screen bg-black flex items-center justify-center">
-            <div className="container px-4 text-center">
-              <h2 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white">
-                hello xbrainer ai
+          <section id="problem" className="min-h-screen bg-black flex items-center justify-center py-16">
+            <div className="container px-4 max-w-4xl">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-16 text-center">
+                Problem
               </h2>
+              
+              <div className="space-y-12 text-white">
+                <div>
+                  <p className="text-lg sm:text-xl leading-relaxed text-white/90">
+                    Brain-computer devices send raw brain (EEG) and motion data. Many pipelines still miss four basics: secure transport, packet checks (timing and signal errors), access control tied to user consent, and a permanent access log. Without this, bad data reaches apps, unauthorized reads happen, and teams can't show compliance—causing exposure risk, unreliable results, and stalled deployments. As headsets move from labs to everyday use, this gap is immediate.
+                  </p>
+                </div>
+                
+                <div className="pt-8">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+                    How XBrainer AI helps
+                  </h3>
+                  <p className="text-lg sm:text-xl leading-relaxed text-white/90">
+                    We add a software layer between device and app that checks each packet in real time, drops corrupted data, controls who can read the stream, and records every access in a permanent log.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
         </main>
