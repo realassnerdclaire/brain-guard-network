@@ -65,69 +65,91 @@ const Index = () => {
               <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
             </div>
             
-            <div className="container px-4 max-w-6xl relative z-10">
-              <div className="text-center mb-20">
+            <div className="container px-4 max-w-7xl relative z-10">
+              <div className="text-center mb-16">
                 <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in">
                   Problem
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto" />
               </div>
               
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                {/* Left side - Problem */}
-                <div className="space-y-8 animate-fade-in">
-                  <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse" />
-                      <span className="text-red-400 font-medium text-sm uppercase tracking-wider">Critical Gap</span>
-                    </div>
-                    <p className="text-xl text-white/90 leading-relaxed">
-                      Brain-computer devices lack <span className="text-white font-semibold">secure transport</span>, 
-                      <span className="text-white font-semibold"> packet validation</span>, and 
-                      <span className="text-white font-semibold"> access control</span>.
-                    </p>
+              {/* Problem Description */}
+              <div className="mb-16 animate-fade-in">
+                <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-5xl mx-auto">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-3 h-3 bg-orange-400 rounded-full animate-pulse" />
+                    <span className="text-orange-400 font-medium text-sm uppercase tracking-wider">Current State</span>
                   </div>
-                  
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div className="border border-red-500/20 bg-red-500/5 rounded-lg p-4">
-                      <div className="text-red-400 font-bold text-lg">Bad Data</div>
-                      <div className="text-white/60 text-sm">Reaches Apps</div>
-                    </div>
-                    <div className="border border-red-500/20 bg-red-500/5 rounded-lg p-4">
-                      <div className="text-red-400 font-bold text-lg">Unauthorized</div>
-                      <div className="text-white/60 text-sm">Access</div>
-                    </div>
-                    <div className="border border-red-500/20 bg-red-500/5 rounded-lg p-4">
-                      <div className="text-red-400 font-bold text-lg">No Compliance</div>
-                      <div className="text-white/60 text-sm">Tracking</div>
-                    </div>
+                  <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-6">
+                    Brain-computer devices send raw brain (EEG) and motion data. Many pipelines still miss four basics: 
+                    <span className="text-white font-semibold"> secure transport</span>, 
+                    <span className="text-white font-semibold"> packet checks</span> (timing and signal errors), 
+                    <span className="text-white font-semibold"> access control tied to user consent</span>, and a 
+                    <span className="text-white font-semibold"> permanent access log</span>.
+                  </p>
+                  <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
+                    Without this, bad data reaches apps, unauthorized reads happen, and teams can't show compliance—causing 
+                    <span className="text-red-400 font-semibold"> exposure risk</span>, 
+                    <span className="text-red-400 font-semibold"> unreliable results</span>, and 
+                    <span className="text-red-400 font-semibold"> stalled deployments</span>. 
+                    As headsets move from labs to everyday use, this gap is immediate.
+                  </p>
+                </div>
+              </div>
+
+              {/* Four Missing Basics */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div className="border border-red-500/20 bg-red-500/5 rounded-xl p-6 text-center animate-fade-in">
+                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-red-400 text-xl">🔒</span>
                   </div>
+                  <h3 className="text-white font-bold mb-2">Secure Transport</h3>
+                  <p className="text-white/60 text-sm">Missing encryption</p>
+                </div>
+                <div className="border border-red-500/20 bg-red-500/5 rounded-xl p-6 text-center animate-fade-in">
+                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-red-400 text-xl">📊</span>
+                  </div>
+                  <h3 className="text-white font-bold mb-2">Packet Checks</h3>
+                  <p className="text-white/60 text-sm">Timing & signal errors</p>
+                </div>
+                <div className="border border-red-500/20 bg-red-500/5 rounded-xl p-6 text-center animate-fade-in">
+                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-red-400 text-xl">👤</span>
+                  </div>
+                  <h3 className="text-white font-bold mb-2">Access Control</h3>
+                  <p className="text-white/60 text-sm">Tied to user consent</p>
+                </div>
+                <div className="border border-red-500/20 bg-red-500/5 rounded-xl p-6 text-center animate-fade-in">
+                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-red-400 text-xl">📝</span>
+                  </div>
+                  <h3 className="text-white font-bold mb-2">Access Log</h3>
+                  <p className="text-white/60 text-sm">Permanent recording</p>
+                </div>
+              </div>
+
+              {/* Solution */}
+              <div className="animate-fade-in">
+                <div className="text-center mb-12">
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                    How XBrainer AI helps
+                  </h3>
+                  <div className="w-16 h-1 bg-gradient-to-r from-green-400 to-blue-400 mx-auto" />
                 </div>
                 
-                {/* Right side - Solution */}
-                <div className="space-y-8 animate-fade-in">
-                  <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                      <span className="text-green-400 font-medium text-sm uppercase tracking-wider">XBrainer Solution</span>
-                    </div>
-                    <p className="text-xl text-white/90 leading-relaxed">
-                      <span className="text-white font-semibold">Real-time packet validation</span> + 
-                      <span className="text-white font-semibold"> access control</span> + 
-                      <span className="text-white font-semibold"> permanent logging</span>
-                    </p>
+                <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-5xl mx-auto">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-green-400 font-medium text-sm uppercase tracking-wider">XBrainer Solution</span>
                   </div>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="border border-green-500/20 bg-green-500/5 rounded-lg p-4 text-center">
-                      <div className="text-green-400 font-bold text-lg">✓ Clean Data</div>
-                      <div className="text-white/60 text-sm">Validated Stream</div>
-                    </div>
-                    <div className="border border-green-500/20 bg-green-500/5 rounded-lg p-4 text-center">
-                      <div className="text-green-400 font-bold text-lg">✓ Secure Access</div>
-                      <div className="text-white/60 text-sm">Full Control</div>
-                    </div>
-                  </div>
+                  <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
+                    We add a <span className="text-green-400 font-semibold">software layer between device and app</span> that 
+                    <span className="text-white font-semibold"> checks each packet in real time</span>, 
+                    <span className="text-white font-semibold"> drops corrupted data</span>, 
+                    <span className="text-white font-semibold"> controls who can read the stream</span>, and 
+                    <span className="text-white font-semibold"> records every access in a permanent log</span>.
+                  </p>
                 </div>
               </div>
             </div>
