@@ -417,9 +417,9 @@ const HeroXBrainer = () => {
             <button 
               className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
               id="tech-adv-btn"
-              onClick={() => {
-                const btn = document.getElementById('tech-adv-btn');
-                if (!btn) return;
+              onClick={(e) => {
+                console.log('🚀 SOLUTION CLICKED - Starting letter animation');
+                const btn = e.currentTarget;
                 
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['S', 'O', 'L', 'U', 'T', 'I', 'O', 'N'];
@@ -616,6 +616,7 @@ const HeroXBrainer = () => {
             <button 
               className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={(e) => {
+                console.log('🚀 OUR EDGE CLICKED - Starting letter animation');
                 const btn = e.currentTarget;
                 
                 // Same color sequence and animation as PROBLEM
