@@ -124,11 +124,11 @@ const Index = () => {
                     <span className="text-[#a855f7] font-medium text-sm uppercase tracking-wider">Critical Gap</span>
                   </div>
                   <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-4">
-                    Brain-computer pipelines lack <span className="text-white font-semibold">four basics</span>: 
-                    secure transport, packet validation, access control, and audit logging.
+                    Brain-computer devices send raw EEG data through <span className="text-white font-semibold">unprotected pipelines</span>. 
+                    Missing foundational security creates immediate enterprise barriers.
                   </p>
                   <p className="text-lg text-white/80">
-                    <span className="text-[#a855f7] font-semibold">Enterprise blocker</span>: bad data, unauthorized access, compliance gaps. 
+                    <span className="text-[#a855f7] font-semibold">Enterprise blocker</span>: bad data reaches apps, unauthorized access occurs, compliance fails. 
                     <span className="text-white font-semibold">Market timing</span>: headsets moving from labs to production.
                   </p>
                 </div>
