@@ -211,13 +211,13 @@ const HeroXBrainer = () => {
       </div>
       
       {/* Interactive navigation labels at bottom - FIXED */}
-      <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0 z-50">
-        <div className="container px-4">
-          <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap">
+      <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0 z-[9999] pointer-events-none">
+        <div className="container px-4 pointer-events-none">
+          <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap pointer-events-auto">
             <button 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group bg-transparent border-none p-2 hover:bg-white/10 rounded"
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group bg-transparent border-none p-4 hover:bg-white/10 rounded pointer-events-auto relative z-[999999]"
               onClick={(e) => {
-                e.preventDefault();
+                alert('BUTTON CLICKED!'); // Simple test
                 console.log('PROBLEM clicked - applying light pink to purple to blue chain!');
                 const element = document.getElementById('problem');
                 if (element) {
