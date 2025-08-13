@@ -488,7 +488,7 @@ const HeroXBrainer = () => {
                         letterSpan.style.color = color;
                         console.log(`SOLUTION Letter ${letter} -> ${color}`);
                       }
-                    }, letterIndex * 50 + colorIndex * 300); // Faster timing for more letters
+                    }, letterIndex * 30 + colorIndex * 100); // Much faster timing
                   });
                 });
                 
@@ -498,7 +498,7 @@ const HeroXBrainer = () => {
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
                   console.log('🔄 Reset to normal SOLUTION');
-                }, letters.length * 50 + colors.length * 300 + 1000);
+                }, letters.length * 30 + colors.length * 100 + 200); // Much faster timing
                 
                 // Scroll to solution section
                 const solutionSection = document.getElementById('solution');
@@ -509,16 +509,42 @@ const HeroXBrainer = () => {
               }}
               id="tech-adv-btn"
               onMouseEnter={(e) => {
+                console.log('🖱️ SOLUTION HOVERED - Starting letter animation');
+                
                 const btn = e.currentTarget;
-                const interval = startHoverAnimation(btn);
-                (btn as any).hoverInterval = interval;
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['S', 'O', 'L', 'U', 'T', 'I', 'O', 'N'];
+                
+                // Create letter spans for hover animation
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="solution-hover-letter-${i}" style="display: inline-block; transition: color 0.2s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
+                ).join('');
+                
+                // Fast hover animation
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`solution-hover-letter-${letterIndex}`);
+                      if (letterSpan) {
+                        letterSpan.style.color = color;
+                      }
+                    }, letterIndex * 20 + colorIndex * 80);
+                  });
+                });
+                
+                // Reset after hover animation
+                setTimeout(() => {
+                  btn.innerHTML = 'SOLUTION';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
+                }, letters.length * 20 + colors.length * 80 + 100);
               }}
               onMouseLeave={(e) => {
                 const btn = e.currentTarget;
-                if ((btn as any).hoverInterval) {
-                  stopHoverAnimation(btn, (btn as any).hoverInterval);
-                  (btn as any).hoverInterval = null;
-                }
+                // Ensure it's back to normal
+                btn.innerHTML = 'SOLUTION';
+                btn.style.color = 'white !important';
+                btn.style.setProperty('color', 'white', 'important');
               }}
               onTouchStart={() => {
                 console.log('📱 TECHNICAL ADVANTAGE TOUCHED - Starting letter animation');
@@ -540,7 +566,7 @@ const HeroXBrainer = () => {
                       if (letterSpan && letter !== ' ') {
                         letterSpan.style.color = color;
                       }
-                    }, letterIndex * 50 + colorIndex * 300);
+                    }, letterIndex * 30 + colorIndex * 100); // Much faster timing
                   });
                 });
                 
@@ -548,7 +574,7 @@ const HeroXBrainer = () => {
                   btn.innerHTML = 'SOLUTION';
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
-                }, letters.length * 50 + colors.length * 300 + 1000);
+                }, letters.length * 30 + colors.length * 100 + 200); // Much faster timing
               }}
             >
               SOLUTION
@@ -602,16 +628,41 @@ const HeroXBrainer = () => {
               }}
               id="tech-adv-mobile-btn"
               onMouseEnter={(e) => {
+                console.log('🖱️ SOLUTION MOBILE HOVERED - Starting letter animation');
+                
                 const btn = e.currentTarget;
-                const interval = startHoverAnimation(btn);
-                (btn as any).hoverInterval = interval;
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['S', 'O', 'L', 'U', 'T', 'I', 'O', 'N'];
+                
+                // Create letter spans for hover animation
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="solution-mobile-hover-letter-${i}" style="display: inline-block; transition: color 0.2s ease; background: none !important; border: none !important;">${letter}</span>`
+                ).join('');
+                
+                // Fast hover animation
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`solution-mobile-hover-letter-${letterIndex}`);
+                      if (letterSpan) {
+                        letterSpan.style.color = color;
+                      }
+                    }, letterIndex * 20 + colorIndex * 80);
+                  });
+                });
+                
+                // Reset after hover animation
+                setTimeout(() => {
+                  btn.innerHTML = 'SOLUTION';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
+                }, letters.length * 20 + colors.length * 80 + 100);
               }}
               onMouseLeave={(e) => {
                 const btn = e.currentTarget;
-                if ((btn as any).hoverInterval) {
-                  stopHoverAnimation(btn, (btn as any).hoverInterval);
-                  (btn as any).hoverInterval = null;
-                }
+                btn.innerHTML = 'SOLUTION';
+                btn.style.color = 'white !important';
+                btn.style.setProperty('color', 'white', 'important');
               }}
             >
               SOLUTION
@@ -665,16 +716,41 @@ const HeroXBrainer = () => {
               }}
               id="compliance-btn"
               onMouseEnter={(e) => {
+                console.log('🖱️ OUR EDGE HOVERED - Starting letter animation');
+                
                 const btn = e.currentTarget;
-                const interval = startHoverAnimation(btn);
-                (btn as any).hoverInterval = interval;
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['O', 'U', 'R', ' ', 'E', 'D', 'G', 'E'];
+                
+                // Create letter spans for hover animation
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="edge-hover-letter-${i}" style="display: inline-block; transition: color 0.2s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                ).join('');
+                
+                // Fast hover animation
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`edge-hover-letter-${letterIndex}`);
+                      if (letterSpan && letter !== ' ') {
+                        letterSpan.style.color = color;
+                      }
+                    }, letterIndex * 20 + colorIndex * 80);
+                  });
+                });
+                
+                // Reset after hover animation
+                setTimeout(() => {
+                  btn.innerHTML = 'OUR EDGE';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
+                }, letters.length * 20 + colors.length * 80 + 100);
               }}
               onMouseLeave={(e) => {
                 const btn = e.currentTarget;
-                if ((btn as any).hoverInterval) {
-                  stopHoverAnimation(btn, (btn as any).hoverInterval);
-                  (btn as any).hoverInterval = null;
-                }
+                btn.innerHTML = 'OUR EDGE';
+                btn.style.color = 'white !important';
+                btn.style.setProperty('color', 'white', 'important');
               }}
             >
               OUR EDGE
@@ -728,16 +804,41 @@ const HeroXBrainer = () => {
               }}
               id="compliance-mobile-btn"
               onMouseEnter={(e) => {
+                console.log('🖱️ OUR EDGE MOBILE HOVERED - Starting letter animation');
+                
                 const btn = e.currentTarget;
-                const interval = startHoverAnimation(btn);
-                (btn as any).hoverInterval = interval;
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['O', 'U', 'R', ' ', 'E', 'D', 'G', 'E'];
+                
+                // Create letter spans for hover animation
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="edge-mobile-hover-letter-${i}" style="display: inline-block; transition: color 0.2s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                ).join('');
+                
+                // Fast hover animation
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`edge-mobile-hover-letter-${letterIndex}`);
+                      if (letterSpan && letter !== ' ') {
+                        letterSpan.style.color = color;
+                      }
+                    }, letterIndex * 20 + colorIndex * 80);
+                  });
+                });
+                
+                // Reset after hover animation
+                setTimeout(() => {
+                  btn.innerHTML = 'OUR EDGE';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
+                }, letters.length * 20 + colors.length * 80 + 100);
               }}
               onMouseLeave={(e) => {
                 const btn = e.currentTarget;
-                if ((btn as any).hoverInterval) {
-                  stopHoverAnimation(btn, (btn as any).hoverInterval);
-                  (btn as any).hoverInterval = null;
-                }
+                btn.innerHTML = 'OUR EDGE';
+                btn.style.color = 'white !important';
+                btn.style.setProperty('color', 'white', 'important');
               }}
             >
               OUR EDGE
