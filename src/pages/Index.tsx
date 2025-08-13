@@ -122,7 +122,7 @@ const Index = () => {
                     
                 {/* Menu dropdown - smaller and more compact for mobile */}
                 <div 
-                  className="fixed top-16 right-4 w-32 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm border border-white/60 rounded-lg shadow-2xl z-[99999999]"
+                  className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm border border-white/60 rounded-lg shadow-2xl z-[99999999]"
                   style={{
                     contain: 'layout style',
                     willChange: 'transform',
@@ -133,7 +133,7 @@ const Index = () => {
                         {menuItems.map((item) => (
                           <li key={item.label}>
                             <button
-                              className="w-full text-left block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-xs sm:text-sm font-medium touch-manipulation"
+                              className="w-full text-left block px-1 sm:px-3 md:px-4 py-1 sm:py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-[10px] sm:text-sm font-medium touch-manipulation"
                               onClick={(e) => {
                                 console.log(`🚀 ${item.label} CLICKED - Starting letter animation`);
                                 
