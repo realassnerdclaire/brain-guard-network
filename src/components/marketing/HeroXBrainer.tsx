@@ -401,21 +401,21 @@ const HeroXBrainer = () => {
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
-                console.log('🚀 TECHNICAL ADVANTAGE CLICKED - Starting letter animation');
+                console.log('🚀 SOLUTION CLICKED - Starting letter animation');
                 
                 const btn = document.getElementById('tech-adv-btn') || document.querySelector('[data-button="tech-adv"]') as HTMLElement;
                 if (!btn) return;
                 
                 // Same color sequence and animation as PROBLEM
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                const letters = ['T', 'E', 'C', 'H', 'N', 'I', 'C', 'A', 'L', ' ', 'A', 'D', 'V', 'A', 'N', 'T', 'A', 'G', 'E'];
+                const letters = ['S', 'O', 'L', 'U', 'T', 'I', 'O', 'N'];
                 
                 // Create letter spans - PREVENT ALL inherited styles
                 btn.innerHTML = letters.map((letter, i) => 
                   `<span id="tech-adv-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
                 ).join('');
                 
-                console.log('✅ TECHNICAL ADVANTAGE Letter spans created - letters only');
+                console.log('✅ SOLUTION Letter spans created - letters only');
                 
                 // Animate each letter - ONLY COLOR CHANGE
                 letters.forEach((letter, letterIndex) => {
@@ -424,7 +424,7 @@ const HeroXBrainer = () => {
                       const letterSpan = document.getElementById(`tech-adv-letter-${letterIndex}`);
                       if (letterSpan && letter !== ' ') {
                         letterSpan.style.color = color;
-                        console.log(`TECH ADV Letter ${letter} -> ${color}`);
+                        console.log(`SOLUTION Letter ${letter} -> ${color}`);
                       }
                     }, letterIndex * 50 + colorIndex * 300); // Faster timing for more letters
                   });
@@ -432,9 +432,9 @@ const HeroXBrainer = () => {
                 
                 // Reset - back to normal white letters
                 setTimeout(() => {
-                  btn.innerHTML = 'TECHNICAL ADVANTAGE';
+                  btn.innerHTML = 'SOLUTION';
                   btn.style.color = 'white';
-                  console.log('🔄 Reset to normal TECHNICAL ADVANTAGE');
+                  console.log('🔄 Reset to normal SOLUTION');
                 }, letters.length * 50 + colors.length * 300 + 1000);
               }}
               id="tech-adv-btn"
@@ -480,26 +480,26 @@ const HeroXBrainer = () => {
                 }, letters.length * 50 + colors.length * 300 + 1000);
               }}
             >
-              TECHNICAL ADVANTAGE
+              SOLUTION
             </button>
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
-                console.log('🚀 TECH ADVANTAGE (mobile) CLICKED - Starting letter animation');
+                console.log('🚀 SOLUTION (mobile) CLICKED - Starting letter animation');
                 
                 const btn = document.getElementById('tech-adv-mobile-btn') || document.querySelector('[data-button="tech-adv-mobile"]') as HTMLElement;
                 if (!btn) return;
                 
                 // Same color sequence and animation as PROBLEM
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                const letters = ['T', 'E', 'C', 'H', ' ', 'A', 'D', 'V', 'A', 'N', 'T', 'A', 'G', 'E'];
+                const letters = ['S', 'O', 'L', 'U', 'T', 'I', 'O', 'N'];
                 
                 // Create letter spans - PREVENT ALL inherited styles
                 btn.innerHTML = letters.map((letter, i) => 
                   `<span id="tech-adv-mobile-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
                 ).join('');
                 
-                console.log('✅ TECH ADVANTAGE (mobile) Letter spans created - letters only');
+                console.log('✅ SOLUTION (mobile) Letter spans created - letters only');
                 
                 // Animate each letter - ONLY COLOR CHANGE
                 letters.forEach((letter, letterIndex) => {
@@ -508,7 +508,7 @@ const HeroXBrainer = () => {
                       const letterSpan = document.getElementById(`tech-adv-mobile-letter-${letterIndex}`);
                       if (letterSpan && letter !== ' ') {
                         letterSpan.style.color = color;
-                        console.log(`TECH ADV (mobile) Letter ${letter} -> ${color}`);
+                        console.log(`SOLUTION (mobile) Letter ${letter} -> ${color}`);
                       }
                     }, letterIndex * 80 + colorIndex * 300);
                   });
@@ -516,7 +516,7 @@ const HeroXBrainer = () => {
                 
                 // Reset - back to normal white letters
                 setTimeout(() => {
-                  btn.innerHTML = 'TECH ADVANTAGE';
+                  btn.innerHTML = 'SOLUTION';
                   btn.style.color = 'white';
                   console.log('🔄 Reset to normal TECH ADVANTAGE (mobile)');
                 }, letters.length * 80 + colors.length * 300 + 1000);
@@ -535,26 +535,26 @@ const HeroXBrainer = () => {
                 }
               }}
             >
-              TECH ADVANTAGE
+              SOLUTION
             </button>
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
-                console.log('🚀 COMPLIANCE AND STANDARDS CLICKED - Starting letter animation');
+                console.log('🚀 OUR EDGE CLICKED - Starting letter animation');
                 
                 const btn = document.getElementById('compliance-btn') || document.querySelector('[data-button="compliance"]') as HTMLElement;
                 if (!btn) return;
                 
                 // Same color sequence and animation as PROBLEM
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                const letters = ['C', 'O', 'M', 'P', 'L', 'I', 'A', 'N', 'C', 'E', ' ', 'A', 'N', 'D', ' ', 'S', 'T', 'A', 'N', 'D', 'A', 'R', 'D', 'S'];
+                const letters = ['O', 'U', 'R', ' ', 'E', 'D', 'G', 'E'];
                 
                 // Create letter spans - PREVENT ALL inherited styles
                 btn.innerHTML = letters.map((letter, i) => 
                   `<span id="compliance-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
                 ).join('');
                 
-                console.log('✅ COMPLIANCE Letter spans created - letters only');
+                console.log('✅ OUR EDGE Letter spans created - letters only');
                 
                 // Animate each letter - ONLY COLOR CHANGE
                 letters.forEach((letter, letterIndex) => {
@@ -563,7 +563,7 @@ const HeroXBrainer = () => {
                       const letterSpan = document.getElementById(`compliance-letter-${letterIndex}`);
                       if (letterSpan && letter !== ' ') {
                         letterSpan.style.color = color;
-                        console.log(`COMPLIANCE Letter ${letter} -> ${color}`);
+                        console.log(`OUR EDGE Letter ${letter} -> ${color}`);
                       }
                     }, letterIndex * 40 + colorIndex * 300); // Faster timing for more letters
                   });
@@ -571,9 +571,9 @@ const HeroXBrainer = () => {
                 
                 // Reset - back to normal white letters
                 setTimeout(() => {
-                  btn.innerHTML = 'COMPLIANCE AND STANDARDS';
+                  btn.innerHTML = 'OUR EDGE';
                   btn.style.color = 'white';
-                  console.log('🔄 Reset to normal COMPLIANCE AND STANDARDS');
+                  console.log('🔄 Reset to normal OUR EDGE');
                 }, letters.length * 40 + colors.length * 300 + 1000);
               }}
               id="compliance-btn"
@@ -590,26 +590,26 @@ const HeroXBrainer = () => {
                 }
               }}
             >
-              COMPLIANCE AND STANDARDS
+              OUR EDGE
             </button>
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
-                console.log('🚀 COMPLIANCE (mobile) CLICKED - Starting letter animation');
+                console.log('🚀 OUR EDGE (mobile) CLICKED - Starting letter animation');
                 
                 const btn = document.getElementById('compliance-mobile-btn') || document.querySelector('[data-button="compliance-mobile"]') as HTMLElement;
                 if (!btn) return;
                 
                 // Same color sequence and animation as PROBLEM
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                const letters = ['C', 'O', 'M', 'P', 'L', 'I', 'A', 'N', 'C', 'E'];
+                const letters = ['O', 'U', 'R', ' ', 'E', 'D', 'G', 'E'];
                 
                 // Create letter spans - PREVENT ALL inherited styles
                 btn.innerHTML = letters.map((letter, i) => 
                   `<span id="compliance-mobile-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
                 ).join('');
                 
-                console.log('✅ COMPLIANCE (mobile) Letter spans created - letters only');
+                console.log('✅ OUR EDGE (mobile) Letter spans created - letters only');
                 
                 // Animate each letter - ONLY COLOR CHANGE
                 letters.forEach((letter, letterIndex) => {
@@ -618,7 +618,7 @@ const HeroXBrainer = () => {
                       const letterSpan = document.getElementById(`compliance-mobile-letter-${letterIndex}`);
                       if (letterSpan) {
                         letterSpan.style.color = color;
-                        console.log(`COMPLIANCE (mobile) Letter ${letter} -> ${color}`);
+                        console.log(`OUR EDGE (mobile) Letter ${letter} -> ${color}`);
                       }
                     }, letterIndex * 100 + colorIndex * 300);
                   });
@@ -626,9 +626,9 @@ const HeroXBrainer = () => {
                 
                 // Reset - back to normal white letters
                 setTimeout(() => {
-                  btn.innerHTML = 'COMPLIANCE';
+                  btn.innerHTML = 'OUR EDGE';
                   btn.style.color = 'white';
-                  console.log('🔄 Reset to normal COMPLIANCE (mobile)');
+                  console.log('🔄 Reset to normal OUR EDGE (mobile)');
                 }, letters.length * 100 + colors.length * 300 + 1000);
               }}
               id="compliance-mobile-btn"
@@ -645,7 +645,7 @@ const HeroXBrainer = () => {
                 }
               }}
             >
-              COMPLIANCE
+              OUR EDGE
             </button>
           </div>
         </div>
