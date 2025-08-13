@@ -51,6 +51,7 @@ const HeroXBrainer = () => {
                 fill="none" 
                 style={{
                   opacity: 0.6,
+                  animation: 'eeg-flow 4s ease-in-out infinite',
                   filter: 'drop-shadow(0 0 4px #00d4ff)',
                   strokeLinecap: 'round'
                 }} />
@@ -61,6 +62,8 @@ const HeroXBrainer = () => {
                 fill="none" 
                 style={{
                   opacity: 0.4,
+                  animation: 'eeg-flow 5s ease-in-out infinite',
+                  animationDelay: '1s',
                   filter: 'drop-shadow(0 0 3px #a855f7)',
                   strokeLinecap: 'round'
                 }} />
@@ -71,6 +74,8 @@ const HeroXBrainer = () => {
                 fill="none" 
                 style={{
                   opacity: 0.25,
+                  animation: 'eeg-flow 6s ease-in-out infinite',
+                  animationDelay: '2s',
                   filter: 'drop-shadow(0 0 2px #00d4ff)',
                   strokeLinecap: 'round'
                 }} />
