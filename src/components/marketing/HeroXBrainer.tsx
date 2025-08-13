@@ -416,6 +416,7 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              id="tech-adv-btn"
               onClick={() => {
                 const btn = document.getElementById('tech-adv-btn');
                 if (!btn) return;
@@ -453,7 +454,6 @@ const HeroXBrainer = () => {
                   }
                 }, letters.length * 10 + colors.length * 30 + 50);
               }}
-              id="tech-adv-btn"
               onMouseEnter={(e) => {
                 console.log('🖱️ SOLUTION HOVERED - Starting letter animation');
                 
@@ -615,11 +615,8 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
-              onClick={() => {
-                console.log('🚀 OUR EDGE CLICKED - Starting letter animation');
-                
-                const btn = document.getElementById('compliance-btn') || document.querySelector('[data-button="compliance"]') as HTMLElement;
-                if (!btn) return;
+              onClick={(e) => {
+                const btn = e.currentTarget;
                 
                 // Same color sequence and animation as PROBLEM
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
