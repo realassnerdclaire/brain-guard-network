@@ -486,6 +486,9 @@ const Index = () => {
             </div>
           </section>
 
+          {/* Spacer between Urgency and Solution */}
+          <div className="h-16 md:h-32 bg-gradient-to-b from-gray-900 to-black"></div>
+
           {/* 3. Solution Section */}
           <section 
             id="solution" 
