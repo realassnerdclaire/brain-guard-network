@@ -62,9 +62,9 @@ const Index = () => {
         }}
       >
         <main className="relative">
-          {/* Menu button in top right */}
+          {/* Menu button in top right - Adjusted for mobile */}
           <header className="absolute left-0 right-0 top-0 z-30">
-            <div className="container flex items-center justify-end py-6 sm:py-8 lg:py-10 px-6 sm:px-8 lg:px-12">
+            <div className="container flex items-center justify-end py-6 sm:py-8 lg:py-10 px-6 sm:px-8 lg:px-12 pt-16 sm:pt-6">
               <div className="relative">
                 <button
                   id="menu-btn"

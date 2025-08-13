@@ -59,7 +59,7 @@ const Compliance = () => {
       {/* Menu Button */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="fixed top-8 right-8 z-50 flex items-center gap-2 text-white bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 hover:bg-black/40 transition-all"
+        className="fixed top-16 sm:top-8 right-8 z-50 flex items-center gap-2 text-white bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 hover:bg-black/40 transition-all"
       >
         {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
         <span className="text-sm font-medium tracking-widest menu-text">MENU</span>
