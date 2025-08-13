@@ -192,7 +192,7 @@ const HeroXBrainer = () => {
         </div>
         
         {/* Action buttons - much closer on mobile */}
-        <div className="absolute bottom-32 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-2 sm:gap-4">
+        <div className="absolute bottom-52 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-2 sm:gap-4">
           <button 
             className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-4 sm:px-6 lg:px-8 py-2 sm:py-3 touch-manipulation text-xs sm:text-sm lg:text-base font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
