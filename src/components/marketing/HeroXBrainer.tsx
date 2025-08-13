@@ -12,7 +12,7 @@ const HeroXBrainer = () => {
           alt="XBrainer AI logo" 
           className="h-10 sm:h-12 lg:h-16 w-auto mix-blend-screen opacity-90 rounded-lg" 
           style={{
-            filter: 'blur(0.5px)',
+            filter: 'blur(0.1px)',
             maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
             WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)'
           }}
