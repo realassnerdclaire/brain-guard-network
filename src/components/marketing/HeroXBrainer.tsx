@@ -50,7 +50,7 @@ const HeroXBrainer = () => {
                 strokeWidth="2" 
                 fill="none" 
                 style={{
-                  opacity: 0.3,
+                  opacity: 0.6,
                   filter: 'drop-shadow(0 0 4px #00d4ff)',
                   strokeLinecap: 'round'
                 }} />
@@ -60,7 +60,7 @@ const HeroXBrainer = () => {
                 strokeWidth="1.5" 
                 fill="none" 
                 style={{
-                  opacity: 0.2,
+                  opacity: 0.4,
                   filter: 'drop-shadow(0 0 3px #a855f7)',
                   strokeLinecap: 'round'
                 }} />
@@ -70,7 +70,7 @@ const HeroXBrainer = () => {
                 strokeWidth="1" 
                 fill="none" 
                 style={{
-                  opacity: 0.15,
+                  opacity: 0.25,
                   filter: 'drop-shadow(0 0 2px #00d4ff)',
                   strokeLinecap: 'round'
                 }} />
