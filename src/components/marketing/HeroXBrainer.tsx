@@ -225,16 +225,52 @@ const HeroXBrainer = () => {
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
-                console.log('🐭 Mouse entered PROBLEM button');
-                e.currentTarget.style.color = '#a855f7';
-                e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
-                e.currentTarget.style.transform = 'scale(1.05)'; // Small scale, not too big
+                console.log('🐭 Mouse entered PROBLEM button - starting color cycle');
+                const btn = e.currentTarget;
+                
+                // Color sequence for hover: white -> light pink -> pink -> dark pink -> purple -> light purple -> blue
+                const hoverColors = [
+                  '#ffffff', // white
+                  '#ffb3d9', // light pink
+                  '#ff80c7', // pink  
+                  '#ff4db6', // dark pink
+                  '#a855f7', // purple
+                  '#c084fc', // light purple
+                  '#3b82f6'  // blue
+                ];
+                
+                let colorIndex = 0;
+                const hoverInterval = setInterval(() => {
+                  if (colorIndex < hoverColors.length) {
+                    const color = hoverColors[colorIndex];
+                    btn.style.color = color;
+                    btn.style.textShadow = `0 0 15px ${color}, 0 0 30px ${color}`;
+                    btn.style.transform = 'scale(1.05)';
+                    console.log(`Hover color ${colorIndex + 1}: ${color}`);
+                    colorIndex++;
+                  } else {
+                    // Reset and restart the cycle
+                    colorIndex = 0;
+                  }
+                }, 300); // Change color every 300ms
+                
+                // Store interval ID on the button for cleanup
+                (btn as any).hoverInterval = hoverInterval;
               }}
               onMouseLeave={(e) => {
-                console.log('🐭 Mouse left PROBLEM button');
-                e.currentTarget.style.color = 'white';
-                e.currentTarget.style.textShadow = 'none';
-                e.currentTarget.style.transform = 'scale(1)'; // Reset scale
+                console.log('🐭 Mouse left PROBLEM button - stopping color cycle');
+                const btn = e.currentTarget;
+                
+                // Clear the color cycling interval
+                if ((btn as any).hoverInterval) {
+                  clearInterval((btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
+                
+                // Reset to white
+                btn.style.color = 'white';
+                btn.style.textShadow = 'none';
+                btn.style.transform = 'scale(1)';
               }}
               onClick={() => {
                 console.log('🚀 PROBLEM CLICKED - Starting letter animation');
