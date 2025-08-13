@@ -8,7 +8,7 @@ const Index = () => {
 
   const menuItems = [
     { label: "ABOUT", href: "#about" },
-    { label: "RESEARCH", href: "#research" },
+    { label: "PROBLEM", href: "#problem" },
     { label: "TECHNOLOGY", href: "#technology" },
     { label: "CAREER", href: "#career" },
     { label: "BRIEFING REQUEST", href: "#briefing" },
@@ -57,6 +57,15 @@ const Index = () => {
             </div>
           </header>
           <HeroXBrainer />
+          
+          {/* Problem Section */}
+          <section id="problem" className="min-h-screen bg-black flex items-center justify-center">
+            <div className="container px-4 text-center">
+              <h2 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white">
+                hello xbrainer ai
+              </h2>
+            </div>
+          </section>
         </main>
       </div>
     </div>

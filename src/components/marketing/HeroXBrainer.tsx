@@ -197,7 +197,7 @@ const HeroXBrainer = () => {
             className="rounded-full border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-6 sm:px-8 py-2 sm:py-3 touch-manipulation text-sm sm:text-base"
             asChild
           >
-            <a href="#cta">JOIN THE WAITLIST +</a>
+            <a href="#cta">JOIN THE WAITLIST</a>
           </Button>
           <Button 
             size="lg" 
@@ -214,7 +214,9 @@ const HeroXBrainer = () => {
       <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0">
         <div className="container px-4">
           <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap">
-            <div className="text-white text-sm sm:text-base lg:text-lg font-medium">PROBLEM</div>
+            <div className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer hover:text-white/80 transition-colors">
+              <a href="#problem">PROBLEM</a>
+            </div>
             <div className="text-white text-sm sm:text-base lg:text-lg font-medium">URGENCY</div>
             <div className="text-white text-sm sm:text-base lg:text-lg font-medium hidden sm:block">TECHNICAL ADVANTAGE</div>
             <div className="text-white text-sm sm:text-base lg:text-lg font-medium sm:hidden">TECH ADVANTAGE</div>
