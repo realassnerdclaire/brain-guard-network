@@ -349,44 +349,23 @@ const Index = () => {
                     </p>
                   </div>
                   
-                  {/* Futuristic hexagonal risk cards */}
-                  <div className="grid gap-6 md:grid-cols-3 animate-scale-in" style={{animationDelay: '0.6s'}}>
-                    <div className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#6C63FF]/20 to-[#7C3AED]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
-                      <div className="relative bg-black/60 backdrop-blur-sm border border-[#6C63FF]/30 rounded-2xl p-6 hover:border-[#6C63FF]/60 transition-all duration-300 hover-scale">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-12 h-12 bg-[#6C63FF]/20 rounded-full flex items-center justify-center">
-                            <span className="text-[#6C63FF] text-xl animate-pulse">🔓</span>
-                          </div>
-                          <h3 className="text-lg font-semibold text-white">Data Breaches</h3>
-                        </div>
-                        <p className="text-white/80 text-sm leading-relaxed">Exposure of neurological health information through unsecured pipelines</p>
+                  <div className="bg-black/40 border border-[#7C3AED]/30 rounded-2xl p-8 animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.6s'}}>
+                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                      <span className="text-[#6C63FF] text-3xl animate-pulse">⚠️</span>
+                      Unsecured pipelines risk:
+                    </h3>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-4 p-4 bg-[#7C3AED]/20 rounded-lg border border-[#7C3AED]/20 hover:border-[#7C3AED]/40 transition-all duration-300 hover-scale">
+                        <span className="text-[#6C63FF] text-xl animate-pulse">🔓</span>
+                        <span className="text-lg text-white/90">Data breaches that could expose neurological health information</span>
                       </div>
-                    </div>
-                    
-                    <div className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#9333EA]/20 to-[#A855F7]/20 rounded-2xl transform -rotate-1 group-hover:-rotate-2 transition-transform duration-300"></div>
-                      <div className="relative bg-black/60 backdrop-blur-sm border border-[#9333EA]/30 rounded-2xl p-6 hover:border-[#9333EA]/60 transition-all duration-300 hover-scale">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-12 h-12 bg-[#9333EA]/20 rounded-full flex items-center justify-center">
-                            <span className="text-[#9333EA] text-xl animate-pulse">⏸️</span>
-                          </div>
-                          <h3 className="text-lg font-semibold text-white">Regulatory Delays</h3>
-                        </div>
-                        <p className="text-white/80 text-sm leading-relaxed">Blocked clinical trials and market launches due to compliance gaps</p>
+                      <div className="flex items-start gap-4 p-4 bg-[#9333EA]/20 rounded-lg border border-[#9333EA]/20 hover:border-[#9333EA]/40 transition-all duration-300 hover-scale">
+                        <span className="text-[#9333EA] text-xl animate-pulse">⏸️</span>
+                        <span className="text-lg text-white/90">Regulatory delays blocking clinical trials and market launches</span>
                       </div>
-                    </div>
-                    
-                    <div className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#4338CA]/20 to-[#4F46E5]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
-                      <div className="relative bg-black/60 backdrop-blur-sm border border-[#4338CA]/30 rounded-2xl p-6 hover:border-[#4338CA]/60 transition-all duration-300 hover-scale">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-12 h-12 bg-[#4338CA]/20 rounded-full flex items-center justify-center">
-                            <span className="text-[#4338CA] text-xl animate-pulse">📊</span>
-                          </div>
-                          <h3 className="text-lg font-semibold text-white">Research Integrity</h3>
-                        </div>
-                        <p className="text-white/80 text-sm leading-relaxed">Loss of data integrity due to tampering or unauthorized access</p>
+                      <div className="flex items-start gap-4 p-4 bg-[#4338CA]/20 rounded-lg border border-[#4338CA]/20 hover:border-[#4338CA]/40 transition-all duration-300 hover-scale">
+                        <span className="text-[#4338CA] text-xl animate-pulse">📊</span>
+                        <span className="text-lg text-white/90">Loss of research integrity due to tampering or unauthorized access</span>
                       </div>
                     </div>
                   </div>
@@ -441,7 +420,7 @@ const Index = () => {
                 
                 <path
                   d="M-50,580 L0,575 L15,590 L30,565 L45,585 L60,570 L80,595 L100,560 L125,590 L150,575 L175,600 L200,555 L225,585 L250,570 L275,595 L300,560 L325,590 L350,575 L375,600 L400,555 L425,585 L450,570 L475,595 L500,560 L525,590 L550,575 L575,600 L600,555 L625,585 L650,570 L675,595 L700,560 L725,590 L750,575 L775,600 L800,555 L825,585 L850,570 L875,595 L900,560 L925,590 L950,575 L975,600 L1000,555 L1025,585 L1050,570 L1075,595 L1100,560 L1125,590 L1150,575 L1175,600 L1200,555 L1225,585 L1250,570 L1275,595 L1300,560 L1325,590 L1350,575 L1375,600 L1400,555 L1425,585 L1450,570 L1475,595 L1500,560 L1525,590 L1550,575 L1575,600 L1600,555 L1625,585 L1650,570 L1675,595 L1700,560 L1725,590 L1750,575 L1775,600 L1800,555 L1825,585 L1850,570 L1875,595 L1900,560 L1925,590 L1950,575 L1975,600"
-                  stroke="#F97316"
+                  stroke="#F472B6"
                   strokeWidth="1"
                   fill="none"
                   opacity="0.6"
@@ -889,9 +868,8 @@ const Index = () => {
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-16 animate-pulse" />
                 
-                {/* Futuristic asymmetric layout */}
+                {/* Patent pending innovation */}
                 <div className="space-y-8 max-w-5xl mx-auto">
-                  {/* Standards-first architecture */}
                   <div className="relative group animate-scale-in" style={{animationDelay: '0.1s'}}>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/20 to-[#1D4ED8]/20 transform skew-x-3 group-hover:skew-x-6 transition-transform duration-700 rounded-3xl"></div>
                     <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#3B82F6]/40 rounded-3xl p-8 hover:border-[#3B82F6]/70 transition-all duration-500 overflow-hidden">
@@ -899,6 +877,25 @@ const Index = () => {
                       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 flex items-center gap-6">
                         <div className="w-16 h-16 bg-gradient-to-br from-[#3B82F6]/20 to-[#2563EB]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-3xl">🎯</span>
+                        </div>
+                        <div className="text-left flex-1">
+                          <h3 className="text-xl font-bold text-white mb-3">Patent Pending Signal-Security Pipeline</h3>
+                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
+                            Innovative approach designed specifically for neural data protection
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Standards-first architecture */}
+                  <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.2s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-bl from-[#2563EB]/20 to-[#3B82F6]/20 transform -skew-y-2 group-hover:-skew-y-4 transition-transform duration-700 rounded-full"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#2563EB]/40 rounded-full p-8 hover:border-[#2563EB]/70 transition-all duration-500 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-l from-[#2563EB]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative z-10 flex items-center gap-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <span className="text-3xl">🛡️</span>
                         </div>
                         <div className="text-left flex-1">
@@ -912,12 +909,12 @@ const Index = () => {
                   </div>
 
                   {/* Adaptive intrusion detection */}
-                  <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.2s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-bl from-[#2563EB]/20 to-[#3B82F6]/20 transform -skew-y-2 group-hover:-skew-y-4 transition-transform duration-700 rounded-full"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#2563EB]/40 rounded-full p-8 hover:border-[#2563EB]/70 transition-all duration-500 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-l from-[#2563EB]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative group animate-scale-in w-5/6" style={{animationDelay: '0.3s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/20 to-[#3B82F6]/20 transform rotate-1 group-hover:rotate-3 transition-transform duration-700"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1E40AF]/40 p-8 hover:border-[#1E40AF]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#1E40AF]/20 to-[#3B82F6]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <span className="text-3xl">🤖</span>
                         </div>
                         <div className="text-left flex-1">
@@ -931,12 +928,12 @@ const Index = () => {
                   </div>
 
                   {/* Flexible SDK integration */}
-                  <div className="relative group animate-scale-in w-5/6" style={{animationDelay: '0.3s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/20 to-[#3B82F6]/20 transform rotate-1 group-hover:rotate-3 transition-transform duration-700"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1E40AF]/40 p-8 hover:border-[#1E40AF]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
-                      <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.4s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-bl from-[#1D4ED8]/20 to-[#2563EB]/20 transform -rotate-2 group-hover:-rotate-4 transition-transform duration-700 rounded-[3rem]"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1D4ED8]/40 rounded-[3rem] p-8 hover:border-[#1D4ED8]/70 transition-all duration-500 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-l from-[#1D4ED8]/5 via-transparent to-[#2563EB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#1E40AF]/20 to-[#3B82F6]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#1D4ED8]/20 to-[#2563EB]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <span className="text-3xl">🔧</span>
                         </div>
                         <div className="text-left flex-1">
@@ -949,6 +946,76 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Brain Pattern - Bottom Left Corner */}
+                <g transform="translate(50, 750)" filter="url(#neonGlow)">
+                  {/* Brain hemisphere outline */}
+                  <path
+                    d="M0,200 Q50,150 100,160 Q150,140 200,150 Q250,130 300,140 Q350,120 400,130 Q450,110 500,120 Q500,170 480,200 Q460,230 430,250 Q400,270 360,280 Q320,290 280,285 Q240,280 200,275 Q160,270 120,260 Q80,250 40,230 Q0,210 0,200Z"
+                    stroke="#2563EB"
+                    strokeWidth="3"
+                    fill="none"
+                    opacity="1.0"
+                  >
+                    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                    <animate attributeName="stroke-width" values="2;4;2" dur="3s" repeatCount="indefinite"/>
+                  </path>
+                  
+                  {/* Brain neural networks spreading outward */}
+                  <g stroke="#3B82F6" strokeWidth="2" opacity="1.0">
+                    {/* Central neural hub */}
+                    <circle cx="250" cy="200" r="12" fill="#3B82F6" opacity="1.0">
+                      <animate attributeName="r" values="8;16;8" dur="2s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    {/* Neural pathways spreading */}
+                    <path d="M250,200 L200,180 L150,160 L100,140" strokeDasharray="6,3" opacity="0.9">
+                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="3s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L300,170 L350,150 L400,130" strokeDasharray="6,3" opacity="0.9">
+                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="2.5s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L220,240 L180,270 L140,300" strokeDasharray="6,3" opacity="0.9">
+                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="3.5s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L290,230 L330,260 L370,290" strokeDasharray="6,3" opacity="0.9">
+                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="2s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L180,220 L120,240 L60,260" strokeDasharray="6,3" opacity="0.9">
+                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="4s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L320,220 L380,240 L440,260" strokeDasharray="6,3" opacity="0.9">
+                      <animate attributeName="stroke-dashoffset" values="0;18;0" dur="1.5s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
+                    </path>
+                  </g>
+                  
+                  {/* Synaptic nodes */}
+                  <g fill="url(#brainGlow)">
+                    <circle cx="150" cy="160" r="5" opacity="1.0">
+                      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+                      <animate attributeName="r" values="3;7;3" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="350" cy="150" r="5" opacity="1.0">
+                      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+                      <animate attributeName="r" values="3;7;3" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="180" cy="270" r="5" opacity="1.0">
+                      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+                      <animate attributeName="r" values="3;7;3" dur="1.8s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="330" cy="260" r="5" opacity="1.0">
+                      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                      <animate attributeName="r" values="3;7;3" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                  </g>
+                </g>
               </div>
             </div>
           </section>
