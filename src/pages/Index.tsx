@@ -100,14 +100,14 @@ const Index = () => {
                 {/* Dropdown menu with backdrop */}
                 {isMenuOpen && (
                   <>
-                    {/* Full screen backdrop with highest priority */}
+                    {/* Full screen opaque backdrop to completely hide background */}
                     <div 
-                      className="fixed inset-0 bg-black/70 z-[9999999]"
+                      className="fixed inset-0 bg-black z-[9999999]"
                       onClick={() => setIsMenuOpen(false)}
                     />
-                    {/* Menu dropdown - positioned with maximum z-index */}
+                    {/* Menu dropdown - positioned to cover everything */}
                     <div 
-                      className="fixed top-16 right-4 w-56 sm:w-64 bg-black/95 backdrop-blur-md border border-white/40 rounded-lg shadow-2xl z-[99999999]"
+                      className="fixed top-16 right-4 w-56 sm:w-64 bg-black border border-white/60 rounded-lg shadow-2xl z-[99999999]"
                       style={{
                         contain: 'layout style',
                         willChange: 'transform',
