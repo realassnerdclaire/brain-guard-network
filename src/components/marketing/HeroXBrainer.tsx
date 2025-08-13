@@ -214,8 +214,8 @@ const HeroXBrainer = () => {
       <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0 z-50">
         <div className="container px-4">
           <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap">
-            <div 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group"
+            <button 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group bg-transparent border-none p-2 hover:bg-white/10 rounded"
               onClick={(e) => {
                 e.preventDefault();
                 console.log('PROBLEM clicked - applying light pink to purple to blue chain!');
@@ -272,7 +272,7 @@ const HeroXBrainer = () => {
               }}
             >
               PROBLEM
-            </div>
+            </button>
             <div 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none"
               onMouseEnter={(e) => {
