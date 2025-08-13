@@ -67,9 +67,59 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
 
       {/* Menu Button */}
       <button
-        onClick={() => {
+        onClick={(e) => {
           if (isMenuOpen) {
-            onBack?.(); // Go back to first landing page when closing menu
+            console.log('🚀 MENU CLOSE CLICKED - Starting letter animation');
+            
+            const btn = e.currentTarget;
+            const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+            const letters = ['M', 'E', 'N', 'U'];
+            
+            // Animate the close icon (X) first
+            const iconElement = btn.querySelector('.lucide');
+            if (iconElement) {
+              colors.forEach((color, colorIndex) => {
+                setTimeout(() => {
+                  (iconElement as HTMLElement).style.color = color;
+                }, colorIndex * 15);
+              });
+              // Reset icon color
+              setTimeout(() => {
+                (iconElement as HTMLElement).style.color = 'white';
+              }, colors.length * 15 + 25);
+            }
+            
+            // Create letter spans for MENU text
+            const textSpan = btn.querySelector('.menu-text');
+            if (textSpan) {
+              textSpan.innerHTML = letters.map((letter, i) => 
+                `<span id="nebula-menu-letter-${i}" style="display: inline-block; transition: color 0.05s ease; background: none !important; border: none !important;">${letter}</span>`
+              ).join('');
+              
+              // Much faster animation
+              letters.forEach((letter, letterIndex) => {
+                colors.forEach((color, colorIndex) => {
+                  setTimeout(() => {
+                    const letterSpan = document.getElementById(`nebula-menu-letter-${letterIndex}`);
+                    if (letterSpan) {
+                      letterSpan.style.color = color;
+                    }
+                  }, letterIndex * 5 + colorIndex * 15);
+                });
+              });
+              
+              // Reset text and close menu
+              setTimeout(() => {
+                textSpan.innerHTML = 'MENU';
+                (textSpan as HTMLElement).style.color = 'white';
+                onBack?.(); // Go back to first landing page after animation
+              }, letters.length * 5 + colors.length * 15 + 25);
+            } else {
+              // Fallback if no text span found
+              setTimeout(() => {
+                onBack?.();
+              }, colors.length * 15 + 25);
+            }
           } else {
             setIsMenuOpen(true);
           }
@@ -77,7 +127,7 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
         className="fixed top-8 right-8 z-50 flex items-center gap-2 text-white bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 hover:bg-black/40 transition-all"
       >
         {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
-        <span className="text-sm font-medium tracking-widest">MENU</span>
+        <span className="text-sm font-medium tracking-widest menu-text">MENU</span>
       </button>
 
       {/* Side Navigation Menu - Even smaller */}

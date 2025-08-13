@@ -76,14 +76,28 @@ const Index = () => {
                     const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                     const letters = ['M', 'E', 'N', 'U'];
                     
-                    // Create letter spans - same as navigation buttons
+                    // Animate the menu icon first
+                    const iconElement = btn.querySelector('.lucide');
+                    if (iconElement) {
+                      colors.forEach((color, colorIndex) => {
+                        setTimeout(() => {
+                          (iconElement as HTMLElement).style.color = color;
+                        }, colorIndex * 15);
+                      });
+                      // Reset icon color
+                      setTimeout(() => {
+                        (iconElement as HTMLElement).style.color = 'white';
+                      }, colors.length * 15 + 25);
+                    }
+                    
+                    // Create letter spans for MENU text
                     const textSpan = btn.querySelector('.menu-text');
                     if (textSpan) {
                       textSpan.innerHTML = letters.map((letter, i) => 
-                        `<span id="menu-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter}</span>`
+                        `<span id="menu-click-letter-${i}" style="display: inline-block; transition: color 0.05s ease; background: none !important; border: none !important;">${letter}</span>`
                       ).join('');
                       
-                      // Same fast animation as navigation buttons
+                      // Much faster animation
                       letters.forEach((letter, letterIndex) => {
                         colors.forEach((color, colorIndex) => {
                           setTimeout(() => {
@@ -91,15 +105,15 @@ const Index = () => {
                             if (letterSpan) {
                               letterSpan.style.color = color;
                             }
-                          }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM button
+                          }, letterIndex * 5 + colorIndex * 15);
                         });
                       });
                       
-                      // Reset - same timing as navigation buttons
+                      // Reset text
                       setTimeout(() => {
                         textSpan.innerHTML = 'MENU';
                         (textSpan as HTMLElement).style.color = 'white !important';
-                      }, letters.length * 10 + colors.length * 30 + 50);
+                      }, letters.length * 5 + colors.length * 15 + 25);
                     }
                     
                     setIsMenuOpen(!isMenuOpen);
