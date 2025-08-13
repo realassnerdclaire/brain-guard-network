@@ -18,11 +18,11 @@ const HeroXBrainer = () => {
           }}
         />
         <div className="flex flex-col">
-          <span className="text-white text-xl sm:text-2xl lg:text-4xl font-bold tracking-tight">
+          <span className="text-white text-2xl sm:text-3xl lg:text-5xl font-bold tracking-tight">
             XBrainer AI
           </span>
-          <span className="text-white/70 text-sm sm:text-base lg:text-lg font-medium">
-            The firewall for your brain
+          <span className="text-white/70 text-sm sm:text-base lg:text-xl font-medium">
+            Securing Neural Data in Real Time
           </span>
         </div>
       </div>
@@ -206,12 +206,12 @@ const HeroXBrainer = () => {
       <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0">
         <div className="container px-4">
           <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap">
-            <div className="text-white text-xs sm:text-sm font-medium">PROBLEM</div>
-            <div className="text-white text-xs sm:text-sm font-medium">URGENCY</div>
-            <div className="text-white text-xs sm:text-sm font-medium hidden sm:block">TECHNICAL ADVANTAGE</div>
-            <div className="text-white text-xs sm:text-sm font-medium sm:hidden">TECH ADVANTAGE</div>
-            <div className="text-white text-xs sm:text-sm font-medium hidden sm:block">COMPLIANCE AND STANDARDS</div>
-            <div className="text-white text-xs sm:text-sm font-medium sm:hidden">COMPLIANCE</div>
+            <div className="text-white text-sm sm:text-base lg:text-lg font-medium">PROBLEM</div>
+            <div className="text-white text-sm sm:text-base lg:text-lg font-medium">URGENCY</div>
+            <div className="text-white text-sm sm:text-base lg:text-lg font-medium hidden sm:block">TECHNICAL ADVANTAGE</div>
+            <div className="text-white text-sm sm:text-base lg:text-lg font-medium sm:hidden">TECH ADVANTAGE</div>
+            <div className="text-white text-sm sm:text-base lg:text-lg font-medium hidden sm:block">COMPLIANCE AND STANDARDS</div>
+            <div className="text-white text-sm sm:text-base lg:text-lg font-medium sm:hidden">COMPLIANCE</div>
           </div>
         </div>
       </div>
