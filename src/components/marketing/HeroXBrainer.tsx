@@ -293,50 +293,41 @@ const HeroXBrainer = () => {
                 btn.style.setProperty('color', 'white', 'important');
               }}
               onClick={() => {
-                console.log('🚀 PROBLEM CLICKED - Starting letter animation');
-                
                 const btn = document.getElementById('problem-btn');
                 if (!btn) return;
                 
-                // Color sequence: light pink → pink → darker pink → purple → blue → light blue
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['P', 'R', 'O', 'B', 'L', 'E', 'M'];
                 
-                // Create letter spans - PREVENT ALL inherited styles that create squares
+                // Create letter spans
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
+                  `<span id="problem-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter}</span>`
                 ).join('');
                 
-                console.log('✅ Letter spans created - letters only');
-                
-                // Animate each letter - ONLY COLOR CHANGE (ONCE)
+                // Very fast animation
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
-                      const letterSpan = document.getElementById(`letter-${letterIndex}`);
+                      const letterSpan = document.getElementById(`problem-click-letter-${letterIndex}`);
                       if (letterSpan) {
-                        // ONLY change color - nothing else
                         letterSpan.style.color = color;
-                        console.log(`Letter ${letter} -> ${color}`);
                       }
-                    }, letterIndex * 30 + colorIndex * 100); // Faster timing
+                    }, letterIndex * 10 + colorIndex * 30); // Very fast timing
                   });
                 });
                 
-                // Reset - back to normal white letters (ONCE)
+                // Reset and navigate
                 setTimeout(() => {
                   btn.innerHTML = 'PROBLEM';
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
-                  console.log('🔄 Reset to normal PROBLEM');
-                }, letters.length * 30 + colors.length * 100 + 200); // Faster timing
-                
-                // Scroll to problem section
-                const problemSection = document.getElementById('problem');
-                if (problemSection) {
-                  problemSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  console.log('✅ Scrolled to problem section');
-                }
+                  
+                  // Navigate to problem section
+                  const problemSection = document.getElementById('problem');
+                  if (problemSection) {
+                    problemSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, letters.length * 10 + colors.length * 30 + 50);
               }}
             >
               PROBLEM
@@ -427,49 +418,41 @@ const HeroXBrainer = () => {
             <button 
               className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
-                console.log('🚀 SOLUTION CLICKED - Starting letter animation');
-                
-                const btn = document.getElementById('tech-adv-btn') || document.querySelector('[data-button="tech-adv"]') as HTMLElement;
+                const btn = document.getElementById('tech-adv-btn');
                 if (!btn) return;
                 
-                // Same color sequence and animation as PROBLEM
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['S', 'O', 'L', 'U', 'T', 'I', 'O', 'N'];
                 
-                // Create letter spans - PREVENT ALL inherited styles
+                // Create letter spans
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="tech-adv-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                  `<span id="solution-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter}</span>`
                 ).join('');
                 
-                console.log('✅ SOLUTION Letter spans created - letters only');
-                
-                // Animate each letter - ONLY COLOR CHANGE
+                // Very fast animation
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
-                      const letterSpan = document.getElementById(`tech-adv-letter-${letterIndex}`);
-                      if (letterSpan && letter !== ' ') {
+                      const letterSpan = document.getElementById(`solution-click-letter-${letterIndex}`);
+                      if (letterSpan) {
                         letterSpan.style.color = color;
-                        console.log(`SOLUTION Letter ${letter} -> ${color}`);
                       }
-                    }, letterIndex * 30 + colorIndex * 100); // Much faster timing
+                    }, letterIndex * 10 + colorIndex * 30); // Very fast timing
                   });
                 });
                 
-                // Reset - back to normal white letters
+                // Reset and navigate
                 setTimeout(() => {
                   btn.innerHTML = 'SOLUTION';
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
-                  console.log('🔄 Reset to normal SOLUTION');
-                }, letters.length * 30 + colors.length * 100 + 200); // Much faster timing
-                
-                // Scroll to solution section
-                const solutionSection = document.getElementById('solution');
-                if (solutionSection) {
-                  solutionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  console.log('✅ Scrolled to solution section');
-                }
+                  
+                  // Navigate to solution section
+                  const solutionSection = document.getElementById('solution');
+                  if (solutionSection) {
+                    solutionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, letters.length * 10 + colors.length * 30 + 50);
               }}
               id="tech-adv-btn"
               onMouseEnter={(e) => {
