@@ -65,22 +65,19 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Futuristic Background - Dark with subtle patterns */}
-      <div className="absolute inset-0 bg-black z-0">
-        {/* Grid pattern overlay */}
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(108, 99, 255, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(108, 99, 255, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px'
-          }}
-        />
-        {/* Gradient overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900/50 to-black z-10" />
-      </div>
+      {/* Neural Network Brain Background */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(/lovable-uploads/31172ad7-ab22-45bf-89f3-b085c5db7d79.png)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/60 z-10" />
 
       {/* Logo and Company Info - Enhanced futuristic styling */}
       <div className="fixed top-8 left-8 z-50 flex items-center gap-4">
@@ -147,9 +144,9 @@ const FAQ = () => {
       {/* Main Content - Futuristic design */}
       <div className="relative z-20 min-h-screen flex flex-col pt-32 px-8 pb-16">
         <div className="max-w-4xl mx-auto w-full">
-          {/* Hero Section - Enhanced with glows and effects */}
+          {/* Hero Section - Smaller headline */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-[#6C63FF] to-[#A855F7] bg-clip-text text-transparent">
+            <h1 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-white via-[#6C63FF] to-[#A855F7] bg-clip-text text-transparent">
               Protecting Brain Data at the Speed of Thought
             </h1>
             <p className="text-xl text-white/80 mb-6">Real-time EEG & BCI security — preventing leaks before they happen.</p>
