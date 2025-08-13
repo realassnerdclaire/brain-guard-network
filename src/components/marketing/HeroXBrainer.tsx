@@ -30,7 +30,7 @@ const HeroXBrainer = () => {
       
       {/* EEG stream signals across entire page - background layer */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <svg className="w-full h-full opacity-20" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <svg className="w-full h-full opacity-40" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="eegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" style={{stopColor: '#00d4ff', stopOpacity: 1}} />
@@ -44,18 +44,18 @@ const HeroXBrainer = () => {
             </linearGradient>
           </defs>
           
-          {/* Simplified EEG waves - subtle and clean */}
+          {/* Simplified EEG waves - balanced visibility */}
           <path d="M0,200 L40,180 L80,220 L120,180 L160,200 L200,190 L240,210 L280,180 L320,220 L360,190 L400,200 L440,180 L480,210 L520,190 L560,200 L600,180 L640,210 L680,190 L720,200 L760,180 L800,210 L840,190 L880,200 L920,180 L960,210 L1000,190 L1040,200 L1080,180 L1120,210 L1160,190 L1200,200 L1240,180 L1280,210 L1320,190 L1360,200 L1400,180 L1440,210 L1480,190 L1520,200 L1560,180 L1600,210 L1640,190 L1680,200 L1720,180 L1760,210 L1800,190 L1840,200 L1880,180 L1920,210"
                 stroke="url(#eegGradient)" 
-                strokeWidth="1" 
+                strokeWidth="2" 
                 fill="none" 
-                style={{opacity: 0.3}} />
+                style={{opacity: 0.7}} />
           
           <path d="M0,600 L40,580 L80,620 L120,580 L160,600 L200,590 L240,610 L280,580 L320,620 L360,590 L400,600 L440,580 L480,610 L520,590 L560,600 L600,580 L640,610 L680,590 L720,600 L760,580 L800,610 L840,590 L880,600 L920,580 L960,610 L1000,590 L1040,600 L1080,580 L1120,610 L1160,590 L1200,600 L1240,580 L1280,610 L1320,590 L1360,600 L1400,580 L1440,610 L1480,590 L1520,600 L1560,580 L1600,610 L1640,590 L1680,600 L1720,580 L1760,610 L1800,590 L1840,600 L1880,580 L1920,610"
                 stroke="url(#eegGradient2)" 
-                strokeWidth="1" 
+                strokeWidth="2" 
                 fill="none" 
-                style={{opacity: 0.2}} />
+                style={{opacity: 0.6}} />
                 
           {/* EEG waves spreading across entire page - graph style */}
           <path d="M0,200 L20,180 L40,220 L60,170 L80,230 L100,160 L120,240 L140,180 L160,200 L180,190 L200,210 L220,185 L240,215 L260,175 L280,225 L300,190 L320,230 L340,170 L360,240 L380,185 L400,220 L420,160 L440,250 L460,190 L480,210 L500,180 L520,230 L540,170 L560,240 L580,185 L600,220 L620,175 L640,235 L660,190 L680,215 L700,180 L720,225 L740,175 L760,235 L780,190 L800,215 L820,180 L840,225 L860,175 L880,235 L900,190 L920,215 L940,180 L960,225 L980,175 L1000,235 L1020,190 L1040,215 L1060,180 L1080,225 L1100,175 L1120,235 L1140,190 L1160,215 L1180,180 L1200,225" 
