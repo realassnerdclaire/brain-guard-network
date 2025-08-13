@@ -142,14 +142,13 @@ const Index = () => {
                     
                 {/* Menu dropdown - smaller and more compact for mobile */}
                 <div 
-                  className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm border rounded-lg shadow-2xl z-[99999999]"
+                  className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm rounded-lg shadow-2xl z-[99999999] menu-border-cycle"
                   style={{
                     contain: 'layout style',
                     willChange: 'transform',
                     isolation: 'isolate',
-                    animation: 'menuBorderCycle 1.4s linear infinite',
                     borderWidth: '4px',
-                    borderColor: '#ffffff'
+                    borderStyle: 'solid'
                   }}
                 >
                       <ul className="py-1">
@@ -190,9 +189,15 @@ const Index = () => {
                                   // Navigate after animation
                                   setTimeout(() => {
                                     setIsMenuOpen(false);
-                                    const targetElement = document.querySelector(item.href);
-                                    if (targetElement) {
-                                      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    
+                                    // Special handling for HOME button
+                                    if (item.label === "HOME") {
+                                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    } else {
+                                      const targetElement = document.querySelector(item.href);
+                                      if (targetElement) {
+                                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                      }
                                     }
                                   }, 100);
                                 }, letters.length * 10 + colors.length * 30 + 50);
