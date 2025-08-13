@@ -50,9 +50,8 @@ const HeroXBrainer = () => {
                 strokeWidth="2" 
                 fill="none" 
                 style={{
-                  opacity: 0.8,
-                  animation: 'eeg-flow 3s ease-in-out infinite',
-                  filter: 'drop-shadow(0 0 8px #00d4ff)',
+                  opacity: 0.3,
+                  filter: 'drop-shadow(0 0 4px #00d4ff)',
                   strokeLinecap: 'round'
                 }} />
           
@@ -61,10 +60,8 @@ const HeroXBrainer = () => {
                 strokeWidth="1.5" 
                 fill="none" 
                 style={{
-                  opacity: 0.7,
-                  animation: 'eeg-flow 4s ease-in-out infinite',
-                  animationDelay: '1s',
-                  filter: 'drop-shadow(0 0 6px #a855f7)',
+                  opacity: 0.2,
+                  filter: 'drop-shadow(0 0 3px #a855f7)',
                   strokeLinecap: 'round'
                 }} />
           
@@ -73,10 +70,8 @@ const HeroXBrainer = () => {
                 strokeWidth="1" 
                 fill="none" 
                 style={{
-                  opacity: 0.6,
-                  animation: 'eeg-flow 5s ease-in-out infinite',
-                  animationDelay: '2s',
-                  filter: 'drop-shadow(0 0 4px #00d4ff)',
+                  opacity: 0.15,
+                  filter: 'drop-shadow(0 0 2px #00d4ff)',
                   strokeLinecap: 'round'
                 }} />
                 
@@ -85,8 +80,7 @@ const HeroXBrainer = () => {
                 stroke="url(#eegGradient)" 
                 strokeWidth="2" 
                 fill="none" 
-                className="animate-pulse" 
-                style={{animation: 'wave-drift 6s ease-in-out infinite'}} />
+                style={{opacity: 0.1}} />
           
           <path d="M0,400 L25,380 L50,420 L75,370 L100,430 L125,360 L150,440 L175,380 L200,400 L225,390 L250,410 L275,385 L300,415 L325,375 L350,425 L375,390 L400,430 L425,370 L450,440 L475,385 L500,420 L525,360 L550,450 L575,390 L600,410 L625,380 L650,430 L675,370 L700,440 L725,385 L750,420 L775,375 L800,435 L825,390 L850,415 L875,380 L900,425 L925,375 L950,435 L975,390 L1000,415 L1025,380 L1050,425 L1075,375 L1100,435 L1125,390 L1150,415 L1175,380 L1200,425 L1225,375 L1250,435 L1275,390 L1300,415 L1325,380 L1350,425 L1375,375 L1400,435 L1425,390 L1450,415 L1475,380 L1500,425 L1525,375 L1550,435 L1575,390 L1600,415 L1625,380 L1650,425 L1675,375 L1700,435 L1725,390 L1750,415 L1775,380 L1800,425 L1825,375 L1850,435 L1875,390 L1900,415 L1920,380" 
                 stroke="url(#eegGradient2)" 
