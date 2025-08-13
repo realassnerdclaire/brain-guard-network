@@ -28,9 +28,13 @@ const Index = () => {
   // Show navigation layout when menu is clicked
   if (showNavigationLayout) {
     return <NavigationLayout 
-      onBack={() => setShowNavigationLayout(false)} 
+      onBack={() => {
+        setShowNavigationLayout(false);
+        setIsMenuOpen(false); // Reset menu state when going back
+      }} 
       onNavigateToSection={(section) => {
         setShowNavigationLayout(false);
+        setIsMenuOpen(false); // Reset menu state when navigating
         // Scroll to the section after a brief delay to allow page transition
         setTimeout(() => {
           const element = document.getElementById(section);
