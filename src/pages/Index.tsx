@@ -100,11 +100,106 @@ const Index = () => {
                 {/* Dropdown menu with backdrop */}
                 {isMenuOpen && (
                   <>
-                    {/* Full screen opaque backdrop to completely hide background */}
+                    {/* Animated neural backdrop */}
                     <div 
                       className="fixed inset-0 bg-black z-[9999999]"
                       onClick={() => setIsMenuOpen(false)}
-                    />
+                    >
+                      {/* Subtle neural network animation */}
+                      <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1920 1080">
+                        <defs>
+                          <linearGradient id="neuralFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.6}} />
+                            <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
+                            <stop offset="100%" style={{stopColor: '#6C63FF', stopOpacity: 0.6}} />
+                          </linearGradient>
+                          <linearGradient id="neuralFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style={{stopColor: '#EC4899', stopOpacity: 0.5}} />
+                            <stop offset="50%" style={{stopColor: '#F472B6', stopOpacity: 0.7}} />
+                            <stop offset="100%" style={{stopColor: '#EC4899', stopOpacity: 0.5}} />
+                          </linearGradient>
+                          <linearGradient id="neuralFlow3" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.4}} />
+                            <stop offset="50%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
+                            <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.4}} />
+                          </linearGradient>
+                        </defs>
+                        
+                        {/* Flowing EEG waves */}
+                        <path
+                          d="M-50,200 L0,195 L20,210 L40,185 L60,205 L80,190 L120,215 L140,180 L180,210 L220,195 L260,220 L300,170 L340,205 L380,190 L420,215 L460,175 L500,200 L540,195 L580,210 L620,185 L660,205 L700,190 L740,215 L780,180 L820,210 L860,195 L900,220 L940,170 L980,205 L1020,190 L1060,215 L1100,175 L1140,200 L1180,195 L1220,210 L1260,185 L1300,205 L1340,190 L1380,215 L1420,180 L1460,210 L1500,195 L1540,220 L1580,170 L1620,205 L1660,190 L1700,215 L1740,175 L1780,200 L1820,195 L1860,210 L1900,185 L1940,205 L1980,190"
+                          stroke="url(#neuralFlow1)"
+                          strokeWidth="2"
+                          fill="none"
+                          opacity="0.7"
+                        >
+                          <animateTransform
+                            attributeName="transform"
+                            type="translate"
+                            values="-100,0; 100,0; -100,0"
+                            dur="8s"
+                            repeatCount="indefinite"
+                          />
+                        </path>
+                        
+                        <path
+                          d="M-50,400 L0,405 L25,380 L50,415 L75,390 L100,410 L130,385 L160,420 L190,395 L220,405 L250,380 L280,415 L310,390 L340,410 L370,385 L400,420 L430,395 L460,405 L490,380 L520,415 L550,390 L580,410 L610,385 L640,420 L670,395 L700,405 L730,380 L760,415 L790,390 L820,410 L850,385 L880,420 L910,395 L940,405 L970,380 L1000,415 L1030,390 L1060,410 L1090,385 L1120,420 L1150,395 L1180,405 L1210,380 L1240,415 L1270,390 L1300,410 L1330,385 L1360,420 L1390,395 L1420,405 L1450,380 L1480,415 L1510,390 L1540,410 L1570,385 L1600,420 L1630,395 L1660,405 L1690,380 L1720,415 L1750,390 L1780,410 L1810,385 L1840,420 L1870,395 L1900,405 L1930,380 L1960,415 L1990,390"
+                          stroke="url(#neuralFlow2)"
+                          strokeWidth="1.5"
+                          fill="none"
+                          opacity="0.6"
+                        >
+                          <animateTransform
+                            attributeName="transform"
+                            type="translate"
+                            values="100,0; -100,0; 100,0"
+                            dur="12s"
+                            repeatCount="indefinite"
+                          />
+                        </path>
+                        
+                        <path
+                          d="M-50,600 L0,595 L15,610 L30,585 L45,605 L60,590 L80,615 L100,580 L125,610 L150,595 L175,620 L200,575 L225,605 L250,590 L275,615 L300,580 L325,610 L350,595 L375,620 L400,575 L425,605 L450,590 L475,615 L500,580 L525,610 L550,595 L575,620 L600,575 L625,605 L650,590 L675,615 L700,580 L725,610 L750,595 L775,620 L800,575 L825,605 L850,590 L875,615 L900,580 L925,610 L950,595 L975,620 L1000,575 L1025,605 L1050,590 L1075,615 L1100,580 L1125,610 L1150,595 L1175,620 L1200,575 L1225,605 L1250,590 L1275,615 L1300,580 L1325,610 L1350,595 L1375,620 L1400,575 L1425,605 L1450,590 L1475,615 L1500,580 L1525,610 L1550,595 L1575,620 L1600,575 L1625,605 L1650,590 L1675,615 L1700,580 L1725,610 L1750,595 L1775,620 L1800,575 L1825,605 L1850,590 L1875,615 L1900,580 L1925,610 L1950,595 L1975,620"
+                          stroke="url(#neuralFlow3)"
+                          strokeWidth="1"
+                          fill="none"
+                          opacity="0.5"
+                        >
+                          <animateTransform
+                            attributeName="transform"
+                            type="translate"
+                            values="0,0; 50,0; 0,0"
+                            dur="15s"
+                            repeatCount="indefinite"
+                          />
+                        </path>
+                        
+                        {/* Neural network nodes */}
+                        <circle cx="200" cy="300" r="3" fill="#6C63FF" opacity="0.4">
+                          <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="600" cy="450" r="2" fill="#EC4899" opacity="0.3">
+                          <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="1000" cy="250" r="2.5" fill="#3B82F6" opacity="0.4">
+                          <animate attributeName="opacity" values="0.2;0.7;0.2" dur="5s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="1400" cy="500" r="2" fill="#A855F7" opacity="0.3">
+                          <animate attributeName="opacity" values="0.1;0.4;0.1" dur="6s" repeatCount="indefinite" />
+                        </circle>
+                        
+                        {/* Connecting neural pathways */}
+                        <line x1="200" y1="300" x2="600" y2="450" stroke="#6C63FF" strokeWidth="0.5" opacity="0.2">
+                          <animate attributeName="opacity" values="0.1;0.3;0.1" dur="7s" repeatCount="indefinite" />
+                        </line>
+                        <line x1="600" y1="450" x2="1000" y2="250" stroke="#EC4899" strokeWidth="0.5" opacity="0.2">
+                          <animate attributeName="opacity" values="0.1;0.4;0.1" dur="8s" repeatCount="indefinite" />
+                        </line>
+                        <line x1="1000" y1="250" x2="1400" y2="500" stroke="#3B82F6" strokeWidth="0.5" opacity="0.2">
+                          <animate attributeName="opacity" values="0.1;0.3;0.1" dur="9s" repeatCount="indefinite" />
+                        </line>
+                      </svg>
+                    </div>
                     {/* Menu dropdown - smaller and more compact */}
                     <div 
                       className="fixed top-16 right-4 w-48 sm:w-52 bg-black border border-white/60 rounded-lg shadow-2xl z-[99999999]"
