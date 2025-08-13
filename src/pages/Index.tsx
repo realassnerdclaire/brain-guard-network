@@ -59,26 +59,75 @@ const Index = () => {
           <HeroXBrainer />
           
           {/* Problem Section */}
-          <section id="problem" className="min-h-screen bg-black flex items-center justify-center py-16">
-            <div className="container px-4 max-w-4xl">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-16 text-center">
-                Problem
-              </h2>
+          <section id="problem" className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden">
+            {/* Subtle background grid */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
+            </div>
+            
+            <div className="container px-4 max-w-6xl relative z-10">
+              <div className="text-center mb-20">
+                <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in">
+                  Problem
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto" />
+              </div>
               
-              <div className="space-y-12 text-white">
-                <div>
-                  <p className="text-lg sm:text-xl leading-relaxed text-white/90">
-                    Brain-computer devices send raw brain (EEG) and motion data. Many pipelines still miss four basics: secure transport, packet checks (timing and signal errors), access control tied to user consent, and a permanent access log. Without this, bad data reaches apps, unauthorized reads happen, and teams can't show compliance—causing exposure risk, unreliable results, and stalled deployments. As headsets move from labs to everyday use, this gap is immediate.
-                  </p>
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                {/* Left side - Problem */}
+                <div className="space-y-8 animate-fade-in">
+                  <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse" />
+                      <span className="text-red-400 font-medium text-sm uppercase tracking-wider">Critical Gap</span>
+                    </div>
+                    <p className="text-xl text-white/90 leading-relaxed">
+                      Brain-computer devices lack <span className="text-white font-semibold">secure transport</span>, 
+                      <span className="text-white font-semibold"> packet validation</span>, and 
+                      <span className="text-white font-semibold"> access control</span>.
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="border border-red-500/20 bg-red-500/5 rounded-lg p-4">
+                      <div className="text-red-400 font-bold text-lg">Bad Data</div>
+                      <div className="text-white/60 text-sm">Reaches Apps</div>
+                    </div>
+                    <div className="border border-red-500/20 bg-red-500/5 rounded-lg p-4">
+                      <div className="text-red-400 font-bold text-lg">Unauthorized</div>
+                      <div className="text-white/60 text-sm">Access</div>
+                    </div>
+                    <div className="border border-red-500/20 bg-red-500/5 rounded-lg p-4">
+                      <div className="text-red-400 font-bold text-lg">No Compliance</div>
+                      <div className="text-white/60 text-sm">Tracking</div>
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="pt-8">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-                    How XBrainer AI helps
-                  </h3>
-                  <p className="text-lg sm:text-xl leading-relaxed text-white/90">
-                    We add a software layer between device and app that checks each packet in real time, drops corrupted data, controls who can read the stream, and records every access in a permanent log.
-                  </p>
+                {/* Right side - Solution */}
+                <div className="space-y-8 animate-fade-in">
+                  <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+                      <span className="text-green-400 font-medium text-sm uppercase tracking-wider">XBrainer Solution</span>
+                    </div>
+                    <p className="text-xl text-white/90 leading-relaxed">
+                      <span className="text-white font-semibold">Real-time packet validation</span> + 
+                      <span className="text-white font-semibold"> access control</span> + 
+                      <span className="text-white font-semibold"> permanent logging</span>
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="border border-green-500/20 bg-green-500/5 rounded-lg p-4 text-center">
+                      <div className="text-green-400 font-bold text-lg">✓ Clean Data</div>
+                      <div className="text-white/60 text-sm">Validated Stream</div>
+                    </div>
+                    <div className="border border-green-500/20 bg-green-500/5 rounded-lg p-4 text-center">
+                      <div className="text-green-400 font-bold text-lg">✓ Secure Access</div>
+                      <div className="text-white/60 text-sm">Full Control</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
