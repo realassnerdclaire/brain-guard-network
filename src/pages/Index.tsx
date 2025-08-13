@@ -676,50 +676,46 @@ const Index = () => {
             id="edge" 
             className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden"
           >
-            {/* Cosmic brain background inspired by uploaded image */}
-            <div className="absolute inset-0 opacity-90">
-              {/* Cosmic space background */}
-              <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/50 via-purple-900/30 to-black"></div>
-              
-              {/* Main cosmic brain silhouette */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div 
-                  className="w-96 h-96 bg-cover bg-center opacity-80"
-                  style={{
-                    backgroundImage: `url('/lovable-uploads/d0e7f404-74da-48fc-8d6a-13a16fe9706f.png')`,
-                    filter: 'hue-rotate(200deg) saturate(1.2) brightness(1.1)',
-                    animation: 'cosmicGlow 6s ease-in-out infinite alternate'
-                  }}
-                ></div>
-              </div>
-              
-              {/* Subtle EEG patterns overlay */}
-              <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1920 1080">
-                <defs>
-                  <linearGradient id="cosmicWave1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
-                    <stop offset="50%" style={{stopColor: '#A78BFA', stopOpacity: 0.8}} />
-                    <stop offset="100%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
-                  </linearGradient>
-                </defs>
-                
-                <path
-                  d="M0,400 L100,395 L200,410 L300,385 L400,405 L500,380 L600,400 L700,390 L800,415 L900,375 L1000,395 L1100,420 L1200,385 L1300,400 L1400,395 L1500,410 L1600,385 L1700,405 L1800,380 L1900,400"
-                  stroke="url(#cosmicWave1)"
-                  strokeWidth="2"
-                  fill="none"
-                  opacity="0.7"
-                >
-                  <animateTransform
-                    attributeName="transform"
-                    type="translate"
-                    values="0,0; 30,0; 0,0"
-                    dur="8s"
-                    repeatCount="indefinite"
-                  />
-                </path>
-              </svg>
+            {/* Small cosmic brain in bottom left corner */}
+            <div className="absolute bottom-8 left-8 opacity-80">
+              <div 
+                className="w-32 h-32 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url('/lovable-uploads/d0e7f404-74da-48fc-8d6a-13a16fe9706f.png')`,
+                  filter: 'hue-rotate(280deg) saturate(1.5) brightness(1.2)',
+                  background: 'linear-gradient(135deg, #EC4899, #8B5CF6, #3B82F6)',
+                  mixBlendMode: 'multiply',
+                  animation: 'cosmicGlow 4s ease-in-out infinite alternate'
+                }}
+              ></div>
             </div>
+              
+            {/* Subtle EEG patterns overlay */}
+            <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1920 1080">
+              <defs>
+                <linearGradient id="cosmicWave1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
+                  <stop offset="50%" style={{stopColor: '#A78BFA', stopOpacity: 0.8}} />
+                  <stop offset="100%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
+                </linearGradient>
+              </defs>
+              
+              <path
+                d="M0,400 L100,395 L200,410 L300,385 L400,405 L500,380 L600,400 L700,390 L800,415 L900,375 L1000,395 L1100,420 L1200,385 L1300,400 L1400,395 L1500,410 L1600,385 L1700,405 L1800,380 L1900,400"
+                stroke="url(#cosmicWave1)"
+                strokeWidth="2"
+                fill="none"
+                opacity="0.7"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  type="translate"
+                  values="0,0; 30,0; 0,0"
+                  dur="8s"
+                  repeatCount="indefinite"
+                />
+              </path>
+            </svg>
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">

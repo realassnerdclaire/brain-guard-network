@@ -308,17 +308,17 @@ All colors MUST be HSL.
       transform: scale(1);
   }
   
-  @keyframes cosmicGlow {
+@keyframes cosmicGlow {
     0% { 
-      filter: hue-rotate(200deg) saturate(1.2) brightness(1.1) drop-shadow(0 0 30px #60A5FA);
+      filter: hue-rotate(280deg) saturate(1.5) brightness(1.2) drop-shadow(0 0 15px #EC4899);
       transform: scale(1);
     }
     50% { 
-      filter: hue-rotate(210deg) saturate(1.4) brightness(1.3) drop-shadow(0 0 50px #A78BFA);
+      filter: hue-rotate(300deg) saturate(1.8) brightness(1.4) drop-shadow(0 0 25px #8B5CF6);
       transform: scale(1.02);
     }
     100% { 
-      filter: hue-rotate(200deg) saturate(1.2) brightness(1.1) drop-shadow(0 0 30px #60A5FA);
+      filter: hue-rotate(320deg) saturate(1.6) brightness(1.3) drop-shadow(0 0 20px #3B82F6);
       transform: scale(1);
     }
   }
