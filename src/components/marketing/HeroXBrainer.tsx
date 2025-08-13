@@ -181,20 +181,20 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 h-full flex items-start justify-start py-0 sm:py-12 lg:py-24 px-4 sm:px-6 pt-28 sm:pt-0">
-        <div className="max-w-2xl lg:max-w-3xl relative z-15 mt-0 sm:mt-0">
-          <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.1] font-normal mb-8 sm:mb-12" id="hero-title">
+      <div className="container relative z-10 h-full flex items-center justify-start py-0 px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div className="max-w-2xl lg:max-w-4xl xl:max-w-5xl relative z-15 mt-20 sm:mt-16 lg:mt-0">
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.1] font-normal mb-6 sm:mb-8 lg:mb-12" id="hero-title">
             <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg text-white/80 max-w-lg lg:max-w-xl leading-relaxed mb-64 sm:mb-0">
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/80 max-w-lg lg:max-w-xl xl:max-w-2xl leading-relaxed mb-8 sm:mb-12 lg:mb-16">
             As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
           </p>
         </div>
         
-        {/* Action buttons - moved down slightly */}
-        <div className="absolute bottom-72 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-2 sm:gap-4">
+        {/* Action buttons - properly positioned for desktop */}
+        <div className="absolute bottom-36 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-6 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-3 sm:gap-4 lg:gap-6">
           <button 
-            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-4 sm:px-6 lg:px-8 py-2 sm:py-3 touch-manipulation text-xs sm:text-sm lg:text-base font-medium cursor-pointer transition-all duration-300"
+            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-6 sm:px-8 lg:px-10 xl:px-12 py-3 sm:py-4 lg:py-5 touch-manipulation text-sm sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
               const btn = e.currentTarget;
               const interval = startHoverAnimation(btn);
@@ -217,7 +217,7 @@ const HeroXBrainer = () => {
             JOIN THE WAITLIST
           </button>
           <button 
-            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-4 sm:px-6 lg:px-8 py-2 sm:py-3 touch-manipulation text-xs sm:text-sm lg:text-base font-medium cursor-pointer transition-all duration-300"
+            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-6 sm:px-8 lg:px-10 xl:px-12 py-3 sm:py-4 lg:py-5 touch-manipulation text-sm sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
               const btn = e.currentTarget;
               const interval = startHoverAnimation(btn);
@@ -242,13 +242,13 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Interactive navigation labels at bottom - moved up more */}
-      <div className="absolute bottom-32 sm:bottom-8 lg:bottom-12 left-0 right-0 z-[9999] pointer-events-none">
-        <div className="container px-2 sm:px-4 pointer-events-none">
-          <div className="flex items-center justify-center gap-1 sm:gap-4 lg:gap-8 xl:gap-12 flex-wrap pointer-events-auto">
+      {/* Interactive navigation labels at bottom - properly spaced for desktop */}
+      <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 xl:bottom-28 left-0 right-0 z-[9999] pointer-events-none">
+        <div className="container px-6 sm:px-8 lg:px-12 xl:px-16 pointer-events-none">
+          <div className="flex items-center justify-center gap-2 sm:gap-6 lg:gap-10 xl:gap-16 flex-wrap pointer-events-auto">
             <button 
               id="problem-btn"
-              className="text-white text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer bg-transparent border-none p-1 sm:p-3 lg:p-4 hover:bg-white/10 rounded z-[99999] relative"
+              className="text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer bg-transparent border-none p-2 sm:p-3 lg:p-4 xl:p-5 hover:bg-white/10 rounded z-[99999] relative"
               style={{
                 pointerEvents: 'auto',
                 position: 'relative',
@@ -334,7 +334,7 @@ const HeroXBrainer = () => {
               PROBLEM
             </button>
             <button 
-              className="text-white text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 select-none bg-transparent border-none p-1 sm:p-3 lg:p-4 hover:bg-white/10 rounded"
+              className="text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 select-none bg-transparent border-none p-2 sm:p-3 lg:p-4 xl:p-5 hover:bg-white/10 rounded"
               id="urgency-btn"
               onClick={() => {
                 console.log('🚀 URGENCY CLICKED - Starting letter animation');
@@ -416,7 +416,7 @@ const HeroXBrainer = () => {
               URGENCY
             </button>
             <button 
-              className="text-white text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-1 sm:p-3 lg:p-4 hover:bg-white/10 rounded"
+              className="text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-2 sm:p-3 lg:p-4 xl:p-5 hover:bg-white/10 rounded"
               id="tech-adv-btn"
               onClick={(e) => {
                 console.log('🚀 SOLUTION CLICKED - Starting letter animation');
@@ -527,7 +527,7 @@ const HeroXBrainer = () => {
               SOLUTION
             </button>
             <button 
-              className="text-white text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-1 sm:p-3 lg:p-4 hover:bg-white/10 rounded"
+              className="text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-2 sm:p-3 lg:p-4 xl:p-5 hover:bg-white/10 rounded"
               onClick={(e) => {
                 console.log('🚀 SOLUTION (mobile) CLICKED - Starting letter animation');
                 
@@ -610,7 +610,7 @@ const HeroXBrainer = () => {
               SOLUTION
             </button>
             <button 
-              className="text-white text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-1 sm:p-3 lg:p-4 hover:bg-white/10 rounded"
+              className="text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-2 sm:p-3 lg:p-4 xl:p-5 hover:bg-white/10 rounded"
               onClick={(e) => {
                 console.log('🚀 OUR EDGE CLICKED - Starting letter animation');
                 const btn = e.currentTarget;
