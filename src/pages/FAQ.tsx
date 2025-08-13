@@ -96,30 +96,30 @@ const FAQ = () => {
           <span className="text-2xl font-bold tracking-tight leading-tight text-white">
             XBrainer AI
           </span>
-          <span className="text-sm font-medium text-[#6C63FF]">
+          <span className="text-sm font-medium text-white">
             Securing Neural Data in Real Time
           </span>
         </div>
       </div>
 
-      {/* Menu Button - Futuristic styling */}
+      {/* Menu Button - Dark blue theme */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="fixed top-8 right-8 z-50 flex items-center gap-2 text-white bg-black/60 backdrop-blur-md border border-[#6C63FF]/30 rounded-lg px-3 py-2 hover:bg-[#6C63FF]/20 hover:border-[#6C63FF]/50 transition-all duration-300 shadow-lg"
+        className="fixed top-8 right-8 z-50 flex items-center gap-2 text-white bg-black/60 backdrop-blur-md border border-blue-600/30 rounded-lg px-3 py-2 hover:bg-blue-900/20 hover:border-blue-500/50 transition-all duration-300 shadow-lg"
         style={{
-          boxShadow: '0 0 20px rgba(108, 99, 255, 0.2)'
+          boxShadow: '0 0 20px rgba(37, 99, 235, 0.2)'
         }}
       >
         {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
         <span className="text-sm font-medium tracking-widest menu-text">MENU</span>
       </button>
 
-      {/* Side Navigation Menu - Enhanced futuristic design */}
-      <div className={`fixed top-0 right-0 h-full w-56 bg-black/90 backdrop-blur-xl border-l border-[#6C63FF]/30 z-40 transform transition-transform duration-300 ${
+      {/* Side Navigation Menu - Dark blue theme */}
+      <div className={`fixed top-0 right-0 h-full w-56 bg-black/90 backdrop-blur-xl border-l border-blue-600/30 z-40 transform transition-transform duration-300 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
         style={{
-          boxShadow: 'inset 0 0 50px rgba(108, 99, 255, 0.1)'
+          boxShadow: 'inset 0 0 50px rgba(37, 99, 235, 0.1)'
         }}
       >
         <div className="p-4 pt-16">
@@ -129,7 +129,7 @@ const FAQ = () => {
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    className="block w-full text-left text-white/80 hover:text-white py-1.5 px-2 text-sm font-medium transition-all duration-300 hover:bg-[#6C63FF]/10 hover:border-l-2 hover:border-[#6C63FF] rounded-r"
+                    className="block w-full text-left text-white/80 hover:text-white py-1.5 px-2 text-sm font-medium transition-all duration-300 hover:bg-blue-600/10 hover:border-l-2 hover:border-blue-500 rounded-r"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {item.name}
@@ -146,16 +146,16 @@ const FAQ = () => {
         <div className="max-w-4xl mx-auto w-full">
           {/* Hero Section - Smaller headline */}
           <div className="text-center mb-12">
-            <h1 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-white via-[#6C63FF] to-[#A855F7] bg-clip-text text-transparent">
+            <h1 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-white via-blue-400 to-blue-600 bg-clip-text text-transparent">
               Protecting Brain Data at the Speed of Thought
             </h1>
             <p className="text-xl text-white/80 mb-6">Real-time EEG & BCI security — preventing leaks before they happen.</p>
             <div className="flex justify-center mb-8">
-              <div className="text-[#6C63FF] text-2xl tracking-widest animate-pulse">⸻</div>
+              <div className="text-blue-400 text-2xl tracking-widest animate-pulse">⸻</div>
             </div>
-            <h2 className="text-2xl font-bold text-[#6C63FF] relative">
+            <h2 className="text-2xl font-bold text-blue-400 relative">
               FAQ – XBrainer AI
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-[#6C63FF] to-transparent"></div>
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
             </h2>
           </div>
           
@@ -166,31 +166,31 @@ const FAQ = () => {
                 key={index} 
                 className="relative group"
               >
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#6C63FF]/20 via-[#A855F7]/20 to-[#6C63FF]/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                {/* Glow effect - Blue theme */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-blue-500/20 to-blue-600/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 
-                <div className="bg-black/60 backdrop-blur-xl border border-[#6C63FF]/20 rounded-2xl overflow-hidden hover:border-[#6C63FF]/40 transition-all duration-300"
+                <div className="bg-black/60 backdrop-blur-xl border border-blue-600/20 rounded-2xl overflow-hidden hover:border-blue-500/40 transition-all duration-300"
                   style={{
                     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
                   }}
                 >
                   <button
                     onClick={() => setOpenQuestion(openQuestion === index ? null : index)}
-                    className="w-full text-left p-6 hover:bg-[#6C63FF]/5 transition-all duration-300"
+                    className="w-full text-left p-6 hover:bg-blue-600/5 transition-all duration-300"
                   >
                     <div className="flex justify-between items-start">
                       <div className="flex-1 pr-4">
-                        <span className="text-[#6C63FF] font-bold text-lg" style={{ textShadow: '0 0 10px rgba(108, 99, 255, 0.5)' }}>{index + 1}. </span>
+                        <span className="text-blue-400 font-bold text-lg" style={{ textShadow: '0 0 10px rgba(59, 130, 246, 0.5)' }}>{index + 1}. </span>
                         <span className="text-lg font-semibold text-white">{faq.question}</span>
                       </div>
-                      <span className={`text-2xl text-[#6C63FF] transition-all duration-300 flex-shrink-0 ${
+                      <span className={`text-2xl text-blue-400 transition-all duration-300 flex-shrink-0 ${
                         openQuestion === index ? 'rotate-45 scale-110' : 'hover:scale-110'
                       }`}>+</span>
                     </div>
                   </button>
                   {openQuestion === index && (
                     <div className="px-6 pb-6" style={{ animation: 'fadeIn 0.3s ease-out' }}>
-                      <div className="pl-8 border-l-2 border-[#6C63FF]/30">
+                      <div className="pl-8 border-l-2 border-blue-500/30">
                         <p className="text-white/80 leading-relaxed">{faq.answer}</p>
                       </div>
                     </div>
@@ -200,17 +200,17 @@ const FAQ = () => {
             ))}
           </div>
 
-          {/* Contact Section - Enhanced futuristic styling */}
+          {/* Contact Section - Blue theme */}
           <div className="mt-12 relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#6C63FF]/30 via-[#A855F7]/30 to-[#6C63FF]/30 rounded-2xl blur-lg opacity-50"></div>
-            <div className="relative bg-black/70 backdrop-blur-xl border border-[#6C63FF]/30 rounded-2xl p-8 text-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 via-blue-500/30 to-blue-600/30 rounded-2xl blur-lg opacity-50"></div>
+            <div className="relative bg-black/70 backdrop-blur-xl border border-blue-600/30 rounded-2xl p-8 text-center">
               <h2 className="text-2xl font-bold mb-4 text-white">Still Have Questions?</h2>
               <p className="text-white/80 mb-6">
                 Can't find what you're looking for? Our team is here to help with any questions about neural data security.
               </p>
-              <button className="relative bg-gradient-to-r from-[#6C63FF] to-[#A855F7] text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg hover:shadow-[#6C63FF]/25 transition-all duration-300 transform hover:scale-105">
+              <button className="relative bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
                 <span className="relative z-10">Contact Our Team</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#A855F7] to-[#6C63FF] rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </div>
           </div>
