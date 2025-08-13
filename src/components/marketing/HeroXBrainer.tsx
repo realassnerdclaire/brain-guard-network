@@ -217,18 +217,36 @@ const HeroXBrainer = () => {
           <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap pointer-events-auto">
             <button 
               id="problem-btn"
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer bg-red-500 border-2 border-yellow-500 p-4 hover:bg-red-700 rounded z-[99999] relative"
+              style={{
+                pointerEvents: 'auto',
+                position: 'relative',
+                zIndex: 99999
+              }}
               onClick={() => {
-                console.log('🚀 PROBLEM button clicked - starting animation');
+                alert('CLICK WORKS!');
+                console.log('🚀 BUTTON CLICKED - TEST SUCCESSFUL');
+                
+                // Simple color test first
                 const btn = document.getElementById('problem-btn');
                 if (btn) {
-                  animateLetters(btn, 'PROBLEM');
-                }
-                
-                // Scroll to problem section
-                const problemSection = document.getElementById('problem');
-                if (problemSection) {
-                  problemSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  btn.style.color = '#ff1493'; // Hot pink
+                  console.log('✅ Color changed to hot pink');
+                  
+                  setTimeout(() => {
+                    btn.style.color = '#a855f7'; // Purple
+                    console.log('✅ Color changed to purple');
+                  }, 500);
+                  
+                  setTimeout(() => {
+                    btn.style.color = '#3b82f6'; // Blue
+                    console.log('✅ Color changed to blue');
+                  }, 1000);
+                  
+                  setTimeout(() => {
+                    btn.style.color = 'white'; // Reset
+                    console.log('✅ Color reset to white');
+                  }, 1500);
                 }
               }}
             >
