@@ -527,11 +527,10 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
-              onClick={() => {
+              onClick={(e) => {
                 console.log('🚀 SOLUTION (mobile) CLICKED - Starting letter animation');
                 
-                const btn = document.getElementById('tech-adv-mobile-btn') || document.querySelector('[data-button="tech-adv-mobile"]') as HTMLElement;
-                if (!btn) return;
+                const btn = e.currentTarget;
                 
                 // Same color sequence and animation as PROBLEM
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
@@ -553,7 +552,7 @@ const HeroXBrainer = () => {
                         letterSpan.style.color = color;
                         console.log(`SOLUTION (mobile) Letter ${letter} -> ${color}`);
                       }
-                    }, letterIndex * 80 + colorIndex * 300);
+                    }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM
                   });
                 });
                 
@@ -563,7 +562,7 @@ const HeroXBrainer = () => {
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
                   console.log('🔄 Reset to normal TECH ADVANTAGE (mobile)');
-                }, letters.length * 80 + colors.length * 300 + 1000);
+                }, letters.length * 10 + colors.length * 30 + 50);
                 
                 // Scroll to solution section
                 const solutionSection = document.getElementById('solution');
@@ -696,11 +695,10 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
-              onClick={() => {
+              onClick={(e) => {
                 console.log('🚀 OUR EDGE (mobile) CLICKED - Starting letter animation');
                 
-                const btn = document.getElementById('compliance-mobile-btn') || document.querySelector('[data-button="compliance-mobile"]') as HTMLElement;
-                if (!btn) return;
+                const btn = e.currentTarget;
                 
                 // Same color sequence and animation as PROBLEM
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
@@ -722,7 +720,7 @@ const HeroXBrainer = () => {
                         letterSpan.style.color = color;
                         console.log(`OUR EDGE (mobile) Letter ${letter} -> ${color}`);
                       }
-                    }, letterIndex * 100 + colorIndex * 300);
+                    }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM
                   });
                 });
                 
@@ -732,7 +730,7 @@ const HeroXBrainer = () => {
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
                   console.log('🔄 Reset to normal OUR EDGE (mobile)');
-                }, letters.length * 100 + colors.length * 300 + 1000);
+                }, letters.length * 10 + colors.length * 30 + 50);
                 
                 // Scroll to edge section
                 const edgeSection = document.getElementById('edge');
