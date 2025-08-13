@@ -243,7 +243,7 @@ const HeroXBrainer = () => {
       </div>
       
       {/* Interactive navigation labels at bottom - minimal mobile spacing */}
-      <div className="absolute bottom-8 sm:bottom-8 lg:bottom-12 left-0 right-0 z-[9999] pointer-events-none">
+      <div className="absolute bottom-16 sm:bottom-8 lg:bottom-12 left-0 right-0 z-[9999] pointer-events-none">
         <div className="container px-2 sm:px-4 pointer-events-none">
           <div className="flex items-center justify-center gap-1 sm:gap-4 lg:gap-8 xl:gap-12 flex-wrap pointer-events-auto">
             <button 
