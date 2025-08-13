@@ -186,13 +186,13 @@ const HeroXBrainer = () => {
           <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.1] font-normal text-white mb-2 sm:mb-6" id="hero-title">
             <span className="inline-block">Secure Neural Data Before It's Too Late</span>
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg text-white/80 max-w-lg lg:max-w-xl leading-relaxed mb-8 sm:mb-0">
+          <p className="text-sm sm:text-base lg:text-lg text-white/80 max-w-lg lg:max-w-xl leading-relaxed mb-16 sm:mb-0">
             As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
           </p>
         </div>
         
         {/* Action buttons - much closer on mobile */}
-        <div className="absolute bottom-12 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-2 sm:gap-4">
+        <div className="absolute bottom-32 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-2 sm:gap-4">
           <button 
             className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-4 sm:px-6 lg:px-8 py-2 sm:py-3 touch-manipulation text-xs sm:text-sm lg:text-base font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
