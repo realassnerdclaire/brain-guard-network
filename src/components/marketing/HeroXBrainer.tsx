@@ -245,11 +245,71 @@ const HeroXBrainer = () => {
             >
               PROBLEM
             </div>
-            <div className="text-white text-sm sm:text-base lg:text-lg font-medium">URGENCY</div>
-            <div className="text-white text-sm sm:text-base lg:text-lg font-medium hidden sm:block">TECHNICAL ADVANTAGE</div>
-            <div className="text-white text-sm sm:text-base lg:text-lg font-medium sm:hidden">TECH ADVANTAGE</div>
-            <div className="text-white text-sm sm:text-base lg:text-lg font-medium hidden sm:block">COMPLIANCE AND STANDARDS</div>
-            <div className="text-white text-sm sm:text-base lg:text-lg font-medium sm:hidden">COMPLIANCE</div>
+            <div 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#00d4ff';
+                e.currentTarget.style.textShadow = '0 0 15px #00d4ff, 0 0 30px #00d4ff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '';
+                e.currentTarget.style.textShadow = '';
+              }}
+            >
+              URGENCY
+            </div>
+            <div 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#a855f7';
+                e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '';
+                e.currentTarget.style.textShadow = '';
+              }}
+            >
+              TECHNICAL ADVANTAGE
+            </div>
+            <div 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#a855f7';
+                e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '';
+                e.currentTarget.style.textShadow = '';
+              }}
+            >
+              TECH ADVANTAGE
+            </div>
+            <div 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#00d4ff';
+                e.currentTarget.style.textShadow = '0 0 15px #00d4ff, 0 0 30px #00d4ff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '';
+                e.currentTarget.style.textShadow = '';
+              }}
+            >
+              COMPLIANCE AND STANDARDS
+            </div>
+            <div 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#00d4ff';
+                e.currentTarget.style.textShadow = '0 0 15px #00d4ff, 0 0 30px #00d4ff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '';
+                e.currentTarget.style.textShadow = '';
+              }}
+            >
+              COMPLIANCE
+            </div>
           </div>
         </div>
       </div>
