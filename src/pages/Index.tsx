@@ -100,7 +100,7 @@ const Index = () => {
                 {/* Dropdown menu */}
                 {isMenuOpen && (
                   <div 
-                    className="absolute top-full right-0 mt-2 w-56 sm:w-64 bg-black/90 border border-white/20 rounded-lg shadow-lg z-50"
+                    className="absolute top-full right-0 mt-2 w-56 sm:w-64 bg-black/95 border border-white/20 rounded-lg shadow-xl z-[9999] backdrop-blur-sm"
                     style={{
                       contain: 'layout style',
                       willChange: 'transform'
