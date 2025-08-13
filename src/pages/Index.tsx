@@ -27,7 +27,19 @@ const Index = () => {
 
   // Show navigation layout when menu is clicked
   if (showNavigationLayout) {
-    return <NavigationLayout onBack={() => setShowNavigationLayout(false)} />;
+    return <NavigationLayout 
+      onBack={() => setShowNavigationLayout(false)} 
+      onNavigateToSection={(section) => {
+        setShowNavigationLayout(false);
+        // Scroll to the section after a brief delay to allow page transition
+        setTimeout(() => {
+          const element = document.getElementById(section);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }}
+    />;
   }
 
   return (

@@ -4,9 +4,10 @@ import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation
 
 interface NavigationLayoutProps {
   onBack?: () => void;
+  onNavigateToSection?: (section: string) => void;
 }
 
-const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
+const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Start with menu open to match screenshot
   const [activeSection, setActiveSection] = useState("PROBLEM");
 
@@ -145,8 +146,8 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
 
       {/* Main Content */}
       <div className="relative z-20 min-h-screen flex flex-col">
-        {/* Central Content */}
-        <div className="flex-1 flex items-center justify-center px-8">
+        {/* Central Content - Adjusted positioning to avoid menu overlap */}
+        <div className="flex-1 flex items-center justify-center px-8 pt-20 pb-20">
           <div className="text-center max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
               Your brain data deserves<br />
@@ -187,11 +188,22 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
                       });
                     });
                     
-                    // Reset and set active
+                    // Reset, set active, and navigate to section
                     setTimeout(() => {
                       btn.innerHTML = item;
                       btn.style.color = 'white';
                       setActiveSection(item);
+                      
+                      // Navigate to the respective section on the main page
+                      if (onNavigateToSection) {
+                        const sectionMap: { [key: string]: string } = {
+                          'PROBLEM': 'problem',
+                          'URGENCY': 'urgency', 
+                          'SOLUTION': 'solution',
+                          'OUR EDGE': 'edge'
+                        };
+                        onNavigateToSection(sectionMap[item] || item.toLowerCase());
+                      }
                     }, letters.length * 5 + colors.length * 15 + 25); // Faster reset
                   }}
                   onMouseEnter={(e) => {
