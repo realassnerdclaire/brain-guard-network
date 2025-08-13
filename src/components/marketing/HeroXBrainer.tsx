@@ -217,55 +217,52 @@ const HeroXBrainer = () => {
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group bg-transparent border-none p-4 hover:bg-white/10 rounded pointer-events-auto relative z-[999999]"
               onClick={(e) => {
-                alert('BUTTON CLICKED!'); // Simple test
-                console.log('PROBLEM clicked - applying light pink to purple to blue chain!');
+                alert('BUTTON CLICKED!');
+                console.log('PROBLEM clicked - animating each letter with color sequence!');
                 const element = document.getElementById('problem');
                 if (element) {
                   const target = e.currentTarget as HTMLElement;
                   
-                  // Remove any existing animations/classes
-                  target.classList.remove('animate-pulse');
-                  target.style.animation = 'none';
+                  // Split PROBLEM into individual letters
+                  const letters = ['P', 'R', 'O', 'B', 'L', 'E', 'M'];
+                  const colorSequence = [
+                    '#ffb3d9', // light pink
+                    '#ff80c7', // pink
+                    '#ff4db6', // darker pink
+                    '#a855f7', // purple
+                    '#3b82f6', // blue
+                    '#60a5fa'  // light blue
+                  ];
                   
-                  // PHASE 1: Start with LIGHT PINK
-                  target.style.transition = 'all 0.5s ease-out';
-                  target.style.color = '#ffb3d9'; // Light pink first
-                  target.style.textShadow = '0 0 30px #ffb3d9, 0 0 60px #ffb3d9, 0 0 90px #ffb3d9';
-                  target.style.transform = 'scale(1.2)';
-                  target.style.filter = 'brightness(1.4) saturate(1.6)';
-                  target.style.borderRadius = '12px';
-                  target.style.background = 'rgba(255, 179, 217, 0.1)';
-                  target.style.boxShadow = '0 0 40px rgba(255, 179, 217, 0.3), inset 0 0 30px rgba(255, 179, 217, 0.2)';
-                  target.style.backdropFilter = 'blur(10px)';
-                  console.log('🌸 PHASE 1: Light Pink applied');
+                  // Create letter spans with edge blending
+                  target.innerHTML = letters.map((letter, index) => 
+                    `<span class="letter-${index}" style="display: inline-block; transition: all 0.3s ease; filter: blur(0px); text-shadow: none; border-radius: 4px; padding: 2px; background: rgba(255,255,255,0.05); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);">${letter}</span>`
+                  ).join('');
                   
+                  // Animate each letter through the color sequence
+                  letters.forEach((letter, letterIndex) => {
+                    const letterSpan = target.querySelector(`.letter-${letterIndex}`) as HTMLElement;
+                    if (letterSpan) {
+                      colorSequence.forEach((color, colorIndex) => {
+                        setTimeout(() => {
+                          letterSpan.style.color = color;
+                          letterSpan.style.textShadow = `0 0 ${20 + colorIndex * 10}px ${color}, 0 0 ${40 + colorIndex * 20}px ${color}`;
+                          letterSpan.style.transform = `scale(${1.1 + colorIndex * 0.05})`;
+                          letterSpan.style.filter = `brightness(${1.2 + colorIndex * 0.1}) saturate(${1.5 + colorIndex * 0.1}) blur(${colorIndex * 0.5}px)`;
+                          letterSpan.style.background = `rgba(${parseInt(color.slice(1,3), 16)}, ${parseInt(color.slice(3,5), 16)}, ${parseInt(color.slice(5,7), 16)}, 0.15)`;
+                          letterSpan.style.boxShadow = `0 0 ${15 + colorIndex * 5}px rgba(${parseInt(color.slice(1,3), 16)}, ${parseInt(color.slice(3,5), 16)}, ${parseInt(color.slice(5,7), 16)}, 0.4), inset 0 0 ${10 + colorIndex * 5}px rgba(${parseInt(color.slice(1,3), 16)}, ${parseInt(color.slice(3,5), 16)}, ${parseInt(color.slice(5,7), 16)}, 0.2)`;
+                          letterSpan.style.backdropFilter = `blur(${5 + colorIndex * 3}px)`;
+                          letterSpan.style.borderRadius = `${6 + colorIndex * 2}px`;
+                          letterSpan.style.border = `1px solid rgba(${parseInt(color.slice(1,3), 16)}, ${parseInt(color.slice(3,5), 16)}, ${parseInt(color.slice(5,7), 16)}, 0.3)`;
+                          console.log(`Letter ${letter} -> Color ${colorIndex + 1}: ${color}`);
+                        }, letterIndex * 150 + colorIndex * 200);
+                      });
+                    }
+                  });
+                  
+                  // Reset after animation
                   setTimeout(() => {
-                    // PHASE 2: Transition to PURPLE  
-                    target.style.color = '#a855f7'; // Purple transition
-                    target.style.textShadow = '0 0 40px #a855f7, 0 0 80px #a855f7, 0 0 120px #a855f7';
-                    target.style.transform = 'scale(1.35)';
-                    target.style.filter = 'brightness(1.5) saturate(1.8)';
-                    target.style.background = 'rgba(168, 85, 247, 0.15)';
-                    target.style.boxShadow = '0 0 50px rgba(168, 85, 247, 0.4), inset 0 0 40px rgba(168, 85, 247, 0.25)';
-                    target.style.backdropFilter = 'blur(15px)';
-                    console.log('💜 PHASE 2: Purple transition applied');
-                  }, 500);
-                  
-                  setTimeout(() => {
-                    // PHASE 3: Final BLUE (optional third phase)
-                    target.style.color = '#3b82f6'; // Blue
-                    target.style.textShadow = '0 0 50px #3b82f6, 0 0 100px #3b82f6, 0 0 150px #3b82f6';
-                    target.style.transform = 'scale(1.45)';
-                    target.style.filter = 'brightness(1.6) saturate(2.0)';
-                    target.style.background = 'rgba(59, 130, 246, 0.15)';
-                    target.style.boxShadow = '0 0 60px rgba(59, 130, 246, 0.5), inset 0 0 50px rgba(59, 130, 246, 0.3)';
-                    target.style.backdropFilter = 'blur(20px)';
-                    console.log('💙 PHASE 3: Blue applied');
-                  }, 1000);
-                  
-                  setTimeout(() => {
-                    // Reset with smooth transition
-                    target.style.transition = 'all 1s ease-out';
+                    target.innerHTML = 'PROBLEM';
                     target.style.color = 'white';
                     target.style.textShadow = 'none';
                     target.style.transform = 'scale(1)';
@@ -274,8 +271,9 @@ const HeroXBrainer = () => {
                     target.style.boxShadow = 'none';
                     target.style.backdropFilter = 'none';
                     target.style.borderRadius = '';
-                    console.log('🔄 Reset to white with smooth edges');
-                  }, 2000);
+                    target.style.border = '';
+                    console.log('🔄 Reset to original PROBLEM text');
+                  }, letters.length * 150 + colorSequence.length * 200 + 500);
                   
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
