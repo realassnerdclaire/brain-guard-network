@@ -219,4 +219,69 @@ All colors MUST be HSL.
     87.5% { color: #dbeafe; } /* light blue */
     100% { color: #ffffff; } /* white */
   }
+  }
+  
+  /* New flowing EEG animations for each section */
+  @keyframes problemFlow {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(2000px); }
+  }
+  
+  @keyframes urgencyPulse {
+    0% { 
+      transform: translateX(-100px) scaleY(1);
+      opacity: 0.3;
+    }
+    50% { 
+      transform: translateX(960px) scaleY(1.2);
+      opacity: 0.8;
+    }
+    100% { 
+      transform: translateX(2020px) scaleY(1);
+      opacity: 0.3;
+    }
+  }
+  
+  @keyframes solutionFlow {
+    0% { 
+      transform: translateX(-100px);
+      opacity: 0.4;
+    }
+    50% { 
+      transform: translateX(960px);
+      opacity: 0.8;
+    }
+    100% { 
+      transform: translateX(2020px);
+      opacity: 0.4;
+    }
+  }
+  
+  @keyframes edgeFlow {
+    0% { 
+      transform: translateX(-100px) scaleX(1);
+      opacity: 0.3;
+      filter: blur(0px);
+    }
+    25% { 
+      transform: translateX(480px) scaleX(1.1);
+      opacity: 0.6;
+      filter: blur(0.5px);
+    }
+    50% { 
+      transform: translateX(960px) scaleX(0.9);
+      opacity: 0.9;
+      filter: blur(0px);
+    }
+    75% { 
+      transform: translateX(1440px) scaleX(1.05);
+      opacity: 0.7;
+      filter: blur(0.3px);
+    }
+    100% { 
+      transform: translateX(1920px) scaleX(1);
+      opacity: 0.3;
+      filter: blur(0px);
+    }
+  }
 }

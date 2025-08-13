@@ -250,7 +250,7 @@ const Index = () => {
               isolation: 'isolate'
             }}
           >
-            {/* Enhanced EEG signal background with complex animations */}
+            {/* Subtle flowing EEG background for Problem section */}
             <div 
               className="absolute inset-0 pointer-events-none overflow-hidden z-0" 
               style={{
@@ -260,7 +260,7 @@ const Index = () => {
               }}
             >
               <svg 
-                className="w-full h-full opacity-60" 
+                className="w-full h-full opacity-20" 
                 viewBox="0 0 1920 1080" 
                 preserveAspectRatio="xMidYMid slice"
                 style={{
@@ -269,54 +269,49 @@ const Index = () => {
                 }}
               >
                 <defs>
-                  <linearGradient id="problemEegGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#ff4444', stopOpacity: 1}} />
-                    <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#ff4444', stopOpacity: 1}} />
+                  <linearGradient id="problemFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#ff4444', stopOpacity: 0.3}} />
+                    <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 0.5}} />
+                    <stop offset="100%" style={{stopColor: '#ff4444', stopOpacity: 0.3}} />
                   </linearGradient>
-                  <linearGradient id="problemEegGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
-                    <stop offset="50%" style={{stopColor: '#ff4444', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
+                  <linearGradient id="problemFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.2}} />
+                    <stop offset="50%" style={{stopColor: '#ff4444', stopOpacity: 0.4}} />
+                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0.2}} />
                   </linearGradient>
-                  <filter id="glitch">
-                    <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-                  </filter>
                 </defs>
                 
-                {/* Chaotic EEG waves representing security breaches */}
+                {/* Subtle flowing waves representing security vulnerabilities */}
                 <path
-                  d="M0,400 Q100,200 200,600 T400,300 T600,700 T800,200 T1000,650 T1200,350 T1400,750 T1600,250 T1800,680 T2000,400"
-                  stroke="url(#problemEegGradient1)"
-                  strokeWidth="4"
-                  fill="none"
-                  opacity="0.8"
-                  filter="url(#glitch)"
-                  style={{
-                    animation: 'eegChaos1 6s linear infinite'
-                  }}
-                />
-                
-                <path
-                  d="M0,600 Q150,300 300,800 T600,400 T900,900 T1200,350 T1500,850 T1800,300 T2100,750"
-                  stroke="url(#problemEegGradient2)"
-                  strokeWidth="3"
-                  fill="none"
-                  opacity="0.7"
-                  style={{
-                    animation: 'eegChaos2 7s linear infinite'
-                  }}
-                />
-                
-                {/* Additional chaotic patterns */}
-                <path
-                  d="M0,500 L50,500 L60,300 L80,700 L100,500 L150,200 L200,800 L250,500"
-                  stroke="#ff4444"
+                  d="M-200,400 Q200,380 600,400 Q1000,420 1400,400 Q1800,380 2200,400"
+                  stroke="url(#problemFlow1)"
                   strokeWidth="2"
                   fill="none"
                   opacity="0.6"
                   style={{
-                    animation: 'eegGlitch 3s linear infinite'
+                    animation: 'problemFlow 15s linear infinite'
+                  }}
+                />
+                
+                <path
+                  d="M-200,500 Q300,480 700,500 Q1100,520 1500,500 Q1900,480 2300,500"
+                  stroke="url(#problemFlow2)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  opacity="0.4"
+                  style={{
+                    animation: 'problemFlow 18s linear infinite reverse'
+                  }}
+                />
+                
+                <path
+                  d="M-200,600 Q400,580 800,600 Q1200,620 1600,600 Q2000,580 2400,600"
+                  stroke="url(#problemFlow1)"
+                  strokeWidth="1"
+                  fill="none"
+                  opacity="0.3"
+                  style={{
+                    animation: 'problemFlow 20s linear infinite'
                   }}
                 />
               </svg>
@@ -372,24 +367,52 @@ const Index = () => {
             id="urgency" 
             className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-16 relative overflow-hidden"
           >
-            {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-20">
+            {/* Flowing EEG background for Urgency section */}
+            <div className="absolute inset-0 opacity-15">
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
-                  <pattern id="urgencyGrid" width="100" height="100" patternUnits="userSpaceOnUse">
-                    <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#ff4db6" strokeWidth="1" opacity="0.3"/>
-                  </pattern>
+                  <linearGradient id="urgencyFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#ff4db6', stopOpacity: 0.4}} />
+                    <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 0.6}} />
+                    <stop offset="100%" style={{stopColor: '#ff4db6', stopOpacity: 0.4}} />
+                  </linearGradient>
+                  <linearGradient id="urgencyFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.3}} />
+                    <stop offset="50%" style={{stopColor: '#00d4ff', stopOpacity: 0.5}} />
+                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0.3}} />
+                  </linearGradient>
                 </defs>
-                <rect width="100%" height="100%" fill="url(#urgencyGrid)" />
-                <circle cx="200" cy="200" r="5" fill="#ff4db6" opacity="0.6">
-                  <animate attributeName="r" values="5;15;5" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="800" cy="400" r="5" fill="#a855f7" opacity="0.6">
-                  <animate attributeName="r" values="5;20;5" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="1400" cy="600" r="5" fill="#00d4ff" opacity="0.6">
-                  <animate attributeName="r" values="5;25;5" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
+                
+                {/* Urgent pulse waves */}
+                <path
+                  d="M-200,300 Q200,250 600,300 Q1000,350 1400,300 Q1800,250 2200,300"
+                  stroke="url(#urgencyFlow1)"
+                  strokeWidth="2"
+                  fill="none"
+                  style={{
+                    animation: 'urgencyPulse 8s linear infinite'
+                  }}
+                />
+                
+                <path
+                  d="M-200,500 Q300,450 700,500 Q1100,550 1500,500 Q1900,450 2300,500"
+                  stroke="url(#urgencyFlow2)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  style={{
+                    animation: 'urgencyPulse 10s linear infinite reverse'
+                  }}
+                />
+                
+                <path
+                  d="M-200,700 Q400,650 800,700 Q1200,750 1600,700 Q2000,650 2400,700"
+                  stroke="url(#urgencyFlow1)"
+                  strokeWidth="1"
+                  fill="none"
+                  style={{
+                    animation: 'urgencyPulse 12s linear infinite'
+                  }}
+                />
               </svg>
             </div>
 
@@ -467,54 +490,62 @@ const Index = () => {
             id="solution" 
             className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex items-center justify-center py-16 relative overflow-hidden"
           >
-            {/* Smooth EEG background representing secure flow */}
-            <div className="absolute inset-0 opacity-30">
+            {/* Smooth flowing EEG background for Solution section */}
+            <div className="absolute inset-0 opacity-15">
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
-                  <linearGradient id="solutionGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#00d4ff', stopOpacity: 1}} />
-                    <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#00d4ff', stopOpacity: 1}} />
+                  <linearGradient id="solutionFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#00d4ff', stopOpacity: 0.4}} />
+                    <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 0.6}} />
+                    <stop offset="100%" style={{stopColor: '#00d4ff', stopOpacity: 0.4}} />
                   </linearGradient>
-                  <linearGradient id="solutionGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
-                    <stop offset="50%" style={{stopColor: '#00ff88', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
+                  <linearGradient id="solutionFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.3}} />
+                    <stop offset="50%" style={{stopColor: '#00ff88', stopOpacity: 0.5}} />
+                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0.3}} />
                   </linearGradient>
                 </defs>
                 
-                {/* Smooth, secure EEG waves */}
+                {/* Harmonious secure EEG waves */}
                 <path
-                  d="M0,400 Q200,380 400,400 T800,400 T1200,400 T1600,400 T2000,400"
-                  stroke="url(#solutionGradient1)"
-                  strokeWidth="3"
-                  fill="none"
-                  opacity="0.8"
-                  style={{
-                    animation: 'eegSecure1 12s linear infinite'
-                  }}
-                />
-                
-                <path
-                  d="M0,600 Q300,580 600,600 T1200,600 T1800,600 T2400,600"
-                  stroke="url(#solutionGradient2)"
+                  d="M-200,350 Q200,330 600,350 Q1000,370 1400,350 Q1800,330 2200,350"
+                  stroke="url(#solutionFlow1)"
                   strokeWidth="2"
                   fill="none"
-                  opacity="0.6"
                   style={{
-                    animation: 'eegSecure2 15s linear infinite'
+                    animation: 'solutionFlow 16s linear infinite'
                   }}
                 />
                 
-                {/* Security nodes */}
-                <circle cx="400" cy="400" r="8" fill="#00d4ff" opacity="0.8">
-                  <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+                <path
+                  d="M-200,450 Q300,430 700,450 Q1100,470 1500,450 Q1900,430 2300,450"
+                  stroke="url(#solutionFlow2)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  style={{
+                    animation: 'solutionFlow 18s linear infinite reverse'
+                  }}
+                />
+                
+                <path
+                  d="M-200,550 Q400,530 800,550 Q1200,570 1600,550 Q2000,530 2400,550"
+                  stroke="url(#solutionFlow1)"
+                  strokeWidth="1"
+                  fill="none"
+                  style={{
+                    animation: 'solutionFlow 20s linear infinite'
+                  }}
+                />
+                
+                {/* Security checkpoints as subtle dots */}
+                <circle cx="400" cy="350" r="3" fill="#00d4ff" opacity="0.6">
+                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="800" cy="400" r="8" fill="#a855f7" opacity="0.8">
-                  <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/>
+                <circle cx="800" cy="450" r="3" fill="#a855f7" opacity="0.6">
+                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="1200" cy="400" r="8" fill="#00ff88" opacity="0.8">
-                  <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+                <circle cx="1200" cy="550" r="3" fill="#00ff88" opacity="0.6">
+                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
                 </circle>
               </svg>
             </div>
@@ -584,49 +615,101 @@ const Index = () => {
             id="edge" 
             className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden"
           >
-            {/* Neural network background visualization */}
-            <div className="absolute inset-0 opacity-20">
+            {/* Futuristic neural network background for Our Edge section */}
+            <div className="absolute inset-0 opacity-12">
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
-                  <radialGradient id="nodeGradient1" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
+                  <linearGradient id="edgeFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.4}} />
+                    <stop offset="50%" style={{stopColor: '#ff4db6', stopOpacity: 0.6}} />
+                    <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0.4}} />
+                  </linearGradient>
+                  <linearGradient id="edgeFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#ff4db6', stopOpacity: 0.3}} />
+                    <stop offset="50%" style={{stopColor: '#00d4ff', stopOpacity: 0.5}} />
+                    <stop offset="100%" style={{stopColor: '#ff4db6', stopOpacity: 0.3}} />
+                  </linearGradient>
+                  <radialGradient id="neuralNode" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.8}} />
                     <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0}} />
                   </radialGradient>
-                  <radialGradient id="nodeGradient2" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" style={{stopColor: '#ff4db6', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#ff4db6', stopOpacity: 0}} />
-                  </radialGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
                 </defs>
                 
-                {/* Neural network connections */}
-                <g stroke="#a855f7" strokeWidth="1" opacity="0.3">
-                  <line x1="200" y1="200" x2="400" y2="300">
-                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="3s" repeatCount="indefinite"/>
-                  </line>
-                  <line x1="400" y1="300" x2="600" y2="250">
-                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="2.5s" repeatCount="indefinite"/>
-                  </line>
-                  <line x1="600" y1="250" x2="800" y2="400">
-                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="4s" repeatCount="indefinite"/>
-                  </line>
-                  <line x1="800" y1="400" x2="1000" y2="300">
-                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="3.5s" repeatCount="indefinite"/>
-                  </line>
+                {/* Advanced EEG neural patterns */}
+                <path
+                  d="M-200,250 Q200,200 600,250 Q1000,300 1400,250 Q1800,200 2200,250"
+                  stroke="url(#edgeFlow1)"
+                  strokeWidth="2"
+                  fill="none"
+                  filter="url(#glow)"
+                  style={{
+                    animation: 'edgeFlow 14s linear infinite'
+                  }}
+                />
+                
+                <path
+                  d="M-200,400 Q300,350 700,400 Q1100,450 1500,400 Q1900,350 2300,400"
+                  stroke="url(#edgeFlow2)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  filter="url(#glow)"
+                  style={{
+                    animation: 'edgeFlow 16s linear infinite reverse'
+                  }}
+                />
+                
+                <path
+                  d="M-200,650 Q400,600 800,650 Q1200,700 1600,650 Q2000,600 2400,650"
+                  stroke="url(#edgeFlow1)"
+                  strokeWidth="1"
+                  fill="none"
+                  filter="url(#glow)"
+                  style={{
+                    animation: 'edgeFlow 18s linear infinite'
+                  }}
+                />
+                
+                {/* Futuristic neural network nodes */}
+                <g filter="url(#glow)">
+                  <circle cx="300" cy="250" r="4" fill="url(#neuralNode)">
+                    <animate attributeName="r" values="2;8;2" dur="4s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="600" cy="400" r="4" fill="url(#neuralNode)">
+                    <animate attributeName="r" values="2;8;2" dur="3.5s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="900" cy="650" r="4" fill="url(#neuralNode)">
+                    <animate attributeName="r" values="2;8;2" dur="4.5s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="1200" cy="250" r="4" fill="url(#neuralNode)">
+                    <animate attributeName="r" values="2;8;2" dur="3s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="1500" cy="400" r="4" fill="url(#neuralNode)">
+                    <animate attributeName="r" values="2;8;2" dur="5s" repeatCount="indefinite"/>
+                  </circle>
                 </g>
                 
-                {/* Neural nodes */}
-                <circle cx="200" cy="200" r="12" fill="url(#nodeGradient1)">
-                  <animate attributeName="r" values="8;16;8" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="400" cy="300" r="12" fill="url(#nodeGradient2)">
-                  <animate attributeName="r" values="8;16;8" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="600" cy="250" r="12" fill="url(#nodeGradient1)">
-                  <animate attributeName="r" values="8;16;8" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="800" cy="400" r="12" fill="url(#nodeGradient2)">
-                  <animate attributeName="r" values="8;16;8" dur="2.8s" repeatCount="indefinite"/>
-                </circle>
+                {/* Connecting neural pathways */}
+                <g stroke="#a855f7" strokeWidth="0.5" opacity="0.3" filter="url(#glow)">
+                  <line x1="300" y1="250" x2="600" y2="400">
+                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="6s" repeatCount="indefinite"/>
+                  </line>
+                  <line x1="600" y1="400" x2="900" y2="650">
+                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="5s" repeatCount="indefinite"/>
+                  </line>
+                  <line x1="900" y1="650" x2="1200" y2="250">
+                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="7s" repeatCount="indefinite"/>
+                  </line>
+                  <line x1="1200" y1="250" x2="1500" y2="400">
+                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="4s" repeatCount="indefinite"/>
+                  </line>
+                </g>
               </svg>
             </div>
 
@@ -638,14 +721,19 @@ const Index = () => {
                 <div className="w-24 h-1 bg-gradient-to-r from-[#a855f7] to-[#ff4db6] mx-auto mb-16 animate-pulse" />
                 
                 <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
-                  <button className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-500/30 rounded-2xl p-8 hover:border-purple-400/60 transition-all duration-500 hover-scale group animate-scale-in" style={{animationDelay: '0.1s'}}>
-                    <div className="flex items-center gap-4 mb-6">
-                      <span className="text-4xl group-hover:scale-110 transition-transform duration-300">🎯</span>
-                      <h3 className="text-xl font-bold text-white">Patent Pending Innovation</h3>
+                  <button className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-500/30 rounded-2xl p-8 hover:border-purple-400/60 transition-all duration-500 hover-scale group animate-scale-in relative overflow-hidden" style={{animationDelay: '0.1s'}}>
+                    {/* Futuristic holographic effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-4 mb-6">
+                        <span className="text-4xl group-hover:scale-110 transition-transform duration-300">🎯</span>
+                        <h3 className="text-xl font-bold text-white">Patent Pending Innovation</h3>
+                      </div>
+                      <p className="text-white/80 text-left group-hover:text-white/90 transition-colors duration-300">
+                        Patent pending signal-security pipeline designed specifically for neural data protection.
+                      </p>
                     </div>
-                    <p className="text-white/80 text-left group-hover:text-white/90 transition-colors duration-300">
-                      Patent pending signal-security pipeline designed specifically for neural data protection.
-                    </p>
                   </button>
                   
                   <button className="bg-gradient-to-br from-blue-900/40 to-purple-900/40 border border-blue-500/30 rounded-2xl p-8 hover:border-blue-400/60 transition-all duration-500 hover-scale group animate-scale-in" style={{animationDelay: '0.2s'}}>
