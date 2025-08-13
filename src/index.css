@@ -219,7 +219,6 @@ All colors MUST be HSL.
     87.5% { color: #dbeafe; } /* light blue */
     100% { color: #ffffff; } /* white */
   }
-  }
   
   /* New flowing EEG animations for each section */
   @keyframes problemFlow {
