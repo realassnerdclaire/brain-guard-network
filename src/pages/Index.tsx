@@ -524,62 +524,67 @@ const Index = () => {
             className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex items-center justify-center py-16 relative overflow-hidden"
           >
             {/* Smooth flowing EEG background for Solution section */}
-            <div className="absolute inset-0 opacity-80">
+            <div className="absolute inset-0 opacity-100">
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
                   <linearGradient id="solutionFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.4}} />
-                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.6}} />
-                    <stop offset="100%" style={{stopColor: '#6C63FF', stopOpacity: 0.4}} />
+                    <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.9}} />
+                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#6C63FF', stopOpacity: 0.9}} />
                   </linearGradient>
                   <linearGradient id="solutionFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#7C3AED', stopOpacity: 0.3}} />
-                    <stop offset="50%" style={{stopColor: '#4338CA', stopOpacity: 0.5}} />
-                    <stop offset="100%" style={{stopColor: '#7C3AED', stopOpacity: 0.3}} />
+                    <stop offset="0%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#4338CA', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
                   </linearGradient>
                 </defs>
                 
-                {/* Harmonious secure EEG waves */}
+                {/* Futuristic crystalline wave patterns */}
                 <path
-                  d="M-200,350 Q200,330 600,350 Q1000,370 1400,350 Q1800,330 2200,350"
+                  d="M-200,350 L100,320 L200,360 L350,340 L500,380 L650,350 L800,390 L950,360 L1100,400 L1250,370 L1400,410 L1550,380 L1700,420 L1850,390 L2000,430 L2200,400"
                   stroke="url(#solutionFlow1)"
-                  strokeWidth="2"
+                  strokeWidth="3"
                   fill="none"
+                  opacity="0.9"
                   style={{
                     animation: 'solutionFlow 16s linear infinite'
                   }}
                 />
                 
                 <path
-                  d="M-200,450 Q300,430 700,450 Q1100,470 1500,450 Q1900,430 2300,450"
+                  d="M-200,450 L150,480 L300,420 L450,460 L600,440 L750,480 L900,460 L1050,500 L1200,470 L1350,510 L1500,480 L1650,520 L1800,490 L1950,530 L2100,500 L2300,540"
                   stroke="url(#solutionFlow2)"
-                  strokeWidth="1.5"
+                  strokeWidth="2.5"
                   fill="none"
+                  opacity="0.8"
                   style={{
                     animation: 'solutionFlow 18s linear infinite reverse'
                   }}
                 />
                 
                 <path
-                  d="M-200,550 Q400,530 800,550 Q1200,570 1600,550 Q2000,530 2400,550"
-                  stroke="url(#solutionFlow1)"
-                  strokeWidth="1"
+                  d="M-200,550 L120,580 L240,530 L380,570 L520,540 L660,580 L800,550 L940,590 L1080,560 L1220,600 L1360,570 L1500,610 L1640,580 L1780,620 L1920,590 L2060,630"
+                  stroke="#4F46E5"
+                  strokeWidth="2"
                   fill="none"
+                  opacity="0.7"
                   style={{
                     animation: 'solutionFlow 20s linear infinite'
                   }}
                 />
                 
-                {/* Security checkpoints as subtle dots */}
-                <circle cx="400" cy="350" r="3" fill="#6C63FF" opacity="0.6">
-                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="800" cy="450" r="3" fill="#A855F7" opacity="0.6">
-                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="1200" cy="550" r="3" fill="#4338CA" opacity="0.6">
-                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
-                </circle>
+                {/* Futuristic data nodes - hexagonal shapes */}
+                <g fill="#6C63FF" opacity="0.8">
+                  <polygon points="400,345 410,340 420,345 420,355 410,360 400,355" transform="rotate(45 410 350)">
+                    <animateTransform attributeName="transform" type="rotate" values="0 410 350;360 410 350;0 410 350" dur="8s" repeatCount="indefinite"/>
+                  </polygon>
+                  <polygon points="800,445 810,440 820,445 820,455 810,460 800,455" transform="rotate(0 810 450)">
+                    <animateTransform attributeName="transform" type="rotate" values="0 810 450;360 810 450;0 810 450" dur="6s" repeatCount="indefinite"/>
+                  </polygon>
+                  <polygon points="1200,545 1210,540 1220,545 1220,555 1210,560 1200,555" transform="rotate(30 1210 550)">
+                    <animateTransform attributeName="transform" type="rotate" values="30 1210 550;390 1210 550;30 1210 550" dur="10s" repeatCount="indefinite"/>
+                  </polygon>
+                </g>
               </svg>
             </div>
 
@@ -669,27 +674,27 @@ const Index = () => {
             className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden"
           >
             {/* Futuristic neural network background for Our Edge section */}
-            <div className="absolute inset-0 opacity-60">
+            <div className="absolute inset-0 opacity-100">
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
                   <linearGradient id="edgeFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 0.4}} />
-                    <stop offset="50%" style={{stopColor: '#9333EA', stopOpacity: 0.6}} />
-                    <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0.4}} />
+                    <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 0.9}} />
+                    <stop offset="50%" style={{stopColor: '#9333EA', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0.9}} />
                   </linearGradient>
                   <linearGradient id="edgeFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#7C3AED', stopOpacity: 0.3}} />
-                    <stop offset="50%" style={{stopColor: '#6C63FF', stopOpacity: 0.5}} />
-                    <stop offset="100%" style={{stopColor: '#7C3AED', stopOpacity: 0.3}} />
+                    <stop offset="0%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#6C63FF', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
                   </linearGradient>
                   <radialGradient id="neuralNode" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
-                    <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0}} />
+                    <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0.3}} />
                   </radialGradient>
                   <radialGradient id="brainGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.6}} />
-                    <stop offset="100%" style={{stopColor: '#4F46E5', stopOpacity: 0}} />
+                    <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 1.0}} />
+                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
+                    <stop offset="100%" style={{stopColor: '#4F46E5', stopOpacity: 0.2}} />
                   </radialGradient>
                   <filter id="glow">
                     <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -707,73 +712,85 @@ const Index = () => {
                   </filter>
                 </defs>
                 
-                {/* Advanced EEG neural patterns */}
+                {/* Futuristic quantum wave patterns */}
                 <path
-                  d="M-200,250 Q200,200 600,250 Q1000,300 1400,250 Q1800,200 2200,250"
+                  d="M-200,250 L0,220 L100,280 L200,200 L300,260 L400,180 L500,240 L600,160 L700,220 L800,140 L900,200 L1000,120 L1100,180 L1200,100 L1300,160 L1400,80 L1500,140 L1600,60 L1700,120 L1800,40 L1900,100 L2000,20 L2100,80 L2200,0"
                   stroke="url(#edgeFlow1)"
-                  strokeWidth="2"
+                  strokeWidth="3"
                   fill="none"
                   filter="url(#glow)"
+                  opacity="0.9"
                   style={{
                     animation: 'edgeFlow 14s linear infinite'
                   }}
                 />
                 
                 <path
-                  d="M-200,400 Q300,350 700,400 Q1100,450 1500,400 Q1900,350 2300,400"
+                  d="M-200,400 L50,430 L150,370 L250,450 L350,390 L450,470 L550,410 L650,490 L750,430 L850,510 L950,450 L1050,530 L1150,470 L1250,550 L1350,490 L1450,570 L1550,510 L1650,590 L1750,530 L1850,610 L1950,550 L2050,630 L2150,570 L2300,650"
                   stroke="url(#edgeFlow2)"
-                  strokeWidth="1.5"
+                  strokeWidth="2.5"
                   fill="none"
                   filter="url(#glow)"
+                  opacity="0.8"
                   style={{
                     animation: 'edgeFlow 16s linear infinite reverse'
                   }}
                 />
                 
                 <path
-                  d="M-200,650 Q400,600 800,650 Q1200,700 1600,650 Q2000,600 2400,650"
+                  d="M-200,650 L80,680 L160,620 L280,700 L400,640 L520,720 L640,660 L760,740 L880,680 L1000,760 L1120,700 L1240,780 L1360,720 L1480,800 L1600,740 L1720,820 L1840,760 L1960,840 L2080,780 L2200,860"
                   stroke="url(#edgeFlow1)"
-                  strokeWidth="1"
+                  strokeWidth="2"
                   fill="none"
                   filter="url(#glow)"
+                  opacity="0.7"
                   style={{
                     animation: 'edgeFlow 18s linear infinite'
                   }}
                 />
                 
-                {/* Futuristic neural network nodes */}
+                {/* Futuristic geometric neural nodes */}
                 <g filter="url(#glow)">
-                  <circle cx="300" cy="250" r="4" fill="url(#neuralNode)">
-                    <animate attributeName="r" values="2;8;2" dur="4s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="600" cy="400" r="4" fill="url(#neuralNode)">
-                    <animate attributeName="r" values="2;8;2" dur="3.5s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="900" cy="650" r="4" fill="url(#neuralNode)">
-                    <animate attributeName="r" values="2;8;2" dur="4.5s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="1200" cy="250" r="4" fill="url(#neuralNode)">
-                    <animate attributeName="r" values="2;8;2" dur="3s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="1500" cy="400" r="4" fill="url(#neuralNode)">
-                    <animate attributeName="r" values="2;8;2" dur="5s" repeatCount="indefinite"/>
-                  </circle>
+                  <polygon points="300,245 310,240 320,245 315,255 305,255" fill="url(#neuralNode)">
+                    <animateTransform attributeName="transform" type="rotate" values="0 310 250;360 310 250;0 310 250" dur="8s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+                  </polygon>
+                  <polygon points="600,395 610,390 620,395 615,405 605,405" fill="url(#neuralNode)">
+                    <animateTransform attributeName="transform" type="rotate" values="0 610 400;360 610 400;0 610 400" dur="6s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite"/>
+                  </polygon>
+                  <polygon points="900,645 910,640 920,645 915,655 905,655" fill="url(#neuralNode)">
+                    <animateTransform attributeName="transform" type="rotate" values="0 910 650;360 910 650;0 910 650" dur="10s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite"/>
+                  </polygon>
+                  <polygon points="1200,245 1210,240 1220,245 1215,255 1205,255" fill="url(#neuralNode)">
+                    <animateTransform attributeName="transform" type="rotate" values="0 1210 250;360 1210 250;0 1210 250" dur="7s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                  </polygon>
+                  <polygon points="1500,395 1510,390 1520,395 1515,405 1505,405" fill="url(#neuralNode)">
+                    <animateTransform attributeName="transform" type="rotate" values="0 1510 400;360 1510 400;0 1510 400" dur="9s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite"/>
+                  </polygon>
                 </g>
                 
-                {/* Connecting neural pathways */}
-                <g stroke="#A855F7" strokeWidth="0.5" opacity="0.3" filter="url(#glow)">
-                  <line x1="300" y1="250" x2="600" y2="400">
-                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="6s" repeatCount="indefinite"/>
-                  </line>
-                  <line x1="600" y1="400" x2="900" y2="650">
-                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="5s" repeatCount="indefinite"/>
-                  </line>
-                  <line x1="900" y1="650" x2="1200" y2="250">
-                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="7s" repeatCount="indefinite"/>
-                  </line>
-                  <line x1="1200" y1="250" x2="1500" y2="400">
-                    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="4s" repeatCount="indefinite"/>
-                  </line>
+                {/* Quantum connection pathways */}
+                <g stroke="#A855F7" strokeWidth="1.5" opacity="0.8" filter="url(#glow)">
+                  <path d="M300,250 L600,400 L900,650" strokeDasharray="8,4">
+                    <animate attributeName="stroke-dashoffset" values="0;24;0" dur="6s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.5;1;0.5" dur="6s" repeatCount="indefinite"/>
+                  </path>
+                  <path d="M600,400 L1200,250 L1500,400" strokeDasharray="6,3">
+                    <animate attributeName="stroke-dashoffset" values="0;18;0" dur="5s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" repeatCount="indefinite"/>
+                  </path>
+                  <path d="M900,650 L1200,250" strokeDasharray="10,5">
+                    <animate attributeName="stroke-dashoffset" values="0;30;0" dur="7s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.5;1;0.5" dur="7s" repeatCount="indefinite"/>
+                  </path>
+                  <path d="M1200,250 L1500,400" strokeDasharray="4,2">
+                    <animate attributeName="stroke-dashoffset" values="0;12;0" dur="4s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+                  </path>
                 </g>
 
                 {/* Neon Brain Pattern - Bottom Left Corner */}
