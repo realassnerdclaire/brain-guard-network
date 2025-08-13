@@ -270,14 +270,14 @@ const Index = () => {
               >
                 <defs>
                   <linearGradient id="problemFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#7C3AED', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#6C63FF', stopOpacity: 0.8}} />
+                    <stop offset="0%" style={{stopColor: '#4F46E5', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#6C63FF', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#4F46E5', stopOpacity: 0.8}} />
                   </linearGradient>
                   <linearGradient id="problemFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#9333EA', stopOpacity: 0.7}} />
-                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.9}} />
-                    <stop offset="100%" style={{stopColor: '#9333EA', stopOpacity: 0.7}} />
+                    <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 0.7}} />
+                    <stop offset="50%" style={{stopColor: '#7C3AED', stopOpacity: 0.9}} />
+                    <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0.7}} />
                   </linearGradient>
                 </defs>
                 
@@ -306,7 +306,7 @@ const Index = () => {
                 
                 <path
                   d="M-50,580 L0,575 L15,590 L30,565 L45,585 L60,570 L80,595 L100,560 L125,590 L150,575 L175,600 L200,555 L225,585 L250,570 L275,595 L300,560 L325,590 L350,575 L375,600 L400,555 L425,585 L450,570 L475,595 L500,560 L525,590 L550,575 L575,600 L600,555 L625,585 L650,570 L675,595 L700,560 L725,590 L750,575 L775,600 L800,555 L825,585 L850,570 L875,595 L900,560 L925,590 L950,575 L975,600 L1000,555 L1025,585 L1050,570 L1075,595 L1100,560 L1125,590 L1150,575 L1175,600 L1200,555 L1225,585 L1250,570 L1275,595 L1300,560 L1325,590 L1350,575 L1375,600 L1400,555 L1425,585 L1450,570 L1475,595 L1500,560 L1525,590 L1550,575 L1575,600 L1600,555 L1625,585 L1650,570 L1675,595 L1700,560 L1725,590 L1750,575 L1775,600 L1800,555 L1825,585 L1850,570 L1875,595 L1900,560 L1925,590 L1950,575 L1975,600"
-                  stroke="#4338CA"
+                  stroke="#4F46E5"
                   strokeWidth="1"
                   fill="none"
                   opacity="0.6"
@@ -318,7 +318,7 @@ const Index = () => {
                 {/* Additional EEG spikes for chaos effect */}
                 <path
                   d="M-50,420 L0,415 L10,440 L20,405 L30,435 L40,410 L50,445 L60,400 L70,430 L80,415 L90,450 L100,395 L110,425 L120,410 L130,445 L140,400 L150,430 L160,415 L170,450 L180,395 L190,425 L200,410"
-                  stroke="#6C63FF"
+                  stroke="#9333EA"
                   strokeWidth="1.5"
                   fill="none"
                   opacity="0.8"
@@ -456,21 +456,21 @@ const Index = () => {
                       Key regulatory milestones:
                     </h3>
                     <div className="space-y-6">
-                      <div className="border-l-4 border-yellow-400 pl-6 bg-yellow-900/10 p-4 rounded-r-lg hover:bg-yellow-900/20 transition-all duration-300 hover-scale">
+                      <div className="border-l-4 border-[#6C63FF] pl-6 bg-[#4F46E5]/10 p-4 rounded-r-lg hover:bg-[#4F46E5]/20 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">🎯</span>
                           <h4 className="text-lg font-semibold text-white">2025:</h4>
                         </div>
                         <p className="text-white/80">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
                       </div>
-                      <div className="border-l-4 border-orange-400 pl-6 bg-orange-900/10 p-4 rounded-r-lg hover:bg-orange-900/20 transition-all duration-300 hover-scale">
+                      <div className="border-l-4 border-[#7C3AED] pl-6 bg-[#7C3AED]/10 p-4 rounded-r-lg hover:bg-[#7C3AED]/20 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">⚖️</span>
                           <h4 className="text-lg font-semibold text-white">2026:</h4>
                         </div>
                         <p className="text-white/80">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
                       </div>
-                      <div className="border-l-4 border-red-400 pl-6 bg-red-900/10 p-4 rounded-r-lg hover:bg-red-900/20 transition-all duration-300 hover-scale">
+                      <div className="border-l-4 border-[#A855F7] pl-6 bg-[#A855F7]/10 p-4 rounded-r-lg hover:bg-[#A855F7]/20 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">🚫</span>
                           <h4 className="text-lg font-semibold text-white">2027+:</h4>
@@ -480,15 +480,15 @@ const Index = () => {
                     </div>
                   </div>
                   
-                  <div className="bg-red-900/20 border-2 border-red-500/50 rounded-2xl p-8 text-center animate-scale-in relative overflow-hidden" style={{animationDelay: '0.6s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent animate-pulse"></div>
+                  <div className="bg-[#A855F7]/20 border-2 border-[#9333EA]/50 rounded-2xl p-8 text-center animate-scale-in relative overflow-hidden" style={{animationDelay: '0.6s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#A855F7]/10 to-transparent animate-pulse"></div>
                     <div className="relative z-10">
                       <div className="flex items-center justify-center gap-3 mb-4">
                         <span className="text-4xl animate-pulse">🚨</span>
                         <span className="text-4xl animate-pulse">⏰</span>
                       </div>
                       <p className="text-xl text-white font-semibold">
-                        Companies that wait risk being <span className="text-red-400 bg-red-900/50 px-3 py-1 rounded-lg animate-pulse">locked out</span> of clinical and consumer markets.
+                        Companies that wait risk being <span className="text-[#A855F7] bg-[#9333EA]/50 px-3 py-1 rounded-lg animate-pulse">locked out</span> of clinical and consumer markets.
                       </p>
                     </div>
                   </div>
@@ -605,15 +605,15 @@ const Index = () => {
                     </div>
                   </div>
                   
-                  <div className="bg-green-900/20 border-2 border-green-500/50 rounded-2xl p-8 text-center animate-fade-in relative overflow-hidden" style={{animationDelay: '0.4s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-transparent animate-pulse"></div>
+                  <div className="bg-[#4F46E5]/20 border-2 border-[#6C63FF]/50 rounded-2xl p-8 text-center animate-fade-in relative overflow-hidden" style={{animationDelay: '0.4s'}}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#4F46E5]/10 to-transparent animate-pulse"></div>
                     <div className="relative z-10">
                       <div className="flex items-center justify-center gap-3 mb-4">
                         <span className="text-4xl animate-pulse">⚡</span>
                         <span className="text-4xl animate-pulse">🚀</span>
                       </div>
                       <p className="text-xl text-white leading-relaxed">
-                        Our approach not only reduces security and compliance risk — it <span className="text-green-400 font-semibold bg-green-900/30 px-3 py-1 rounded-lg animate-pulse">shortens time-to-market</span> for device makers and researchers.
+                        Our approach not only reduces security and compliance risk — it <span className="text-[#4F46E5] font-semibold bg-[#6C63FF]/30 px-3 py-1 rounded-lg animate-pulse">shortens time-to-market</span> for device makers and researchers.
                       </p>
                     </div>
                   </div>
