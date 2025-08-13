@@ -150,19 +150,20 @@ const Layout = ({ children }: LayoutProps) => {
                 <span className="menu-text">MENU</span>
               </button>
               
-              {/* Conditional menu rendering based on route */}
+              {/* Brain Nebula Full-Screen Overlay - Only on home page */}
               {isMenuOpen && location.pathname === "/" && (
                 <div 
                   className="fixed inset-0 bg-black z-[9999999]"
                   onClick={() => setIsMenuOpen(false)}
+                  style={{ isolation: 'isolate' }}
                 >
-                  {/* Brain backdrop - only on home page */}
+                  {/* Brain nebula backdrop */}
                   <div className="absolute inset-0 z-0">
                     <div 
-                      className="w-full h-full bg-cover bg-center bg-no-repeat opacity-50"
+                      className="w-full h-full bg-cover bg-center bg-no-repeat opacity-60"
                       style={{
                         backgroundImage: `url('/lovable-uploads/e289f332-67c8-4420-919d-c7146bb726d9.png')`,
-                        filter: 'blur(0.5px) brightness(0.9) saturate(1.2)'
+                        filter: 'blur(0.5px) brightness(0.9) saturate(1.3)'
                       }}
                     />
                   </div>
