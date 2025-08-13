@@ -324,3 +324,27 @@ All colors MUST be HSL.
   }
   }
 }
+
+/* EEG Animation */
+@keyframes eegFlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50px);
+  }
+}
+
+@keyframes problemFlow {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 0.6;
+  }
+}
