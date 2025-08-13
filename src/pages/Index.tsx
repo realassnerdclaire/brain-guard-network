@@ -348,7 +348,7 @@ const Index = () => {
           {/* 2. Urgency Section */}
           <section 
             id="urgency" 
-            className="min-h-screen md:min-h-[70vh] bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-8 md:py-8 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
           >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
@@ -419,65 +419,65 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-8 animate-fade-in">
+                <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-white mb-4 md:mb-4 animate-fade-in">
                   The Urgency
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-8 md:mb-16 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-8 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-8 text-left max-w-4xl mx-auto">
-                  <div className="bg-gradient-to-r from-[#EC4899]/40 to-[#F472B6]/40 border-2 border-[#EC4899]/50 rounded-2xl p-4 md:p-8 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
-                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-4">
-                      <span className="text-2xl md:text-4xl animate-pulse">📈</span>
-                      <h3 className="text-lg md:text-2xl font-bold text-white">Market Explosion</h3>
+                <div className="space-y-4 md:space-y-4 text-left max-w-4xl mx-auto">
+                  <div className="bg-gradient-to-r from-[#EC4899]/40 to-[#F472B6]/40 border-2 border-[#EC4899]/50 rounded-2xl p-4 md:p-4 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-2">
+                      <span className="text-2xl md:text-2xl animate-pulse">📈</span>
+                      <h3 className="text-lg md:text-lg font-bold text-white">Market Explosion</h3>
                     </div>
-                    <p className="text-base md:text-xl text-white/90 leading-relaxed mb-2 md:mb-4">
+                    <p className="text-base md:text-base text-white/90 leading-relaxed mb-2 md:mb-2">
                       The market is scaling fast — <span className="text-[#F472B6] font-semibold bg-[#EC4899]/30 px-2 py-1 rounded animate-pulse">3M+ EEG devices expected in North America by 2026</span>.
                     </p>
-                    <div className="flex items-center gap-2 text-sm md:text-lg text-[#EC4899] font-semibold">
+                    <div className="flex items-center gap-2 text-sm md:text-sm text-[#EC4899] font-semibold">
                       <span className="animate-pulse">⚡</span>
                       <span>More devices = more attack surfaces = higher compliance risk</span>
                     </div>
                   </div>
                   
-                  <div className="bg-black/40 border border-white/10 rounded-2xl p-4 md:p-8 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                    <h3 className="text-lg md:text-2xl font-bold text-white mb-3 md:mb-6 flex items-center gap-2 md:gap-3">
-                      <span className="text-yellow-400 text-xl md:text-3xl animate-pulse">⚡</span>
+                  <div className="bg-black/40 border border-white/10 rounded-2xl p-4 md:p-4 animate-fade-in" style={{animationDelay: '0.4s'}}>
+                    <h3 className="text-lg md:text-lg font-bold text-white mb-3 md:mb-3 flex items-center gap-2 md:gap-2">
+                      <span className="text-yellow-400 text-xl md:text-xl animate-pulse">⚡</span>
                       Key regulatory milestones:
                     </h3>
-                    <div className="space-y-3 md:space-y-6">
-                      <div className="border-l-4 border-[#EC4899] pl-3 md:pl-6 bg-[#EC4899]/10 p-2 md:p-4 rounded-r-lg hover:bg-[#EC4899]/20 transition-all duration-300 hover-scale">
-                        <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
-                          <span className="text-lg md:text-2xl">🎯</span>
-                          <h4 className="text-sm md:text-lg font-semibold text-white">2025:</h4>
+                    <div className="space-y-3 md:space-y-2">
+                      <div className="border-l-4 border-[#EC4899] pl-3 md:pl-4 bg-[#EC4899]/10 p-2 md:p-2 rounded-r-lg hover:bg-[#EC4899]/20 transition-all duration-300 hover-scale">
+                        <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
+                          <span className="text-lg md:text-lg">🎯</span>
+                          <h4 className="text-sm md:text-sm font-semibold text-white">2025:</h4>
                         </div>
-                        <p className="text-sm md:text-base text-white/80">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
+                        <p className="text-sm md:text-sm text-white/80">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
                       </div>
-                      <div className="border-l-4 border-[#F472B6] pl-3 md:pl-6 bg-[#F472B6]/10 p-2 md:p-4 rounded-r-lg hover:bg-[#F472B6]/20 transition-all duration-300 hover-scale">
-                        <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
-                          <span className="text-lg md:text-2xl">⚖️</span>
-                          <h4 className="text-sm md:text-lg font-semibold text-white">2026:</h4>
+                      <div className="border-l-4 border-[#F472B6] pl-3 md:pl-4 bg-[#F472B6]/10 p-2 md:p-2 rounded-r-lg hover:bg-[#F472B6]/20 transition-all duration-300 hover-scale">
+                        <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
+                          <span className="text-lg md:text-lg">⚖️</span>
+                          <h4 className="text-sm md:text-sm font-semibold text-white">2026:</h4>
                         </div>
-                        <p className="text-sm md:text-base text-white/80">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
+                        <p className="text-sm md:text-sm text-white/80">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
                       </div>
-                      <div className="border-l-4 border-[#BE185D] pl-3 md:pl-6 bg-[#BE185D]/10 p-2 md:p-4 rounded-r-lg hover:bg-[#BE185D]/20 transition-all duration-300 hover-scale">
-                        <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
-                          <span className="text-lg md:text-2xl">🚫</span>
-                          <h4 className="text-sm md:text-lg font-semibold text-white">2027+:</h4>
+                      <div className="border-l-4 border-[#BE185D] pl-3 md:pl-4 bg-[#BE185D]/10 p-2 md:p-2 rounded-r-lg hover:bg-[#BE185D]/20 transition-all duration-300 hover-scale">
+                        <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
+                          <span className="text-lg md:text-lg">🚫</span>
+                          <h4 className="text-sm md:text-sm font-semibold text-white">2027+:</h4>
                         </div>
-                        <p className="text-sm md:text-base text-white/80">Potential new neurodata-specific protections may limit non-compliant market entry</p>
+                        <p className="text-sm md:text-sm text-white/80">Potential new neurodata-specific protections may limit non-compliant market entry</p>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="bg-[#EC4899]/20 border-2 border-[#F472B6]/50 rounded-2xl p-4 md:p-8 text-center animate-scale-in relative overflow-hidden" style={{animationDelay: '0.6s'}}>
+                  <div className="bg-[#EC4899]/20 border-2 border-[#F472B6]/50 rounded-2xl p-4 md:p-4 text-center animate-scale-in relative overflow-hidden" style={{animationDelay: '0.6s'}}>
                     <div className="absolute inset-0 bg-gradient-to-r from-[#EC4899]/10 to-transparent animate-pulse"></div>
                     <div className="relative z-10">
-                      <div className="flex items-center justify-center gap-2 md:gap-3 mb-2 md:mb-4">
-                        <span className="text-2xl md:text-4xl animate-pulse">🚨</span>
-                        <span className="text-2xl md:text-4xl animate-pulse">⏰</span>
+                      <div className="flex items-center justify-center gap-2 md:gap-2 mb-2 md:mb-2">
+                        <span className="text-2xl md:text-2xl animate-pulse">🚨</span>
+                        <span className="text-2xl md:text-2xl animate-pulse">⏰</span>
                       </div>
-                      <p className="text-base md:text-xl text-white font-semibold">
-                        Companies that wait risk being <span className="text-[#EC4899] bg-[#F472B6]/50 px-2 md:px-3 py-1 rounded-lg animate-pulse">locked out</span> of clinical and consumer markets.
+                      <p className="text-base md:text-base text-white font-semibold">
+                        Companies that wait risk being <span className="text-[#EC4899] bg-[#F472B6]/50 px-2 md:px-2 py-1 rounded-lg animate-pulse">locked out</span> of clinical and consumer markets.
                       </p>
                     </div>
                   </div>
