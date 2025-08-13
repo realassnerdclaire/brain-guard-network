@@ -61,56 +61,56 @@ const HeroXBrainer = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          {/* Logo and brand section - better desktop spacing */}
-          <div className="flex items-center justify-center mb-12 lg:mb-20">
-            <div className="flex items-center gap-4 lg:gap-6">
-              <div className="w-12 h-12 lg:w-20 lg:h-20 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 shadow-lg flex items-center justify-center">
-                <svg className="w-6 h-6 lg:w-10 lg:h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          {/* Logo and brand section */}
+          <div className="flex items-center justify-center mb-8">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 shadow-lg flex items-center justify-center">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44A2.5 2.5 0 0 1 2.5 9.5z"/>
                   <path d="M12 4.5L19.32 8a2 2 0 0 1 1.18 1.84L20 12l-.5 2.16a2 2 0 0 1-1.18 1.84L12 19.5"/>
                 </svg>
               </div>
-              <span className="text-2xl lg:text-4xl font-bold text-white tracking-tight">XBrainer AI</span>
+              <span className="text-xl font-bold text-white tracking-tight">XBrainer AI</span>
             </div>
           </div>
 
-          {/* Main headline with improved desktop spacing */}
-          <div className="text-center mb-16 lg:mb-24">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight lg:leading-[0.9] mb-8 lg:mb-12">
+          {/* Main headline */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               <span className={`bg-gradient-to-r ${getGradientColor()} bg-clip-text text-transparent transition-all duration-2000`}>
                 Secure Neural Data Before It's Too Late
               </span>
             </h1>
             
-            <div className="max-w-4xl mx-auto mb-12 lg:mb-16">
-              <p className="text-xl lg:text-2xl xl:text-3xl text-blue-100 leading-relaxed lg:leading-relaxed font-light">
+            <div className="max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-blue-100 leading-relaxed font-light">
                 Securing Neural Data in Real Time
               </p>
             </div>
           </div>
 
-          {/* Description with better desktop layout */}
-          <div className="max-w-5xl mx-auto mb-16 lg:mb-20">
-            <div className="bg-black/50 backdrop-blur-sm border border-blue-500/30 rounded-2xl lg:rounded-3xl p-8 lg:p-12 xl:p-16">
-              <p className="text-lg lg:text-xl xl:text-2xl text-white/90 leading-relaxed lg:leading-loose text-center">
+          {/* Description */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="bg-black/50 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8">
+              <p className="text-lg text-white/90 leading-relaxed text-center">
                 As brain-computer devices become more common, the risk of brain data being misused is growing. 
                 XBrainer AI makes tools to keep this data safe.
               </p>
             </div>
           </div>
 
-          {/* CTA section with improved desktop spacing */}
+          {/* CTA section */}
           <div className="text-center">
-            <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 justify-center items-center max-w-2xl mx-auto">
-              <button className="w-full sm:w-auto px-8 lg:px-12 py-4 lg:py-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg lg:text-xl rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
+              <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                 Get Early Access
               </button>
-              <button className="w-full sm:w-auto px-8 lg:px-12 py-4 lg:py-6 border-2 border-blue-500 text-blue-400 font-semibold text-lg lg:text-xl rounded-full hover:bg-blue-500/10 transition-all duration-300">
+              <button className="w-full sm:w-auto px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold text-lg rounded-full hover:bg-blue-500/10 transition-all duration-300">
                 Learn More
               </button>
             </div>
             
-            <p className="text-blue-200/70 text-base lg:text-lg mt-8 lg:mt-12">
+            <p className="text-blue-200/70 text-sm mt-6">
               Join the waitlist for early access to our neural security platform
             </p>
           </div>
