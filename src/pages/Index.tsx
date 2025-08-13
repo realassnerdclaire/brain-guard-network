@@ -316,7 +316,7 @@ const Index = () => {
                   
                   <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
                     <p className="text-base md:text-xl text-white/90 leading-relaxed mb-4 md:mb-8">
-                      But raw brain data is among the most sensitive personal information. And today's security measures fail to protect it in real time.
+                      But raw brain data is among the most sensitive personal information — and today's security measures fail to protect it in real time.
                     </p>
                   </div>
                   
