@@ -248,6 +248,20 @@ const HeroXBrainer = () => {
                     console.log('✅ Color reset to white');
                   }, 1500);
                 }
+                
+                // Scroll to problem section
+                console.log('🎯 Scrolling to problem section...');
+                const problemSection = document.getElementById('problem');
+                if (problemSection) {
+                  problemSection.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start',
+                    inline: 'nearest'
+                  });
+                  console.log('✅ Scrolled to problem section');
+                } else {
+                  console.log('❌ Problem section not found');
+                }
               }}
             >
               PROBLEM
