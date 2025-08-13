@@ -105,24 +105,24 @@ const Index = () => {
                     {/* Brain backdrop */}
                     <div className="absolute inset-0 z-0">
                       <div 
-                        className="w-full h-full bg-cover bg-center bg-no-repeat opacity-20"
+                        className="w-full h-full bg-cover bg-center bg-no-repeat opacity-50"
                         style={{
                           backgroundImage: `url('/lovable-uploads/e289f332-67c8-4420-919d-c7146bb726d9.png')`,
-                          filter: 'blur(1px) brightness(0.7) saturate(0.8)'
+                          filter: 'blur(0.5px) brightness(0.9) saturate(1.2)'
                         }}
                       />
                     </div>
                     
                     {/* Text overlay on top */}
                     <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                      <p className="text-white/60 text-xl sm:text-2xl lg:text-3xl font-light text-center px-8 max-w-4xl leading-relaxed">
+                      <p className="text-white text-sm sm:text-xl md:text-2xl lg:text-3xl font-light text-center px-4 sm:px-8 max-w-4xl leading-relaxed">
                         Your brain data deserves the same protection as your bank account.
                       </p>
                     </div>
                     
                 {/* Menu dropdown - smaller and more compact for mobile */}
                 <div 
-                  className="fixed top-16 right-4 w-40 sm:w-48 md:w-52 bg-black border border-white/60 rounded-lg shadow-2xl z-[99999999]"
+                  className="fixed top-16 right-4 w-32 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm border border-white/60 rounded-lg shadow-2xl z-[99999999]"
                   style={{
                     contain: 'layout style',
                     willChange: 'transform',
@@ -133,7 +133,7 @@ const Index = () => {
                         {menuItems.map((item) => (
                           <li key={item.label}>
                             <button
-                              className="w-full text-left block px-2 sm:px-3 md:px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-xs sm:text-sm font-medium touch-manipulation"
+                              className="w-full text-left block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-xs sm:text-sm font-medium touch-manipulation"
                               onClick={(e) => {
                                 console.log(`🚀 ${item.label} CLICKED - Starting letter animation`);
                                 
