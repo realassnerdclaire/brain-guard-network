@@ -250,7 +250,7 @@ const Index = () => {
           {/* 1. Problem Section */}
           <section 
             id="problem" 
-            className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden"
+            className="min-h-screen md:min-h-screen bg-black flex items-center justify-center py-8 md:py-16 relative overflow-hidden"
             style={{
               contain: 'layout style paint',
               willChange: 'transform',
@@ -338,41 +338,41 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 animate-fade-in">
+                <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-8 animate-fade-in">
                   The Problem
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#6C63FF] to-[#A855F7] mx-auto mb-16 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#6C63FF] to-[#A855F7] mx-auto mb-8 md:mb-16 animate-pulse" />
                 
-                <div className="space-y-8 text-left max-w-4xl mx-auto">
+                <div className="space-y-4 md:space-y-8 text-left max-w-4xl mx-auto">
                   <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-                    <p className="text-xl text-white/90 leading-relaxed mb-6">
+                    <p className="text-base md:text-xl text-white/90 leading-relaxed mb-3 md:mb-6">
                       EEG and BCI devices are moving from research labs to clinics, homes, and hybrid environments.
                     </p>
                   </div>
                   
                   <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
-                    <p className="text-xl text-white/90 leading-relaxed mb-8">
+                    <p className="text-base md:text-xl text-white/90 leading-relaxed mb-4 md:mb-8">
                       But raw brain data is highly sensitive, and current security measures fail to protect it in real-time.
                     </p>
                   </div>
                   
-                  <div className="bg-black/40 border border-[#7C3AED]/30 rounded-2xl p-8 animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.6s'}}>
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                      <span className="text-[#6C63FF] text-3xl animate-pulse">⚠️</span>
+                  <div className="bg-black/40 border border-[#7C3AED]/30 rounded-2xl p-4 md:p-8 animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.6s'}}>
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-3 md:mb-6 flex items-center gap-3">
+                      <span className="text-[#6C63FF] text-xl md:text-3xl animate-pulse">⚠️</span>
                       Unsecured pipelines risk:
                     </h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4 p-4 bg-[#7C3AED]/20 rounded-lg border border-[#7C3AED]/20 hover:border-[#7C3AED]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#6C63FF] text-xl animate-pulse">🔓</span>
-                        <span className="text-lg text-white/90">Data breaches that could expose neurological health information</span>
+                    <div className="space-y-2 md:space-y-4">
+                      <div className="flex items-start gap-2 md:gap-4 p-2 md:p-4 bg-[#7C3AED]/20 rounded-lg border border-[#7C3AED]/20 hover:border-[#7C3AED]/40 transition-all duration-300 hover-scale">
+                        <span className="text-[#6C63FF] text-base md:text-xl animate-pulse">🔓</span>
+                        <span className="text-sm md:text-lg text-white/90">Data breaches that could expose neurological health information</span>
                       </div>
-                      <div className="flex items-start gap-4 p-4 bg-[#9333EA]/20 rounded-lg border border-[#9333EA]/20 hover:border-[#9333EA]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#9333EA] text-xl animate-pulse">⏸️</span>
-                        <span className="text-lg text-white/90">Regulatory delays blocking clinical trials and market launches</span>
+                      <div className="flex items-start gap-2 md:gap-4 p-2 md:p-4 bg-[#9333EA]/20 rounded-lg border border-[#9333EA]/20 hover:border-[#9333EA]/40 transition-all duration-300 hover-scale">
+                        <span className="text-[#9333EA] text-base md:text-xl animate-pulse">⏸️</span>
+                        <span className="text-sm md:text-lg text-white/90">Regulatory delays blocking clinical trials and market launches</span>
                       </div>
-                      <div className="flex items-start gap-4 p-4 bg-[#4338CA]/20 rounded-lg border border-[#4338CA]/20 hover:border-[#4338CA]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#4338CA] text-xl animate-pulse">📊</span>
-                        <span className="text-lg text-white/90">Loss of research integrity due to tampering or unauthorized access</span>
+                      <div className="flex items-start gap-2 md:gap-4 p-2 md:p-4 bg-[#4338CA]/20 rounded-lg border border-[#4338CA]/20 hover:border-[#4338CA]/40 transition-all duration-300 hover-scale">
+                        <span className="text-[#4338CA] text-base md:text-xl animate-pulse">📊</span>
+                        <span className="text-sm md:text-lg text-white/90">Loss of research integrity due to tampering or unauthorized access</span>
                       </div>
                     </div>
                   </div>
@@ -384,7 +384,7 @@ const Index = () => {
           {/* 2. Urgency Section */}
           <section 
             id="urgency" 
-            className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-16 relative overflow-hidden"
+            className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-8 md:py-16 relative overflow-hidden"
           >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
@@ -455,10 +455,10 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 animate-fade-in">
+                <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-8 animate-fade-in">
                   The Urgency
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-16 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-8 md:mb-16 animate-pulse" />
                 
                 <div className="space-y-8 text-left max-w-4xl mx-auto">
                   <div className="bg-gradient-to-r from-[#EC4899]/40 to-[#F472B6]/40 border-2 border-[#EC4899]/50 rounded-2xl p-8 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
