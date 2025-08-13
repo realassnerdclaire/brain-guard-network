@@ -105,23 +105,23 @@ const Index = () => {
                       className="fixed inset-0 bg-black z-[9999999]"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      {/* Subtle neural network animation */}
-                      <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1920 1080">
+                      {/* More visible neural network animation */}
+                      <svg className="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 1920 1080">
                         <defs>
                           <linearGradient id="neuralFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.6}} />
-                            <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
-                            <stop offset="100%" style={{stopColor: '#6C63FF', stopOpacity: 0.6}} />
+                            <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.8}} />
+                            <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 1.0}} />
+                            <stop offset="100%" style={{stopColor: '#6C63FF', stopOpacity: 0.8}} />
                           </linearGradient>
                           <linearGradient id="neuralFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style={{stopColor: '#EC4899', stopOpacity: 0.5}} />
-                            <stop offset="50%" style={{stopColor: '#F472B6', stopOpacity: 0.7}} />
-                            <stop offset="100%" style={{stopColor: '#EC4899', stopOpacity: 0.5}} />
+                            <stop offset="0%" style={{stopColor: '#EC4899', stopOpacity: 0.7}} />
+                            <stop offset="50%" style={{stopColor: '#F472B6', stopOpacity: 0.9}} />
+                            <stop offset="100%" style={{stopColor: '#EC4899', stopOpacity: 0.7}} />
                           </linearGradient>
                           <linearGradient id="neuralFlow3" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.4}} />
-                            <stop offset="50%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
-                            <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.4}} />
+                            <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.6}} />
+                            <stop offset="50%" style={{stopColor: '#60A5FA', stopOpacity: 0.8}} />
+                            <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.6}} />
                           </linearGradient>
                         </defs>
                         
@@ -174,29 +174,29 @@ const Index = () => {
                           />
                         </path>
                         
-                        {/* Neural network nodes */}
-                        <circle cx="200" cy="300" r="3" fill="#6C63FF" opacity="0.4">
-                          <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" />
+                        {/* More visible neural network nodes */}
+                        <circle cx="200" cy="300" r="4" fill="#6C63FF" opacity="0.7">
+                          <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3s" repeatCount="indefinite" />
                         </circle>
-                        <circle cx="600" cy="450" r="2" fill="#EC4899" opacity="0.3">
-                          <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" repeatCount="indefinite" />
+                        <circle cx="600" cy="450" r="3" fill="#EC4899" opacity="0.6">
+                          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" />
                         </circle>
-                        <circle cx="1000" cy="250" r="2.5" fill="#3B82F6" opacity="0.4">
-                          <animate attributeName="opacity" values="0.2;0.7;0.2" dur="5s" repeatCount="indefinite" />
+                        <circle cx="1000" cy="250" r="3.5" fill="#3B82F6" opacity="0.7">
+                          <animate attributeName="opacity" values="0.4;0.9;0.4" dur="5s" repeatCount="indefinite" />
                         </circle>
-                        <circle cx="1400" cy="500" r="2" fill="#A855F7" opacity="0.3">
-                          <animate attributeName="opacity" values="0.1;0.4;0.1" dur="6s" repeatCount="indefinite" />
+                        <circle cx="1400" cy="500" r="3" fill="#A855F7" opacity="0.6">
+                          <animate attributeName="opacity" values="0.3;0.7;0.3" dur="6s" repeatCount="indefinite" />
                         </circle>
                         
-                        {/* Connecting neural pathways */}
-                        <line x1="200" y1="300" x2="600" y2="450" stroke="#6C63FF" strokeWidth="0.5" opacity="0.2">
-                          <animate attributeName="opacity" values="0.1;0.3;0.1" dur="7s" repeatCount="indefinite" />
+                        {/* More visible connecting neural pathways */}
+                        <line x1="200" y1="300" x2="600" y2="450" stroke="#6C63FF" strokeWidth="1" opacity="0.5">
+                          <animate attributeName="opacity" values="0.2;0.7;0.2" dur="7s" repeatCount="indefinite" />
                         </line>
-                        <line x1="600" y1="450" x2="1000" y2="250" stroke="#EC4899" strokeWidth="0.5" opacity="0.2">
-                          <animate attributeName="opacity" values="0.1;0.4;0.1" dur="8s" repeatCount="indefinite" />
+                        <line x1="600" y1="450" x2="1000" y2="250" stroke="#EC4899" strokeWidth="1" opacity="0.5">
+                          <animate attributeName="opacity" values="0.2;0.8;0.2" dur="8s" repeatCount="indefinite" />
                         </line>
-                        <line x1="1000" y1="250" x2="1400" y2="500" stroke="#3B82F6" strokeWidth="0.5" opacity="0.2">
-                          <animate attributeName="opacity" values="0.1;0.3;0.1" dur="9s" repeatCount="indefinite" />
+                        <line x1="1000" y1="250" x2="1400" y2="500" stroke="#3B82F6" strokeWidth="1" opacity="0.5">
+                          <animate attributeName="opacity" values="0.2;0.6;0.2" dur="9s" repeatCount="indefinite" />
                         </line>
                       </svg>
                     </div>
