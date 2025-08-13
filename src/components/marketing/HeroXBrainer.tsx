@@ -316,43 +316,44 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none bg-transparent border-none p-4 hover:bg-white/10 rounded"
-              onClick={(e) => {
-                const target = e.currentTarget as HTMLElement;
-                // Same dramatic animation for URGENCY
-                target.style.transition = 'all 0.4s ease-out';
-                target.style.color = '#ff1493';
-                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
-                target.style.transform = 'scale(1.3)';
-                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
-                target.style.borderRadius = '8px';
-                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+              onClick={() => {
+                console.log('🚀 URGENCY CLICKED - Starting letter animation');
                 
-                setTimeout(() => {
-                  target.style.color = '#8a2be2';
-                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
-                  target.style.transform = 'scale(1.4)';
-                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
-                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
-                }, 400);
+                const btn = document.getElementById('urgency-btn') || document.querySelector('[data-button="urgency"]') as HTMLElement;
+                if (!btn) return;
                 
-                setTimeout(() => {
-                  target.style.color = '#0080ff';
-                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
-                  target.style.transform = 'scale(1.5)';
-                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
-                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
-                }, 800);
+                // Same color sequence and animation as PROBLEM
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['U', 'R', 'G', 'E', 'N', 'C', 'Y'];
                 
+                // Create letter spans - PREVENT ALL inherited styles
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="urgency-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
+                ).join('');
+                
+                console.log('✅ URGENCY Letter spans created - letters only');
+                
+                // Animate each letter - ONLY COLOR CHANGE
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`urgency-letter-${letterIndex}`);
+                      if (letterSpan) {
+                        letterSpan.style.color = color;
+                        console.log(`URGENCY Letter ${letter} -> ${color}`);
+                      }
+                    }, letterIndex * 100 + colorIndex * 300);
+                  });
+                });
+                
+                // Reset - back to normal white letters
                 setTimeout(() => {
-                  target.style.transition = 'all 0.8s ease-out';
-                  target.style.color = 'white';
-                  target.style.textShadow = 'none';
-                  target.style.transform = 'scale(1)';
-                  target.style.filter = 'none';
-                  target.style.boxShadow = 'none';
-                  target.style.borderRadius = '';
-                }, 1600);
+                  btn.innerHTML = 'URGENCY';
+                  btn.style.color = 'white';
+                  console.log('🔄 Reset to normal URGENCY');
+                }, letters.length * 100 + colors.length * 300 + 1000);
               }}
+              id="urgency-btn"
               onMouseEnter={(e) => {
                 const btn = e.currentTarget;
                 const interval = startHoverAnimation(btn);
@@ -370,43 +371,44 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
-              onClick={(e) => {
-                const target = e.currentTarget as HTMLElement;
-                // Same dramatic animation for TECHNICAL ADVANTAGE
-                target.style.transition = 'all 0.4s ease-out';
-                target.style.color = '#ff1493';
-                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
-                target.style.transform = 'scale(1.3)';
-                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
-                target.style.borderRadius = '8px';
-                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+              onClick={() => {
+                console.log('🚀 TECHNICAL ADVANTAGE CLICKED - Starting letter animation');
                 
-                setTimeout(() => {
-                  target.style.color = '#8a2be2';
-                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
-                  target.style.transform = 'scale(1.4)';
-                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
-                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
-                }, 400);
+                const btn = document.getElementById('tech-adv-btn') || document.querySelector('[data-button="tech-adv"]') as HTMLElement;
+                if (!btn) return;
                 
-                setTimeout(() => {
-                  target.style.color = '#0080ff';
-                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
-                  target.style.transform = 'scale(1.5)';
-                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
-                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
-                }, 800);
+                // Same color sequence and animation as PROBLEM
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['T', 'E', 'C', 'H', 'N', 'I', 'C', 'A', 'L', ' ', 'A', 'D', 'V', 'A', 'N', 'T', 'A', 'G', 'E'];
                 
+                // Create letter spans - PREVENT ALL inherited styles
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="tech-adv-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                ).join('');
+                
+                console.log('✅ TECHNICAL ADVANTAGE Letter spans created - letters only');
+                
+                // Animate each letter - ONLY COLOR CHANGE
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`tech-adv-letter-${letterIndex}`);
+                      if (letterSpan && letter !== ' ') {
+                        letterSpan.style.color = color;
+                        console.log(`TECH ADV Letter ${letter} -> ${color}`);
+                      }
+                    }, letterIndex * 50 + colorIndex * 300); // Faster timing for more letters
+                  });
+                });
+                
+                // Reset - back to normal white letters
                 setTimeout(() => {
-                  target.style.transition = 'all 0.8s ease-out';
-                  target.style.color = 'white';
-                  target.style.textShadow = 'none';
-                  target.style.transform = 'scale(1)';
-                  target.style.filter = 'none';
-                  target.style.boxShadow = 'none';
-                  target.style.borderRadius = '';
-                }, 1600);
+                  btn.innerHTML = 'TECHNICAL ADVANTAGE';
+                  btn.style.color = 'white';
+                  console.log('🔄 Reset to normal TECHNICAL ADVANTAGE');
+                }, letters.length * 50 + colors.length * 300 + 1000);
               }}
+              id="tech-adv-btn"
               onMouseEnter={(e) => {
                 const btn = e.currentTarget;
                 const interval = startHoverAnimation(btn);
@@ -424,43 +426,44 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
-              onClick={(e) => {
-                const target = e.currentTarget as HTMLElement;
-                // Same dramatic animation for TECH ADVANTAGE (mobile)
-                target.style.transition = 'all 0.4s ease-out';
-                target.style.color = '#ff1493';
-                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
-                target.style.transform = 'scale(1.3)';
-                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
-                target.style.borderRadius = '8px';
-                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+              onClick={() => {
+                console.log('🚀 TECH ADVANTAGE (mobile) CLICKED - Starting letter animation');
                 
-                setTimeout(() => {
-                  target.style.color = '#8a2be2';
-                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
-                  target.style.transform = 'scale(1.4)';
-                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
-                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
-                }, 400);
+                const btn = document.getElementById('tech-adv-mobile-btn') || document.querySelector('[data-button="tech-adv-mobile"]') as HTMLElement;
+                if (!btn) return;
                 
-                setTimeout(() => {
-                  target.style.color = '#0080ff';
-                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
-                  target.style.transform = 'scale(1.5)';
-                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
-                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
-                }, 800);
+                // Same color sequence and animation as PROBLEM
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['T', 'E', 'C', 'H', ' ', 'A', 'D', 'V', 'A', 'N', 'T', 'A', 'G', 'E'];
                 
+                // Create letter spans - PREVENT ALL inherited styles
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="tech-adv-mobile-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                ).join('');
+                
+                console.log('✅ TECH ADVANTAGE (mobile) Letter spans created - letters only');
+                
+                // Animate each letter - ONLY COLOR CHANGE
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`tech-adv-mobile-letter-${letterIndex}`);
+                      if (letterSpan && letter !== ' ') {
+                        letterSpan.style.color = color;
+                        console.log(`TECH ADV (mobile) Letter ${letter} -> ${color}`);
+                      }
+                    }, letterIndex * 80 + colorIndex * 300);
+                  });
+                });
+                
+                // Reset - back to normal white letters
                 setTimeout(() => {
-                  target.style.transition = 'all 0.8s ease-out';
-                  target.style.color = 'white';
-                  target.style.textShadow = 'none';
-                  target.style.transform = 'scale(1)';
-                  target.style.filter = 'none';
-                  target.style.boxShadow = 'none';
-                  target.style.borderRadius = '';
-                }, 1600);
+                  btn.innerHTML = 'TECH ADVANTAGE';
+                  btn.style.color = 'white';
+                  console.log('🔄 Reset to normal TECH ADVANTAGE (mobile)');
+                }, letters.length * 80 + colors.length * 300 + 1000);
               }}
+              id="tech-adv-mobile-btn"
               onMouseEnter={(e) => {
                 const btn = e.currentTarget;
                 const interval = startHoverAnimation(btn);
@@ -478,43 +481,44 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
-              onClick={(e) => {
-                const target = e.currentTarget as HTMLElement;
-                // Same dramatic animation for COMPLIANCE AND STANDARDS
-                target.style.transition = 'all 0.4s ease-out';
-                target.style.color = '#ff1493';
-                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
-                target.style.transform = 'scale(1.3)';
-                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
-                target.style.borderRadius = '8px';
-                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+              onClick={() => {
+                console.log('🚀 COMPLIANCE AND STANDARDS CLICKED - Starting letter animation');
                 
-                setTimeout(() => {
-                  target.style.color = '#8a2be2';
-                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
-                  target.style.transform = 'scale(1.4)';
-                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
-                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
-                }, 400);
+                const btn = document.getElementById('compliance-btn') || document.querySelector('[data-button="compliance"]') as HTMLElement;
+                if (!btn) return;
                 
-                setTimeout(() => {
-                  target.style.color = '#0080ff';
-                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
-                  target.style.transform = 'scale(1.5)';
-                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
-                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
-                }, 800);
+                // Same color sequence and animation as PROBLEM
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['C', 'O', 'M', 'P', 'L', 'I', 'A', 'N', 'C', 'E', ' ', 'A', 'N', 'D', ' ', 'S', 'T', 'A', 'N', 'D', 'A', 'R', 'D', 'S'];
                 
+                // Create letter spans - PREVENT ALL inherited styles
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="compliance-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                ).join('');
+                
+                console.log('✅ COMPLIANCE Letter spans created - letters only');
+                
+                // Animate each letter - ONLY COLOR CHANGE
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`compliance-letter-${letterIndex}`);
+                      if (letterSpan && letter !== ' ') {
+                        letterSpan.style.color = color;
+                        console.log(`COMPLIANCE Letter ${letter} -> ${color}`);
+                      }
+                    }, letterIndex * 40 + colorIndex * 300); // Faster timing for more letters
+                  });
+                });
+                
+                // Reset - back to normal white letters
                 setTimeout(() => {
-                  target.style.transition = 'all 0.8s ease-out';
-                  target.style.color = 'white';
-                  target.style.textShadow = 'none';
-                  target.style.transform = 'scale(1)';
-                  target.style.filter = 'none';
-                  target.style.boxShadow = 'none';
-                  target.style.borderRadius = '';
-                }, 1600);
+                  btn.innerHTML = 'COMPLIANCE AND STANDARDS';
+                  btn.style.color = 'white';
+                  console.log('🔄 Reset to normal COMPLIANCE AND STANDARDS');
+                }, letters.length * 40 + colors.length * 300 + 1000);
               }}
+              id="compliance-btn"
               onMouseEnter={(e) => {
                 const btn = e.currentTarget;
                 const interval = startHoverAnimation(btn);
@@ -532,43 +536,44 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
-              onClick={(e) => {
-                const target = e.currentTarget as HTMLElement;
-                // Same dramatic animation for COMPLIANCE (mobile)
-                target.style.transition = 'all 0.4s ease-out';
-                target.style.color = '#ff1493';
-                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
-                target.style.transform = 'scale(1.3)';
-                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
-                target.style.borderRadius = '8px';
-                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+              onClick={() => {
+                console.log('🚀 COMPLIANCE (mobile) CLICKED - Starting letter animation');
                 
-                setTimeout(() => {
-                  target.style.color = '#8a2be2';
-                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
-                  target.style.transform = 'scale(1.4)';
-                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
-                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
-                }, 400);
+                const btn = document.getElementById('compliance-mobile-btn') || document.querySelector('[data-button="compliance-mobile"]') as HTMLElement;
+                if (!btn) return;
                 
-                setTimeout(() => {
-                  target.style.color = '#0080ff';
-                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
-                  target.style.transform = 'scale(1.5)';
-                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
-                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
-                }, 800);
+                // Same color sequence and animation as PROBLEM
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['C', 'O', 'M', 'P', 'L', 'I', 'A', 'N', 'C', 'E'];
                 
+                // Create letter spans - PREVENT ALL inherited styles
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="compliance-mobile-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
+                ).join('');
+                
+                console.log('✅ COMPLIANCE (mobile) Letter spans created - letters only');
+                
+                // Animate each letter - ONLY COLOR CHANGE
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`compliance-mobile-letter-${letterIndex}`);
+                      if (letterSpan) {
+                        letterSpan.style.color = color;
+                        console.log(`COMPLIANCE (mobile) Letter ${letter} -> ${color}`);
+                      }
+                    }, letterIndex * 100 + colorIndex * 300);
+                  });
+                });
+                
+                // Reset - back to normal white letters
                 setTimeout(() => {
-                  target.style.transition = 'all 0.8s ease-out';
-                  target.style.color = 'white';
-                  target.style.textShadow = 'none';
-                  target.style.transform = 'scale(1)';
-                  target.style.filter = 'none';
-                  target.style.boxShadow = 'none';
-                  target.style.borderRadius = '';
-                }, 1600);
+                  btn.innerHTML = 'COMPLIANCE';
+                  btn.style.color = 'white';
+                  console.log('🔄 Reset to normal COMPLIANCE (mobile)');
+                }, letters.length * 100 + colors.length * 300 + 1000);
               }}
+              id="compliance-mobile-btn"
               onMouseEnter={(e) => {
                 const btn = e.currentTarget;
                 const interval = startHoverAnimation(btn);
