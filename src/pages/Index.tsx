@@ -62,7 +62,7 @@ const Index = () => {
           <section id="problem" className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden">
             {/* EEG signal background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-              <svg className="w-full h-full opacity-20" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+              <svg className="w-full h-full opacity-60" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
                 <defs>
                   <linearGradient id="problemEegGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" style={{stopColor: '#00d4ff', stopOpacity: 1}} />
@@ -82,9 +82,9 @@ const Index = () => {
                       strokeWidth="2" 
                       fill="none" 
                       style={{
-                        opacity: 0.4,
+                        opacity: 0.8,
                         animation: 'eeg-flow 6s ease-in-out infinite',
-                        filter: 'drop-shadow(0 0 4px #00d4ff)',
+                        filter: 'drop-shadow(0 0 6px #00d4ff)',
                         strokeLinecap: 'round'
                       }} />
                 
@@ -94,10 +94,10 @@ const Index = () => {
                       strokeWidth="1.5" 
                       fill="none" 
                       style={{
-                        opacity: 0.3,
+                        opacity: 0.6,
                         animation: 'eeg-flow 8s ease-in-out infinite',
                         animationDelay: '2s',
-                        filter: 'drop-shadow(0 0 3px #a855f7)',
+                        filter: 'drop-shadow(0 0 5px #a855f7)',
                         strokeLinecap: 'round'
                       }} />
               </svg>
