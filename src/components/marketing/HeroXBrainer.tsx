@@ -182,7 +182,7 @@ const HeroXBrainer = () => {
       
       <div className="container relative z-10 flex items-center h-screen py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-2xl relative z-15">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] font-normal text-white">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-normal text-white">
             Secure Neural Data Before It's Too Late
           </h1>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg text-white/80 max-w-xl">
