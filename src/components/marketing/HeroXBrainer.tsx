@@ -181,18 +181,68 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-48 sm:py-0 px-3 sm:px-8 lg:px-12 xl:px-16">
+      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-32 sm:py-0 px-3 sm:px-8 lg:px-12 xl:px-16">
         <div className="max-w-2xl lg:max-w-4xl xl:max-w-5xl relative z-15 mt-0 sm:mt-16 lg:mt-0">
           <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-2 sm:mb-8 lg:mb-12" id="hero-title">
             <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/80 max-w-xs lg:max-w-xl xl:max-w-2xl leading-tight mb-3 sm:mb-12 lg:mb-16 mt-8">
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/80 max-w-xs lg:max-w-xl xl:max-w-2xl leading-tight mb-6 sm:mb-12 lg:mb-16 mt-4 sm:mt-8">
             As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
           </p>
+          
+          {/* Action buttons - mobile inline with content, desktop separate */}
+          <div className="flex flex-col gap-2 sm:hidden">
+            <button 
+              className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-4 py-2 touch-manipulation text-xs font-medium cursor-pointer transition-all duration-300 whitespace-nowrap w-fit"
+              onMouseEnter={(e) => {
+                const btn = e.currentTarget;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
+              }}
+              onMouseLeave={(e) => {
+                const btn = e.currentTarget;
+                if ((btn as any).hoverInterval) {
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
+              }}
+              onClick={() => {
+                const ctaSection = document.getElementById('cta');
+                if (ctaSection) {
+                  ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              JOIN THE WAITLIST
+            </button>
+            <button 
+              className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-4 py-2 touch-manipulation text-xs font-medium cursor-pointer transition-all duration-300 whitespace-nowrap w-fit"
+              onMouseEnter={(e) => {
+                const btn = e.currentTarget;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
+              }}
+              onMouseLeave={(e) => {
+                const btn = e.currentTarget;
+                if ((btn as any).hoverInterval) {
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
+              }}
+              onClick={() => {
+                const demoSection = document.getElementById('demo');
+                if (demoSection) {
+                  demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              SEE THE DEMO
+            </button>
+          </div>
         </div>
         
-        {/* Action buttons - mobile centered, desktop right-aligned */}
-        <div className="absolute bottom-80 left-1/2 -translate-x-1/2 sm:bottom-40 sm:left-auto sm:translate-x-0 sm:right-8 lg:bottom-48 lg:right-16 xl:bottom-52 xl:right-20 flex flex-col gap-2 sm:gap-4 lg:gap-6">
+        {/* Action buttons - desktop only (hidden on mobile) */}
+        <div className="absolute bottom-80 left-1/2 -translate-x-1/2 sm:bottom-40 sm:left-auto sm:translate-x-0 sm:right-8 lg:bottom-48 lg:right-16 xl:bottom-52 xl:right-20 hidden sm:flex flex-col gap-2 sm:gap-4 lg:gap-6">
           <button 
             className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-2 sm:px-8 lg:px-10 xl:px-12 py-1 sm:py-4 lg:py-5 touch-manipulation text-[10px] sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 whitespace-nowrap"
             onMouseEnter={(e) => {
