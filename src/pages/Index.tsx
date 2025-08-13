@@ -118,24 +118,17 @@ const Index = () => {
               
               {/* Problem Description */}
               <div className="mb-16 animate-fade-in">
-                <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-5xl mx-auto">
+                <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-3 h-3 bg-[#a855f7] rounded-full animate-pulse" />
-                    <span className="text-[#a855f7] font-medium text-sm uppercase tracking-wider">Current State</span>
+                    <span className="text-[#a855f7] font-medium text-sm uppercase tracking-wider">Current Gap</span>
                   </div>
-                  <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-6">
-                    Brain-computer devices send raw brain (EEG) and motion data. Many pipelines still miss four basics: 
-                    <span className="text-white font-semibold"> secure transport</span>, 
-                    <span className="text-white font-semibold"> packet checks</span> (timing and signal errors), 
-                    <span className="text-white font-semibold"> access control tied to user consent</span>, and a 
-                    <span className="text-white font-semibold"> permanent access log</span>.
+                  <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-4">
+                    Brain-computer devices lack <span className="text-white font-semibold">four critical safeguards</span>: 
+                    secure transport, packet validation, access control, and audit logging.
                   </p>
-                  <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
-                    Without this, bad data reaches apps, unauthorized reads happen, and teams can't show compliance—causing 
-                    <span className="text-[#a855f7] font-semibold"> exposure risk</span>, 
-                    <span className="text-[#a855f7] font-semibold"> unreliable results</span>, and 
-                    <span className="text-[#a855f7] font-semibold"> stalled deployments</span>. 
-                    As headsets move from labs to everyday use, this gap is immediate.
+                  <p className="text-lg text-white/80">
+                    Result: <span className="text-[#a855f7] font-semibold">bad data + unauthorized access + compliance gaps</span>
                   </p>
                 </div>
               </div>
@@ -181,17 +174,14 @@ const Index = () => {
                   <div className="w-16 h-1 bg-gradient-to-r from-[#00d4ff] to-[#a855f7] mx-auto" />
                 </div>
                 
-                <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-5xl mx-auto">
+                <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-3 h-3 bg-[#00d4ff] rounded-full animate-pulse" />
                     <span className="text-[#00d4ff] font-medium text-sm uppercase tracking-wider">XBrainer Solution</span>
                   </div>
                   <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
-                    We add a <span className="text-[#00d4ff] font-semibold">software layer between device and app</span> that 
-                    <span className="text-white font-semibold"> checks each packet in real time</span>, 
-                    <span className="text-white font-semibold"> drops corrupted data</span>, 
-                    <span className="text-white font-semibold"> controls who can read the stream</span>, and 
-                    <span className="text-white font-semibold"> records every access in a permanent log</span>.
+                    <span className="text-[#00d4ff] font-semibold">Real-time software layer</span> that validates packets, 
+                    controls access, and logs everything permanently.
                   </p>
                 </div>
               </div>
