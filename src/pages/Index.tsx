@@ -316,7 +316,7 @@ const Index = () => {
                   
                   <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
                     <p className="text-base md:text-xl text-white/90 leading-relaxed mb-4 md:mb-8">
-                      But raw brain data is among the most sensitive personal information — and today's security measures fail to protect it in real time.
+                      But raw brain data is among the most sensitive personal information. And today's security measures fail to protect it in real time.
                     </p>
                   </div>
                   
@@ -328,7 +328,7 @@ const Index = () => {
                     <div className="space-y-2 md:space-y-4">
                       <div className="flex items-start gap-2 md:gap-4 p-2 md:p-4 bg-[#7C3AED]/20 rounded-lg border border-[#7C3AED]/20 hover:border-[#7C3AED]/40 transition-all duration-300 hover-scale">
                         <span className="text-[#6C63FF] text-base md:text-xl animate-pulse">🔓</span>
-                        <span className="text-sm md:text-lg text-white/90">Data breaches that could expose neurological health information</span>
+                        <span className="text-sm md:text-lg text-white/90">Data breaches exposing neurological health information</span>
                       </div>
                       <div className="flex items-start gap-2 md:gap-4 p-2 md:p-4 bg-[#9333EA]/20 rounded-lg border border-[#9333EA]/20 hover:border-[#9333EA]/40 transition-all duration-300 hover-scale">
                         <span className="text-[#9333EA] text-base md:text-xl animate-pulse">⏸️</span>
