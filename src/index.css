@@ -324,14 +324,38 @@ All colors MUST be HSL.
   }
   
   @keyframes menuBorderCycle {
-    0% { border-color: white; }
-    14.28% { border-color: #ffb3d9; } /* light pink */
-    28.56% { border-color: #ff80c7; } /* pink */
-    42.84% { border-color: #a855f7; } /* purple */
-    57.12% { border-color: #c4b5fd; } /* light purple */
-    71.4% { border-color: #93c5fd; } /* light blue */
-    85.68% { border-color: #3b82f6; } /* blue */
-    100% { border-color: white; }
+    0% { 
+      border-color: #ffffff; 
+      box-shadow: 0 0 15px #ffffff, inset 0 0 15px rgba(255,255,255,0.2);
+    }
+    14.28% { 
+      border-color: #ff80c7; 
+      box-shadow: 0 0 20px #ff80c7, inset 0 0 15px rgba(255,128,199,0.2);
+    }
+    28.56% { 
+      border-color: #ff1493; 
+      box-shadow: 0 0 25px #ff1493, inset 0 0 15px rgba(255,20,147,0.2);
+    }
+    42.84% { 
+      border-color: #a855f7; 
+      box-shadow: 0 0 30px #a855f7, inset 0 0 15px rgba(168,85,247,0.2);
+    }
+    57.12% { 
+      border-color: #c4b5fd; 
+      box-shadow: 0 0 25px #c4b5fd, inset 0 0 15px rgba(196,181,253,0.2);
+    }
+    71.4% { 
+      border-color: #60a5fa; 
+      box-shadow: 0 0 30px #60a5fa, inset 0 0 15px rgba(96,165,250,0.2);
+    }
+    85.68% { 
+      border-color: #0ea5e9; 
+      box-shadow: 0 0 35px #0ea5e9, inset 0 0 15px rgba(14,165,233,0.2);
+    }
+    100% { 
+      border-color: #ffffff; 
+      box-shadow: 0 0 15px #ffffff, inset 0 0 15px rgba(255,255,255,0.2);
+    }
   }
   }
 }
