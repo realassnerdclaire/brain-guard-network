@@ -45,41 +45,37 @@ const Index = () => {
               <div className="relative">
                 <button
                   id="menu-btn"
-                  onClick={() => {
-                    // Menu click animation
+                  onClick={(e) => {
                     console.log('🚀 MENU CLICKED - Starting letter animation');
                     
-                    const btn = document.getElementById('menu-btn');
-                    if (btn) {
-                      const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                      const letters = ['M', 'E', 'N', 'U'];
+                    const btn = e.currentTarget;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = ['M', 'E', 'N', 'U'];
+                    
+                    // Create letter spans - same as navigation buttons
+                    const textSpan = btn.querySelector('.menu-text');
+                    if (textSpan) {
+                      textSpan.innerHTML = letters.map((letter, i) => 
+                        `<span id="menu-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter}</span>`
+                      ).join('');
                       
-                      // Create letter spans - PREVENT ALL inherited styles
-                      const textSpan = btn.querySelector('.menu-text');
-                      if (textSpan) {
-                        textSpan.innerHTML = letters.map((letter, i) => 
-                          `<span id="menu-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
-                        ).join('');
-                        
-                        // Animate each letter - ONLY COLOR CHANGE
-                        letters.forEach((letter, letterIndex) => {
-                          colors.forEach((color, colorIndex) => {
-                            setTimeout(() => {
-                              const letterSpan = document.getElementById(`menu-letter-${letterIndex}`);
-                              if (letterSpan) {
-                                letterSpan.style.color = color;
-                                console.log(`MENU Letter ${letter} -> ${color}`);
-                              }
-                            }, letterIndex * 100 + colorIndex * 300);
-                          });
+                      // Same fast animation as navigation buttons
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`menu-click-letter-${letterIndex}`);
+                            if (letterSpan) {
+                              letterSpan.style.color = color;
+                            }
+                          }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM button
                         });
-                        
-                        // Reset - back to normal white letters
-                        setTimeout(() => {
-                          textSpan.innerHTML = 'MENU';
-                          console.log('🔄 Reset to normal MENU');
-                        }, letters.length * 100 + colors.length * 300 + 1000);
-                      }
+                      });
+                      
+                      // Reset - same timing as navigation buttons
+                      setTimeout(() => {
+                        textSpan.innerHTML = 'MENU';
+                        (textSpan as HTMLElement).style.color = 'white !important';
+                      }, letters.length * 10 + colors.length * 30 + 50);
                     }
                     
                     setIsMenuOpen(!isMenuOpen);
@@ -150,46 +146,44 @@ const Index = () => {
                           <button
                             className="w-full text-left block px-4 sm:px-6 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium touch-manipulation"
                             onClick={(e) => {
-                              // Menu item click animation
                               console.log(`🚀 ${item.label} CLICKED - Starting letter animation`);
                               
                               const btn = e.currentTarget as HTMLElement;
                               const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                               const letters = item.label.split('');
                               
-                              // Create letter spans - PREVENT ALL inherited styles
+                              // Create letter spans - same as navigation buttons
                               btn.innerHTML = letters.map((letter, i) => 
-                                `<span id="menu-item-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                                `<span id="menu-item-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
                               ).join('');
                               
-                              // Animate each letter - ONLY COLOR CHANGE
+                              // Same fast animation as navigation buttons
                               letters.forEach((letter, letterIndex) => {
                                 colors.forEach((color, colorIndex) => {
                                   setTimeout(() => {
-                                    const letterSpan = document.getElementById(`menu-item-letter-${letterIndex}`);
+                                    const letterSpan = document.getElementById(`menu-item-click-letter-${letterIndex}`);
                                     if (letterSpan && letter !== ' ') {
                                       letterSpan.style.color = color;
-                                      console.log(`${item.label} Letter ${letter} -> ${color}`);
                                     }
-                                  }, letterIndex * 50 + colorIndex * 300);
+                                  }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM button
                                 });
                               });
                               
-                              // Reset and navigate
+                              // Reset and navigate - same timing as navigation buttons
                               setTimeout(() => {
                                 btn.innerHTML = item.label;
-                                console.log(`🔄 Reset to normal ${item.label}`);
+                                btn.style.color = 'white !important';
+                                btn.style.setProperty('color', 'white', 'important');
                                 
                                 // Navigate after animation
                                 setTimeout(() => {
                                   setIsMenuOpen(false);
-                                  // Smooth scroll to section
                                   const targetElement = document.querySelector(item.href);
                                   if (targetElement) {
                                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                                   }
-                                }, 200);
-                              }, letters.length * 50 + colors.length * 300 + 1000);
+                                }, 100);
+                              }, letters.length * 10 + colors.length * 30 + 50);
                             }}
                             onMouseEnter={(e) => {
                               const btn = e.currentTarget;
