@@ -340,10 +340,10 @@ const Index = () => {
                     <span className="text-[#a855f7] font-medium text-sm uppercase tracking-wider">Critical Gap</span>
                   </div>
                   <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-4">
-                    BCI devices stream raw EEG/IMU. Most systems lack four basics: encrypted transport, packet checks (timing, range, artifacts), consent-based access, and a write-once audit log.
+                    BCI devices stream raw EEG/IMU. Most systems lack four basics: <span className="text-[#a855f7] font-semibold">encrypted transport</span>, <span className="text-[#a855f7] font-semibold">packet checks</span> (timing, range, artifacts), <span className="text-[#a855f7] font-semibold">consent-based access</span>, and a <span className="text-[#a855f7] font-semibold">write-once audit log</span>.
                   </p>
                   <p className="text-lg text-white/80">
-                    Without these, corrupted data reaches apps, unauthorized reads occur, and deployments stall as adoption expands beyond labs.
+                    Without these, <span className="text-[#a855f7] font-semibold">corrupted data</span> reaches apps, <span className="text-[#a855f7] font-semibold">unauthorized reads</span> occur, and <span className="text-[#a855f7] font-semibold">deployments stall</span> as adoption expands beyond labs.
                   </p>
                 </div>
               </div>
