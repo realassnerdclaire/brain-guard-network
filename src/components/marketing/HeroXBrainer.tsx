@@ -344,12 +344,12 @@ const HeroXBrainer = () => {
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['U', 'R', 'G', 'E', 'N', 'C', 'Y'];
                 
-                // Create letter spans - PREVENT ALL inherited styles
+                // Create letter spans
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="urgency-click-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important;">${letter}</span>`
+                  `<span id="urgency-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter}</span>`
                 ).join('');
                 
-                // Animate each letter - FAST, ONCE ONLY
+                // Same speed as PROBLEM button
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
@@ -357,7 +357,7 @@ const HeroXBrainer = () => {
                       if (letterSpan) {
                         letterSpan.style.color = color;
                       }
-                    }, letterIndex * 20 + colorIndex * 50); // Much faster timing
+                    }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM
                   });
                 });
                 
@@ -371,9 +371,8 @@ const HeroXBrainer = () => {
                   const urgencySection = document.getElementById('urgency');
                   if (urgencySection) {
                     urgencySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    console.log('✅ Scrolled to urgency section');
                   }
-                }, letters.length * 20 + colors.length * 50 + 100);
+                }, letters.length * 10 + colors.length * 30 + 50);
               }}
               onMouseEnter={(e) => {
                 console.log('🖱️ URGENCY HOVERED');
@@ -429,7 +428,7 @@ const HeroXBrainer = () => {
                   `<span id="solution-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter}</span>`
                 ).join('');
                 
-                // Very fast animation
+                // Same speed as PROBLEM button
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
@@ -437,7 +436,7 @@ const HeroXBrainer = () => {
                       if (letterSpan) {
                         letterSpan.style.color = color;
                       }
-                    }, letterIndex * 10 + colorIndex * 30); // Very fast timing
+                    }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM
                   });
                 });
                 
@@ -626,40 +625,35 @@ const HeroXBrainer = () => {
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['O', 'U', 'R', ' ', 'E', 'D', 'G', 'E'];
                 
-                // Create letter spans - PREVENT ALL inherited styles
+                // Create letter spans
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="compliance-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                  `<span id="compliance-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
                 ).join('');
                 
-                console.log('✅ OUR EDGE Letter spans created - letters only');
-                
-                // Animate each letter - ONLY COLOR CHANGE
+                // Same speed as PROBLEM button
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
-                      const letterSpan = document.getElementById(`compliance-letter-${letterIndex}`);
+                      const letterSpan = document.getElementById(`compliance-click-letter-${letterIndex}`);
                       if (letterSpan && letter !== ' ') {
                         letterSpan.style.color = color;
-                        console.log(`OUR EDGE Letter ${letter} -> ${color}`);
                       }
-                    }, letterIndex * 40 + colorIndex * 300); // Faster timing for more letters
+                    }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM
                   });
                 });
                 
-                // Reset - back to normal white letters
+                // Reset and navigate
                 setTimeout(() => {
                   btn.innerHTML = 'OUR EDGE';
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
-                  console.log('🔄 Reset to normal OUR EDGE');
-                }, letters.length * 40 + colors.length * 300 + 1000);
-                
-                // Scroll to edge section
-                const edgeSection = document.getElementById('edge');
-                if (edgeSection) {
-                  edgeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  console.log('✅ Scrolled to edge section');
-                }
+                  
+                  // Navigate to edge section
+                  const edgeSection = document.getElementById('edge');
+                  if (edgeSection) {
+                    edgeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, letters.length * 10 + colors.length * 30 + 50);
               }}
               id="compliance-btn"
               onMouseEnter={(e) => {
