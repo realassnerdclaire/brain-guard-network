@@ -184,7 +184,7 @@ const HeroXBrainer = () => {
       <div className="container relative z-10 flex items-center h-screen py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-2xl relative z-15">
           <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl leading-[1.1] font-normal text-white" id="hero-title">
-            <span className="inline-block animate-color-cycle">Secure Neural Data Before It's Too Late</span>
+            <span className="inline-block">Secure Neural Data Before It's Too Late</span>
           </h1>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg text-white/80 max-w-xl">
             As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
@@ -247,7 +247,7 @@ const HeroXBrainer = () => {
           <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 flex-wrap pointer-events-auto">
             <button 
               id="problem-btn"
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer bg-transparent border-none p-4 hover:bg-white/10 rounded z-[99999] relative"
+              className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer bg-transparent border-none p-4 hover:bg-white/10 rounded z-[99999] relative"
               style={{
                 pointerEvents: 'auto',
                 position: 'relative',
@@ -315,7 +315,7 @@ const HeroXBrainer = () => {
               PROBLEM
             </button>
             <button 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
                 console.log('🚀 URGENCY CLICKED - Starting letter animation');
                 
@@ -406,7 +406,7 @@ const HeroXBrainer = () => {
               URGENCY
             </button>
             <button 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
                 console.log('🚀 SOLUTION CLICKED - Starting letter animation');
                 
@@ -497,7 +497,7 @@ const HeroXBrainer = () => {
               SOLUTION
             </button>
             <button 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
                 console.log('🚀 SOLUTION (mobile) CLICKED - Starting letter animation');
                 
@@ -559,7 +559,7 @@ const HeroXBrainer = () => {
               SOLUTION
             </button>
             <button 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
                 console.log('🚀 OUR EDGE CLICKED - Starting letter animation');
                 
@@ -621,7 +621,7 @@ const HeroXBrainer = () => {
               OUR EDGE
             </button>
             <button 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
               onClick={() => {
                 console.log('🚀 OUR EDGE (mobile) CLICKED - Starting letter animation');
                 
