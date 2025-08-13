@@ -276,9 +276,9 @@ const HeroXBrainer = () => {
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['P', 'R', 'O', 'B', 'L', 'E', 'M'];
                 
-                // Create letter spans - LETTERS ONLY, no containers
+                // Create letter spans - PREVENT ALL inherited styles that create squares
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="letter-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter}</span>`
+                  `<span id="letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
                 ).join('');
                 
                 console.log('✅ Letter spans created - letters only');
