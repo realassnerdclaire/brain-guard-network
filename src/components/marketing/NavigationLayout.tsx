@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 interface NavigationLayoutProps {
@@ -12,17 +13,17 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
   const [activeSection, setActiveSection] = useState("PROBLEM");
 
   const menuItems = [
-    "HOME",
-    "ABOUT US", 
-    "VISION",
-    "OVERVIEW",
-    "COMPLIANCE & STANDARDS",
-    "USE CASES",
-    "SECURITY & PRIVACY",
-    "PARTNERS & COLLABORATORS", 
-    "RESOURCES",
-    "CAREERS",
-    "FAQ"
+    { name: "HOME", path: "/" },
+    { name: "ABOUT US", path: "/about" }, 
+    { name: "VISION", path: "/vision" },
+    { name: "OVERVIEW", path: "/overview" },
+    { name: "COMPLIANCE & STANDARDS", path: "/compliance" },
+    { name: "USE CASES", path: "/use-cases" },
+    { name: "SECURITY & PRIVACY", path: "/security" },
+    { name: "PARTNERS & COLLABORATORS", path: "/partners" }, 
+    { name: "RESOURCES", path: "/resources" },
+    { name: "CAREERS", path: "/careers" },
+    { name: "FAQ", path: "/faq" }
   ];
 
   const bottomNavItems = ["PROBLEM", "URGENCY", "SOLUTION", "OUR EDGE"];
@@ -138,16 +139,17 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
           <nav>
             <ul className="space-y-1">
               {menuItems.map((item, index) => (
-                <li key={item}>
-                  <button
+                <li key={item.name}>
+                  <Link
+                    to={item.path}
                     className="block w-full text-left text-white/80 hover:text-white py-1.5 px-2 text-sm font-medium transition-colors hover:bg-white/5 rounded"
                     style={{ animationDelay: `${index * 0.1}s` }}
                     onClick={(e) => {
-                      console.log(`🚀 ${item} CLICKED - Starting letter animation`);
+                      console.log(`🚀 ${item.name} CLICKED - Starting letter animation`);
                       
                       const btn = e.currentTarget as HTMLElement;
                       const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                      const letters = item.split('');
+                      const letters = item.name.split('');
                       
                       // Create letter spans
                       btn.innerHTML = letters.map((letter, i) => 
@@ -162,15 +164,15 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
                             if (letterSpan && letter !== ' ') {
                               letterSpan.style.color = color;
                             }
-                          }, letterIndex * 5 + colorIndex * 15); // Much faster timing
+                          }, letterIndex * 5 + colorIndex * 15);
                         });
                       });
                       
-                      // Reset after animation
+                      // Reset after animation - let React Router handle navigation
                       setTimeout(() => {
-                        btn.innerHTML = item;
+                        btn.innerHTML = item.name;
                         btn.style.color = 'white';
-                      }, letters.length * 5 + colors.length * 15 + 25); // Faster reset
+                      }, letters.length * 5 + colors.length * 15 + 25);
                     }}
                     onMouseEnter={(e) => {
                       const btn = e.currentTarget;
@@ -185,8 +187,8 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
                       }
                     }}
                   >
-                    {item}
-                  </button>
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
