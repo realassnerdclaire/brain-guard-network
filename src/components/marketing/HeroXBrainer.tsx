@@ -191,7 +191,7 @@ const HeroXBrainer = () => {
           </p>
           
           {/* Action buttons - mobile inline with content, desktop separate */}
-          <div className="flex flex-col gap-2 sm:hidden">
+          <div className="flex flex-col gap-2 sm:hidden items-end">
             <button 
               className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-4 py-2 touch-manipulation text-xs font-medium cursor-pointer transition-all duration-300 whitespace-nowrap w-fit"
               onMouseEnter={(e) => {
