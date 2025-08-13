@@ -205,7 +205,7 @@ const HeroXBrainer = () => {
       {/* Press logos at bottom */}
       <div className="absolute bottom-16 left-0 right-0">
         <div className="container">
-          <div className="flex items-center justify-center gap-12 opacity-60">
+          <div className="flex items-center justify-center gap-12">
             <div className="text-white text-sm font-medium">PROBLEM</div>
             <div className="text-white text-sm font-medium">URGENCY</div>
             <div className="text-white text-sm font-medium">TECHNICAL ADVANTAGE</div>
