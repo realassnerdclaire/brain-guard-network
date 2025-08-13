@@ -2,10 +2,12 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import HeroXBrainer from "@/components/marketing/HeroXBrainer";
+import NavigationLayout from "@/components/marketing/NavigationLayout";
 import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showNavigationLayout, setShowNavigationLayout] = useState(false);
 
   const menuItems = [
     { label: "ABOUT", href: "#about" },
@@ -22,6 +24,11 @@ const Index = () => {
     { label: "FAQ", href: "#faq" },
     { label: "CONTACT", href: "#contact" },
   ];
+
+  // Show navigation layout when menu is clicked
+  if (showNavigationLayout) {
+    return <NavigationLayout onBack={() => setShowNavigationLayout(false)} />;
+  }
 
   return (
     <div 
@@ -80,6 +87,7 @@ const Index = () => {
                     }
                     
                     setIsMenuOpen(!isMenuOpen);
+                    setShowNavigationLayout(true);
                   }}
                   onMouseEnter={(e) => {
                     const btn = e.currentTarget;
