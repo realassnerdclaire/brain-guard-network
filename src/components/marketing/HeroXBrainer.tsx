@@ -300,7 +300,8 @@ const HeroXBrainer = () => {
                 // Reset - back to normal white letters
                 setTimeout(() => {
                   btn.innerHTML = 'PROBLEM';
-                  btn.style.color = 'white';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
                   console.log('🔄 Reset to normal PROBLEM');
                 }, letters.length * 100 + colors.length * 300 + 1000);
                 
@@ -349,7 +350,8 @@ const HeroXBrainer = () => {
                 // Reset - back to normal white letters
                 setTimeout(() => {
                   btn.innerHTML = 'URGENCY';
-                  btn.style.color = 'white';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
                   console.log('🔄 Reset to normal URGENCY');
                 }, letters.length * 100 + colors.length * 300 + 1000);
                 
@@ -399,7 +401,8 @@ const HeroXBrainer = () => {
                 
                 setTimeout(() => {
                   btn.innerHTML = 'URGENCY';
-                  btn.style.color = 'white';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
                 }, letters.length * 100 + colors.length * 300 + 1000);
               }}
             >
@@ -440,7 +443,8 @@ const HeroXBrainer = () => {
                 // Reset - back to normal white letters
                 setTimeout(() => {
                   btn.innerHTML = 'SOLUTION';
-                  btn.style.color = 'white';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
                   console.log('🔄 Reset to normal SOLUTION');
                 }, letters.length * 50 + colors.length * 300 + 1000);
                 
@@ -489,8 +493,9 @@ const HeroXBrainer = () => {
                 });
                 
                 setTimeout(() => {
-                  btn.innerHTML = 'TECHNICAL ADVANTAGE';
-                  btn.style.color = 'white';
+                  btn.innerHTML = 'SOLUTION';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
                 }, letters.length * 50 + colors.length * 300 + 1000);
               }}
             >
@@ -531,7 +536,8 @@ const HeroXBrainer = () => {
                 // Reset - back to normal white letters
                 setTimeout(() => {
                   btn.innerHTML = 'SOLUTION';
-                  btn.style.color = 'white';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
                   console.log('🔄 Reset to normal TECH ADVANTAGE (mobile)');
                 }, letters.length * 80 + colors.length * 300 + 1000);
                 
@@ -593,7 +599,8 @@ const HeroXBrainer = () => {
                 // Reset - back to normal white letters
                 setTimeout(() => {
                   btn.innerHTML = 'OUR EDGE';
-                  btn.style.color = 'white';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
                   console.log('🔄 Reset to normal OUR EDGE');
                 }, letters.length * 40 + colors.length * 300 + 1000);
                 
@@ -655,7 +662,8 @@ const HeroXBrainer = () => {
                 // Reset - back to normal white letters
                 setTimeout(() => {
                   btn.innerHTML = 'OUR EDGE';
-                  btn.style.color = 'white';
+                  btn.style.color = 'white !important';
+                  btn.style.setProperty('color', 'white', 'important');
                   console.log('🔄 Reset to normal OUR EDGE (mobile)');
                 }, letters.length * 100 + colors.length * 300 + 1000);
                 

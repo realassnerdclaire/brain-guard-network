@@ -227,6 +227,8 @@ const Index = () => {
                               
                               setTimeout(() => {
                                 btn.innerHTML = item.label;
+                                btn.style.color = 'white !important';
+                                btn.style.setProperty('color', 'white', 'important');
                                 
                                 setTimeout(() => {
                                   setIsMenuOpen(false);
