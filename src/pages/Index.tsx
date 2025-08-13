@@ -20,8 +20,20 @@ const Index = () => {
   ];
 
   return (
-    <div className="dark min-h-screen bg-background text-foreground">
-      <div className="min-h-screen w-full">
+    <div 
+      className="dark min-h-screen bg-background text-foreground" 
+      style={{
+        contain: 'layout style',
+        willChange: 'transform'
+      }}
+    >
+      <div 
+        className="min-h-screen w-full" 
+        style={{
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden'
+        }}
+      >
         <main className="relative">
           {/* Menu button in top right */}
           <header className="absolute left-0 right-0 top-0 z-30">
@@ -37,7 +49,13 @@ const Index = () => {
                 
                 {/* Dropdown menu */}
                 {isMenuOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-56 sm:w-64 bg-black/90 backdrop-blur-sm border border-white/20 rounded-lg shadow-lg z-50">
+                  <div 
+                    className="absolute top-full right-0 mt-2 w-56 sm:w-64 bg-black/90 border border-white/20 rounded-lg shadow-lg z-50"
+                    style={{
+                      contain: 'layout style',
+                      willChange: 'transform'
+                    }}
+                  >
                     <ul className="py-2">
                       {menuItems.map((item) => (
                         <li key={item.label}>
@@ -59,7 +77,15 @@ const Index = () => {
           <HeroXBrainer />
           
           {/* Problem Section */}
-          <section id="problem" className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden">
+          <section 
+            id="problem" 
+            className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden"
+            style={{
+              contain: 'layout style paint',
+              willChange: 'transform',
+              isolation: 'isolate'
+            }}
+          >
             {/* Optimized EEG signal background with animations */}
             <div 
               className="absolute inset-0 pointer-events-none overflow-hidden z-0" 
