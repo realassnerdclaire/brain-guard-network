@@ -676,15 +676,13 @@ const Index = () => {
             id="edge" 
             className="min-h-screen bg-black flex items-center justify-center py-16 relative overflow-hidden"
           >
-            {/* Small cosmic brain in bottom left corner */}
+            {/* Small cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8 opacity-80">
               <div 
-                className="w-32 h-32 bg-cover bg-center"
+                className="w-32 h-32 bg-cover bg-center rounded-lg"
                 style={{
-                  backgroundImage: `url('/lovable-uploads/d0e7f404-74da-48fc-8d6a-13a16fe9706f.png')`,
-                  filter: 'hue-rotate(280deg) saturate(1.5) brightness(1.2)',
-                  background: 'linear-gradient(135deg, #EC4899, #8B5CF6, #3B82F6)',
-                  mixBlendMode: 'multiply',
+                  backgroundImage: `url('/lovable-uploads/d645f645-ea87-42f5-842f-54a2a3e36daf.png')`,
+                  filter: 'saturate(1.3) brightness(1.1)',
                   animation: 'cosmicGlow 4s ease-in-out infinite alternate'
                 }}
               ></div>
