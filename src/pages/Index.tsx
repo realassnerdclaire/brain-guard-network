@@ -209,94 +209,106 @@ const Index = () => {
               </div>
             </div>
           </header>
-          {/* Hero Section */}
-          <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
-            {/* Neural network background */}
-            <div className="absolute inset-0">
-              <svg className="w-full h-full" viewBox="0 0 1920 1080">
+          {/* Hero Section - Original Design */}
+          <section className="min-h-screen bg-black flex flex-col relative overflow-hidden">
+            {/* Neural network background with animated EEG patterns */}
+            <div className="absolute inset-0 pointer-events-none">
+              <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
                 <defs>
-                  <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{stopColor: '#1e3a8a', stopOpacity: 0.3}} />
-                    <stop offset="50%" style={{stopColor: '#7c3aed', stopOpacity: 0.2}} />
-                    <stop offset="100%" style={{stopColor: '#1e3a8a', stopOpacity: 0.3}} />
+                  <linearGradient id="eegGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#8B5CF6', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
+                  </linearGradient>
+                  <linearGradient id="eegGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#06B6D4', stopOpacity: 0.6}} />
+                    <stop offset="50%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
+                    <stop offset="100%" style={{stopColor: '#06B6D4', stopOpacity: 0.6}} />
                   </linearGradient>
                 </defs>
                 
-                {/* Neural connections */}
-                <g stroke="url(#neuralGradient)" strokeWidth="1" fill="none" opacity="0.4">
-                  <path d="M100,200 Q300,100 500,200 T900,200" />
-                  <path d="M200,300 Q400,200 600,300 T1000,300" />
-                  <path d="M150,400 Q350,300 550,400 T950,400" />
-                  <path d="M250,500 Q450,400 650,500 T1050,500" />
-                </g>
+                {/* Animated EEG waveforms */}
+                <path
+                  d="M-100,100 L0,105 L20,80 L40,120 L60,90 L80,110 L100,85 L140,125 L180,95 L220,105 L260,75 L300,130 L340,100 L380,115 L420,80 L460,120 L500,95 L540,105 L580,85 L620,125 L660,100 L700,115 L740,90 L780,110 L820,85 L860,125 L900,100 L940,115 L980,80 L1020,120 L1060,95 L1100,105 L1140,85 L1180,125 L1220,100 L1260,115 L1300,90 L1340,110 L1380,85 L1420,125 L1460,100 L1500,115 L1540,80 L1580,120 L1620,95 L1660,105 L1700,85 L1740,125 L1780,100 L1820,115 L1860,90 L1900,110 L1940,85 L1980,125 L2020,100"
+                  stroke="url(#eegGradient1)"
+                  strokeWidth="2"
+                  fill="none"
+                  opacity="0.7"
+                  style={{
+                    animation: 'eegFlow 8s linear infinite'
+                  }}
+                />
                 
-                {/* Neural nodes */}
-                <g fill="url(#neuralGradient)" opacity="0.6">
-                  <circle cx="100" cy="200" r="3" />
-                  <circle cx="500" cy="200" r="3" />
-                  <circle cx="900" cy="200" r="3" />
-                  <circle cx="200" cy="300" r="3" />
-                  <circle cx="600" cy="300" r="3" />
-                  <circle cx="1000" cy="300" r="3" />
-                </g>
+                <path
+                  d="M-100,200 L0,195 L25,220 L50,185 L75,210 L100,190 L125,215 L160,180 L195,205 L230,195 L265,220 L300,175 L335,200 L370,190 L405,215 L440,180 L475,205 L510,195 L545,220 L580,175 L615,200 L650,190 L685,215 L720,180 L755,205 L790,195 L825,220 L860,175 L895,200 L930,190 L965,215 L1000,180 L1035,205 L1070,195 L1105,220 L1140,175 L1175,200 L1210,190 L1245,215 L1280,180 L1315,205 L1350,195 L1385,220 L1420,175 L1455,200 L1490,190 L1525,215 L1560,180 L1595,205 L1630,195 L1665,220 L1700,175 L1735,200 L1770,190 L1805,215 L1840,180 L1875,205 L1910,195 L1945,220 L1980,175 L2015,200"
+                  stroke="url(#eegGradient2)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  opacity="0.5"
+                  style={{
+                    animation: 'eegFlow 12s linear infinite reverse'
+                  }}
+                />
+                
+                {/* Additional neural patterns */}
+                <path
+                  d="M-100,300 L0,295 L15,320 L30,285 L45,310 L60,290 L75,315 L100,280 L125,305 L150,295 L175,320 L200,275 L225,300 L250,290 L275,315 L300,280 L325,305 L350,295 L375,320 L400,275 L425,300 L450,290 L475,315 L500,280 L525,305 L550,295 L575,320 L600,275 L625,300 L650,290 L675,315 L700,280 L725,305 L750,295 L775,320 L800,275 L825,300 L850,290 L875,315 L900,280 L925,305 L950,295 L975,320 L1000,275 L1025,300 L1050,290 L1075,315 L1100,280 L1125,305 L1150,295 L1175,320 L1200,275 L1225,300 L1250,290 L1275,315 L1300,280 L1325,305 L1350,295 L1375,320 L1400,275 L1425,300 L1450,290 L1475,315 L1500,280 L1525,305 L1550,295 L1575,320 L1600,275 L1625,300 L1650,290 L1675,315 L1700,280 L1725,305 L1750,295 L1775,320 L1800,275 L1825,300 L1850,290 L1875,315 L1900,280 L1925,305 L1950,295 L1975,320"
+                  stroke="#3B82F6"
+                  strokeWidth="1"
+                  fill="none"
+                  opacity="0.4"
+                  style={{
+                    animation: 'eegFlow 15s linear infinite'
+                  }}
+                />
               </svg>
             </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              <div className="max-w-7xl mx-auto">
-                {/* Logo and brand section */}
-                <div className="flex items-center justify-center mb-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 shadow-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44A2.5 2.5 0 0 1 2.5 9.5z"/>
-                        <path d="M12 4.5L19.32 8a2 2 0 0 1 1.18 1.84L20 12l-.5 2.16a2 2 0 0 1-1.18 1.84L12 19.5"/>
-                      </svg>
-                    </div>
-                    <span className="text-xl font-bold text-white tracking-tight">XBrainer AI</span>
-                  </div>
+            {/* Header with logo */}
+            <div className="flex items-center justify-between p-6 relative z-10">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 shadow-lg flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44A2.5 2.5 0 0 1 2.5 9.5z"/>
+                    <path d="M12 4.5L19.32 8a2 2 0 0 1 1.18 1.84L20 12l-.5 2.16a2 2 0 0 1-1.18 1.84L12 19.5"/>
+                  </svg>
                 </div>
+                <div>
+                  <h1 className="text-xl font-bold text-white">XBrainer AI</h1>
+                  <p className="text-sm text-gray-400">Securing Neural Data in Real Time</p>
+                </div>
+              </div>
+            </div>
 
-                {/* Main headline */}
-                <div className="text-center mb-12">
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                    <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-                      Secure Neural Data Before It's Too Late
-                    </span>
-                  </h1>
-                  
-                  <div className="max-w-3xl mx-auto mb-8">
-                    <p className="text-xl text-blue-100 leading-relaxed font-light">
-                      Securing Neural Data in Real Time
-                    </p>
-                  </div>
+            {/* Main content area */}
+            <div className="flex-1 flex items-center justify-center px-6 relative z-10">
+              <div className="text-center max-w-2xl">
+                <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+                  Secure Neural Data Before It's Too Late
+                </h2>
+                
+                <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
+                  As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
+                </p>
+                
+                <div className="space-y-4">
+                  <button className="w-full md:w-auto px-8 py-4 bg-gray-700 text-white font-semibold text-lg rounded-full hover:bg-gray-600 transition-all duration-300 border border-gray-600">
+                    JOIN THE WAITLIST
+                  </button>
+                  <button className="w-full md:w-auto px-8 py-4 border-2 border-gray-500 text-gray-300 font-semibold text-lg rounded-full hover:bg-gray-500/10 transition-all duration-300 md:ml-4">
+                    SEE THE DEMO
+                  </button>
                 </div>
+              </div>
+            </div>
 
-                {/* Description */}
-                <div className="max-w-4xl mx-auto mb-12">
-                  <div className="bg-black/50 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8">
-                    <p className="text-lg text-white/90 leading-relaxed text-center">
-                      As brain-computer devices become more common, the risk of brain data being misused is growing. 
-                      XBrainer AI makes tools to keep this data safe.
-                    </p>
-                  </div>
-                </div>
-
-                {/* CTA section */}
-                <div className="text-center">
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
-                    <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                      Get Early Access
-                    </button>
-                    <button className="w-full sm:w-auto px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold text-lg rounded-full hover:bg-blue-500/10 transition-all duration-300">
-                      Learn More
-                    </button>
-                  </div>
-                  
-                  <p className="text-blue-200/70 text-sm mt-6">
-                    Join the waitlist for early access to our neural security platform
-                  </p>
-                </div>
+            {/* Bottom navigation */}
+            <div className="relative z-10 p-6">
+              <div className="flex justify-center space-x-8 text-gray-400 text-sm font-medium">
+                <a href="#problem" className="hover:text-white transition-colors">PROBLEM</a>
+                <a href="#urgency" className="hover:text-white transition-colors">URGENCY</a>
+                <a href="#solution" className="hover:text-white transition-colors">SOLUTION</a>
+                <a href="#edge" className="hover:text-white transition-colors">OUR EDGE</a>
               </div>
             </div>
           </section>
