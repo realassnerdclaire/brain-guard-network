@@ -17,6 +17,10 @@ import Careers from "./pages/Careers";
 import FAQ from "./pages/FAQ";
 import Waitlist from "./pages/Waitlist";
 import Demo from "./pages/Demo";
+import Problem from "./pages/Problem";
+import Urgency from "./pages/Urgency";
+import Solution from "./pages/Solution";
+import OurEdge from "./pages/OurEdge";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +46,10 @@ const App = () => (
             <Route path="/faq" element={<FAQ />} />
             <Route path="/waitlist" element={<Waitlist />} />
             <Route path="/demo" element={<Demo />} />
+            <Route path="/problem" element={<Problem />} />
+            <Route path="/urgency" element={<Urgency />} />
+            <Route path="/solution" element={<Solution />} />
+            <Route path="/our-edge" element={<OurEdge />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
