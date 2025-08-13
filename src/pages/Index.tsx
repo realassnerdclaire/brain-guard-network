@@ -405,45 +405,60 @@ const Index = () => {
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
                   <linearGradient id="urgencyFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#EC4899', stopOpacity: 0.9}} />
+                    <stop offset="0%" style={{stopColor: '#EC4899', stopOpacity: 0.8}} />
                     <stop offset="50%" style={{stopColor: '#F472B6', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#EC4899', stopOpacity: 0.9}} />
+                    <stop offset="100%" style={{stopColor: '#EC4899', stopOpacity: 0.8}} />
                   </linearGradient>
                   <linearGradient id="urgencyFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#BE185D', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#DB2777', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#BE185D', stopOpacity: 0.8}} />
+                    <stop offset="0%" style={{stopColor: '#BE185D', stopOpacity: 0.7}} />
+                    <stop offset="50%" style={{stopColor: '#DB2777', stopOpacity: 0.9}} />
+                    <stop offset="100%" style={{stopColor: '#BE185D', stopOpacity: 0.7}} />
                   </linearGradient>
                 </defs>
                 
-                {/* Realistic EEG urgent pulse patterns */}
+                {/* Copy exact EEG patterns from Problem section */}
                 <path
-                  d="M-50,280 L0,275 L15,295 L30,265 L45,290 L60,270 L75,300 L90,260 L105,285 L120,275 L135,305 L150,255 L165,280 L180,270 L195,300 L210,260 L225,285 L240,275 L255,305 L270,255 L285,280 L300,270 L315,300 L330,260 L345,285 L360,275 L375,305 L390,255 L405,280 L420,270 L435,300 L450,260 L465,285 L480,275 L495,305 L510,255 L525,280 L540,270 L555,300 L570,260 L585,285 L600,275 L615,305 L630,255 L645,280 L660,270 L675,300 L690,260 L705,285 L720,275 L735,305 L750,255 L765,280 L780,270 L795,300 L810,260 L825,285 L840,275 L855,305 L870,255 L885,280 L900,270 L915,300 L930,260 L945,285 L960,275 L975,305 L990,255 L1005,280 L1020,270 L1035,300 L1050,260 L1065,285 L1080,275 L1095,305 L1110,255 L1125,280 L1140,270 L1155,300 L1170,260 L1185,285 L1200,275 L1215,305 L1230,255 L1245,280 L1260,270 L1275,300 L1290,260 L1305,285 L1320,275 L1335,305 L1350,255 L1365,280 L1380,270 L1395,300 L1410,260 L1425,285 L1440,275 L1455,305 L1470,255 L1485,280 L1500,270 L1515,300 L1530,260 L1545,285 L1560,275 L1575,305 L1590,255 L1605,280 L1620,270 L1635,300 L1650,260 L1665,285 L1680,275 L1695,305 L1710,255 L1725,280 L1740,270 L1755,300 L1770,260 L1785,285 L1800,275 L1815,305 L1830,255 L1845,280 L1860,270 L1875,300 L1890,260 L1905,285 L1920,275 L1935,305 L1950,255 L1965,280 L1980,270"
+                  d="M-50,380 L0,375 L20,390 L40,365 L60,385 L80,370 L120,395 L140,360 L180,390 L220,375 L260,400 L300,350 L340,385 L380,370 L420,395 L460,355 L500,380 L540,375 L580,390 L620,365 L660,385 L700,370 L740,395 L780,360 L820,390 L860,375 L900,400 L940,350 L980,385 L1020,370 L1060,395 L1100,355 L1140,380 L1180,375 L1220,390 L1260,365 L1300,385 L1340,370 L1380,395 L1420,360 L1460,390 L1500,375 L1540,400 L1580,350 L1620,385 L1660,370 L1700,395 L1740,355 L1780,380 L1820,375 L1860,390 L1900,365 L1940,385 L1980,370"
                   stroke="url(#urgencyFlow1)"
                   strokeWidth="2"
                   fill="none"
+                  opacity="0.9"
                   style={{
-                    animation: 'urgencyPulse 6s linear infinite'
+                    animation: 'urgencyPulse 12s linear infinite'
                   }}
                 />
                 
                 <path
-                  d="M-50,480 L0,485 L20,465 L40,505 L60,475 L80,495 L100,455 L120,515 L140,485 L160,475 L180,520 L200,460 L220,490 L240,480 L260,525 L280,455 L300,485 L320,475 L340,520 L360,460 L380,490 L400,480 L420,525 L440,455 L460,485 L480,475 L500,520 L520,460 L540,490 L560,480 L580,525 L600,455 L620,485 L640,475 L660,520 L680,460 L700,490 L720,480 L740,525 L760,455 L780,485 L800,475 L820,520 L840,460 L860,490 L880,480 L900,525 L920,455 L940,485 L960,475 L980,520 L1000,460 L1020,490 L1040,480 L1060,525 L1080,455 L1100,485 L1120,475 L1140,520 L1160,460 L1180,490 L1200,480 L1220,525 L1240,455 L1260,485 L1280,475 L1300,520 L1320,460 L1340,490 L1360,480 L1380,525 L1400,455 L1420,485 L1440,475 L1460,520 L1480,460 L1500,490 L1520,480 L1540,525 L1560,455 L1580,485 L1600,475 L1620,520 L1640,460 L1660,490 L1680,480 L1700,525 L1720,455 L1740,485 L1760,475 L1780,520 L1800,460 L1820,490 L1840,480 L1860,525 L1880,455 L1900,485 L1920,475 L1940,520 L1960,460 L1980,490"
+                  d="M-50,480 L0,485 L25,460 L50,495 L75,470 L100,490 L130,465 L160,500 L190,475 L220,485 L250,460 L280,495 L310,470 L340,490 L370,465 L400,500 L430,475 L460,485 L490,460 L520,495 L550,470 L580,490 L610,465 L640,500 L670,475 L700,485 L730,460 L760,495 L790,470 L820,490 L850,465 L880,500 L910,475 L940,485 L970,460 L1000,495 L1030,470 L1060,490 L1090,465 L1120,500 L1150,475 L1180,485 L1210,460 L1240,495 L1270,470 L1300,490 L1330,465 L1360,500 L1390,475 L1420,485 L1450,460 L1480,495 L1510,470 L1540,490 L1570,465 L1600,500 L1630,475 L1660,485 L1690,460 L1720,495 L1750,470 L1780,490 L1810,465 L1840,500 L1870,475 L1900,485 L1930,460 L1960,495 L1990,470"
                   stroke="url(#urgencyFlow2)"
                   strokeWidth="1.5"
                   fill="none"
+                  opacity="0.7"
                   style={{
-                    animation: 'urgencyPulse 8s linear infinite reverse'
+                    animation: 'urgencyPulse 15s linear infinite reverse'
                   }}
                 />
                 
                 <path
-                  d="M-50,680 L0,675 L12,695 L24,665 L36,690 L48,670 L60,700 L72,660 L84,685 L96,675 L108,705 L120,655 L132,680 L144,670 L156,700 L168,660 L180,685 L192,675 L204,705 L216,655 L228,680 L240,670 L252,700 L264,660 L276,685 L288,675 L300,705 L312,655 L324,680 L336,670 L348,700 L360,660 L372,685 L384,675 L396,705 L408,655 L420,680 L432,670 L444,700 L456,660 L468,685 L480,675 L492,705 L504,655 L516,680 L528,670 L540,700 L552,660 L564,685 L576,675 L588,705 L600,655 L612,680 L624,670 L636,700 L648,660 L660,685 L672,675 L684,705 L696,655 L708,680 L720,670 L732,700 L744,660 L756,685 L768,675 L780,705 L792,655 L804,680 L816,670 L828,700 L840,660 L852,685 L864,675 L876,705 L888,655 L900,680 L912,670 L924,700 L936,660 L948,685 L960,675 L972,705 L984,655 L996,680 L1008,670 L1020,700 L1032,660 L1044,685 L1056,675 L1068,705 L1080,655 L1092,680 L1104,670 L1116,700 L1128,660 L1140,685 L1152,675 L1164,705 L1176,655 L1188,680 L1200,670 L1212,700 L1224,660 L1236,685 L1248,675 L1260,705 L1272,655 L1284,680 L1296,670 L1308,700 L1320,660 L1332,685 L1344,675 L1356,705 L1368,655 L1380,680 L1392,670 L1404,700 L1416,660 L1428,685 L1440,675 L1452,705 L1464,655 L1476,680 L1488,670 L1500,700 L1512,660 L1524,685 L1536,675 L1548,705 L1560,655 L1572,680 L1584,670 L1596,700 L1608,660 L1620,685 L1632,675 L1644,705 L1656,655 L1668,680 L1680,670 L1692,700 L1704,660 L1716,685 L1728,675 L1740,705 L1752,655 L1764,680 L1776,670 L1788,700 L1800,660 L1812,685 L1824,675 L1836,705 L1848,655 L1860,680 L1872,670 L1884,700 L1896,660 L1908,685 L1920,675 L1932,705 L1944,655 L1956,680 L1968,670 L1980,700"
+                  d="M-50,580 L0,575 L15,590 L30,565 L45,585 L60,570 L80,595 L100,560 L125,590 L150,575 L175,600 L200,555 L225,585 L250,570 L275,595 L300,560 L325,590 L350,575 L375,600 L400,555 L425,585 L450,570 L475,595 L500,560 L525,590 L550,575 L575,600 L600,555 L625,585 L650,570 L675,595 L700,560 L725,590 L750,575 L775,600 L800,555 L825,585 L850,570 L875,595 L900,560 L925,590 L950,575 L975,600 L1000,555 L1025,585 L1050,570 L1075,595 L1100,560 L1125,590 L1150,575 L1175,600 L1200,555 L1225,585 L1250,570 L1275,595 L1300,560 L1325,590 L1350,575 L1375,600 L1400,555 L1425,585 L1450,570 L1475,595 L1500,560 L1525,590 L1550,575 L1575,600 L1600,555 L1625,585 L1650,570 L1675,595 L1700,560 L1725,590 L1750,575 L1775,600 L1800,555 L1825,585 L1850,570 L1875,595 L1900,560 L1925,590 L1950,575 L1975,600"
                   stroke="#F97316"
                   strokeWidth="1"
                   fill="none"
+                  opacity="0.6"
                   style={{
-                    animation: 'urgencyPulse 10s linear infinite'
+                    animation: 'urgencyPulse 18s linear infinite'
+                  }}
+                />
+                
+                {/* Additional EEG spikes for urgency effect */}
+                <path
+                  d="M-50,420 L0,415 L10,440 L20,405 L30,435 L40,410 L50,445 L60,400 L70,430 L80,415 L90,450 L100,395 L110,425 L120,410 L130,445 L140,400 L150,430 L160,415 L170,450 L180,395 L190,425 L200,410"
+                  stroke="#BE185D"
+                  strokeWidth="1.5"
+                  fill="none"
+                  opacity="0.8"
+                  style={{
+                    animation: 'urgencyPulse 8s linear infinite'
                   }}
                 />
               </svg>
@@ -539,52 +554,51 @@ const Index = () => {
                   </linearGradient>
                 </defs>
                 
-                {/* Futuristic crystalline wave patterns */}
+                {/* Copy exact EEG patterns from Problem section */}
                 <path
-                  d="M-200,350 L100,320 L200,360 L350,340 L500,380 L650,350 L800,390 L950,360 L1100,400 L1250,370 L1400,410 L1550,380 L1700,420 L1850,390 L2000,430 L2200,400"
+                  d="M-50,380 L0,375 L20,390 L40,365 L60,385 L80,370 L120,395 L140,360 L180,390 L220,375 L260,400 L300,350 L340,385 L380,370 L420,395 L460,355 L500,380 L540,375 L580,390 L620,365 L660,385 L700,370 L740,395 L780,360 L820,390 L860,375 L900,400 L940,350 L980,385 L1020,370 L1060,395 L1100,355 L1140,380 L1180,375 L1220,390 L1260,365 L1300,385 L1340,370 L1380,395 L1420,360 L1460,390 L1500,375 L1540,400 L1580,350 L1620,385 L1660,370 L1700,395 L1740,355 L1780,380 L1820,375 L1860,390 L1900,365 L1940,385 L1980,370"
                   stroke="url(#solutionFlow1)"
-                  strokeWidth="3"
+                  strokeWidth="2"
                   fill="none"
                   opacity="0.9"
                   style={{
-                    animation: 'solutionFlow 16s linear infinite'
+                    animation: 'solutionFlow 12s linear infinite'
                   }}
                 />
                 
                 <path
-                  d="M-200,450 L150,480 L300,420 L450,460 L600,440 L750,480 L900,460 L1050,500 L1200,470 L1350,510 L1500,480 L1650,520 L1800,490 L1950,530 L2100,500 L2300,540"
+                  d="M-50,480 L0,485 L25,460 L50,495 L75,470 L100,490 L130,465 L160,500 L190,475 L220,485 L250,460 L280,495 L310,470 L340,490 L370,465 L400,500 L430,475 L460,485 L490,460 L520,495 L550,470 L580,490 L610,465 L640,500 L670,475 L700,485 L730,460 L760,495 L790,470 L820,490 L850,465 L880,500 L910,475 L940,485 L970,460 L1000,495 L1030,470 L1060,490 L1090,465 L1120,500 L1150,475 L1180,485 L1210,460 L1240,495 L1270,470 L1300,490 L1330,465 L1360,500 L1390,475 L1420,485 L1450,460 L1480,495 L1510,470 L1540,490 L1570,465 L1600,500 L1630,475 L1660,485 L1690,460 L1720,495 L1750,470 L1780,490 L1810,465 L1840,500 L1870,475 L1900,485 L1930,460 L1960,495 L1990,470"
                   stroke="url(#solutionFlow2)"
-                  strokeWidth="2.5"
-                  fill="none"
-                  opacity="0.8"
-                  style={{
-                    animation: 'solutionFlow 18s linear infinite reverse'
-                  }}
-                />
-                
-                <path
-                  d="M-200,550 L120,580 L240,530 L380,570 L520,540 L660,580 L800,550 L940,590 L1080,560 L1220,600 L1360,570 L1500,610 L1640,580 L1780,620 L1920,590 L2060,630"
-                  stroke="#4F46E5"
-                  strokeWidth="2"
+                  strokeWidth="1.5"
                   fill="none"
                   opacity="0.7"
                   style={{
-                    animation: 'solutionFlow 20s linear infinite'
+                    animation: 'solutionFlow 15s linear infinite reverse'
                   }}
                 />
                 
-                {/* Futuristic data nodes - hexagonal shapes */}
-                <g fill="#6C63FF" opacity="0.8">
-                  <polygon points="400,345 410,340 420,345 420,355 410,360 400,355" transform="rotate(45 410 350)">
-                    <animateTransform attributeName="transform" type="rotate" values="0 410 350;360 410 350;0 410 350" dur="8s" repeatCount="indefinite"/>
-                  </polygon>
-                  <polygon points="800,445 810,440 820,445 820,455 810,460 800,455" transform="rotate(0 810 450)">
-                    <animateTransform attributeName="transform" type="rotate" values="0 810 450;360 810 450;0 810 450" dur="6s" repeatCount="indefinite"/>
-                  </polygon>
-                  <polygon points="1200,545 1210,540 1220,545 1220,555 1210,560 1200,555" transform="rotate(30 1210 550)">
-                    <animateTransform attributeName="transform" type="rotate" values="30 1210 550;390 1210 550;30 1210 550" dur="10s" repeatCount="indefinite"/>
-                  </polygon>
-                </g>
+                <path
+                  d="M-50,580 L0,575 L15,590 L30,565 L45,585 L60,570 L80,595 L100,560 L125,590 L150,575 L175,600 L200,555 L225,585 L250,570 L275,595 L300,560 L325,590 L350,575 L375,600 L400,555 L425,585 L450,570 L475,595 L500,560 L525,590 L550,575 L575,600 L600,555 L625,585 L650,570 L675,595 L700,560 L725,590 L750,575 L775,600 L800,555 L825,585 L850,570 L875,595 L900,560 L925,590 L950,575 L975,600 L1000,555 L1025,585 L1050,570 L1075,595 L1100,560 L1125,590 L1150,575 L1175,600 L1200,555 L1225,585 L1250,570 L1275,595 L1300,560 L1325,590 L1350,575 L1375,600 L1400,555 L1425,585 L1450,570 L1475,595 L1500,560 L1525,590 L1550,575 L1575,600 L1600,555 L1625,585 L1650,570 L1675,595 L1700,560 L1725,590 L1750,575 L1775,600 L1800,555 L1825,585 L1850,570 L1875,595 L1900,560 L1925,590 L1950,575 L1975,600"
+                  stroke="#4F46E5"
+                  strokeWidth="1"
+                  fill="none"
+                  opacity="0.6"
+                  style={{
+                    animation: 'solutionFlow 18s linear infinite'
+                  }}
+                />
+                
+                {/* Additional EEG spikes for solution effect */}
+                <path
+                  d="M-50,420 L0,415 L10,440 L20,405 L30,435 L40,410 L50,445 L60,400 L70,430 L80,415 L90,450 L100,395 L110,425 L120,410 L130,445 L140,400 L150,430 L160,415 L170,450 L180,395 L190,425 L200,410"
+                  stroke="#6B21A8"
+                  strokeWidth="1.5"
+                  fill="none"
+                  opacity="0.8"
+                  style={{
+                    animation: 'solutionFlow 8s linear infinite'
+                  }}
+                />
               </svg>
             </div>
 
@@ -605,7 +619,7 @@ const Index = () => {
                           <span className="text-3xl animate-pulse">🛡️</span>
                         </div>
                         <h3 className="text-2xl font-bold text-white">
-                          XBrainer AI builds a neural intrusion prevention system that:
+                        XBrainer AI builds a neural intrusion prevention system that:
                         </h3>
                       </div>
                       
@@ -712,66 +726,51 @@ const Index = () => {
                   </filter>
                 </defs>
                 
-                {/* Futuristic quantum wave patterns */}
+                {/* Copy exact EEG patterns from Problem section */}
                 <path
-                  d="M-200,250 L0,220 L100,280 L200,200 L300,260 L400,180 L500,240 L600,160 L700,220 L800,140 L900,200 L1000,120 L1100,180 L1200,100 L1300,160 L1400,80 L1500,140 L1600,60 L1700,120 L1800,40 L1900,100 L2000,20 L2100,80 L2200,0"
-                  stroke="url(#edgeFlow1)"
-                  strokeWidth="3"
-                  fill="none"
-                  filter="url(#glow)"
-                  opacity="0.9"
-                  style={{
-                    animation: 'edgeFlow 14s linear infinite'
-                  }}
-                />
-                
-                <path
-                  d="M-200,400 L50,430 L150,370 L250,450 L350,390 L450,470 L550,410 L650,490 L750,430 L850,510 L950,450 L1050,530 L1150,470 L1250,550 L1350,490 L1450,570 L1550,510 L1650,590 L1750,530 L1850,610 L1950,550 L2050,630 L2150,570 L2300,650"
-                  stroke="url(#edgeFlow2)"
-                  strokeWidth="2.5"
-                  fill="none"
-                  filter="url(#glow)"
-                  opacity="0.8"
-                  style={{
-                    animation: 'edgeFlow 16s linear infinite reverse'
-                  }}
-                />
-                
-                <path
-                  d="M-200,650 L80,680 L160,620 L280,700 L400,640 L520,720 L640,660 L760,740 L880,680 L1000,760 L1120,700 L1240,780 L1360,720 L1480,800 L1600,740 L1720,820 L1840,760 L1960,840 L2080,780 L2200,860"
+                  d="M-50,380 L0,375 L20,390 L40,365 L60,385 L80,370 L120,395 L140,360 L180,390 L220,375 L260,400 L300,350 L340,385 L380,370 L420,395 L460,355 L500,380 L540,375 L580,390 L620,365 L660,385 L700,370 L740,395 L780,360 L820,390 L860,375 L900,400 L940,350 L980,385 L1020,370 L1060,395 L1100,355 L1140,380 L1180,375 L1220,390 L1260,365 L1300,385 L1340,370 L1380,395 L1420,360 L1460,390 L1500,375 L1540,400 L1580,350 L1620,385 L1660,370 L1700,395 L1740,355 L1780,380 L1820,375 L1860,390 L1900,365 L1940,385 L1980,370"
                   stroke="url(#edgeFlow1)"
                   strokeWidth="2"
                   fill="none"
-                  filter="url(#glow)"
+                  opacity="0.9"
+                  style={{
+                    animation: 'edgeFlow 12s linear infinite'
+                  }}
+                />
+                
+                <path
+                  d="M-50,480 L0,485 L25,460 L50,495 L75,470 L100,490 L130,465 L160,500 L190,475 L220,485 L250,460 L280,495 L310,470 L340,490 L370,465 L400,500 L430,475 L460,485 L490,460 L520,495 L550,470 L580,490 L610,465 L640,500 L670,475 L700,485 L730,460 L760,495 L790,470 L820,490 L850,465 L880,500 L910,475 L940,485 L970,460 L1000,495 L1030,470 L1060,490 L1090,465 L1120,500 L1150,475 L1180,485 L1210,460 L1240,495 L1270,470 L1300,490 L1330,465 L1360,500 L1390,475 L1420,485 L1450,460 L1480,495 L1510,470 L1540,490 L1570,465 L1600,500 L1630,475 L1660,485 L1690,460 L1720,495 L1750,470 L1780,490 L1810,465 L1840,500 L1870,475 L1900,485 L1930,460 L1960,495 L1990,470"
+                  stroke="url(#edgeFlow2)"
+                  strokeWidth="1.5"
+                  fill="none"
                   opacity="0.7"
+                  style={{
+                    animation: 'edgeFlow 15s linear infinite reverse'
+                  }}
+                />
+                
+                <path
+                  d="M-50,580 L0,575 L15,590 L30,565 L45,585 L60,570 L80,595 L100,560 L125,590 L150,575 L175,600 L200,555 L225,585 L250,570 L275,595 L300,560 L325,590 L350,575 L375,600 L400,555 L425,585 L450,570 L475,595 L500,560 L525,590 L550,575 L575,600 L600,555 L625,585 L650,570 L675,595 L700,560 L725,590 L750,575 L775,600 L800,555 L825,585 L850,570 L875,595 L900,560 L925,590 L950,575 L975,600 L1000,555 L1025,585 L1050,570 L1075,595 L1100,560 L1125,590 L1150,575 L1175,600 L1200,555 L1225,585 L1250,570 L1275,595 L1300,560 L1325,590 L1350,575 L1375,600 L1400,555 L1425,585 L1450,570 L1475,595 L1500,560 L1525,590 L1550,575 L1575,600 L1600,555 L1625,585 L1650,570 L1675,595 L1700,560 L1725,590 L1750,575 L1775,600 L1800,555 L1825,585 L1850,570 L1875,595 L1900,560 L1925,590 L1950,575 L1975,600"
+                  stroke="#1D4ED8"
+                  strokeWidth="1"
+                  fill="none"
+                  opacity="0.6"
                   style={{
                     animation: 'edgeFlow 18s linear infinite'
                   }}
                 />
                 
-                {/* Futuristic geometric neural nodes */}
-                <g filter="url(#glow)">
-                  <polygon points="300,245 310,240 320,245 315,255 305,255" fill="url(#neuralNode)">
-                    <animateTransform attributeName="transform" type="rotate" values="0 310 250;360 310 250;0 310 250" dur="8s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
-                  </polygon>
-                  <polygon points="600,395 610,390 620,395 615,405 605,405" fill="url(#neuralNode)">
-                    <animateTransform attributeName="transform" type="rotate" values="0 610 400;360 610 400;0 610 400" dur="6s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite"/>
-                  </polygon>
-                  <polygon points="900,645 910,640 920,645 915,655 905,655" fill="url(#neuralNode)">
-                    <animateTransform attributeName="transform" type="rotate" values="0 910 650;360 910 650;0 910 650" dur="10s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite"/>
-                  </polygon>
-                  <polygon points="1200,245 1210,240 1220,245 1215,255 1205,255" fill="url(#neuralNode)">
-                    <animateTransform attributeName="transform" type="rotate" values="0 1210 250;360 1210 250;0 1210 250" dur="7s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
-                  </polygon>
-                  <polygon points="1500,395 1510,390 1520,395 1515,405 1505,405" fill="url(#neuralNode)">
-                    <animateTransform attributeName="transform" type="rotate" values="0 1510 400;360 1510 400;0 1510 400" dur="9s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite"/>
-                  </polygon>
-                </g>
+                {/* Additional EEG spikes for edge effect */}
+                <path
+                  d="M-50,420 L0,415 L10,440 L20,405 L30,435 L40,410 L50,445 L60,400 L70,430 L80,415 L90,450 L100,395 L110,425 L120,410 L130,445 L140,400 L150,430 L160,415 L170,450 L180,395 L190,425 L200,410"
+                  stroke="#2563EB"
+                  strokeWidth="1.5"
+                  fill="none"
+                  opacity="0.8"
+                  style={{
+                    animation: 'edgeFlow 8s linear infinite'
+                  }}
+                />
                 
                 {/* Quantum connection pathways */}
                 <g stroke="#3B82F6" strokeWidth="1.5" opacity="0.8" filter="url(#glow)">
@@ -890,9 +889,7 @@ const Index = () => {
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-16 animate-pulse" />
                 
-                {/* Futuristic asymmetric layout */}
-                <div className="space-y-8 max-w-5xl mx-auto">
-                  {/* First edge - Morphing shape */}
+                  {/* Standards-first architecture */}
                   <div className="relative group animate-scale-in" style={{animationDelay: '0.1s'}}>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/20 to-[#1D4ED8]/20 transform skew-x-3 group-hover:skew-x-6 transition-transform duration-700 rounded-3xl"></div>
                     <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#3B82F6]/40 rounded-3xl p-8 hover:border-[#3B82F6]/70 transition-all duration-500 overflow-hidden">
@@ -900,69 +897,50 @@ const Index = () => {
                       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 flex items-center gap-6">
                         <div className="w-16 h-16 bg-gradient-to-br from-[#3B82F6]/20 to-[#2563EB]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-3xl">🎯</span>
+                          <span className="text-3xl">🛡️</span>
                         </div>
                         <div className="text-left flex-1">
-                          <h3 className="text-xl font-bold text-white mb-3">Patent Pending Innovation</h3>
+                          <h3 className="text-xl font-bold text-white mb-3">Standards-first Architecture</h3>
                           <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
-                            Patent pending signal-security pipeline designed specifically for neural data protection.
+                            HIPAA, GDPR, ISO 27001, FDA guidance
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Second edge - Floating capsule */}
+                  {/* Adaptive intrusion detection */}
                   <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.2s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-bl from-[#4F46E5]/20 to-[#6C63FF]/20 transform -skew-y-2 group-hover:-skew-y-4 transition-transform duration-700 rounded-full"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#6C63FF]/40 rounded-full p-8 hover:border-[#6C63FF]/70 transition-all duration-500 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-l from-[#6C63FF]/5 via-transparent to-[#4F46E5]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-bl from-[#2563EB]/20 to-[#3B82F6]/20 transform -skew-y-2 group-hover:-skew-y-4 transition-transform duration-700 rounded-full"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#2563EB]/40 rounded-full p-8 hover:border-[#2563EB]/70 transition-all duration-500 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-l from-[#2563EB]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#4F46E5]/20 to-[#6C63FF]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-3xl">⚡</span>
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-3xl">🤖</span>
                         </div>
                         <div className="text-left flex-1">
-                          <h3 className="text-xl font-bold text-white mb-3">Real-time Performance</h3>
+                          <h3 className="text-xl font-bold text-white mb-3">Adaptive Intrusion Detection</h3>
                           <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
-                            Zero-latency encryption that doesn't compromise EEG signal quality or research accuracy.
+                            Powered by AI models tuned for BCI signal patterns
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Third edge - Angular design */}
+                  {/* Flexible SDK integration */}
                   <div className="relative group animate-scale-in w-5/6" style={{animationDelay: '0.3s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#9333EA]/20 to-[#A855F7]/20 transform rotate-1 group-hover:rotate-3 transition-transform duration-700"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#9333EA]/40 p-8 hover:border-[#9333EA]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
-                      <div className="absolute inset-0 bg-gradient-to-tr from-[#9333EA]/5 via-transparent to-[#A855F7]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/20 to-[#3B82F6]/20 transform rotate-1 group-hover:rotate-3 transition-transform duration-700"></div>
+                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1E40AF]/40 p-8 hover:border-[#1E40AF]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#9333EA]/20 to-[#A855F7]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-3xl">🏆</span>
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#1E40AF]/20 to-[#3B82F6]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-3xl">🔧</span>
                         </div>
                         <div className="text-left flex-1">
-                          <h3 className="text-xl font-bold text-white mb-3">Compliance Leadership</h3>
+                          <h3 className="text-xl font-bold text-white mb-3">Flexible SDK Integration</h3>
                           <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
-                            First neural security solution built to exceed emerging BCI regulatory standards.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Fourth edge - Organic blob */}
-                  <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.4s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-bl from-[#4338CA]/20 to-[#7C3AED]/20 transform -rotate-2 group-hover:-rotate-4 transition-transform duration-700 rounded-[3rem]"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#4338CA]/40 rounded-[3rem] p-8 hover:border-[#4338CA]/70 transition-all duration-500 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-l from-[#4338CA]/5 via-transparent to-[#7C3AED]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative z-10 flex items-center gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#4338CA]/20 to-[#7C3AED]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-3xl">🚀</span>
-                        </div>
-                        <div className="text-left flex-1">
-                          <h3 className="text-xl font-bold text-white mb-3">Market Ready</h3>
-                          <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
-                            Deployable solution ready for immediate integration with existing EEG hardware and software.
+                            For device manufacturers and research platforms
                           </p>
                         </div>
                       </div>
