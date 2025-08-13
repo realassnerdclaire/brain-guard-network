@@ -164,7 +164,7 @@ const HeroXBrainer = () => {
       </div>
 
       {/* Enhanced futuristic neon brain - foreground layer */}
-      <div className="absolute right-0 sm:right-0 top-1/2 -translate-y-4 w-3/5 sm:w-2/5 h-[50vh] sm:h-[65vh] z-10">
+      <div className="absolute right-0 sm:right-0 top-1/3 sm:top-1/2 -translate-y-4 w-3/5 sm:w-2/5 h-[50vh] sm:h-[65vh] z-10">
         <img
           src={futuristicBrain}
           alt="Futuristic translucent brain with neural pathways"
@@ -192,7 +192,7 @@ const HeroXBrainer = () => {
         </div>
         
         {/* Action buttons - much closer on mobile */}
-        <div className="absolute bottom-52 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-2 sm:gap-4">
+        <div className="absolute bottom-72 sm:bottom-32 lg:bottom-40 right-4 sm:right-8 lg:right-16 flex flex-col gap-2 sm:gap-4">
           <button 
             className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-4 sm:px-6 lg:px-8 py-2 sm:py-3 touch-manipulation text-xs sm:text-sm lg:text-base font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
