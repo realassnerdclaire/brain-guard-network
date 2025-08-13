@@ -310,13 +310,13 @@ const Index = () => {
                 <div className="space-y-4 md:space-y-8 text-left max-w-4xl mx-auto">
                   <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
                     <p className="text-base md:text-xl text-white/90 leading-relaxed mb-3 md:mb-6">
-                      EEG and BCI devices are moving from research labs to clinics, homes, and hybrid environments.
+                      EEG and BCI devices are leaving the lab for clinics, homes, and consumer environments.
                     </p>
                   </div>
                   
                   <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
                     <p className="text-base md:text-xl text-white/90 leading-relaxed mb-4 md:mb-8">
-                      But raw brain data is highly sensitive, and current security measures fail to protect it in real-time.
+                      But raw brain data is among the most sensitive personal information. And today's security measures fail to protect it in real time.
                     </p>
                   </div>
                   
