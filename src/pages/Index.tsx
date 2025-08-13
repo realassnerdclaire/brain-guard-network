@@ -889,6 +889,8 @@ const Index = () => {
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-16 animate-pulse" />
                 
+                {/* Futuristic asymmetric layout */}
+                <div className="space-y-8 max-w-5xl mx-auto">
                   {/* Standards-first architecture */}
                   <div className="relative group animate-scale-in" style={{animationDelay: '0.1s'}}>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/20 to-[#1D4ED8]/20 transform skew-x-3 group-hover:skew-x-6 transition-transform duration-700 rounded-3xl"></div>
