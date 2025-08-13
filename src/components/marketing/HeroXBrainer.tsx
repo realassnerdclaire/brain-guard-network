@@ -191,8 +191,8 @@ const HeroXBrainer = () => {
           </p>
         </div>
         
-        {/* Action buttons - mobile responsive positioning */}
-        <div className="absolute bottom-52 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-3 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-2 sm:gap-4 lg:gap-6">
+        {/* Action buttons - mobile centered, desktop right-aligned */}
+        <div className="absolute bottom-80 left-1/2 -translate-x-1/2 sm:bottom-40 sm:left-auto sm:translate-x-0 sm:right-8 lg:bottom-48 lg:right-16 xl:bottom-52 xl:right-20 flex flex-col gap-2 sm:gap-4 lg:gap-6">
           <button 
             className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-2 sm:px-8 lg:px-10 xl:px-12 py-1 sm:py-4 lg:py-5 touch-manipulation text-[10px] sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300 whitespace-nowrap"
             onMouseEnter={(e) => {
