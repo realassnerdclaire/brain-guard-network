@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 interface LayoutProps {
@@ -10,6 +10,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
     { label: "HOME", href: "/" },
@@ -130,8 +131,123 @@ const Layout = ({ children }: LayoutProps) => {
                 <span className="menu-text">MENU</span>
               </button>
               
-              {/* Simple dropdown menu */}
-              {isMenuOpen && (
+              {/* Conditional menu rendering based on route */}
+              {isMenuOpen && location.pathname === "/" && (
+                <div 
+                  className="fixed inset-0 bg-black z-[9999999]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {/* Brain backdrop - only on home page */}
+                  <div className="absolute inset-0 z-0">
+                    <div 
+                      className="w-full h-full bg-cover bg-center bg-no-repeat opacity-50"
+                      style={{
+                        backgroundImage: `url('/lovable-uploads/e289f332-67c8-4420-919d-c7146bb726d9.png')`,
+                        filter: 'blur(0.5px) brightness(0.9) saturate(1.2)'
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Text overlay on top - mobile optimized */}
+                  <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none px-4 -translate-x-8">
+                    <p className="text-white text-center font-light leading-relaxed max-w-4xl">
+                      <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl">Your brain data deserves</span>
+                      <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl">the same protection as</span>
+                      <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl">your bank account.</span>
+                    </p>
+                  </div>
+                  
+                  {/* Keep menu button visible */}
+                  <div className="absolute top-0 right-0 z-[99999999] p-6 sm:p-8 lg:p-10 px-6 sm:px-8 lg:px-12">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setIsMenuOpen(false);
+                      }}
+                      className="text-white text-base sm:text-lg font-medium tracking-widest hover:text-white/80 transition-colors touch-manipulation min-h-[44px] flex items-center gap-2"
+                    >
+                      <Menu size={20} />
+                      <span>MENU</span>
+                    </button>
+                  </div>
+                  
+                  {/* Menu dropdown on home page */}
+                  <div 
+                    className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm rounded-lg shadow-2xl z-[99999999] white-neon-border"
+                    style={{
+                      contain: 'layout style',
+                      willChange: 'transform',
+                      isolation: 'isolate'
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <ul className="py-1">
+                      {menuItems.map((item) => (
+                        <li key={item.label}>
+                          <button
+                            className="w-full text-left block px-1 sm:px-3 md:px-4 py-1 sm:py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-[10px] sm:text-sm font-medium touch-manipulation"
+                            onClick={(e) => {
+                              console.log(`🚀 ${item.label} CLICKED - Starting letter animation`);
+                              
+                              const btn = e.currentTarget as HTMLElement;
+                              const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                              const letters = item.label.split('');
+                              
+                              // Create letter spans - same as navigation buttons
+                              btn.innerHTML = letters.map((letter, i) => 
+                                `<span id="menu-item-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                              ).join('');
+                              
+                              // Same fast animation as navigation buttons
+                              letters.forEach((letter, letterIndex) => {
+                                colors.forEach((color, colorIndex) => {
+                                  setTimeout(() => {
+                                    const letterSpan = document.getElementById(`menu-item-click-letter-${letterIndex}`);
+                                    if (letterSpan && letter !== ' ') {
+                                      letterSpan.style.color = color;
+                                    }
+                                  }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM button
+                                });
+                              });
+                              
+                              // Reset and navigate - same timing as navigation buttons
+                              setTimeout(() => {
+                                btn.innerHTML = item.label;
+                                btn.style.color = 'white !important';
+                                btn.style.setProperty('color', 'white', 'important');
+                                
+                                // Navigate after animation
+                                setTimeout(() => {
+                                  setIsMenuOpen(false);
+                                  navigate(item.href);
+                                }, 100);
+                              }, letters.length * 10 + colors.length * 30 + 50);
+                            }}
+                            onMouseEnter={(e) => {
+                              const btn = e.currentTarget;
+                              const interval = startHoverAnimation(btn);
+                              (btn as any).hoverInterval = interval;
+                            }}
+                            onMouseLeave={(e) => {
+                              const btn = e.currentTarget;
+                              if ((btn as any).hoverInterval) {
+                                stopHoverAnimation(btn, (btn as any).hoverInterval);
+                                (btn as any).hoverInterval = null;
+                              }
+                            }}
+                          >
+                            {item.label}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Simple dropdown menu for other pages */}
+              {isMenuOpen && location.pathname !== "/" && (
                 <div 
                   className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm rounded-lg shadow-2xl z-[99999999] white-neon-border"
                   style={{
