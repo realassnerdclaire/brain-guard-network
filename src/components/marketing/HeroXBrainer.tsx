@@ -3,7 +3,7 @@ import futuristicBrain from "@/assets/futuristic-brain-correct.png";
 import { animateLetters, startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 const HeroXBrainer = () => {
-  console.log("HeroXBrainer rendering - should have NO background images or components");
+  console.log("🎨 HeroXBrainer component rendering with color animation!");
   return (
     <section className="relative h-screen bg-black overflow-hidden">
       {/* XBrainer AI logo and company name - responsive positioning */}
