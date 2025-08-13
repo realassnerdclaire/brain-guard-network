@@ -19,10 +19,10 @@ const HeroXBrainer = () => {
           }}
         />
         <div className="flex flex-col">
-          <span className="text-white text-lg sm:text-3xl lg:text-5xl font-bold tracking-tight leading-tight">
+          <span className="text-lg sm:text-3xl lg:text-5xl font-bold tracking-tight leading-tight" style={{color: '#ffffff'}}>
             XBrainer AI
           </span>
-          <span className="text-white/70 text-xs sm:text-base lg:text-xl font-medium">
+          <span className="text-xs sm:text-base lg:text-xl font-medium" style={{color: 'rgba(255, 255, 255, 0.7)'}}>
             Securing Neural Data in Real Time
           </span>
         </div>
