@@ -41,7 +41,7 @@ const Index = () => {
         <main className="relative">
           {/* Menu button in top right */}
           <header className="absolute left-0 right-0 top-0 z-30">
-            <div className="container flex items-center justify-end py-4 sm:py-6 px-4 sm:px-6">
+            <div className="container flex items-center justify-end py-6 sm:py-8 lg:py-10 px-6 sm:px-8 lg:px-12">
               <div className="relative">
                 <button
                   id="menu-btn"
@@ -300,8 +300,8 @@ const Index = () => {
               </svg>
             </div>
 
-            <div className="container relative z-10 text-center px-4 sm:px-6">
-              <div className="max-w-6xl mx-auto">
+            <div className="container relative z-10 text-center px-6 sm:px-8 lg:px-12">
+              <div className="max-w-7xl mx-auto">
                 <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-8 animate-fade-in">
                   The Problem
                 </h2>
