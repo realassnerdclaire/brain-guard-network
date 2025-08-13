@@ -686,8 +686,20 @@ const Index = () => {
                     <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
                     <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0}} />
                   </radialGradient>
+                  <radialGradient id="brainGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.6}} />
+                    <stop offset="100%" style={{stopColor: '#4F46E5', stopOpacity: 0}} />
+                  </radialGradient>
                   <filter id="glow">
                     <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                  <filter id="neonGlow">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
                     <feMerge> 
                       <feMergeNode in="coloredBlur"/>
                       <feMergeNode in="SourceGraphic"/>
@@ -762,6 +774,94 @@ const Index = () => {
                   <line x1="1200" y1="250" x2="1500" y2="400">
                     <animate attributeName="opacity" values="0.1;0.6;0.1" dur="4s" repeatCount="indefinite"/>
                   </line>
+                </g>
+
+                {/* Neon Brain Pattern - Bottom Left Corner */}
+                <g transform="translate(50, 750)" filter="url(#neonGlow)">
+                  {/* Brain hemisphere outline */}
+                  <path
+                    d="M0,200 Q50,150 100,160 Q150,140 200,150 Q250,130 300,140 Q350,120 400,130 Q450,110 500,120 Q500,170 480,200 Q460,230 430,250 Q400,270 360,280 Q320,290 280,285 Q240,280 200,275 Q160,270 120,260 Q80,250 40,230 Q0,210 0,200Z"
+                    stroke="#6C63FF"
+                    strokeWidth="2"
+                    fill="none"
+                    opacity="0.8"
+                  >
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                  </path>
+                  
+                  {/* Brain neural networks spreading outward */}
+                  <g stroke="#A855F7" strokeWidth="1" opacity="0.7">
+                    {/* Central neural hub */}
+                    <circle cx="250" cy="200" r="8" fill="#A855F7" opacity="0.9">
+                      <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    {/* Neural pathways spreading */}
+                    <path d="M250,200 L200,180 L150,160 L100,140" strokeDasharray="4,2">
+                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="4s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L300,170 L350,150 L400,130" strokeDasharray="4,2">
+                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="3.5s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L220,240 L180,270 L140,300" strokeDasharray="4,2">
+                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="4.5s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L290,230 L330,260 L370,290" strokeDasharray="4,2">
+                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="3s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L180,220 L120,240 L60,260" strokeDasharray="4,2">
+                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="5s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M250,200 L320,220 L380,240 L440,260" strokeDasharray="4,2">
+                      <animate attributeName="stroke-dashoffset" values="0;12;0" dur="2.5s" repeatCount="indefinite"/>
+                    </path>
+                  </g>
+                  
+                  {/* Synaptic nodes */}
+                  <g fill="url(#brainGlow)">
+                    <circle cx="150" cy="160" r="3">
+                      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="350" cy="150" r="3">
+                      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="180" cy="270" r="3">
+                      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="330" cy="260" r="3">
+                      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="120" cy="240" r="3">
+                      <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="380" cy="240" r="3">
+                      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
+                    </circle>
+                  </g>
+                  
+                  {/* Electrical impulses */}
+                  <g stroke="#4F46E5" strokeWidth="1.5" opacity="0.8">
+                    <circle cx="200" cy="180" r="15" fill="none" strokeDasharray="8,4">
+                      <animate attributeName="r" values="10;25;10" dur="3s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="300" cy="170" r="18" fill="none" strokeDasharray="6,3">
+                      <animate attributeName="r" values="12;30;12" dur="2.5s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                  </g>
+                  
+                  {/* Spreading neural activity */}
+                  <g stroke="#9333EA" strokeWidth="0.8" opacity="0.6">
+                    <circle cx="250" cy="200" r="40" fill="none" strokeDasharray="12,8">
+                      <animate attributeName="r" values="30;80;30" dur="6s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="6s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="250" cy="200" r="60" fill="none" strokeDasharray="16,12">
+                      <animate attributeName="r" values="50;120;50" dur="8s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.5;0.05;0.5" dur="8s" repeatCount="indefinite"/>
+                    </circle>
+                  </g>
                 </g>
               </svg>
             </div>
