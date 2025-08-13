@@ -121,19 +121,15 @@ const Index = () => {
                 <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-3 h-3 bg-[#a855f7] rounded-full animate-pulse" />
-                    <span className="text-[#a855f7] font-medium text-sm uppercase tracking-wider">Market Gap</span>
+                    <span className="text-[#a855f7] font-medium text-sm uppercase tracking-wider">Critical Gap</span>
                   </div>
                   <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-4">
-                    <span className="text-white font-bold">$32B brain-computer interface market</span> faces critical bottleneck: 
-                    <span className="text-white font-semibold"> zero standardized security infrastructure</span> for neural data streams.
+                    Brain-computer pipelines lack <span className="text-white font-semibold">four basics</span>: 
+                    secure transport, packet validation, access control, and audit logging.
                   </p>
-                  <p className="text-lg text-white/80 mb-4">
-                    <span className="text-[#a855f7] font-semibold">Enterprise deployment stalled</span> due to: 
-                    liability exposure, regulatory non-compliance, and corrupted data reaching production systems.
-                  </p>
-                  <p className="text-lg text-white/90">
-                    <span className="text-white font-bold">First-mover advantage</span>: capture enterprise BCI market 
-                    before big tech builds competing infrastructure.
+                  <p className="text-lg text-white/80">
+                    <span className="text-[#a855f7] font-semibold">Enterprise blocker</span>: bad data, unauthorized access, compliance gaps. 
+                    <span className="text-white font-semibold">Market timing</span>: headsets moving from labs to production.
                   </p>
                 </div>
               </div>
