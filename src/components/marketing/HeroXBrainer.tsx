@@ -227,30 +227,34 @@ const HeroXBrainer = () => {
                   target.classList.remove('animate-pulse');
                   target.style.animation = 'none';
                   
-                  // PHASE 1: DRAMATIC Light Pink
+                  // PHASE 1: DRAMATIC Light Pink + Edge blur
                   target.style.transition = 'all 0.4s ease-out';
                   target.style.color = '#ff1493'; // Hot pink - much more dramatic
                   target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
                   target.style.transform = 'scale(1.3)';
-                  target.style.filter = 'brightness(1.5) saturate(1.8)';
-                  console.log('🌸 PHASE 1: DRAMATIC Hot Pink applied');
+                  target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
+                  target.style.borderRadius = '8px';
+                  target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+                  console.log('🌸 PHASE 1: DRAMATIC Hot Pink with edge blur applied');
                   
                   setTimeout(() => {
-                    // PHASE 2: DRAMATIC Purple  
+                    // PHASE 2: DRAMATIC Purple + stronger blur
                     target.style.color = '#8a2be2'; // Blue violet - more dramatic
                     target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
                     target.style.transform = 'scale(1.4)';
-                    target.style.filter = 'brightness(1.6) saturate(2.0)';
-                    console.log('💜 PHASE 2: DRAMATIC Purple applied');
+                    target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
+                    target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
+                    console.log('💜 PHASE 2: DRAMATIC Purple with stronger blur applied');
                   }, 400);
                   
                   setTimeout(() => {
-                    // PHASE 3: DRAMATIC Electric Blue
+                    // PHASE 3: DRAMATIC Electric Blue + max blur
                     target.style.color = '#0080ff'; // Electric blue - super dramatic
                     target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
                     target.style.transform = 'scale(1.5)';
-                    target.style.filter = 'brightness(1.8) saturate(2.2)';
-                    console.log('💙 PHASE 3: DRAMATIC Electric Blue applied');
+                    target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
+                    target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
+                    console.log('💙 PHASE 3: DRAMATIC Electric Blue with max blur applied');
                   }, 800);
                   
                   setTimeout(() => {
@@ -260,7 +264,9 @@ const HeroXBrainer = () => {
                     target.style.textShadow = 'none';
                     target.style.transform = 'scale(1)';
                     target.style.filter = 'none';
-                    console.log('🔄 Reset to white');
+                    target.style.boxShadow = 'none';
+                    target.style.borderRadius = '';
+                    console.log('🔄 Reset to white with clear edges');
                   }, 1600);
                   
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -277,8 +283,45 @@ const HeroXBrainer = () => {
             >
               PROBLEM
             </button>
-            <div 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none"
+            <button 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              onClick={(e) => {
+                const target = e.currentTarget as HTMLElement;
+                // Same dramatic animation for URGENCY
+                target.style.transition = 'all 0.4s ease-out';
+                target.style.color = '#ff1493';
+                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
+                target.style.transform = 'scale(1.3)';
+                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
+                target.style.borderRadius = '8px';
+                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+                
+                setTimeout(() => {
+                  target.style.color = '#8a2be2';
+                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
+                  target.style.transform = 'scale(1.4)';
+                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
+                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
+                }, 400);
+                
+                setTimeout(() => {
+                  target.style.color = '#0080ff';
+                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
+                  target.style.transform = 'scale(1.5)';
+                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
+                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
+                }, 800);
+                
+                setTimeout(() => {
+                  target.style.transition = 'all 0.8s ease-out';
+                  target.style.color = 'white';
+                  target.style.textShadow = 'none';
+                  target.style.transform = 'scale(1)';
+                  target.style.filter = 'none';
+                  target.style.boxShadow = 'none';
+                  target.style.borderRadius = '';
+                }, 1600);
+              }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = '#00d4ff';
                 e.currentTarget.style.textShadow = '0 0 15px #00d4ff, 0 0 30px #00d4ff';
@@ -289,9 +332,46 @@ const HeroXBrainer = () => {
               }}
             >
               URGENCY
-            </div>
-            <div 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block"
+            </button>
+            <button 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              onClick={(e) => {
+                const target = e.currentTarget as HTMLElement;
+                // Same dramatic animation for TECHNICAL ADVANTAGE
+                target.style.transition = 'all 0.4s ease-out';
+                target.style.color = '#ff1493';
+                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
+                target.style.transform = 'scale(1.3)';
+                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
+                target.style.borderRadius = '8px';
+                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+                
+                setTimeout(() => {
+                  target.style.color = '#8a2be2';
+                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
+                  target.style.transform = 'scale(1.4)';
+                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
+                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
+                }, 400);
+                
+                setTimeout(() => {
+                  target.style.color = '#0080ff';
+                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
+                  target.style.transform = 'scale(1.5)';
+                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
+                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
+                }, 800);
+                
+                setTimeout(() => {
+                  target.style.transition = 'all 0.8s ease-out';
+                  target.style.color = 'white';
+                  target.style.textShadow = 'none';
+                  target.style.transform = 'scale(1)';
+                  target.style.filter = 'none';
+                  target.style.boxShadow = 'none';
+                  target.style.borderRadius = '';
+                }, 1600);
+              }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = '#a855f7';
                 e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
@@ -302,9 +382,46 @@ const HeroXBrainer = () => {
               }}
             >
               TECHNICAL ADVANTAGE
-            </div>
-            <div 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden"
+            </button>
+            <button 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              onClick={(e) => {
+                const target = e.currentTarget as HTMLElement;
+                // Same dramatic animation for TECH ADVANTAGE (mobile)
+                target.style.transition = 'all 0.4s ease-out';
+                target.style.color = '#ff1493';
+                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
+                target.style.transform = 'scale(1.3)';
+                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
+                target.style.borderRadius = '8px';
+                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+                
+                setTimeout(() => {
+                  target.style.color = '#8a2be2';
+                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
+                  target.style.transform = 'scale(1.4)';
+                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
+                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
+                }, 400);
+                
+                setTimeout(() => {
+                  target.style.color = '#0080ff';
+                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
+                  target.style.transform = 'scale(1.5)';
+                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
+                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
+                }, 800);
+                
+                setTimeout(() => {
+                  target.style.transition = 'all 0.8s ease-out';
+                  target.style.color = 'white';
+                  target.style.textShadow = 'none';
+                  target.style.transform = 'scale(1)';
+                  target.style.filter = 'none';
+                  target.style.boxShadow = 'none';
+                  target.style.borderRadius = '';
+                }, 1600);
+              }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = '#a855f7';
                 e.currentTarget.style.textShadow = '0 0 15px #a855f7, 0 0 30px #a855f7';
@@ -315,9 +432,46 @@ const HeroXBrainer = () => {
               }}
             >
               TECH ADVANTAGE
-            </div>
-            <div 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block"
+            </button>
+            <button 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none hidden sm:block bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              onClick={(e) => {
+                const target = e.currentTarget as HTMLElement;
+                // Same dramatic animation for COMPLIANCE AND STANDARDS
+                target.style.transition = 'all 0.4s ease-out';
+                target.style.color = '#ff1493';
+                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
+                target.style.transform = 'scale(1.3)';
+                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
+                target.style.borderRadius = '8px';
+                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+                
+                setTimeout(() => {
+                  target.style.color = '#8a2be2';
+                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
+                  target.style.transform = 'scale(1.4)';
+                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
+                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
+                }, 400);
+                
+                setTimeout(() => {
+                  target.style.color = '#0080ff';
+                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
+                  target.style.transform = 'scale(1.5)';
+                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
+                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
+                }, 800);
+                
+                setTimeout(() => {
+                  target.style.transition = 'all 0.8s ease-out';
+                  target.style.color = 'white';
+                  target.style.textShadow = 'none';
+                  target.style.transform = 'scale(1)';
+                  target.style.filter = 'none';
+                  target.style.boxShadow = 'none';
+                  target.style.borderRadius = '';
+                }, 1600);
+              }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = '#00d4ff';
                 e.currentTarget.style.textShadow = '0 0 15px #00d4ff, 0 0 30px #00d4ff';
@@ -328,9 +482,46 @@ const HeroXBrainer = () => {
               }}
             >
               COMPLIANCE AND STANDARDS
-            </div>
-            <div 
-              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden"
+            </button>
+            <button 
+              className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 select-none sm:hidden bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              onClick={(e) => {
+                const target = e.currentTarget as HTMLElement;
+                // Same dramatic animation for COMPLIANCE (mobile)
+                target.style.transition = 'all 0.4s ease-out';
+                target.style.color = '#ff1493';
+                target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
+                target.style.transform = 'scale(1.3)';
+                target.style.filter = 'brightness(1.5) saturate(1.8) blur(0.5px)';
+                target.style.borderRadius = '8px';
+                target.style.boxShadow = '0 0 30px #ff1493, inset 0 0 20px rgba(255, 20, 147, 0.3)';
+                
+                setTimeout(() => {
+                  target.style.color = '#8a2be2';
+                  target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
+                  target.style.transform = 'scale(1.4)';
+                  target.style.filter = 'brightness(1.6) saturate(2.0) blur(0.8px)';
+                  target.style.boxShadow = '0 0 40px #8a2be2, inset 0 0 25px rgba(138, 43, 226, 0.4)';
+                }, 400);
+                
+                setTimeout(() => {
+                  target.style.color = '#0080ff';
+                  target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
+                  target.style.transform = 'scale(1.5)';
+                  target.style.filter = 'brightness(1.8) saturate(2.2) blur(1px)';
+                  target.style.boxShadow = '0 0 50px #0080ff, inset 0 0 30px rgba(0, 128, 255, 0.5)';
+                }, 800);
+                
+                setTimeout(() => {
+                  target.style.transition = 'all 0.8s ease-out';
+                  target.style.color = 'white';
+                  target.style.textShadow = 'none';
+                  target.style.transform = 'scale(1)';
+                  target.style.filter = 'none';
+                  target.style.boxShadow = 'none';
+                  target.style.borderRadius = '';
+                }, 1600);
+              }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = '#00d4ff';
                 e.currentTarget.style.textShadow = '0 0 15px #00d4ff, 0 0 30px #00d4ff';
@@ -341,7 +532,7 @@ const HeroXBrainer = () => {
               }}
             >
               COMPLIANCE
-            </div>
+            </button>
           </div>
         </div>
       </div>
