@@ -147,7 +147,7 @@ const Index = () => {
                     contain: 'layout style',
                     willChange: 'transform',
                     isolation: 'isolate',
-                    animation: 'menuBorderCycle 4s ease-in-out infinite',
+                    animation: 'menuBorderCycle 0.8s ease-in-out infinite',
                     borderWidth: '3px'
                   }}
                 >
