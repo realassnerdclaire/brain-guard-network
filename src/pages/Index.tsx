@@ -93,6 +93,39 @@ const Index = () => {
                       (btn as any).hoverInterval = null;
                     }
                   }}
+                  onTouchStart={() => {
+                    console.log('📱 MENU TOUCHED - Starting letter animation');
+                    
+                    const btn = document.getElementById('menu-btn');
+                    if (btn) {
+                      const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                      const letters = ['M', 'E', 'N', 'U'];
+                      
+                      const textSpan = btn.querySelector('.menu-text');
+                      if (textSpan) {
+                        textSpan.innerHTML = letters.map((letter, i) => 
+                          `<span id="menu-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter}</span>`
+                        ).join('');
+                        
+                        letters.forEach((letter, letterIndex) => {
+                          colors.forEach((color, colorIndex) => {
+                            setTimeout(() => {
+                              const letterSpan = document.getElementById(`menu-letter-touch-${letterIndex}`);
+                              if (letterSpan) {
+                                letterSpan.style.color = color;
+                              }
+                            }, letterIndex * 100 + colorIndex * 300);
+                          });
+                        });
+                        
+                        setTimeout(() => {
+                          textSpan.innerHTML = 'MENU';
+                        }, letters.length * 100 + colors.length * 300 + 1000);
+                      }
+                    }
+                    
+                    setIsMenuOpen(!isMenuOpen);
+                  }}
                   className="text-white text-base sm:text-lg font-medium tracking-widest hover:text-white/80 transition-colors touch-manipulation min-h-[44px] flex items-center gap-2"
                 >
                   <Menu size={20} />
@@ -162,6 +195,37 @@ const Index = () => {
                                 stopHoverAnimation(btn, (btn as any).hoverInterval);
                                 (btn as any).hoverInterval = null;
                               }
+                            }}
+                            onTouchStart={(e) => {
+                              console.log(`📱 ${item.label} TOUCHED - Starting letter animation`);
+                              
+                              const btn = e.currentTarget as HTMLElement;
+                              const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                              const letters = item.label.split('');
+                              
+                              btn.innerHTML = letters.map((letter, i) => 
+                                `<span id="menu-item-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                              ).join('');
+                              
+                              letters.forEach((letter, letterIndex) => {
+                                colors.forEach((color, colorIndex) => {
+                                  setTimeout(() => {
+                                    const letterSpan = document.getElementById(`menu-item-letter-touch-${letterIndex}`);
+                                    if (letterSpan && letter !== ' ') {
+                                      letterSpan.style.color = color;
+                                    }
+                                  }, letterIndex * 50 + colorIndex * 300);
+                                });
+                              });
+                              
+                              setTimeout(() => {
+                                btn.innerHTML = item.label;
+                                
+                                setTimeout(() => {
+                                  setIsMenuOpen(false);
+                                  window.location.href = item.href;
+                                }, 200);
+                              }, letters.length * 50 + colors.length * 300 + 1000);
                             }}
                           >
                             {item.label}
@@ -352,6 +416,43 @@ const Index = () => {
                       (card as any).hoverInterval = null;
                     }
                   }}
+                  onTouchStart={(e) => {
+                    console.log('📱 SECURE TRANSPORT TOUCHED - Starting letter animation with popup');
+                    
+                    const card = e.currentTarget;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = ['S', 'E', 'C', 'U', 'R', 'E', ' ', 'T', 'R', 'A', 'N', 'S', 'P', 'O', 'R', 'T'];
+                    
+                    card.style.transform = 'scale(1.1)';
+                    card.style.zIndex = '50';
+                    card.style.transition = 'all 0.3s ease-out';
+                    card.style.boxShadow = '0 20px 60px rgba(168, 85, 247, 0.3)';
+                    
+                    const titleElement = card.querySelector('h3');
+                    if (titleElement) {
+                      titleElement.innerHTML = letters.map((letter, i) => 
+                        `<span id="secure-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      ).join('');
+                      
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`secure-letter-touch-${letterIndex}`);
+                            if (letterSpan && letter !== ' ') {
+                              letterSpan.style.color = color;
+                            }
+                          }, letterIndex * 50 + colorIndex * 300);
+                        });
+                      });
+                      
+                      setTimeout(() => {
+                        titleElement.innerHTML = 'Secure Transport';
+                        card.style.transform = 'scale(1)';
+                        card.style.zIndex = '';
+                        card.style.boxShadow = '';
+                      }, letters.length * 50 + colors.length * 300 + 1000);
+                    }
+                  }}
                 >
                   <div className="w-12 h-12 bg-[#a855f7]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-[#a855f7] text-xl">🔒</span>
@@ -410,6 +511,43 @@ const Index = () => {
                     if ((e.currentTarget as any).hoverInterval) {
                       stopHoverAnimation(e.currentTarget, (e.currentTarget as any).hoverInterval);
                       (e.currentTarget as any).hoverInterval = null;
+                    }
+                  }}
+                  onTouchStart={(e) => {
+                    console.log('📱 PACKET CHECKS TOUCHED - Starting letter animation with popup');
+                    
+                    const card = e.currentTarget;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = ['P', 'A', 'C', 'K', 'E', 'T', ' ', 'C', 'H', 'E', 'C', 'K', 'S'];
+                    
+                    card.style.transform = 'scale(1.1)';
+                    card.style.zIndex = '50';
+                    card.style.transition = 'all 0.3s ease-out';
+                    card.style.boxShadow = '0 20px 60px rgba(168, 85, 247, 0.3)';
+                    
+                    const titleElement = card.querySelector('h3');
+                    if (titleElement) {
+                      titleElement.innerHTML = letters.map((letter, i) => 
+                        `<span id="packet-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      ).join('');
+                      
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`packet-letter-touch-${letterIndex}`);
+                            if (letterSpan && letter !== ' ') {
+                              letterSpan.style.color = color;
+                            }
+                          }, letterIndex * 50 + colorIndex * 300);
+                        });
+                      });
+                      
+                      setTimeout(() => {
+                        titleElement.innerHTML = 'Packet Checks';
+                        card.style.transform = 'scale(1)';
+                        card.style.zIndex = '';
+                        card.style.boxShadow = '';
+                      }, letters.length * 50 + colors.length * 300 + 1000);
                     }
                   }}
                 >
@@ -472,6 +610,43 @@ const Index = () => {
                       (e.currentTarget as any).hoverInterval = null;
                     }
                   }}
+                  onTouchStart={(e) => {
+                    console.log('📱 ACCESS CONTROL TOUCHED - Starting letter animation with popup');
+                    
+                    const card = e.currentTarget;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = ['A', 'C', 'C', 'E', 'S', 'S', ' ', 'C', 'O', 'N', 'T', 'R', 'O', 'L'];
+                    
+                    card.style.transform = 'scale(1.1)';
+                    card.style.zIndex = '50';
+                    card.style.transition = 'all 0.3s ease-out';
+                    card.style.boxShadow = '0 20px 60px rgba(168, 85, 247, 0.3)';
+                    
+                    const titleElement = card.querySelector('h3');
+                    if (titleElement) {
+                      titleElement.innerHTML = letters.map((letter, i) => 
+                        `<span id="access-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      ).join('');
+                      
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`access-letter-touch-${letterIndex}`);
+                            if (letterSpan && letter !== ' ') {
+                              letterSpan.style.color = color;
+                            }
+                          }, letterIndex * 50 + colorIndex * 300);
+                        });
+                      });
+                      
+                      setTimeout(() => {
+                        titleElement.innerHTML = 'Access Control';
+                        card.style.transform = 'scale(1)';
+                        card.style.zIndex = '';
+                        card.style.boxShadow = '';
+                      }, letters.length * 50 + colors.length * 300 + 1000);
+                    }
+                  }}
                 >
                   <div className="w-12 h-12 bg-[#a855f7]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-[#a855f7] text-xl">👤</span>
@@ -530,6 +705,43 @@ const Index = () => {
                     if ((e.currentTarget as any).hoverInterval) {
                       stopHoverAnimation(e.currentTarget, (e.currentTarget as any).hoverInterval);
                       (e.currentTarget as any).hoverInterval = null;
+                    }
+                  }}
+                  onTouchStart={(e) => {
+                    console.log('📱 ACCESS LOG TOUCHED - Starting letter animation with popup');
+                    
+                    const card = e.currentTarget;
+                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                    const letters = ['A', 'C', 'C', 'E', 'S', 'S', ' ', 'L', 'O', 'G'];
+                    
+                    card.style.transform = 'scale(1.1)';
+                    card.style.zIndex = '50';
+                    card.style.transition = 'all 0.3s ease-out';
+                    card.style.boxShadow = '0 20px 60px rgba(168, 85, 247, 0.3)';
+                    
+                    const titleElement = card.querySelector('h3');
+                    if (titleElement) {
+                      titleElement.innerHTML = letters.map((letter, i) => 
+                        `<span id="log-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                      ).join('');
+                      
+                      letters.forEach((letter, letterIndex) => {
+                        colors.forEach((color, colorIndex) => {
+                          setTimeout(() => {
+                            const letterSpan = document.getElementById(`log-letter-touch-${letterIndex}`);
+                            if (letterSpan && letter !== ' ') {
+                              letterSpan.style.color = color;
+                            }
+                          }, letterIndex * 50 + colorIndex * 300);
+                        });
+                      });
+                      
+                      setTimeout(() => {
+                        titleElement.innerHTML = 'Access Log';
+                        card.style.transform = 'scale(1)';
+                        card.style.zIndex = '';
+                        card.style.boxShadow = '';
+                      }, letters.length * 50 + colors.length * 300 + 1000);
                     }
                   }}
                 >

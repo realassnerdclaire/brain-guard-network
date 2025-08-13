@@ -41,6 +41,12 @@ export const stopHoverAnimation = (element: HTMLElement, interval: number) => {
 export const animateLetters = (element: HTMLElement, word: string) => {
   console.log('🎬 Starting letter animation for:', word);
   
+  // Prevent multiple animations on the same element
+  if (element.hasAttribute('data-animating')) {
+    return;
+  }
+  element.setAttribute('data-animating', 'true');
+  
   const letters = word.split('');
   const colorSequence = [
     '#ffb3d9', // light pink
@@ -103,6 +109,7 @@ export const animateLetters = (element: HTMLElement, word: string) => {
     element.style.textShadow = '';
     element.style.transform = '';
     element.style.filter = '';
+    element.removeAttribute('data-animating');
     console.log('🔄 Animation reset complete');
   }, totalDuration);
 

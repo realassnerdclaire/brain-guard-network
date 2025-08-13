@@ -366,6 +366,35 @@ const HeroXBrainer = () => {
                   (btn as any).hoverInterval = null;
                 }
               }}
+              onTouchStart={() => {
+                console.log('📱 URGENCY TOUCHED - Starting letter animation');
+                
+                const btn = document.getElementById('urgency-btn');
+                if (!btn) return;
+                
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['U', 'R', 'G', 'E', 'N', 'C', 'Y'];
+                
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="urgency-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important;">${letter}</span>`
+                ).join('');
+                
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`urgency-letter-touch-${letterIndex}`);
+                      if (letterSpan) {
+                        letterSpan.style.color = color;
+                      }
+                    }, letterIndex * 100 + colorIndex * 300);
+                  });
+                });
+                
+                setTimeout(() => {
+                  btn.innerHTML = 'URGENCY';
+                  btn.style.color = 'white';
+                }, letters.length * 100 + colors.length * 300 + 1000);
+              }}
             >
               URGENCY
             </button>
@@ -420,6 +449,35 @@ const HeroXBrainer = () => {
                   stopHoverAnimation(btn, (btn as any).hoverInterval);
                   (btn as any).hoverInterval = null;
                 }
+              }}
+              onTouchStart={() => {
+                console.log('📱 TECHNICAL ADVANTAGE TOUCHED - Starting letter animation');
+                
+                const btn = document.getElementById('tech-adv-btn');
+                if (!btn) return;
+                
+                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+                const letters = ['T', 'E', 'C', 'H', 'N', 'I', 'C', 'A', 'L', ' ', 'A', 'D', 'V', 'A', 'N', 'T', 'A', 'G', 'E'];
+                
+                btn.innerHTML = letters.map((letter, i) => 
+                  `<span id="tech-adv-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                ).join('');
+                
+                letters.forEach((letter, letterIndex) => {
+                  colors.forEach((color, colorIndex) => {
+                    setTimeout(() => {
+                      const letterSpan = document.getElementById(`tech-adv-letter-touch-${letterIndex}`);
+                      if (letterSpan && letter !== ' ') {
+                        letterSpan.style.color = color;
+                      }
+                    }, letterIndex * 50 + colorIndex * 300);
+                  });
+                });
+                
+                setTimeout(() => {
+                  btn.innerHTML = 'TECHNICAL ADVANTAGE';
+                  btn.style.color = 'white';
+                }, letters.length * 50 + colors.length * 300 + 1000);
               }}
             >
               TECHNICAL ADVANTAGE
