@@ -134,6 +134,12 @@ const Index = () => {
               </div>
 
               {/* Four Missing Basics */}
+              <div className="text-center mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                  Missing Security Foundations
+                </h3>
+                <p className="text-white/60 text-sm uppercase tracking-wider">What current pipelines lack</p>
+              </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                 <div className="border border-[#a855f7]/20 bg-[#a855f7]/5 rounded-xl p-6 text-center animate-fade-in">
                   <div className="w-12 h-12 bg-[#a855f7]/20 rounded-full flex items-center justify-center mx-auto mb-4">
