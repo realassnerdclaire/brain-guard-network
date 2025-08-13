@@ -181,20 +181,20 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-16 sm:py-0 px-2 sm:px-8 lg:px-12 xl:px-16">
+      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-20 sm:py-0 px-3 sm:px-8 lg:px-12 xl:px-16">
         <div className="max-w-2xl lg:max-w-4xl xl:max-w-5xl relative z-15 mt-0 sm:mt-16 lg:mt-0">
-          <h1 className="text-base sm:text-4xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-1 sm:mb-8 lg:mb-12" id="hero-title">
+          <h1 className="text-lg sm:text-4xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-2 sm:mb-8 lg:mb-12" id="hero-title">
             <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
           </h1>
-          <p className="text-xs sm:text-base lg:text-lg xl:text-xl text-white/80 max-w-xs lg:max-w-xl xl:max-w-2xl leading-tight mb-1 sm:mb-12 lg:mb-16">
+          <p className="text-xs sm:text-base lg:text-lg xl:text-xl text-white/80 max-w-xs lg:max-w-xl xl:max-w-2xl leading-tight mb-3 sm:mb-12 lg:mb-16">
             As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
           </p>
         </div>
         
-        {/* Action buttons - extremely compact mobile positioning */}
-        <div className="absolute bottom-8 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-2 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-0.5 sm:gap-4 lg:gap-6">
+        {/* Action buttons - balanced mobile positioning */}
+        <div className="absolute bottom-10 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-3 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-1 sm:gap-4 lg:gap-6">
           <button 
-            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-2 sm:px-8 lg:px-10 xl:px-12 py-1 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
+            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-3 sm:px-8 lg:px-10 xl:px-12 py-1.5 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
               const btn = e.currentTarget;
               const interval = startHoverAnimation(btn);
@@ -217,7 +217,7 @@ const HeroXBrainer = () => {
             JOIN THE WAITLIST
           </button>
           <button 
-            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-2 sm:px-8 lg:px-10 xl:px-12 py-1 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
+            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-3 sm:px-8 lg:px-10 xl:px-12 py-1.5 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
               const btn = e.currentTarget;
               const interval = startHoverAnimation(btn);
@@ -242,10 +242,10 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Interactive navigation labels at bottom - ultra compact mobile */}
-      <div className="absolute bottom-1 sm:bottom-20 lg:bottom-24 xl:bottom-28 left-0 right-0 z-[9999] pointer-events-none">
-        <div className="container px-1 sm:px-8 lg:px-12 xl:px-16 pointer-events-none">
-          <div className="flex items-center justify-center gap-0.5 sm:gap-6 lg:gap-10 xl:gap-16 flex-wrap pointer-events-auto">
+      {/* Interactive navigation labels at bottom - comfortable mobile spacing */}
+      <div className="absolute bottom-2 sm:bottom-20 lg:bottom-24 xl:bottom-28 left-0 right-0 z-[9999] pointer-events-none">
+        <div className="container px-2 sm:px-8 lg:px-12 xl:px-16 pointer-events-none">
+          <div className="flex items-center justify-center gap-1 sm:gap-6 lg:gap-10 xl:gap-16 flex-wrap pointer-events-auto">
             <button 
               id="problem-btn"
               className="text-white text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer bg-transparent border-none p-0 sm:p-3 lg:p-4 xl:p-5 hover:bg-white/10 rounded z-[99999] relative"
