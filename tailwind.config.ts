@@ -107,13 +107,13 @@ export default {
 				},
 				'color-cycle': {
 					'0%': { color: '#ffffff' },
-					'12.5%': { color: '#ffe6f0' },
-					'25%': { color: '#ffb3d9' },
-					'37.5%': { color: '#ff80c7' },
-					'50%': { color: '#c084fc' },
-					'62.5%': { color: '#e5d4ff' },
-					'75%': { color: '#e0f2fe' },
-					'87.5%': { color: '#60a5fa' },
+					'12.5%': { color: '#fef2f2' },
+					'25%': { color: '#fce7f3' },
+					'37.5%': { color: '#f9a8d4' },
+					'50%': { color: '#e9d5ff' },
+					'62.5%': { color: '#f3e8ff' },
+					'75%': { color: '#f0f9ff' },
+					'87.5%': { color: '#dbeafe' },
 					'100%': { color: '#ffffff' }
 				}
 			},
@@ -128,7 +128,7 @@ export default {
 				'slide-out-right': 'slide-out-right 0.3s ease-out',
 				'enter': 'fade-in 0.3s ease-out, scale-in 0.2s ease-out',
 				'exit': 'fade-out 0.3s ease-out, scale-out 0.2s ease-out',
-				'color-cycle': 'color-cycle 6s ease-in-out infinite'
+				'color-cycle': 'color-cycle 8s ease-in-out infinite'
 			}
 		}
 	},

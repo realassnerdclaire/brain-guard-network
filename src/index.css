@@ -210,13 +210,13 @@ All colors MUST be HSL.
   
   @keyframes color-cycle {
     0% { color: #ffffff; } /* white */
-    12.5% { color: #ffe6f0; } /* very light pink */
-    25% { color: #ffb3d9; } /* light pink */
-    37.5% { color: #ff80c7; } /* pink */
-    50% { color: #c084fc; } /* light purple */
-    62.5% { color: #e5d4ff; } /* very light purple */
-    75% { color: #e0f2fe; } /* very light blue */
-    87.5% { color: #60a5fa; } /* light blue */
+    12.5% { color: #fef2f2; } /* very light pink */
+    25% { color: #fce7f3; } /* light pink */
+    37.5% { color: #f9a8d4; } /* pink */
+    50% { color: #e9d5ff; } /* light purple */
+    62.5% { color: #f3e8ff; } /* very light purple */
+    75% { color: #f0f9ff; } /* very light blue */
+    87.5% { color: #dbeafe; } /* light blue */
     100% { color: #ffffff; } /* white */
   }
 }
