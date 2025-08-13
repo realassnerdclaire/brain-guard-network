@@ -343,54 +343,49 @@ const HeroXBrainer = () => {
             </button>
             <button 
               className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 select-none bg-transparent border-none p-4 hover:bg-white/10 rounded"
+              id="urgency-btn"
               onClick={() => {
                 console.log('🚀 URGENCY CLICKED - Starting letter animation');
                 
-                const btn = document.getElementById('urgency-btn') || document.querySelector('[data-button="urgency"]') as HTMLElement;
+                const btn = document.getElementById('urgency-btn');
                 if (!btn) return;
                 
-                // Same color sequence and animation as PROBLEM
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['U', 'R', 'G', 'E', 'N', 'C', 'Y'];
                 
                 // Create letter spans - PREVENT ALL inherited styles
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="urgency-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
+                  `<span id="urgency-click-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important;">${letter}</span>`
                 ).join('');
-                
-                console.log('✅ URGENCY Letter spans created - letters only');
                 
                 // Animate each letter - FAST, ONCE ONLY
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
-                      const letterSpan = document.getElementById(`urgency-letter-${letterIndex}`);
+                      const letterSpan = document.getElementById(`urgency-click-letter-${letterIndex}`);
                       if (letterSpan) {
                         letterSpan.style.color = color;
-                        console.log(`URGENCY Letter ${letter} -> ${color}`);
                       }
-                    }, letterIndex * 30 + colorIndex * 100); // Faster timing
+                    }, letterIndex * 20 + colorIndex * 50); // Much faster timing
                   });
                 });
                 
-                // Reset - back to normal white letters (ONCE)
+                // Reset and navigate
                 setTimeout(() => {
                   btn.innerHTML = 'URGENCY';
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
-                  console.log('🔄 Reset to normal URGENCY');
-                }, letters.length * 30 + colors.length * 100 + 200); // Faster timing
-                
-                // Scroll to urgency section
-                const urgencySection = document.getElementById('urgency');
-                if (urgencySection) {
-                  urgencySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  console.log('✅ Scrolled to urgency section');
-                }
+                  
+                  // Navigate to urgency section
+                  const urgencySection = document.getElementById('urgency');
+                  if (urgencySection) {
+                    urgencySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    console.log('✅ Scrolled to urgency section');
+                  }
+                }, letters.length * 20 + colors.length * 50 + 100);
               }}
-              id="urgency-btn"
               onMouseEnter={(e) => {
-                console.log('🖱️ URGENCY HOVERED - Starting letter animation');
+                console.log('🖱️ URGENCY HOVERED');
                 
                 const btn = e.currentTarget;
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
@@ -398,7 +393,7 @@ const HeroXBrainer = () => {
                 
                 // Create letter spans for hover animation
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="urgency-hover-letter-${i}" style="display: inline-block; transition: color 0.2s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
+                  `<span id="urgency-hover-letter-${i}" style="display: inline-block; transition: color 0.2s ease; background: none !important; border: none !important;">${letter}</span>`
                 ).join('');
                 
                 // Fast hover animation
@@ -409,7 +404,7 @@ const HeroXBrainer = () => {
                       if (letterSpan) {
                         letterSpan.style.color = color;
                       }
-                    }, letterIndex * 20 + colorIndex * 80);
+                    }, letterIndex * 15 + colorIndex * 40); // Faster hover
                   });
                 });
                 
@@ -418,44 +413,13 @@ const HeroXBrainer = () => {
                   btn.innerHTML = 'URGENCY';
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
-                }, letters.length * 20 + colors.length * 80 + 100);
+                }, letters.length * 15 + colors.length * 40 + 50);
               }}
               onMouseLeave={(e) => {
                 const btn = e.currentTarget;
-                // Ensure it's back to normal
                 btn.innerHTML = 'URGENCY';
                 btn.style.color = 'white !important';
                 btn.style.setProperty('color', 'white', 'important');
-              }}
-              onTouchStart={() => {
-                console.log('📱 URGENCY TOUCHED - Starting letter animation');
-                
-                const btn = document.getElementById('urgency-btn');
-                if (!btn) return;
-                
-                const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                const letters = ['U', 'R', 'G', 'E', 'N', 'C', 'Y'];
-                
-                btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="urgency-letter-touch-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important;">${letter}</span>`
-                ).join('');
-                
-                letters.forEach((letter, letterIndex) => {
-                  colors.forEach((color, colorIndex) => {
-                    setTimeout(() => {
-                      const letterSpan = document.getElementById(`urgency-letter-touch-${letterIndex}`);
-                      if (letterSpan) {
-                        letterSpan.style.color = color;
-                      }
-                    }, letterIndex * 100 + colorIndex * 300);
-                  });
-                });
-                
-                setTimeout(() => {
-                  btn.innerHTML = 'URGENCY';
-                  btn.style.color = 'white !important';
-                  btn.style.setProperty('color', 'white', 'important');
-                }, letters.length * 100 + colors.length * 300 + 1000);
               }}
             >
               URGENCY
