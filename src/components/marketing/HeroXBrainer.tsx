@@ -227,37 +227,41 @@ const HeroXBrainer = () => {
                   target.classList.remove('animate-pulse');
                   target.style.animation = 'none';
                   
-                  // PHASE 1: Light Pink
-                  target.style.transition = 'all 0.3s ease-out';
-                  target.style.color = '#ffb3d9'; // Light pink
-                  target.style.textShadow = '0 0 25px #ffb3d9, 0 0 50px #ffb3d9';
-                  target.style.transform = 'scale(1.15)';
-                  console.log('🌸 PHASE 1: Light Pink applied');
+                  // PHASE 1: DRAMATIC Light Pink
+                  target.style.transition = 'all 0.4s ease-out';
+                  target.style.color = '#ff1493'; // Hot pink - much more dramatic
+                  target.style.textShadow = '0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 120px #ff1493';
+                  target.style.transform = 'scale(1.3)';
+                  target.style.filter = 'brightness(1.5) saturate(1.8)';
+                  console.log('🌸 PHASE 1: DRAMATIC Hot Pink applied');
                   
                   setTimeout(() => {
-                    // PHASE 2: Purple  
-                    target.style.color = '#8b5cf6'; // Purple
-                    target.style.textShadow = '0 0 30px #8b5cf6, 0 0 60px #8b5cf6';
-                    target.style.transform = 'scale(1.25)';
-                    console.log('💜 PHASE 2: Purple applied');
-                  }, 300);
+                    // PHASE 2: DRAMATIC Purple  
+                    target.style.color = '#8a2be2'; // Blue violet - more dramatic
+                    target.style.textShadow = '0 0 50px #8a2be2, 0 0 100px #8a2be2, 0 0 150px #8a2be2';
+                    target.style.transform = 'scale(1.4)';
+                    target.style.filter = 'brightness(1.6) saturate(2.0)';
+                    console.log('💜 PHASE 2: DRAMATIC Purple applied');
+                  }, 400);
                   
                   setTimeout(() => {
-                    // PHASE 3: Blue
-                    target.style.color = '#3b82f6'; // Blue
-                    target.style.textShadow = '0 0 35px #3b82f6, 0 0 70px #3b82f6';
-                    target.style.transform = 'scale(1.35)';
-                    console.log('💙 PHASE 3: Blue applied');
-                  }, 600);
+                    // PHASE 3: DRAMATIC Electric Blue
+                    target.style.color = '#0080ff'; // Electric blue - super dramatic
+                    target.style.textShadow = '0 0 60px #0080ff, 0 0 120px #0080ff, 0 0 180px #0080ff';
+                    target.style.transform = 'scale(1.5)';
+                    target.style.filter = 'brightness(1.8) saturate(2.2)';
+                    console.log('💙 PHASE 3: DRAMATIC Electric Blue applied');
+                  }, 800);
                   
                   setTimeout(() => {
                     // Reset
-                    target.style.transition = 'all 0.6s ease-out';
+                    target.style.transition = 'all 0.8s ease-out';
                     target.style.color = 'white';
                     target.style.textShadow = 'none';
                     target.style.transform = 'scale(1)';
+                    target.style.filter = 'none';
                     console.log('🔄 Reset to white');
-                  }, 1200);
+                  }, 1600);
                   
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
