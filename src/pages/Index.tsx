@@ -120,6 +120,20 @@ const Index = () => {
                       </p>
                     </div>
                     
+                    {/* Keep menu button visible */}
+                    <div className="absolute top-0 right-0 z-[99999999] p-6 sm:p-8 lg:p-10 px-6 sm:px-8 lg:px-12">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsMenuOpen(false);
+                        }}
+                        className="text-white text-base sm:text-lg font-medium tracking-widest hover:text-white/80 transition-colors touch-manipulation min-h-[44px] flex items-center gap-2"
+                      >
+                        <Menu size={20} />
+                        <span>MENU</span>
+                      </button>
+                    </div>
+                    
                 {/* Menu dropdown - smaller and more compact for mobile */}
                 <div 
                   className="fixed top-16 right-4 w-24 sm:w-48 md:w-52 bg-black/90 backdrop-blur-sm border border-white/60 rounded-lg shadow-2xl z-[99999999]"
