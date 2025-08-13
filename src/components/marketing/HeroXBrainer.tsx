@@ -186,7 +186,7 @@ const HeroXBrainer = () => {
           <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.1] font-normal text-white mb-2 sm:mb-6" id="hero-title">
             <span className="inline-block">Secure Neural Data Before It's Too Late</span>
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg text-white/80 max-w-lg lg:max-w-xl leading-relaxed mb-20 sm:mb-0">
+          <p className="text-sm sm:text-base lg:text-lg text-white/80 max-w-lg lg:max-w-xl leading-relaxed mb-24 sm:mb-0">
             As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
           </p>
         </div>
