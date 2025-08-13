@@ -105,20 +105,20 @@ const Index = () => {
                       className="fixed inset-0 bg-black z-[9999999]"
                       onClick={() => setIsMenuOpen(false)}
                     />
-                    {/* Menu dropdown - positioned to cover everything */}
+                    {/* Menu dropdown - smaller and more compact */}
                     <div 
-                      className="fixed top-16 right-4 w-56 sm:w-64 bg-black border border-white/60 rounded-lg shadow-2xl z-[99999999]"
+                      className="fixed top-16 right-4 w-48 sm:w-52 bg-black border border-white/60 rounded-lg shadow-2xl z-[99999999]"
                       style={{
                         contain: 'layout style',
                         willChange: 'transform',
                         isolation: 'isolate'
                       }}
                     >
-                    <ul className="py-2">
+                    <ul className="py-1">
                       {menuItems.map((item) => (
                         <li key={item.label}>
                           <button
-                            className="w-full text-left block px-4 sm:px-6 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium touch-manipulation"
+                            className="w-full text-left block px-3 sm:px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium touch-manipulation"
                             onClick={(e) => {
                               console.log(`🚀 ${item.label} CLICKED - Starting letter animation`);
                               
