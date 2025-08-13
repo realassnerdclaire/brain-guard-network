@@ -218,42 +218,46 @@ const HeroXBrainer = () => {
               className="text-white text-sm sm:text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 group"
               onClick={(e) => {
                 e.preventDefault();
-                console.log('PROBLEM clicked!'); // Debug log
+                console.log('PROBLEM clicked - applying light pink to purple to blue chain!');
                 const element = document.getElementById('problem');
                 if (element) {
-                  const target = e.currentTarget;
+                  const target = e.currentTarget as HTMLElement;
                   
-                  // Phase 1: Bright Light Pink
-                  target.style.transition = 'all 0.2s ease';
-                  target.style.color = '#ff80d4';
-                  target.style.textShadow = '0 0 30px #ff80d4, 0 0 60px #ff80d4, 0 0 90px #ff80d4';
-                  target.style.transform = 'scale(1.2)';
-                  console.log('Phase 1: Light Pink');
+                  // Remove any existing animations/classes
+                  target.classList.remove('animate-pulse');
+                  target.style.animation = 'none';
                   
-                  setTimeout(() => {
-                    // Phase 2: Bright Purple
-                    target.style.color = '#9d4edd';
-                    target.style.textShadow = '0 0 35px #9d4edd, 0 0 70px #9d4edd, 0 0 105px #9d4edd';
-                    target.style.transform = 'scale(1.3)';
-                    console.log('Phase 2: Purple');
-                  }, 200);
+                  // PHASE 1: Light Pink
+                  target.style.transition = 'all 0.3s ease-out';
+                  target.style.color = '#ffb3d9'; // Light pink
+                  target.style.textShadow = '0 0 25px #ffb3d9, 0 0 50px #ffb3d9';
+                  target.style.transform = 'scale(1.15)';
+                  console.log('🌸 PHASE 1: Light Pink applied');
                   
                   setTimeout(() => {
-                    // Phase 3: Bright Cyan Blue
-                    target.style.color = '#00ffff';
-                    target.style.textShadow = '0 0 40px #00ffff, 0 0 80px #00ffff, 0 0 120px #00ffff';
-                    target.style.transform = 'scale(1.4)';
-                    console.log('Phase 3: Cyan Blue');
-                  }, 400);
+                    // PHASE 2: Purple  
+                    target.style.color = '#8b5cf6'; // Purple
+                    target.style.textShadow = '0 0 30px #8b5cf6, 0 0 60px #8b5cf6';
+                    target.style.transform = 'scale(1.25)';
+                    console.log('💜 PHASE 2: Purple applied');
+                  }, 300);
                   
                   setTimeout(() => {
-                    // Reset with smooth transition
-                    target.style.transition = 'all 0.5s ease';
-                    target.style.color = '';
-                    target.style.textShadow = '';
-                    target.style.transform = '';
-                    console.log('Reset');
-                  }, 800);
+                    // PHASE 3: Blue
+                    target.style.color = '#3b82f6'; // Blue
+                    target.style.textShadow = '0 0 35px #3b82f6, 0 0 70px #3b82f6';
+                    target.style.transform = 'scale(1.35)';
+                    console.log('💙 PHASE 3: Blue applied');
+                  }, 600);
+                  
+                  setTimeout(() => {
+                    // Reset
+                    target.style.transition = 'all 0.6s ease-out';
+                    target.style.color = 'white';
+                    target.style.textShadow = 'none';
+                    target.style.transform = 'scale(1)';
+                    console.log('🔄 Reset to white');
+                  }, 1200);
                   
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
