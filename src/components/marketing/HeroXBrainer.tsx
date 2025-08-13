@@ -187,7 +187,7 @@ const HeroXBrainer = () => {
             Secure Neural Data Before It's Too Late
           </h1>
           <p className="mt-6 text-lg text-white/80 max-w-xl">
-            As brain-computer devices become more common, the risk of brain data being stolen or changed is growing. XBrainer AI makes tools to keep this data safe.
+            As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
           </p>
         </div>
         
