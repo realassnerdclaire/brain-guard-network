@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import futuristicBrain from "@/assets/futuristic-brain-correct.png";
 import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 interface LayoutProps {
@@ -40,9 +41,29 @@ const Layout = ({ children }: LayoutProps) => {
           backfaceVisibility: 'hidden'
         }}
       >
-        {/* Menu button in top right */}
+        {/* Logo, company name and menu in header */}
         <header className="absolute left-0 right-0 top-0 z-30">
-          <div className="container flex items-center justify-end py-6 sm:py-8 lg:py-10 px-6 sm:px-8 lg:px-12">
+          <div className="container flex items-center justify-between py-6 sm:py-8 lg:py-10 px-6 sm:px-8 lg:px-12">
+            {/* Logo and company name */}
+            <div className="flex items-center gap-1 sm:gap-4 lg:gap-6">
+              <div className="w-6 h-6 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full overflow-hidden flex-shrink-0">
+                <img 
+                  src={futuristicBrain} 
+                  alt="XBrainer AI Logo" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex flex-col">
+                <h1 className="text-white text-xs sm:text-xl lg:text-2xl xl:text-3xl font-bold tracking-wider">
+                  XBRAINER AI
+                </h1>
+                <p className="text-white/70 text-[8px] sm:text-xs lg:text-sm font-light tracking-widest mt-0 sm:mt-1">
+                  NEURAL FIREWALL TECHNOLOGY
+                </p>
+              </div>
+            </div>
+            
+            {/* Menu button */}
             <div className="relative">
               <button
                 id="menu-btn"
