@@ -176,6 +176,70 @@ const Layout = ({ children }: LayoutProps) => {
                       <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl">your bank account.</span>
                     </p>
                   </div>
+
+                  {/* Navigation buttons at bottom - PROBLEM, URGENCY, SOLUTION, OUR EDGE */}
+                  <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex gap-8 pointer-events-auto">
+                    <button 
+                      className="text-white text-lg font-medium hover:text-primary transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsMenuOpen(false);
+                        setTimeout(() => {
+                          const section = document.getElementById('problem');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        }, 100);
+                      }}
+                    >
+                      PROBLEM
+                    </button>
+                    <button 
+                      className="text-white text-lg font-medium hover:text-primary transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsMenuOpen(false);
+                        setTimeout(() => {
+                          const section = document.getElementById('urgency');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        }, 100);
+                      }}
+                    >
+                      URGENCY
+                    </button>
+                    <button 
+                      className="text-white text-lg font-medium hover:text-primary transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsMenuOpen(false);
+                        setTimeout(() => {
+                          const section = document.getElementById('solution');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        }, 100);
+                      }}
+                    >
+                      SOLUTION
+                    </button>
+                    <button 
+                      className="text-white text-lg font-medium hover:text-primary transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsMenuOpen(false);
+                        setTimeout(() => {
+                          const section = document.getElementById('edge');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        }, 100);
+                      }}
+                    >
+                      OUR EDGE
+                    </button>
+                  </div>
                   
                   {/* Keep menu button visible */}
                   <div className="absolute top-0 right-0 z-[99999999] p-6 sm:p-8 lg:p-10 px-6 sm:px-8 lg:px-12">
