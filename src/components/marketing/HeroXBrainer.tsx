@@ -537,39 +537,35 @@ const HeroXBrainer = () => {
                 const letters = ['S', 'O', 'L', 'U', 'T', 'I', 'O', 'N'];
                 
                 // Create letter spans - PREVENT ALL inherited styles
+                // Create letter spans - EXACTLY like PROBLEM button
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="tech-adv-mobile-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+                  `<span id="solution-mobile-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter}</span>`
                 ).join('');
                 
-                console.log('✅ SOLUTION (mobile) Letter spans created - letters only');
-                
-                // Animate each letter - ONLY COLOR CHANGE
+                // EXACT same animation as PROBLEM button
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
-                      const letterSpan = document.getElementById(`tech-adv-mobile-letter-${letterIndex}`);
-                      if (letterSpan && letter !== ' ') {
+                      const letterSpan = document.getElementById(`solution-mobile-click-letter-${letterIndex}`);
+                      if (letterSpan) {
                         letterSpan.style.color = color;
-                        console.log(`SOLUTION (mobile) Letter ${letter} -> ${color}`);
                       }
                     }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM
                   });
                 });
                 
-                // Reset - back to normal white letters
+                // Reset and navigate
                 setTimeout(() => {
                   btn.innerHTML = 'SOLUTION';
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
-                  console.log('🔄 Reset to normal TECH ADVANTAGE (mobile)');
+                  
+                  // Navigate to solution section
+                  const solutionSection = document.getElementById('solution');
+                  if (solutionSection) {
+                    solutionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
                 }, letters.length * 10 + colors.length * 30 + 50);
-                
-                // Scroll to solution section
-                const solutionSection = document.getElementById('solution');
-                if (solutionSection) {
-                  solutionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  console.log('✅ Scrolled to solution section (mobile)');
-                }
               }}
               id="tech-adv-mobile-btn"
               onMouseEnter={(e) => {
@@ -704,40 +700,35 @@ const HeroXBrainer = () => {
                 const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
                 const letters = ['O', 'U', 'R', ' ', 'E', 'D', 'G', 'E'];
                 
-                // Create letter spans - PREVENT ALL inherited styles
+                // Create letter spans - EXACTLY like PROBLEM button  
                 btn.innerHTML = letters.map((letter, i) => 
-                  `<span id="compliance-mobile-letter-${i}" style="display: inline-block; transition: color 0.3s ease; background: none !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; filter: none !important; transform: none !important; text-shadow: none !important; padding: 0 !important; margin: 0 !important;">${letter}</span>`
+                  `<span id="edge-mobile-click-letter-${i}" style="display: inline-block; transition: color 0.1s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
                 ).join('');
                 
-                console.log('✅ OUR EDGE (mobile) Letter spans created - letters only');
-                
-                // Animate each letter - ONLY COLOR CHANGE
+                // EXACT same animation as PROBLEM button
                 letters.forEach((letter, letterIndex) => {
                   colors.forEach((color, colorIndex) => {
                     setTimeout(() => {
-                      const letterSpan = document.getElementById(`compliance-mobile-letter-${letterIndex}`);
-                      if (letterSpan) {
+                      const letterSpan = document.getElementById(`edge-mobile-click-letter-${letterIndex}`);
+                      if (letterSpan && letter !== ' ') {
                         letterSpan.style.color = color;
-                        console.log(`OUR EDGE (mobile) Letter ${letter} -> ${color}`);
                       }
                     }, letterIndex * 10 + colorIndex * 30); // Same timing as PROBLEM
                   });
                 });
                 
-                // Reset - back to normal white letters
+                // Reset and navigate
                 setTimeout(() => {
                   btn.innerHTML = 'OUR EDGE';
                   btn.style.color = 'white !important';
                   btn.style.setProperty('color', 'white', 'important');
-                  console.log('🔄 Reset to normal OUR EDGE (mobile)');
+                  
+                  // Navigate to edge section
+                  const edgeSection = document.getElementById('edge');
+                  if (edgeSection) {
+                    edgeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
                 }, letters.length * 10 + colors.length * 30 + 50);
-                
-                // Scroll to edge section
-                const edgeSection = document.getElementById('edge');
-                if (edgeSection) {
-                  edgeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  console.log('✅ Scrolled to edge section (mobile)');
-                }
               }}
               id="compliance-mobile-btn"
               onMouseEnter={(e) => {
