@@ -11,7 +11,7 @@ const HeroXBrainer = () => {
         <img 
           src="/lovable-uploads/a84358e6-b8f3-4172-a059-3c05cad36874.png" 
           alt="XBrainer AI logo" 
-          className="h-6 sm:h-12 lg:h-16 w-auto mix-blend-screen opacity-90 rounded-lg sm:rounded-2xl" 
+          className="h-10 sm:h-12 lg:h-16 w-auto mix-blend-screen opacity-90 rounded-lg sm:rounded-2xl" 
           style={{
             filter: 'blur(0.1px)',
             maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
@@ -19,10 +19,10 @@ const HeroXBrainer = () => {
           }}
         />
         <div className="flex flex-col">
-          <span className="text-sm sm:text-3xl lg:text-5xl font-bold tracking-tight leading-tight" style={{color: '#ffffff'}}>
+          <span className="text-xl sm:text-3xl lg:text-5xl font-bold tracking-tight leading-tight" style={{color: '#ffffff'}}>
             XBrainer AI
           </span>
-          <span className="text-xs sm:text-base lg:text-xl font-medium" style={{color: 'rgba(255, 255, 255, 0.7)'}}>
+          <span className="text-sm sm:text-base lg:text-xl font-medium" style={{color: 'rgba(255, 255, 255, 0.7)'}}>
             Securing Neural Data in Real Time
           </span>
         </div>
