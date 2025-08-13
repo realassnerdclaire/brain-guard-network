@@ -8,19 +8,17 @@ const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: "ABOUT", href: "#about" },
-    { label: "PROBLEM", href: "#problem" },
-    { label: "URGENCY", href: "#urgency" },
-    { label: "SOLUTION", href: "#solution" },
-    { label: "OUR EDGE", href: "#edge" },
-    { label: "TECHNOLOGY", href: "#technology" },
-    { label: "CAREER", href: "#career" },
-    { label: "BRIEFING REQUEST", href: "#briefing" },
+    { label: "HOME", href: "#home" },
+    { label: "ABOUT US", href: "#about" },
     { label: "VISION", href: "#vision" },
-    { label: "FEATURE", href: "#features" },
-    { label: "HOW IT WORKS", href: "#how" },
+    { label: "OVERVIEW", href: "#overview" },
+    { label: "COMPLIANCE & STANDARDS", href: "#compliance" },
+    { label: "USE CASES", href: "#usecases" },
+    { label: "SECURITY & PRIVACY", href: "#security" },
+    { label: "PARTNERS & COLLABORATORS", href: "#partners" },
+    { label: "RESOURCES", href: "#resources" },
+    { label: "CAREERS", href: "#careers" },
     { label: "FAQ", href: "#faq" },
-    { label: "CONTACT", href: "#contact" },
   ];
 
   return (
