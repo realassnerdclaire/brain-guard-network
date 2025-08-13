@@ -164,19 +164,19 @@ const HeroXBrainer = () => {
       </div>
 
       {/* Enhanced futuristic neon brain - foreground layer */}
-      <div className="absolute right-0 sm:right-0 top-1/2 -translate-y-4 w-4/5 sm:w-3/5 h-[70vh] sm:h-[80vh] z-10 animate-pulse">
+      <div className="absolute right-0 sm:right-0 top-1/2 -translate-y-4 w-4/5 sm:w-3/5 h-[70vh] sm:h-[80vh] z-10">
         <img
           src={futuristicBrain}
           alt="Futuristic translucent brain with neural pathways"
-          className="w-full h-full object-cover opacity-60 animate-pulse"
+          className="w-full h-full object-cover opacity-25 sm:opacity-30"
           loading="eager"
           decoding="async"
           style={{
-            filter: 'drop-shadow(0 0 20px #00d4ff) drop-shadow(0 0 30px #a855f7) brightness(1.1) contrast(1.1) blur(0.5px)',
-            maskImage: 'radial-gradient(ellipse 90% 95% at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0) 100%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 90% 95% at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0) 100%)',
-            animation: 'float 6s ease-in-out infinite',
-            mixBlendMode: 'screen'
+            filter: 'drop-shadow(0 0 40px rgba(0, 212, 255, 0.1)) drop-shadow(0 0 60px rgba(168, 85, 247, 0.1)) brightness(0.8) contrast(0.9) blur(3px)',
+            maskImage: 'radial-gradient(ellipse 120% 110% at center, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.05) 85%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 120% 110% at center, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.05) 85%, rgba(0,0,0,0) 100%)',
+            animation: 'float 8s ease-in-out infinite',
+            mixBlendMode: 'soft-light'
           }}
         />
       </div>
