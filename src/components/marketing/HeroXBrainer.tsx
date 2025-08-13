@@ -191,8 +191,8 @@ const HeroXBrainer = () => {
           </p>
         </div>
         
-        {/* Action buttons - balanced mobile positioning */}
-        <div className="absolute bottom-10 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-3 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-1 sm:gap-4 lg:gap-6">
+        {/* Action buttons - closer to content for better proportions */}
+        <div className="absolute bottom-32 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-3 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-1 sm:gap-4 lg:gap-6">
           <button 
             className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-3 sm:px-8 lg:px-10 xl:px-12 py-1.5 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
@@ -242,8 +242,8 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Interactive navigation labels at bottom - comfortable mobile spacing */}
-      <div className="absolute bottom-2 sm:bottom-20 lg:bottom-24 xl:bottom-28 left-0 right-0 z-[9999] pointer-events-none">
+      {/* Interactive navigation labels at bottom - adjusted for better proportions */}
+      <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 xl:bottom-28 left-0 right-0 z-[9999] pointer-events-none">
         <div className="container px-2 sm:px-8 lg:px-12 xl:px-16 pointer-events-none">
           <div className="flex items-center justify-center gap-1 sm:gap-6 lg:gap-10 xl:gap-16 flex-wrap pointer-events-auto">
             <button 
