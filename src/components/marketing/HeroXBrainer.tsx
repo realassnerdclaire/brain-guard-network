@@ -30,17 +30,17 @@ const HeroXBrainer = () => {
       
       {/* EEG stream signals across entire page - background layer */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <svg className="w-full h-full opacity-20" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <svg className="w-full h-full opacity-60" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="eegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: '#00d4ff', stopOpacity: 0.8}} />
+              <stop offset="0%" style={{stopColor: '#00d4ff', stopOpacity: 1}} />
               <stop offset="50%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#00d4ff', stopOpacity: 0.8}} />
+              <stop offset="100%" style={{stopColor: '#00d4ff', stopOpacity: 1}} />
             </linearGradient>
             <linearGradient id="eegGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 0.6}} />
-              <stop offset="50%" style={{stopColor: '#00d4ff', stopOpacity: 0.9}} />
-              <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 0.6}} />
+              <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
+              <stop offset="50%" style={{stopColor: '#00d4ff', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
             </linearGradient>
           </defs>
           
