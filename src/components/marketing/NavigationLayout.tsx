@@ -27,19 +27,19 @@ const NavigationLayout = ({ onBack }: NavigationLayoutProps) => {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Brain Background */}
+      {/* Nebula Brain Background */}
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(/lovable-uploads/4d214831-55b3-4338-a09c-1c85fd57f9d6.png)`,
+          backgroundImage: `url(/lovable-uploads/27f96d4c-bee3-4923-8c3e-57550bedb369.png)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
       />
       
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/30 z-10" />
 
       {/* Back Button */}
       <button
