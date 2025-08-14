@@ -623,38 +623,38 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-white mb-4 md:mb-4 animate-fade-in">
+                <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   The Solution
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] mx-auto mb-8 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] mx-auto mb-4 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-8 md:space-y-12 text-center max-w-6xl mx-auto">
-                  <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-12">
+                <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
+                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
                     XBrainer AI secures brain data in real time, from EEG and BCI devices to end users.
                   </p>
                   
                   {/* Solution Feature Cards - Timeline Style */}
-                  <div className="space-y-6 max-w-4xl mx-auto text-left">
+                  <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
                     {/* Real-time Encryption */}
-                    <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Real-time Encryption</h3>
-                      <p className="text-white/80 text-sm md:text-lg leading-relaxed">Encryption at the source prevents interception and ensures neural data stays protected from device to destination.</p>
+                    <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Real-time Encryption</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Encryption at the source prevents interception and ensures neural data stays protected from device to destination.</p>
                     </div>
                     
                     {/* Instant Access Controls */}
-                    <div className="bg-slate-800/60 border-l-4 border-indigo-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Instant Access Controls</h3>
-                      <p className="text-white/80 text-sm md:text-lg leading-relaxed">Give or revoke permissions instantly with granular control over who can access neural data and when.</p>
+                    <div className="bg-slate-800/60 border-l-4 border-indigo-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Instant Access Controls</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Give or revoke permissions instantly with granular control over who can access neural data and when.</p>
                     </div>
                     
                     {/* Permanent Audit Logs */}
-                    <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Permanent Audit Logs</h3>
-                      <p className="text-white/80 text-sm md:text-lg leading-relaxed">Record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
+                    <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Permanent Audit Logs</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
                     </div>
                   </div>
                   
-                  <p className="text-xl md:text-2xl text-white/90 leading-relaxed mt-12">
+                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mt-4 md:mt-12">
                     We help device makers, researchers, and healthcare providers deploy neurotechnology safely while maintaining data integrity and privacy.
                   </p>
                 </div>
