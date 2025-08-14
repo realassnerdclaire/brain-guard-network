@@ -21,9 +21,20 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="dark min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-background z-10" />
+    <div 
+      className="dark min-h-screen bg-background text-foreground" 
+      style={{
+        contain: 'layout style',
+        willChange: 'transform'
+      }}
+    >
+      <div 
+        className="min-h-screen w-full" 
+        style={{
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden'
+        }}
+      >
 
       {/* Fixed Header Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/20">
@@ -130,6 +141,7 @@ const AboutUs = () => {
           onClick={() => setIsMenuOpen(false)}
         />
       )}
+      </div>
     </div>
   );
 };
