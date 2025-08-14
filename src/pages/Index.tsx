@@ -282,8 +282,8 @@ const Index = () => {
           
           {/* Horizontal Scrolling Container for 4 Sections */}
           <div className="relative">
-            {/* Navigation Arrows */}
-            <div className="fixed left-4 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4">
+            {/* Navigation Arrows - Moved lower to not interfere with content */}
+            <div className="fixed left-4 bottom-32 z-30 flex flex-col gap-4">
               <button
                 onClick={scrollLeft}
                 disabled={currentSection === 0}
@@ -299,7 +299,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="fixed right-4 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4">
+            <div className="fixed right-4 bottom-32 z-30 flex flex-col gap-4">
               <button
                 onClick={scrollRight}
                 disabled={currentSection === 3}
@@ -315,8 +315,8 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Section Indicators */}
-            <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full px-4 py-2">
+            {/* Section Indicators - Moved higher to accommodate lower arrow buttons */}
+            <div className="fixed bottom-16 left-1/2 -translate-x-1/2 z-30 flex gap-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full px-4 py-2">
               {sectionNames.map((name, index) => (
                 <button
                   key={name}
@@ -543,46 +543,46 @@ const Index = () => {
               </svg>
             </div>
 
-            <div className="container relative z-10 text-center px-4 sm:px-6">
+            <div className="container relative z-10 text-center px-4 sm:px-6 h-full flex flex-col justify-center">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in">
                   The Urgency
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-3 md:mb-4 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-8 text-center max-w-6xl mx-auto">
-                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-8">
+                <div className="space-y-3 md:space-y-4 text-center max-w-6xl mx-auto">
+                  <p className="text-sm sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 md:mb-4">
                     The market is scaling fast. <span className="text-cyan-300 font-bold">3M+ EEG devices expected in North America by 2026</span>.
                   </p>
                   
-                  {/* Urgency Feature Cards - Timeline Style */}
-                  <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
+                  {/* Urgency Feature Cards - Optimized for desktop fit */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto text-left">
                     {/* Market Explosion */}
-                    <div className="bg-slate-800/60 border-l-4 border-cyan-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Market Explosion</h3>
-                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">More devices = more attack surfaces = higher compliance risk</p>
+                    <div className="bg-slate-800/60 border-l-4 border-cyan-200 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Market Explosion</h3>
+                      <p className="text-white/80 text-xs md:text-sm leading-relaxed">More devices = more attack surfaces = higher compliance risk</p>
                     </div>
                     
                     {/* 2025 Milestones */}
-                    <div className="bg-slate-800/60 border-l-4 border-cyan-300 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2025: FDA Guidance</h3>
-                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
+                    <div className="bg-slate-800/60 border-l-4 border-cyan-300 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">2025: FDA Guidance</h3>
+                      <p className="text-white/80 text-xs md:text-sm leading-relaxed">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
                     </div>
                     
                     {/* 2026 Enforcement */}
-                    <div className="bg-slate-800/60 border-l-4 border-cyan-400 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2026: Enforcement Tightens</h3>
-                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
+                    <div className="bg-slate-800/60 border-l-4 border-cyan-400 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">2026: Enforcement Tightens</h3>
+                      <p className="text-white/80 text-xs md:text-sm leading-relaxed">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
                     </div>
                     
                     {/* 2027+ New Protections */}
-                    <div className="bg-slate-800/60 border-l-4 border-cyan-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2027+: Market Entry Risk</h3>
-                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Potential new neurodata-specific protections may limit non-compliant market entry</p>
+                    <div className="bg-slate-800/60 border-l-4 border-cyan-700 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">2027+: Market Entry Risk</h3>
+                      <p className="text-white/80 text-xs md:text-sm leading-relaxed">Potential new neurodata-specific protections may limit non-compliant market entry</p>
                     </div>
                   </div>
                   
-                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mt-4 md:mt-12">
+                  <p className="text-sm sm:text-lg md:text-xl text-white/90 leading-relaxed mt-3 md:mt-4">
                     Companies that wait risk being <span className="text-cyan-300 font-semibold">locked out</span> of clinical and consumer markets.
                   </p>
                 </div>
@@ -684,40 +684,40 @@ const Index = () => {
               </svg>
             </div>
 
-            <div className="container relative z-10 text-center px-4 sm:px-6">
+            <div className="container relative z-10 text-center px-4 sm:px-6 h-full flex flex-col justify-center">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in">
                   The Solution
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-green-100 via-green-300 to-green-600 mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-green-100 via-green-300 to-green-600 mx-auto mb-3 md:mb-4 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-8 text-center max-w-6xl mx-auto">
-                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-8">
+                <div className="space-y-3 md:space-y-4 text-center max-w-6xl mx-auto">
+                  <p className="text-sm sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 md:mb-4">
                     XBrainer AI <span className="text-teal-300">secures</span> brain data <span className="text-teal-300">in real time</span>, from <span className="text-teal-300">EEG and BCI</span> devices to end users.
                   </p>
                   
-                  {/* Solution Feature Cards - Timeline Style */}
-                  <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
+                  {/* Solution Feature Cards - Optimized for desktop fit */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto text-left">
                     {/* Real-time Encryption */}
-                    <div className="bg-slate-800/60 border-l-4 border-teal-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Real-time Encryption</h3>
-                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Encryption at the source prevents interception and ensures neural data stays protected from device to destination.</p>
+                    <div className="bg-slate-800/60 border-l-4 border-teal-200 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Real-time Encryption</h3>
+                      <p className="text-white/80 text-xs md:text-sm leading-relaxed">Encryption at the source prevents interception and ensures neural data stays protected from device to destination.</p>
                     </div>
                     
                     {/* Instant Access Controls */}
-                    <div className="bg-slate-800/60 border-l-4 border-teal-400 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Instant Access Controls</h3>
-                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Give or revoke permissions instantly with granular control over who can access neural data and when.</p>
+                    <div className="bg-slate-800/60 border-l-4 border-teal-400 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Instant Access Controls</h3>
+                      <p className="text-white/80 text-xs md:text-sm leading-relaxed">Give or revoke permissions instantly with granular control over who can access neural data and when.</p>
                     </div>
                     
                     {/* Permanent Audit Logs */}
-                    <div className="bg-slate-800/60 border-l-4 border-teal-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Permanent Audit Logs</h3>
-                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
+                    <div className="bg-slate-800/60 border-l-4 border-teal-700 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Permanent Audit Logs</h3>
+                      <p className="text-white/80 text-xs md:text-sm leading-relaxed">Record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
                     </div>
                   </div>
                   
-                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mt-4 md:mt-12">
+                  <p className="text-sm sm:text-lg md:text-xl text-white/90 leading-relaxed mt-3 md:mt-4">
                     We help device makers, researchers, and healthcare providers deploy neurotechnology safely while maintaining data integrity and privacy.
                   </p>
                 </div>
@@ -773,37 +773,37 @@ const Index = () => {
               </path>
             </svg>
 
-            <div className="container relative z-10 text-center px-4 sm:px-6">
+            <div className="container relative z-10 text-center px-4 sm:px-6 h-full flex flex-col justify-center">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in">
                   Our Edge
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-3 md:mb-4 animate-pulse" />
                 
-                {/* Our Edge Feature Cards - Timeline Style */}
-                <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
+                {/* Our Edge Feature Cards - Optimized for desktop fit */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto text-left">
                   {/* Patent-Pending Security Pipeline */}
-                  <div className="bg-slate-800/60 border-l-4 border-cyan-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Patent-Pending Security Pipeline</h3>
-                    <p className="text-white/80 text-xs md:text-lg leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-cyan-200 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Patent-Pending Security Pipeline</h3>
+                    <p className="text-white/80 text-xs md:text-sm leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
                   </div>
                   
                   {/* Regulatory-First Design */}
-                  <div className="bg-slate-800/60 border-l-4 border-cyan-300 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Regulatory-First Design</h3>
-                    <p className="text-white/80 text-xs md:text-lg leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-cyan-300 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Regulatory-First Design</h3>
+                    <p className="text-white/80 text-xs md:text-sm leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
                   </div>
                   
                   {/* AI-Driven Threat Detection */}
-                  <div className="bg-slate-800/60 border-l-4 border-cyan-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">AI-Driven Threat Detection</h3>
-                    <p className="text-white/80 text-xs md:text-lg leading-relaxed">Advanced machine learning specifically tuned for BCI signal anomalies and neural data security threats.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-cyan-500 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">AI-Driven Threat Detection</h3>
+                    <p className="text-white/80 text-xs md:text-sm leading-relaxed">Advanced machine learning specifically tuned for BCI signal anomalies and neural data security threats.</p>
                   </div>
                   
                   {/* Seamless Integration */}
-                  <div className="bg-slate-800/60 border-l-4 border-cyan-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Seamless Integration</h3>
-                    <p className="text-white/80 text-xs md:text-lg leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-cyan-700 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Seamless Integration</h3>
+                    <p className="text-white/80 text-xs md:text-sm leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
                   </div>
                 </div>
               </div>
