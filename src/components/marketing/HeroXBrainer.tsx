@@ -100,20 +100,21 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 h-full flex items-start sm:items-center justify-start pt-48 sm:py-0 px-3 sm:px-8 lg:px-12 xl:px-16">
-        <div className="max-w-2xl lg:max-w-4xl xl:max-w-5xl relative z-15 mt-0 sm:mt-16 lg:mt-0">
-          <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-2 sm:mb-8 lg:mb-12" id="hero-title">
+      <div className="container relative z-10 h-full flex items-center justify-between px-3 sm:px-8 lg:px-12 xl:px-16 py-20">
+        {/* Left side - Headline and subheadline */}
+        <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl relative z-15">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-6 sm:mb-8 lg:mb-12" id="hero-title">
             <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/80 max-w-xs lg:max-w-xl xl:max-w-2xl leading-tight mb-3 sm:mb-12 lg:mb-16 mt-8">
+          <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-lg lg:max-w-2xl xl:max-w-3xl leading-relaxed">
             As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
           </p>
         </div>
         
-        {/* Action buttons - brought significantly up */}
-        <div className="absolute bottom-52 sm:bottom-40 lg:bottom-48 xl:bottom-52 right-3 sm:right-8 lg:right-16 xl:right-20 flex flex-col gap-1 sm:gap-4 lg:gap-6">
+        {/* Right side - Action buttons */}
+        <div className="flex flex-col gap-4 lg:gap-6 ml-8">
           <button 
-            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-3 sm:px-8 lg:px-10 xl:px-12 py-1.5 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
+            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
               const btn = e.currentTarget;
               const interval = startHoverAnimation(btn);
@@ -136,7 +137,7 @@ const HeroXBrainer = () => {
             JOIN THE WAITLIST
           </button>
           <button 
-            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-3 sm:px-8 lg:px-10 xl:px-12 py-1.5 sm:py-4 lg:py-5 touch-manipulation text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer transition-all duration-300"
+            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300"
             onMouseEnter={(e) => {
               const btn = e.currentTarget;
               const interval = startHoverAnimation(btn);
