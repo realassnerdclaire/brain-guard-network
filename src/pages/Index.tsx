@@ -347,7 +347,7 @@ const Index = () => {
               {/* 1. Problem Section */}
               <section 
                 id="problem" 
-                className="min-w-full min-h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+                className="min-w-full h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
               >
             {/* Subtle flowing EEG background for Problem section */}
             <div 
@@ -435,9 +435,9 @@ const Index = () => {
                 </h2>
                 <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#10B981] to-[#059669] mx-auto mb-4 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
-                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
-                    EEG and BCI devices are leaving the lab for clinics, homes, and consumer environments.
+                <div className="space-y-4 md:space-y-8 text-center max-w-6xl mx-auto">
+                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-8">
+                    Neural data is vulnerable to <span className="text-green-300 font-bold">real time</span> interception during transmission, <span className="text-green-300 font-bold">unauthorized access</span> to stored datasets, <span className="text-green-300 font-bold">compliance failures</span> with HIPAA and GDPR, and <span className="text-green-300 font-bold">tampering</span> with critical neural signals.
                   </p>
                   
                   {/* Problem Feature Cards - Timeline Style */}
@@ -474,7 +474,7 @@ const Index = () => {
               {/* 2. Urgency Section */}
               <section 
                 id="urgency" 
-                className="min-w-full min-h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+                className="min-w-full h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
               >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
@@ -550,8 +550,8 @@ const Index = () => {
                 </h2>
                 <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-4 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
-                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
+                <div className="space-y-4 md:space-y-8 text-center max-w-6xl mx-auto">
+                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-8">
                     The market is scaling fast. <span className="text-cyan-300 font-bold">3M+ EEG devices expected in North America by 2026</span>.
                   </p>
                   
@@ -593,7 +593,7 @@ const Index = () => {
               {/* 3. Solution Section */}
               <section 
                 id="solution" 
-                className="min-w-full min-h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+                className="min-w-full h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
               >
             {/* Enhanced futuristic background with neural network effects */}
             <div className="absolute inset-0 overflow-hidden">
@@ -691,8 +691,8 @@ const Index = () => {
                 </h2>
                 <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-green-100 via-green-300 to-green-600 mx-auto mb-4 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
-                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
+                <div className="space-y-4 md:space-y-8 text-center max-w-6xl mx-auto">
+                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-8">
                     XBrainer AI <span className="text-teal-300">secures</span> brain data <span className="text-teal-300">in real time</span>, from <span className="text-teal-300">EEG and BCI</span> devices to end users.
                   </p>
                   
@@ -728,7 +728,7 @@ const Index = () => {
               {/* 4. Our Edge Section */}
               <section 
                 id="edge" 
-                className="min-w-full min-h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+                className="min-w-full h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
               >
             {/* Large cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8">

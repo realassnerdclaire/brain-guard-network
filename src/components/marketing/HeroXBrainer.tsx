@@ -104,8 +104,8 @@ const HeroXBrainer = () => {
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-16">
           {/* Left side - Headline and subheadline */}
           <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl relative z-15">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-6 sm:mb-8" id="hero-title">
-              <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-6 sm:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 via-cyan-300 via-cyan-400 via-cyan-700 via-green-800 via-green-600 via-green-300 via-green-100 to-white" id="hero-title">
+              Secure Neural Data Before It's Too Late
             </h1>
             <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-md lg:max-w-2xl leading-relaxed">
               As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
