@@ -1,6 +1,6 @@
 
-import { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, ChevronLeft, ChevronRight } from "lucide-react";
 import HeroXBrainer from "@/components/marketing/HeroXBrainer";
 import NavigationLayout from "@/components/marketing/NavigationLayout";
 import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
@@ -8,6 +8,8 @@ import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showNavigationLayout, setShowNavigationLayout] = useState(false);
+  const [currentSection, setCurrentSection] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Optimized title setting
   useEffect(() => {
@@ -29,6 +31,30 @@ const Index = () => {
     { label: "FAQ", href: "#faq" },
     { label: "CONTACT", href: "#contact" },
   ];
+
+  const sectionNames = ['Problem', 'Urgency', 'Solution', 'Our Edge'];
+
+  // Navigation functions for horizontal scrolling
+  const scrollToSection = (sectionIndex: number) => {
+    if (scrollContainerRef.current) {
+      const sectionWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: sectionIndex * sectionWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSection(sectionIndex);
+    }
+  };
+
+  const scrollLeft = () => {
+    const newIndex = currentSection > 0 ? currentSection - 1 : 0;
+    scrollToSection(newIndex);
+  };
+
+  const scrollRight = () => {
+    const newIndex = currentSection < 3 ? currentSection + 1 : 3;
+    scrollToSection(newIndex);
+  };
 
   // Show navigation layout when menu is clicked
   if (showNavigationLayout) {
@@ -256,7 +282,67 @@ const Index = () => {
           
           {/* Horizontal Scrolling Container for 4 Sections */}
           <div className="relative">
-            <div className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory" style={{ scrollBehavior: 'smooth' }}>
+            {/* Navigation Arrows */}
+            <div className="fixed left-4 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4">
+              <button
+                onClick={scrollLeft}
+                disabled={currentSection === 0}
+                className="bg-black/60 backdrop-blur-md border border-white/20 rounded-full p-3 text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+                style={{
+                  boxShadow: '0 0 20px rgba(255, 255, 255, 0.1)'
+                }}
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <div className="text-white text-xs text-center bg-black/60 backdrop-blur-md border border-white/20 rounded-lg px-2 py-1">
+                {currentSection + 1}/4
+              </div>
+            </div>
+
+            <div className="fixed right-4 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4">
+              <button
+                onClick={scrollRight}
+                disabled={currentSection === 3}
+                className="bg-black/60 backdrop-blur-md border border-white/20 rounded-full p-3 text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+                style={{
+                  boxShadow: '0 0 20px rgba(255, 255, 255, 0.1)'
+                }}
+              >
+                <ChevronRight size={24} />
+              </button>
+              <div className="text-white text-xs text-center bg-black/60 backdrop-blur-md border border-white/20 rounded-lg px-2 py-1">
+                {sectionNames[currentSection]}
+              </div>
+            </div>
+
+            {/* Section Indicators */}
+            <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full px-4 py-2">
+              {sectionNames.map((name, index) => (
+                <button
+                  key={name}
+                  onClick={() => scrollToSection(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSection === index 
+                      ? 'bg-white shadow-lg' 
+                      : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                  title={name}
+                />
+              ))}
+            </div>
+
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory" 
+              style={{ scrollBehavior: 'smooth' }}
+              onScroll={(e) => {
+                const container = e.currentTarget;
+                const sectionWidth = container.clientWidth;
+                const scrollLeft = container.scrollLeft;
+                const newSection = Math.round(scrollLeft / sectionWidth);
+                setCurrentSection(newSection);
+              }}
+            >
               
               {/* 1. Problem Section */}
               <section 
