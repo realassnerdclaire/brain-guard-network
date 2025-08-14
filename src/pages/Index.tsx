@@ -679,17 +679,20 @@ const Index = () => {
           {/* 4. Our Edge Section */}
           <section 
             id="edge" 
-            className="min-h-screen md:min-h-[100vh] bg-black flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden"
           >
             {/* Large cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8">
               <div 
-                className="w-80 h-80 bg-cover bg-center rounded-lg"
+                className="w-80 h-80 bg-cover bg-center"
                 style={{
                   backgroundImage: `url('/lovable-uploads/574042c4-4d23-497c-8222-72b20a878a2f.png')`,
                   filter: 'saturate(1.5) brightness(1.4) contrast(1.2)',
-                  opacity: '0.95',
-                  animation: 'cosmicGlow 4s ease-in-out infinite alternate'
+                  opacity: '0.8',
+                  animation: 'cosmicGlow 4s ease-in-out infinite alternate',
+                  mixBlendMode: 'screen',
+                  maskImage: 'linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)',
+                  WebkitMaskImage: 'linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)'
                 }}
               ></div>
             </div>
