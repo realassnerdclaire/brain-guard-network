@@ -164,8 +164,8 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Interactive navigation labels - brought significantly up */}
-      <div className="absolute bottom-32 sm:bottom-20 lg:bottom-24 xl:bottom-28 left-0 right-0 z-[9999] pointer-events-none">
+      {/* Interactive navigation labels - positioned lower */}
+      <div className="absolute bottom-16 sm:bottom-12 lg:bottom-16 xl:bottom-20 left-0 right-0 z-[9999] pointer-events-none">
         <div className="container px-2 sm:px-8 lg:px-12 xl:px-16 pointer-events-none">
           <div className="flex items-center justify-center gap-1 sm:gap-6 lg:gap-10 xl:gap-16 flex-wrap pointer-events-auto">
             <button 
