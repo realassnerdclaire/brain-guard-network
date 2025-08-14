@@ -11,7 +11,15 @@ const Index = () => {
 
   // Set document title on component mount
   useEffect(() => {
+    // Set title immediately
     document.title = "XBrainer AI Official Website";
+    
+    // Also set it again with a timeout to override any other title changes
+    const timeoutId = setTimeout(() => {
+      document.title = "XBrainer AI Official Website";
+    }, 100);
+    
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const menuItems = [
