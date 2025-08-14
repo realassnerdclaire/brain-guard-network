@@ -386,7 +386,7 @@ const Index = () => {
           {/* 2. Urgency Section */}
           <section 
             id="urgency" 
-            className="min-h-screen md:min-h-[100vh] bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden"
           >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
