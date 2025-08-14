@@ -20,19 +20,9 @@ const Overview = () => {
   ];
 
   return (
-    <div className="dark min-h-screen bg-background text-white relative overflow-hidden">
+    <div className="dark min-h-screen bg-background text-foreground relative overflow-hidden">
       {/* Background */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(/lovable-uploads/27f96d4c-bee3-4923-8c3e-57550bedb369.png)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
-      
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 bg-background z-10" />
 
       {/* Fixed Header Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-blue-600/20">
