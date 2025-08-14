@@ -465,21 +465,21 @@ const Index = () => {
                 <div className="space-y-4 md:space-y-4 text-left max-w-4xl mx-auto">
                   <div className="bg-gradient-to-r from-[#EC4899]/40 to-[#F472B6]/40 border-2 border-[#EC4899]/50 rounded-2xl p-4 md:p-4 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
                     <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-2">
-                      <span className="text-2xl md:text-2xl animate-pulse">📈</span>
+                      <span className="text-2xl md:text-2xl animate-pulse"></span>
                       <h3 className="text-lg md:text-lg font-bold text-white">Market Explosion</h3>
                     </div>
                     <p className="text-base md:text-base text-white/90 leading-relaxed mb-2 md:mb-2">
                       The market is scaling fast — <span className="text-[#F472B6] font-semibold bg-[#EC4899]/30 px-2 py-1 rounded animate-pulse">3M+ EEG devices expected in North America by 2026</span>.
                     </p>
                     <div className="flex items-center gap-2 text-sm md:text-sm text-[#EC4899] font-semibold">
-                      <span className="animate-pulse">⚡</span>
+                      <span className="animate-pulse"></span>
                       <span>More devices = more attack surfaces = higher compliance risk</span>
                     </div>
                   </div>
                   
                   <div className="bg-black/40 border border-white/10 rounded-2xl p-4 md:p-4 animate-fade-in" style={{animationDelay: '0.4s'}}>
                     <h3 className="text-lg md:text-lg font-bold text-white mb-3 md:mb-3 flex items-center gap-2 md:gap-2">
-                      <span className="text-yellow-400 text-xl md:text-xl animate-pulse">⚡</span>
+                      <span className="text-yellow-400 text-xl md:text-xl animate-pulse"></span>
                       Key regulatory milestones:
                     </h3>
                     <div className="space-y-3 md:space-y-2">
@@ -511,8 +511,8 @@ const Index = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-[#EC4899]/10 to-transparent animate-pulse"></div>
                     <div className="relative z-10">
                       <div className="flex items-center justify-center gap-2 md:gap-2 mb-2 md:mb-2">
-                        <span className="text-2xl md:text-2xl animate-pulse">🚨</span>
-                        <span className="text-2xl md:text-2xl animate-pulse">⏰</span>
+                        <span className="text-2xl md:text-2xl animate-pulse"></span>
+                        <span className="text-2xl md:text-2xl animate-pulse"></span>
                       </div>
                       <p className="text-base md:text-base text-white font-semibold">
                         Companies that wait risk being <span className="text-[#EC4899] bg-[#F472B6]/50 px-2 md:px-2 py-1 rounded-lg animate-pulse">locked out</span> of clinical and consumer markets.
@@ -662,8 +662,8 @@ const Index = () => {
                       <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/5 to-transparent animate-pulse"></div>
                       <div className="relative z-10">
                         <div className="flex items-center justify-center gap-3 mb-2 md:mb-2">
-                          <span className="text-2xl md:text-2xl animate-pulse">⚡</span>
-                          <span className="text-2xl md:text-2xl animate-pulse">🚀</span>
+                          <span className="text-2xl md:text-2xl animate-pulse"></span>
+                          <span className="text-2xl md:text-2xl animate-pulse"></span>
                         </div>
                         <p className="text-base md:text-base text-white leading-relaxed">
                           Our approach not only reduces security and compliance risk — it <span className="text-[#7C3AED] font-semibold bg-[#9333EA]/30 px-3 py-1 rounded-full animate-pulse">shortens time-to-market</span> for device makers and researchers.
