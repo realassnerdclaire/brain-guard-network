@@ -610,7 +610,7 @@ const Index = () => {
                     <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#7C3AED]/40 rounded-[2rem] p-4 md:p-4 hover:border-[#7C3AED]/70 transition-all duration-500">
                       <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-3">
                         <div className="w-12 h-12 md:w-12 md:h-12 bg-gradient-to-br from-[#EC4899]/20 to-[#F472B6]/20 rounded-full flex items-center justify-center">
-                          <span className="text-xl md:text-xl animate-pulse">🛡️</span>
+                          <span className="text-xl md:text-xl animate-pulse"></span>
                         </div>
                         <h3 className="text-lg md:text-lg font-bold text-white">
                         XBrainer AI builds a neural intrusion prevention system that:
@@ -623,7 +623,7 @@ const Index = () => {
                           <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/10 to-[#7C3AED]/5 rounded-[1.5rem] transform rotate-3 group-hover/feature:rotate-6 transition-transform duration-300"></div>
                           <div className="relative bg-black/50 backdrop-blur-sm border border-[#7C3AED]/30 rounded-[1.5rem] p-3 md:p-3 text-center hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5 transition-all duration-300 hover-scale">
                             <div className="w-12 h-12 md:w-12 md:h-12 bg-gradient-to-br from-[#7C3AED]/20 to-[#7C3AED]/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-2 group-hover/feature:scale-110 transition-transform duration-300">
-                              <span className="text-[#7C3AED] text-lg md:text-lg">🔒</span>
+                              <span className="text-[#7C3AED] text-lg md:text-lg"></span>
                             </div>
                             <h4 className="text-white font-bold mb-2 md:mb-2 text-sm md:text-sm">Real-time Encryption</h4>
                             <p className="text-white/70 text-xs md:text-xs">Encrypts and authenticates EEG streams in real time</p>
@@ -634,7 +634,7 @@ const Index = () => {
                           <div className="absolute inset-0 bg-gradient-to-br from-[#9333EA]/10 to-[#9333EA]/5 rounded-[1.5rem] transform -rotate-2 group-hover/feature:-rotate-4 transition-transform duration-300"></div>
                           <div className="relative bg-black/50 backdrop-blur-sm border border-[#9333EA]/30 rounded-[1.5rem] p-3 md:p-3 text-center hover:border-[#9333EA]/60 hover:bg-[#9333EA]/5 transition-all duration-300 hover-scale">
                             <div className="w-12 h-12 md:w-12 md:h-12 bg-gradient-to-br from-[#9333EA]/20 to-[#9333EA]/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-2 group-hover/feature:scale-110 transition-transform duration-300">
-                              <span className="text-[#9333EA] text-lg md:text-lg">👤</span>
+                              <span className="text-[#9333EA] text-lg md:text-lg"></span>
                             </div>
                             <h4 className="text-white font-bold mb-2 md:mb-2 text-sm md:text-sm">Access Controls</h4>
                             <p className="text-white/70 text-xs md:text-xs">Applies consent-based access controls for each data request</p>
@@ -645,7 +645,7 @@ const Index = () => {
                           <div className="absolute inset-0 bg-gradient-to-br from-[#6B21A8]/10 to-[#6B21A8]/5 rounded-[1.5rem] transform rotate-1 group-hover/feature:rotate-3 transition-transform duration-300"></div>
                           <div className="relative bg-black/50 backdrop-blur-sm border border-[#6B21A8]/30 rounded-[1.5rem] p-3 md:p-3 text-center hover:border-[#6B21A8]/60 hover:bg-[#6B21A8]/5 transition-all duration-300 hover-scale">
                             <div className="w-12 h-12 md:w-12 md:h-12 bg-gradient-to-br from-[#6B21A8]/20 to-[#6B21A8]/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-2 group-hover/feature:scale-110 transition-transform duration-300">
-                              <span className="text-[#6B21A8] text-lg md:text-lg">📝</span>
+                              <span className="text-[#6B21A8] text-lg md:text-lg"></span>
                             </div>
                             <h4 className="text-white font-bold mb-2 md:mb-2 text-sm md:text-sm">Audit Trails</h4>
                             <p className="text-white/70 text-xs md:text-xs">Maintains full audit trails to meet HIPAA, GDPR, and emerging BCI standards</p>
