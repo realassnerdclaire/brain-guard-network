@@ -257,9 +257,8 @@ const Index = () => {
           {/* 1. Problem Section */}
           <section 
             id="problem" 
-            className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-background flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
             style={{
-              backgroundColor: '#1a1a1a',
               contain: 'layout style paint',
               willChange: 'transform',
               isolation: 'isolate'
@@ -296,70 +295,48 @@ const Index = () => {
                   </linearGradient>
                 </defs>
                 
-                {/* MANY MORE EEG waveforms in Problem section - fast movement */}
+                {/* Only 4 EEG waveforms total */}
                 <path
-                  d="M-50,380 L0,375 L5,390 L10,365 L15,385 L20,370 L25,395 L30,360 L35,390 L40,375 L45,400 L50,350 L55,385 L60,370 L65,395 L70,355 L75,380 L80,375 L85,390 L90,365 L95,385 L100,370 L105,395 L110,360 L115,390 L120,375 L125,400 L130,350 L135,385 L140,370 L145,395 L150,355 L155,380 L160,375 L165,390 L170,365 L175,385 L180,370"
+                  d="M-50,380 L0,375 L20,390 L40,365 L60,385 L80,370 L120,395 L140,360 L180,390 L220,375 L260,400 L300,350 L340,385 L380,370 L420,395 L460,355 L500,380 L540,375 L580,390 L620,365 L660,385 L700,370 L740,395 L780,360 L820,390 L860,375 L900,400 L940,350 L980,385 L1020,370 L1060,395 L1100,355 L1140,380 L1180,375 L1220,390 L1260,365 L1300,385 L1340,370 L1380,395 L1420,360 L1460,390 L1500,375 L1540,400 L1580,350 L1620,385 L1660,370 L1700,395 L1740,355 L1780,380 L1820,375 L1860,390 L1900,365 L1940,385 L1980,370"
                   stroke="url(#problemFlow1)"
-                  strokeWidth="3.5"
+                  strokeWidth="0.5"
                   fill="none"
-                  opacity="0.8"
+                  opacity="0.1"
                   style={{
-                    animation: 'problemFlow 3s linear infinite'
+                    animation: 'problemFlow 20s linear infinite'
                   }}
                 />
                 
                 <path
-                  d="M-50,480 L0,485 L6,460 L12,495 L18,470 L24,490 L30,465 L36,500 L42,475 L48,485 L54,460 L60,495 L66,470 L72,490 L78,465 L84,500 L90,475 L96,485 L102,460 L108,495 L114,470 L120,490 L126,465 L132,500 L138,475 L144,485 L150,460 L156,495 L162,470 L168,490 L174,465 L180,500"
+                  d="M-50,480 L0,485 L25,460 L50,495 L75,470 L100,490 L130,465 L160,500 L190,475 L220,485 L250,460 L280,495 L310,470 L340,490 L370,465 L400,500 L430,475 L460,485 L490,460 L520,495 L550,470 L580,490 L610,465 L640,500 L670,475 L700,485 L730,460 L760,495 L790,470 L820,490 L850,465 L880,500 L910,475 L940,485 L970,460 L1000,495 L1030,470 L1060,490 L1090,465 L1120,500 L1150,475 L1180,485 L1210,460 L1240,495 L1270,470 L1300,490 L1330,465 L1360,500 L1390,475 L1420,485 L1450,460 L1480,495 L1510,470 L1540,490 L1570,465 L1600,500 L1630,475 L1660,485 L1690,460 L1720,495 L1750,470 L1780,490 L1810,465 L1840,500 L1870,475 L1900,485 L1930,460 L1960,495 L1990,470"
                   stroke="url(#problemFlow2)"
-                  strokeWidth="3.2"
+                  strokeWidth="0.4"
                   fill="none"
-                  opacity="0.7"
+                  opacity="0.08"
                   style={{
-                    animation: 'problemFlow 4s linear infinite reverse'
+                    animation: 'problemFlow 25s linear infinite reverse'
                   }}
                 />
                 
                 <path
-                  d="M-50,580 L0,575 L4,590 L8,565 L12,585 L16,570 L20,595 L24,560 L28,590 L32,575 L36,600 L40,555 L44,585 L48,570 L52,595 L56,560 L60,590 L64,575 L68,600 L72,555 L76,585 L80,570 L84,595 L88,560 L92,590 L96,575 L100,600 L104,555 L108,585 L112,570 L116,595 L120,560 L124,590 L128,575 L132,600 L136,555 L140,585 L144,570 L148,595 L152,560 L156,590 L160,575 L164,600 L168,555 L172,585 L176,570 L180,595"
+                  d="M-50,580 L0,575 L15,590 L30,565 L45,585 L60,570 L80,595 L100,560 L125,590 L150,575 L175,600 L200,555 L225,585 L250,570 L275,595 L300,560 L325,590 L350,575 L375,600 L400,555 L425,585 L450,570 L475,595 L500,560 L525,590 L550,575 L575,600 L600,555 L625,585 L650,570 L675,595 L700,560 L725,590 L750,575 L775,600 L800,555 L825,585 L850,570 L875,595 L900,560 L925,590 L950,575 L975,600 L1000,555 L1025,585 L1050,570 L1075,595 L1100,560 L1125,590 L1150,575 L1175,600 L1200,555 L1225,585 L1250,570 L1275,595 L1300,560 L1325,590 L1350,575 L1375,600 L1400,555 L1425,585 L1450,570 L1475,595 L1500,560 L1525,590 L1550,575 L1575,600 L1600,555 L1625,585 L1650,570 L1675,595 L1700,560 L1725,590 L1750,575 L1775,600 L1800,555 L1825,585 L1850,570 L1875,595 L1900,560 L1925,590 L1950,575 L1975,600"
                   stroke="#4F46E5"
-                  strokeWidth="2.8"
+                  strokeWidth="0.3"
                   fill="none"
-                  opacity="0.6"
+                  opacity="0.05"
                   style={{
-                    animation: 'problemFlow 2.5s linear infinite'
+                    animation: 'problemFlow 30s linear infinite'
                   }}
                 />
                 
                 <path
-                  d="M-50,320 L0,325 L3,310 L6,335 L9,320 L12,340 L15,315 L18,330 L21,320 L24,345 L27,310 L30,325 L33,320 L36,340 L39,315 L42,330 L45,320 L48,345 L51,310 L54,325 L57,320 L60,340 L63,315 L66,330 L69,320 L72,345 L75,310 L78,325 L81,320 L84,340 L87,315 L90,330 L93,320 L96,345 L99,310 L102,325 L105,320 L108,340 L111,315 L114,330 L117,320 L120,345 L123,310 L126,325 L129,320 L132,340 L135,315 L138,330 L141,320 L144,345 L147,310 L150,325 L153,320 L156,340 L159,315 L162,330 L165,320 L168,345 L171,310 L174,325 L177,320 L180,340"
+                  d="M-50,320 L0,325 L10,310 L20,335 L30,320 L40,340 L50,315 L60,330 L70,320 L80,345 L90,310 L100,325 L110,320 L120,340 L130,315 L140,330 L150,320 L160,345 L170,310 L180,325 L190,320 L200,340"
                   stroke="#A855F7"
-                  strokeWidth="2.5"
+                  strokeWidth="0.4"
                   fill="none"
-                  opacity="0.5"
+                  opacity="0.06"
                   style={{
-                    animation: 'problemFlow 1.8s linear infinite'
-                  }}
-                />
-                
-                <path
-                  d="M-50,680 L0,685 L7,660 L14,695 L21,670 L28,690 L35,665 L42,700 L49,675 L56,685 L63,660 L70,695 L77,670 L84,690 L91,665 L98,700 L105,675 L112,685 L119,660 L126,695 L133,670 L140,690 L147,665 L154,700 L161,675 L168,685 L175,660 L182,695"
-                  stroke="#EC4899"
-                  strokeWidth="3.8"
-                  fill="none"
-                  opacity="0.9"
-                  style={{
-                    animation: 'problemFlow 1.5s linear infinite reverse'
-                  }}
-                />
-                
-                <path
-                  d="M-50,780 L0,785 L2,760 L4,795 L6,770 L8,790 L10,765 L12,800 L14,775 L16,785 L18,760 L20,795 L22,770 L24,790 L26,765 L28,800 L30,775 L32,785 L34,760 L36,795 L38,770 L40,790 L42,765 L44,800 L46,775 L48,785 L50,760 L52,795 L54,770 L56,790 L58,765 L60,800 L62,775 L64,785 L66,760 L68,795 L70,770 L72,790 L74,765 L76,800 L78,775 L80,785 L82,760 L84,795 L86,770 L88,790 L90,765 L92,800 L94,775 L96,785 L98,760 L100,795 L102,770 L104,790 L106,765 L108,800 L110,775 L112,785 L114,760 L116,795 L118,770 L120,790"
-                  stroke="#3B82F6"
-                  strokeWidth="4.2"
-                  fill="none"
-                  opacity="0.8"
-                  style={{
-                    animation: 'problemFlow 1.2s linear infinite'
+                    animation: 'problemFlow 18s linear infinite'
                   }}
                 />
                 
@@ -414,8 +391,7 @@ const Index = () => {
           {/* 2. Urgency Section */}
           <section 
             id="urgency" 
-            className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
-            style={{backgroundColor: '#1a1a1a'}}
+            className="min-h-screen md:min-h-[100vh] bg-gradient-to-b from-black to-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
           >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
@@ -553,58 +529,75 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Removed spacer */}
+          {/* Spacer between Urgency and Solution */}
+          <div className="h-16 md:h-32 bg-gradient-to-b from-gray-900 to-black"></div>
 
           {/* 3. Solution Section */}
           <section 
             id="solution" 
-            className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
-            style={{backgroundColor: '#1a1a1a'}}
+            className="min-h-screen md:min-h-[100vh] bg-gradient-to-b from-gray-900 to-black flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
           >
-            {/* High frequency EEG background for Solution section */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-50">
-              <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            {/* Smooth flowing EEG background for Solution section */}
+            <div className="absolute inset-0 opacity-100">
+              <svg className="w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
-                  <linearGradient id="solutionEegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#EC4899', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
+                  <linearGradient id="solutionFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.9}} />
+                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#6C63FF', stopOpacity: 0.9}} />
                   </linearGradient>
-                  <linearGradient id="solutionEegGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#EC4899', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
+                  <linearGradient id="solutionFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#4338CA', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
                   </linearGradient>
                 </defs>
                 
-                <path d="M0,300 L7,312 L11,288 L15,320 L19,285 L23,325 L27,280 L31,308 L35,295 L39,318 L43,285 L47,330 L51,275 L55,312 L59,295 L63,322 L67,280 L71,335 L75,270 L79,308 L83,288 L87,328 L91,275 L95,320 L99,290 L103,312 L107,285 L111,330 L115,270 L119,325 L123,280 L127,340 L131,265 L135,308 L139,295 L143,318 L147,285 L151,328 L155,275 L159,312 L163,288 L167,330 L171,270 L175,322 L179,285 L183,335 L187,260 L191,308 L195,295 L199,318 L203,280 L207,330 L211,275 L215,312 L219,288 L223,328 L227,270 L231,322 L235,285 L239,340 L243,265 L247,308 L251,295 L255,318 L259,285 L263,328 L267,275 L271,312 L275,288 L279,330 L283,270 L287,322 L291,285 L295,335 L299,260 L303,308 L307,295 L311,318 L315,280 L319,330"
-                      stroke="url(#solutionEegGradient)" 
-                      strokeWidth="2.8" 
-                      fill="none" 
-                      style={{
-                        animation: 'solutionFlow 14s linear infinite',
-                        strokeLinecap: 'round'
-                      }} />
+                {/* Copy exact EEG patterns from Problem section */}
+                <path
+                  d="M-50,380 L0,375 L20,390 L40,365 L60,385 L80,370 L120,395 L140,360 L180,390 L220,375 L260,400 L300,350 L340,385 L380,370 L420,395 L460,355 L500,380 L540,375 L580,390 L620,365 L660,385 L700,370 L740,395 L780,360 L820,390 L860,375 L900,400 L940,350 L980,385 L1020,370 L1060,395 L1100,355 L1140,380 L1180,375 L1220,390 L1260,365 L1300,385 L1340,370 L1380,395 L1420,360 L1460,390 L1500,375 L1540,400 L1580,350 L1620,385 L1660,370 L1700,395 L1740,355 L1780,380 L1820,375 L1860,390 L1900,365 L1940,385 L1980,370"
+                  stroke="url(#solutionFlow1)"
+                  strokeWidth="2"
+                  fill="none"
+                  opacity="0.9"
+                  style={{
+                    animation: 'solutionFlow 12s linear infinite'
+                  }}
+                />
                 
-                <path d="M0,500 L9,515 L13,485 L17,525 L21,480 L25,530 L29,475 L33,510 L37,495 L41,520 L45,485 L49,535 L53,470 L57,515 L61,495 L65,525 L69,480 L73,540 L77,465 L81,510 L85,485 L89,535 L93,470 L97,525 L101,490 L105,515 L109,485 L113,535 L117,465 L121,530 L125,480 L129,545 L133,460 L137,510 L141,495 L145,520 L149,485 L153,535 L157,470 L161,515 L165,485 L169,535 L173,465 L177,525 L181,485 L185,540 L189,455 L193,510 L197,495 L201,520 L205,480 L209,535 L213,470 L217,515 L221,485 L225,535 L229,465 L233,525 L237,485 L241,545 L245,460 L249,510 L253,495 L257,520 L261,485 L265,535 L269,470 L273,515 L277,485 L281,535 L285,465 L289,525 L293,485 L297,540 L301,455 L305,510 L309,495 L313,520 L317,480 L321,535"
-                      stroke="url(#solutionEegGradient2)" 
-                      strokeWidth="2.2"
-                      fill="none" 
-                      style={{
-                        animation: 'solutionFlow 16s linear infinite reverse',
-                        animationDelay: '3s',
-                        strokeLinecap: 'round'
-                      }} />
+                <path
+                  d="M-50,480 L0,485 L25,460 L50,495 L75,470 L100,490 L130,465 L160,500 L190,475 L220,485 L250,460 L280,495 L310,470 L340,490 L370,465 L400,500 L430,475 L460,485 L490,460 L520,495 L550,470 L580,490 L610,465 L640,500 L670,475 L700,485 L730,460 L760,495 L790,470 L820,490 L850,465 L880,500 L910,475 L940,485 L970,460 L1000,495 L1030,470 L1060,490 L1090,465 L1120,500 L1150,475 L1180,485 L1210,460 L1240,495 L1270,470 L1300,490 L1330,465 L1360,500 L1390,475 L1420,485 L1450,460 L1480,495 L1510,470 L1540,490 L1570,465 L1600,500 L1630,475 L1660,485 L1690,460 L1720,495 L1750,470 L1780,490 L1810,465 L1840,500 L1870,475 L1900,485 L1930,460 L1960,495 L1990,470"
+                  stroke="url(#solutionFlow2)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  opacity="0.7"
+                  style={{
+                    animation: 'solutionFlow 15s linear infinite reverse'
+                  }}
+                />
                 
-                <path d="M0,700 L6,718 L10,682 L14,728 L18,675 L22,735 L26,670 L30,715 L34,690 L38,725 L42,680 L46,740 L50,665 L54,718 L58,690 L62,730 L66,675 L70,745 L74,660 L78,715 L82,682 L86,738 L90,665 L94,728 L98,685 L102,718 L106,680 L110,740 L114,660 L118,735 L122,675 L126,750 L130,655 L134,715 L138,690 L142,725 L146,680 L150,738 L154,665 L158,718 L162,682 L166,740 L170,660 L174,730 L178,680 L182,745 L186,650 L190,715 L194,690 L198,725 L202,675 L206,740 L210,665 L214,718 L218,682 L222,738 L226,660 L230,730 L234,680 L238,750 L242,655 L246,715 L250,690 L254,725 L258,680 L262,738 L266,665 L270,718 L274,682 L278,740 L282,660 L286,730 L290,680 L294,745 L298,650 L302,715 L306,690 L310,725 L314,675 L318,740"
-                      stroke="url(#solutionEegGradient)" 
-                      strokeWidth="1.8"
-                      fill="none" 
-                      style={{
-                        animation: 'solutionFlow 20s linear infinite',
-                        animationDelay: '5s',
-                        strokeLinecap: 'round'
-                      }} />
+                <path
+                  d="M-50,580 L0,575 L15,590 L30,565 L45,585 L60,570 L80,595 L100,560 L125,590 L150,575 L175,600 L200,555 L225,585 L250,570 L275,595 L300,560 L325,590 L350,575 L375,600 L400,555 L425,585 L450,570 L475,595 L500,560 L525,590 L550,575 L575,600 L600,555 L625,585 L650,570 L675,595 L700,560 L725,590 L750,575 L775,600 L800,555 L825,585 L850,570 L875,595 L900,560 L925,590 L950,575 L975,600 L1000,555 L1025,585 L1050,570 L1075,595 L1100,560 L1125,590 L1150,575 L1175,600 L1200,555 L1225,585 L1250,570 L1275,595 L1300,560 L1325,590 L1350,575 L1375,600 L1400,555 L1425,585 L1450,570 L1475,595 L1500,560 L1525,590 L1550,575 L1575,600 L1600,555 L1625,585 L1650,570 L1675,595 L1700,560 L1725,590 L1750,575 L1775,600 L1800,555 L1825,585 L1850,570 L1875,595 L1900,560 L1925,590 L1950,575 L1975,600"
+                  stroke="#4F46E5"
+                  strokeWidth="1"
+                  fill="none"
+                  opacity="0.6"
+                  style={{
+                    animation: 'solutionFlow 18s linear infinite'
+                  }}
+                />
+                
+                {/* Additional EEG spikes for solution effect */}
+                <path
+                  d="M-50,420 L0,415 L10,440 L20,405 L30,435 L40,410 L50,445 L60,400 L70,430 L80,415 L90,450 L100,395 L110,425 L120,410 L130,445 L140,400 L150,430 L160,415 L170,450 L180,395 L190,425 L200,410"
+                  stroke="#6B21A8"
+                  strokeWidth="1.5"
+                  fill="none"
+                  opacity="0.8"
+                  style={{
+                    animation: 'solutionFlow 8s linear infinite'
+                  }}
+                />
               </svg>
             </div>
 
@@ -691,8 +684,7 @@ const Index = () => {
           {/* 4. Our Edge Section */}
           <section 
             id="edge" 
-            className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
-            style={{backgroundColor: '#1a1a1a'}}
+            className="min-h-screen md:min-h-[100vh] bg-black flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
           >
             {/* Large cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8">
@@ -707,63 +699,32 @@ const Index = () => {
               ></div>
             </div>
               
-            {/* High frequency EEG background for Edge section */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-45">
-              <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
-                <defs>
-                  <linearGradient id="edgeEegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
-                    <stop offset="33%" style={{stopColor: '#EC4899', stopOpacity: 1}} />
-                    <stop offset="66%" style={{stopColor: '#3B82F6', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
-                  </linearGradient>
-                  <linearGradient id="edgeEegGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#EC4899', stopOpacity: 0.8}} />
-                  </linearGradient>
-                </defs>
-                
-                <path d="M0,250 L8,265 L12,235 L16,275 L20,230 L24,280 L28,225 L32,260 L36,245 L40,270 L44,235 L48,285 L52,220 L56,265 L60,245 L64,275 L68,230 L72,290 L76,215 L80,260 L84,235 L88,285 L92,220 L96,275 L100,240 L104,265 L108,235 L112,285 L116,215 L120,280 L124,230 L128,295 L132,210 L136,260 L140,245 L144,270 L148,235 L152,285 L156,220 L160,265 L164,235 L168,285 L172,215 L176,275 L180,235 L184,290 L188,205 L192,260 L196,245 L200,270 L204,230 L208,285 L212,220 L216,265 L220,235 L224,285 L228,215 L232,275 L236,235 L240,295 L244,210 L248,260 L252,245 L256,270 L260,235 L264,285 L268,220 L272,265 L276,235 L280,285 L284,215 L288,275 L292,235 L296,290 L300,205 L304,260 L308,245 L312,270 L316,230 L320,285"
-                      stroke="url(#edgeEegGradient)" 
-                      strokeWidth="2.6" 
-                      fill="none" 
-                      style={{
-                        animation: 'edgeFlow 10s linear infinite',
-                        strokeLinecap: 'round'
-                      }} />
-                
-                <path d="M0,450 L9,468 L13,432 L17,478 L21,425 L25,485 L29,420 L33,465 L37,440 L41,475 L45,430 L49,490 L53,415 L57,468 L61,440 L65,480 L69,425 L73,495 L77,410 L81,465 L85,432 L89,490 L93,415 L97,480 L101,435 L105,468 L109,430 L113,490 L117,410 L121,485 L125,425 L129,500 L133,405 L137,465 L141,440 L145,475 L149,430 L153,490 L157,415 L161,468 L165,432 L169,490 L173,410 L177,480 L181,430 L185,495 L189,400 L193,465 L197,440 L201,475 L205,425 L209,490 L213,415 L217,468 L221,432 L225,490 L229,410 L233,480 L237,430 L241,500 L245,405 L249,465 L253,440 L257,475 L261,430 L265,490 L269,415 L273,468 L277,432 L281,490 L285,410 L289,480 L293,430 L297,495 L301,400 L305,465 L309,440 L313,475 L317,425 L321,490"
-                      stroke="url(#edgeEegGradient2)" 
-                      strokeWidth="2.2" 
-                      fill="none" 
-                      style={{
-                        animation: 'edgeFlow 13s linear infinite reverse',
-                        animationDelay: '2s',
-                        strokeLinecap: 'round'
-                      }} />
-                
-                <path d="M0,650 L6,672 L10,628 L14,685 L18,620 L22,690 L26,615 L30,670 L34,635 L38,680 L42,625 L46,695 L50,610 L54,672 L58,635 L62,685 L66,620 L70,700 L74,605 L78,670 L82,628 L86,695 L90,610 L94,685 L98,630 L102,672 L106,625 L110,695 L114,605 L118,690 L122,620 L126,705 L130,600 L134,670 L138,635 L142,680 L146,625 L150,695 L154,610 L158,672 L162,628 L166,695 L170,605 L174,685 L178,625 L182,700 L186,595 L190,670 L194,635 L198,680 L202,620 L206,695 L210,610 L214,672 L218,628 L222,695 L226,605 L230,685 L234,625 L238,705 L242,600 L246,670 L250,635 L254,680 L258,625 L262,695 L266,610 L270,672 L274,628 L278,695 L282,605 L286,685 L290,625 L294,700 L298,595 L302,670 L306,635 L310,680 L314,620 L318,695"
-                      stroke="url(#edgeEegGradient)" 
-                      strokeWidth="1.8" 
-                      fill="none" 
-                      style={{
-                        animation: 'edgeFlow 17s linear infinite',
-                        animationDelay: '4s',
-                        strokeLinecap: 'round'
-                      }} />
-                
-                <path d="M0,850 L7,875 L11,825 L15,885 L19,815 L23,890 L27,810 L31,870 L35,830 L39,880 L43,820 L47,895 L51,805 L55,875 L59,830 L63,885 L67,815 L71,900 L75,800 L79,870 L83,825 L87,895 L91,805 L95,885 L99,825 L103,875 L107,820 L111,895 L115,800 L119,890 L123,815 L127,905 L131,795 L135,870 L139,830 L143,880 L147,820 L151,895 L155,805 L159,875 L163,825 L167,895 L171,800 L175,885 L179,820 L183,900 L187,790 L191,870 L195,830 L199,880 L203,815 L207,895 L211,805 L215,875 L219,825 L223,895 L227,800 L231,885 L235,820 L239,905 L243,795 L247,870 L251,830 L255,880 L259,820 L263,895 L267,805 L271,875 L275,825 L279,895 L283,800 L287,885 L291,820 L295,900 L299,790 L303,870 L307,830 L311,880 L315,815 L319,895"
-                      stroke="url(#edgeEegGradient2)" 
-                      strokeWidth="1.6" 
-                      fill="none" 
-                      style={{
-                        animation: 'edgeFlow 22s linear infinite reverse',
-                        animationDelay: '6s',
-                        strokeLinecap: 'round'
-                      }} />
-              </svg>
-            </div>
+            {/* Subtle EEG patterns overlay */}
+            <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1920 1080">
+              <defs>
+                <linearGradient id="cosmicWave1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
+                  <stop offset="50%" style={{stopColor: '#A78BFA', stopOpacity: 0.8}} />
+                  <stop offset="100%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
+                </linearGradient>
+              </defs>
+              
+              <path
+                d="M0,400 L100,395 L200,410 L300,385 L400,405 L500,380 L600,400 L700,390 L800,415 L900,375 L1000,395 L1100,420 L1200,385 L1300,400 L1400,395 L1500,410 L1600,385 L1700,405 L1800,380 L1900,400"
+                stroke="url(#cosmicWave1)"
+                strokeWidth="2"
+                fill="none"
+                opacity="0.7"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  type="translate"
+                  values="0,0; 30,0; 0,0"
+                  dur="8s"
+                  repeatCount="indefinite"
+                />
+              </path>
+            </svg>
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">

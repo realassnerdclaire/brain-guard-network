@@ -20,7 +20,7 @@ const Compliance = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden" style={{backgroundColor: '#1a1a1a'}}>
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background */}
       <div 
         className="absolute inset-0 z-0"
