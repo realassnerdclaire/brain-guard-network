@@ -108,10 +108,10 @@ const AboutUs = () => {
             alt=""
             className="absolute top-2 -right-16 w-72 h-72 object-cover opacity-45"
             style={{
-              filter: 'brightness(0.9) contrast(1.1) blur(1px)',
+              filter: 'brightness(0.9) contrast(1.1)',
               transform: 'rotate(8deg)',
-              maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0) 100%)',
-              WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0) 100%)'
+              maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0) 100%)',
+              WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0) 100%)'
             }}
           />
         </div>
