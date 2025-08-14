@@ -428,42 +428,42 @@ const Index = () => {
               </svg>
             </div>
 
-            <div className="container relative z-10 text-center px-4 sm:px-6">
+            <div className="container relative z-10 text-center px-4 sm:px-6 h-full flex flex-col justify-center">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in">
                   The Problem
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#10B981] to-[#059669] mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#10B981] to-[#059669] mx-auto mb-3 md:mb-4 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-8 text-center max-w-6xl mx-auto">
-                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-8">
+                <div className="space-y-3 md:space-y-4 text-center max-w-6xl mx-auto">
+                  <p className="text-sm sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 md:mb-4">
                     EEG and BCI devices are leaving the lab for clinics, homes, and consumer environments.
                   </p>
                   
-                  {/* Problem Feature Cards - Timeline Style */}
-                  <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
+                  {/* Problem Feature Cards - Optimized for desktop fit */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto text-left">
                         {/* Raw Brain Data Risk */}
-                        <div className="bg-slate-800/60 border-l-4 border-emerald-100 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                          <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Raw Brain Data at Risk</h3>
-                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Raw brain data is among the most sensitive personal information, but today's security measures fail to protect it in <span className="text-green-300 font-bold">real time</span>.</p>
+                        <div className="bg-slate-800/60 border-l-4 border-emerald-100 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                          <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Raw Brain Data at Risk</h3>
+                          <p className="text-white/80 text-xs md:text-sm leading-relaxed">Raw brain data is among the most sensitive personal information, but today's security measures fail to protect it in <span className="text-green-300 font-bold">real time</span>.</p>
                         </div>
                     
                         {/* Data Breaches */}
-                        <div className="bg-slate-800/60 border-l-4 border-emerald-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                          <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Data Breaches</h3>
-                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Unsecured pipelines expose neurological health information to <span className="text-green-300 font-bold">unauthorized access</span> and potential misuse.</p>
+                        <div className="bg-slate-800/60 border-l-4 border-emerald-200 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                          <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Data Breaches</h3>
+                          <p className="text-white/80 text-xs md:text-sm leading-relaxed">Unsecured pipelines expose neurological health information to <span className="text-green-300 font-bold">unauthorized access</span> and potential misuse.</p>
                         </div>
                     
                         {/* Regulatory Delays */}
-                        <div className="bg-slate-800/60 border-l-4 border-emerald-400 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                          <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Regulatory Delays</h3>
-                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Security gaps cause <span className="text-green-300 font-bold">compliance failures</span> that stall clinical trials and delay market approvals.</p>
+                        <div className="bg-slate-800/60 border-l-4 border-emerald-400 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                          <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Regulatory Delays</h3>
+                          <p className="text-white/80 text-xs md:text-sm leading-relaxed">Security gaps cause <span className="text-green-300 font-bold">compliance failures</span> that stall clinical trials and delay market approvals.</p>
                         </div>
                     
                         {/* Research Integrity Loss */}
-                        <div className="bg-slate-800/60 border-l-4 border-emerald-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                          <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Research Integrity Loss</h3>
-                          <p className="text-white/80 text-xs md:text-lg leading-relaxed"><span className="text-green-300 font-bold">Tampering</span> and unauthorized access compromise research validity and scientific reproducibility.</p>
+                        <div className="bg-slate-800/60 border-l-4 border-emerald-700 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                          <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Research Integrity Loss</h3>
+                          <p className="text-white/80 text-xs md:text-sm leading-relaxed"><span className="text-green-300 font-bold">Tampering</span> and unauthorized access compromise research validity and scientific reproducibility.</p>
                         </div>
                   </div>
                 </div>
