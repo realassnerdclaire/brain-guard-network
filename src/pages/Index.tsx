@@ -483,21 +483,21 @@ const Index = () => {
                       Key regulatory milestones:
                     </h3>
                     <div className="space-y-3 md:space-y-2">
-                      <div className="border-l-4 border-blue-400 pl-3 md:pl-4 bg-slate-800/80 p-2 md:p-2 rounded-r-lg hover:bg-slate-700/80 transition-all duration-300 hover-scale">
+                      <div className="border-l-4 border-pink-200 pl-3 md:pl-4 bg-slate-800/80 p-2 md:p-2 rounded-r-lg hover:bg-slate-700/80 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
                           <span className="text-lg md:text-lg"></span>
                           <h4 className="text-sm md:text-sm font-semibold text-white">2025:</h4>
                         </div>
                         <p className="text-sm md:text-sm text-white/80">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
                       </div>
-                      <div className="border-l-4 border-purple-400 pl-3 md:pl-4 bg-slate-800/80 p-2 md:p-2 rounded-r-lg hover:bg-slate-700/80 transition-all duration-300 hover-scale">
+                      <div className="border-l-4 border-pink-400 pl-3 md:pl-4 bg-slate-800/80 p-2 md:p-2 rounded-r-lg hover:bg-slate-700/80 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
                           <span className="text-lg md:text-lg"></span>
                           <h4 className="text-sm md:text-sm font-semibold text-white">2026:</h4>
                         </div>
                         <p className="text-sm md:text-sm text-white/80">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
                       </div>
-                      <div className="border-l-4 border-pink-400 pl-3 md:pl-4 bg-slate-800/80 p-2 md:p-2 rounded-r-lg hover:bg-slate-700/80 transition-all duration-300 hover-scale">
+                      <div className="border-l-4 border-pink-600 pl-3 md:pl-4 bg-slate-800/80 p-2 md:p-2 rounded-r-lg hover:bg-slate-700/80 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
                           <span className="text-lg md:text-lg"></span>
                           <h4 className="text-sm md:text-sm font-semibold text-white">2027+:</h4>
