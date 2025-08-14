@@ -29,116 +29,114 @@ const HeroXBrainer = () => {
       </div>
       
       
-      {/* MASSIVE EEG graphs for first landing page - very top */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-10 opacity-95">
+      {/* ULTRA VISIBLE EEG graphs - absolute front layer */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-50" style={{opacity: 1}}>
         <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
           <defs>
-            <linearGradient id="heroEegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: '#EC4899', stopOpacity: 1}} />
-              <stop offset="33%" style={{stopColor: '#3B82F6', stopOpacity: 1}} />
-              <stop offset="66%" style={{stopColor: '#A855F7', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#EC4899', stopOpacity: 1}} />
+            <linearGradient id="ultraHeroEeg1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: '#FF1493', stopOpacity: 1}} />
+              <stop offset="50%" style={{stopColor: '#00BFFF', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#9932CC', stopOpacity: 1}} />
             </linearGradient>
-            <linearGradient id="heroEegGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 1}} />
-              <stop offset="50%" style={{stopColor: '#EC4899', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 1}} />
+            <linearGradient id="ultraHeroEeg2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: '#9932CC', stopOpacity: 1}} />
+              <stop offset="50%" style={{stopColor: '#FF1493', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#00BFFF', stopOpacity: 1}} />
             </linearGradient>
-            <linearGradient id="heroEegGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 1}} />
-              <stop offset="33%" style={{stopColor: '#A855F7', stopOpacity: 1}} />
-              <stop offset="66%" style={{stopColor: '#EC4899', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 1}} />
+            <linearGradient id="ultraHeroEeg3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: '#00BFFF', stopOpacity: 1}} />
+              <stop offset="50%" style={{stopColor: '#9932CC', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#FF1493', stopOpacity: 1}} />
             </linearGradient>
           </defs>
           
-          {/* First EEG line - super fast movement */}
-          <path d="M0,80 L5,95 L8,65 L12,105 L15,60 L18,110 L22,55 L25,90 L28,75 L32,100 L35,65 L38,115 L42,50 L45,95 L48,75 L52,105 L55,60 L58,120 L62,45 L65,90 L68,65 L72,115 L75,50 L78,105 L82,70 L85,95 L88,65 L92,115 L95,45 L98,110 L102,60 L105,125 L108,40 L112,90 L115,75 L118,100 L122,65 L125,118 L128,50 L132,95 L135,65 L138,115 L142,45 L145,105 L148,70 L152,120 L155,40 L158,90 L162,65 L165,105 L168,60 L172,115 L175,50 L178,95 L182,65 L185,118 L188,45 L192,100 L195,75 L198,110 L202,55 L205,120 L208,50 L212,95 L215,65 L218,115 L222,50 L225,105 L228,70 L232,125 L235,40 L238,90 L242,75 L245,100 L248,65 L252,118 L255,50 L258,95 L262,65 L265,115 L268,45 L272,105 L275,70 L278,120 L282,40 L285,90 L288,65 L292,105 L295,60 L298,115 L302,50 L305,95 L308,65 L312,118 L315,45 L318,100 L322,75 L325,110 L328,55 L332,120"
-                stroke="url(#heroEegGradient)" 
-                strokeWidth="5.5" 
-                fill="none" 
-                style={{
-                  animation: 'eeg-flow 1.5s ease-in-out infinite',
-                  strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 6px currentColor)'
-                }} />
+          {/* SUPER FAST EEG Line 1 - Top area */}
+          <path d="M0,50 L10,80 L20,20 L30,110 L40,10 L50,120 L60,5 L70,90 L80,30 L90,100 L100,20 L110,130 L120,0 L130,80 L140,30 L150,110 L160,10 L170,140 L180,0 L190,90 L200,20 L210,120 L220,5 L230,110 L240,30 L250,100 L260,20 L270,130 L280,0 L290,140 L300,10 L310,90 L320,30 L330,120 L340,5 L350,110 L360,20 L370,130 L380,0 L390,100 L400,30 L410,140"
+            stroke="url(#ultraHeroEeg1)" 
+            strokeWidth="8" 
+            fill="none" 
+            style={{
+              animation: 'lightning-eeg 0.5s linear infinite',
+              strokeLinecap: 'round',
+              filter: 'drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor)',
+            }} />
           
-          {/* Second EEG line - ultra fast */}
-          <path d="M0,140 L4,158 L7,122 L11,168 L14,115 L17,175 L21,110 L24,155 L27,135 L31,165 L34,125 L37,180 L41,105 L44,158 L47,135 L51,170 L54,120 L57,185 L61,100 L64,155 L67,122 L71,178 L74,105 L77,170 L81,130 L84,158 L87,125 L91,180 L94,100 L97,175 L101,115 L104,190 L107,95 L111,155 L114,135 L117,165 L121,125 L124,183 L127,105 L131,158 L134,122 L137,180 L141,100 L144,170 L147,130 L151,190 L154,95 L157,155 L161,135 L164,165 L167,120 L171,185 L174,105 L177,158 L181,122 L184,183 L187,100 L191,170 L194,130 L197,175 L201,115 L204,190 L207,105 L211,158 L214,122 L217,180 L221,105 L224,170 L227,130 L231,195 L234,90 L237,155 L241,135 L244,165 L247,125 L251,183 L254,105 L257,158 L261,122 L264,180 L267,100 L271,170 L274,130 L277,190 L281,95 L284,155 L287,135 L291,165 L294,120 L297,185 L301,105 L304,158 L307,122 L311,183 L314,100 L317,170 L321,130 L324,175 L327,115 L331,190"
-                stroke="url(#heroEegGradient2)" 
-                strokeWidth="5.2" 
-                fill="none" 
-                style={{
-                  animation: 'eeg-flow 1.8s ease-in-out infinite reverse',
-                  strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 6px currentColor)'
-                }} />
+          {/* SUPER FAST EEG Line 2 - Upper middle */}
+          <path d="M0,150 L8,185 L16,115 L24,200 L32,100 L40,220 L48,90 L56,175 L64,130 L72,190 L80,115 L88,210 L96,85 L104,185 L112,130 L120,200 L128,100 L136,230 L144,85 L152,175 L160,115 L168,220 L176,90 L184,200 L192,130 L200,190 L208,115 L216,210 L224,85 L232,230 L240,100 L248,175 L256,130 L264,220 L272,90 L280,200 L288,115 L296,230 L304,85 L312,175 L320,130 L328,210 L336,90 L344,200 L352,115 L360,230 L368,85 L376,190 L384,130 L392,220 L400,90 L408,230"
+            stroke="url(#ultraHeroEeg2)" 
+            strokeWidth="7.5" 
+            fill="none" 
+            style={{
+              animation: 'lightning-eeg 0.4s linear infinite reverse',
+              strokeLinecap: 'round',
+              filter: 'drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor)',
+            }} />
           
-          {/* Third EEG line - rapid movement */}
-          <path d="M0,200 L3,222 L6,178 L9,235 L12,170 L15,245 L18,165 L21,215 L24,190 L27,225 L30,180 L33,250 L36,160 L39,222 L42,190 L45,235 L48,175 L51,255 L54,155 L57,215 L60,178 L63,248 L66,160 L69,235 L72,185 L75,222 L78,180 L81,250 L84,155 L87,245 L90,170 L93,260 L96,150 L99,215 L102,190 L105,225 L108,180 L111,253 L114,160 L117,222 L120,178 L123,250 L126,155 L129,235 L132,185 L135,260 L138,150 L141,215 L144,190 L147,225 L150,175 L153,255 L156,160 L159,222 L162,178 L165,253 L168,155 L171,235 L174,185 L177,245 L180,170 L183,260 L186,160 L189,222 L192,178 L195,250 L198,160 L201,235 L204,185 L207,265 L210,145 L213,215 L216,190 L219,225 L222,180 L225,253 L228,160 L231,222 L234,178 L237,250 L240,155 L243,235 L246,185 L249,260 L252,150 L255,215 L258,190 L261,225 L264,175 L267,255 L270,160 L273,222 L276,178 L279,253 L282,155 L285,235 L288,185 L291,245 L294,170 L297,260 L300,160 L303,222 L306,178 L309,250 L312,160 L315,235 L318,185 L321,265"
-                stroke="url(#heroEegGradient3)" 
-                strokeWidth="4.8" 
-                fill="none" 
-                style={{
-                  animation: 'eeg-flow 2.2s ease-in-out infinite',
-                  strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 6px currentColor)'
-                }} />
+          {/* SUPER FAST EEG Line 3 - Middle */}
+          <path d="M0,280 L6,320 L12,240 L18,340 L24,220 L30,360 L36,200 L42,300 L48,260 L54,320 L60,240 L66,370 L72,210 L78,320 L84,260 L90,340 L96,230 L102,380 L108,200 L114,300 L120,240 L126,360 L132,210 L138,340 L144,270 L150,320 L156,240 L162,370 L168,200 L174,380 L180,220 L186,300 L192,260 L198,320 L204,230 L210,380 L216,200 L222,340 L228,240 L234,360 L240,210 L246,320 L252,260 L258,380 L264,220 L270,300 L276,240 L282,370 L288,200 L294,340 L300,260 L306,320 L312,230 L318,380 L324,200 L330,360 L336,240 L342,300 L348,260 L354,380"
+            stroke="url(#ultraHeroEeg3)" 
+            strokeWidth="7" 
+            fill="none" 
+            style={{
+              animation: 'lightning-eeg 0.6s linear infinite',
+              strokeLinecap: 'round',
+              filter: 'drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor)',
+            }} />
           
-          {/* Fourth EEG line - extreme speed */}
-          <path d="M0,260 L2,285 L4,235 L6,295 L8,225 L10,305 L12,220 L14,275 L16,245 L18,285 L20,235 L22,310 L24,215 L26,285 L28,245 L30,295 L32,230 L34,315 L36,210 L38,275 L40,235 L42,308 L44,215 L46,295 L48,240 L50,285 L52,235 L54,310 L56,210 L58,305 L60,225 L62,320 L64,205 L66,275 L68,245 L70,285 L72,235 L74,313 L76,215 L78,285 L80,235 L82,310 L84,210 L86,295 L88,240 L90,320 L92,205 L94,275 L96,245 L98,285 L100,230 L102,315 L104,215 L106,285 L108,235 L110,313 L112,210 L114,295 L116,240 L118,305 L120,225 L122,320 L124,215 L126,285 L128,235 L130,310 L132,215 L134,295 L136,240 L138,325 L140,200 L142,275 L144,245 L146,285 L148,235 L150,313 L152,215 L154,285 L156,235 L158,310 L160,210 L162,295 L164,240 L166,320 L168,205 L170,275 L172,245 L174,285 L176,230 L178,315 L180,215 L182,285 L184,235 L186,313 L188,210 L190,295 L192,240 L194,305 L196,225 L198,320 L200,215 L202,285 L204,235 L206,310 L208,215 L210,295 L212,240 L214,325"
-                stroke="url(#heroEegGradient)" 
-                strokeWidth="4.5" 
-                fill="none" 
-                style={{
-                  animation: 'eeg-flow 1.2s ease-in-out infinite reverse',
-                  strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 6px currentColor)'
-                }} />
+          {/* SUPER FAST EEG Line 4 - Lower middle */}
+          <path d="M0,420 L5,465 L10,375 L15,485 L20,355 L25,505 L30,335 L35,445 L40,395 L45,465 L50,375 L55,515 L60,345 L65,465 L70,395 L75,485 L80,365 L85,525 L90,335 L95,445 L100,375 L105,505 L110,345 L115,485 L120,405 L125,465 L130,375 L135,515 L140,335 L145,525 L150,355 L155,445 L160,395 L165,465 L170,365 L175,525 L180,335 L185,485 L190,375 L195,505 L200,345 L205,465 L210,395 L215,525 L220,355 L225,445 L230,375 L235,515 L240,345 L245,485 L250,395 L255,465 L260,365 L265,525 L270,335 L275,505 L280,375 L285,445 L290,395 L295,525"
+            stroke="url(#ultraHeroEeg1)" 
+            strokeWidth="6.5" 
+            fill="none" 
+            style={{
+              animation: 'lightning-eeg 0.3s linear infinite reverse',
+              strokeLinecap: 'round',
+              filter: 'drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor)',
+            }} />
           
-          {/* Fifth EEG line - lightning fast */}
-          <path d="M0,320 L3,348 L5,292 L8,358 L10,285 L13,368 L15,280 L18,335 L20,305 L23,345 L25,295 L28,375 L30,275 L33,348 L35,305 L38,358 L40,290 L43,380 L45,270 L48,335 L50,292 L53,370 L55,275 L58,358 L60,300 L63,348 L65,295 L68,375 L70,270 L73,368 L75,285 L78,385 L80,265 L83,335 L85,305 L88,345 L90,295 L93,378 L95,275 L98,348 L100,292 L103,375 L105,270 L108,358 L110,300 L113,385 L115,265 L118,335 L120,305 L123,345 L125,290 L128,380 L130,275 L133,348 L135,292 L138,378 L140,270 L143,358 L145,300 L148,368 L150,285 L153,385 L155,275 L158,348 L160,292 L163,375 L165,275 L168,358 L170,300 L173,390 L175,260 L178,335 L180,305 L183,345 L185,295 L188,378 L190,275 L193,348 L195,292 L198,375 L200,270 L203,358 L205,300 L208,385 L210,265 L213,335 L215,305 L218,345 L220,290 L223,380 L225,275 L228,348 L230,292 L233,378 L235,270 L238,358 L240,300 L243,368 L245,285 L248,385"
-                stroke="url(#heroEegGradient2)" 
-                strokeWidth="4.2" 
-                fill="none" 
-                style={{
-                  animation: 'eeg-flow 1.6s ease-in-out infinite',
-                  strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 6px currentColor)'
-                }} />
+          {/* SUPER FAST EEG Line 5 - Lower area */}
+          <path d="M0,560 L4,605 L8,515 L12,625 L16,495 L20,645 L24,475 L28,585 L32,535 L36,605 L40,515 L44,655 L48,485 L52,605 L56,535 L60,625 L64,505 L68,665 L72,475 L76,585 L80,515 L84,645 L88,485 L92,625 L96,545 L100,605 L104,515 L108,655 L112,475 L116,665 L120,495 L124,585 L128,535 L132,605 L136,505 L140,665 L144,475 L148,625 L152,515 L156,645 L160,485 L164,605 L168,535 L172,665 L176,495 L180,585 L184,515 L188,655 L192,485 L196,625 L200,535 L204,605 L208,505 L212,665 L216,475 L220,645 L224,515 L228,585 L232,535 L236,665"
+            stroke="url(#ultraHeroEeg2)" 
+            strokeWidth="6" 
+            fill="none" 
+            style={{
+              animation: 'lightning-eeg 0.7s linear infinite',
+              strokeLinecap: 'round',
+              filter: 'drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor)',
+            }} />
           
-          {/* Sixth EEG line - blazing fast */}
-          <path d="M0,380 L2,410 L3,350 L5,420 L6,345 L8,430 L9,340 L11,395 L12,365 L14,405 L15,355 L17,435 L18,335 L20,410 L21,365 L23,420 L24,350 L26,440 L27,330 L29,395 L30,350 L32,430 L33,335 L35,420 L36,360 L38,410 L39,355 L41,435 L42,330 L44,430 L45,345 L47,445 L48,325 L50,395 L51,365 L53,405 L54,355 L56,438 L57,335 L59,410 L60,350 L62,435 L63,330 L65,420 L66,360 L68,445 L69,325 L71,395 L72,365 L74,405 L75,350 L77,440 L78,335 L80,410 L81,350 L83,438 L84,330 L86,420 L87,360 L89,430 L90,345 L92,445 L93,335 L95,410 L96,350 L98,435 L99,335 L101,420 L102,360 L104,450 L105,320 L107,395 L108,365 L110,405 L111,355 L113,438 L114,335 L116,410 L117,350 L119,435 L120,330 L122,420 L123,360 L125,445 L126,325 L128,395 L129,365 L131,405 L132,350 L134,440 L135,335 L137,410 L138,350 L140,438 L141,330 L143,420 L144,360 L146,430 L147,345 L149,445"
-                stroke="url(#heroEegGradient3)" 
-                strokeWidth="3.8" 
-                fill="none" 
-                style={{
-                  animation: 'eeg-flow 1.0s ease-in-out infinite reverse',
-                  strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 6px currentColor)'
-                }} />
+          {/* SUPER FAST EEG Line 6 - Bottom area */}
+          <path d="M0,700 L3,750 L6,650 L9,770 L12,630 L15,790 L18,610 L21,730 L24,670 L27,750 L30,650 L33,800 L36,620 L39,750 L42,670 L45,770 L48,640 L51,810 L54,610 L57,730 L60,650 L63,790 L66,620 L69,770 L72,680 L75,750 L78,650 L81,800 L84,610 L87,810 L90,630 L93,730 L96,670 L99,750 L102,640 L105,810 L108,610 L111,770 L114,650 L117,790 L120,620 L123,750 L126,670 L129,810 L132,630 L135,730 L138,650 L141,800 L144,620 L147,770 L150,670 L153,750 L156,640 L159,810"
+            stroke="url(#ultraHeroEeg3)" 
+            strokeWidth="5.5" 
+            fill="none" 
+            style={{
+              animation: 'lightning-eeg 0.4s linear infinite reverse',
+              strokeLinecap: 'round',
+              filter: 'drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor)',
+            }} />
           
-          {/* Seventh EEG line - ultra rapid */}
-          <path d="M0,440 L2,472 L3,408 L5,485 L6,400 L8,495 L9,395 L11,460 L12,425 L14,470 L15,415 L17,500 L18,390 L20,472 L21,425 L23,485 L24,410 L26,505 L27,385 L29,460 L30,408 L32,495 L33,390 L35,485 L36,420 L38,472 L39,415 L41,500 L42,385 L44,495 L45,400 L47,510 L48,380 L50,460 L51,425 L53,470 L54,415 L56,503 L57,390 L59,472 L60,408 L62,500 L63,385 L65,485 L66,420 L68,510 L69,380 L71,460 L72,425 L74,470 L75,410 L77,505 L78,390 L80,472 L81,408 L83,503 L84,385 L86,485 L87,420 L89,495 L90,400 L92,510 L93,390 L95,472 L96,408 L98,500 L99,390 L101,485 L102,420 L104,515 L105,375 L107,460 L108,425 L110,470 L111,415 L113,503 L114,390 L116,472 L117,408 L119,500 L120,385 L122,485 L123,420 L125,510 L126,380 L128,460 L129,425 L131,470 L132,410 L134,505 L135,390 L137,472 L138,408 L140,503 L141,385 L143,485 L144,420 L146,495 L147,400 L149,510"
-                stroke="url(#heroEegGradient)" 
-                strokeWidth="3.5" 
-                fill="none" 
-                style={{
-                  animation: 'eeg-flow 0.8s ease-in-out infinite',
-                  strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 6px currentColor)'
-                }} />
+          {/* SUPER FAST EEG Line 7 - Additional top layer */}
+          <path d="M0,840 L2,895 L4,785 L6,915 L8,765 L10,935 L12,745 L14,875 L16,805 L18,895 L20,785 L22,945 L24,755 L26,895 L28,805 L30,915 L32,775 L34,955 L36,745 L38,875 L40,785 L42,935 L44,755 L46,915 L48,815 L50,895 L52,785 L54,945 L56,745 L58,955 L60,765 L62,875 L64,805 L66,895 L68,775 L70,955 L72,745 L74,915 L76,785 L78,935 L80,755 L82,895 L84,805 L86,955 L88,765 L90,875 L92,785 L94,945 L96,755 L98,915 L100,805 L102,895 L104,775 L106,955"
+            stroke="url(#ultraHeroEeg1)" 
+            strokeWidth="5" 
+            fill="none" 
+            style={{
+              animation: 'lightning-eeg 0.2s linear infinite',
+              strokeLinecap: 'round',
+              filter: 'drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor)',
+            }} />
           
-          {/* Eighth EEG line - maximum speed */}
-          <path d="M0,500 L1,535 L2,465 L3,545 L4,460 L5,555 L6,455 L7,520 L8,485 L9,530 L10,475 L11,560 L12,450 L13,535 L14,485 L15,545 L16,470 L17,565 L18,445 L19,520 L20,465 L21,555 L22,450 L23,545 L24,480 L25,535 L26,475 L27,560 L28,445 L29,555 L30,460 L31,570 L32,440 L33,520 L34,485 L35,530 L36,475 L37,563 L38,450 L39,535 L40,465 L41,560 L42,445 L43,545 L44,480 L45,570 L46,440 L47,520 L48,485 L49,530 L50,470 L51,565 L52,450 L53,535 L54,465 L55,563 L56,445 L57,545 L58,480 L59,555 L60,460 L61,570 L62,450 L63,535 L64,465 L65,560 L66,450 L67,545 L68,480 L69,575 L70,435 L71,520 L72,485 L73,530 L74,475 L75,563 L76,450 L77,535 L78,465 L79,560 L80,445 L81,545 L82,480 L83,570 L84,440 L85,520 L86,485 L87,530 L88,470 L89,565 L90,450 L91,535 L92,465 L93,563 L94,445 L95,545 L96,480 L97,555 L98,460 L99,570"
-                stroke="url(#heroEegGradient2)" 
-                strokeWidth="3.2" 
-                fill="none" 
-                style={{
-                  animation: 'eeg-flow 0.6s ease-in-out infinite reverse',
-                  strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 6px currentColor)'
-                }} />
+          {/* SUPER FAST EEG Line 8 - Final ultra fast layer */}
+          <path d="M0,980 L1,1035 L2,925 L3,1055 L4,905 L5,1075 L6,885 L7,1015 L8,945 L9,1035 L10,925 L11,1085 L12,895 L13,1035 L14,945 L15,1055 L16,915 L17,1095 L18,885 L19,1015 L20,925 L21,1075 L22,895 L23,1055 L24,955 L25,1035 L26,925 L27,1085 L28,885 L29,1095 L30,905 L31,1015 L32,945 L33,1035 L34,915 L35,1095 L36,885 L37,1055 L38,925 L39,1075 L40,895 L41,1035 L42,945 L43,1095 L44,905 L45,1015 L46,925 L47,1085 L48,895 L49,1055 L50,945 L51,1035 L52,915 L53,1095"
+            stroke="url(#ultraHeroEeg2)" 
+            strokeWidth="4.5" 
+            fill="none" 
+            style={{
+              animation: 'lightning-eeg 0.1s linear infinite reverse',
+              strokeLinecap: 'round',
+              filter: 'drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor)',
+            }} />
         </svg>
       </div>
 
