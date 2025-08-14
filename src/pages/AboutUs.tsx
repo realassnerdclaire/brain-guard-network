@@ -119,7 +119,6 @@ const AboutUs = () => {
           <div className="space-y-8 text-lg leading-relaxed">
             {/* What is XBrainer AI */}
             <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#6C63FF]/30 rounded-xl p-6">
-              <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-[#6C63FF] to-transparent"></div>
               <h2 className="text-2xl font-bold text-[#6C63FF] mb-4">What is XBrainer AI?</h2>
               <p className="text-white/90 text-base">
                 Real-time security layer for brain–computer interfaces. Encrypts streams, validates packets, manages consent-based access, and maintains audit logs between EEG/IMU devices and applications.
@@ -134,7 +133,6 @@ const AboutUs = () => {
 
             {/* Why it matters */}
             <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#A855F7]/30 rounded-xl p-6">
-              <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-[#A855F7] to-transparent"></div>
               <h2 className="text-2xl font-bold text-[#A855F7] mb-4">Why it matters?</h2>
               <p className="text-white/90 text-base">
                 EEG/BCI pipelines lack encryption, packet validation, consent controls, and audit logs. Missing security creates <span className="text-red-400">exposed data</span>, <span className="text-red-400">corrupted results</span>, and <span className="text-red-400">delayed approvals</span> as projects scale to production.
@@ -143,7 +141,6 @@ const AboutUs = () => {
 
             {/* Founder Team */}
             <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#3B82F6]/30 rounded-xl p-6">
-              <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-[#3B82F6] to-transparent"></div>
               <h2 className="text-2xl font-bold text-[#3B82F6] mb-6">Founder Team</h2>
               <div className="space-y-6">
                 <div className="border-l-2 border-[#6C63FF] pl-4">
@@ -171,7 +168,6 @@ const AboutUs = () => {
 
             {/* Why we started XBrainer AI */}
             <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#14B8A6]/30 rounded-xl p-6">
-              <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-[#14B8A6] to-transparent"></div>
               <h2 className="text-2xl font-bold text-[#14B8A6] mb-4">Why we started XBrainer AI</h2>
               <p className="text-white/90 text-base leading-relaxed">
                 Claire's stroke left her exposed and vulnerable—neural signals needed protection at capture. Owen saw timing errors destroy Cleveland Clinic results. Angelina witnessed corrupted Mount Sinai sessions that should have been stopped upstream. We're building the missing security layer: lock, check, gate, log—so when biology wavers, data doesn't.
