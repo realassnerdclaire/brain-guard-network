@@ -338,44 +338,42 @@ const Index = () => {
               </svg>
             </div>
 
-            <div className="container relative z-10 text-center px-6 sm:px-8 lg:px-12">
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-white mb-4 md:mb-4 animate-fade-in">
+            <div className="container relative z-10 text-center px-4 sm:px-6">
+              <div className="max-w-6xl mx-auto">
+                <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   The Problem
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#6C63FF] to-[#A855F7] mx-auto mb-8 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#6C63FF] to-[#A855F7] mx-auto mb-4 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-4 text-left max-w-4xl mx-auto">
-                  <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-                    <p className="text-base md:text-base text-white/90 leading-relaxed mb-3 md:mb-2">
-                      EEG and BCI devices are leaving the lab for clinics, homes, and consumer environments.
-                    </p>
-                  </div>
+                <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
+                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
+                    EEG and BCI devices are leaving the lab for clinics, homes, and consumer environments.
+                  </p>
                   
-                  <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
-                    <p className="text-base md:text-base text-white/90 leading-relaxed mb-4 md:mb-3">
-                      But raw brain data is among the most sensitive personal information. And today's security measures fail to protect it in real time.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-black/40 border border-[#7C3AED]/30 rounded-2xl p-4 md:p-4 animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.6s'}}>
-                    <h3 className="text-lg md:text-lg font-bold text-white mb-3 md:mb-3 flex items-center gap-3">
-                      <span className="text-[#6C63FF] text-xl md:text-xl animate-pulse"></span>
-                      Unsecured pipelines risk:
-                    </h3>
-                    <div className="space-y-2 md:space-y-2">
-                      <div className="flex items-start gap-2 md:gap-3 p-2 md:p-2 bg-purple-200/20 rounded-lg border border-purple-200/20 hover:border-purple-200/40 transition-all duration-300 hover-scale">
-                        <span className="text-purple-200 text-base md:text-base animate-pulse"></span>
-                        <span className="text-sm md:text-sm text-white/90"><strong>Data breaches</strong> exposing neurological health information</span>
-                      </div>
-                      <div className="flex items-start gap-2 md:gap-3 p-2 md:p-2 bg-purple-400/20 rounded-lg border border-purple-400/20 hover:border-purple-400/40 transition-all duration-300 hover-scale">
-                        <span className="text-purple-400 text-base md:text-base animate-pulse"></span>
-                        <span className="text-sm md:text-sm text-white/90"><strong>Regulatory delays</strong> that stall trials and market approvals</span>
-                      </div>
-                      <div className="flex items-start gap-2 md:gap-3 p-2 md:p-2 bg-purple-600/20 rounded-lg border border-purple-600/20 hover:border-purple-600/40 transition-all duration-300 hover-scale">
-                        <span className="text-purple-600 text-base md:text-base animate-pulse"></span>
-                        <span className="text-sm md:text-sm text-white/90"><strong>Research integrity</strong> loss from tampering or unauthorized access</span>
-                      </div>
+                  {/* Problem Feature Cards - Timeline Style */}
+                  <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
+                    {/* Raw Brain Data Risk */}
+                    <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Raw Brain Data at Risk</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Raw brain data is among the most sensitive personal information, but today's security measures fail to protect it in real time.</p>
+                    </div>
+                    
+                    {/* Data Breaches */}
+                    <div className="bg-slate-800/60 border-l-4 border-red-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Data Breaches</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Unsecured pipelines expose neurological health information to unauthorized access and potential misuse.</p>
+                    </div>
+                    
+                    {/* Regulatory Delays */}
+                    <div className="bg-slate-800/60 border-l-4 border-orange-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Regulatory Delays</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Security gaps cause compliance failures that stall clinical trials and delay market approvals.</p>
+                    </div>
+                    
+                    {/* Research Integrity Loss */}
+                    <div className="bg-slate-800/60 border-l-4 border-yellow-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Research Integrity Loss</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Tampering and unauthorized access compromise research validity and scientific reproducibility.</p>
                     </div>
                   </div>
                 </div>
@@ -457,68 +455,46 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-white mb-4 md:mb-4 animate-fade-in">
+                <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   The Urgency
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-8 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-4 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-4 text-left max-w-4xl mx-auto">
-                  <div className="bg-black/50 border border-gray-700/50 rounded-2xl p-4 md:p-4 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.2s'}}>
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-2">
-                      <span className="text-2xl md:text-2xl animate-pulse"></span>
-                      <h3 className="text-lg md:text-lg font-bold text-white">Market Explosion</h3>
+                <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
+                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
+                    The market is scaling fast — <span className="text-pink-300 font-semibold bg-pink-500/20 px-1 py-0.5 rounded">3M+ EEG devices expected in North America by 2026</span>.
+                  </p>
+                  
+                  {/* Urgency Feature Cards - Timeline Style */}
+                  <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
+                    {/* Market Explosion */}
+                    <div className="bg-slate-800/60 border-l-4 border-pink-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Market Explosion</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">More devices = more attack surfaces = higher compliance risk</p>
                     </div>
-                    <p className="text-base md:text-base text-white/90 leading-relaxed mb-2 md:mb-2">
-                      The market is scaling fast — <span className="text-pink-300 font-semibold bg-pink-500/20 px-2 py-1 rounded animate-pulse">3M+ EEG devices expected in North America by 2026</span>.
-                    </p>
-                    <div className="flex items-center gap-2 text-sm md:text-sm text-pink-400 font-semibold">
-                      <span className="animate-pulse"></span>
-                      <span>More devices = more attack surfaces = higher compliance risk</span>
+                    
+                    {/* 2025 Milestones */}
+                    <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2025: FDA Guidance</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
+                    </div>
+                    
+                    {/* 2026 Enforcement */}
+                    <div className="bg-slate-800/60 border-l-4 border-yellow-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2026: Enforcement Tightens</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
+                    </div>
+                    
+                    {/* 2027+ New Protections */}
+                    <div className="bg-slate-800/60 border-l-4 border-red-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2027+: Market Entry Risk</h3>
+                      <p className="text-white/80 text-xs md:text-lg leading-relaxed">Potential new neurodata-specific protections may limit non-compliant market entry</p>
                     </div>
                   </div>
                   
-                  <div className="bg-black/60 border border-gray-700/50 rounded-2xl p-4 md:p-4 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                    <h3 className="text-lg md:text-lg font-bold text-white mb-3 md:mb-3 flex items-center gap-2 md:gap-2">
-                      <span className="text-yellow-400 text-xl md:text-xl animate-pulse"></span>
-                      Key regulatory milestones:
-                    </h3>
-                    <div className="space-y-3 md:space-y-2">
-                      <div className="border-l-4 border-pink-200 pl-3 md:pl-4 bg-slate-800/80 p-2 md:p-2 rounded-r-lg hover:bg-slate-700/80 transition-all duration-300 hover-scale">
-                        <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
-                          <span className="text-lg md:text-lg"></span>
-                          <h4 className="text-sm md:text-sm font-semibold text-white">2025:</h4>
-                        </div>
-                        <p className="text-sm md:text-sm text-white/80">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
-                      </div>
-                      <div className="border-l-4 border-pink-400 pl-3 md:pl-4 bg-slate-800/80 p-2 md:p-2 rounded-r-lg hover:bg-slate-700/80 transition-all duration-300 hover-scale">
-                        <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
-                          <span className="text-lg md:text-lg"></span>
-                          <h4 className="text-sm md:text-sm font-semibold text-white">2026:</h4>
-                        </div>
-                        <p className="text-sm md:text-sm text-white/80">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
-                      </div>
-                      <div className="border-l-4 border-pink-600 pl-3 md:pl-4 bg-slate-800/80 p-2 md:p-2 rounded-r-lg hover:bg-slate-700/80 transition-all duration-300 hover-scale">
-                        <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
-                          <span className="text-lg md:text-lg"></span>
-                          <h4 className="text-sm md:text-sm font-semibold text-white">2027+:</h4>
-                        </div>
-                        <p className="text-sm md:text-sm text-white/80">Potential new neurodata-specific protections may limit non-compliant market entry</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-black/60 border border-pink-400/40 rounded-2xl p-4 md:p-4 text-center animate-scale-in relative overflow-hidden" style={{animationDelay: '0.6s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-transparent animate-pulse"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center justify-center gap-2 md:gap-2 mb-2 md:mb-2">
-                        <span className="text-2xl md:text-2xl animate-pulse"></span>
-                        <span className="text-2xl md:text-2xl animate-pulse"></span>
-                      </div>
-                      <p className="text-base md:text-base text-white font-semibold">
-                        Companies that wait risk being <span className="text-white bg-pink-500/30 px-2 md:px-2 py-1 rounded-lg animate-pulse sparkle">locked out</span> of clinical and consumer markets.
-                      </p>
-                    </div>
-                  </div>
+                  <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mt-4 md:mt-12">
+                    Companies that wait risk being <span className="text-white bg-pink-500/30 px-1 py-0.5 rounded animate-pulse">locked out</span> of clinical and consumer markets.
+                  </p>
                 </div>
               </div>
             </div>
@@ -712,35 +688,35 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-white mb-4 md:mb-4 animate-fade-in">
+                <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   Our Edge
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-8 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-4 md:mb-6 animate-pulse" />
                 
                 {/* Our Edge Feature Cards - Timeline Style */}
-                <div className="space-y-6 max-w-4xl mx-auto text-left">
+                <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
                   {/* Patent-Pending Security Pipeline */}
-                  <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Patent-Pending Security Pipeline</h3>
-                    <p className="text-white/80 text-sm md:text-lg leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Patent-Pending Security Pipeline</h3>
+                    <p className="text-white/80 text-xs md:text-lg leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
                   </div>
                   
                   {/* Regulatory-First Design */}
-                  <div className="bg-slate-800/60 border-l-4 border-green-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Regulatory-First Design</h3>
-                    <p className="text-white/80 text-sm md:text-lg leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-green-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Regulatory-First Design</h3>
+                    <p className="text-white/80 text-xs md:text-lg leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
                   </div>
                   
                   {/* AI-Driven Threat Detection */}
-                  <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">AI-Driven Threat Detection</h3>
-                    <p className="text-white/80 text-sm md:text-lg leading-relaxed">Advanced machine learning specifically tuned for BCI signal anomalies and neural data security threats.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">AI-Driven Threat Detection</h3>
+                    <p className="text-white/80 text-xs md:text-lg leading-relaxed">Advanced machine learning specifically tuned for BCI signal anomalies and neural data security threats.</p>
                   </div>
                   
                   {/* Seamless Integration */}
-                  <div className="bg-slate-800/60 border-l-4 border-orange-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Seamless Integration</h3>
-                    <p className="text-white/80 text-sm md:text-lg leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-orange-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Seamless Integration</h3>
+                    <p className="text-white/80 text-xs md:text-lg leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
                   </div>
                 </div>
               </div>
