@@ -263,8 +263,18 @@ All colors MUST be HSL.
     100% { 
       transform: translateX(2020px);
       opacity: 0.4;
-    }
   }
+}
+
+/* Scrollbar hide utilities for horizontal scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
   
   @keyframes edgeFlow {
     0% { 

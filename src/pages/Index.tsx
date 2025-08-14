@@ -254,11 +254,15 @@ const Index = () => {
           </header>
           <HeroXBrainer />
           
-          {/* 1. Problem Section */}
-          <section 
-            id="problem" 
-            className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden"
-          >
+          {/* Horizontal Scrolling Container for 4 Sections */}
+          <div className="relative">
+            <div className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory" style={{ scrollBehavior: 'smooth' }}>
+              
+              {/* 1. Problem Section */}
+              <section 
+                id="problem" 
+                className="min-w-full min-h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+              >
             {/* Subtle flowing EEG background for Problem section */}
             <div 
               className="absolute inset-0 pointer-events-none overflow-hidden z-0" 
@@ -381,11 +385,11 @@ const Index = () => {
             </div>
           </section>
 
-          {/* 2. Urgency Section */}
-          <section 
-            id="urgency" 
-            className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden"
-          >
+              {/* 2. Urgency Section */}
+              <section 
+                id="urgency" 
+                className="min-w-full min-h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+              >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
               <svg className="w-full h-full" viewBox="0 0 1920 1080">
@@ -500,14 +504,11 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Spacer between Urgency and Solution */}
-          <div className="h-16 md:h-32 bg-background"></div>
-
-          {/* 3. Solution Section */}
-          <section 
-            id="solution" 
-            className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden"
-          >
+              {/* 3. Solution Section */}
+              <section 
+                id="solution" 
+                className="min-w-full min-h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+              >
             {/* Enhanced futuristic background with neural network effects */}
             <div className="absolute inset-0 overflow-hidden">
               {/* Neural grid overlay */}
@@ -638,11 +639,11 @@ const Index = () => {
             </div>
           </section>
 
-          {/* 4. Our Edge Section */}
-          <section 
-            id="edge" 
-            className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden"
-          >
+              {/* 4. Our Edge Section */}
+              <section 
+                id="edge" 
+                className="min-w-full min-h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+              >
             {/* Large cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8">
               <div 
@@ -721,7 +722,10 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </section>
+              </section>
+              
+            </div>
+          </div>
         </main>
       </div>
     </div>
