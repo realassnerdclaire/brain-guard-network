@@ -21,7 +21,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden" style={{backgroundColor: '#2d2d2d'}}>
+    <div className="min-h-screen text-white relative overflow-hidden" style={{backgroundColor: '#1a1a1a'}}>
       {/* Background */}
       <div 
         className="absolute inset-0 z-0"

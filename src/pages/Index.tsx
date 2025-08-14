@@ -259,7 +259,7 @@ const Index = () => {
             id="problem" 
             className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
             style={{
-              backgroundColor: '#2d2d2d',
+              backgroundColor: '#1a1a1a',
               contain: 'layout style paint',
               willChange: 'transform',
               isolation: 'isolate'
@@ -393,7 +393,7 @@ const Index = () => {
           <section 
             id="urgency" 
             className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
-            style={{backgroundColor: '#2d2d2d'}}
+            style={{backgroundColor: '#1a1a1a'}}
           >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
@@ -537,7 +537,7 @@ const Index = () => {
           <section 
             id="solution" 
             className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
-            style={{backgroundColor: '#2d2d2d'}}
+            style={{backgroundColor: '#1a1a1a'}}
           >
             {/* Clean solution section without EEG animations */}
 
@@ -625,7 +625,7 @@ const Index = () => {
           <section 
             id="edge" 
             className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
-            style={{backgroundColor: '#2d2d2d'}}
+            style={{backgroundColor: '#1a1a1a'}}
           >
             {/* Large cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8">
