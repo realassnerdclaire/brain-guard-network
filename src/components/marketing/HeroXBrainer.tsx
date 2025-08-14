@@ -63,8 +63,7 @@ const HeroXBrainer = () => {
                 fill="none" 
                 style={{
                   opacity: 0.4,
-                  animation: 'eeg-flow 5s ease-in-out infinite',
-                  animationDelay: '1s',
+                  animation: 'eeg-flow 3s ease-in-out infinite',
                   filter: 'drop-shadow(0 0 3px #a855f7)',
                   strokeLinecap: 'round'
                 }} />

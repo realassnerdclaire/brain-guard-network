@@ -1,117 +1,64 @@
-// Hover color cycling animation
-export const startHoverAnimation = (element: HTMLElement) => {
-  console.log('🐭 Starting hover color cycle');
+// Optimized letter animation utilities with reduced performance impact
+
+// Cached elements to avoid repeated DOM queries
+const elementCache = new Map<HTMLElement, any>();
+
+// Simple, fast letter animation with minimal setTimeout usage
+export const animateLetters = (element: HTMLElement, text: string) => {
+  const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+  const letters = text.split('');
   
-  // Color sequence: white -> light pink -> pink -> dark pink -> purple -> light purple -> blue
-  const hoverColors = [
-    '#ffffff', // white
-    '#ffb3d9', // light pink
-    '#ff80c7', // pink  
-    '#ff4db6', // dark pink
-    '#a855f7', // purple
-    '#c084fc', // light purple
-    '#3b82f6'  // blue
-  ];
+  // Create spans immediately
+  element.innerHTML = letters.map((letter, i) => 
+    `<span style="display: inline-block; transition: color 0.15s ease; color: white;">${letter === ' ' ? '&nbsp;' : letter}</span>`
+  ).join('');
   
-  let colorIndex = 0;
-  const hoverInterval = setInterval(() => {
-    if (colorIndex < hoverColors.length) {
-      const color = hoverColors[colorIndex];
-      element.style.color = color;
-      element.style.textShadow = `0 0 15px ${color}, 0 0 30px ${color}`;
-      element.style.transform = 'scale(1.05)';
-      colorIndex++;
-    } else {
-      // Reset and restart the cycle
-      colorIndex = 0;
+  const spans = element.querySelectorAll('span');
+  
+  // Single quick animation cycle instead of multiple setTimeout calls
+  letters.forEach((letter, letterIndex) => {
+    if (letter !== ' ') {
+      const span = spans[letterIndex] as HTMLElement;
+      
+      // Immediate color change
+      span.style.color = colors[letterIndex % colors.length];
+      
+      // Reset to white after short delay
+      setTimeout(() => {
+        span.style.color = 'white';
+      }, 200);
     }
-  }, 300);
+  });
   
-  return hoverInterval;
+  // Reset entire element after animation
+  setTimeout(() => {
+    element.innerHTML = text;
+    element.style.color = 'white';
+  }, 400);
+};
+
+// Optimized hover animation with reduced frequency
+export const startHoverAnimation = (element: HTMLElement) => {
+  if (elementCache.has(element)) {
+    return elementCache.get(element);
+  }
+  
+  const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
+  let colorIndex = 0;
+  
+  const interval = setInterval(() => {
+    element.style.color = colors[colorIndex % colors.length];
+    colorIndex++;
+  }, 400); // Slower interval for better performance
+  
+  elementCache.set(element, interval);
+  return interval;
 };
 
 export const stopHoverAnimation = (element: HTMLElement, interval: number) => {
-  console.log('🐭 Stopping hover color cycle');
   clearInterval(interval);
   element.style.color = 'white';
   element.style.textShadow = 'none';
   element.style.transform = 'scale(1)';
-};
-
-export const animateLetters = (element: HTMLElement, word: string) => {
-  console.log('🎬 Starting letter animation for:', word);
-  
-  // Prevent multiple animations on the same element
-  if (element.hasAttribute('data-animating')) {
-    return;
-  }
-  element.setAttribute('data-animating', 'true');
-  
-  const letters = word.split('');
-  const colorSequence = [
-    '#ffb3d9', // light pink
-    '#ff80c7', // pink  
-    '#ff4db6', // darker pink
-    '#a855f7', // purple
-    '#3b82f6', // blue
-    '#60a5fa'  // light blue
-  ];
-
-  // Create letter spans with proper structure
-  const letterSpans = letters.map((letter, index) => 
-    `<span class="animated-letter" data-index="${index}" style="
-      display: inline-block; 
-      transition: all 0.4s ease-out; 
-      padding: 2px 1px;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255,255,255,0.1);
-      margin: 0 1px;
-    ">${letter}</span>`
-  ).join('');
-
-  // Replace content
-  element.innerHTML = letterSpans;
-
-  // Animate each letter through color sequence
-  letters.forEach((letter, letterIndex) => {
-    const letterSpan = element.querySelector(`[data-index="${letterIndex}"]`) as HTMLElement;
-    if (!letterSpan) return;
-
-    console.log(`🔤 Animating letter: ${letter} (index ${letterIndex})`);
-
-    colorSequence.forEach((color, colorIndex) => {
-      setTimeout(() => {
-        const r = parseInt(color.slice(1,3), 16);
-        const g = parseInt(color.slice(3,5), 16);
-        const b = parseInt(color.slice(5,7), 16);
-        
-        letterSpan.style.color = color;
-        letterSpan.style.textShadow = `0 0 ${15 + colorIndex * 8}px ${color}, 0 0 ${30 + colorIndex * 15}px ${color}`;
-        letterSpan.style.transform = `scale(${1.1 + colorIndex * 0.08})`;
-        letterSpan.style.filter = `brightness(${1.2 + colorIndex * 0.15}) saturate(${1.4 + colorIndex * 0.2})`;
-        letterSpan.style.background = `rgba(${r}, ${g}, ${b}, ${0.1 + colorIndex * 0.05})`;
-        letterSpan.style.boxShadow = `0 0 ${10 + colorIndex * 8}px rgba(${r}, ${g}, ${b}, 0.4)`;
-        letterSpan.style.backdropFilter = `blur(${8 + colorIndex * 4}px)`;
-        letterSpan.style.border = `1px solid rgba(${r}, ${g}, ${b}, 0.4)`;
-        
-        console.log(`✨ Letter ${letter} -> Phase ${colorIndex + 1}: ${color}`);
-      }, letterIndex * 100 + colorIndex * 250);
-    });
-  });
-
-  // Reset after animation completes
-  const totalDuration = letters.length * 100 + colorSequence.length * 250 + 1000;
-  setTimeout(() => {
-    element.innerHTML = word;
-    element.style.color = '';
-    element.style.textShadow = '';
-    element.style.transform = '';
-    element.style.filter = '';
-    element.removeAttribute('data-animating');
-    console.log('🔄 Animation reset complete');
-  }, totalDuration);
-
-  return totalDuration;
+  elementCache.delete(element);
 };

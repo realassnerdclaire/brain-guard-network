@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
@@ -9,8 +9,16 @@ interface NavigationLayoutProps {
 }
 
 const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true); // Start with menu open to match screenshot
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [activeSection, setActiveSection] = useState("PROBLEM");
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  // Preload background image immediately
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => setImageLoaded(true);
+    img.src = '/lovable-uploads/27f96d4c-bee3-4923-8c3e-57550bedb369.png';
+  }, []);
 
   const menuItems = [
     { name: "HOME", path: "/" },
@@ -30,16 +38,25 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Nebula Brain Background */}
+      {/* Optimized Background with immediate loading */}
       <div 
-        className="absolute inset-0 z-0"
+        className={`absolute inset-0 z-0 transition-opacity duration-300 ${
+          imageLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
         style={{
-          backgroundImage: `url(/lovable-uploads/27f96d4c-bee3-4923-8c3e-57550bedb369.png)`,
+          backgroundImage: imageLoaded ? `url(/lovable-uploads/27f96d4c-bee3-4923-8c3e-57550bedb369.png)` : 'none',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          willChange: 'transform',
+          transform: 'translateZ(0)' // Force GPU acceleration
         }}
       />
+      
+      {/* Fallback gradient while loading */}
+      {!imageLoaded && (
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-black z-0" />
+      )}
       
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/30 z-10" />
@@ -66,73 +83,24 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
         </div>
       </div>
 
-      {/* Menu Button */}
+      {/* Simplified Menu Button */}
       <button
-        onClick={(e) => {
+        onClick={() => {
           if (isMenuOpen) {
-            console.log('🚀 MENU CLOSE CLICKED - Starting letter animation');
-            
-            const btn = e.currentTarget;
-            const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-            const letters = ['M', 'E', 'N', 'U'];
-            
-            // Animate the close icon (X) first
-            const iconElement = btn.querySelector('.lucide');
-            if (iconElement) {
-              colors.forEach((color, colorIndex) => {
-                setTimeout(() => {
-                  (iconElement as HTMLElement).style.color = color;
-                }, colorIndex * 15);
-              });
-              // Reset icon color
-              setTimeout(() => {
-                (iconElement as HTMLElement).style.color = 'white';
-              }, colors.length * 15 + 25);
-            }
-            
-            // Create letter spans for MENU text
-            const textSpan = btn.querySelector('.menu-text');
-            if (textSpan) {
-              textSpan.innerHTML = letters.map((letter, i) => 
-                `<span id="nebula-menu-letter-${i}" style="display: inline-block; transition: color 0.05s ease; background: none !important; border: none !important;">${letter}</span>`
-              ).join('');
-              
-              // Much faster animation
-              letters.forEach((letter, letterIndex) => {
-                colors.forEach((color, colorIndex) => {
-                  setTimeout(() => {
-                    const letterSpan = document.getElementById(`nebula-menu-letter-${letterIndex}`);
-                    if (letterSpan) {
-                      letterSpan.style.color = color;
-                    }
-                  }, letterIndex * 5 + colorIndex * 15);
-                });
-              });
-              
-              // Reset text and close menu
-              setTimeout(() => {
-                textSpan.innerHTML = 'MENU';
-                (textSpan as HTMLElement).style.color = 'white';
-                onBack?.(); // Go back to first landing page after animation
-              }, letters.length * 5 + colors.length * 15 + 25);
-            } else {
-              // Fallback if no text span found
-              setTimeout(() => {
-                onBack?.();
-              }, colors.length * 15 + 25);
-            }
+            // Immediate close without animation
+            onBack?.();
           } else {
             setIsMenuOpen(true);
           }
         }}
-        className="fixed top-16 sm:top-8 right-8 z-50 flex items-center gap-2 text-white bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 hover:bg-black/40 transition-all"
+        className="fixed top-16 sm:top-8 right-8 z-50 flex items-center gap-2 text-white bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 hover:bg-black/40 transition-all duration-200"
       >
         {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
-        <span className="text-sm font-medium tracking-widest menu-text">MENU</span>
+        <span className="text-sm font-medium tracking-widest">MENU</span>
       </button>
 
-      {/* Side Navigation Menu - Even smaller */}
-      <div className={`fixed top-0 right-0 h-full w-56 bg-black/80 backdrop-blur-md border-l border-white/20 z-40 transform transition-transform duration-300 ${
+      {/* Optimized Side Navigation Menu */}
+      <div className={`fixed top-0 right-0 h-full w-56 bg-black/80 backdrop-blur-md border-l border-white/20 z-40 transform transition-transform duration-200 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="p-4 pt-16">
@@ -142,49 +110,10 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    className="block w-full text-left text-white/80 hover:text-white py-1.5 px-2 text-sm font-medium transition-colors hover:bg-white/5 rounded"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                    onClick={(e) => {
-                      console.log(`🚀 ${item.name} CLICKED - Starting letter animation`);
-                      
-                      const btn = e.currentTarget as HTMLElement;
-                      const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                      const letters = item.name.split('');
-                      
-                      // Create letter spans
-                      btn.innerHTML = letters.map((letter, i) => 
-                        `<span id="nav-menu-letter-${i}" style="display: inline-block; transition: color 0.05s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
-                      ).join('');
-                      
-                      // Much faster animation
-                      letters.forEach((letter, letterIndex) => {
-                        colors.forEach((color, colorIndex) => {
-                          setTimeout(() => {
-                            const letterSpan = document.getElementById(`nav-menu-letter-${letterIndex}`);
-                            if (letterSpan && letter !== ' ') {
-                              letterSpan.style.color = color;
-                            }
-                          }, letterIndex * 5 + colorIndex * 15);
-                        });
-                      });
-                      
-                      // Reset after animation - let React Router handle navigation
-                      setTimeout(() => {
-                        btn.innerHTML = item.name;
-                        btn.style.color = 'white';
-                      }, letters.length * 5 + colors.length * 15 + 25);
-                    }}
-                    onMouseEnter={(e) => {
-                      const btn = e.currentTarget;
-                      const interval = startHoverAnimation(btn);
-                      (btn as any).hoverInterval = interval;
-                    }}
-                    onMouseLeave={(e) => {
-                      const btn = e.currentTarget;
-                      if ((btn as any).hoverInterval) {
-                        stopHoverAnimation(btn, (btn as any).hoverInterval);
-                        (btn as any).hoverInterval = null;
-                      }
+                    className="block w-full text-left text-white/80 hover:text-white py-1.5 px-2 text-sm font-medium transition-colors duration-200 hover:bg-white/5 rounded"
+                    onClick={() => {
+                      // Simplified immediate navigation
+                      console.log(`Navigating to ${item.name}`);
                     }}
                   >
                     {item.name}
@@ -209,68 +138,28 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
           </div>
         </div>
 
-        {/* Bottom Navigation with faster color animations */}
+        {/* Optimized Bottom Navigation */}
         <div className="pb-12">
           <nav className="flex justify-center">
             <div className="flex items-center gap-4 bg-black/30 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5">
               {bottomNavItems.map((item) => (
                 <button
                   key={item}
-                  onClick={(e) => {
-                    console.log(`🚀 ${item} CLICKED - Starting letter animation`);
+                  onClick={() => {
+                    setActiveSection(item);
                     
-                    const btn = e.currentTarget as HTMLElement;
-                    const colors = ['#ffb3d9', '#ff80c7', '#ff4db6', '#a855f7', '#3b82f6', '#60a5fa'];
-                    const letters = item.split('');
-                    
-                    // Create letter spans
-                    btn.innerHTML = letters.map((letter, i) => 
-                      `<span id="bottom-nav-letter-${i}" style="display: inline-block; transition: color 0.05s ease; background: none !important; border: none !important;">${letter === ' ' ? '&nbsp;' : letter}</span>`
-                    ).join('');
-                    
-                    // Much faster color animation
-                    letters.forEach((letter, letterIndex) => {
-                      colors.forEach((color, colorIndex) => {
-                        setTimeout(() => {
-                          const letterSpan = document.getElementById(`bottom-nav-letter-${letterIndex}`);
-                          if (letterSpan && letter !== ' ') {
-                            letterSpan.style.color = color;
-                          }
-                        }, letterIndex * 5 + colorIndex * 15); // Much faster timing
-                      });
-                    });
-                    
-                    // Reset, set active, and navigate to section
-                    setTimeout(() => {
-                      btn.innerHTML = item;
-                      btn.style.color = 'white';
-                      setActiveSection(item);
-                      
-                      // Navigate to the respective section on the main page
-                      if (onNavigateToSection) {
-                        const sectionMap: { [key: string]: string } = {
-                          'PROBLEM': 'problem',
-                          'URGENCY': 'urgency', 
-                          'SOLUTION': 'solution',
-                          'OUR EDGE': 'edge'
-                        };
-                        onNavigateToSection(sectionMap[item] || item.toLowerCase());
-                      }
-                    }, letters.length * 5 + colors.length * 15 + 25); // Faster reset
-                  }}
-                  onMouseEnter={(e) => {
-                    const btn = e.currentTarget;
-                    const interval = startHoverAnimation(btn);
-                    (btn as any).hoverInterval = interval;
-                  }}
-                  onMouseLeave={(e) => {
-                    const btn = e.currentTarget;
-                    if ((btn as any).hoverInterval) {
-                      stopHoverAnimation(btn, (btn as any).hoverInterval);
-                      (btn as any).hoverInterval = null;
+                    // Immediate navigation without animation
+                    if (onNavigateToSection) {
+                      const sectionMap: { [key: string]: string } = {
+                        'PROBLEM': 'problem',
+                        'URGENCY': 'urgency', 
+                        'SOLUTION': 'solution',
+                        'OUR EDGE': 'edge'
+                      };
+                      onNavigateToSection(sectionMap[item] || item.toLowerCase());
                     }
                   }}
-                  className={`text-sm font-medium tracking-wide transition-all hover:text-white ${
+                  className={`text-sm font-medium tracking-wide transition-all duration-200 hover:text-white ${
                     activeSection === item 
                       ? 'text-white border-b-2 border-white pb-1' 
                       : 'text-white/60'
