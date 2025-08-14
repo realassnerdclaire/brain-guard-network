@@ -558,25 +558,25 @@ const Index = () => {
                   {/* Urgency Feature Cards - Timeline Style */}
                   <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
                     {/* Market Explosion */}
-                    <div className="bg-slate-800/60 border-l-4 border-sky-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-cyan-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Market Explosion</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">More devices = more attack surfaces = higher compliance risk</p>
                     </div>
                     
                     {/* 2025 Milestones */}
-                    <div className="bg-slate-800/60 border-l-4 border-sky-300 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-cyan-300 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2025: FDA Guidance</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
                     </div>
                     
                     {/* 2026 Enforcement */}
-                    <div className="bg-slate-800/60 border-l-4 border-blue-400 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-cyan-400 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2026: Enforcement Tightens</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
                     </div>
                     
                     {/* 2027+ New Protections */}
-                    <div className="bg-slate-800/60 border-l-4 border-blue-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-cyan-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2027+: Market Entry Risk</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">Potential new neurodata-specific protections may limit non-compliant market entry</p>
                     </div>
@@ -783,25 +783,25 @@ const Index = () => {
                 {/* Our Edge Feature Cards - Timeline Style */}
                 <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
                   {/* Patent-Pending Security Pipeline */}
-                  <div className="bg-slate-800/60 border-l-4 border-purple-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                  <div className="bg-slate-800/60 border-l-4 border-cyan-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                     <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Patent-Pending Security Pipeline</h3>
                     <p className="text-white/80 text-xs md:text-lg leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
                   </div>
                   
                   {/* Regulatory-First Design */}
-                  <div className="bg-slate-800/60 border-l-4 border-purple-300 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                  <div className="bg-slate-800/60 border-l-4 border-cyan-300 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                     <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Regulatory-First Design</h3>
                     <p className="text-white/80 text-xs md:text-lg leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
                   </div>
                   
                   {/* AI-Driven Threat Detection */}
-                  <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                  <div className="bg-slate-800/60 border-l-4 border-cyan-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                     <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">AI-Driven Threat Detection</h3>
                     <p className="text-white/80 text-xs md:text-lg leading-relaxed">Advanced machine learning specifically tuned for BCI signal anomalies and neural data security threats.</p>
                   </div>
                   
                   {/* Seamless Integration */}
-                  <div className="bg-slate-800/60 border-l-4 border-purple-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                  <div className="bg-slate-800/60 border-l-4 border-cyan-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                     <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Seamless Integration</h3>
                     <p className="text-white/80 text-xs md:text-lg leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
                   </div>
