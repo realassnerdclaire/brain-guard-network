@@ -353,25 +353,25 @@ const Index = () => {
                   {/* Problem Feature Cards - Timeline Style */}
                   <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
                     {/* Raw Brain Data Risk */}
-                    <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-pink-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Raw Brain Data at Risk</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">Raw brain data is among the most sensitive personal information, but today's security measures fail to protect it in real time.</p>
                     </div>
                     
                     {/* Data Breaches */}
-                    <div className="bg-slate-800/60 border-l-4 border-red-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-pink-300 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Data Breaches</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">Unsecured pipelines expose neurological health information to unauthorized access and potential misuse.</p>
                     </div>
                     
                     {/* Regulatory Delays */}
-                    <div className="bg-slate-800/60 border-l-4 border-orange-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-pink-400 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Regulatory Delays</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">Security gaps cause compliance failures that stall clinical trials and delay market approvals.</p>
                     </div>
                     
                     {/* Research Integrity Loss */}
-                    <div className="bg-slate-800/60 border-l-4 border-yellow-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-pink-600 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Research Integrity Loss</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">Tampering and unauthorized access compromise research validity and scientific reproducibility.</p>
                     </div>
