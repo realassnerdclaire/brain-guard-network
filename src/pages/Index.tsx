@@ -282,46 +282,45 @@ const Index = () => {
           
           {/* Horizontal Scrolling Container for 4 Sections */}
           <div className="relative">
-            {/* Navigation Arrows - Positioned above titles but below current position */}
-            <div className="fixed left-4 top-1/2 translate-y-4 z-30 flex flex-col gap-4">
+            {/* Navigation Arrows - Responsive positioning for mobile and desktop */}
+            <div className="fixed left-2 sm:left-4 top-1/2 translate-y-4 sm:translate-y-4 z-30 flex flex-col gap-2 sm:gap-4">
               <button
                 onClick={scrollLeft}
                 disabled={currentSection === 0}
-                className="bg-black/60 backdrop-blur-md border border-white/20 rounded-full p-3 text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+                className="bg-black/60 backdrop-blur-md border border-white/20 rounded-full p-2 sm:p-3 text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
                 style={{
                   boxShadow: '0 0 20px rgba(255, 255, 255, 0.1)'
                 }}
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={18} className="sm:w-6 sm:h-6" />
               </button>
-              <div className="text-white text-xs text-center bg-black/60 backdrop-blur-md border border-white/20 rounded-lg px-2 py-1">
+              <div className="text-white text-xs text-center bg-black/60 backdrop-blur-md border border-white/20 rounded-lg px-1 sm:px-2 py-1">
                 {currentSection + 1}/4
               </div>
             </div>
 
-            <div className="fixed right-4 top-1/2 translate-y-4 z-30 flex flex-col gap-4">
+            <div className="fixed right-2 sm:right-4 top-1/2 translate-y-4 sm:translate-y-4 z-30 flex flex-col gap-2 sm:gap-4">
               <button
                 onClick={scrollRight}
                 disabled={currentSection === 3}
-                className="bg-black/60 backdrop-blur-md border border-white/20 rounded-full p-3 text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+                className="bg-black/60 backdrop-blur-md border border-white/20 rounded-full p-2 sm:p-3 text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
                 style={{
                   boxShadow: '0 0 20px rgba(255, 255, 255, 0.1)'
                 }}
               >
-                <ChevronRight size={24} />
+                <ChevronRight size={18} className="sm:w-6 sm:h-6" />
               </button>
-              <div className="text-white text-xs text-center bg-black/60 backdrop-blur-md border border-white/20 rounded-lg px-2 py-1">
+              <div className="text-white text-xs text-center bg-black/60 backdrop-blur-md border border-white/20 rounded-lg px-1 sm:px-2 py-1">
                 {sectionNames[currentSection]}
               </div>
             </div>
-
-            {/* Section Indicators */}
-            <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full px-4 py-2">
+            {/* Section Indicators - Mobile optimized */}
+            <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full px-3 sm:px-4 py-1 sm:py-2">
               {sectionNames.map((name, index) => (
                 <button
                   key={name}
                   onClick={() => scrollToSection(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     currentSection === index 
                       ? 'bg-white shadow-lg' 
                       : 'bg-white/30 hover:bg-white/50'

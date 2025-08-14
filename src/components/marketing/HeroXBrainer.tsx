@@ -104,10 +104,25 @@ const HeroXBrainer = () => {
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-16">
           {/* Left side - Headline and subheadline */}
           <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl relative z-15">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-6 sm:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-50 via-cyan-200 via-cyan-400 via-cyan-600 via-cyan-400 via-cyan-200 via-cyan-50 to-white" id="hero-title">
+            <h1 
+              className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-6 sm:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-50 via-cyan-200 via-cyan-400 via-cyan-600 via-cyan-400 via-cyan-200 via-cyan-50 to-white opacity-0" 
+              id="hero-title"
+              style={{
+                animation: 'fade-in 1.2s ease-out 0.5s both, scale-in 1s ease-out 0.5s both',
+                transform: 'translateY(30px)',
+                animationFillMode: 'both'
+              }}
+            >
               Secure Neural Data Before It's Too Late
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-md lg:max-w-2xl leading-relaxed">
+            <p 
+              className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-md lg:max-w-2xl leading-relaxed opacity-0"
+              style={{
+                animation: 'fade-in 1s ease-out 1.2s both',
+                transform: 'translateY(20px)',
+                animationFillMode: 'both'
+              }}
+            >
               As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
             </p>
           </div>
@@ -115,7 +130,12 @@ const HeroXBrainer = () => {
           {/* Right side - Action buttons */}
           <div className="flex flex-col gap-4 lg:gap-6 lg:mt-8">
             <button 
-              className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300"
+              className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300 opacity-0"
+              style={{
+                animation: 'fade-in 1s ease-out 1.8s both, scale-in 0.8s ease-out 1.8s both',
+                transform: 'translateX(30px)',
+                animationFillMode: 'both'
+              }}
               onMouseEnter={(e) => {
                 const btn = e.currentTarget;
                 const interval = startHoverAnimation(btn);
@@ -138,7 +158,12 @@ const HeroXBrainer = () => {
               JOIN THE WAITLIST
             </button>
             <button 
-              className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300"
+              className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300 opacity-0"
+              style={{
+                animation: 'fade-in 1s ease-out 2.2s both, scale-in 0.8s ease-out 2.2s both',
+                transform: 'translateX(30px)',
+                animationFillMode: 'both'
+              }}
               onMouseEnter={(e) => {
                 const btn = e.currentTarget;
                 const interval = startHoverAnimation(btn);
