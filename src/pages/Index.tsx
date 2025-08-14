@@ -525,12 +525,12 @@ const Index = () => {
           </section>
 
           {/* Spacer between Urgency and Solution */}
-          <div className="h-16 md:h-32 bg-gradient-to-b from-gray-900 to-black"></div>
+          <div className="h-16 md:h-32 bg-background"></div>
 
           {/* 3. Solution Section */}
           <section 
             id="solution" 
-            className="min-h-screen md:min-h-[100vh] bg-gradient-to-b from-gray-900 to-black flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden"
           >
             {/* Smooth flowing EEG background for Solution section */}
             <div className="absolute inset-0 opacity-100">
