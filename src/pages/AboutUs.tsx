@@ -106,10 +106,10 @@ const AboutUs = () => {
           <img 
             src="/lovable-uploads/c93b77ed-67f7-4582-bdc4-916188a4fe5f.png"
             alt=""
-            className="absolute top-4 right-16 w-48 h-48 object-cover opacity-50"
+            className="absolute top-2 right-8 w-72 h-72 object-cover opacity-45"
             style={{
               filter: 'brightness(0.9) contrast(1.1)',
-              transform: 'rotate(5deg)'
+              transform: 'rotate(8deg)'
             }}
           />
         </div>
