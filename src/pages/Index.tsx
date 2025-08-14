@@ -636,21 +636,21 @@ const Index = () => {
                   {/* Solution Feature Cards - Timeline Style */}
                   <div className="space-y-6 max-w-4xl mx-auto text-left">
                     {/* Real-time Encryption */}
-                    <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-2xl font-bold text-white mb-4">Real-time Encryption</h3>
-                      <p className="text-white/80 text-lg leading-relaxed">Encryption at the source prevents interception and ensures neural data stays protected from device to destination.</p>
+                    <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Real-time Encryption</h3>
+                      <p className="text-white/80 text-sm md:text-lg leading-relaxed">Encryption at the source prevents interception and ensures neural data stays protected from device to destination.</p>
                     </div>
                     
                     {/* Instant Access Controls */}
-                    <div className="bg-slate-800/60 border-l-4 border-indigo-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-2xl font-bold text-white mb-4">Instant Access Controls</h3>
-                      <p className="text-white/80 text-lg leading-relaxed">Give or revoke permissions instantly with granular control over who can access neural data and when.</p>
+                    <div className="bg-slate-800/60 border-l-4 border-indigo-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Instant Access Controls</h3>
+                      <p className="text-white/80 text-sm md:text-lg leading-relaxed">Give or revoke permissions instantly with granular control over who can access neural data and when.</p>
                     </div>
                     
                     {/* Permanent Audit Logs */}
-                    <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                      <h3 className="text-2xl font-bold text-white mb-4">Permanent Audit Logs</h3>
-                      <p className="text-white/80 text-lg leading-relaxed">Record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
+                    <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Permanent Audit Logs</h3>
+                      <p className="text-white/80 text-sm md:text-lg leading-relaxed">Record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
                     </div>
                   </div>
                   
@@ -720,27 +720,27 @@ const Index = () => {
                 {/* Our Edge Feature Cards - Timeline Style */}
                 <div className="space-y-6 max-w-4xl mx-auto text-left">
                   {/* Patent-Pending Security Pipeline */}
-                  <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-2xl font-bold text-white mb-4">Patent-Pending Security Pipeline</h3>
-                    <p className="text-white/80 text-lg leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Patent-Pending Security Pipeline</h3>
+                    <p className="text-white/80 text-sm md:text-lg leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
                   </div>
                   
                   {/* Regulatory-First Design */}
-                  <div className="bg-slate-800/60 border-l-4 border-green-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-2xl font-bold text-white mb-4">Regulatory-First Design</h3>
-                    <p className="text-white/80 text-lg leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-green-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Regulatory-First Design</h3>
+                    <p className="text-white/80 text-sm md:text-lg leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
                   </div>
                   
                   {/* AI-Driven Threat Detection */}
-                  <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-2xl font-bold text-white mb-4">AI-Driven Threat Detection</h3>
-                    <p className="text-white/80 text-lg leading-relaxed">Advanced machine learning specifically tuned for BCI signal anomalies and neural data security threats.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">AI-Driven Threat Detection</h3>
+                    <p className="text-white/80 text-sm md:text-lg leading-relaxed">Advanced machine learning specifically tuned for BCI signal anomalies and neural data security threats.</p>
                   </div>
                   
                   {/* Seamless Integration */}
-                  <div className="bg-slate-800/60 border-l-4 border-orange-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
-                    <h3 className="text-2xl font-bold text-white mb-4">Seamless Integration</h3>
-                    <p className="text-white/80 text-lg leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
+                  <div className="bg-slate-800/60 border-l-4 border-orange-500 rounded-2xl p-4 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">Seamless Integration</h3>
+                    <p className="text-white/80 text-sm md:text-lg leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
                   </div>
                 </div>
               </div>
