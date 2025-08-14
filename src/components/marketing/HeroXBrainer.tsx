@@ -29,8 +29,8 @@ const HeroXBrainer = () => {
       </div>
       
       
-      {/* High frequency EEG background flows */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-10 opacity-80">
+      {/* Prominent EEG background flows for hero section */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-10 opacity-90">
         <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="heroEegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -44,50 +44,83 @@ const HeroXBrainer = () => {
               <stop offset="50%" style={{stopColor: '#EC4899', stopOpacity: 1}} />
               <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 1}} />
             </linearGradient>
+            <linearGradient id="heroEegGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 1}} />
+              <stop offset="33%" style={{stopColor: '#A855F7', stopOpacity: 1}} />
+              <stop offset="66%" style={{stopColor: '#EC4899', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 1}} />
+            </linearGradient>
           </defs>
           
-          {/* High frequency EEG lines - sharp spikes */}
-          <path d="M0,200 L10,205 L15,185 L20,215 L25,190 L30,220 L35,180 L40,200 L45,195 L50,210 L55,185 L60,225 L65,175 L70,205 L75,195 L80,215 L85,180 L90,230 L95,170 L100,200 L105,190 L110,220 L115,175 L120,210 L125,195 L130,205 L135,185 L140,225 L145,170 L150,215 L155,180 L160,235 L165,165 L170,200 L175,195 L180,210 L185,185 L190,220 L195,175 L200,205 L205,190 L210,225 L215,170 L220,215 L225,185 L230,230 L235,160 L240,200 L245,195 L250,210 L255,180 L260,225 L265,175 L270,205 L275,190 L280,220 L285,170 L290,215 L295,185 L300,235 L305,165 L310,200 L315,195 L320,210 L325,185 L330,220 L335,175 L340,205 L345,190 L350,225 L355,170 L360,215 L365,185 L370,230 L375,160 L380,200 L385,195 L390,210 L395,180 L400,225"
+          {/* Top EEG line - high frequency spikes */}
+          <path d="M0,150 L10,165 L15,135 L20,175 L25,130 L30,180 L35,125 L40,170 L45,140 L50,185 L55,120 L60,175 L65,135 L70,180 L75,125 L80,185 L85,115 L90,170 L95,140 L100,190 L105,110 L110,175 L115,135 L120,185 L125,120 L130,180 L135,130 L140,190 L145,115 L150,175 L155,135 L160,185 L165,120 L170,180 L175,130 L180,190 L185,115 L190,175 L195,135 L200,185 L205,120 L210,180 L215,130 L220,190 L225,115 L230,175 L235,135 L240,185 L245,120 L250,180 L255,130 L260,190 L265,115 L270,175 L275,135 L280,185 L285,120 L290,180 L295,130 L300,190 L305,115 L310,175 L315,135 L320,185 L325,120 L330,180 L335,130 L340,190 L345,115 L350,175 L355,135 L360,185 L365,120 L370,180 L375,130 L380,190 L385,115 L390,175 L395,135 L400,185"
                 stroke="url(#heroEegGradient)" 
+                strokeWidth="4.5" 
+                fill="none" 
+                style={{
+                  animation: 'eeg-flow 6s ease-in-out infinite',
+                  strokeLinecap: 'round',
+                  filter: 'drop-shadow(0 0 4px currentColor)'
+                }} />
+          
+          {/* Second EEG line */}
+          <path d="M0,300 L8,318 L12,282 L16,328 L20,275 L24,335 L28,270 L32,315 L36,285 L40,325 L44,275 L48,340 L52,265 L56,318 L60,285 L64,330 L68,270 L72,345 L76,260 L80,315 L84,282 L88,338 L92,265 L96,328 L100,280 L104,318 L108,275 L112,340 L116,260 L120,335 L124,270 L128,350 L132,255 L136,315 L140,285 L144,325 L148,275 L152,338 L156,265 L160,318 L164,282 L168,340 L172,260 L176,330 L180,275 L184,345 L188,250 L192,315 L196,285 L200,325 L204,270 L208,340 L212,265 L216,318 L220,282 L224,338 L228,260 L232,330 L236,275 L240,350 L244,255 L248,315 L252,285 L256,325 L260,275 L264,338 L268,265 L272,318 L276,282 L280,340 L284,260 L288,330 L292,275 L296,345 L300,250 L304,315 L308,285 L312,325 L316,270 L320,340"
+                stroke="url(#heroEegGradient2)" 
                 strokeWidth="4" 
                 fill="none" 
                 style={{
-                  animation: 'eeg-flow 8s ease-in-out infinite',
+                  animation: 'eeg-flow 8s ease-in-out infinite reverse',
+                  animationDelay: '1s',
                   strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 3px currentColor)'
+                  filter: 'drop-shadow(0 0 4px currentColor)'
                 }} />
           
-          <path d="M0,400 L8,410 L12,390 L16,420 L20,385 L24,425 L28,380 L32,405 L36,395 L40,415 L44,385 L48,430 L52,375 L56,410 L60,395 L64,420 L68,380 L72,435 L76,370 L80,405 L84,390 L88,425 L92,375 L96,415 L100,395 L104,410 L108,385 L112,430 L116,370 L120,420 L124,380 L128,440 L132,365 L136,405 L140,395 L144,415 L148,385 L152,425 L156,375 L160,410 L164,390 L168,430 L172,370 L176,420 L180,385 L184,435 L188,360 L192,405 L196,395 L200,415 L204,380 L208,430 L212,375 L216,410 L220,390 L224,425 L228,370 L232,420 L236,385 L240,440 L244,365 L248,405 L252,395 L256,415 L260,385 L264,425 L268,375 L272,410 L276,390 L280,430 L284,370 L288,420 L292,385 L296,435 L300,360 L304,405 L308,395 L312,415 L316,380 L320,430"
-                stroke="url(#heroEegGradient2)" 
+          {/* Third EEG line */}
+          <path d="M0,450 L6,472 L10,428 L14,485 L18,420 L22,490 L26,415 L30,475 L34,435 L38,485 L42,420 L46,495 L50,410 L54,472 L58,435 L62,488 L66,415 L70,500 L74,405 L78,475 L82,428 L86,495 L90,410 L94,488 L98,425 L102,472 L106,420 L110,495 L114,405 L118,490 L122,415 L126,505 L130,400 L134,475 L138,435 L142,485 L146,420 L150,495 L154,410 L158,472 L162,428 L166,495 L170,405 L174,488 L178,420 L182,500 L186,395 L190,475 L194,435 L198,485 L202,415 L206,495 L210,410 L214,472 L218,428 L222,495 L226,405 L230,488 L234,420 L238,505 L242,400 L246,475 L250,435 L254,485 L258,420 L262,495 L266,410 L270,472 L274,428 L278,495 L282,405 L286,488 L290,420 L294,500 L298,395 L302,475 L306,435 L310,485 L314,415 L318,495"
+                stroke="url(#heroEegGradient3)" 
                 strokeWidth="3.5" 
+                fill="none" 
+                style={{
+                  animation: 'eeg-flow 10s ease-in-out infinite',
+                  animationDelay: '2s',
+                  strokeLinecap: 'round',
+                  filter: 'drop-shadow(0 0 4px currentColor)'
+                }} />
+          
+          {/* Fourth EEG line */}
+          <path d="M0,600 L7,625 L11,575 L15,635 L19,570 L23,640 L27,565 L31,620 L35,585 L39,630 L43,575 L47,645 L51,560 L55,625 L59,585 L63,635 L67,570 L71,650 L75,555 L79,620 L83,575 L87,645 L91,560 L95,635 L99,580 L103,625 L107,575 L111,645 L115,555 L119,640 L123,570 L127,655 L131,550 L135,620 L139,585 L143,630 L147,575 L151,645 L155,560 L159,625 L163,575 L167,645 L171,555 L175,635 L179,575 L183,650 L187,545 L191,620 L195,585 L199,630 L203,570 L207,645 L211,560 L215,625 L219,575 L223,645 L227,555 L231,635 L235,575 L239,655 L243,550 L247,620 L251,585 L255,630 L259,575 L263,645 L267,560 L271,625 L275,575 L279,645 L283,555 L287,635 L291,575 L295,650 L299,545 L303,620 L307,585 L311,630 L315,570 L319,645"
+                stroke="url(#heroEegGradient)" 
+                strokeWidth="3.8" 
                 fill="none" 
                 style={{
                   animation: 'eeg-flow 12s ease-in-out infinite reverse',
-                  animationDelay: '2s',
+                  animationDelay: '3s',
                   strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 3px currentColor)'
+                  filter: 'drop-shadow(0 0 4px currentColor)'
                 }} />
           
-          <path d="M0,600 L5,608 L8,592 L12,615 L15,588 L18,620 L22,585 L25,605 L28,598 L32,612 L35,590 L38,625 L42,580 L45,608 L48,595 L52,618 L55,585 L58,630 L62,575 L65,605 L68,592 L72,622 L75,578 L78,615 L82,590 L85,608 L88,595 L92,625 L95,575 L98,618 L102,585 L105,635 L108,570 L112,605 L115,595 L118,615 L122,585 L125,628 L128,578 L132,608 L135,592 L138,625 L142,575 L145,618 L148,590 L152,630 L155,570 L158,605 L162,595 L165,615 L168,585 L172,625 L175,578 L178,608 L182,592 L185,628 L188,575 L192,618 L195,590 L198,630 L202,570 L205,605 L208,595 L212,615 L215,585 L218,625 L222,578 L225,608 L228,592 L232,628 L235,575 L238,618 L242,590 L245,630 L248,570 L252,605 L255,595 L258,615 L262,585 L265,625 L268,578 L272,608 L275,592 L278,628 L282,575 L285,618 L288,590 L292,630 L295,570 L298,605 L302,595 L305,615 L308,585 L312,625"
-                stroke="url(#heroEegGradient)" 
-                strokeWidth="3" 
+          {/* Fifth EEG line */}
+          <path d="M0,750 L9,778 L13,722 L17,788 L21,715 L25,795 L29,710 L33,770 L37,735 L41,785 L45,720 L49,800 L53,705 L57,778 L61,735 L65,790 L69,715 L73,805 L77,700 L81,770 L85,722 L89,800 L93,705 L97,790 L101,730 L105,778 L109,720 L113,800 L117,700 L121,795 L125,715 L129,810 L133,695 L137,770 L141,735 L145,785 L149,720 L153,800 L157,705 L161,778 L165,722 L169,800 L173,700 L177,790 L181,720 L185,805 L189,690 L193,770 L197,735 L201,785 L205,715 L209,800 L213,705 L217,778 L221,722 L225,800 L229,700 L233,790 L237,720 L241,810 L245,695 L249,770 L253,735 L257,785 L261,720 L265,800 L269,705 L273,778 L277,722 L281,800 L285,700 L289,790 L293,720 L297,805 L301,690 L305,770 L309,735 L313,785 L317,715 L321,800"
+                stroke="url(#heroEegGradient2)" 
+                strokeWidth="3.2" 
                 fill="none" 
                 style={{
-                  animation: 'eeg-flow 15s ease-in-out infinite',
+                  animation: 'eeg-flow 14s ease-in-out infinite',
                   animationDelay: '4s',
                   strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 3px currentColor)'
+                  filter: 'drop-shadow(0 0 4px currentColor)'
                 }} />
           
-          <path d="M0,800 L6,812 L10,788 L14,820 L18,785 L22,825 L26,780 L30,810 L34,795 L38,818 L42,785 L46,830 L50,775 L54,812 L58,795 L62,822 L66,780 L70,835 L74,770 L78,810 L82,788 L86,828 L90,775 L94,820 L98,790 L102,812 L106,785 L110,830 L114,770 L118,825 L122,780 L126,840 L130,765 L134,810 L138,795 L142,818 L146,785 L150,828 L154,775 L158,812 L162,788 L166,830 L170,770 L174,822 L178,785 L182,835 L186,760 L190,810 L194,795 L198,818 L202,780 L206,830 L210,775 L214,812 L218,788 L222,828 L226,770 L230,822 L234,785 L238,840 L242,765 L246,810 L250,795 L254,818 L258,785 L262,828 L266,775 L270,812 L274,788 L278,830 L282,770 L286,822 L290,785 L294,835 L298,760 L302,810 L306,795 L310,818 L314,780 L318,830"
-                stroke="url(#heroEegGradient2)" 
-                strokeWidth="3.5" 
+          {/* Sixth EEG line */}
+          <path d="M0,900 L8,932 L12,868 L16,945 L20,860 L24,950 L28,855 L32,925 L36,880 L40,940 L44,865 L48,955 L52,850 L56,932 L60,880 L64,945 L68,860 L72,960 L76,845 L80,925 L84,868 L88,955 L92,850 L96,945 L100,875 L104,932 L108,865 L112,955 L116,845 L120,950 L124,860 L128,965 L132,840 L136,925 L140,880 L144,940 L148,865 L152,955 L156,850 L160,932 L164,868 L168,955 L172,845 L176,945 L180,865 L184,960 L188,835 L192,925 L196,880 L200,940 L204,860 L208,955 L212,850 L216,932 L220,868 L224,955 L228,845 L232,945 L236,865 L240,965 L244,840 L248,925 L252,880 L256,940 L260,865 L264,955 L268,850 L272,932 L276,868 L280,955 L284,845 L288,945 L292,865 L296,960 L300,835 L304,925 L308,880 L312,940 L316,860 L320,955"
+                stroke="url(#heroEegGradient3)" 
+                strokeWidth="2.8" 
                 fill="none" 
                 style={{
-                  animation: 'eeg-flow 18s ease-in-out infinite reverse',
-                  animationDelay: '6s',
+                  animation: 'eeg-flow 16s ease-in-out infinite reverse',
+                  animationDelay: '5s',
                   strokeLinecap: 'round',
-                  filter: 'drop-shadow(0 0 3px currentColor)'
+                  filter: 'drop-shadow(0 0 4px currentColor)'
                 }} />
         </svg>
       </div>
