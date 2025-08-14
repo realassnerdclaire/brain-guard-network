@@ -257,7 +257,7 @@ const Index = () => {
           {/* 1. Problem Section */}
           <section 
             id="problem" 
-            className="min-h-screen md:min-h-[100vh] bg-gray-800 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
             style={{
               contain: 'layout style paint',
               willChange: 'transform',
@@ -391,7 +391,7 @@ const Index = () => {
           {/* 2. Urgency Section */}
           <section 
             id="urgency" 
-            className="min-h-screen md:min-h-[100vh] bg-gray-800 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
           >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
@@ -529,13 +529,12 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Spacer between Urgency and Solution */}
-          <div className="h-16 md:h-32 bg-gradient-to-b from-gray-900 to-black"></div>
+          {/* Removed spacer */}
 
           {/* 3. Solution Section */}
           <section 
             id="solution" 
-            className="min-h-screen md:min-h-[100vh] bg-gray-800 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
           >
             {/* Clean solution section without EEG animations */}
 
@@ -622,7 +621,7 @@ const Index = () => {
           {/* 4. Our Edge Section */}
           <section 
             id="edge" 
-            className="min-h-screen md:min-h-[100vh] bg-gray-800 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
           >
             {/* Large cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8">
