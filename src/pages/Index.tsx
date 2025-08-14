@@ -11,15 +11,25 @@ const Index = () => {
 
   // Set document title on component mount
   useEffect(() => {
-    // Set title immediately
-    document.title = "XBrainer AI Official Website";
-    
-    // Also set it again with a timeout to override any other title changes
-    const timeoutId = setTimeout(() => {
+    // Set title immediately and aggressively
+    const setTitle = () => {
       document.title = "XBrainer AI Official Website";
-    }, 100);
+    };
     
-    return () => clearTimeout(timeoutId);
+    setTitle();
+    
+    // Set it multiple times to override any other changes
+    const intervals = [50, 100, 200, 500, 1000].map(delay => 
+      setTimeout(setTitle, delay)
+    );
+    
+    // Also use an interval to keep setting it
+    const persistentInterval = setInterval(setTitle, 2000);
+    
+    return () => {
+      intervals.forEach(clearTimeout);
+      clearInterval(persistentInterval);
+    };
   }, []);
 
   const menuItems = [
