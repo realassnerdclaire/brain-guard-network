@@ -37,7 +37,7 @@ const NavigationLayout = ({ onBack, onNavigateToSection }: NavigationLayoutProps
   const bottomNavItems = ["PROBLEM", "URGENCY", "SOLUTION", "OUR EDGE"];
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-background text-white relative overflow-hidden">
       {/* Optimized Background with immediate loading */}
       <div 
         className={`absolute inset-0 z-0 transition-opacity duration-300 ${
