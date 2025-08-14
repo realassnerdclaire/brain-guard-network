@@ -106,12 +106,14 @@ const AboutUs = () => {
           <img 
             src="/lovable-uploads/c93b77ed-67f7-4582-bdc4-916188a4fe5f.png"
             alt=""
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
+            className="absolute top-2 -right-16 w-72 h-72 object-cover opacity-45"
             style={{
-              filter: 'brightness(0.6) contrast(1.2)',
+              filter: 'brightness(0.9) contrast(1.1)',
+              transform: 'rotate(8deg)',
+              maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0) 100%)',
+              WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0) 100%)'
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90"></div>
         </div>
         <div className="max-w-4xl mx-auto relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">About XBrainer AI</h1>
