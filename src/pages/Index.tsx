@@ -257,12 +257,7 @@ const Index = () => {
           {/* 1. Problem Section */}
           <section 
             id="problem" 
-            className="min-h-screen md:min-h-[100vh] bg-background flex items-center justify-center relative overflow-hidden"
-            style={{
-              contain: 'layout style paint',
-              willChange: 'transform',
-              isolation: 'isolate'
-            }}
+            className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden"
           >
             {/* Subtle flowing EEG background for Problem section */}
             <div 

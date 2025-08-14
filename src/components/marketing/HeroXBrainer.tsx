@@ -5,7 +5,7 @@ import { animateLetters, startHoverAnimation, stopHoverAnimation } from "@/utils
 const HeroXBrainer = () => {
   console.log("🎨 HeroXBrainer component rendering with color animation!");
   return (
-    <section className="relative h-screen bg-background overflow-hidden flex flex-col justify-center sm:justify-start">
+    <section className="relative min-h-screen bg-background overflow-hidden flex flex-col justify-center sm:justify-start">
       {/* XBrainer AI logo and company name - responsive positioning */}
       <div className="absolute top-2 left-2 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-20 flex items-center gap-1 sm:gap-4 lg:gap-6">
         <img 
