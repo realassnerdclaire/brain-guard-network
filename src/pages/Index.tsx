@@ -257,7 +257,7 @@ const Index = () => {
           {/* 1. Problem Section */}
           <section 
             id="problem" 
-            className="min-h-screen md:min-h-[100vh] bg-black flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] bg-background flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
             style={{
               contain: 'layout style paint',
               willChange: 'transform',
