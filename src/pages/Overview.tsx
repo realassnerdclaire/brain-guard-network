@@ -20,7 +20,7 @@ const Overview = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-white relative overflow-hidden">
+    <div className="dark min-h-screen bg-background text-white relative overflow-hidden">
       {/* Background */}
       <div 
         className="absolute inset-0 z-0"
