@@ -548,11 +548,11 @@ const Index = () => {
                 <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   The Urgency
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1E40AF] mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-4 md:mb-6 animate-pulse" />
                 
                 <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
-                    The market is scaling fast — <span className="text-sky-300 font-bold">3M+ EEG devices expected in North America by 2026</span>.
+                    The market is scaling fast. <span className="text-cyan-300 font-bold">3M+ EEG devices expected in North America by 2026</span>.
                   </p>
                   
                   {/* Urgency Feature Cards - Timeline Style */}
@@ -583,7 +583,7 @@ const Index = () => {
                   </div>
                   
                   <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mt-4 md:mt-12">
-                    Companies that wait risk being <span className="text-white bg-pink-500/30 px-1 py-0.5 rounded animate-pulse">locked out</span> of clinical and consumer markets.
+                    Companies that wait risk being <span className="text-cyan-300 font-semibold">locked out</span> of clinical and consumer markets.
                   </p>
                 </div>
               </div>
@@ -689,7 +689,7 @@ const Index = () => {
                 <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   The Solution
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#14B8A6] to-[#0D9488] mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-green-100 via-green-300 to-green-600 mx-auto mb-4 md:mb-6 animate-pulse" />
                 
                 <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
@@ -778,7 +778,7 @@ const Index = () => {
                 <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   Our Edge
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#A855F7] to-[#7C3AED] mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-4 md:mb-6 animate-pulse" />
                 
                 {/* Our Edge Feature Cards - Timeline Style */}
                 <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
