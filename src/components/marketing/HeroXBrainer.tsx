@@ -100,65 +100,67 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 h-full flex items-center justify-between px-3 sm:px-8 lg:px-12 xl:px-16 py-20">
-        {/* Left side - Headline and subheadline */}
-        <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl relative z-15">
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-6 sm:mb-8 lg:mb-12" id="hero-title">
-            <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
-          </h1>
-          <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-lg lg:max-w-2xl xl:max-w-3xl leading-relaxed">
-            As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
-          </p>
-        </div>
-        
-        {/* Right side - Action buttons */}
-        <div className="flex flex-col gap-4 lg:gap-6 ml-8">
-          <button 
-            className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300"
-            onMouseEnter={(e) => {
-              const btn = e.currentTarget;
-              const interval = startHoverAnimation(btn);
-              (btn as any).hoverInterval = interval;
-            }}
-            onMouseLeave={(e) => {
-              const btn = e.currentTarget;
-              if ((btn as any).hoverInterval) {
-                stopHoverAnimation(btn, (btn as any).hoverInterval);
-                (btn as any).hoverInterval = null;
-              }
-            }}
-            onClick={() => {
-              const ctaSection = document.getElementById('cta');
-              if (ctaSection) {
-                ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }}
-          >
-            JOIN THE WAITLIST
-          </button>
-          <button 
-            className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300"
-            onMouseEnter={(e) => {
-              const btn = e.currentTarget;
-              const interval = startHoverAnimation(btn);
-              (btn as any).hoverInterval = interval;
-            }}
-            onMouseLeave={(e) => {
-              const btn = e.currentTarget;
-              if ((btn as any).hoverInterval) {
-                stopHoverAnimation(btn, (btn as any).hoverInterval);
-                (btn as any).hoverInterval = null;
-              }
-            }}
-            onClick={() => {
-              const demoSection = document.getElementById('demo');
-              if (demoSection) {
-                demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }}
-          >
-            SEE THE DEMO
-          </button>
+      <div className="container relative z-10 h-full flex flex-col justify-center px-3 sm:px-8 lg:px-12 xl:px-16 py-20">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-16">
+          {/* Left side - Headline and subheadline */}
+          <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl relative z-15">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight font-normal mb-6 sm:mb-8" id="hero-title">
+              <span className="inline-block" style={{animation: 'color-cycle 5s ease-in-out infinite'}}>Secure Neural Data Before It's Too Late</span>
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-md lg:max-w-2xl leading-relaxed">
+              As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
+            </p>
+          </div>
+          
+          {/* Right side - Action buttons */}
+          <div className="flex flex-col gap-4 lg:gap-6 lg:mt-8">
+            <button 
+              className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300"
+              onMouseEnter={(e) => {
+                const btn = e.currentTarget;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
+              }}
+              onMouseLeave={(e) => {
+                const btn = e.currentTarget;
+                if ((btn as any).hoverInterval) {
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
+              }}
+              onClick={() => {
+                const ctaSection = document.getElementById('cta');
+                if (ctaSection) {
+                  ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              JOIN THE WAITLIST
+            </button>
+            <button 
+              className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-8 lg:px-12 py-4 lg:py-5 text-lg lg:text-xl font-medium cursor-pointer transition-all duration-300"
+              onMouseEnter={(e) => {
+                const btn = e.currentTarget;
+                const interval = startHoverAnimation(btn);
+                (btn as any).hoverInterval = interval;
+              }}
+              onMouseLeave={(e) => {
+                const btn = e.currentTarget;
+                if ((btn as any).hoverInterval) {
+                  stopHoverAnimation(btn, (btn as any).hoverInterval);
+                  (btn as any).hoverInterval = null;
+                }
+              }}
+              onClick={() => {
+                const demoSection = document.getElementById('demo');
+                if (demoSection) {
+                  demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              SEE THE DEMO
+            </button>
+          </div>
         </div>
       </div>
       
