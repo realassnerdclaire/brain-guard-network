@@ -532,67 +532,92 @@ const Index = () => {
             id="solution" 
             className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden"
           >
-            {/* Smooth flowing EEG background for Solution section */}
-            <div className="absolute inset-0 opacity-100">
-              <svg className="w-full h-full" viewBox="0 0 1920 1080">
+            {/* Enhanced futuristic background with neural network effects */}
+            <div className="absolute inset-0 overflow-hidden">
+              {/* Neural grid overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-background via-purple-950/20 to-blue-950/20" />
+              
+              {/* Animated neural network nodes */}
+              <div className="absolute inset-0">
+                <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50" style={{animationDelay: '0s'}} />
+                <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-purple-400 rounded-full animate-pulse shadow-lg shadow-purple-400/50" style={{animationDelay: '1s'}} />
+                <div className="absolute bottom-1/3 left-1/3 w-4 h-4 bg-blue-500 rounded-full animate-pulse shadow-lg shadow-blue-500/50" style={{animationDelay: '2s'}} />
+                <div className="absolute top-2/3 right-1/4 w-2.5 h-2.5 bg-indigo-400 rounded-full animate-pulse shadow-lg shadow-indigo-400/50" style={{animationDelay: '1.5s'}} />
+                
+                {/* Connecting lines */}
+                <svg className="absolute inset-0 w-full h-full">
+                  <defs>
+                    <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{stopColor: '#60A5FA', stopOpacity: 0.4}} />
+                      <stop offset="100%" style={{stopColor: '#A855F7', stopOpacity: 0.4}} />
+                    </linearGradient>
+                  </defs>
+                  <path d="M25% 25% L66% 33%" stroke="url(#connectionGradient)" strokeWidth="1" fill="none" opacity="0.6">
+                    <animate attributeName="stroke-dasharray" values="0,20;20,0;0,20" dur="4s" repeatCount="indefinite" />
+                  </path>
+                  <path d="M66% 33% L33% 66%" stroke="url(#connectionGradient)" strokeWidth="1" fill="none" opacity="0.6">
+                    <animate attributeName="stroke-dasharray" values="0,20;20,0;0,20" dur="4s" repeatCount="indefinite" begin="1s" />
+                  </path>
+                  <path d="M33% 66% L75% 66%" stroke="url(#connectionGradient)" strokeWidth="1" fill="none" opacity="0.6">
+                    <animate attributeName="stroke-dasharray" values="0,20;20,0;0,20" dur="4s" repeatCount="indefinite" begin="2s" />
+                  </path>
+                </svg>
+              </div>
+
+              {/* Enhanced EEG patterns */}
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1920 1080">
                 <defs>
                   <linearGradient id="solutionFlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#6C63FF', stopOpacity: 0.9}} />
-                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#6C63FF', stopOpacity: 0.9}} />
+                    <stop offset="0%" style={{stopColor: '#06B6D4', stopOpacity: 0.8}} />
+                    <stop offset="50%" style={{stopColor: '#3B82F6', stopOpacity: 1.0}} />
+                    <stop offset="100%" style={{stopColor: '#8B5CF6', stopOpacity: 0.8}} />
                   </linearGradient>
                   <linearGradient id="solutionFlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: '#4338CA', stopOpacity: 1.0}} />
-                    <stop offset="100%" style={{stopColor: '#7C3AED', stopOpacity: 0.8}} />
+                    <stop offset="0%" style={{stopColor: '#A855F7', stopOpacity: 0.6}} />
+                    <stop offset="50%" style={{stopColor: '#6366F1', stopOpacity: 0.9}} />
+                    <stop offset="100%" style={{stopColor: '#06B6D4', stopOpacity: 0.6}} />
                   </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
                 </defs>
                 
-                {/* Copy exact EEG patterns from Problem section */}
+                {/* Stronger, more defined EEG patterns */}
                 <path
                   d="M-50,380 L0,375 L20,390 L40,365 L60,385 L80,370 L120,395 L140,360 L180,390 L220,375 L260,400 L300,350 L340,385 L380,370 L420,395 L460,355 L500,380 L540,375 L580,390 L620,365 L660,385 L700,370 L740,395 L780,360 L820,390 L860,375 L900,400 L940,350 L980,385 L1020,370 L1060,395 L1100,355 L1140,380 L1180,375 L1220,390 L1260,365 L1300,385 L1340,370 L1380,395 L1420,360 L1460,390 L1500,375 L1540,400 L1580,350 L1620,385 L1660,370 L1700,395 L1740,355 L1780,380 L1820,375 L1860,390 L1900,365 L1940,385 L1980,370"
                   stroke="url(#solutionFlow1)"
-                  strokeWidth="2"
+                  strokeWidth="3"
                   fill="none"
-                  opacity="0.9"
+                  opacity="1"
+                  filter="url(#glow)"
                   style={{
-                    animation: 'solutionFlow 12s linear infinite'
+                    animation: 'solutionFlow 8s linear infinite'
                   }}
                 />
                 
                 <path
                   d="M-50,480 L0,485 L25,460 L50,495 L75,470 L100,490 L130,465 L160,500 L190,475 L220,485 L250,460 L280,495 L310,470 L340,490 L370,465 L400,500 L430,475 L460,485 L490,460 L520,495 L550,470 L580,490 L610,465 L640,500 L670,475 L700,485 L730,460 L760,495 L790,470 L820,490 L850,465 L880,500 L910,475 L940,485 L970,460 L1000,495 L1030,470 L1060,490 L1090,465 L1120,500 L1150,475 L1180,485 L1210,460 L1240,495 L1270,470 L1300,490 L1330,465 L1360,500 L1390,475 L1420,485 L1450,460 L1480,495 L1510,470 L1540,490 L1570,465 L1600,500 L1630,475 L1660,485 L1690,460 L1720,495 L1750,470 L1780,490 L1810,465 L1840,500 L1870,475 L1900,485 L1930,460 L1960,495 L1990,470"
                   stroke="url(#solutionFlow2)"
-                  strokeWidth="1.5"
+                  strokeWidth="2.5"
                   fill="none"
-                  opacity="0.7"
+                  opacity="0.9"
+                  filter="url(#glow)"
                   style={{
-                    animation: 'solutionFlow 15s linear infinite reverse'
+                    animation: 'solutionFlow 10s linear infinite reverse'
                   }}
                 />
                 
-                <path
-                  d="M-50,580 L0,575 L15,590 L30,565 L45,585 L60,570 L80,595 L100,560 L125,590 L150,575 L175,600 L200,555 L225,585 L250,570 L275,595 L300,560 L325,590 L350,575 L375,600 L400,555 L425,585 L450,570 L475,595 L500,560 L525,590 L550,575 L575,600 L600,555 L625,585 L650,570 L675,595 L700,560 L725,590 L750,575 L775,600 L800,555 L825,585 L850,570 L875,595 L900,560 L925,590 L950,575 L975,600 L1000,555 L1025,585 L1050,570 L1075,595 L1100,560 L1125,590 L1150,575 L1175,600 L1200,555 L1225,585 L1250,570 L1275,595 L1300,560 L1325,590 L1350,575 L1375,600 L1400,555 L1425,585 L1450,570 L1475,595 L1500,560 L1525,590 L1550,575 L1575,600 L1600,555 L1625,585 L1650,570 L1675,595 L1700,560 L1725,590 L1750,575 L1775,600 L1800,555 L1825,585 L1850,570 L1875,595 L1900,560 L1925,590 L1950,575 L1975,600"
-                  stroke="#4F46E5"
-                  strokeWidth="1"
-                  fill="none"
-                  opacity="0.6"
-                  style={{
-                    animation: 'solutionFlow 18s linear infinite'
-                  }}
-                />
-                
-                {/* Additional EEG spikes for solution effect */}
-                <path
-                  d="M-50,420 L0,415 L10,440 L20,405 L30,435 L40,410 L50,445 L60,400 L70,430 L80,415 L90,450 L100,395 L110,425 L120,410 L130,445 L140,400 L150,430 L160,415 L170,450 L180,395 L190,425 L200,410"
-                  stroke="#6B21A8"
-                  strokeWidth="1.5"
-                  fill="none"
-                  opacity="0.8"
-                  style={{
-                    animation: 'solutionFlow 8s linear infinite'
-                  }}
-                />
+                {/* Digital grid overlay */}
+                <defs>
+                  <pattern id="digitalGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3B82F6" strokeWidth="0.5" opacity="0.2" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#digitalGrid)" />
               </svg>
             </div>
 
@@ -624,7 +649,7 @@ const Index = () => {
                   </div>
                   
                   <p className="text-lg md:text-xl text-white/90 leading-relaxed mt-8">
-                    We enable device makers, researchers, and healthcare providers to deploy neurotechnology safely while maintaining data integrity and privacy.
+                    We help device makers, researchers, and healthcare providers deploy neurotechnology safely while maintaining data integrity and privacy.
                   </p>
                 </div>
               </div>
@@ -686,47 +711,23 @@ const Index = () => {
                 </h2>
                 <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-8 md:mb-6 animate-pulse" />
                 
-                {/* Feature items with original text content */}
-                <div className="space-y-4 md:space-y-3 max-w-5xl mx-auto">
-                  <div className="relative group animate-scale-in" style={{animationDelay: '0.1s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/20 to-[#1D4ED8]/20 transform skew-x-3 group-hover:skew-x-6 transition-transform duration-700 rounded-3xl"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#3B82F6]/40 rounded-3xl p-4 md:p-4 hover:border-[#3B82F6]/70 transition-all duration-500 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6]/5 via-transparent to-[#1D4ED8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative z-10 text-left">
-                        <h3 className="text-base md:text-base font-bold text-white mb-1 md:mb-1">Patent pending signal-security pipeline</h3>
-                      </div>
-                    </div>
+                {/* Feature items with updated content */}
+                <div className="text-left space-y-4 text-white/80 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#3B82F6] text-xl mt-1">•</span>
+                    <p><strong>Patent-Pending Security Pipeline</strong> – Real-time encryption and integrity checks for neural data.</p>
                   </div>
-
-                  <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.2s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-bl from-[#2563EB]/20 to-[#3B82F6]/20 transform -skew-y-2 group-hover:-skew-y-4 transition-transform duration-700 rounded-full"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#2563EB]/40 rounded-full p-4 md:p-4 hover:border-[#2563EB]/70 transition-all duration-500 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-l from-[#2563EB]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative z-10 text-left">
-                        <h3 className="text-base md:text-base font-bold text-white mb-1 md:mb-1">Standards-first architecture: HIPAA, GDPR, ISO 27001, FDA guidance</h3>
-                      </div>
-                    </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#2563EB] text-xl mt-1">•</span>
+                    <p><strong>Regulatory-First Design</strong> – HIPAA, GDPR, ISO 27001, FDA-ready.</p>
                   </div>
-
-                  <div className="relative group animate-scale-in w-5/6" style={{animationDelay: '0.3s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/20 to-[#3B82F6]/20 transform rotate-1 group-hover:rotate-3 transition-transform duration-700"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1E40AF]/40 p-4 md:p-4 hover:border-[#1E40AF]/70 transition-all duration-500 overflow-hidden" style={{clipPath: 'polygon(0 0, calc(100% - 2rem) 0, 100% 100%, 2rem 100%)'}}>
-                      <div className="absolute inset-0 bg-gradient-to-tr from-[#1E40AF]/5 via-transparent to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative z-10 text-left">
-                        <h3 className="text-base md:text-base font-bold text-white mb-1 md:mb-1">Adaptive intrusion detection powered by AI models tuned for BCI signal patterns</h3>
-                      </div>
-                    </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#1E40AF] text-xl mt-1">•</span>
+                    <p><strong>AI-Driven Threat Detection</strong> – Tuned for BCI signal anomalies.</p>
                   </div>
-
-                  <div className="relative group animate-scale-in ml-auto w-4/5" style={{animationDelay: '0.4s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-bl from-[#1D4ED8]/20 to-[#2563EB]/20 transform -rotate-2 group-hover:-rotate-4 transition-transform duration-700 rounded-[3rem]"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#1D4ED8]/40 rounded-[3rem] p-4 md:p-4 hover:border-[#1D4ED8]/70 transition-all duration-500 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-l from-[#1D4ED8]/5 via-transparent to-[#2563EB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative z-10 text-left">
-                        <h3 className="text-base md:text-base font-bold text-white mb-1 md:mb-1">Flexible SDK integration for device manufacturers and research platforms</h3>
-                      </div>
-                    </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#1D4ED8] text-xl mt-1">•</span>
+                    <p><strong>Seamless Integration</strong> – SDKs and APIs for devices, research, and clinical systems.</p>
                   </div>
                 </div>
               </div>
