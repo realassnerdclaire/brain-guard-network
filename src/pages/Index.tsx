@@ -360,20 +360,20 @@ const Index = () => {
                   
                   <div className="bg-black/40 border border-[#7C3AED]/30 rounded-2xl p-4 md:p-4 animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.6s'}}>
                     <h3 className="text-lg md:text-lg font-bold text-white mb-3 md:mb-3 flex items-center gap-3">
-                      <span className="text-[#6C63FF] text-xl md:text-xl animate-pulse">⚠️</span>
+                      <span className="text-[#6C63FF] text-xl md:text-xl animate-pulse"></span>
                       Unsecured pipelines risk:
                     </h3>
                     <div className="space-y-2 md:space-y-2">
                       <div className="flex items-start gap-2 md:gap-3 p-2 md:p-2 bg-[#7C3AED]/20 rounded-lg border border-[#7C3AED]/20 hover:border-[#7C3AED]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#6C63FF] text-base md:text-base animate-pulse">🔓</span>
+                        <span className="text-[#6C63FF] text-base md:text-base animate-pulse"></span>
                         <span className="text-sm md:text-sm text-white/90"><strong>Data breaches</strong> exposing neurological health information</span>
                       </div>
                       <div className="flex items-start gap-2 md:gap-3 p-2 md:p-2 bg-[#9333EA]/20 rounded-lg border border-[#9333EA]/20 hover:border-[#9333EA]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#9333EA] text-base md:text-base animate-pulse">⏸️</span>
+                        <span className="text-[#9333EA] text-base md:text-base animate-pulse"></span>
                         <span className="text-sm md:text-sm text-white/90"><strong>Regulatory delays</strong> that stall trials and market approvals</span>
                       </div>
                       <div className="flex items-start gap-2 md:gap-3 p-2 md:p-2 bg-[#4338CA]/20 rounded-lg border border-[#4338CA]/20 hover:border-[#4338CA]/40 transition-all duration-300 hover-scale">
-                        <span className="text-[#4338CA] text-base md:text-base animate-pulse">📊</span>
+                        <span className="text-[#4338CA] text-base md:text-base animate-pulse"></span>
                         <span className="text-sm md:text-sm text-white/90"><strong>Research integrity</strong> loss from tampering or unauthorized access</span>
                       </div>
                     </div>
