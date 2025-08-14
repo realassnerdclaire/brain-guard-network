@@ -603,71 +603,29 @@ const Index = () => {
                 </h2>
                 <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] mx-auto mb-8 md:mb-6 animate-pulse" />
                 
-                <div className="space-y-4 md:space-y-4 text-left max-w-4xl mx-auto">
-                  {/* Futuristic neural shield container */}
-                  <div className="relative group animate-scale-in" style={{animationDelay: '0.2s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/20 to-[#9333EA]/20 rounded-[2rem] transform -rotate-1 group-hover:-rotate-2 transition-transform duration-700"></div>
-                    <div className="relative bg-black/70 backdrop-blur-lg border-2 border-[#7C3AED]/40 rounded-[2rem] p-4 md:p-4 hover:border-[#7C3AED]/70 transition-all duration-500">
-                      <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-3">
-                        <div className="w-12 h-12 md:w-12 md:h-12 bg-gradient-to-br from-[#EC4899]/20 to-[#F472B6]/20 rounded-full flex items-center justify-center">
-                          <span className="text-xl md:text-xl animate-pulse"></span>
-                        </div>
-                        <h3 className="text-lg md:text-lg font-bold text-white">
-                        XBrainer AI builds a neural intrusion prevention system that:
-                        </h3>
-                      </div>
-                      
-                      {/* Organic feature circles */}
-                      <div className="grid gap-3 md:gap-3 md:grid-cols-3">
-                        <div className="relative group/feature">
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/10 to-[#7C3AED]/5 rounded-[1.5rem] transform rotate-3 group-hover/feature:rotate-6 transition-transform duration-300"></div>
-                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#7C3AED]/30 rounded-[1.5rem] p-3 md:p-3 text-center hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5 transition-all duration-300 hover-scale">
-                            <div className="mb-2 md:mb-2">
-                            </div>
-                            <h4 className="text-white font-bold mb-2 md:mb-2 text-sm md:text-sm">Real-time Encryption</h4>
-                            <p className="text-white/70 text-xs md:text-xs">Encrypts and authenticates EEG streams in real time</p>
-                          </div>
-                        </div>
-                        
-                        <div className="relative group/feature">
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#9333EA]/10 to-[#9333EA]/5 rounded-[1.5rem] transform -rotate-2 group-hover/feature:-rotate-4 transition-transform duration-300"></div>
-                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#9333EA]/30 rounded-[1.5rem] p-3 md:p-3 text-center hover:border-[#9333EA]/60 hover:bg-[#9333EA]/5 transition-all duration-300 hover-scale">
-                            <div className="mb-2 md:mb-2">
-                            </div>
-                            <h4 className="text-white font-bold mb-2 md:mb-2 text-sm md:text-sm">Access Controls</h4>
-                            <p className="text-white/70 text-xs md:text-xs">Applies consent-based access controls for each data request</p>
-                          </div>
-                        </div>
-                        
-                        <div className="relative group/feature">
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#6B21A8]/10 to-[#6B21A8]/5 rounded-[1.5rem] transform rotate-1 group-hover/feature:rotate-3 transition-transform duration-300"></div>
-                          <div className="relative bg-black/50 backdrop-blur-sm border border-[#6B21A8]/30 rounded-[1.5rem] p-3 md:p-3 text-center hover:border-[#6B21A8]/60 hover:bg-[#6B21A8]/5 transition-all duration-300 hover-scale">
-                            <div className="mb-2 md:mb-2">
-                            </div>
-                            <h4 className="text-white font-bold mb-2 md:mb-2 text-sm md:text-sm">Audit Trails</h4>
-                            <p className="text-white/70 text-xs md:text-xs">Maintains full audit trails to meet HIPAA, GDPR, and emerging BCI standards</p>
-                          </div>
-                        </div>
-                      </div>
+                <div className="space-y-6 md:space-y-8 text-center max-w-4xl mx-auto">
+                  <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8">
+                    XBrainer AI secures brain data in real time, from EEG and BCI devices to end users.
+                  </p>
+                  
+                  <div className="text-left space-y-4 text-white/80 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#7C3AED] text-xl mt-1">•</span>
+                      <p>Real-time encryption at the source prevents interception.</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#9333EA] text-xl mt-1">•</span>
+                      <p>Instant access controls give or revoke permissions instantly.</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#6B21A8] text-xl mt-1">•</span>
+                      <p>Permanent audit logs record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
                     </div>
                   </div>
                   
-                  {/* Flowing benefit capsule */}
-                  <div className="relative group animate-fade-in" style={{animationDelay: '0.4s'}}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/10 to-[#9333EA]/10 rounded-full transform scale-105 group-hover:scale-110 transition-transform duration-500"></div>
-                    <div className="relative bg-black/80 backdrop-blur-md border-2 border-[#7C3AED]/40 rounded-full p-4 md:p-4 text-center overflow-hidden hover:border-[#7C3AED]/70 transition-all duration-500">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/5 to-transparent animate-pulse"></div>
-                      <div className="relative z-10">
-                        <div className="flex items-center justify-center gap-3 mb-2 md:mb-2">
-                          <span className="text-2xl md:text-2xl animate-pulse"></span>
-                          <span className="text-2xl md:text-2xl animate-pulse"></span>
-                        </div>
-                        <p className="text-base md:text-base text-white leading-relaxed">
-                          Our approach not only reduces security and compliance risk — it <span className="text-[#7C3AED] font-semibold bg-[#9333EA]/30 px-3 py-1 rounded-full animate-pulse">shortens time-to-market</span> for device makers and researchers.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <p className="text-lg md:text-xl text-white/90 leading-relaxed mt-8">
+                    We enable device makers, researchers, and healthcare providers to deploy neurotechnology safely while maintaining data integrity and privacy.
+                  </p>
                 </div>
               </div>
             </div>
