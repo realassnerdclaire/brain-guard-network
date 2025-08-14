@@ -108,9 +108,12 @@ const HeroXBrainer = () => {
               className="text-3xl sm:text-5xl lg:text-6xl xl:text-8xl leading-tight font-normal mb-6 sm:mb-8 lg:mb-10 xl:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-50 via-cyan-200 via-cyan-400 via-cyan-600 via-cyan-400 via-cyan-200 via-cyan-50 to-white opacity-0" 
               id="hero-title"
               style={{
-                animation: 'fade-in 1.2s ease-out 0.5s both, scale-in 1s ease-out 0.5s both',
-                transform: 'translateY(30px)',
-                animationFillMode: 'both'
+                animation: 'fade-in 1.2s ease-out 0.5s both, scale-in 1s ease-out 0.5s both, heroGlow 3s ease-in-out infinite',
+                backgroundSize: '300% 100%',
+                backgroundPosition: '0% 50%',
+                animationFillMode: 'both',
+                filter: 'drop-shadow(0 0 20px rgba(6, 182, 212, 0.8))',
+                transform: 'perspective(1000px) rotateX(5deg)'
               }}
             >
               Secure Neural Data Before It's Too Late
@@ -118,9 +121,8 @@ const HeroXBrainer = () => {
             <p 
               className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-md lg:max-w-2xl xl:max-w-3xl leading-relaxed lg:leading-loose opacity-0"
               style={{
-                animation: 'fade-in 1s ease-out 1.2s both',
-                transform: 'translateY(20px)',
-                animationFillMode: 'both'
+                animation: 'fade-in 1s ease-out 1.2s both, scale-in 0.8s ease-out 1.2s both, subtitleFloat 4s ease-in-out infinite',
+                filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))'
               }}
             >
               As brain-computer devices become more common, the risk of brain data being misused is growing. XBrainer AI makes tools to keep this data safe.
@@ -132,9 +134,9 @@ const HeroXBrainer = () => {
             <button 
               className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-8 lg:px-12 xl:px-16 py-4 lg:py-6 xl:py-7 text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 opacity-0"
               style={{
-                animation: 'fade-in 1s ease-out 1.8s both, scale-in 0.8s ease-out 1.8s both',
-                transform: 'translateX(30px)',
-                animationFillMode: 'both'
+                animation: 'fade-in 0.8s ease-out 1.5s both, scale-in 0.6s ease-out 1.5s both, buttonPulse 2s ease-in-out infinite',
+                filter: 'drop-shadow(0 0 15px rgba(6, 182, 212, 0.6))',
+                transformOrigin: 'center'
               }}
               onMouseEnter={(e) => {
                 const btn = e.currentTarget;
@@ -158,11 +160,11 @@ const HeroXBrainer = () => {
               JOIN THE WAITLIST
             </button>
             <button 
-              className="rounded-full border border-white/30 bg-transparent text-white backdrop-blur-sm hover:bg-white/10 px-8 lg:px-12 xl:px-16 py-4 lg:py-6 xl:py-7 text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 opacity-0"
+              className="rounded-full border border-cyan-300/50 bg-cyan-600/20 text-cyan-100 backdrop-blur-sm hover:bg-cyan-500/30 px-8 lg:px-12 xl:px-16 py-4 lg:py-6 xl:py-7 text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 opacity-0"
               style={{
-                animation: 'fade-in 1s ease-out 2.2s both, scale-in 0.8s ease-out 2.2s both',
-                transform: 'translateX(30px)',
-                animationFillMode: 'both'
+                animation: 'fade-in 0.8s ease-out 1.8s both, scale-in 0.6s ease-out 1.8s both, buttonGlow 2.5s ease-in-out infinite',
+                filter: 'drop-shadow(0 0 15px rgba(103, 232, 249, 0.6))',
+                transformOrigin: 'center'
               }}
               onMouseEnter={(e) => {
                 const btn = e.currentTarget;

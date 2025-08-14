@@ -637,10 +637,10 @@ const Index = () => {
                   animation: currentSection === 2 ? 'scale-in 0.6s ease-out, fade-in 0.6s ease-out' : 'none'
                 }}
               >
-            {/* Enhanced futuristic background with neural network effects */}
+              {/* Enhanced futuristic background with neural network effects */}
             <div className="absolute inset-0 overflow-hidden">
-              {/* Neural grid overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-background via-purple-950/20 to-blue-950/20" />
+              {/* Neural grid overlay - same as urgency section */}
+              <div className="absolute inset-0 bg-background" />
               
               {/* Animated neural network nodes */}
               <div className="absolute inset-0">
