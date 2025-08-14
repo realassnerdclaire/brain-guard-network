@@ -485,21 +485,21 @@ const Index = () => {
                     <div className="space-y-3 md:space-y-2">
                       <div className="border-l-4 border-[#EC4899] pl-3 md:pl-4 bg-[#EC4899]/10 p-2 md:p-2 rounded-r-lg hover:bg-[#EC4899]/20 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
-                          <span className="text-lg md:text-lg">🎯</span>
+                          <span className="text-lg md:text-lg"></span>
                           <h4 className="text-sm md:text-sm font-semibold text-white">2025:</h4>
                         </div>
                         <p className="text-sm md:text-sm text-white/80">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
                       </div>
                       <div className="border-l-4 border-[#F472B6] pl-3 md:pl-4 bg-[#F472B6]/10 p-2 md:p-2 rounded-r-lg hover:bg-[#F472B6]/20 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
-                          <span className="text-lg md:text-lg">⚖️</span>
+                          <span className="text-lg md:text-lg"></span>
                           <h4 className="text-sm md:text-sm font-semibold text-white">2026:</h4>
                         </div>
                         <p className="text-sm md:text-sm text-white/80">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
                       </div>
                       <div className="border-l-4 border-[#BE185D] pl-3 md:pl-4 bg-[#BE185D]/10 p-2 md:p-2 rounded-r-lg hover:bg-[#BE185D]/20 transition-all duration-300 hover-scale">
                         <div className="flex items-center gap-2 md:gap-2 mb-1 md:mb-1">
-                          <span className="text-lg md:text-lg">🚫</span>
+                          <span className="text-lg md:text-lg"></span>
                           <h4 className="text-sm md:text-sm font-semibold text-white">2027+:</h4>
                         </div>
                         <p className="text-sm md:text-sm text-white/80">Potential new neurodata-specific protections may limit non-compliant market entry</p>
@@ -515,7 +515,7 @@ const Index = () => {
                         <span className="text-2xl md:text-2xl animate-pulse"></span>
                       </div>
                       <p className="text-base md:text-base text-white font-semibold">
-                        Companies that wait risk being <span className="text-[#EC4899] bg-[#F472B6]/50 px-2 md:px-2 py-1 rounded-lg animate-pulse">locked out</span> of clinical and consumer markets.
+                        Companies that wait risk being <span className="text-white bg-[#F472B6]/50 px-2 md:px-2 py-1 rounded-lg animate-pulse sparkle">locked out</span> of clinical and consumer markets.
                       </p>
                     </div>
                   </div>
