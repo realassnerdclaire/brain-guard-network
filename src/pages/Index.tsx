@@ -539,7 +539,27 @@ const Index = () => {
             className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
             style={{backgroundColor: '#1a1a1a'}}
           >
-            {/* Clean solution section without EEG animations */}
+            {/* Subtle flowing EEG background for Solution section */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-15">
+              <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="solutionEegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#7C3AED', stopOpacity: 0.6}} />
+                    <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.8}} />
+                    <stop offset="100%" style={{stopColor: '#7C3AED', stopOpacity: 0.6}} />
+                  </linearGradient>
+                </defs>
+                
+                <path d="M0,400 L60,395 L120,415 L180,385 L240,405 L300,375 L360,395 L420,420 L480,380 L540,400 L600,410 L660,385 L720,405 L780,395 L840,415 L900,385 L960,405 L1020,375 L1080,395 L1140,420 L1200,380 L1260,400 L1320,410 L1380,385 L1440,405 L1500,395 L1560,415 L1620,385 L1680,405 L1740,375 L1800,395 L1860,420 L1920,380"
+                      stroke="url(#solutionEegGradient)" 
+                      strokeWidth="1.2" 
+                      fill="none" 
+                      style={{
+                        animation: 'solutionFlow 18s linear infinite',
+                        strokeLinecap: 'round'
+                      }} />
+              </svg>
+            </div>
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
@@ -640,7 +660,37 @@ const Index = () => {
               ></div>
             </div>
               
-            {/* Clean edge section without EEG animations */}
+            {/* Flowing EEG background for Edge section */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-10">
+              <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="edgeEegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor: '#3B82F6', stopOpacity: 0.6}} />
+                    <stop offset="50%" style={{stopColor: '#60A5FA', stopOpacity: 0.8}} />
+                    <stop offset="100%" style={{stopColor: '#3B82F6', stopOpacity: 0.6}} />
+                  </linearGradient>
+                </defs>
+                
+                <path d="M0,350 L80,345 L160,365 L240,335 L320,355 L400,325 L480,345 L560,370 L640,330 L720,350 L800,360 L880,335 L960,355 L1040,345 L1120,365 L1200,335 L1280,355 L1360,325 L1440,345 L1520,370 L1600,330 L1680,350 L1760,360 L1840,335 L1920,355"
+                      stroke="url(#edgeEegGradient)" 
+                      strokeWidth="1" 
+                      fill="none" 
+                      style={{
+                        animation: 'edgeFlow 20s linear infinite',
+                        strokeLinecap: 'round'
+                      }} />
+                
+                <path d="M0,650 L70,655 L140,635 L210,665 L280,645 L350,675 L420,655 L490,630 L560,670 L630,650 L700,640 L770,665 L840,645 L910,655 L980,635 L1050,665 L1120,645 L1190,675 L1260,655 L1330,630 L1400,670 L1470,650 L1540,640 L1610,665 L1680,645 L1750,655 L1820,635 L1890,665 L1920,645"
+                      stroke="url(#edgeEegGradient)" 
+                      strokeWidth="0.8" 
+                      fill="none" 
+                      style={{
+                        animation: 'edgeFlow 25s linear infinite reverse',
+                        animationDelay: '3s',
+                        strokeLinecap: 'round'
+                      }} />
+              </svg>
+            </div>
 
             <div className="container relative z-10 text-center px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">

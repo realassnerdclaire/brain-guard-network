@@ -29,7 +29,38 @@ const HeroXBrainer = () => {
       </div>
       
       
-      {/* Removed EEG animations from hero - keeping it clean */}
+      {/* Subtle EEG background flows */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-20">
+        <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="heroEegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
+              <stop offset="50%" style={{stopColor: '#A78BFA', stopOpacity: 0.8}} />
+              <stop offset="100%" style={{stopColor: '#60A5FA', stopOpacity: 0.6}} />
+            </linearGradient>
+          </defs>
+          
+          {/* Flowing EEG lines */}
+          <path d="M0,300 L50,295 L100,310 L150,285 L200,305 L250,280 L300,300 L350,290 L400,315 L450,275 L500,295 L550,320 L600,285 L650,300 L700,295 L750,310 L800,285 L850,305 L900,280 L950,300 L1000,290 L1050,315 L1100,275 L1150,295 L1200,320 L1250,285 L1300,300 L1350,295 L1400,310 L1450,285 L1500,305 L1550,280 L1600,300 L1650,290 L1700,315 L1750,275 L1800,295 L1850,320 L1900,285 L1950,300"
+                stroke="url(#heroEegGradient)" 
+                strokeWidth="1" 
+                fill="none" 
+                style={{
+                  animation: 'eeg-flow 12s ease-in-out infinite',
+                  strokeLinecap: 'round'
+                }} />
+          
+          <path d="M0,600 L40,608 L80,592 L120,612 L160,588 L200,616 L240,584 L280,608 L320,592 L360,612 L400,588 L440,616 L480,584 L520,608 L560,592 L600,612 L640,588 L680,616 L720,584 L760,608 L800,592 L840,612 L880,588 L920,616 L960,584 L1000,608 L1040,592 L1080,612 L1120,588 L1160,616 L1200,584 L1240,608 L1280,592 L1320,612 L1360,588 L1400,616 L1440,584 L1480,608 L1520,592 L1560,612 L1600,588 L1640,616 L1680,584 L1720,608 L1760,592 L1800,612 L1840,588 L1880,616 L1920,584"
+                stroke="url(#heroEegGradient)" 
+                strokeWidth="0.8" 
+                fill="none" 
+                style={{
+                  animation: 'eeg-flow 15s ease-in-out infinite reverse',
+                  animationDelay: '2s',
+                  strokeLinecap: 'round'
+                }} />
+        </svg>
+      </div>
 
       {/* Enhanced futuristic neon brain - foreground layer */}
       <div className="absolute right-0 sm:right-0 top-1/3 sm:top-1/2 -translate-y-4 w-3/5 sm:w-2/5 h-[50vh] sm:h-[65vh] z-10">
