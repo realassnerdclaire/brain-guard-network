@@ -40,7 +40,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-gray-800 text-white relative overflow-hidden">
       {/* Neural Network Brain Background */}
       <div 
         className="absolute inset-0 z-0"
