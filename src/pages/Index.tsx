@@ -295,7 +295,7 @@ const Index = () => {
                   </linearGradient>
                 </defs>
                 
-                {/* Realistic EEG waveforms representing security vulnerabilities */}
+                {/* Only 4 EEG waveforms total */}
                 <path
                   d="M-50,380 L0,375 L20,390 L40,365 L60,385 L80,370 L120,395 L140,360 L180,390 L220,375 L260,400 L300,350 L340,385 L380,370 L420,395 L460,355 L500,380 L540,375 L580,390 L620,365 L660,385 L700,370 L740,395 L780,360 L820,390 L860,375 L900,400 L940,350 L980,385 L1020,370 L1060,395 L1100,355 L1140,380 L1180,375 L1220,390 L1260,365 L1300,385 L1340,370 L1380,395 L1420,360 L1460,390 L1500,375 L1540,400 L1580,350 L1620,385 L1660,370 L1700,395 L1740,355 L1780,380 L1820,375 L1860,390 L1900,365 L1940,385 L1980,370"
                   stroke="url(#problemFlow1)"
@@ -326,6 +326,17 @@ const Index = () => {
                   opacity="0.05"
                   style={{
                     animation: 'problemFlow 30s linear infinite'
+                  }}
+                />
+                
+                <path
+                  d="M-50,320 L0,325 L10,310 L20,335 L30,320 L40,340 L50,315 L60,330 L70,320 L80,345 L90,310 L100,325 L110,320 L120,340 L130,315 L140,330 L150,320 L160,345 L170,310 L180,325 L190,320 L200,340"
+                  stroke="#A855F7"
+                  strokeWidth="0.4"
+                  fill="none"
+                  opacity="0.06"
+                  style={{
+                    animation: 'problemFlow 18s linear infinite'
                   }}
                 />
                 
