@@ -106,28 +106,47 @@ const AboutUs = () => {
           
           <div className="space-y-8 text-lg leading-relaxed">
             <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-4 text-[#6C63FF]">Our Mission</h2>
+              <h2 className="text-2xl font-bold mb-4 text-[#6C63FF]">What is XBrainer AI?</h2>
               <p className="text-white/90">
-                XBrainer AI is revolutionizing neural data security by providing real-time protection for EEG and BCI devices. 
-                We ensure that brain data receives the same level of protection as your most sensitive financial information.
+                We build a real-time security layer for brain–computer interfaces. It sits between EEG/IMU devices and apps to encrypt streams, run packet checks, apply consent-based access, and record a write-once audit log. Hardware-agnostic and low-latency, it scales from lab pilots to clinical and enterprise deployments on-prem or cloud. So applications receive validated, access-controlled neural data without firmware changes.
               </p>
             </div>
 
             <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-4 text-[#A855F7]">Who We Are</h2>
+              <h2 className="text-2xl font-bold mb-4 text-[#A855F7]">Why it matters?</h2>
               <p className="text-white/90">
-                Founded by leading experts in neuroscience, cybersecurity, and AI, XBrainer AI bridges the critical gap 
-                between advancing brain-computer interface technology and protecting the most intimate data imaginable - 
-                human thoughts and neural patterns.
+                Many EEG/BCI pipelines lack four basics: encryption in transit, packet checks (timing/range/artifacts), consent-based access, and a write-once audit log. As projects move from pilots to production, missing controls create immediate risk: exposed data, corrupted results, and delayed approvals. A real-time, hardware-agnostic security layer at the signal source closes this gap.
               </p>
             </div>
 
             <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-4 text-[#3B82F6]">Our Commitment</h2>
+              <h2 className="text-2xl font-bold mb-4 text-[#3B82F6]">Founder Team</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-[#6C63FF]">Claire Kwon - Founder</h3>
+                  <p className="text-white/90">
+                    Claire holds a degree in Applied Mathematics. She built low-latency ML and data pipelines at Amazon, Microsoft, and Goldman Sachs, and she works as an AI architect. At XBrainer AI, she leads signal capture, stream encryption, packet verification, CI/CD, and observability.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-[#A855F7]">Owen Anderson - Co-founder</h3>
+                  <p className="text-white/90">
+                    Owen is a neural signal processing researcher at the Cleveland Clinic, where he analyzes EEG and local field potentials in deep brain stimulation studies. He is a first author in the Journal of Neurophysiology and has presented his work at national neuroscience conferences. He led the development of a live EEG-controlled prosthetic-hand simulation that is now transitioning to a hardware prototype. At XBrainer AI, he leads device integration, real-time signal validation, and researcher partnerships.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-[#3B82F6]">Angelina Liu — Co-Founder</h3>
+                  <p className="text-white/90">
+                    Angelina is a neuroscience researcher at Columbia University and Mount Sinai focused on EEG acquisition, preprocessing, and artifact correction. She develops signal-quality and anomaly-detection models and designs lab protocols for reliable data collection. At XBrainer AI, she leads neuroscience methods, dataset curation, and evaluation, and drives integrations with research teams.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-4 text-[#14B8A6]">Why we started XBrainer AI</h2>
               <p className="text-white/90">
-                As neural interfaces move from research labs to clinical settings and consumer environments, 
-                we are committed to ensuring that privacy, security, and user control remain at the forefront 
-                of this technological revolution.
+                Claire's three stroke left her awake but unable to move; that moment made the risk of unguarded neural signals impossible to ignore. Living with the memory of that stroke—the loss of control, the exposure—made one thing clear: brain data must be protected at capture. The third time she revisited that stroke, it wasn't about fear—it was a decision to build the missing safety layer. Owen Anderson, working on EEG/LFP in Cleveland Clinic DBS studies, saw how tiny timing and range errors can break results unless checks run inline. Angela (Angelina) Liu, in Mount Sinai EEG work, saw corrupted and artifact-heavy sessions that should have been stopped upstream. Together we're building a real-time security layer: lock data at capture, check every packet, gate access by consent, and keep a write-once audit log—so even when biology or devices waver, the data does not.
               </p>
             </div>
           </div>
