@@ -462,7 +462,7 @@ const Index = () => {
                 
                 <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
-                    The market is scaling fast — <span className="text-pink-300 font-semibold bg-pink-500/20 px-1 py-0.5 rounded">3M+ EEG devices expected in North America by 2026</span>.
+                    The market is scaling fast — <span className="text-sky-300 font-bold">3M+ EEG devices expected in North America by 2026</span>.
                   </p>
                   
                   {/* Urgency Feature Cards - Timeline Style */}
@@ -602,29 +602,29 @@ const Index = () => {
                 <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   The Solution
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#14B8A6] to-[#0D9488] mx-auto mb-4 md:mb-6 animate-pulse" />
                 
                 <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
-                    XBrainer AI secures brain data in real time, from EEG and BCI devices to end users.
+                    XBrainer AI <span className="text-teal-300">secures</span> brain data <span className="text-teal-300">in real time</span>, from <span className="text-teal-300">EEG and BCI</span> devices to end users.
                   </p>
                   
                   {/* Solution Feature Cards - Timeline Style */}
                   <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
                     {/* Real-time Encryption */}
-                    <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-teal-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Real-time Encryption</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">Encryption at the source prevents interception and ensures neural data stays protected from device to destination.</p>
                     </div>
                     
                     {/* Instant Access Controls */}
-                    <div className="bg-slate-800/60 border-l-4 border-indigo-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-teal-400 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Instant Access Controls</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">Give or revoke permissions instantly with granular control over who can access neural data and when.</p>
                     </div>
                     
                     {/* Permanent Audit Logs */}
-                    <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-teal-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Permanent Audit Logs</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">Record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
                     </div>
@@ -691,18 +691,18 @@ const Index = () => {
                 <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   Our Edge
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#A855F7] to-[#7C3AED] mx-auto mb-4 md:mb-6 animate-pulse" />
                 
                 {/* Our Edge Feature Cards - Timeline Style */}
                 <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
                   {/* Patent-Pending Security Pipeline */}
-                  <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                  <div className="bg-slate-800/60 border-l-4 border-purple-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                     <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Patent-Pending Security Pipeline</h3>
                     <p className="text-white/80 text-xs md:text-lg leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
                   </div>
                   
                   {/* Regulatory-First Design */}
-                  <div className="bg-slate-800/60 border-l-4 border-green-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                  <div className="bg-slate-800/60 border-l-4 border-purple-300 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                     <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Regulatory-First Design</h3>
                     <p className="text-white/80 text-xs md:text-lg leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
                   </div>
@@ -714,7 +714,7 @@ const Index = () => {
                   </div>
                   
                   {/* Seamless Integration */}
-                  <div className="bg-slate-800/60 border-l-4 border-orange-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                  <div className="bg-slate-800/60 border-l-4 border-purple-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                     <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Seamless Integration</h3>
                     <p className="text-white/80 text-xs md:text-lg leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
                   </div>
