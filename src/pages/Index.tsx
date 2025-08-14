@@ -282,8 +282,8 @@ const Index = () => {
           
           {/* Horizontal Scrolling Container for 4 Sections */}
           <div className="relative">
-            {/* Navigation Arrows - Moved lower to not interfere with content */}
-            <div className="fixed left-4 bottom-32 z-30 flex flex-col gap-4">
+            {/* Navigation Arrows - Moved to title level */}
+            <div className="fixed left-4 top-24 z-30 flex flex-col gap-4">
               <button
                 onClick={scrollLeft}
                 disabled={currentSection === 0}
@@ -299,7 +299,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="fixed right-4 bottom-32 z-30 flex flex-col gap-4">
+            <div className="fixed right-4 top-24 z-30 flex flex-col gap-4">
               <button
                 onClick={scrollRight}
                 disabled={currentSection === 3}
@@ -348,6 +348,9 @@ const Index = () => {
               <section 
                 id="problem" 
                 className="min-w-full h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+                style={{
+                  animation: currentSection === 0 ? 'scale-in 0.6s ease-out, fade-in 0.6s ease-out' : 'none'
+                }}
               >
             {/* Subtle flowing EEG background for Problem section */}
             <div 
@@ -430,10 +433,16 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6 h-full flex flex-col justify-center">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in">
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in transform transition-all duration-500"
+                    style={{
+                      animation: currentSection === 0 ? 'fade-in 0.8s ease-out 0.2s both, scale-in 0.6s ease-out 0.2s both' : 'none'
+                    }}>
                   The Problem
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#10B981] to-[#059669] mx-auto mb-3 md:mb-4 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#10B981] to-[#059669] mx-auto mb-3 md:mb-4 animate-pulse" 
+                     style={{
+                       animation: currentSection === 0 ? 'fade-in 0.8s ease-out 0.4s both' : 'animate-pulse'
+                     }} />
                 
                 <div className="space-y-3 md:space-y-4 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 md:mb-4">
@@ -441,7 +450,10 @@ const Index = () => {
                   </p>
                   
                   {/* Problem Feature Cards - Optimized for desktop fit */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto text-left">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto text-left"
+                       style={{
+                         animation: currentSection === 0 ? 'fade-in 1s ease-out 0.6s both, scale-in 0.8s ease-out 0.6s both' : 'none'
+                       }}>
                         {/* Raw Brain Data Risk */}
                         <div className="bg-slate-800/60 border-l-4 border-emerald-100 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                           <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Raw Brain Data at Risk</h3>
@@ -475,6 +487,9 @@ const Index = () => {
               <section 
                 id="urgency" 
                 className="min-w-full h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+                style={{
+                  animation: currentSection === 1 ? 'scale-in 0.6s ease-out, fade-in 0.6s ease-out' : 'none'
+                }}
               >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
@@ -545,10 +560,16 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6 h-full flex flex-col justify-center">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in">
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in transform transition-all duration-500"
+                    style={{
+                      animation: currentSection === 1 ? 'fade-in 0.8s ease-out 0.2s both, scale-in 0.6s ease-out 0.2s both' : 'none'
+                    }}>
                   The Urgency
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-3 md:mb-4 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-3 md:mb-4 animate-pulse" 
+                     style={{
+                       animation: currentSection === 1 ? 'fade-in 0.8s ease-out 0.4s both' : 'animate-pulse'
+                     }} />
                 
                 <div className="space-y-3 md:space-y-4 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 md:mb-4">
@@ -556,7 +577,10 @@ const Index = () => {
                   </p>
                   
                   {/* Urgency Feature Cards - Optimized for desktop fit */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto text-left">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto text-left"
+                       style={{
+                         animation: currentSection === 1 ? 'fade-in 1s ease-out 0.6s both, scale-in 0.8s ease-out 0.6s both' : 'none'
+                       }}>
                     {/* Market Explosion */}
                     <div className="bg-slate-800/60 border-l-4 border-cyan-200 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Market Explosion</h3>
@@ -594,6 +618,9 @@ const Index = () => {
               <section 
                 id="solution" 
                 className="min-w-full h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+                style={{
+                  animation: currentSection === 2 ? 'scale-in 0.6s ease-out, fade-in 0.6s ease-out' : 'none'
+                }}
               >
             {/* Enhanced futuristic background with neural network effects */}
             <div className="absolute inset-0 overflow-hidden">
@@ -686,10 +713,16 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6 h-full flex flex-col justify-center">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in">
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in transform transition-all duration-500"
+                    style={{
+                      animation: currentSection === 2 ? 'fade-in 0.8s ease-out 0.2s both, scale-in 0.6s ease-out 0.2s both' : 'none'
+                    }}>
                   The Solution
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-green-100 via-green-300 to-green-600 mx-auto mb-3 md:mb-4 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-green-100 via-green-300 to-green-600 mx-auto mb-3 md:mb-4 animate-pulse" 
+                     style={{
+                       animation: currentSection === 2 ? 'fade-in 0.8s ease-out 0.4s both' : 'animate-pulse'
+                     }} />
                 
                 <div className="space-y-3 md:space-y-4 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 md:mb-4">
@@ -697,7 +730,10 @@ const Index = () => {
                   </p>
                   
                   {/* Solution Feature Cards - Optimized for desktop fit */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto text-left">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto text-left"
+                       style={{
+                         animation: currentSection === 2 ? 'fade-in 1s ease-out 0.6s both, scale-in 0.8s ease-out 0.6s both' : 'none'
+                       }}>
                     {/* Real-time Encryption */}
                     <div className="bg-slate-800/60 border-l-4 border-teal-200 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Real-time Encryption</h3>
@@ -729,6 +765,9 @@ const Index = () => {
               <section 
                 id="edge" 
                 className="min-w-full h-screen bg-background flex items-center justify-center relative overflow-hidden snap-start"
+                style={{
+                  animation: currentSection === 3 ? 'scale-in 0.6s ease-out, fade-in 0.6s ease-out' : 'none'
+                }}
               >
             {/* Large cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8">
@@ -775,13 +814,22 @@ const Index = () => {
 
             <div className="container relative z-10 text-center px-4 sm:px-6 h-full flex flex-col justify-center">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in">
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 animate-fade-in transform transition-all duration-500"
+                    style={{
+                      animation: currentSection === 3 ? 'fade-in 0.8s ease-out 0.2s both, scale-in 0.6s ease-out 0.2s both' : 'none'
+                    }}>
                   Our Edge
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-3 md:mb-4 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-cyan-100 via-cyan-300 via-cyan-400 to-cyan-700 mx-auto mb-3 md:mb-4 animate-pulse" 
+                     style={{
+                       animation: currentSection === 3 ? 'fade-in 0.8s ease-out 0.4s both' : 'animate-pulse'
+                     }} />
                 
                 {/* Our Edge Feature Cards - Optimized for desktop fit */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto text-left"
+                     style={{
+                       animation: currentSection === 3 ? 'fade-in 1s ease-out 0.6s both, scale-in 0.8s ease-out 0.6s both' : 'none'
+                     }}>
                   {/* Patent-Pending Security Pipeline */}
                   <div className="bg-slate-800/60 border-l-4 border-cyan-200 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                     <h3 className="text-sm md:text-lg font-bold text-white mb-1 md:mb-2">Patent-Pending Security Pipeline</h3>
