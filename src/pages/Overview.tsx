@@ -25,7 +25,7 @@ const Overview = () => {
       <div className="absolute inset-0 bg-background z-10" />
 
       {/* Fixed Header Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-blue-600/20">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/20">
         <div className="flex items-center justify-between p-4 md:p-6">
           {/* Logo and Company Info */}
           <div className="flex items-center gap-4">
@@ -41,10 +41,10 @@ const Overview = () => {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600/20 to-blue-500/20 blur-sm -z-10"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl md:text-2xl font-bold tracking-tight leading-tight text-white">
+              <span className="text-xl md:text-2xl font-bold tracking-tight leading-tight text-foreground">
                 XBrainer AI
               </span>
-              <span className="text-xs md:text-sm font-medium text-white">
+              <span className="text-xs md:text-sm font-medium text-foreground/70">
                 Securing Neural Data in Real Time
               </span>
             </div>
@@ -53,7 +53,7 @@ const Overview = () => {
           {/* Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center gap-2 text-white bg-black/60 backdrop-blur-md border border-blue-600/30 rounded-lg px-3 py-2 hover:bg-blue-900/20 hover:border-blue-500/50 transition-all duration-300 shadow-lg"
+            className="flex items-center gap-2 text-foreground bg-background/60 backdrop-blur-md border border-border/30 rounded-lg px-3 py-2 hover:bg-muted/20 hover:border-border/50 transition-all duration-300 shadow-lg"
             style={{
               boxShadow: '0 0 20px rgba(37, 99, 235, 0.2)'
             }}

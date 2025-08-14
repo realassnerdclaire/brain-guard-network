@@ -25,7 +25,7 @@ const Vision = () => {
       <div className="absolute inset-0 bg-background z-10" />
 
       {/* Fixed Header Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-blue-600/20">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/20">
         <div className="flex items-center justify-between p-4 md:p-6">
           {/* Logo and Company Info */}
           <div className="flex items-center gap-4">
