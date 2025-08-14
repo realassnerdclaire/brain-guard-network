@@ -633,39 +633,24 @@ const Index = () => {
                     XBrainer AI secures brain data in real time, from EEG and BCI devices to end users.
                   </p>
                   
-                  {/* Feature Cards Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
-                    {/* Real-time Encryption Card */}
-                    <div className="bg-gradient-to-br from-purple-900/40 to-purple-700/20 border border-purple-400/30 rounded-2xl p-6 hover:scale-105 transition-all duration-300 group">
-                      <div className="flex items-center justify-center w-16 h-16 bg-purple-500/20 rounded-2xl mb-4 mx-auto group-hover:bg-purple-500/30 transition-colors">
-                        <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m0 0v2m0-2h2m-2 0H8m4-9V3m0 0v2m0-2h2m-2 0H8m4 9v2m0 0v2m0-2h2m-2 0H8" />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg font-semibold text-white mb-3">Real-time Encryption</h3>
-                      <p className="text-white/80 text-sm leading-relaxed">Encryption at the source prevents interception and ensures neural data stays protected from device to destination.</p>
+                  {/* Solution Feature Cards - Timeline Style */}
+                  <div className="space-y-6 max-w-4xl mx-auto text-left">
+                    {/* Real-time Encryption */}
+                    <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-2xl font-bold text-white mb-4">Real-time Encryption</h3>
+                      <p className="text-white/80 text-lg leading-relaxed">Encryption at the source prevents interception and ensures neural data stays protected from device to destination.</p>
                     </div>
                     
-                    {/* Instant Access Controls Card */}
-                    <div className="bg-gradient-to-br from-indigo-900/40 to-indigo-700/20 border border-indigo-400/30 rounded-2xl p-6 hover:scale-105 transition-all duration-300 group">
-                      <div className="flex items-center justify-center w-16 h-16 bg-indigo-500/20 rounded-2xl mb-4 mx-auto group-hover:bg-indigo-500/30 transition-colors">
-                        <svg className="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg font-semibold text-white mb-3">Instant Access Controls</h3>
-                      <p className="text-white/80 text-sm leading-relaxed">Give or revoke permissions instantly with granular control over who can access neural data and when.</p>
+                    {/* Instant Access Controls */}
+                    <div className="bg-slate-800/60 border-l-4 border-indigo-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-2xl font-bold text-white mb-4">Instant Access Controls</h3>
+                      <p className="text-white/80 text-lg leading-relaxed">Give or revoke permissions instantly with granular control over who can access neural data and when.</p>
                     </div>
                     
-                    {/* Permanent Audit Logs Card */}
-                    <div className="bg-gradient-to-br from-blue-900/40 to-blue-700/20 border border-blue-400/30 rounded-2xl p-6 hover:scale-105 transition-all duration-300 group">
-                      <div className="flex items-center justify-center w-16 h-16 bg-blue-500/20 rounded-2xl mb-4 mx-auto group-hover:bg-blue-500/30 transition-colors">
-                        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg font-semibold text-white mb-3">Permanent Audit Logs</h3>
-                      <p className="text-white/80 text-sm leading-relaxed">Record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
+                    {/* Permanent Audit Logs */}
+                    <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                      <h3 className="text-2xl font-bold text-white mb-4">Permanent Audit Logs</h3>
+                      <p className="text-white/80 text-lg leading-relaxed">Record every data interaction for compliance with HIPAA, GDPR, and upcoming neurotech regulations.</p>
                     </div>
                   </div>
                   
@@ -732,62 +717,30 @@ const Index = () => {
                 </h2>
                 <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] mx-auto mb-8 md:mb-6 animate-pulse" />
                 
-                {/* Edge Feature Cards */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+                {/* Our Edge Feature Cards - Timeline Style */}
+                <div className="space-y-6 max-w-4xl mx-auto text-left">
                   {/* Patent-Pending Security Pipeline */}
-                  <div className="bg-gradient-to-br from-blue-900/40 to-cyan-700/20 border border-blue-400/30 rounded-2xl p-8 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-colors"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center justify-center w-20 h-20 bg-blue-500/20 rounded-3xl mb-6 group-hover:bg-blue-500/30 transition-colors">
-                        <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-4">Patent-Pending Security Pipeline</h3>
-                      <p className="text-white/80 text-base leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
-                    </div>
+                  <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-2xl font-bold text-white mb-4">Patent-Pending Security Pipeline</h3>
+                    <p className="text-white/80 text-lg leading-relaxed">Real-time encryption and integrity checks for neural data ensuring maximum protection throughout the entire data lifecycle.</p>
                   </div>
                   
                   {/* Regulatory-First Design */}
-                  <div className="bg-gradient-to-br from-green-900/40 to-emerald-700/20 border border-green-400/30 rounded-2xl p-8 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-2xl group-hover:bg-green-500/20 transition-colors"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center justify-center w-20 h-20 bg-green-500/20 rounded-3xl mb-6 group-hover:bg-green-500/30 transition-colors">
-                        <svg className="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-4">Regulatory-First Design</h3>
-                      <p className="text-white/80 text-base leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
-                    </div>
+                  <div className="bg-slate-800/60 border-l-4 border-green-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-2xl font-bold text-white mb-4">Regulatory-First Design</h3>
+                    <p className="text-white/80 text-lg leading-relaxed">HIPAA, GDPR, ISO 27001, FDA-ready architecture built from the ground up with compliance at its core.</p>
                   </div>
                   
                   {/* AI-Driven Threat Detection */}
-                  <div className="bg-gradient-to-br from-purple-900/40 to-pink-700/20 border border-purple-400/30 rounded-2xl p-8 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-colors"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center justify-center w-20 h-20 bg-purple-500/20 rounded-3xl mb-6 group-hover:bg-purple-500/30 transition-colors">
-                        <svg className="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-4">AI-Driven Threat Detection</h3>
-                      <p className="text-white/80 text-base leading-relaxed">Advanced machine learning specifically tuned for BCI signal anomalies and neural data security threats.</p>
-                    </div>
+                  <div className="bg-slate-800/60 border-l-4 border-purple-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-2xl font-bold text-white mb-4">AI-Driven Threat Detection</h3>
+                    <p className="text-white/80 text-lg leading-relaxed">Advanced machine learning specifically tuned for BCI signal anomalies and neural data security threats.</p>
                   </div>
                   
                   {/* Seamless Integration */}
-                  <div className="bg-gradient-to-br from-orange-900/40 to-red-700/20 border border-orange-400/30 rounded-2xl p-8 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl group-hover:bg-orange-500/20 transition-colors"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center justify-center w-20 h-20 bg-orange-500/20 rounded-3xl mb-6 group-hover:bg-orange-500/30 transition-colors">
-                        <svg className="w-10 h-10 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1v-1a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-4">Seamless Integration</h3>
-                      <p className="text-white/80 text-base leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
-                    </div>
+                  <div className="bg-slate-800/60 border-l-4 border-orange-500 rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 className="text-2xl font-bold text-white mb-4">Seamless Integration</h3>
+                    <p className="text-white/80 text-lg leading-relaxed">Comprehensive SDKs and APIs designed for effortless integration with devices, research platforms, and clinical systems.</p>
                   </div>
                 </div>
               </div>
