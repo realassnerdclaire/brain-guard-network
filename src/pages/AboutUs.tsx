@@ -101,7 +101,19 @@ const AboutUs = () => {
 
       {/* Main Content */}
       <div className="relative z-20 min-h-screen flex flex-col pt-32 px-8">
-        <div className="max-w-4xl mx-auto">
+        {/* Background Nebula */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <img 
+            src="/lovable-uploads/c93b77ed-67f7-4582-bdc4-916188a4fe5f.png"
+            alt=""
+            className="absolute top-1/4 right-1/4 w-96 h-96 object-cover opacity-20 blur-sm"
+            style={{
+              filter: 'brightness(0.7) contrast(1.2)',
+              transform: 'rotate(15deg)'
+            }}
+          />
+        </div>
+        <div className="max-w-4xl mx-auto relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">About XBrainer AI</h1>
           
           <div className="space-y-8 text-lg leading-relaxed">
