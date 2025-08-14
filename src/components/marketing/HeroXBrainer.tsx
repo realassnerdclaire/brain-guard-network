@@ -100,12 +100,12 @@ const HeroXBrainer = () => {
         />
       </div>
       
-      <div className="container relative z-10 h-full flex flex-col justify-center px-3 sm:px-8 lg:px-12 xl:px-16 py-20">
+      <div className="container relative z-10 h-full flex flex-col justify-center items-start px-3 sm:px-8 lg:px-12 xl:px-16 py-20 pt-32 lg:pt-40 xl:pt-48">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 lg:gap-20 xl:gap-24">
           {/* Left side - Headline and subheadline */}
           <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl relative z-15">
             <h1 
-              className="text-3xl sm:text-5xl lg:text-6xl xl:text-8xl leading-tight font-normal mb-8 sm:mb-10 lg:mb-12 xl:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-50 via-cyan-200 via-cyan-400 via-cyan-600 via-cyan-400 via-cyan-200 via-cyan-50 to-white opacity-0" 
+              className="text-3xl sm:text-5xl lg:text-6xl xl:text-8xl leading-tight font-normal mb-6 sm:mb-8 lg:mb-10 xl:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-50 via-cyan-200 via-cyan-400 via-cyan-600 via-cyan-400 via-cyan-200 via-cyan-50 to-white opacity-0" 
               id="hero-title"
               style={{
                 animation: 'fade-in 1.2s ease-out 0.5s both, scale-in 1s ease-out 0.5s both',
@@ -128,7 +128,7 @@ const HeroXBrainer = () => {
           </div>
           
           {/* Right side - Action buttons */}
-          <div className="flex flex-col gap-6 lg:gap-8 xl:gap-10 lg:mt-12 xl:mt-16">
+          <div className="flex flex-col gap-6 lg:gap-8 xl:gap-10 lg:mt-8 xl:mt-12">
             <button 
               className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-8 lg:px-12 xl:px-16 py-4 lg:py-6 xl:py-7 text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 opacity-0"
               style={{
