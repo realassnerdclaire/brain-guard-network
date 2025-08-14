@@ -282,8 +282,8 @@ const Index = () => {
           
           {/* Horizontal Scrolling Container for 4 Sections */}
           <div className="relative">
-            {/* Navigation Arrows - Positioned at title level */}
-            <div className="fixed left-4 top-1/2 -translate-y-8 z-30 flex flex-col gap-4">
+            {/* Navigation Arrows - Positioned above titles but below current position */}
+            <div className="fixed left-4 top-1/2 translate-y-4 z-30 flex flex-col gap-4">
               <button
                 onClick={scrollLeft}
                 disabled={currentSection === 0}
@@ -299,7 +299,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="fixed right-4 top-1/2 -translate-y-8 z-30 flex flex-col gap-4">
+            <div className="fixed right-4 top-1/2 translate-y-4 z-30 flex flex-col gap-4">
               <button
                 onClick={scrollRight}
                 disabled={currentSection === 3}
