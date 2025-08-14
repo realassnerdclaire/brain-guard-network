@@ -30,7 +30,7 @@ const HeroXBrainer = () => {
       
       
       {/* High frequency EEG background flows */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-25">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-60">
         <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="heroEegGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -49,7 +49,7 @@ const HeroXBrainer = () => {
           {/* High frequency EEG lines - sharp spikes */}
           <path d="M0,200 L10,205 L15,185 L20,215 L25,190 L30,220 L35,180 L40,200 L45,195 L50,210 L55,185 L60,225 L65,175 L70,205 L75,195 L80,215 L85,180 L90,230 L95,170 L100,200 L105,190 L110,220 L115,175 L120,210 L125,195 L130,205 L135,185 L140,225 L145,170 L150,215 L155,180 L160,235 L165,165 L170,200 L175,195 L180,210 L185,185 L190,220 L195,175 L200,205 L205,190 L210,225 L215,170 L220,215 L225,185 L230,230 L235,160 L240,200 L245,195 L250,210 L255,180 L260,225 L265,175 L270,205 L275,190 L280,220 L285,170 L290,215 L295,185 L300,235 L305,165 L310,200 L315,195 L320,210 L325,185 L330,220 L335,175 L340,205 L345,190 L350,225 L355,170 L360,215 L365,185 L370,230 L375,160 L380,200 L385,195 L390,210 L395,180 L400,225"
                 stroke="url(#heroEegGradient)" 
-                strokeWidth="1.2" 
+                strokeWidth="2.5" 
                 fill="none" 
                 style={{
                   animation: 'eeg-flow 8s ease-in-out infinite',
@@ -58,7 +58,7 @@ const HeroXBrainer = () => {
           
           <path d="M0,400 L8,410 L12,390 L16,420 L20,385 L24,425 L28,380 L32,405 L36,395 L40,415 L44,385 L48,430 L52,375 L56,410 L60,395 L64,420 L68,380 L72,435 L76,370 L80,405 L84,390 L88,425 L92,375 L96,415 L100,395 L104,410 L108,385 L112,430 L116,370 L120,420 L124,380 L128,440 L132,365 L136,405 L140,395 L144,415 L148,385 L152,425 L156,375 L160,410 L164,390 L168,430 L172,370 L176,420 L180,385 L184,435 L188,360 L192,405 L196,395 L200,415 L204,380 L208,430 L212,375 L216,410 L220,390 L224,425 L228,370 L232,420 L236,385 L240,440 L244,365 L248,405 L252,395 L256,415 L260,385 L264,425 L268,375 L272,410 L276,390 L280,430 L284,370 L288,420 L292,385 L296,435 L300,360 L304,405 L308,395 L312,415 L316,380 L320,430"
                 stroke="url(#heroEegGradient2)" 
-                strokeWidth="1" 
+                strokeWidth="2" 
                 fill="none" 
                 style={{
                   animation: 'eeg-flow 12s ease-in-out infinite reverse',
@@ -68,7 +68,7 @@ const HeroXBrainer = () => {
           
           <path d="M0,600 L5,608 L8,592 L12,615 L15,588 L18,620 L22,585 L25,605 L28,598 L32,612 L35,590 L38,625 L42,580 L45,608 L48,595 L52,618 L55,585 L58,630 L62,575 L65,605 L68,592 L72,622 L75,578 L78,615 L82,590 L85,608 L88,595 L92,625 L95,575 L98,618 L102,585 L105,635 L108,570 L112,605 L115,595 L118,615 L122,585 L125,628 L128,578 L132,608 L135,592 L138,625 L142,575 L145,618 L148,590 L152,630 L155,570 L158,605 L162,595 L165,615 L168,585 L172,625 L175,578 L178,608 L182,592 L185,628 L188,575 L192,618 L195,590 L198,630 L202,570 L205,605 L208,595 L212,615 L215,585 L218,625 L222,578 L225,608 L228,592 L232,628 L235,575 L238,618 L242,590 L245,630 L248,570 L252,605 L255,595 L258,615 L262,585 L265,625 L268,578 L272,608 L275,592 L278,628 L282,575 L285,618 L288,590 L292,630 L295,570 L298,605 L302,595 L305,615 L308,585 L312,625"
                 stroke="url(#heroEegGradient)" 
-                strokeWidth="0.8" 
+                strokeWidth="1.8" 
                 fill="none" 
                 style={{
                   animation: 'eeg-flow 15s ease-in-out infinite',
@@ -78,7 +78,7 @@ const HeroXBrainer = () => {
           
           <path d="M0,800 L6,812 L10,788 L14,820 L18,785 L22,825 L26,780 L30,810 L34,795 L38,818 L42,785 L46,830 L50,775 L54,812 L58,795 L62,822 L66,780 L70,835 L74,770 L78,810 L82,788 L86,828 L90,775 L94,820 L98,790 L102,812 L106,785 L110,830 L114,770 L118,825 L122,780 L126,840 L130,765 L134,810 L138,795 L142,818 L146,785 L150,828 L154,775 L158,812 L162,788 L166,830 L170,770 L174,822 L178,785 L182,835 L186,760 L190,810 L194,795 L198,818 L202,780 L206,830 L210,775 L214,812 L218,788 L222,828 L226,770 L230,822 L234,785 L238,840 L242,765 L246,810 L250,795 L254,818 L258,785 L262,828 L266,775 L270,812 L274,788 L278,830 L282,770 L286,822 L290,785 L294,835 L298,760 L302,810 L306,795 L310,818 L314,780 L318,830"
                 stroke="url(#heroEegGradient2)" 
-                strokeWidth="0.9" 
+                strokeWidth="2.2" 
                 fill="none" 
                 style={{
                   animation: 'eeg-flow 18s ease-in-out infinite reverse',
