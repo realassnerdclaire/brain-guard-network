@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import HeroXBrainer from "@/components/marketing/HeroXBrainer";
 import NavigationLayout from "@/components/marketing/NavigationLayout";
@@ -8,6 +8,11 @@ import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showNavigationLayout, setShowNavigationLayout] = useState(false);
+
+  // Set document title on component mount
+  useEffect(() => {
+    document.title = "XBrainer AI Official Website";
+  }, []);
 
   const menuItems = [
     { label: "ABOUT", href: "#about" },
