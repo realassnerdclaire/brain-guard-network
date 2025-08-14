@@ -776,7 +776,7 @@ const HeroXBrainer = () => {
       </div>
       
       {/* Subtle bottom fade - lowered z-index */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent pointer-events-none z-0"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent pointer-events-none z-0"></div>
     </section>
   );
 };
