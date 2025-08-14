@@ -257,8 +257,9 @@ const Index = () => {
           {/* 1. Problem Section */}
           <section 
             id="problem" 
-            className="min-h-screen md:min-h-[100vh] bg-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
             style={{
+              backgroundColor: '#2d2d2d',
               contain: 'layout style paint',
               willChange: 'transform',
               isolation: 'isolate'
@@ -391,7 +392,8 @@ const Index = () => {
           {/* 2. Urgency Section */}
           <section 
             id="urgency" 
-            className="min-h-screen md:min-h-[100vh] bg-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            style={{backgroundColor: '#2d2d2d'}}
           >
             {/* Enhanced EEG background for Urgency section - increased visibility */}
             <div className="absolute inset-0 opacity-90">
@@ -534,7 +536,8 @@ const Index = () => {
           {/* 3. Solution Section */}
           <section 
             id="solution" 
-            className="min-h-screen md:min-h-[100vh] bg-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            style={{backgroundColor: '#2d2d2d'}}
           >
             {/* Clean solution section without EEG animations */}
 
@@ -621,7 +624,8 @@ const Index = () => {
           {/* 4. Our Edge Section */}
           <section 
             id="edge" 
-            className="min-h-screen md:min-h-[100vh] bg-gray-900 flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            className="min-h-screen md:min-h-[100vh] flex items-center justify-center py-8 md:py-4 relative overflow-hidden"
+            style={{backgroundColor: '#2d2d2d'}}
           >
             {/* Large cosmic nebula in bottom left corner */}
             <div className="absolute bottom-8 left-8">
