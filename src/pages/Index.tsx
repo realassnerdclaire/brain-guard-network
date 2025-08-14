@@ -343,7 +343,7 @@ const Index = () => {
                 <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   The Problem
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#6C63FF] to-[#A855F7] mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-4 md:mb-6 animate-pulse" />
                 
                 <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
@@ -458,7 +458,7 @@ const Index = () => {
                 <h2 className="text-xl sm:text-4xl lg:text-4xl font-bold text-white mb-2 md:mb-4 animate-fade-in">
                   The Urgency
                 </h2>
-                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#EC4899] to-[#F472B6] mx-auto mb-4 md:mb-6 animate-pulse" />
+                <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1E40AF] mx-auto mb-4 md:mb-6 animate-pulse" />
                 
                 <div className="space-y-4 md:space-y-12 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-12">
@@ -468,25 +468,25 @@ const Index = () => {
                   {/* Urgency Feature Cards - Timeline Style */}
                   <div className="space-y-3 md:space-y-6 max-w-4xl mx-auto text-left">
                     {/* Market Explosion */}
-                    <div className="bg-slate-800/60 border-l-4 border-pink-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-sky-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Market Explosion</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">More devices = more attack surfaces = higher compliance risk</p>
                     </div>
                     
                     {/* 2025 Milestones */}
-                    <div className="bg-slate-800/60 border-l-4 border-blue-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-sky-300 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2025: FDA Guidance</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">FDA final guidance on BCI cybersecurity; ISO/IEC 27701 adoption accelerates</p>
                     </div>
                     
                     {/* 2026 Enforcement */}
-                    <div className="bg-slate-800/60 border-l-4 border-yellow-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-blue-400 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2026: Enforcement Tightens</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">HIPAA, GDPR, and CCPA enforcement tighten for neurodata</p>
                     </div>
                     
                     {/* 2027+ New Protections */}
-                    <div className="bg-slate-800/60 border-l-4 border-red-500 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-slate-800/60 border-l-4 border-blue-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                       <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">2027+: Market Entry Risk</h3>
                       <p className="text-white/80 text-xs md:text-lg leading-relaxed">Potential new neurodata-specific protections may limit non-compliant market entry</p>
                     </div>
