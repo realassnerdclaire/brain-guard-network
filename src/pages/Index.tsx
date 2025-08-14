@@ -437,7 +437,7 @@ const Index = () => {
                 
                 <div className="space-y-4 md:space-y-8 text-center max-w-6xl mx-auto">
                   <p className="text-sm sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-4 md:mb-8">
-                    Neural data is vulnerable to <span className="text-green-300 font-bold">real time</span> interception during transmission, <span className="text-green-300 font-bold">unauthorized access</span> to stored datasets, <span className="text-green-300 font-bold">compliance failures</span> with HIPAA and GDPR, and <span className="text-green-300 font-bold">tampering</span> with critical neural signals.
+                    EEG and BCI devices are leaving the lab for clinics, homes, and consumer environments.
                   </p>
                   
                   {/* Problem Feature Cards - Timeline Style */}
@@ -445,25 +445,25 @@ const Index = () => {
                         {/* Raw Brain Data Risk */}
                         <div className="bg-slate-800/60 border-l-4 border-emerald-100 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                           <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Raw Brain Data at Risk</h3>
-                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Raw brain data is among the most sensitive personal information, but today's security measures fail to protect it in real time.</p>
+                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Raw brain data is among the most sensitive personal information, but today's security measures fail to protect it in <span className="text-green-300 font-bold">real time</span>.</p>
                         </div>
                     
                         {/* Data Breaches */}
                         <div className="bg-slate-800/60 border-l-4 border-emerald-200 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                           <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Data Breaches</h3>
-                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Unsecured pipelines expose neurological health information to unauthorized access and potential misuse.</p>
+                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Unsecured pipelines expose neurological health information to <span className="text-green-300 font-bold">unauthorized access</span> and potential misuse.</p>
                         </div>
                     
                         {/* Regulatory Delays */}
                         <div className="bg-slate-800/60 border-l-4 border-emerald-400 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                           <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Regulatory Delays</h3>
-                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Security gaps cause compliance failures that stall clinical trials and delay market approvals.</p>
+                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Security gaps cause <span className="text-green-300 font-bold">compliance failures</span> that stall clinical trials and delay market approvals.</p>
                         </div>
                     
                         {/* Research Integrity Loss */}
                         <div className="bg-slate-800/60 border-l-4 border-emerald-700 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02]">
                           <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-4">Research Integrity Loss</h3>
-                          <p className="text-white/80 text-xs md:text-lg leading-relaxed">Tampering and unauthorized access compromise research validity and scientific reproducibility.</p>
+                          <p className="text-white/80 text-xs md:text-lg leading-relaxed"><span className="text-green-300 font-bold">Tampering</span> and unauthorized access compromise research validity and scientific reproducibility.</p>
                         </div>
                   </div>
                 </div>
