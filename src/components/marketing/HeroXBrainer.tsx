@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import futuristicBrain from "@/assets/futuristic-brain-correct.png";
 import { animateLetters, startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
+import { useNavigate } from "react-router-dom";
 
 const HeroXBrainer = () => {
+  const navigate = useNavigate();
   console.log("🎨 HeroXBrainer component rendering with color animation!");
   return (
     <section className="relative min-h-screen bg-background overflow-hidden flex flex-col justify-center sm:justify-start">
@@ -150,12 +152,7 @@ const HeroXBrainer = () => {
                   (btn as any).hoverInterval = null;
                 }
               }}
-              onClick={() => {
-                const ctaSection = document.getElementById('cta');
-                if (ctaSection) {
-                  ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
+              onClick={() => navigate('/waitlist')}
             >
               JOIN THE WAITLIST
             </button>
