@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import NavbarXBrainer from '@/components/marketing/NavbarXBrainer';
 
 interface WaitlistFormData {
   full_name: string;
@@ -90,6 +91,11 @@ export default function Waitlist() {
       
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/50 z-10" />
+
+      {/* Navigation */}
+      <div className="relative z-30">
+        <NavbarXBrainer />
+      </div>
 
       {/* Logo and Company Info */}
       <div className="fixed top-8 left-8 z-50 flex items-center gap-4">
