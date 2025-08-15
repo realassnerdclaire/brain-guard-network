@@ -105,7 +105,7 @@ export default function Waitlist() {
       <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Fixed Header Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/20">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary/90 to-primary-glow/90 backdrop-blur-md border-b border-primary/30">
         <div className="flex items-center justify-between p-4 md:p-6">
           {/* Logo and Company Info */}
           <div className="flex items-center gap-4">
@@ -133,9 +133,9 @@ export default function Waitlist() {
           {/* Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center gap-2 text-white bg-black/60 backdrop-blur-md border border-blue-600/30 rounded-lg px-3 py-2 hover:bg-blue-900/20 hover:border-blue-500/50 transition-all duration-300 shadow-lg"
+            className="flex items-center gap-2 text-white bg-gradient-to-r from-primary to-primary-glow backdrop-blur-md border border-primary/50 rounded-lg px-3 py-2 hover:from-primary-glow hover:to-primary hover:shadow-elegant transition-all duration-300 shadow-lg"
             style={{
-              boxShadow: '0 0 20px rgba(37, 99, 235, 0.2)'
+              boxShadow: '0 0 20px hsl(var(--primary) / 0.4)'
             }}
           >
             {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
@@ -145,7 +145,7 @@ export default function Waitlist() {
       </div>
 
       {/* Side Navigation Menu */}
-      <div className={`fixed top-0 right-0 h-full w-56 bg-black/80 backdrop-blur-md border-l border-white/20 z-40 transform transition-transform duration-300 ${
+      <div className={`fixed top-0 right-0 h-full w-56 bg-gradient-to-b from-primary/80 to-primary-glow/80 backdrop-blur-md border-l border-primary/30 z-40 transform transition-transform duration-300 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="p-4 pt-16">
