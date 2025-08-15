@@ -90,23 +90,17 @@ export default function Waitlist() {
 
   // Render waitlist page with dropdown menu
   return (
-    <div className="min-h-screen bg-background text-white relative overflow-hidden">
+    <div className="dark min-h-screen bg-background text-foreground relative overflow-hidden">
       {/* Background */}
       <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(/lovable-uploads/27f96d4c-bee3-4923-8c3e-57550bedb369.png)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
+        className="absolute inset-0 z-0 bg-background"
       />
       
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 bg-background/50 z-10" />
 
       {/* Fixed Header Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="flex items-center justify-between p-4 md:p-6">
           {/* Logo and Company Info */}
           <div className="flex items-center gap-4">
@@ -122,10 +116,10 @@ export default function Waitlist() {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600/20 to-blue-500/20 blur-sm -z-10"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl md:text-2xl font-bold tracking-tight leading-tight text-white">
+              <span className="text-xl md:text-2xl font-bold tracking-tight leading-tight text-foreground">
                 XBrainer AI
               </span>
-              <span className="text-xs md:text-sm font-medium text-white">
+              <span className="text-xs md:text-sm font-medium text-muted-foreground">
                 Securing Neural Data in Real Time
               </span>
             </div>
@@ -134,7 +128,7 @@ export default function Waitlist() {
           {/* Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center gap-2 text-white bg-black/80 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 hover:bg-black/90 hover:border-white/30 transition-all duration-300 shadow-lg"
+            className="flex items-center gap-2 text-foreground bg-card backdrop-blur-md border border-border rounded-lg px-3 py-2 hover:bg-accent transition-all duration-300 shadow-lg"
           >
             {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
             <span className="text-sm font-medium tracking-widest">MENU</span>
@@ -143,7 +137,7 @@ export default function Waitlist() {
       </div>
 
       {/* Side Navigation Menu */}
-      <div className={`fixed top-0 right-0 h-full w-56 bg-black/90 backdrop-blur-md border-l border-white/20 z-40 transform transition-transform duration-300 ${
+      <div className={`fixed top-0 right-0 h-full w-56 bg-card/90 backdrop-blur-md border-l border-border z-40 transform transition-transform duration-300 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="p-4 pt-16">
@@ -153,7 +147,7 @@ export default function Waitlist() {
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    className="block w-full text-left text-white/80 hover:text-white py-1.5 px-2 text-sm font-medium transition-colors hover:bg-white/5 rounded"
+                    className="block w-full text-left text-muted-foreground hover:text-foreground py-1.5 px-2 text-sm font-medium transition-colors hover:bg-accent rounded"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {item.name}
@@ -170,26 +164,26 @@ export default function Waitlist() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold text-white mb-4">
+              <h1 className="text-4xl font-bold text-foreground mb-4">
                 Join the Waitlist
               </h1>
-              <p className="text-lg text-white/80">
+              <p className="text-lg text-muted-foreground">
                 Be among the first to experience the future of brain-computer interfaces.
                 Sign up now to get early access and updates.
               </p>
             </div>
 
-            <Card className="border-white/20 bg-black/30 backdrop-blur-md">
+            <Card className="border-border bg-card/30 backdrop-blur-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-white">Early Access Registration</CardTitle>
-                <CardDescription className="text-white/70">
+                <CardTitle className="text-2xl text-foreground">Early Access Registration</CardTitle>
+                <CardDescription className="text-muted-foreground">
                   Fill out the form below to secure your spot on our waitlist.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="full_name" className="text-white">
+                    <Label htmlFor="full_name" className="text-foreground">
                       Full Name *
                     </Label>
                     <Input
@@ -199,12 +193,12 @@ export default function Waitlist() {
                       onChange={(e) => handleInputChange('full_name', e.target.value)}
                       placeholder="Enter your full name"
                       required
-                      className="border-white/20 bg-black/20 text-white placeholder:text-white/50"
+                      className="border-border bg-input text-foreground placeholder:text-muted-foreground"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white">
+                    <Label htmlFor="email" className="text-foreground">
                       Email Address *
                     </Label>
                     <Input
@@ -214,12 +208,12 @@ export default function Waitlist() {
                       onChange={(e) => handleInputChange('email', e.target.value)}
                       placeholder="Enter your email address"
                       required
-                      className="border-white/20 bg-black/20 text-white placeholder:text-white/50"
+                      className="border-border bg-input text-foreground placeholder:text-muted-foreground"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="affiliation" className="text-white">
+                    <Label htmlFor="affiliation" className="text-foreground">
                       Affiliation (Optional)
                     </Label>
                     <Input
@@ -228,12 +222,12 @@ export default function Waitlist() {
                       value={formData.affiliation}
                       onChange={(e) => handleInputChange('affiliation', e.target.value)}
                       placeholder="Company, University, or Organization"
-                      className="border-white/20 bg-black/20 text-white placeholder:text-white/50"
+                      className="border-border bg-input text-foreground placeholder:text-muted-foreground"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="use_case" className="text-white">
+                    <Label htmlFor="use_case" className="text-foreground">
                       Primary Use Case (Optional)
                     </Label>
                     <Textarea
@@ -242,7 +236,7 @@ export default function Waitlist() {
                       onChange={(e) => handleInputChange('use_case', e.target.value)}
                       placeholder="How do you plan to use brain-computer interface technology?"
                       rows={4}
-                      className="border-white/20 bg-black/20 text-white placeholder:text-white/50"
+                      className="border-border bg-input text-foreground placeholder:text-muted-foreground"
                     />
                   </div>
 
@@ -251,13 +245,13 @@ export default function Waitlist() {
                       id="consent"
                       checked={formData.consent}
                       onCheckedChange={(checked) => handleInputChange('consent', checked as boolean)}
-                      className="border-white/40 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                      className="border-border data-[state=checked]:bg-primary data-[state=checked]:border-primary"
                     />
                     <div className="space-y-1">
-                      <Label htmlFor="consent" className="text-sm text-white cursor-pointer">
+                      <Label htmlFor="consent" className="text-sm text-foreground cursor-pointer">
                         I consent to receive updates and communications about XBrainer *
                       </Label>
-                      <p className="text-xs text-white/60">
+                      <p className="text-xs text-muted-foreground">
                         By checking this box, you agree to receive product updates, early access notifications, 
                         and relevant information about our brain-computer interface technology.
                       </p>
@@ -304,7 +298,7 @@ export default function Waitlist() {
                     )}
                   </Button>
 
-                  <p className="text-xs text-white/60 text-center">
+                  <p className="text-xs text-muted-foreground text-center">
                     We respect your privacy. Your information will only be used to contact you about XBrainer updates.
                   </p>
                 </form>
@@ -317,7 +311,7 @@ export default function Waitlist() {
       {/* Overlay to close menu */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/20 z-30"
+          className="fixed inset-0 bg-background/20 z-30"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
