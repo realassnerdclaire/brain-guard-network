@@ -3,6 +3,7 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { z } from "https://esm.sh/zod@3.23.8";
+import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -76,6 +77,38 @@ serve(async (req) => {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
+    }
+
+    // Send email notification to info@xbrainer.ai
+    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    if (resendApiKey) {
+      try {
+        const resend = new Resend(resendApiKey);
+        await resend.emails.send({
+          from: "XBrainer Waitlist <onboarding@resend.dev>",
+          to: ["info@xbrainer.ai"],
+          subject: "New Waitlist Registration - XBrainer AI",
+          html: `
+            <h2>New Waitlist Registration</h2>
+            <p><strong>Name:</strong> ${parsed.data.full_name}</p>
+            <p><strong>Email:</strong> ${parsed.data.email}</p>
+            <p><strong>Affiliation:</strong> ${parsed.data.affiliation || 'Not provided'}</p>
+            <p><strong>Use Case:</strong> ${parsed.data.use_case || 'Not provided'}</p>
+            <p><strong>UTM Source:</strong> ${parsed.data.utm_source || 'Not provided'}</p>
+            <p><strong>UTM Medium:</strong> ${parsed.data.utm_medium || 'Not provided'}</p>
+            <p><strong>UTM Campaign:</strong> ${parsed.data.utm_campaign || 'Not provided'}</p>
+            <p><strong>IP Address:</strong> ${ip || 'Not available'}</p>
+            <p><strong>User Agent:</strong> ${ua || 'Not available'}</p>
+            <p><strong>Timestamp:</strong> ${new Date().toISOString()}</p>
+          `,
+        });
+        console.log("Email notification sent successfully");
+      } catch (emailError) {
+        console.error("Failed to send email notification:", emailError);
+        // Don't fail the request if email fails
+      }
+    } else {
+      console.warn("RESEND_API_KEY not configured, skipping email notification");
     }
 
     return new Response(JSON.stringify({ ok: true, message: "Success! You're on the waitlist." }), { 
