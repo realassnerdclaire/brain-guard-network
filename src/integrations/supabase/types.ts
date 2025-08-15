@@ -20,6 +20,7 @@ export type Database = {
           consent: boolean
           created_at: string
           email: string
+          email_ci: string | null
           full_name: string
           id: string
           ip: unknown | null
@@ -34,6 +35,7 @@ export type Database = {
           consent?: boolean
           created_at?: string
           email: string
+          email_ci?: string | null
           full_name: string
           id?: string
           ip?: unknown | null
@@ -48,6 +50,7 @@ export type Database = {
           consent?: boolean
           created_at?: string
           email?: string
+          email_ci?: string | null
           full_name?: string
           id?: string
           ip?: unknown | null
