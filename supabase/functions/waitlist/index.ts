@@ -1,7 +1,8 @@
-import "https://deno.land/x/xhr@0.1.0/mod.ts";
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+// Deno Deploy runtime
+// supabase/functions/waitlist/index.ts
+import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { z } from "https://esm.sh/zod@3.23.8";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -9,157 +10,83 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 };
 
-// Validation schema
-const waitlistSchema = z.object({
+const schema = z.object({
   full_name: z.string().min(2).max(120),
-  email: z.string().email(),
-  affiliation: z.string().max(200).optional(),
-  use_case: z.string().max(1000).optional(),
-  consent: z.boolean().refine(val => val === true, {
-    message: "Consent must be true"
-  }),
+  email: z.string().email().max(254),
+  affiliation: z.string().max(200).optional().or(z.literal("")),
+  use_case: z.string().max(1000).optional().or(z.literal("")),
+  consent: z.literal(true),
   utm_source: z.string().optional(),
   utm_medium: z.string().optional(),
   utm_campaign: z.string().optional(),
 });
 
 serve(async (req) => {
-  console.log('=== WAITLIST FUNCTION START ===');
-  console.log('Method:', req.method);
-  console.log('URL:', req.url);
-  console.log('Headers:', Object.fromEntries(req.headers.entries()));
-  
-  // Handle CORS preflight requests
+  // Handle CORS preflight requests  
   if (req.method === 'OPTIONS') {
-    console.log('Handling CORS preflight request');
-    return new Response(null, { 
-      headers: corsHeaders,
-      status: 200 
-    });
+    return new Response(null, { headers: corsHeaders, status: 200 });
   }
 
-  if (req.method !== 'POST') {
-    console.log('Method not allowed:', req.method);
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ ok: false, error: "Method not allowed" }), { 
       status: 405,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
 
   try {
-    const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-    console.log('Service role key exists:', !!serviceRoleKey);
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseServiceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     
-    if (!serviceRoleKey) {
-      console.error('SUPABASE_SERVICE_ROLE_KEY not found in environment');
-      return new Response(JSON.stringify({ error: 'Server configuration error - missing service role key' }), {
+    if (!supabaseUrl || !supabaseServiceRoleKey) {
+      console.error('Missing required environment variables');
+      return new Response(JSON.stringify({ ok: false, error: "Server configuration error" }), { 
         status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
+    
+    const supabase = createClient(supabaseUrl, supabaseServiceRoleKey, { auth: { persistSession: false } });
 
-    // Initialize Supabase client with service role key
-    const supabase = createClient(
-      'https://sievygiqahkmahihoeln.supabase.co',
-      serviceRoleKey
-    );
+    const ua = req.headers.get("user-agent") ?? undefined;
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? undefined;
 
     const body = await req.json();
-    console.log('Request body received:', body);
-
-    // Validate input
-    const validatedData = waitlistSchema.parse(body);
-    console.log('Data validation passed:', validatedData);
-
-    // Extract headers
-    const userAgent = req.headers.get('user-agent') || null;
-    const clientIP = req.headers.get('x-forwarded-for') || 
-                     req.headers.get('x-real-ip') || 
-                     req.headers.get('cf-connecting-ip') || 
-                     null;
-
-    // Prepare data for insertion
-    const insertData = {
-      full_name: validatedData.full_name,
-      email: validatedData.email,
-      email_ci: validatedData.email.toLowerCase(),
-      affiliation: validatedData.affiliation || null,
-      use_case: validatedData.use_case || null,
-      consent: validatedData.consent,
-      utm_source: validatedData.utm_source || null,
-      utm_medium: validatedData.utm_medium || null,
-      utm_campaign: validatedData.utm_campaign || null,
-      user_agent: userAgent,
-      ip: clientIP,
-    };
-
-    console.log('Attempting database insert with data:', insertData);
-
-    // Insert into database using service role (bypasses RLS)
-    const { data, error } = await supabase
-      .from('waitlist')
-      .insert([insertData])
-      .select();
-
-    if (error) {
-      console.error('Database insertion error:', error);
-      
-      // Handle duplicate email error
-      if (error.code === '23505' && error.message.includes('waitlist_email_ci_unique')) {
-        console.log('Duplicate email detected, returning success message');
-        return new Response(JSON.stringify({ 
-          ok: true, 
-          message: "You're already on the waitlist." 
-        }), {
-          status: 200,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        });
-      }
-
-      return new Response(JSON.stringify({ 
-        error: 'Failed to submit waitlist entry',
-        details: error.message 
-      }), {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
-    }
-
-    console.log('Database insertion successful:', data);
-
-    return new Response(JSON.stringify({ 
-      ok: true, 
-      message: 'Successfully added to waitlist!' 
-    }), {
-      status: 200,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
-
-  } catch (error) {
-    console.error('=== FUNCTION ERROR ===');
-    console.error('Error type:', error.constructor.name);
-    console.error('Error message:', error.message);
-    console.error('Error stack:', error.stack);
-    
-    if (error instanceof z.ZodError) {
-      console.error('Validation errors:', error.errors);
-      return new Response(JSON.stringify({ 
-        error: 'Validation failed', 
-        details: error.errors 
-      }), {
+    const parsed = schema.safeParse(body);
+    if (!parsed.success) {
+      return new Response(JSON.stringify({ ok: false, error: parsed.error.flatten().fieldErrors }), { 
         status: 400,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
 
-    return new Response(JSON.stringify({ 
-      error: 'Internal server error',
-      message: error.message 
-    }), {
-      status: 500,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    const payload = { ...parsed.data, user_agent: ua, ip };
+    const { error } = await supabase.from("waitlist").insert(payload);
+
+    // 23505 = unique_violation
+    if (error && (error as any).code === "23505") {
+      return new Response(JSON.stringify({ ok: true, message: "You're already on the waitlist." }), { 
+        status: 200,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+    if (error) {
+      console.error("Insert error:", error);
+      return new Response(JSON.stringify({ ok: false, error: "Unable to join the waitlist." }), { 
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    return new Response(JSON.stringify({ ok: true, message: "Success! You're on the waitlist." }), { 
+      status: 200,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
-  } finally {
-    console.log('=== WAITLIST FUNCTION END ===');
+  } catch (e) {
+    console.error("Function error:", e);
+    return new Response(JSON.stringify({ ok: false, error: "Unexpected error." }), { 
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
   }
-});
+}, { onError: (e) => console.error(e) });
