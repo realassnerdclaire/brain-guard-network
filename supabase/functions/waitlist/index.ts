@@ -24,12 +24,18 @@ const waitlistSchema = z.object({
 });
 
 serve(async (req) => {
-  console.log('Waitlist function called with method:', req.method);
+  console.log('=== WAITLIST FUNCTION START ===');
+  console.log('Method:', req.method);
+  console.log('URL:', req.url);
+  console.log('Headers:', Object.fromEntries(req.headers.entries()));
   
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     console.log('Handling CORS preflight request');
-    return new Response(null, { headers: corsHeaders });
+    return new Response(null, { 
+      headers: corsHeaders,
+      status: 200 
+    });
   }
 
   if (req.method !== 'POST') {
@@ -42,15 +48,15 @@ serve(async (req) => {
 
   try {
     const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+    console.log('Service role key exists:', !!serviceRoleKey);
+    
     if (!serviceRoleKey) {
-      console.error('SUPABASE_SERVICE_ROLE_KEY not found');
-      return new Response(JSON.stringify({ error: 'Server configuration error' }), {
+      console.error('SUPABASE_SERVICE_ROLE_KEY not found in environment');
+      return new Response(JSON.stringify({ error: 'Server configuration error - missing service role key' }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
-
-    console.log('Service role key found, initializing Supabase client');
 
     // Initialize Supabase client with service role key
     const supabase = createClient(
@@ -59,11 +65,11 @@ serve(async (req) => {
     );
 
     const body = await req.json();
-    console.log('Received body:', body);
+    console.log('Request body received:', body);
 
     // Validate input
     const validatedData = waitlistSchema.parse(body);
-    console.log('Validated data:', validatedData);
+    console.log('Data validation passed:', validatedData);
 
     // Extract headers
     const userAgent = req.headers.get('user-agent') || null;
@@ -87,46 +93,56 @@ serve(async (req) => {
       ip: clientIP,
     };
 
-    console.log('Inserting data:', insertData);
+    console.log('Attempting database insert with data:', insertData);
 
-    // Insert into database
+    // Insert into database using service role (bypasses RLS)
     const { data, error } = await supabase
       .from('waitlist')
       .insert([insertData])
       .select();
 
     if (error) {
-      console.error('Database error:', error);
+      console.error('Database insertion error:', error);
       
       // Handle duplicate email error
       if (error.code === '23505' && error.message.includes('waitlist_email_ci_unique')) {
+        console.log('Duplicate email detected, returning success message');
         return new Response(JSON.stringify({ 
           ok: true, 
           message: "You're already on the waitlist." 
         }), {
+          status: 200,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
 
-      return new Response(JSON.stringify({ error: 'Failed to submit waitlist entry' }), {
+      return new Response(JSON.stringify({ 
+        error: 'Failed to submit waitlist entry',
+        details: error.message 
+      }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
 
-    console.log('Successfully inserted:', data);
+    console.log('Database insertion successful:', data);
 
     return new Response(JSON.stringify({ 
       ok: true, 
       message: 'Successfully added to waitlist!' 
     }), {
+      status: 200,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
 
   } catch (error) {
-    console.error('Error in waitlist function:', error);
+    console.error('=== FUNCTION ERROR ===');
+    console.error('Error type:', error.constructor.name);
+    console.error('Error message:', error.message);
+    console.error('Error stack:', error.stack);
     
     if (error instanceof z.ZodError) {
+      console.error('Validation errors:', error.errors);
       return new Response(JSON.stringify({ 
         error: 'Validation failed', 
         details: error.errors 
@@ -136,9 +152,14 @@ serve(async (req) => {
       });
     }
 
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+    return new Response(JSON.stringify({ 
+      error: 'Internal server error',
+      message: error.message 
+    }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
+  } finally {
+    console.log('=== WAITLIST FUNCTION END ===');
   }
 });
