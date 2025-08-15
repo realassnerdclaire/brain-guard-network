@@ -7,6 +7,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 interface WaitlistFormData {
   full_name: string;
@@ -42,23 +43,22 @@ export default function Waitlist() {
     mutationFn: async (data: WaitlistFormData) => {
       const utmParams = getUtmParams();
       
-      const response = await fetch('https://sievygiqahkmahihoeln.supabase.co/functions/v1/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      console.log('Submitting waitlist data:', { ...data, ...utmParams });
+      
+      const { data: result, error } = await supabase.functions.invoke('waitlist', {
+        body: {
           ...data,
           ...utmParams,
-        }),
+        },
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to submit');
+      if (error) {
+        console.error('Supabase function error:', error);
+        throw new Error(error.message || 'Failed to submit to waitlist');
       }
 
-      return response.json();
+      console.log('Waitlist submission successful:', result);
+      return result;
     },
   });
 
