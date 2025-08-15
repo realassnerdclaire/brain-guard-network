@@ -173,7 +173,7 @@ export default function Waitlist() {
               </p>
             </div>
 
-            <Card className="border-border bg-card/30 backdrop-blur-md">
+            <Card className="border-border bg-card/30 backdrop-blur-md turquoise-cycling">
               <CardHeader>
                 <CardTitle className="text-2xl text-foreground">Early Access Registration</CardTitle>
                 <CardDescription className="text-muted-foreground">
