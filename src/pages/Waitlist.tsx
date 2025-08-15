@@ -38,7 +38,8 @@ export default function Waitlist() {
     { name: "OVERVIEW", path: "/overview" },
     { name: "COMPLIANCE & STANDARDS", path: "/compliance" },
     { name: "FAQ", path: "/faq" },
-    { name: "CONTACT", path: "/contact" }
+    { name: "CONTACT", path: "/contact" },
+    { name: "SEE DEMO", path: "/demo-login" }
   ];
 
   // Extract UTM parameters from URL
@@ -105,7 +106,7 @@ export default function Waitlist() {
       <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Fixed Header Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary/90 to-primary-glow/90 backdrop-blur-md border-b border-primary/30">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
         <div className="flex items-center justify-between p-4 md:p-6">
           {/* Logo and Company Info */}
           <div className="flex items-center gap-4">
@@ -133,10 +134,7 @@ export default function Waitlist() {
           {/* Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center gap-2 text-white bg-gradient-to-r from-primary to-primary-glow backdrop-blur-md border border-primary/50 rounded-lg px-3 py-2 hover:from-primary-glow hover:to-primary hover:shadow-elegant transition-all duration-300 shadow-lg"
-            style={{
-              boxShadow: '0 0 20px hsl(var(--primary) / 0.4)'
-            }}
+            className="flex items-center gap-2 text-white bg-black/80 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 hover:bg-black/90 hover:border-white/30 transition-all duration-300 shadow-lg"
           >
             {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
             <span className="text-sm font-medium tracking-widest">MENU</span>
@@ -145,7 +143,7 @@ export default function Waitlist() {
       </div>
 
       {/* Side Navigation Menu */}
-      <div className={`fixed top-0 right-0 h-full w-56 bg-gradient-to-b from-primary/80 to-primary-glow/80 backdrop-blur-md border-l border-primary/30 z-40 transform transition-transform duration-300 ${
+      <div className={`fixed top-0 right-0 h-full w-56 bg-black/90 backdrop-blur-md border-l border-white/20 z-40 transform transition-transform duration-300 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="p-4 pt-16">
