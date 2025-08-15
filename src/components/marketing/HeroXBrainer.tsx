@@ -175,12 +175,7 @@ const HeroXBrainer = () => {
                   (btn as any).hoverInterval = null;
                 }
               }}
-              onClick={() => {
-                const demoSection = document.getElementById('demo');
-                if (demoSection) {
-                  demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
+              onClick={() => navigate('/demo-login')}
             >
               SEE THE DEMO
             </button>

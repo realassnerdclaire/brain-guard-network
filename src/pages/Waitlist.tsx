@@ -285,8 +285,7 @@ export default function Waitlist() {
                   <Button
                     type="submit"
                     disabled={isSubmitDisabled}
-                    className="w-full h-12 text-base font-semibold"
-                    variant="hero"
+                    className="w-full h-12 text-base font-semibold bg-white text-black hover:bg-white/90"
                   >
                     {waitlistMutation.isPending ? (
                       <>
