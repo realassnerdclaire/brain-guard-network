@@ -87,6 +87,7 @@ export default function Waitlist() {
 
   const isSubmitDisabled = !formData.consent || waitlistMutation.isPending;
 
+  // Render waitlist page with dropdown menu
   return (
     <div className="min-h-screen bg-background text-white relative overflow-hidden">
       {/* Background */}
