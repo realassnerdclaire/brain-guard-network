@@ -163,7 +163,7 @@ const AboutUsScrolling = () => {
       {/* Horizontal Scrolling Container */}
       <div 
         ref={scrollContainerRef}
-        className="flex overflow-x-auto snap-x snap-mandatory h-screen pt-20"
+        className="flex overflow-x-auto snap-x snap-mandatory pt-24 pb-24"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         onScroll={handleScroll}
       >
