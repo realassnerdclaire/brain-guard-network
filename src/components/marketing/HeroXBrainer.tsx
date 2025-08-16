@@ -183,10 +183,10 @@ const HeroXBrainer = () => {
         </div>
       </div>
       
-      {/* Interactive navigation labels - positioned lower */}
-      <div className="absolute bottom-28 sm:bottom-20 lg:bottom-24 xl:bottom-28 left-0 right-0 z-[9999] pointer-events-none">
+      {/* Interactive navigation labels - positioned lower to avoid overlap */}
+      <div className="absolute bottom-16 sm:bottom-12 lg:bottom-16 xl:bottom-20 left-0 right-0 z-[9999] pointer-events-none">
         <div className="container px-2 sm:px-8 lg:px-12 xl:px-16 pointer-events-none">
-          <div className="flex items-center justify-center gap-1 sm:gap-6 lg:gap-10 xl:gap-16 flex-wrap pointer-events-auto">
+          <div className="flex items-center justify-center gap-3 sm:gap-8 lg:gap-12 xl:gap-20 flex-wrap pointer-events-auto">
             <button 
               id="problem-btn"
               className="text-white text-xs sm:text-base lg:text-lg xl:text-xl font-medium cursor-pointer bg-transparent border-none p-0 sm:p-3 lg:p-4 xl:p-5 hover:bg-white/10 rounded z-[99999] relative"
