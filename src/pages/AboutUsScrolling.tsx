@@ -25,7 +25,11 @@ const AboutUsScrolling = () => {
     "What is XBrainer AI?",
     "Why it matters?", 
     "Founder Team",
-    "Why we started XBrainer AI"
+    "Why we started XBrainer AI",
+    "Our Mission",
+    "Who it's for",
+    "Why now",
+    "Why we win"
   ];
 
   const scrollToSection = (index: number) => {
@@ -261,8 +265,85 @@ const AboutUsScrolling = () => {
               </p>
             </div>
           </div>
-        </section>
-      </div>
+         </section>
+
+         {/* Our Mission Section */}
+         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#F59E0B] animate-fade-in">
+               Our Mission
+             </h2>
+             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#F59E0B] to-[#FBBF24] mx-auto mb-8 animate-pulse" />
+             <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#F59E0B]/30 rounded-xl p-8 max-w-3xl mx-auto">
+               <p className="text-white/90 text-lg leading-relaxed">
+                 Protect brain data at the source. We secure EEG and BCI streams in real time so only valid, consented signals reach applications.
+               </p>
+             </div>
+           </div>
+         </section>
+
+         {/* Who it's for Section */}
+         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#8B5CF6] animate-fade-in">
+               Who it's for
+             </h2>
+             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] mx-auto mb-8 animate-pulse" />
+             <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#8B5CF6]/30 rounded-xl p-8 max-w-3xl mx-auto">
+               <p className="text-white/90 text-lg leading-relaxed">
+                 BCI companies, EEG device makers, hospitals, defense programs, university labs, and medical faculty.
+               </p>
+             </div>
+           </div>
+         </section>
+
+         {/* Why now Section */}
+         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#EF4444] animate-fade-in">
+               Why now
+             </h2>
+             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#EF4444] to-[#F87171] mx-auto mb-8 animate-pulse" />
+             <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#EF4444]/30 rounded-xl p-8 max-w-3xl mx-auto">
+               <p className="text-white/90 text-lg leading-relaxed">
+                 EEG and BCI are leaving the lab and entering clinics, homes, and defense uses. Many stacks still lack encryption, packet checks, consent control, and audit trails. That gap creates near-term risk: exposed data, altered results, and slower approvals.
+               </p>
+             </div>
+           </div>
+         </section>
+
+         {/* Why we win Section */}
+         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#10B981] animate-fade-in">
+               Why we win
+             </h2>
+             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#10B981] to-[#34D399] mx-auto mb-8 animate-pulse" />
+             <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#10B981]/30 rounded-xl p-8 max-w-3xl mx-auto text-left space-y-5">
+               <div className="border-l-4 border-[#10B981] pl-6">
+                 <h3 className="text-lg font-semibold text-[#10B981] mb-1">Source layer</h3>
+                 <p className="text-white/90">Packet checks for timing, range, and artifacts. Encrypted transport. Consent-gated reads. Write-once audit log before any app or cloud sees data.</p>
+               </div>
+               <div className="border-l-4 border-[#06B6D4] pl-6">
+                 <h3 className="text-lg font-semibold text-[#06B6D4] mb-1">Drop in</h3>
+                 <p className="text-white/90">Light SDK in Python and TypeScript with a small runtime. No firmware changes. Runs on edge or cloud.</p>
+               </div>
+               <div className="border-l-4 border-[#F59E0B] pl-6">
+                 <h3 className="text-lg font-semibold text-[#F59E0B] mb-1">Fast</h3>
+                 <p className="text-white/90">Current prototype runs under 150 ms end to end at 512 Hz on recorded and hardware-in-the-loop tests.</p>
+               </div>
+               <div className="border-l-4 border-[#8B5CF6] pl-6">
+                 <h3 className="text-lg font-semibold text-[#8B5CF6] mb-1">Device coverage</h3>
+                 <p className="text-white/90">Works with common EEG headsets. New adapters added without rework.</p>
+               </div>
+               <div className="border-l-4 border-[#EC4899] pl-6">
+                 <h3 className="text-lg font-semibold text-[#EC4899] mb-1">Team</h3>
+                 <p className="text-white/90">Claire covers infra and ML. Owen covers clinical EEG validation. Angela covers artifact and signal quality research.</p>
+               </div>
+             </div>
+           </div>
+         </section>
+       </div>
 
       {/* Overlay to close menu */}
       {isMenuOpen && (
