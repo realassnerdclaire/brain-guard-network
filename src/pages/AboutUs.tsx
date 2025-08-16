@@ -175,6 +175,61 @@ const AboutUs = () => {
                 Claire's stroke left her exposed and vulnerable—neural signals needed protection at capture. Owen saw timing errors destroy Cleveland Clinic results. Angelina witnessed corrupted Mount Sinai sessions that should have been stopped upstream. We're building the missing security layer: lock, check, gate, log—so when biology wavers, data doesn't.
               </p>
             </div>
+
+            {/* Our Mission */}
+            <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#F59E0B]/30 rounded-xl p-6">
+              <h2 className="text-2xl font-bold text-[#F59E0B] mb-4">Our Mission</h2>
+              <p className="text-white/90 text-base leading-relaxed">
+                Protect brain data at the source. We secure EEG and BCI streams in real time so only valid, consented signals reach applications.
+              </p>
+            </div>
+
+            {/* Who it's for */}
+            <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#8B5CF6]/30 rounded-xl p-6">
+              <h2 className="text-2xl font-bold text-[#8B5CF6] mb-4">Who it's for</h2>
+              <p className="text-white/90 text-base">
+                BCI companies, EEG device makers, hospitals, defense programs, university labs, and medical faculty.
+              </p>
+            </div>
+
+            {/* Why now */}
+            <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#EF4444]/30 rounded-xl p-6">
+              <h2 className="text-2xl font-bold text-[#EF4444] mb-4">Why now</h2>
+              <p className="text-white/90 text-base leading-relaxed">
+                EEG and BCI are leaving the lab and entering clinics, homes, and defense uses. Many stacks still lack encryption, packet checks, consent control, and audit trails. That gap creates near-term risk: exposed data, altered results, and slower approvals.
+              </p>
+            </div>
+
+            {/* Why we win */}
+            <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#10B981]/30 rounded-xl p-6">
+              <h2 className="text-2xl font-bold text-[#10B981] mb-4">Why we win</h2>
+              <div className="space-y-4 text-white/90 text-base">
+                <div className="border-l-2 border-[#10B981] pl-4">
+                  <h3 className="font-semibold text-[#10B981] mb-1">Source layer</h3>
+                  <p>Packet checks for timing, range, and artifacts. Encrypted transport. Consent-gated reads. Write-once audit log before any app or cloud sees data.</p>
+                </div>
+                
+                <div className="border-l-2 border-[#06B6D4] pl-4">
+                  <h3 className="font-semibold text-[#06B6D4] mb-1">Drop in</h3>
+                  <p>Light SDK in Python and TypeScript with a small runtime. No firmware changes. Runs on edge or cloud.</p>
+                </div>
+                
+                <div className="border-l-2 border-[#F59E0B] pl-4">
+                  <h3 className="font-semibold text-[#F59E0B] mb-1">Fast</h3>
+                  <p>Current prototype runs under 150 ms end to end at 512 Hz on recorded and hardware-in-the-loop tests.</p>
+                </div>
+                
+                <div className="border-l-2 border-[#8B5CF6] pl-4">
+                  <h3 className="font-semibold text-[#8B5CF6] mb-1">Device coverage</h3>
+                  <p>Works with common EEG headsets. New adapters added without rework.</p>
+                </div>
+                
+                <div className="border-l-2 border-[#EC4899] pl-4">
+                  <h3 className="font-semibold text-[#EC4899] mb-1">Team</h3>
+                  <p>Claire covers infra and ML. Owen covers clinical EEG validation. Angela covers artifact and signal quality research.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
