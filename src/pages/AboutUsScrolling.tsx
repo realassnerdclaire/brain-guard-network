@@ -123,7 +123,7 @@ const AboutUsScrolling = () => {
       {/* Navigation Arrows */}
       <button 
         onClick={() => scrollToSection(Math.max(0, currentSection - 1))}
-        className="hidden fixed left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md text-white rounded-full p-2 sm:p-3 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg"
+        className="fixed left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md text-white rounded-full p-2 sm:p-3 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg"
         disabled={currentSection === 0}
         style={{ 
           opacity: currentSection === 0 ? 0.3 : 1,
@@ -135,7 +135,7 @@ const AboutUsScrolling = () => {
       
       <button 
         onClick={() => scrollToSection(Math.min(sections.length - 1, currentSection + 1))}
-        className="hidden fixed right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md text-white rounded-full p-2 sm:p-3 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg"
+        className="fixed right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md text-white rounded-full p-2 sm:p-3 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg"
         disabled={currentSection === sections.length - 1}
         style={{ 
           opacity: currentSection === sections.length - 1 ? 0.3 : 1,
@@ -146,7 +146,7 @@ const AboutUsScrolling = () => {
       </button>
 
       {/* Section Indicators */}
-      <div className="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2">
         {sections.map((_, index) => (
           <button
             key={index}
@@ -160,10 +160,15 @@ const AboutUsScrolling = () => {
         ))}
       </div>
 
-      {/* Vertical Stacked Sections */}
-      <div className="pt-24 pb-16 space-y-24">
+      {/* Horizontal Scrolling Container */}
+      <div 
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto snap-x snap-mandatory h-screen pt-20"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        onScroll={handleScroll}
+      >
         {/* What is XBrainer AI Section */}
-        <section className="w-full bg-background relative overflow-hidden">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <img 
               src="/lovable-uploads/c93b77ed-67f7-4582-bdc4-916188a4fe5f.png"
@@ -195,7 +200,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why it matters Section */}
-        <section className="w-full bg-background relative overflow-hidden">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#A855F7] animate-fade-in">
               Why it matters?
@@ -210,7 +215,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Founder Team Section */}
-        <section className="w-full bg-background relative overflow-hidden">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#3B82F6] animate-fade-in">
               Founder Team
@@ -242,7 +247,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why we started Section */}
-        <section className="w-full bg-background relative overflow-hidden">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#14B8A6] animate-fade-in">
               Why we started XBrainer AI
@@ -257,7 +262,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Our Mission Section */}
-        <section className="w-full bg-background relative overflow-hidden">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#F59E0B] animate-fade-in">
               Our Mission
@@ -272,7 +277,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Who it's for Section */}
-        <section className="w-full bg-background relative overflow-hidden">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#8B5CF6] animate-fade-in">
               Who it's for
@@ -287,7 +292,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why now Section */}
-        <section className="w-full bg-background relative overflow-hidden">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#EF4444] animate-fade-in">
               Why now
@@ -302,7 +307,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why we win Section */}
-        <section className="w-full bg-background relative overflow-hidden">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#10B981] animate-fade-in">
               Why we win
