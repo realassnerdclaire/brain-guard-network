@@ -16,8 +16,7 @@ export default function DemoLogin() {
   const navigate = useNavigate();
 
   // Demo credentials
-  const DEMO_EMAIL = 'demo@xbrainer.ai';
-  const DEMO_PASSWORD = 'xbrainer2024';
+  const DEMO_PASSWORD = 'xbrainer_demo_view_admin';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,12 +26,12 @@ export default function DemoLogin() {
     // Simulate loading
     await new Promise(resolve => setTimeout(resolve, 1000));
 
-    if (email === DEMO_EMAIL && password === DEMO_PASSWORD) {
+    if (password === DEMO_PASSWORD) {
       // Success - redirect to demo page
       localStorage.setItem('demo_authenticated', 'true');
       navigate('/demo');
     } else {
-      setError('Invalid credentials. Please use the demo credentials provided.');
+      setError('Invalid credentials. Access denied.');
     }
     
     setIsLoading(false);
@@ -88,10 +87,10 @@ export default function DemoLogin() {
                 {/* Demo Credentials Display */}
                 <div className="mb-6 p-4 bg-blue-500/20 border border-blue-500/40 rounded-lg">
                   <h3 className="text-sm font-semibold text-blue-400 mb-2">Demo Credentials:</h3>
-                  <div className="space-y-1 text-sm text-white/80">
-                    <p><strong>Email:</strong> demo@xbrainer.ai</p>
-                    <p><strong>Password:</strong> xbrainer2024</p>
-                  </div>
+                   <div className="space-y-1 text-sm text-white/80">
+                     <p><strong>Email:</strong> Any email address</p>
+                     <p><strong>Password:</strong> xbrainer_demo_view_admin</p>
+                   </div>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
