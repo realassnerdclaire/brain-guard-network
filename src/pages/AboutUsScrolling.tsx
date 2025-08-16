@@ -163,12 +163,12 @@ const AboutUsScrolling = () => {
       {/* Horizontal Scrolling Container */}
       <div 
         ref={scrollContainerRef}
-        className="flex overflow-x-auto snap-x snap-mandatory pt-24 pb-24"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className="flex overflow-x-auto snap-x snap-mandatory"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', height: 'calc(100vh - 80px)' }}
         onScroll={handleScroll}
       >
         {/* What is XBrainer AI Section */}
-        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <img 
               src="/lovable-uploads/c93b77ed-67f7-4582-bdc4-916188a4fe5f.png"
@@ -200,7 +200,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why it matters Section */}
-        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#A855F7] animate-fade-in">
               Why it matters?
@@ -215,7 +215,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Founder Team Section */}
-        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#3B82F6] animate-fade-in">
               Founder Team
@@ -247,7 +247,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why we started Section */}
-        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#14B8A6] animate-fade-in">
               Why we started XBrainer AI
@@ -262,7 +262,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Our Mission Section */}
-        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#F59E0B] animate-fade-in">
               Our Mission
@@ -277,7 +277,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Who it's for Section */}
-        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#8B5CF6] animate-fade-in">
               Who it's for
@@ -292,7 +292,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why now Section */}
-        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#EF4444] animate-fade-in">
               Why now
@@ -307,7 +307,7 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why we win Section */}
-        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-hidden snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#10B981] animate-fade-in">
               Why we win
