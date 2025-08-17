@@ -16,6 +16,7 @@ import DemoLogin from "./pages/DemoLogin";
 import Demo from "./pages/Demo";
 import JourneyDev from "./pages/JourneyDev";
 import EEGMonitor from "./pages/EEGMonitor";
+import EEGVideoDemo from "./pages/EEGVideoDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/demo-login" element={<DemoLogin />} />
           <Route path="/demo" element={<Demo />} />
           <Route path="/eeg-monitor" element={<EEGMonitor />} />
+          <Route path="/eeg-video-demo" element={<EEGVideoDemo />} />
           <Route path="/journey-dev" element={<JourneyDev />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
