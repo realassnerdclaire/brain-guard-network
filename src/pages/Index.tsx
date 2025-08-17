@@ -279,6 +279,18 @@ const Index = () => {
               </div>
             </div>
           </header>
+          
+          {/* Quick Access Banner for EEG Monitor */}
+          <div className="fixed top-20 left-1/2 -translate-x-1/2 z-20 bg-gradient-to-r from-primary/90 to-blue-500/90 backdrop-blur-md border border-white/20 rounded-xl px-6 py-3 text-white shadow-lg">
+            <a 
+              href="/eeg-monitor" 
+              className="flex items-center space-x-3 hover:scale-105 transition-transform"
+            >
+              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+              <span className="font-medium">Launch Live EEG Monitor</span>
+            </a>
+          </div>
+          
           <HeroXBrainer />
           
           {/* Horizontal Scrolling Container for 4 Sections */}
