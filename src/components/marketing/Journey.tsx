@@ -6,8 +6,14 @@ import type { JourneyConfig } from '@/components/journey/EEGEngine';
 
 export default function Journey() {
   const [config, setConfig] = useState<JourneyConfig | null>(null);
+  const [isClient, setIsClient] = useState(false);
   const stageRef = useRef<EEGStageHandle>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Ensure client-side hydration
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Load config
   useEffect(() => {
@@ -17,9 +23,9 @@ export default function Journey() {
       .catch(console.error);
   }, []);
 
-  // Scroll binding
+  // Scroll binding - only after client hydration
   const { scrollYProgress } = useScroll({
-    target: scrollRef,
+    target: isClient ? scrollRef : undefined,
     offset: ["start start", "end end"]
   });
 
@@ -29,9 +35,9 @@ export default function Journey() {
   const aeProgress = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
   const downstreamProgress = useTransform(scrollYProgress, [0.8, 1.0], [0, 1]);
 
-  // Update stage
+  // Update stage - only after client hydration
   useEffect(() => {
-    if (!stageRef.current) return;
+    if (!stageRef.current || !isClient) return;
     
     const unsubscribes = [
       validationProgress.on('change', (v) => stageRef.current?.setValidation(v)),
@@ -41,9 +47,9 @@ export default function Journey() {
       downstreamProgress.on('change', (v) => stageRef.current?.setDownstream(v))
     ];
     return () => unsubscribes.forEach(unsub => unsub());
-  }, [validationProgress, encryptionProgress, consentProgress, aeProgress, downstreamProgress]);
+  }, [validationProgress, encryptionProgress, consentProgress, aeProgress, downstreamProgress, isClient]);
 
-  if (!config) {
+  if (!config || !isClient) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full"></div>

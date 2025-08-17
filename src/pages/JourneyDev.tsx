@@ -12,6 +12,7 @@ export default function JourneyDevPage() {
   const [config, setConfig] = useState<JourneyConfig | null>(null);
   const [bindToScroll, setBindToScroll] = useState(false);
   const [fps, setFps] = useState(0);
+  const [isClient, setIsClient] = useState(false);
   const stageRef = useRef<EEGStageHandle>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   
@@ -23,6 +24,11 @@ export default function JourneyDevPage() {
     autoencoder: 0,
     downstream: 0
   });
+
+  // Ensure client-side hydration
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Load config
   useEffect(() => {
@@ -52,9 +58,9 @@ export default function JourneyDevPage() {
     return () => cancelAnimationFrame(id);
   }, []);
 
-  // Scroll binding
+  // Scroll binding - only after client hydration
   const { scrollYProgress } = useScroll({
-    target: scrollRef,
+    target: isClient && bindToScroll ? scrollRef : undefined,
     offset: ["start start", "end end"]
   });
 
@@ -64,9 +70,9 @@ export default function JourneyDevPage() {
   const aeProgress = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
   const downstreamProgress = useTransform(scrollYProgress, [0.8, 1.0], [0, 1]);
 
-  // Update stage based on mode
+  // Update stage based on mode - only after client hydration
   useEffect(() => {
-    if (!stageRef.current) return;
+    if (!stageRef.current || !isClient) return;
 
     if (bindToScroll) {
       const unsubscribes = [
@@ -84,9 +90,9 @@ export default function JourneyDevPage() {
       stageRef.current.setAE(sliders.autoencoder);
       stageRef.current.setDownstream(sliders.downstream);
     }
-  }, [bindToScroll, sliders, validationProgress, encryptionProgress, consentProgress, aeProgress, downstreamProgress]);
+  }, [bindToScroll, sliders, validationProgress, encryptionProgress, consentProgress, aeProgress, downstreamProgress, isClient]);
 
-  if (!config) {
+  if (!config || !isClient) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
