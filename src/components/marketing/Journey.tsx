@@ -96,157 +96,366 @@ const journeyData = {
   ]
 };
 
-// Visual icon components
-const VisualIcon = ({ icon, hint, isActive }: { icon: string; hint: string; isActive: boolean }) => {
-  const iconComponents = {
-    "wave-in": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path 
-          d="M10,50 Q30,20 50,50 T90,50" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100 animate-pulse' : 'opacity-40'}`}
-        />
-        <circle cx="15" cy="45" r="2" fill="currentColor" className={isActive ? 'animate-bounce' : ''} />
-        <circle cx="85" cy="55" r="2" fill="currentColor" className={isActive ? 'animate-bounce' : ''} />
-      </svg>
-    ),
-    "shield-scan": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path 
-          d="M50,10 L30,20 L30,50 Q30,70 50,85 Q70,70 70,50 L70,20 Z" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-        />
-        <line x1="40" y1="40" x2="60" y2="40" stroke="currentColor" strokeWidth="1" className={isActive ? 'animate-pulse' : ''} />
-        <line x1="40" y1="50" x2="60" y2="50" stroke="currentColor" strokeWidth="1" className={isActive ? 'animate-pulse' : ''} />
-      </svg>
-    ),
-    "lock": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <rect 
-          x="30" y="45" width="40" height="35" rx="3" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-        />
-        <path 
-          d="M40,45 L40,35 Q40,25 50,25 Q60,25 60,35 L60,45" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-        />
-        <circle cx="50" cy="62" r="3" fill="currentColor" className={isActive ? 'animate-pulse' : ''} />
-      </svg>
-    ),
-    "flow": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path 
-          d="M20,30 L50,30 L50,50 L80,50" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-        />
-        <circle cx="50" cy="40" r="8" fill="none" stroke="currentColor" strokeWidth="2" />
-        <polygon points="75,45 85,50 75,55" fill="currentColor" className={isActive ? 'animate-pulse' : ''} />
-      </svg>
-    ),
-    "ai-chip": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <rect 
-          x="25" y="25" width="50" height="50" rx="5" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-        />
-        <circle cx="40" cy="40" r="3" fill="currentColor" className={isActive ? 'animate-pulse' : ''} />
-        <circle cx="60" cy="40" r="3" fill="currentColor" className={isActive ? 'animate-pulse' : ''} />
-        <circle cx="50" cy="60" r="3" fill="currentColor" className={isActive ? 'animate-pulse' : ''} />
-      </svg>
-    ),
-    "eye-strike": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <ellipse 
-          cx="50" cy="50" rx="30" ry="15" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-        />
-        <circle cx="50" cy="50" r="8" fill="none" stroke="currentColor" strokeWidth="2" />
-        <line x1="25" y1="25" x2="75" y2="75" stroke="currentColor" strokeWidth="3" className={isActive ? 'animate-pulse' : ''} />
-      </svg>
-    ),
-    "finger-brain": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <ellipse 
-          cx="50" cy="40" rx="20" ry="15" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-        />
-        <rect x="45" y="55" width="10" height="20" rx="5" fill="none" stroke="currentColor" strokeWidth="2" />
-        <circle cx="45" cy="35" r="2" fill="currentColor" className={isActive ? 'animate-pulse' : ''} />
-        <circle cx="55" cy="35" r="2" fill="currentColor" className={isActive ? 'animate-pulse' : ''} />
-      </svg>
-    ),
-    "ledger": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <rect 
-          x="25" y="20" width="50" height="60" rx="3" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-        />
-        <line x1="35" y1="35" x2="65" y2="35" stroke="currentColor" strokeWidth="1" />
-        <line x1="35" y1="45" x2="65" y2="45" stroke="currentColor" strokeWidth="1" />
-        <line x1="35" y1="55" x2="65" y2="55" stroke="currentColor" strokeWidth="1" />
-        <circle cx="30" cy="35" r="2" fill="currentColor" className={isActive ? 'animate-pulse' : ''} />
-      </svg>
-    ),
-    "api": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <rect 
-          x="20" y="30" width="25" height="40" rx="3" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-        />
-        <rect x="55" y="30" width="25" height="40" rx="3" fill="none" stroke="currentColor" strokeWidth="2" />
-        <path d="M45,45 L55,45" stroke="currentColor" strokeWidth="2" className={isActive ? 'animate-pulse' : ''} />
-        <path d="M45,55 L55,55" stroke="currentColor" strokeWidth="2" className={isActive ? 'animate-pulse' : ''} />
-      </svg>
-    ),
-    "target": (
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        <circle 
-          cx="50" cy="50" r="25" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          className={`transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-        />
-        <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="2" />
-        <circle cx="50" cy="50" r="5" fill="currentColor" className={isActive ? 'animate-pulse' : ''} />
-      </svg>
-    )
-  };
+// Animated Visual Component
+const StickyVisual = ({ activeStepId, stepProgress }: { activeStepId: string; stepProgress: number }) => {
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+    
+    const handleChange = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  // Animation values based on active step and progress
+  const lockOpacity = activeStepId === 'encryption' ? stepProgress : 0;
+  const gateAngle = activeStepId === 'routing-consent' ? stepProgress * 45 : 0;
+  const anomalyGlow = activeStepId === 'anomaly-detection' ? stepProgress : 0;
+  const maskWidth = activeStepId === 'privacy-redaction' ? stepProgress * 100 : 0;
+  const authMeter = activeStepId === 'brainprint-auth' ? stepProgress * 100 : 0;
+  const ledgerBlocks = activeStepId === 'audit-logging' ? Math.floor(stepProgress * 5) : 0;
 
   return (
-    <div className="relative w-32 h-32 mx-auto mb-4 text-primary">
-      {iconComponents[icon as keyof typeof iconComponents]}
-      <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-muted-foreground text-center">
-        {hint}
-      </div>
+    <div className="relative w-full h-96 bg-card border rounded-xl p-8 shadow-elegant overflow-hidden">
+      <svg viewBox="0 0 400 300" className="w-full h-full">
+        <defs>
+          <pattern id="maskPattern" patternUnits="userSpaceOnUse" width="4" height="4">
+            <rect width="4" height="4" fill="hsl(var(--muted))"/>
+            <rect width="2" height="4" fill="hsl(var(--muted-foreground))"/>
+          </pattern>
+        </defs>
+
+        {/* Background pipeline */}
+        <motion.path
+          d="M40,150 L360,150"
+          stroke="hsl(var(--muted-foreground))"
+          strokeWidth="2"
+          strokeDasharray="5,5"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+        />
+
+        {/* Data packets flowing */}
+        <g id="packets">
+          {[...Array(5)].map((_, i) => (
+            <motion.rect
+              key={i}
+              x={0}
+              y={140}
+              width="20"
+              height="20"
+              rx="4"
+              fill="hsl(var(--primary))"
+              opacity={0.7}
+              animate={{
+                x: [40 + i * 40, 360 + i * 40],
+                opacity: [0, 0.7, 0.7, 0]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: i * 0.5,
+                ease: "linear"
+              }}
+            />
+          ))}
+        </g>
+
+        {/* Protocol badges (ingestion) */}
+        <AnimatePresence>
+          {activeStepId === 'ingestion' && (
+            <motion.g
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, staggerChildren: 0.1 }}
+            >
+              {['BLE', 'USB', 'TCP'].map((protocol, i) => (
+                <motion.g key={protocol}>
+                  <motion.rect
+                    x={60 + i * 80}
+                    y={100}
+                    width="50"
+                    height="20"
+                    rx="10"
+                    fill="hsl(var(--secondary))"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                  />
+                  <motion.text
+                    x={85 + i * 80}
+                    y={114}
+                    textAnchor="middle"
+                    fontSize="10"
+                    fill="hsl(var(--secondary-foreground))"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: i * 0.1 + 0.2 }}
+                  >
+                    {protocol}
+                  </motion.text>
+                </motion.g>
+              ))}
+            </motion.g>
+          )}
+        </AnimatePresence>
+
+        {/* Verification validators */}
+        <AnimatePresence>
+          {activeStepId === 'verification' && (
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.circle
+                cx="150"
+                cy="120"
+                r="15"
+                fill="none"
+                stroke="hsl(var(--success))"
+                strokeWidth="2"
+                initial={{ scale: 0 }}
+                animate={{ scale: [0, 1.2, 1] }}
+                transition={{ duration: 0.5 }}
+              />
+              <motion.text
+                x="150"
+                y="125"
+                textAnchor="middle"
+                fontSize="12"
+                fill="hsl(var(--success))"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                ✓
+              </motion.text>
+            </motion.g>
+          )}
+        </AnimatePresence>
+
+        {/* Encryption lock */}
+        <AnimatePresence>
+          {activeStepId === 'encryption' && (
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.rect
+                x="180"
+                y="130"
+                width="40"
+                height="40"
+                rx="8"
+                fill="hsl(var(--primary))"
+                fillOpacity={lockOpacity}
+                stroke="hsl(var(--primary))"
+                strokeWidth="2"
+                initial={{ scale: 0, rotate: -10 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ duration: 0.4, ease: "backOut" }}
+              />
+              <motion.path
+                d="M190,140 L190,135 Q190,125 200,125 Q210,125 210,135 L210,140"
+                fill="none"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="2"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              />
+            </motion.g>
+          )}
+        </AnimatePresence>
+
+        {/* Policy gate */}
+        <AnimatePresence>
+          {activeStepId === 'routing-consent' && (
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.rect
+                x="200"
+                y="140"
+                width="30"
+                height="20"
+                fill="hsl(var(--secondary))"
+                animate={{ rotate: gateAngle }}
+                style={{ transformOrigin: '200px 150px' }}
+              />
+              <motion.path
+                d="M240,150 L280,130"
+                stroke="hsl(var(--success))"
+                strokeWidth="3"
+                opacity={stepProgress}
+              />
+              <motion.path
+                d="M240,150 L280,170"
+                stroke="hsl(var(--destructive))"
+                strokeWidth="3"
+                opacity={1 - stepProgress}
+              />
+            </motion.g>
+          )}
+        </AnimatePresence>
+
+        {/* Anomaly detection */}
+        <AnimatePresence>
+          {activeStepId === 'anomaly-detection' && (
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.circle
+                cx="200"
+                cy="150"
+                r="20"
+                fill="none"
+                stroke="hsl(var(--destructive))"
+                strokeWidth="2"
+                opacity={anomalyGlow}
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 1, repeat: Infinity }}
+              />
+              <motion.path
+                d="M220,150 Q240,130 260,150"
+                fill="none"
+                stroke="hsl(var(--warning))"
+                strokeWidth="2"
+                opacity={stepProgress}
+              />
+            </motion.g>
+          )}
+        </AnimatePresence>
+
+        {/* Privacy redaction mask */}
+        <AnimatePresence>
+          {activeStepId === 'privacy-redaction' && (
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.rect
+                x="150"
+                y="130"
+                width={maskWidth}
+                height="40"
+                fill="url(#maskPattern)"
+                opacity={0.8}
+              />
+            </motion.g>
+          )}
+        </AnimatePresence>
+
+        {/* Brainprint auth meter */}
+        <AnimatePresence>
+          {activeStepId === 'brainprint-auth' && (
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.circle
+                cx="200"
+                cy="120"
+                r="25"
+                fill="none"
+                stroke="hsl(var(--muted))"
+                strokeWidth="4"
+              />
+              <motion.circle
+                cx="200"
+                cy="120"
+                r="25"
+                fill="none"
+                stroke="hsl(var(--success))"
+                strokeWidth="4"
+                strokeDasharray={`${authMeter * 1.57} 157`}
+                strokeLinecap="round"
+                transform="rotate(-90 200 120)"
+              />
+            </motion.g>
+          )}
+        </AnimatePresence>
+
+        {/* Audit logging blocks */}
+        <AnimatePresence>
+          {activeStepId === 'audit-logging' && (
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              {[...Array(ledgerBlocks)].map((_, i) => (
+                <motion.g key={i}>
+                  <motion.rect
+                    x={280 + i * 15}
+                    y={135}
+                    width="12"
+                    height="30"
+                    fill="hsl(var(--secondary))"
+                    initial={{ y: 200, opacity: 0 }}
+                    animate={{ y: 135, opacity: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                  />
+                  {i > 0 && (
+                    <motion.line
+                      x1={275 + i * 15}
+                      y1={150}
+                      x2={280 + i * 15}
+                      y2={150}
+                      stroke="hsl(var(--primary))"
+                      strokeWidth="2"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ delay: i * 0.1 + 0.2 }}
+                    />
+                  )}
+                </motion.g>
+              ))}
+            </motion.g>
+          )}
+        </AnimatePresence>
+
+        {/* Downstream shield pulse */}
+        <AnimatePresence>
+          {activeStepId === 'downstream' && (
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.circle
+                cx="320"
+                cy="150"
+                r="20"
+                fill="none"
+                stroke="hsl(var(--primary))"
+                strokeWidth="3"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.8, 0.3]
+                }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.g>
+          )}
+        </AnimatePresence>
+      </svg>
     </div>
   );
 };
@@ -336,17 +545,43 @@ const Journey = () => {
     <section id="journey" className="bg-background py-24">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">{journeyData.title}</h2>
-          <p className="text-xl text-muted-foreground mb-8">{journeyData.subtitle}</p>
-          <a 
+        <motion.div 
+          className="text-center mb-16 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            {journeyData.title}
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-muted-foreground mb-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            {journeyData.subtitle}
+          </motion.p>
+          <motion.a 
             href="#journey-end"
             className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
             aria-label="Skip to end of journey"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
           >
             Skip to end <ChevronDown className="ml-1 h-4 w-4" />
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
         {/* Journey Content */}
         <div 
