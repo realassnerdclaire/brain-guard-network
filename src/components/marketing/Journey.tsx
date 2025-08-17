@@ -2,76 +2,197 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { 
   motion, 
   useScroll, 
-  useTransform, 
-  useMotionValue,
+  useTransform,
   AnimatePresence 
 } from 'framer-motion';
 
-// Journey data with exact copy as specified
-const journeySteps = [
-  {
-    id: "validation",
-    title: "Validation",
-    body: "Timestamp, channel count, and spectral integrity checks. Malformed/late frames are flagged and dropped.",
-    side: "left"
-  },
-  {
-    id: "encryption", 
-    title: "AES encryption",
-    body: "Per-packet AES-256-GCM with ECDH session keys; anti-tamper & anti-replay.",
-    side: "right"
-  },
-  {
-    id: "consent",
-    title: "Consent enforcement", 
-    body: "Purpose- and role-aware policy gate; only compliant windows flow.",
-    side: "left"
-  },
-  {
-    id: "anomaly",
-    title: "Autoencoder rejection",
-    body: "Rolling 250ms windows; frames with reconstruction error > 3σ are quarantined.",
-    side: "right"
-  },
-  {
-    id: "downstream",
-    title: "Safely sent to downstream application",
-    body: "Only authorized, policy-checked signals reach dashboards, research tools, or therapeutic apps.",
-    side: "left"
-  }
-];
+// Journey configuration (inline as specified)
+const journeyConfig = {
+  "title": "How XBrainer Secures Your EEG Stream",
+  "subtitle": "Scroll to see one EEG waveform protected step by step",
+  "cta": { "label": "Explore SDKs", "href": "/docs" },
 
-// EEG Signal Generation
-const generateEEGPath = (modifications: any = {}) => {
-  const sampleRate = 512;
-  const duration = 4; // 4 seconds
-  const samples = sampleRate * duration;
+  "seed": 1337,
+  "theme": {
+    "bg": "auto",
+    "colors": {
+      "eeg": "#6EE2FF",
+      "ghost": "#B7F0FF",
+      "allowedHalo": "#00C2FF",
+      "ok": "#15D27E",
+      "error": "#FF5A5A",
+      "redact": "#9AA1A9",
+      "ticksLight": "rgba(0,0,0,0.12)",
+      "ticksDark": "rgba(255,255,255,0.12)"
+    }
+  },
+
+  "a11y": {
+    "stage_aria": "Visualization of a single EEG waveform being secured by XBrainer in five steps.",
+    "step_regions_role": "region"
+  },
+
+  "eeg": {
+    "duration_s": 4,
+    "fs_hz": 512,
+    "amp_uv": 80,
+    "map": { "x_px_start": 60, "x_px_end": 1040, "y_px_center": 130, "y_px_scale": 90 },
+    "components": [
+      { "type": "sine", "freq_hz": 10, "amp_uv": 22, "phase": 0 },
+      { "type": "sine", "freq_hz": 20, "amp_uv": 8, "phase": 1.2 },
+      { "type": "sine", "freq_hz": 0.4, "amp_uv": 3, "phase": 0 },
+      { "type": "pink_noise", "sigma_uv": 3 }
+    ],
+    "bandpass_visual": { "low_hz": 1, "high_hz": 45, "smoothness": 0.5 }
+  },
+
+  "artifacts": [
+    { "kind": "spike", "t_s": 0.82, "peak_uv": 120, "width_ms": 12 },
+    { "kind": "dropout", "t_s": 2.04, "duration_ms": 80 },
+    { "kind": "saturation", "t_s": 3.12, "duration_ms": 60, "clamp_uv": 80 }
+  ],
+
+  "encryption": {
+    "window_ms": 64,
+    "cipher_filter": { "turbulence_base_freq": 0.8, "displacement_scale": 6 },
+    "show_nonce_indicator_hz": 8,
+    "gcm_tag": { "width_px": 6, "height_px": 4, "offset_px": 6 },
+    "lock_anim_deg": -18
+  },
+
+  "consent": {
+    "allow_ratio": 0.7,
+    "deny_style": { "hatch_angle_deg": 45, "opacity": 0.6 },
+    "tooltip": "purpose: research • role: PI • consent: valid (TTL 23h)"
+  },
+
+  "autoencoder": {
+    "window_ms": 250,
+    "anomaly_rate": 0.05,
+    "sigma_threshold": 3,
+    "residual_colormap": [
+      { "t": 0.0, "color": "rgba(0,0,0,0)" },
+      { "t": 0.6, "color": "rgba(255,193,7,0.45)" },
+      { "t": 1.0, "color": "rgba(255,90,90,0.75)" }
+    ],
+    "quarantine": { "tray_y_px": 220, "slot_px": 22 }
+  },
+
+  "downstream": {
+    "destinations": [
+      { "id": "dashboard", "icon": "xbr-dashboard", "label": "Dashboard" },
+      { "id": "lab",       "icon": "xbr-lab",       "label": "Lab Tool" },
+      { "id": "therapy",   "icon": "xbr-therapy",   "label": "Therapeutic App" }
+    ],
+    "shield_pulse_ms": 700,
+    "latency_label": "<150ms",
+    "show_hash_chain": true,
+    "hash_icon": "xbr-hashchain"
+  },
+
+  "steps": [
+    {
+      "id": "validation",
+      "side": "left",
+      "title": "Validation",
+      "body": "Timestamp, channel count, and spectral integrity checks. Malformed or late frames are flagged and dropped.",
+      "animations": { "defects_blink_times": 2, "defects_blink_ms": 160, "clean_crossfade_range": [0.5, 1.0], "mark_colors": { "flag": "#FF5A5A", "fixed": "#15D27E" }, "dotted_rejected": "6 8" }
+    },
+    {
+      "id": "encryption",
+      "side": "right",
+      "title": "AES encryption",
+      "body": "Per-packet AES-256-GCM with ECDH session keys; anti-tamper & anti-replay.",
+      "animations": { "slicer_opacity": 0.2, "capsule_corner_px": 6, "base_path_dim": [0.9, 0.25], "nonce_dot_hz": 8, "lock_close_range": [0.6, 1.0] }
+    },
+    {
+      "id": "consent",
+      "side": "left",
+      "title": "Consent enforcement",
+      "body": "Purpose- and role-aware policy gate; only permitted views flow.",
+      "animations": { "allow_halo_opacity": [0.0, 0.6], "deny_opacity": 0.6, "allow_underpath_opacity": [0.25, 0.8], "deny_underpath_opacity": 0.15 }
+    },
+    {
+      "id": "autoencoder",
+      "side": "right",
+      "title": "Autoencoder rejection",
+      "body": "Rolling 250ms windows; frames with reconstruction error > 3σ are quarantined.",
+      "animations": { "ghost_opacity": [0.0, 0.7], "residual_band_range": [0.2, 0.6], "drop_arc_ms": 420, "dotted_removed": "3 6", "safe_halo_opacity": [0.0, 0.3] }
+    },
+    {
+      "id": "downstream",
+      "side": "left",
+      "title": "Safely sent to downstream application",
+      "body": "Authorized, policy-checked data delivered to dashboards, research tools, and therapeutic apps with full traceability.",
+      "animations": { "restore_clean_opacity": 0.9, "shield_pulse_ms": 700, "breathing_glow": { "enabled": true, "period_ms": 5000, "max_opacity": 0.15 } }
+    }
+  ],
+
+  "reduced_motion": { "enabled": true, "disable": ["jitter", "rotation", "displacement", "large_morphs"], "fallbacks": { "use_opacity": true, "use_color": true } }
+};
+
+// Seeded random function for deterministic results
+const seededRandom = (seed: number) => {
+  let x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+};
+
+// EEG Signal Generation based on config
+const generateEEGSignal = (config: typeof journeyConfig, modifications: any = {}) => {
+  const { duration_s, fs_hz, components, map } = config.eeg;
+  const samples = duration_s * fs_hz;
   const points: [number, number][] = [];
   
   for (let i = 0; i < samples; i++) {
-    const t = i / sampleRate;
+    const t = i / fs_hz;
+    let eeg = 0;
     
-    // Base EEG signal components
-    const alpha = 22 * Math.sin(2 * Math.PI * 10 * t);
-    const beta = 8 * Math.sin(2 * Math.PI * 20 * t + Math.PI / 4);
-    const drift = 4 * Math.sin(2 * Math.PI * 0.5 * t);
-    const noise = (Math.random() - 0.5) * 6; // Pink noise approximation
+    // Generate signal from components
+    components.forEach(comp => {
+      switch (comp.type) {
+        case 'sine':
+          eeg += comp.amp_uv * Math.sin(2 * Math.PI * comp.freq_hz * t + comp.phase);
+          break;
+        case 'pink_noise':
+          eeg += (seededRandom(config.seed + i) - 0.5) * 2 * comp.sigma_uv;
+          break;
+      }
+    });
     
-    let eeg = alpha + beta + drift + noise;
+    // Apply artifacts if specified
+    if (modifications.addArtifacts) {
+      config.artifacts.forEach(artifact => {
+        const startTime = artifact.t_s;
+        const endTime = artifact.t_s + (artifact.duration_ms || artifact.width_ms || 12) / 1000;
+        
+        if (t >= startTime && t <= endTime) {
+          switch (artifact.kind) {
+            case 'spike':
+              eeg += artifact.peak_uv;
+              break;
+            case 'dropout':
+              eeg = 0;
+              break;
+            case 'saturation':
+              eeg = Math.max(-artifact.clamp_uv, Math.min(artifact.clamp_uv, eeg));
+              break;
+          }
+        }
+      });
+    }
     
-    // Apply modifications based on step
-    if (modifications.artifacts && !modifications.cleaned) {
-      // Add artifacts for validation step
-      if (t >= 0.8 && t <= 0.812) eeg += 120; // Spike at 0.8s
-      if (t >= 2.0 && t <= 2.08) eeg = 0; // Dropout at 2.0s
-      if (t >= 3.1 && t <= 3.16) eeg = Math.max(-80, Math.min(80, eeg)); // Saturation
+    // Apply band-pass visual smoothing if clean
+    if (modifications.cleaned) {
+      // Simple smoothing approximation
+      eeg = eeg * 0.8;
     }
     
     // Clamp to visual scale
-    eeg = Math.max(-80, Math.min(80, eeg));
+    eeg = Math.max(-config.eeg.amp_uv, Math.min(config.eeg.amp_uv, eeg));
     
-    const x = (t / duration) * 1000; // Map to SVG width
-    const y = 120 - (eeg / 80) * 100; // Map to SVG coordinates, centered at y=120
+    // Map to SVG coordinates
+    const x = map.x_px_start + (t / duration_s) * (map.x_px_end - map.x_px_start);
+    const y = map.y_px_center - (eeg / config.eeg.amp_uv) * map.y_px_scale;
     
     points.push([x, y]);
   }
@@ -85,8 +206,12 @@ const generateEEGPath = (modifications: any = {}) => {
   return pathString;
 };
 
-// EEG Stage Component - Fixed center visualization
-const EEGStage = ({ activeStepId, stepProgress }: { activeStepId: string; stepProgress: number }) => {
+// EEG Stage Component - Single sticky SVG
+const EEGStage = ({ 
+  stepProgresses 
+}: { 
+  stepProgresses: number[] 
+}) => {
   const [isReducedMotion, setIsReducedMotion] = useState(false);
   
   useEffect(() => {
@@ -98,53 +223,86 @@ const EEGStage = ({ activeStepId, stepProgress }: { activeStepId: string; stepPr
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  // Generate EEG path based on active step
-  const eegPath = useMemo(() => {
-    switch (activeStepId) {
-      case 'validation':
-        return generateEEGPath({ artifacts: true, cleaned: stepProgress > 0.4 });
-      default:
-        return generateEEGPath();
-    }
-  }, [activeStepId, stepProgress]);
+  // Determine active step
+  const activeStepIndex = stepProgresses.findIndex(p => p > 0);
+  const activeStep = activeStepIndex >= 0 ? journeyConfig.steps[activeStepIndex] : journeyConfig.steps[0];
+  const activeProgress = activeStepIndex >= 0 ? stepProgresses[activeStepIndex] : 0;
 
-  // Animation values
-  const packetOpacity = activeStepId === 'encryption' ? 1 - stepProgress * 0.75 : 1;
-  const lockProgress = activeStepId === 'encryption' ? stepProgress : 0;
-  const gateProgress = activeStepId === 'consent' ? stepProgress : 0;
-  const anomalyProgress = activeStepId === 'anomaly' ? stepProgress : 0;
-  const shieldProgress = activeStepId === 'downstream' ? stepProgress : 0;
+  // Generate EEG paths
+  const eegRawPath = useMemo(() => {
+    return generateEEGSignal(journeyConfig, { 
+      addArtifacts: activeStep.id === 'validation' && activeProgress < 0.5 
+    });
+  }, [activeStep.id, activeProgress]);
+  
+  const eegCleanPath = useMemo(() => {
+    return generateEEGSignal(journeyConfig, { 
+      cleaned: true 
+    });
+  }, []);
+
+  // Calculate encryption windows
+  const encryptionWindows = Math.floor(journeyConfig.eeg.duration_s / (journeyConfig.encryption.window_ms / 1000));
+  
+  // Calculate consent windows and permissions
+  const consentWindows = 20; // Approximate for visual
+  const allowedWindows = Array.from({ length: consentWindows }, (_, i) => {
+    const rnd = seededRandom(journeyConfig.seed + i);
+    return rnd < journeyConfig.consent.allow_ratio;
+  });
+
+  // Calculate anomaly windows
+  const anomalyWindows = Math.floor(journeyConfig.eeg.duration_s / (journeyConfig.autoencoder.window_ms / 1000));
+  const anomalousIndices = Array.from({ length: anomalyWindows }, (_, i) => {
+    const rnd = seededRandom(journeyConfig.seed * 2 + i);
+    return rnd < journeyConfig.autoencoder.anomaly_rate;
+  });
 
   return (
     <div 
       id="eeg-stage"
-      className="sticky top-[calc(50vh-160px)] h-80 flex items-center justify-center z-20"
-      style={{ height: '320px' }}
+      style={{
+        position: 'sticky',
+        top: 'calc(50vh - 160px)',
+        height: '320px',
+        display: 'grid',
+        placeItems: 'center',
+        zIndex: 2
+      }}
     >
       <svg 
         id="eeg-svg"
-        width="1000" 
-        height="240" 
-        viewBox="0 0 1000 240"
+        width="1100" 
+        height="260" 
+        viewBox="0 0 1100 260"
         className="max-w-full h-auto"
-        aria-label="Visualization of EEG data changing through XBrainer's security layers"
+        role="img"
+        aria-label={journeyConfig.a11y.stage_aria}
       >
         <defs>
-          {/* Cipher mosaic pattern */}
-          <pattern id="cipherPattern" patternUnits="userSpaceOnUse" width="8" height="8">
-            <rect width="8" height="8" fill="#1a1a1a"/>
-            <rect x="0" y="0" width="2" height="2" fill="#6EE2FF" opacity="0.6"/>
-            <rect x="4" y="2" width="2" height="2" fill="#6EE2FF" opacity="0.4"/>
-            <rect x="2" y="4" width="2" height="2" fill="#6EE2FF" opacity="0.8"/>
-            <rect x="6" y="6" width="2" height="2" fill="#6EE2FF" opacity="0.3"/>
-          </pattern>
-          
-          {/* Turbulence for encryption effect */}
-          <filter id="cipherNoise">
-            <feTurbulence baseFrequency="0.8" numOctaves="1" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/>
+          {/* Ciphertext mosaic filter for encrypted capsules */}
+          <filter id="xbr-cipher" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence 
+              type="fractalNoise" 
+              baseFrequency={journeyConfig.encryption.cipher_filter.turbulence_base_freq} 
+              numOctaves="1" 
+              seed="7" 
+              result="noise"
+            />
+            <feDisplacementMap 
+              in="SourceGraphic" 
+              in2="noise" 
+              scale={journeyConfig.encryption.cipher_filter.displacement_scale} 
+              xChannelSelector="R" 
+              yChannelSelector="G"
+            />
           </filter>
-          
+
+          {/* Redaction hatch pattern for denied windows */}
+          <pattern id="xbr-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform={`rotate(${journeyConfig.consent.deny_style.hatch_angle_deg})`}>
+            <line x1="0" y1="0" x2="0" y2="8" stroke={journeyConfig.theme.colors.redact} strokeWidth="2" strokeOpacity={journeyConfig.consent.deny_style.opacity}></line>
+          </pattern>
+
           {/* Glow effects */}
           <filter id="glow">
             <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -156,209 +314,279 @@ const EEGStage = ({ activeStepId, stepProgress }: { activeStepId: string; stepPr
         </defs>
 
         {/* Baseline grid */}
-        <line x1="0" y1="120" x2="1000" y2="120" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
+        <line 
+          x1={journeyConfig.eeg.map.x_px_start} 
+          y1={journeyConfig.eeg.map.y_px_center} 
+          x2={journeyConfig.eeg.map.x_px_end} 
+          y2={journeyConfig.eeg.map.y_px_center} 
+          stroke={journeyConfig.theme.colors.ticksDark} 
+          strokeWidth="1"
+        />
+        
         {/* Time ticks every second */}
-        {[250, 500, 750].map(x => (
-          <line key={x} x1={x} y1="115" x2={x} y2="125" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
-        ))}
+        {Array.from({ length: journeyConfig.eeg.duration_s - 1 }, (_, i) => {
+          const x = journeyConfig.eeg.map.x_px_start + ((i + 1) / journeyConfig.eeg.duration_s) * (journeyConfig.eeg.map.x_px_end - journeyConfig.eeg.map.x_px_start);
+          return (
+            <line 
+              key={i}
+              x1={x} 
+              y1={journeyConfig.eeg.map.y_px_center - 5} 
+              x2={x} 
+              y2={journeyConfig.eeg.map.y_px_center + 5} 
+              stroke={journeyConfig.theme.colors.ticksDark} 
+              strokeWidth="1"
+            />
+          );
+        })}
 
-        {/* Main EEG Path */}
+        {/* Raw EEG Path */}
         <motion.path
-          id="eeg-path"
-          d={eegPath}
-          stroke="#6EE2FF"
+          id="eeg-raw"
+          d={eegRawPath}
+          stroke={journeyConfig.theme.colors.eeg}
           strokeWidth="2.5"
           strokeLinecap="round"
           fill="none"
-          opacity={packetOpacity}
-          animate={{
-            opacity: packetOpacity
-          }}
-          transition={{ duration: 0.3 }}
+          opacity={activeStep.id === 'validation' && activeProgress < 0.5 ? 1 : 0.2}
+          strokeDasharray={activeStep.id === 'validation' && activeProgress > 0.5 ? journeyConfig.steps[0].animations.dotted_rejected : "none"}
         />
 
-        {/* Validation artifacts and corrections */}
+        {/* Clean EEG Path */}
+        <motion.path
+          id="eeg-clean"
+          d={eegCleanPath}
+          stroke={journeyConfig.theme.colors.eeg}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          fill="none"
+          opacity={
+            activeStep.id === 'validation' && activeProgress > 0.5 ? 0.9 :
+            activeStep.id === 'encryption' ? journeyConfig.steps[1].animations.base_path_dim[1] :
+            activeStep.id === 'consent' ? journeyConfig.steps[2].animations.allow_underpath_opacity[1] :
+            activeStep.id === 'autoencoder' ? 0.9 :
+            activeStep.id === 'downstream' ? journeyConfig.steps[4].animations.restore_clean_opacity :
+            1
+          }
+        />
+
+        {/* Ghost reconstruction path for autoencoder step */}
+        {activeStep.id === 'autoencoder' && (
+          <motion.path
+            id="eeg-ghost"
+            d={eegCleanPath}
+            stroke={journeyConfig.theme.colors.ghost}
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            fill="none"
+            opacity={activeProgress * journeyConfig.steps[3].animations.ghost_opacity[1]}
+            transform="translate(0, 5)" // Slight offset
+          />
+        )}
+
+        {/* Validation artifacts */}
         <AnimatePresence>
-          {activeStepId === 'validation' && (
+          {activeStep.id === 'validation' && activeProgress < 0.5 && (
             <motion.g
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              {/* Artifact highlights */}
-              {stepProgress < 0.4 && (
-                <>
-                  <motion.path
-                    d="M200,20 L220,220"
-                    stroke="#FF5A5A"
-                    strokeWidth="3.5"
-                    opacity={stepProgress < 0.2 ? 1 : 0}
-                    animate={{ opacity: [1, 0, 1, 0] }}
-                    transition={{ duration: 0.3, repeat: 2 }}
+              {/* Artifact markers */}
+              {journeyConfig.artifacts.map((artifact, i) => {
+                const x = journeyConfig.eeg.map.x_px_start + (artifact.t_s / journeyConfig.eeg.duration_s) * (journeyConfig.eeg.map.x_px_end - journeyConfig.eeg.map.x_px_start);
+                return (
+                  <motion.circle
+                    key={i}
+                    cx={x}
+                    cy={journeyConfig.eeg.map.y_px_center - 40}
+                    r="6"
+                    fill={journeyConfig.steps[0].animations.mark_colors.flag}
+                    animate={{ opacity: [1, 0, 1] }}
+                    transition={{ 
+                      duration: journeyConfig.steps[0].animations.defects_blink_ms / 1000,
+                      repeat: journeyConfig.steps[0].animations.defects_blink_times
+                    }}
                   />
-                  <motion.path
-                    d="M500,120 L540,120"
-                    stroke="#FF5A5A"
-                    strokeWidth="3.5"
-                    strokeDasharray="6 8"
-                    opacity={stepProgress < 0.2 ? 1 : 0.2}
-                  />
-                </>
-              )}
-              
-              {/* Green checkmarks */}
-              {stepProgress > 0.4 && (
-                <>
-                  {[150, 400, 650, 850].map((x, i) => (
-                    <motion.text
-                      key={x}
-                      x={x}
-                      y={80}
-                      textAnchor="middle"
-                      fontSize="16"
-                      fill="#15D27E"
-                      initial={{ scale: 0.7, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: i * 0.1 + 0.2 }}
-                    >
-                      ✓
-                    </motion.text>
-                  ))}
-                </>
-              )}
+                );
+              })}
             </motion.g>
           )}
         </AnimatePresence>
 
-        {/* Encryption packetization and lock */}
+        {/* Validation checkmarks */}
         <AnimatePresence>
-          {activeStepId === 'encryption' && (
+          {activeStep.id === 'validation' && activeProgress > 0.5 && (
             <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              {journeyConfig.artifacts.map((artifact, i) => {
+                const x = journeyConfig.eeg.map.x_px_start + (artifact.t_s / journeyConfig.eeg.duration_s) * (journeyConfig.eeg.map.x_px_end - journeyConfig.eeg.map.x_px_start);
+                return (
+                  <motion.text
+                    key={i}
+                    x={x}
+                    y={journeyConfig.eeg.map.y_px_center - 40}
+                    textAnchor="middle"
+                    fontSize="16"
+                    fill={journeyConfig.steps[0].animations.mark_colors.fixed}
+                    initial={{ scale: 0.7, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: i * 0.1 + 0.2 }}
+                  >
+                    ✓
+                  </motion.text>
+                );
+              })}
+            </motion.g>
+          )}
+        </AnimatePresence>
+
+        {/* Encryption elements */}
+        <AnimatePresence>
+          {activeStep.id === 'encryption' && (
+            <motion.g id="slicers"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
               {/* Vertical packet slicers */}
-              {Array.from({ length: 62 }, (_, i) => (
-                <motion.line
-                  key={i}
-                  x1={i * 16 + 16}
-                  y1={20}
-                  x2={i * 16 + 16}
-                  y2={220}
-                  stroke="rgba(255,255,255,0.2)"
-                  strokeWidth="1"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: stepProgress * 0.6 }}
-                  transition={{ delay: i * 0.01 }}
-                />
-              ))}
+              {Array.from({ length: encryptionWindows }, (_, i) => {
+                const x = journeyConfig.eeg.map.x_px_start + (i / encryptionWindows) * (journeyConfig.eeg.map.x_px_end - journeyConfig.eeg.map.x_px_start);
+                return (
+                  <motion.line
+                    key={i}
+                    x1={x}
+                    y1={20}
+                    x2={x}
+                    y2={240}
+                    stroke="rgba(255,255,255,0.2)"
+                    strokeWidth="1"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: activeProgress * journeyConfig.steps[1].animations.slicer_opacity }}
+                    transition={{ delay: i * 0.01 }}
+                  />
+                );
+              })}
 
-              {/* Cipher mosaic overlays */}
-              {stepProgress > 0.2 && Array.from({ length: 30 }, (_, i) => (
-                <motion.rect
-                  key={i}
-                  x={i * 32 + 8}
-                  y={100}
-                  width={24}
-                  height={40}
-                  fill="url(#cipherPattern)"
-                  rx="4"
-                  initial={{ opacity: 0, scaleY: 0 }}
-                  animate={{ opacity: 0.8, scaleY: 1 }}
-                  transition={{ delay: i * 0.02 }}
-                />
-              ))}
+              {/* Cipher capsules */}
+              <g id="cipherCapsules">
+                {activeProgress > 0.25 && Array.from({ length: Math.floor(encryptionWindows / 2) }, (_, i) => {
+                  const x = journeyConfig.eeg.map.x_px_start + 20 + (i * 40);
+                  return (
+                    <motion.rect
+                      key={i}
+                      x={x}
+                      y={journeyConfig.eeg.map.y_px_center - 20}
+                      width="30"
+                      height="40"
+                      rx={journeyConfig.steps[1].animations.capsule_corner_px}
+                      ry={journeyConfig.steps[1].animations.capsule_corner_px}
+                      filter="url(#xbr-cipher)"
+                      fill={journeyConfig.theme.colors.eeg}
+                      opacity="0.7"
+                      initial={{ opacity: 0, scaleY: 0 }}
+                      animate={{ opacity: 0.7, scaleY: 1 }}
+                      transition={{ delay: i * 0.02 }}
+                    />
+                  );
+                })}
+              </g>
 
-              {/* Padlock */}
-              <motion.g transform="translate(450, 50)">
-                <motion.rect
-                  x="-12"
-                  y="8"
-                  width="24"
-                  height="20"
-                  rx="4"
-                  fill="#6EE2FF"
-                  opacity={lockProgress}
-                />
-                <motion.path
-                  d="M-8,-2 L-8,-8 Q-8,-16 0,-16 Q8,-16 8,-8 L8,-2"
-                  fill="none"
-                  stroke="#6EE2FF"
-                  strokeWidth="3"
-                  initial={{ rotate: -18, y: 6 }}
-                  animate={{ 
-                    rotate: lockProgress > 0.4 ? 0 : -18,
-                    y: lockProgress > 0.4 ? 0 : 6
-                  }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                />
-              </motion.g>
+              {/* GCM tags */}
+              <g id="gcmTags">
+                {activeProgress > 0.4 && Array.from({ length: Math.floor(encryptionWindows / 2) }, (_, i) => {
+                  const x = journeyConfig.eeg.map.x_px_start + 45 + (i * 40);
+                  return (
+                    <motion.rect
+                      key={i}
+                      x={x}
+                      y={journeyConfig.eeg.map.y_px_center + 25}
+                      width={journeyConfig.encryption.gcm_tag.width_px}
+                      height={journeyConfig.encryption.gcm_tag.height_px}
+                      fill={journeyConfig.theme.colors.allowedHalo}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 0.8 }}
+                      transition={{ delay: i * 0.03 }}
+                    />
+                  );
+                })}
+              </g>
 
-              {/* Anti-replay nonce tick */}
+              {/* Lock icon */}
+              {activeProgress > 0.6 && (
+                <motion.g transform="translate(550, 50)">
+                  <svg width="18" height="18" aria-hidden="true">
+                    <use href="#xbr-lock" stroke={journeyConfig.theme.colors.eeg} />
+                  </svg>
+                </motion.g>
+              )}
+
+              {/* Nonce indicator */}
               <motion.circle
-                cx={0}
-                cy={120}
+                cx={journeyConfig.eeg.map.x_px_start}
+                cy={journeyConfig.eeg.map.y_px_center}
                 r="2"
-                fill="#9BD8FF"
-                animate={{ cx: [0, 1000] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                fill={journeyConfig.theme.colors.ghost}
+                animate={{ 
+                  cx: [journeyConfig.eeg.map.x_px_start, journeyConfig.eeg.map.x_px_end] 
+                }}
+                transition={{ 
+                  duration: 1 / journeyConfig.steps[1].animations.nonce_dot_hz, 
+                  repeat: Infinity, 
+                  ease: "linear" 
+                }}
               />
             </motion.g>
           )}
         </AnimatePresence>
 
-        {/* Consent enforcement gate */}
+        {/* Consent enforcement elements */}
         <AnimatePresence>
-          {activeStepId === 'consent' && (
-            <motion.g
+          {activeStep.id === 'consent' && (
+            <motion.g id="policyOverlays"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
               {/* Policy gate */}
-              <motion.rect
-                x="480"
-                y="100"
-                width="40"
-                height="40"
-                fill="none"
-                stroke="#6EE2FF"
-                strokeWidth="3"
-                rx="4"
-              />
-              
-              {/* Allowed packets with halo */}
-              {Array.from({ length: 20 }, (_, i) => {
-                const isAllowed = i % 10 < 7; // 70% allowed
+              <motion.g transform="translate(550, 50)">
+                <svg width="18" height="18" aria-hidden="true">
+                  <use href="#xbr-gate" stroke={journeyConfig.theme.colors.eeg} />
+                </svg>
+              </motion.g>
+
+              {/* Allowed/denied windows */}
+              {allowedWindows.map((isAllowed, i) => {
+                const x = journeyConfig.eeg.map.x_px_start + (i / consentWindows) * (journeyConfig.eeg.map.x_px_end - journeyConfig.eeg.map.x_px_start);
                 return (
                   <motion.g key={i}>
-                    <motion.rect
-                      x={i * 40 + 60}
-                      y={110}
-                      width="20"
-                      height="20"
-                      rx="4"
-                      fill={isAllowed ? "#6EE2FF" : "#9AA1A9"}
-                      opacity={isAllowed ? 1 : 0.3}
-                      animate={{
-                        scaleY: isAllowed ? 1 : gateProgress > 0.5 ? 0.1 : 1,
-                        opacity: isAllowed ? 1 : gateProgress > 0.5 ? 0.2 : 0.3
-                      }}
-                      transition={{ duration: 0.4, delay: i * 0.05 }}
-                    />
+                    {/* Allowed halo */}
                     {isAllowed && (
                       <motion.rect
-                        x={i * 40 + 58}
-                        y={108}
-                        width="24"
-                        height="24"
-                        rx="6"
+                        x={x - 5}
+                        y={journeyConfig.eeg.map.y_px_center - 25}
+                        width="30"
+                        height="50"
+                        rx="8"
                         fill="none"
-                        stroke="#00C2FF"
+                        stroke={journeyConfig.theme.colors.allowedHalo}
                         strokeWidth="1"
-                        opacity={gateProgress * 0.5}
+                        opacity={activeProgress * journeyConfig.steps[2].animations.allow_halo_opacity[1]}
                         filter="url(#glow)"
+                      />
+                    )}
+                    
+                    {/* Denied hatch */}
+                    {!isAllowed && (
+                      <motion.rect
+                        x={x - 5}
+                        y={journeyConfig.eeg.map.y_px_center - 25}
+                        width="30"
+                        height="50"
+                        fill="url(#xbr-hatch)"
+                        opacity={activeProgress * journeyConfig.steps[2].animations.deny_opacity}
                       />
                     )}
                   </motion.g>
@@ -368,9 +596,9 @@ const EEGStage = ({ activeStepId, stepProgress }: { activeStepId: string; stepPr
           )}
         </AnimatePresence>
 
-        {/* Anomaly detection and quarantine */}
+        {/* Autoencoder elements */}
         <AnimatePresence>
-          {activeStepId === 'anomaly' && (
+          {activeStep.id === 'autoencoder' && (
             <motion.g
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -378,61 +606,67 @@ const EEGStage = ({ activeStepId, stepProgress }: { activeStepId: string; stepPr
             >
               {/* Spectrogram background */}
               <motion.rect
-                x="0"
-                y="140"
-                width="1000"
+                x={journeyConfig.eeg.map.x_px_start}
+                y={160}
+                width={journeyConfig.eeg.map.x_px_end - journeyConfig.eeg.map.x_px_start}
                 height="60"
-                fill="url(#cipherPattern)"
-                opacity={0.15}
+                fill={journeyConfig.theme.colors.eeg}
+                opacity="0.1"
               />
               
-              {/* Anomalous packets */}
-              {[150, 400, 750].map((x, i) => (
-                <motion.g key={i}>
-                  <motion.rect
-                    x={x}
-                    y={110}
-                    width="20"
-                    height="20"
-                    rx="4"
-                    fill="#FF5A5A"
-                    filter="url(#glow)"
-                    animate={{
-                      y: anomalyProgress > 0.3 ? [110, 115, 110, 180] : 110,
-                      opacity: anomalyProgress > 0.6 ? 0 : 1
-                    }}
-                    transition={{ 
-                      duration: 0.8, 
-                      delay: i * 0.2,
-                      ease: "easeInOut"
-                    }}
-                  />
-                </motion.g>
-              ))}
-              
+              {/* Residual band */}
+              <g id="residualBand">
+                {activeProgress > 0.2 && anomalousIndices.map((isAnomalous, i) => {
+                  if (!isAnomalous) return null;
+                  const x = journeyConfig.eeg.map.x_px_start + (i / anomalyWindows) * (journeyConfig.eeg.map.x_px_end - journeyConfig.eeg.map.x_px_start);
+                  return (
+                    <motion.rect
+                      key={i}
+                      x={x}
+                      y={journeyConfig.eeg.map.y_px_center - 15}
+                      width="20"
+                      height="30"
+                      fill={journeyConfig.autoencoder.residual_colormap[2].color}
+                      rx="4"
+                      initial={{ opacity: 0 }}
+                      animate={{ 
+                        opacity: activeProgress > 0.6 ? 0 : 0.8,
+                        y: activeProgress > 0.6 ? journeyConfig.autoencoder.quarantine.tray_y_px : journeyConfig.eeg.map.y_px_center - 15
+                      }}
+                      transition={{ 
+                        duration: journeyConfig.steps[3].animations.drop_arc_ms / 1000,
+                        delay: i * 0.1
+                      }}
+                    />
+                  );
+                })}
+              </g>
+
               {/* Quarantine tray */}
-              <motion.rect
-                x="400"
-                y="190"
-                width="200"
-                height="30"
-                rx="8"
-                fill="none"
-                stroke="#FF5A5A"
-                strokeWidth="2"
-                strokeDasharray="5 5"
-                opacity={anomalyProgress > 0.3 ? 1 : 0}
-              />
-              
-              {/* Clean packets glow */}
-              {anomalyProgress > 0.6 && (
+              <g id="quarantineTray">
+                <motion.rect
+                  x={journeyConfig.eeg.map.x_px_start + 200}
+                  y={journeyConfig.autoencoder.quarantine.tray_y_px}
+                  width="400"
+                  height="30"
+                  rx="8"
+                  fill="none"
+                  stroke={journeyConfig.theme.colors.error}
+                  strokeWidth="2"
+                  strokeDasharray="5 5"
+                  opacity={activeProgress > 0.3 ? 1 : 0}
+                />
+              </g>
+
+              {/* Clean signal glow */}
+              {activeProgress > 0.6 && (
                 <motion.path
-                  d={eegPath}
-                  stroke="#15D27E"
+                  d={eegCleanPath}
+                  stroke={journeyConfig.theme.colors.ok}
                   strokeWidth="4"
                   strokeLinecap="round"
                   fill="none"
-                  opacity={0.35}
+                  opacity={journeyConfig.steps[3].animations.safe_halo_opacity[1]}
                   filter="url(#glow)"
                 />
               )}
@@ -440,70 +674,90 @@ const EEGStage = ({ activeStepId, stepProgress }: { activeStepId: string; stepPr
           )}
         </AnimatePresence>
 
-        {/* Downstream delivery */}
+        {/* Downstream elements */}
         <AnimatePresence>
-          {activeStepId === 'downstream' && (
+          {activeStep.id === 'downstream' && (
             <motion.g
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
               {/* Destination icons */}
-              <motion.g transform="translate(920, 100)">
-                {/* Dashboard */}
-                <motion.rect
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="15"
-                  rx="2"
-                  fill="#6EE2FF"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2 }}
-                />
-                
-                {/* Lab Tool */}
-                <motion.circle
-                  cx="10"
-                  cy="25"
-                  r="8"
-                  fill="none"
-                  stroke="#6EE2FF"
-                  strokeWidth="2"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.4 }}
-                />
-                
-                {/* Therapeutic App */}
-                <motion.path
-                  d="M5,35 Q10,30 15,35 Q10,40 5,35"
-                  fill="#6EE2FF"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.6 }}
-                />
-              </motion.g>
+              <g id="destIcons" transform="translate(980, 40)">
+                {journeyConfig.downstream.destinations.map((dest, i) => (
+                  <motion.g 
+                    key={dest.id}
+                    transform={`translate(0, ${i * 30})`}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: i * 0.2 }}
+                  >
+                    <svg width="20" height="20" aria-label={dest.label}>
+                      <use href={`#${dest.icon}`} stroke={journeyConfig.theme.colors.eeg} />
+                    </svg>
+                  </motion.g>
+                ))}
+              </g>
 
               {/* Protective shield pulse */}
               <motion.circle
-                cx="930"
+                cx="990"
                 cy="120"
-                r="30"
+                r="40"
                 fill="none"
-                stroke="#00C2FF"
+                stroke={journeyConfig.theme.colors.allowedHalo}
                 strokeWidth="2"
                 animate={{ 
                   scale: [1, 1.08, 1],
                   opacity: [0.4, 0.8, 0.4]
                 }}
                 transition={{ 
-                  duration: 1.5, 
+                  duration: journeyConfig.downstream.shield_pulse_ms / 1000, 
                   repeat: isReducedMotion ? 0 : Infinity,
                   ease: "easeInOut"
                 }}
               />
+
+              {/* Hash chain badge */}
+              {journeyConfig.downstream.show_hash_chain && (
+                <motion.g 
+                  transform="translate(500, 180)"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <svg width="18" height="18" aria-hidden="true">
+                    <use href={`#${journeyConfig.downstream.hash_icon}`} stroke={journeyConfig.theme.colors.eeg} />
+                  </svg>
+                </motion.g>
+              )}
+
+              {/* Latency label */}
+              <motion.text
+                x="600"
+                y="195"
+                fontSize="12"
+                fill={journeyConfig.theme.colors.eeg}
+                textAnchor="middle"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                {journeyConfig.downstream.latency_label}
+              </motion.text>
+
+              {/* Hash chain */}
+              <g id="badges" transform="translate(500, 180)">
+                <motion.g 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <svg width="18" height="18" aria-hidden="true">
+                    <use href="#xbr-hashchain" stroke={journeyConfig.theme.colors.eeg} />
+                  </svg>
+                </motion.g>
+              </g>
             </motion.g>
           )}
         </AnimatePresence>
@@ -516,20 +770,28 @@ const EEGStage = ({ activeStepId, stepProgress }: { activeStepId: string; stepPr
 const SidePanel = ({ 
   step, 
   isActive, 
-  progress 
+  progress,
+  index
 }: { 
-  step: typeof journeySteps[0]; 
+  step: typeof journeyConfig.steps[0]; 
   isActive: boolean; 
-  progress: number; 
+  progress: number;
+  index: number;
 }) => {
   const isLeft = step.side === 'left';
   
   return (
     <motion.div
       className={`
-        sticky top-1/2 -translate-y-1/2 w-[34ch] z-30
         ${isLeft ? 'left-[6vw] text-right' : 'right-[6vw] text-left'}
       `}
+      style={{
+        position: 'sticky',
+        top: '50vh',
+        transform: 'translateY(-50%)',
+        width: '36ch',
+        zIndex: 3
+      }}
       initial={{ y: 16, opacity: 0 }}
       animate={{ 
         y: isActive ? 0 : 16, 
@@ -540,7 +802,11 @@ const SidePanel = ({
         ease: [0.2, 0.8, 0.2, 1] 
       }}
     >
-      <motion.div className="bg-card/90 backdrop-blur-sm border rounded-xl p-6 shadow-elegant">
+      <motion.div 
+        className="bg-card/90 backdrop-blur-sm border rounded-xl p-6 shadow-elegant"
+        role={journeyConfig.a11y.step_regions_role}
+        aria-live="polite"
+      >
         <motion.h3 
           className="text-xl font-semibold text-foreground mb-3"
           animate={{ opacity: isActive ? 1 : 0.7 }}
@@ -568,39 +834,35 @@ const Journey = () => {
     offset: ["start start", "end end"]
   });
 
-  // Calculate step progress and active step
-  const stepProgress = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, journeySteps.length]
-  );
+  // Calculate step progresses
+  const stepProgresses = journeyConfig.steps.map((_, i) => {
+    return useTransform(
+      scrollYProgress,
+      [i / journeyConfig.steps.length, (i + 1) / journeyConfig.steps.length],
+      [0, 1]
+    );
+  });
+
+  // Get current progress values
+  const progressValues = stepProgresses.map(p => p.get());
 
   useEffect(() => {
-    return stepProgress.on("change", (latest) => {
-      const newActiveIndex = Math.min(
-        Math.floor(latest), 
-        journeySteps.length - 1
-      );
-      if (newActiveIndex !== activeStepIndex) {
-        setActiveStepIndex(newActiveIndex);
-      }
+    const unsubscribes = stepProgresses.map((progress, i) => {
+      return progress.on("change", (latest) => {
+        if (latest > 0 && latest > progressValues[activeStepIndex]) {
+          setActiveStepIndex(i);
+        }
+      });
     });
-  }, [stepProgress, activeStepIndex]);
 
-  const currentStepProgress = useTransform(
-    scrollYProgress,
-    [
-      activeStepIndex / journeySteps.length,
-      (activeStepIndex + 1) / journeySteps.length
-    ],
-    [0, 1]
-  );
-
-  const activeStep = journeySteps[activeStepIndex];
+    return () => {
+      unsubscribes.forEach(unsub => unsub());
+    };
+  }, [stepProgresses, progressValues, activeStepIndex]);
 
   // Keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowDown' && activeStepIndex < journeySteps.length - 1) {
+    if (e.key === 'ArrowDown' && activeStepIndex < journeyConfig.steps.length - 1) {
       const nextSection = containerRef.current?.children[activeStepIndex + 1] as HTMLElement;
       nextSection?.scrollIntoView({ behavior: 'smooth' });
     } else if (e.key === 'ArrowUp' && activeStepIndex > 0) {
@@ -628,22 +890,20 @@ const Journey = () => {
       </a>
 
       {/* Fixed EEG Stage */}
-      <EEGStage 
-        activeStepId={activeStep.id} 
-        stepProgress={currentStepProgress.get()} 
-      />
+      <EEGStage stepProgresses={progressValues} />
 
       {/* Step sections for scroll snapping */}
-      {journeySteps.map((step, index) => (
+      {journeyConfig.steps.map((step, index) => (
         <div 
           key={step.id}
-          className="h-screen scroll-snap-start relative"
+          className="h-screen relative"
           style={{ scrollSnapAlign: 'start' }}
         >
           <SidePanel
             step={step}
             isActive={index === activeStepIndex}
-            progress={index === activeStepIndex ? currentStepProgress.get() : 0}
+            progress={index === activeStepIndex ? progressValues[index] : 0}
+            index={index}
           />
         </div>
       ))}
