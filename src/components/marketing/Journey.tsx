@@ -1,120 +1,97 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowDown, ChevronDown } from 'lucide-react';
+import { 
+  motion, 
+  useScroll, 
+  useTransform, 
+  useMotionValue,
+  AnimatePresence 
+} from 'framer-motion';
 
 const journeyData = {
   title: "How XBrainer Secures Your EEG Stream",
-  subtitle: "A step-by-step view of our neural security pipeline",
-  cta: { label: "See SDK Examples", href: "/docs" },
+  subtitle: "Scroll to see our on-device security pipeline in action",
+  cta: { label: "Explore SDKs", href: "/docs" },
   steps: [
     {
       id: "ingestion",
       title: "Data ingestion",
-      headline: "Connect EEG/IMU streams in real time",
-      body: "We ingest multi-protocol signals (BLE, USB, TCP) into a schema-normalized buffer with overflow protection and live→disk recording options.",
-      key_points: [
-        "Multi-protocol adapters; schema validation",
-        "Ring buffer with backpressure; lossless logging (optional)"
-      ],
-      visual: { icon: "wave-in", hint: "Live frames entering a buffer" }
+      headline: "Connect EEG/IMU streams",
+      body: "Multi-protocol adapters (BLE/USB/TCP) → schema-normalized ring buffer with backpressure.",
+      points: ["Schema validation", "Live→disk logging (optional)"],
+      animState: "packets_in+schema_ok+buffer_fill"
     },
     {
       id: "verification",
       title: "Verification & integrity checks",
-      headline: "Validate timestamps, channels, and spectral ranges",
-      body: "We run time- and frequency-domain integrity checks, synchronize clocks, and drop malformed/late frames.",
-      key_points: [
-        "µV range checks; artifact detection",
-        "Timestamp sync & drift compensation"
-      ],
-      visual: { icon: "shield-scan", hint: "Frames flagged/validated" }
+      headline: "Validate + drop malformed frames",
+      body: "Timestamp/channel/µV range checks; artifact detection; late frames dropped.",
+      points: ["Drift compensation", "Discard malformed"],
+      animState: "validators_on+bad_drop"
     },
     {
       id: "encryption",
       title: "AES encryption",
-      headline: "Encrypt every packet on device",
-      body: "Packets are sealed with AES-256-GCM using session keys from ECDH. Schema is validated pre-decrypt; tampering/replay is rejected.",
-      key_points: [
-        "AES-256-GCM; ECDH session keys",
-        "Authenticated encryption; anti-replay"
-      ],
-      visual: { icon: "lock", hint: "Ciphertext packets" }
+      headline: "Seal packets with AES-256-GCM",
+      body: "ECDH session keys, anti-tamper & anti-replay.",
+      points: ["Per-packet AEAD", "Nonce discipline"],
+      animState: "lock_tunnel+padlock_shimmer"
     },
     {
       id: "routing-consent",
       title: "Routing & consent policy",
-      headline: "Enforce consent with a programmable policy engine",
-      body: "A JSON/DSL policy (cached by session) gates access path by user, device, and purpose — evaluated in microseconds per frame.",
-      key_points: [
-        "Role-/purpose-based rules; TTL & revocation",
-        "Trust boundary enforcement; dynamic path rewrites"
-      ],
-      visual: { icon: "flow", hint: "Policy gate allows/blocks routes" }
+      headline: "Purpose/user/device↦policy",
+      body: "Microsecond JSON/DSL evaluation; TTL & revocation.",
+      points: ["Trust boundaries", "Dynamic rewrites"],
+      animState: "gate_branch+block_reject"
     },
     {
       id: "anomaly-detection",
       title: "Anomaly detection",
-      headline: "Autoencoder spots spoofed or out-of-distribution signals",
-      body: "A lightweight AE scores rolling windows and quarantines frames above threshold; metrics exposed for monitoring.",
-      key_points: [
-        "Rolling-window AE scoring; >3σ quarantine",
-        "Prometheus metrics for jitter/loss/errors"
-      ],
-      visual: { icon: "ai-chip", hint: "Abnormal frames highlighted" }
+      headline: "Autoencoder quarantine >3σ",
+      body: "Rolling window scoring; metrics exposed.",
+      points: ["Jitter/loss/error counters", "Quarantine loop"],
+      animState: "outlier_glow+quarantine+metrics_tick"
     },
     {
       id: "privacy-redaction",
       title: "Privacy redaction",
-      headline: "Mask sensitive cognitive patterns by policy",
-      body: "A CNN classifier can redact windows that likely contain identifiable or sensitive states (e.g., attention, stress) when enabled.",
-      key_points: [
-        "Policy-driven redaction mask",
-        "Confidence scores; audit tagging"
-      ],
-      visual: { icon: "eye-strike", hint: "Masked regions in stream" }
+      headline: "Mask sensitive windows",
+      body: "Policy-driven redaction of identifiable/cognitive patterns.",
+      points: ["Confidence tagging", "Audit labels"],
+      animState: "mask_bands+striped_packets"
     },
     {
       id: "brainprint-auth",
       title: "Brainprint authentication",
-      headline: "Passive biometric login with revocable embeddings",
-      body: "A Siamese model verifies the user locally within ~55ms on edge devices; falls back to OAuth2 if unavailable.",
-      key_points: [
-        "Local, encrypted embeddings",
-        "Spoof resistance via signal entropy"
-      ],
-      visual: { icon: "finger-brain", hint: "Match score indicator" }
+      headline: "Passive EEG biometric",
+      body: "Local Siamese match (~55ms); OAuth2 fallback.",
+      points: ["Revocable embeddings", "Entropy injection"],
+      animState: "match_meter+halo_packets"
     },
     {
       id: "audit-logging",
       title: "Immutable audit logging",
-      headline: "Tamper-evident, hash-chained event ledger",
-      body: "We log every consent check, decrypt, and anomaly decision with cryptographic chaining for chain-of-custody.",
-      key_points: [
-        "Write-once store; SHA-256 hash-chain",
-        "Exportable for SIEM/compliance"
-      ],
-      visual: { icon: "ledger", hint: "Linked audit entries" }
+      headline: "Hash-chained ledger",
+      body: "Consent/decrypt/anomaly events chained & exportable.",
+      points: ["Chain of custody", "SIEM ready"],
+      animState: "ledger_blocks+hash_link"
     },
     {
       id: "sdk-access",
       title: "SDK & access gateway",
-      headline: "Controlled access via Python/TypeScript SDKs",
-      body: "Downstream apps receive only policy-permitted matrices/metadata via REST/gRPC/WebSocket with backpressure handling.",
-      key_points: [
-        "Resilient clients; heartbeats & reconnection",
-        "Rate-limited APIs; per-session tokens"
-      ],
-      visual: { icon: "api", hint: "Client app consuming stream" }
+      headline: "Python/TS SDKs + APIs",
+      body: "REST/gRPC/WebSocket with backpressure and heartbeats.",
+      points: ["Rate limiting", "Reconnection"],
+      animState: "client_node+rate_limiter"
     },
     {
       id: "downstream",
       title: "Safely sent to downstream application",
       headline: "Security preserved end-to-end",
-      body: "Only authorized, policy-compliant data flows to dashboards, research tools, or therapeutic apps — with full traceability.",
-      key_points: [
-        "End-to-end latency target <150ms",
-        "Compliant by design (GDPR/HIPAA workflows)"
-      ],
-      visual: { icon: "target", hint: "Destination systems" }
+      body: "Only authorized, policy-compliant data reaches tools and apps.",
+      points: ["Traceable", "<150ms target"],
+      animState: "dest_icons+shield_pulse"
     }
   ]
 };
@@ -280,6 +257,19 @@ const Journey = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const stepRefs = useRef<{ [key: string]: HTMLDivElement }>({});
 
+  // Scroll progress for animations
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const activeStepIndex = journeyData.steps.findIndex(step => step.id === activeStepId);
+  const stepProgress = useTransform(
+    scrollYProgress, 
+    [activeStepIndex / journeyData.steps.length, (activeStepIndex + 1) / journeyData.steps.length], 
+    [0, 1]
+  );
+
   useEffect(() => {
     // Check for reduced motion preference
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -340,8 +330,7 @@ const Journey = () => {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [activeStepId, isReducedMotion]);
 
-  const activeStepIndex = journeyData.steps.findIndex(step => step.id === activeStepId);
-  const progress = ((activeStepIndex + 1) / journeyData.steps.length) * 100;
+  const progress = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
     <section id="journey" className="bg-background py-24">
@@ -367,47 +356,47 @@ const Journey = () => {
         >
           {/* Sticky Visual Panel - Desktop */}
           <div className="hidden lg:block lg:sticky lg:top-32">
-            <div className="bg-card border rounded-xl p-8 shadow-elegant">
-              <VisualIcon 
-                icon={journeyData.steps.find(step => step.id === activeStepId)?.visual.icon || 'wave-in'}
-                hint={journeyData.steps.find(step => step.id === activeStepId)?.visual.hint || ''}
-                isActive={true}
-              />
-              
-              {/* Progress Indicator */}
-              <div className="mt-8">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-sm text-muted-foreground">Progress</span>
-                  <span className="text-sm font-medium">{activeStepIndex + 1} / {journeyData.steps.length}</span>
-                </div>
-                <div className="w-full bg-muted rounded-full h-2">
-                  <div 
-                    className="bg-gradient-primary h-2 rounded-full transition-all duration-300"
-                    style={{ width: `${progress}%` }}
+            <StickyVisual 
+              activeStepId={activeStepId} 
+              stepProgress={stepProgress.get ? stepProgress.get() : 0} 
+            />
+            
+            {/* Progress Indicator */}
+            <div className="mt-8 bg-card border rounded-xl p-6 shadow-elegant">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-sm text-muted-foreground">Progress</span>
+                <span className="text-sm font-medium">{activeStepIndex + 1} / {journeyData.steps.length}</span>
+              </div>
+              <div className="w-full bg-muted rounded-full h-2">
+                <motion.div 
+                  className="bg-gradient-primary h-2 rounded-full"
+                  style={{ width: progress.get ? progress.get() + '%' : '0%' }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+              </div>
+              <div className="flex justify-between mt-4">
+                {journeyData.steps.map((step, index) => (
+                  <motion.button
+                    key={step.id}
+                    onClick={() => {
+                      const targetRef = stepRefs.current[step.id];
+                      if (targetRef) {
+                        targetRef.scrollIntoView({ 
+                          behavior: isReducedMotion ? 'auto' : 'smooth', 
+                          block: 'start' 
+                        });
+                      }
+                    }}
+                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                      index <= activeStepIndex 
+                        ? 'bg-primary shadow-glow' 
+                        : 'bg-muted hover:bg-muted-foreground/50'
+                    }`}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    aria-label={`Go to step ${index + 1}: ${step.title}`}
                   />
-                </div>
-                <div className="flex justify-between mt-2">
-                  {journeyData.steps.map((step, index) => (
-                    <button
-                      key={step.id}
-                      onClick={() => {
-                        const targetRef = stepRefs.current[step.id];
-                        if (targetRef) {
-                          targetRef.scrollIntoView({ 
-                            behavior: isReducedMotion ? 'auto' : 'smooth', 
-                            block: 'start' 
-                          });
-                        }
-                      }}
-                      className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                        index <= activeStepIndex 
-                          ? 'bg-primary shadow-glow' 
-                          : 'bg-muted hover:bg-muted-foreground/50'
-                      }`}
-                      aria-label={`Go to step ${index + 1}: ${step.title}`}
-                    />
-                  ))}
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -415,7 +404,7 @@ const Journey = () => {
           {/* Steps */}
           <div className="space-y-8 lg:space-y-0">
             {journeyData.steps.map((step, index) => (
-              <div
+              <motion.div
                 key={step.id}
                 ref={(el) => {
                   if (el) stepRefs.current[step.id] = el;
@@ -423,66 +412,137 @@ const Journey = () => {
                 data-step-id={step.id}
                 className="min-h-screen lg:min-h-[80vh] flex flex-col justify-center py-16 lg:py-24"
                 style={{ scrollSnapAlign: 'start' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
               >
                 {/* Mobile Visual */}
                 <div className="lg:hidden mb-8">
-                  <div className="bg-card border rounded-xl p-6 shadow-elegant">
-                    <VisualIcon 
-                      icon={step.visual.icon}
-                      hint={step.visual.hint}
-                      isActive={step.id === activeStepId}
-                    />
-                  </div>
+                  <StickyVisual 
+                    activeStepId={step.id} 
+                    stepProgress={step.id === activeStepId ? 1 : 0} 
+                  />
                 </div>
 
                 {/* Step Content */}
-                <div className={`transition-all duration-300 ${
-                  step.id === activeStepId && !isReducedMotion
-                    ? 'opacity-100 translate-y-0' 
-                    : 'opacity-70 translate-y-4'
-                }`}>
-                  <div className="flex items-center mb-4">
-                    <span className="bg-primary text-primary-foreground text-sm font-medium px-3 py-1 rounded-full mr-4">
+                <motion.div 
+                  className="transition-all duration-300"
+                  animate={{
+                    opacity: step.id === activeStepId || isReducedMotion ? 1 : 0.7,
+                    y: step.id === activeStepId || isReducedMotion ? 0 : 8
+                  }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <motion.div 
+                    className="flex items-center mb-4"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <motion.span 
+                      className="bg-primary text-primary-foreground text-sm font-medium px-3 py-1 rounded-full mr-4"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
                       {index + 1}
-                    </span>
+                    </motion.span>
                     <h3 className="text-lg font-semibold text-muted-foreground uppercase tracking-wide">
                       {step.title}
                     </h3>
-                  </div>
+                  </motion.div>
                   
-                  <h4 className="text-3xl lg:text-4xl font-bold mb-6">
+                  <motion.h4 
+                    className="text-3xl lg:text-4xl font-bold mb-6"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                  >
                     {step.headline}
-                  </h4>
+                  </motion.h4>
                   
-                  <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  <motion.p 
+                    className="text-lg text-muted-foreground mb-8 leading-relaxed"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                  >
                     {step.body}
-                  </p>
+                  </motion.p>
                   
-                  <ul className="space-y-3">
-                    {step.key_points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                  <motion.ul 
+                    className="space-y-3"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, staggerChildren: 0.1 }}
+                  >
+                    {step.points.map((point, pointIndex) => (
+                      <motion.li 
+                        key={pointIndex} 
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 + pointIndex * 0.1 }}
+                      >
+                        <motion.div 
+                          className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.6 + pointIndex * 0.1, type: "spring" }}
+                        />
                         <span className="text-muted-foreground">{point}</span>
-                      </li>
+                      </motion.li>
                     ))}
-                  </ul>
-                </div>
-              </div>
+                  </motion.ul>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* CTA Section */}
-        <div id="journey-end" className="text-center mt-24 pt-16 border-t">
-          <h3 className="text-2xl font-bold mb-6">Ready to integrate XBrainer?</h3>
-          <a
+        <motion.div 
+          id="journey-end" 
+          className="text-center mt-24 pt-16 border-t"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <motion.h3 
+            className="text-2xl font-bold mb-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            Ready to integrate XBrainer?
+          </motion.h3>
+          <motion.a
             href={journeyData.cta.href}
             className="inline-flex items-center bg-gradient-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:shadow-glow transition-all duration-200"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
           >
             {journeyData.cta.label}
-            <ArrowDown className="ml-2 h-5 w-5 rotate-[-90deg]" />
-          </a>
-        </div>
+            <motion.div
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowDown className="ml-2 h-5 w-5 rotate-[-90deg]" />
+            </motion.div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
