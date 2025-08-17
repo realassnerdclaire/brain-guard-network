@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import EEGStage, { type EEGStageHandle } from '@/components/journey/EEGStage';
 import JourneyPanels from '@/components/journey/JourneyPanels';
-import ScrollBinder from '@/components/journey/ScrollBinder';
+import SafeScrollBinder from '@/components/journey/SafeScrollBinder';
 import ClientOnly from '@/components/journey/ClientOnly';
 import type { JourneyConfig } from '@/components/journey/EEGEngine';
 
@@ -50,7 +50,7 @@ export default function Journey() {
           </div>
           <JourneyPanels config={config} stepProgresses={stepProgresses} />
         </section>
-        <ScrollBinder 
+        <SafeScrollBinder 
           stageRef={stageRef}
           scrollRef={scrollRef}
           onStepProgresses={setStepProgresses}

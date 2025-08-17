@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import EEGStage, { type EEGStageHandle } from '@/components/journey/EEGStage';
 import JourneyPanels from '@/components/journey/JourneyPanels';
 import ClientOnly from '@/components/journey/ClientOnly';
-import ScrollBinder from '@/components/journey/ScrollBinder';
+import SafeScrollBinder from '@/components/journey/SafeScrollBinder';
 import type { JourneyConfig } from '@/components/journey/EEGEngine';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -183,7 +183,7 @@ export default function JourneyDevPage() {
                 </div>
                 <JourneyPanels config={config} stepProgresses={stepProgresses} />
               </section>
-              <ScrollBinder 
+              <SafeScrollBinder 
                 stageRef={stageRef}
                 scrollRef={scrollRef}
                 onStepProgresses={setStepProgresses}
