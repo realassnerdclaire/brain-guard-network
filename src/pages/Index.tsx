@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, ChevronLeft, ChevronRight } from "lucide-react";
 import HeroXBrainer from "@/components/marketing/HeroXBrainer";
 import NavigationLayout from "@/components/marketing/NavigationLayout";
+import Journey from "@/components/marketing/Journey";
 import { startHoverAnimation, stopHoverAnimation } from "@/utils/letterAnimation";
 
 const Index = () => {
@@ -875,6 +876,9 @@ const Index = () => {
               
             </div>
           </div>
+          
+          {/* Journey Section */}
+          <Journey />
         </main>
       </div>
     </div>
