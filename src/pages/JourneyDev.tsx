@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
-import { useScroll, useTransform } from 'framer-motion';
 import EEGStage, { type EEGStageHandle } from '@/components/journey/EEGStage';
 import JourneyPanels from '@/components/journey/JourneyPanels';
-import ClientOnlyJourney from '@/components/journey/ClientOnlyJourney';
+import ScrollBinder from '@/components/journey/ScrollBinder';
 import type { JourneyConfig } from '@/components/journey/EEGEngine';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,9 +12,7 @@ export default function JourneyDevPage() {
   const [config, setConfig] = useState<JourneyConfig | null>(null);
   const [bindToScroll, setBindToScroll] = useState(false);
   const [fps, setFps] = useState(0);
-  const [isClient, setIsClient] = useState(false);
   const stageRef = useRef<EEGStageHandle>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
   
   // Manual sliders state
   const [sliders, setSliders] = useState({
@@ -26,10 +23,8 @@ export default function JourneyDevPage() {
     downstream: 0
   });
 
-  // Ensure client-side hydration
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  // Step progresses from scroll or manual
+  const [stepProgresses, setStepProgresses] = useState([0, 0, 0, 0, 0]);
 
   // Load config
   useEffect(() => {
@@ -59,41 +54,27 @@ export default function JourneyDevPage() {
     return () => cancelAnimationFrame(id);
   }, []);
 
-  // Scroll binding - only after client hydration
-  const { scrollYProgress } = useScroll({
-    target: isClient && bindToScroll ? scrollRef : undefined,
-    offset: ["start start", "end end"]
-  });
-
-  const validationProgress = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-  const encryptionProgress = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
-  const consentProgress = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
-  const aeProgress = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
-  const downstreamProgress = useTransform(scrollYProgress, [0.8, 1.0], [0, 1]);
-
-  // Update stage based on mode - only after client hydration
+  // Update stage based on mode (manual sliders)
   useEffect(() => {
-    if (!stageRef.current || !isClient) return;
+    if (!stageRef.current || bindToScroll) return;
 
-    if (bindToScroll) {
-      const unsubscribes = [
-        validationProgress.on('change', (v) => stageRef.current?.setValidation(v)),
-        encryptionProgress.on('change', (v) => stageRef.current?.setEncryption(v)),
-        consentProgress.on('change', (v) => stageRef.current?.setConsent(v)),
-        aeProgress.on('change', (v) => stageRef.current?.setAE(v)),
-        downstreamProgress.on('change', (v) => stageRef.current?.setDownstream(v))
-      ];
-      return () => unsubscribes.forEach(unsub => unsub());
-    } else {
-      stageRef.current.setValidation(sliders.validation);
-      stageRef.current.setEncryption(sliders.encryption);
-      stageRef.current.setConsent(sliders.consent);
-      stageRef.current.setAE(sliders.autoencoder);
-      stageRef.current.setDownstream(sliders.downstream);
-    }
-  }, [bindToScroll, sliders, validationProgress, encryptionProgress, consentProgress, aeProgress, downstreamProgress, isClient]);
+    stageRef.current.setValidation(sliders.validation);
+    stageRef.current.setEncryption(sliders.encryption);
+    stageRef.current.setConsent(sliders.consent);
+    stageRef.current.setAE(sliders.autoencoder);
+    stageRef.current.setDownstream(sliders.downstream);
 
-  if (!config || !isClient) {
+    // Update step progresses for manual mode
+    setStepProgresses([
+      sliders.validation,
+      sliders.encryption,
+      sliders.consent,
+      sliders.autoencoder,
+      sliders.downstream
+    ]);
+  }, [sliders, bindToScroll]);
+
+  if (!config) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
@@ -104,25 +85,8 @@ export default function JourneyDevPage() {
     );
   }
 
-  const stepProgresses = bindToScroll 
-    ? [
-        validationProgress.get(),
-        encryptionProgress.get(),
-        consentProgress.get(),
-        aeProgress.get(),
-        downstreamProgress.get()
-      ]
-    : [
-        sliders.validation,
-        sliders.encryption,
-        sliders.consent,
-        sliders.autoencoder,
-        sliders.downstream
-      ];
-
   return (
-    <ClientOnlyJourney>
-      <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <header className="border-b border-border/50 sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
         <div className="container py-4">
@@ -196,29 +160,35 @@ export default function JourneyDevPage() {
         {/* Main Content */}
         <main className="flex-1">
           {bindToScroll ? (
-            /* Scroll Mode */
-            <div ref={scrollRef} style={{ height: '500vh' }}>
-              <section 
-                id="xbr-journey"
-                className="relative"
-                style={{ height: '500vh' }}
-              >
-                <div
-                  id="eeg-stage"
-                  style={{
-                    position: 'sticky',
-                    top: 'calc(50vh - 160px)',
-                    height: '320px',
-                    display: 'grid',
-                    placeItems: 'center',
-                    zIndex: 2
-                  }}
-                >
-                  <EEGStage ref={stageRef} config={config} />
+            <ScrollBinder 
+              stageRef={stageRef} 
+              onProgress={setStepProgresses}
+            >
+              {(scrollRef) => (
+                <div ref={scrollRef} style={{ height: '500vh' }}>
+                  <section 
+                    id="xbr-journey"
+                    className="relative"
+                    style={{ height: '500vh' }}
+                  >
+                    <div
+                      id="eeg-stage"
+                      style={{
+                        position: 'sticky',
+                        top: 'calc(50vh - 160px)',
+                        height: '320px',
+                        display: 'grid',
+                        placeItems: 'center',
+                        zIndex: 2
+                      }}
+                    >
+                      <EEGStage ref={stageRef} config={config} />
+                    </div>
+                    <JourneyPanels config={config} stepProgresses={stepProgresses} />
+                  </section>
                 </div>
-                <JourneyPanels config={config} stepProgresses={stepProgresses} />
-              </section>
-            </div>
+              )}
+            </ScrollBinder>
           ) : (
             /* Manual Mode */
             <div className="p-8">
@@ -259,7 +229,6 @@ export default function JourneyDevPage() {
           )}
         </main>
       </div>
-      </div>
-    </ClientOnlyJourney>
+    </div>
   );
 }
