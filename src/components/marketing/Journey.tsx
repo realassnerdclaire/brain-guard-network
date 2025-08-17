@@ -2,12 +2,14 @@ import React, { useRef, useEffect, useState } from 'react';
 import EEGStage, { type EEGStageHandle } from '@/components/journey/EEGStage';
 import JourneyPanels from '@/components/journey/JourneyPanels';
 import ScrollBinder from '@/components/journey/ScrollBinder';
+import ClientOnly from '@/components/journey/ClientOnly';
 import type { JourneyConfig } from '@/components/journey/EEGEngine';
 
 export default function Journey() {
   const [config, setConfig] = useState<JourneyConfig | null>(null);
   const [stepProgresses, setStepProgresses] = useState([0, 0, 0, 0, 0]);
   const stageRef = useRef<EEGStageHandle>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Load config
   useEffect(() => {
@@ -26,34 +28,34 @@ export default function Journey() {
   }
 
   return (
-    <ScrollBinder 
-      stageRef={stageRef} 
-      onProgress={setStepProgresses}
-    >
-      {(scrollRef) => (
-        <div ref={scrollRef} style={{ height: '500vh' }}>
-          <section 
-            id="xbr-journey"
-            className="relative"
-            style={{ height: '500vh' }}
+    <ClientOnly>
+      <div ref={scrollRef} style={{ height: '500vh' }}>
+        <section 
+          id="xbr-journey"
+          className="relative"
+          style={{ height: '500vh' }}
+        >
+          <div
+            id="eeg-stage"
+            style={{
+              position: 'sticky',
+              top: 'calc(50vh - 160px)',
+              height: '320px',
+              display: 'grid',
+              placeItems: 'center',
+              zIndex: 2
+            }}
           >
-            <div
-              id="eeg-stage"
-              style={{
-                position: 'sticky',
-                top: 'calc(50vh - 160px)',
-                height: '320px',
-                display: 'grid',
-                placeItems: 'center',
-                zIndex: 2
-              }}
-            >
-              <EEGStage ref={stageRef} config={config} />
-            </div>
-            <JourneyPanels config={config} stepProgresses={stepProgresses} />
-          </section>
-        </div>
-      )}
-    </ScrollBinder>
+            <EEGStage ref={stageRef} config={config} />
+          </div>
+          <JourneyPanels config={config} stepProgresses={stepProgresses} />
+        </section>
+        <ScrollBinder 
+          stageRef={stageRef}
+          scrollRef={scrollRef}
+          onStepProgresses={setStepProgresses}
+        />
+      </div>
+    </ClientOnly>
   );
 }

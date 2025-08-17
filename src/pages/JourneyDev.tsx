@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import EEGStage, { type EEGStageHandle } from '@/components/journey/EEGStage';
 import JourneyPanels from '@/components/journey/JourneyPanels';
+import ClientOnly from '@/components/journey/ClientOnly';
 import ScrollBinder from '@/components/journey/ScrollBinder';
 import type { JourneyConfig } from '@/components/journey/EEGEngine';
 import { Button } from '@/components/ui/button';
@@ -13,6 +14,7 @@ export default function JourneyDevPage() {
   const [bindToScroll, setBindToScroll] = useState(false);
   const [fps, setFps] = useState(0);
   const stageRef = useRef<EEGStageHandle>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   
   // Manual sliders state
   const [sliders, setSliders] = useState({
@@ -86,8 +88,8 @@ export default function JourneyDevPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
+    <ClientOnly>
+      <div className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border/50 sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
         <div className="container py-4">
           <div className="flex items-center justify-between">
@@ -160,35 +162,33 @@ export default function JourneyDevPage() {
         {/* Main Content */}
         <main className="flex-1">
           {bindToScroll ? (
-            <ScrollBinder 
-              stageRef={stageRef} 
-              onProgress={setStepProgresses}
-            >
-              {(scrollRef) => (
-                <div ref={scrollRef} style={{ height: '500vh' }}>
-                  <section 
-                    id="xbr-journey"
-                    className="relative"
-                    style={{ height: '500vh' }}
-                  >
-                    <div
-                      id="eeg-stage"
-                      style={{
-                        position: 'sticky',
-                        top: 'calc(50vh - 160px)',
-                        height: '320px',
-                        display: 'grid',
-                        placeItems: 'center',
-                        zIndex: 2
-                      }}
-                    >
-                      <EEGStage ref={stageRef} config={config} />
-                    </div>
-                    <JourneyPanels config={config} stepProgresses={stepProgresses} />
-                  </section>
+            <div ref={scrollRef} style={{ height: '500vh' }}>
+              <section 
+                id="xbr-journey"
+                className="relative"
+                style={{ height: '500vh' }}
+              >
+                <div
+                  id="eeg-stage"
+                  style={{
+                    position: 'sticky',
+                    top: 'calc(50vh - 160px)',
+                    height: '320px',
+                    display: 'grid',
+                    placeItems: 'center',
+                    zIndex: 2
+                  }}
+                >
+                  <EEGStage ref={stageRef} config={config} />
                 </div>
-              )}
-            </ScrollBinder>
+                <JourneyPanels config={config} stepProgresses={stepProgresses} />
+              </section>
+              <ScrollBinder 
+                stageRef={stageRef}
+                scrollRef={scrollRef}
+                onStepProgresses={setStepProgresses}
+              />
+            </div>
           ) : (
             /* Manual Mode */
             <div className="p-8">
@@ -229,6 +229,7 @@ export default function JourneyDevPage() {
           )}
         </main>
       </div>
-    </div>
+      </div>
+    </ClientOnly>
   );
 }

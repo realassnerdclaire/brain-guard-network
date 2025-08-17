@@ -79,42 +79,43 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
   const aeStep = cfg.steps.find(s => s.id === 'autoencoder')?.animations;
   const downstreamStep = cfg.steps.find(s => s.id === 'downstream')?.animations;
 
-  // Config-driven animation calculations
-  const validationArtifactsVisible = pValidation > 0 && pValidation < (validationStep?.clean_crossfade_range?.[0] ?? 0.5);
-  const validationCheckmarksVisible = pValidation > (validationStep?.clean_crossfade_range?.[0] ?? 0.5);
+  // Config-driven animation calculations for validation step
+  const crossfadeRange = validationStep?.clean_crossfade_range || [0.5, 1.0];
+  const validationArtifactsVisible = pValidation > 0 && pValidation < crossfadeRange[0];
+  const validationCheckmarksVisible = pValidation > crossfadeRange[0];
   
-  // Raw path opacity and stroke
-  const rawOpacity = pValidation < (validationStep?.clean_crossfade_range?.[0] ?? 0.5) ? 1.0 : 0.2;
-  const rawStrokeDash = pValidation > (validationStep?.clean_crossfade_range?.[0] ?? 0.5) ? 
-    (validationStep?.dotted_rejected ?? "6 8") : "none";
+  // Raw path opacity and stroke - drive from config
+  const rawOpacity = pValidation < crossfadeRange[0] ? 1.0 : 0.2;
+  const rawStrokeDash = pValidation > crossfadeRange[0] ? 
+    (validationStep?.dotted_rejected || "6 8") : "none";
   
   // Clean path opacity based on stage
   let cleanOpacity = 0.9;
-  if (pValidation <= (validationStep?.clean_crossfade_range?.[0] ?? 0.5)) {
+  if (pValidation <= crossfadeRange[0]) {
     cleanOpacity = 0;
   } else if (pEncryption > 0) {
     cleanOpacity = lerp(
-      encryptionStep?.base_path_dim?.[0] ?? 0.9, 
-      encryptionStep?.base_path_dim?.[1] ?? 0.25, 
+      encryptionStep?.base_path_dim?.[0] || 0.9, 
+      encryptionStep?.base_path_dim?.[1] || 0.25, 
       Math.min(1, pEncryption * 1.25)
     );
   } else if (pConsent > 0) {
     cleanOpacity = lerp(
-      consentStep?.allow_underpath_opacity?.[0] ?? 0.25, 
-      consentStep?.allow_underpath_opacity?.[1] ?? 0.8, 
+      consentStep?.allow_underpath_opacity?.[0] || 0.25, 
+      consentStep?.allow_underpath_opacity?.[1] || 0.8, 
       pConsent
     );
   } else if (pDown > 0) {
-    cleanOpacity = downstreamStep?.restore_clean_opacity ?? 0.9;
+    cleanOpacity = downstreamStep?.restore_clean_opacity || 0.9;
   }
   
   // Clean path stroke dash for AE step
-  const cleanStrokeDash = pAE > (aeStep?.residual_band_range?.[1] ?? 0.6) ? 
-    (aeStep?.dotted_removed ?? "3 6") : "none";
+  const cleanStrokeDash = pAE > (aeStep?.residual_band_range?.[1] || 0.6) ? 
+    (aeStep?.dotted_removed || "3 6") : "none";
   
   // Ghost opacity
   const ghostOpacity = pAE > 0 ? 
-    lerp(0, aeStep?.ghost_opacity?.[1] ?? 0.7, Math.min(1, pAE * 1.5)) : 0;
+    lerp(0, aeStep?.ghost_opacity?.[1] || 0.7, Math.min(1, pAE * 1.5)) : 0;
 
   return (
     <svg width={1100} height={260} viewBox="0 0 1100 260" role="img" aria-label={cfg.a11y.stage_aria}>
@@ -197,7 +198,7 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
                   cx={x}
                   cy={cfg.eeg.map.y_px_center - 40}
                   r="6"
-                  fill={c.error}
+                  fill={validationStep?.mark_colors?.flag || c.error}
                   initial={{ opacity: 0, scale: 0.7 }}
                   animate={{ 
                     opacity: [1, 0, 1], 
@@ -205,8 +206,8 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
                   }}
                   transition={{ 
                     opacity: { 
-                      duration: (validationStep?.defects_blink_ms ?? 160) / 1000,
-                      repeat: validationStep?.defects_blink_times ?? 2,
+                      duration: (validationStep?.defects_blink_ms || 160) / 1000,
+                      repeat: validationStep?.defects_blink_times || 2,
                       repeatType: "reverse"
                     },
                     scale: { duration: 0.2 }
@@ -231,7 +232,7 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
                   y={cfg.eeg.map.y_px_center - 40}
                   textAnchor="middle"
                   fontSize="16"
-                  fill={validationStep?.mark_colors?.fixed ?? cfg.theme.colors.ok}
+                  fill={validationStep?.mark_colors?.fixed || c.ok}
                   initial={{ scale: 0.7, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: i * 0.1 + 0.2 }}
