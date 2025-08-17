@@ -1,103 +1,82 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowDown, ChevronDown } from 'lucide-react';
+import { Shield, Lock, CheckCircle2, Brain, Database, ChevronDown, ArrowRight } from 'lucide-react';
 import { 
   motion, 
   useScroll, 
   useTransform, 
-  useMotionValue,
-  AnimatePresence 
+  useMotionValue 
 } from 'framer-motion';
 
 const journeyData = {
-  title: "How XBrainer Secures Your EEG Stream",
-  subtitle: "Scroll to see our on-device security pipeline in action",
+  title: "XBrainer EEG Security Pipeline",
+  subtitle: "Watch your neural data transform through our security layers",
   cta: { label: "Explore SDKs", href: "/docs" },
   steps: [
     {
-      id: "ingestion",
-      title: "Data ingestion",
-      headline: "Connect EEG/IMU streams",
-      body: "Multi-protocol adapters (BLE/USB/TCP) → schema-normalized ring buffer with backpressure.",
-      points: ["Schema validation", "Live→disk logging (optional)"],
-      animState: "packets_in+schema_ok+buffer_fill"
-    },
-    {
-      id: "verification",
-      title: "Verification & integrity checks",
-      headline: "Validate + drop malformed frames",
-      body: "Timestamp/channel/µV range checks; artifact detection; late frames dropped.",
-      points: ["Drift compensation", "Discard malformed"],
-      animState: "validators_on+bad_drop"
+      id: "validation",
+      title: "Validation",
+      headline: "Signal integrity checks",
+      body: "We check timestamps, channel counts, and signal integrity, dropping malformed or late frames.",
+      points: ["Timestamp validation", "Channel verification", "Artifact detection"]
     },
     {
       id: "encryption",
-      title: "AES encryption",
-      headline: "Seal packets with AES-256-GCM",
-      body: "ECDH session keys, anti-tamper & anti-replay.",
-      points: ["Per-packet AEAD", "Nonce discipline"],
-      animState: "lock_tunnel+padlock_shimmer"
+      title: "AES Encryption", 
+      headline: "Secure packet sealing",
+      body: "Every packet is sealed with AES-256-GCM using session keys.",
+      points: ["AES-256-GCM encryption", "Session key management", "Anti-replay protection"]
     },
     {
-      id: "routing-consent",
-      title: "Routing & consent policy",
-      headline: "Purpose/user/device↦policy",
-      body: "Microsecond JSON/DSL evaluation; TTL & revocation.",
-      points: ["Trust boundaries", "Dynamic rewrites"],
-      animState: "gate_branch+block_reject"
+      id: "consent",
+      title: "Consent Enforcement",
+      headline: "Policy-based access control",
+      body: "Only policy-compliant signals flow forward.",
+      points: ["Dynamic policy evaluation", "Access control gates", "Revocation handling"]
     },
     {
-      id: "anomaly-detection",
-      title: "Anomaly detection",
-      headline: "Autoencoder quarantine >3σ",
-      body: "Rolling window scoring; metrics exposed.",
-      points: ["Jitter/loss/error counters", "Quarantine loop"],
-      animState: "outlier_glow+quarantine+metrics_tick"
-    },
-    {
-      id: "privacy-redaction",
-      title: "Privacy redaction",
-      headline: "Mask sensitive windows",
-      body: "Policy-driven redaction of identifiable/cognitive patterns.",
-      points: ["Confidence tagging", "Audit labels"],
-      animState: "mask_bands+striped_packets"
-    },
-    {
-      id: "brainprint-auth",
-      title: "Brainprint authentication",
-      headline: "Passive EEG biometric",
-      body: "Local Siamese match (~55ms); OAuth2 fallback.",
-      points: ["Revocable embeddings", "Entropy injection"],
-      animState: "match_meter+halo_packets"
-    },
-    {
-      id: "audit-logging",
-      title: "Immutable audit logging",
-      headline: "Hash-chained ledger",
-      body: "Consent/decrypt/anomaly events chained & exportable.",
-      points: ["Chain of custody", "SIEM ready"],
-      animState: "ledger_blocks+hash_link"
-    },
-    {
-      id: "sdk-access",
-      title: "SDK & access gateway",
-      headline: "Python/TS SDKs + APIs",
-      body: "REST/gRPC/WebSocket with backpressure and heartbeats.",
-      points: ["Rate limiting", "Reconnection"],
-      animState: "client_node+rate_limiter"
+      id: "anomaly",
+      title: "Autoencoder Rejection",
+      headline: "Anomaly detection",
+      body: "Anomaly detector drops spoofed or out-of-distribution frames.",
+      points: ["Real-time scoring", "Outlier quarantine", "Monitoring metrics"]
     },
     {
       id: "downstream",
-      title: "Safely sent to downstream application",
-      headline: "Security preserved end-to-end",
-      body: "Only authorized, policy-compliant data reaches tools and apps.",
-      points: ["Traceable", "<150ms target"],
-      animState: "dest_icons+shield_pulse"
+      title: "Secure Delivery",
+      headline: "Authorized data delivery",
+      body: "Only authorized, policy-checked data is delivered to research and therapeutic tools.",
+      points: ["End-to-end security", "Traceability", "Performance optimization"]
     }
   ]
 };
 
-// Animated Visual Component
-const StickyVisual = ({ activeStepId, stepProgress }: { activeStepId: string; stepProgress: number }) => {
+// Generate EEG waveform data
+const generateEEGData = (points: number, noise: number = 0.3, artifacts: boolean = false) => {
+  const data = [];
+  for (let i = 0; i < points; i++) {
+    const x = i / points;
+    let y = Math.sin(x * Math.PI * 8) * 0.3 + Math.sin(x * Math.PI * 20) * 0.15; // Alpha waves + beta
+    y += (Math.random() - 0.5) * noise; // Add noise
+    
+    if (artifacts && Math.random() < 0.1) {
+      y += (Math.random() - 0.5) * 2; // Add artifacts
+    }
+    
+    data.push({ x: x * 800, y: 150 + y * 50 });
+  }
+  return data;
+};
+
+// Convert data points to SVG path
+const dataToPath = (data: Array<{x: number, y: number}>) => {
+  return data.reduce((path, point, i) => {
+    const command = i === 0 ? 'M' : 'L';
+    return `${path} ${command} ${point.x} ${point.y}`;
+  }, '');
+};
+
+// EEG Waveform Component
+const EEGWaveform = ({ activeStepId, stepProgress }: { activeStepId: string; stepProgress: number }) => {
   const [isReducedMotion, setIsReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -109,352 +88,347 @@ const StickyVisual = ({ activeStepId, stepProgress }: { activeStepId: string; st
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  // Animation values based on active step and progress
-  const lockOpacity = activeStepId === 'encryption' ? stepProgress : 0;
-  const gateAngle = activeStepId === 'routing-consent' ? stepProgress * 45 : 0;
-  const anomalyGlow = activeStepId === 'anomaly-detection' ? stepProgress : 0;
-  const maskWidth = activeStepId === 'privacy-redaction' ? stepProgress * 100 : 0;
-  const authMeter = activeStepId === 'brainprint-auth' ? stepProgress * 100 : 0;
-  const ledgerBlocks = activeStepId === 'audit-logging' ? Math.floor(stepProgress * 5) : 0;
+  // Generate waveform based on active step
+  const getWaveformData = () => {
+    switch (activeStepId) {
+      case 'validation':
+        const rawData = generateEEGData(200, 0.5, true);
+        const cleanData = generateEEGData(200, 0.2, false);
+        return {
+          raw: dataToPath(rawData),
+          clean: dataToPath(cleanData),
+          showArtifacts: true
+        };
+      
+      case 'encryption':
+        return {
+          packets: true,
+          encrypted: stepProgress > 0.5
+        };
+      
+      case 'consent':
+        return {
+          gatePosition: 400,
+          allowedPath: stepProgress > 0.3,
+          blockedPackets: stepProgress > 0.6
+        };
+      
+      case 'anomaly':
+        return {
+          spectrogram: true,
+          anomalies: stepProgress > 0.4,
+          quarantine: stepProgress > 0.7
+        };
+      
+      case 'downstream':
+        return {
+          stable: true,
+          destinations: stepProgress > 0.5
+        };
+      
+      default:
+        return { normal: dataToPath(generateEEGData(200, 0.3)) };
+    }
+  };
+
+  const waveformState = getWaveformData();
 
   return (
-    <div className="relative w-full h-96 bg-card border rounded-xl p-8 shadow-elegant overflow-hidden">
-      <svg viewBox="0 0 400 300" className="w-full h-full">
+    <div className="sticky top-1/2 -translate-y-1/2 w-full h-40 bg-card/50 backdrop-blur border rounded-xl p-6 shadow-lg overflow-hidden">
+      <svg viewBox="0 0 800 120" className="w-full h-full" aria-label="EEG data visualization">
         <defs>
-          <pattern id="maskPattern" patternUnits="userSpaceOnUse" width="4" height="4">
-            <rect width="4" height="4" fill="hsl(var(--muted))"/>
-            <rect width="2" height="4" fill="hsl(var(--muted-foreground))"/>
+          <pattern id="cipherPattern" patternUnits="userSpaceOnUse" width="8" height="8">
+            <rect width="8" height="8" fill="hsl(var(--primary)/0.1)"/>
+            <rect width="4" height="4" fill="hsl(var(--primary)/0.3)"/>
+            <rect x="4" y="4" width="4" height="4" fill="hsl(var(--primary)/0.3)"/>
           </pattern>
+          <linearGradient id="spectrogramGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3"/>
+            <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.1"/>
+          </linearGradient>
         </defs>
 
-        {/* Background pipeline */}
-        <motion.path
-          d="M40,150 L360,150"
-          stroke="hsl(var(--muted-foreground))"
-          strokeWidth="2"
-          strokeDasharray="5,5"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        />
-
-        {/* Data packets flowing */}
-        <g id="packets">
-          {[...Array(5)].map((_, i) => (
-            <motion.rect
-              key={i}
-              x={0}
-              y={140}
-              width="20"
-              height="20"
-              rx="4"
-              fill="hsl(var(--primary))"
-              opacity={0.7}
-              animate={{
-                x: [40 + i * 40, 360 + i * 40],
-                opacity: [0, 0.7, 0.7, 0]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                delay: i * 0.5,
-                ease: "linear"
-              }}
+        {/* Baseline EEG waveform */}
+        {activeStepId === 'validation' && (
+          <>
+            {/* Raw signal with artifacts */}
+            <motion.path
+              d={waveformState.raw}
+              fill="none"
+              stroke="hsl(var(--muted-foreground))"
+              strokeWidth="2"
+              opacity={1 - stepProgress}
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2, ease: "easeInOut" }}
             />
-          ))}
-        </g>
-
-        {/* Protocol badges (ingestion) */}
-        <AnimatePresence>
-          {activeStepId === 'ingestion' && (
-            <motion.g
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, staggerChildren: 0.1 }}
-            >
-              {['BLE', 'USB', 'TCP'].map((protocol, i) => (
-                <motion.g key={protocol}>
-                  <motion.rect
-                    x={60 + i * 80}
-                    y={100}
-                    width="50"
-                    height="20"
-                    rx="10"
-                    fill="hsl(var(--secondary))"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: i * 0.1 }}
-                  />
-                  <motion.text
-                    x={85 + i * 80}
-                    y={114}
-                    textAnchor="middle"
-                    fontSize="10"
-                    fill="hsl(var(--secondary-foreground))"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: i * 0.1 + 0.2 }}
-                  >
-                    {protocol}
-                  </motion.text>
-                </motion.g>
-              ))}
-            </motion.g>
-          )}
-        </AnimatePresence>
-
-        {/* Verification validators */}
-        <AnimatePresence>
-          {activeStepId === 'verification' && (
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.circle
-                cx="150"
-                cy="120"
-                r="15"
-                fill="none"
-                stroke="hsl(var(--success))"
-                strokeWidth="2"
-                initial={{ scale: 0 }}
-                animate={{ scale: [0, 1.2, 1] }}
-                transition={{ duration: 0.5 }}
-              />
-              <motion.text
-                x="150"
-                y="125"
-                textAnchor="middle"
-                fontSize="12"
-                fill="hsl(var(--success))"
+            
+            {/* Clean signal */}
+            <motion.path
+              d={waveformState.clean}
+              fill="none"
+              stroke="hsl(var(--primary))"
+              strokeWidth="2"
+              opacity={stepProgress}
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
+            />
+            
+            {/* Validation checkmarks */}
+            {stepProgress > 0.5 && (
+              <motion.g
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
+                transition={{ duration: 0.5, staggerChildren: 0.1 }}
               >
-                ✓
-              </motion.text>
-            </motion.g>
-          )}
-        </AnimatePresence>
-
-        {/* Encryption lock */}
-        <AnimatePresence>
-          {activeStepId === 'encryption' && (
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.rect
-                x="180"
-                y="130"
-                width="40"
-                height="40"
-                rx="8"
-                fill="hsl(var(--primary))"
-                fillOpacity={lockOpacity}
-                stroke="hsl(var(--primary))"
-                strokeWidth="2"
-                initial={{ scale: 0, rotate: -10 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ duration: 0.4, ease: "backOut" }}
-              />
-              <motion.path
-                d="M190,140 L190,135 Q190,125 200,125 Q210,125 210,135 L210,140"
-                fill="none"
-                stroke="hsl(var(--primary-foreground))"
-                strokeWidth="2"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ delay: 0.2, duration: 0.3 }}
-              />
-            </motion.g>
-          )}
-        </AnimatePresence>
-
-        {/* Policy gate */}
-        <AnimatePresence>
-          {activeStepId === 'routing-consent' && (
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.rect
-                x="200"
-                y="140"
-                width="30"
-                height="20"
-                fill="hsl(var(--secondary))"
-                animate={{ rotate: gateAngle }}
-                style={{ transformOrigin: '200px 150px' }}
-              />
-              <motion.path
-                d="M240,150 L280,130"
-                stroke="hsl(var(--success))"
-                strokeWidth="3"
-                opacity={stepProgress}
-              />
-              <motion.path
-                d="M240,150 L280,170"
-                stroke="hsl(var(--destructive))"
-                strokeWidth="3"
-                opacity={1 - stepProgress}
-              />
-            </motion.g>
-          )}
-        </AnimatePresence>
-
-        {/* Anomaly detection */}
-        <AnimatePresence>
-          {activeStepId === 'anomaly-detection' && (
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.circle
-                cx="200"
-                cy="150"
-                r="20"
-                fill="none"
-                stroke="hsl(var(--destructive))"
-                strokeWidth="2"
-                opacity={anomalyGlow}
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-              />
-              <motion.path
-                d="M220,150 Q240,130 260,150"
-                fill="none"
-                stroke="hsl(var(--warning))"
-                strokeWidth="2"
-                opacity={stepProgress}
-              />
-            </motion.g>
-          )}
-        </AnimatePresence>
-
-        {/* Privacy redaction mask */}
-        <AnimatePresence>
-          {activeStepId === 'privacy-redaction' && (
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.rect
-                x="150"
-                y="130"
-                width={maskWidth}
-                height="40"
-                fill="url(#maskPattern)"
-                opacity={0.8}
-              />
-            </motion.g>
-          )}
-        </AnimatePresence>
-
-        {/* Brainprint auth meter */}
-        <AnimatePresence>
-          {activeStepId === 'brainprint-auth' && (
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.circle
-                cx="200"
-                cy="120"
-                r="25"
-                fill="none"
-                stroke="hsl(var(--muted))"
-                strokeWidth="4"
-              />
-              <motion.circle
-                cx="200"
-                cy="120"
-                r="25"
-                fill="none"
-                stroke="hsl(var(--success))"
-                strokeWidth="4"
-                strokeDasharray={`${authMeter * 1.57} 157`}
-                strokeLinecap="round"
-                transform="rotate(-90 200 120)"
-              />
-            </motion.g>
-          )}
-        </AnimatePresence>
-
-        {/* Audit logging blocks */}
-        <AnimatePresence>
-          {activeStepId === 'audit-logging' && (
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              {[...Array(ledgerBlocks)].map((_, i) => (
-                <motion.g key={i}>
-                  <motion.rect
-                    x={280 + i * 15}
-                    y={135}
-                    width="12"
-                    height="30"
-                    fill="hsl(var(--secondary))"
-                    initial={{ y: 200, opacity: 0 }}
-                    animate={{ y: 135, opacity: 1 }}
-                    transition={{ delay: i * 0.1 }}
-                  />
-                  {i > 0 && (
-                    <motion.line
-                      x1={275 + i * 15}
-                      y1={150}
-                      x2={280 + i * 15}
-                      y2={150}
-                      stroke="hsl(var(--primary))"
-                      strokeWidth="2"
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: 1 }}
-                      transition={{ delay: i * 0.1 + 0.2 }}
+                {[200, 400, 600].map((x, i) => (
+                  <motion.g key={i}>
+                    <motion.circle
+                      cx={x}
+                      cy={40}
+                      r="12"
+                      fill="hsl(var(--success))"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: i * 0.2 }}
                     />
-                  )}
-                </motion.g>
+                    <motion.text
+                      x={x}
+                      y={45}
+                      textAnchor="middle"
+                      fontSize="12"
+                      fill="white"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: i * 0.2 + 0.1 }}
+                    >
+                      ✓
+                    </motion.text>
+                  </motion.g>
+                ))}
+              </motion.g>
+            )}
+          </>
+        )}
+
+        {/* Encryption - packets with cipher pattern */}
+        {activeStepId === 'encryption' && (
+          <>
+            {/* Signal as discrete packets */}
+            <motion.g>
+              {[...Array(8)].map((_, i) => (
+                <motion.rect
+                  key={i}
+                  x={50 + i * 90}
+                  y={50}
+                  width="60"
+                  height="20"
+                  rx="4"
+                  fill={waveformState.encrypted ? "url(#cipherPattern)" : "hsl(var(--primary))"}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: i * 0.1, duration: 0.3 }}
+                />
               ))}
             </motion.g>
-          )}
-        </AnimatePresence>
+            
+            {/* Lock icon */}
+            {stepProgress > 0.3 && (
+              <motion.g
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <Lock className="w-6 h-6" x={350} y={20} />
+              </motion.g>
+            )}
+          </>
+        )}
 
-        {/* Downstream shield pulse */}
-        <AnimatePresence>
-          {activeStepId === 'downstream' && (
+        {/* Consent - policy gate */}
+        {activeStepId === 'consent' && (
+          <>
+            {/* Packets approaching gate */}
+            <motion.g>
+              {[...Array(6)].map((_, i) => (
+                <motion.rect
+                  key={i}
+                  x={0}
+                  y={50}
+                  width="40"
+                  height="20"
+                  rx="4"
+                  fill={i < 4 ? "hsl(var(--primary))" : "hsl(var(--muted))"}
+                  animate={{
+                    x: [50 + i * 60, waveformState.gatePosition + (i < 4 ? 100 : -50)],
+                    opacity: i >= 4 && waveformState.blockedPackets ? 0 : 1
+                  }}
+                  transition={{ duration: 2, delay: i * 0.2, ease: "easeInOut" }}
+                />
+              ))}
+            </motion.g>
+            
+            {/* Policy gate */}
+            <motion.rect
+              x={390}
+              y={30}
+              width="20"
+              height="60"
+              fill="hsl(var(--secondary))"
+              animate={{ 
+                rotateY: waveformState.allowedPath ? 60 : 0 
+              }}
+              style={{ transformOrigin: '400px 60px' }}
+              transition={{ duration: 0.5 }}
+            />
+            
+            {/* Policy icon */}
             <motion.g
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              transition={{ delay: 0.5 }}
             >
-              <motion.circle
-                cx="320"
-                cy="150"
-                r="20"
-                fill="none"
-                stroke="hsl(var(--primary))"
-                strokeWidth="3"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.8, 0.3]
-                }}
-                transition={{ 
-                  duration: 1.5, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
+              <Shield className="w-5 h-5" x={385} y={10} />
             </motion.g>
-          )}
-        </AnimatePresence>
+          </>
+        )}
+
+        {/* Anomaly detection - spectrogram and quarantine */}
+        {activeStepId === 'anomaly' && (
+          <>
+            {/* Spectrogram background */}
+            <motion.rect
+              x={0}
+              y={80}
+              width={800}
+              height={40}
+              fill="url(#spectrogramGradient)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: waveformState.spectrogram ? 0.5 : 0 }}
+              transition={{ duration: 0.8 }}
+            />
+            
+            {/* Normal packets */}
+            <motion.g>
+              {[...Array(8)].map((_, i) => (
+                <motion.rect
+                  key={i}
+                  x={50 + i * 90}
+                  y={50}
+                  width="60"
+                  height="20"
+                  rx="4"
+                  fill="hsl(var(--success))"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: i * 0.1 }}
+                />
+              ))}
+            </motion.g>
+            
+            {/* Anomalous packets */}
+            {waveformState.anomalies && (
+              <motion.g>
+                {[2, 5].map((i) => (
+                  <motion.rect
+                    key={i}
+                    x={50 + i * 90}
+                    y={50}
+                    width="60"
+                    height="20"
+                    rx="4"
+                    fill="hsl(var(--destructive))"
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      y: waveformState.quarantine ? [50, 100] : [50]
+                    }}
+                    transition={{ 
+                      scale: { duration: 0.5, repeat: 3 },
+                      y: { duration: 0.8, delay: 1.5 }
+                    }}
+                  />
+                ))}
+              </motion.g>
+            )}
+            
+            {/* Quarantine bin */}
+            {waveformState.quarantine && (
+              <motion.rect
+                x={100}
+                y={100}
+                width={120}
+                height={15}
+                rx="8"
+                fill="hsl(var(--destructive)/0.2)"
+                stroke="hsl(var(--destructive))"
+                strokeWidth="2"
+                initial={{ opacity: 0, y: 120 }}
+                animate={{ opacity: 1, y: 100 }}
+                transition={{ duration: 0.5 }}
+              />
+            )}
+          </>
+        )}
+
+        {/* Downstream - stable delivery */}
+        {activeStepId === 'downstream' && (
+          <>
+            {/* Stable waveform */}
+            <motion.path
+              d={dataToPath(generateEEGData(200, 0.1))}
+              fill="none"
+              stroke="hsl(var(--primary))"
+              strokeWidth="3"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+            />
+            
+            {/* Destination icons */}
+            {waveformState.destinations && (
+              <motion.g
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, staggerChildren: 0.2 }}
+              >
+                <motion.g>
+                  <Database className="w-8 h-8" x={700} y={20} />
+                  <motion.text x={720} y={45} fontSize="10" fill="hsl(var(--muted-foreground))">
+                    Research
+                  </motion.text>
+                </motion.g>
+                
+                <motion.g>
+                  <Brain className="w-8 h-8" x={700} y={60} />
+                  <motion.text x={720} y={85} fontSize="10" fill="hsl(var(--muted-foreground))">
+                    Therapy
+                  </motion.text>
+                </motion.g>
+                
+                {/* Protection shield */}
+                <motion.circle
+                  cx={720}
+                  cy={55}
+                  r={35}
+                  fill="none"
+                  stroke="hsl(var(--primary))"
+                  strokeWidth="2"
+                  opacity={0.3}
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.3, 0.6, 0.3]
+                  }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </motion.g>
+            )}
+          </>
+        )}
       </svg>
     </div>
   );
@@ -591,7 +565,7 @@ const Journey = () => {
         >
           {/* Sticky Visual Panel - Desktop */}
           <div className="hidden lg:block lg:sticky lg:top-32">
-            <StickyVisual 
+            <EEGWaveform 
               activeStepId={activeStepId} 
               stepProgress={stepProgress.get ? stepProgress.get() : 0} 
             />
@@ -654,7 +628,7 @@ const Journey = () => {
               >
                 {/* Mobile Visual */}
                 <div className="lg:hidden mb-8">
-                  <StickyVisual 
+                  <EEGWaveform 
                     activeStepId={step.id} 
                     stepProgress={step.id === activeStepId ? 1 : 0} 
                   />
@@ -774,7 +748,7 @@ const Journey = () => {
               animate={{ x: [0, 4, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <ArrowDown className="ml-2 h-5 w-5 rotate-[-90deg]" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </motion.div>
           </motion.a>
         </motion.div>
