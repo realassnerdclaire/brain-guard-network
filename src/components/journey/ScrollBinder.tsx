@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useLayoutEffect } from 'react';
 import { useScroll, useTransform } from 'framer-motion';
 import type { EEGStageHandle } from '@/components/journey/EEGStage';
 
@@ -35,9 +35,14 @@ function ScrollHandler({
   scrollRef: React.RefObject<HTMLDivElement>;
   onProgress?: (stepProgresses: number[]) => void;
 }) {
-  // Now we can safely use useScroll since this component only renders after mount
+  // Delay binding until the element ref is set post-commit
+  const [ready, setReady] = useState(false);
+  useLayoutEffect(() => {
+    if (scrollRef.current) setReady(true);
+  }, []);
+
   const { scrollYProgress } = useScroll({
-    target: scrollRef,
+    target: ready ? scrollRef : undefined,
     offset: ["start start", "end end"]
   });
 
