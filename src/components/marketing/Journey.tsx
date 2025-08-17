@@ -1,135 +1,89 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { 
-  motion, 
-  useScroll, 
-  useTransform,
-  AnimatePresence 
-} from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { useScroll, useTransform } from 'framer-motion';
+import EEGStage, { type EEGStageHandle } from '@/components/journey/EEGStage';
+import JourneyPanels from '@/components/journey/JourneyPanels';
+import type { JourneyConfig } from '@/components/journey/EEGEngine';
 
-// Journey configuration (inline as specified)
-const journeyConfig = {
-  "title": "How XBrainer Secures Your EEG Stream",
-  "subtitle": "Scroll to see one EEG waveform protected step by step",
-  "cta": { "label": "Explore SDKs", "href": "/docs" },
+export default function Journey() {
+  const [config, setConfig] = useState<JourneyConfig | null>(null);
+  const stageRef = useRef<EEGStageHandle>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  "seed": 1337,
-  "theme": {
-    "bg": "auto",
-    "colors": {
-      "eeg": "#6EE2FF",
-      "ghost": "#B7F0FF",
-      "allowedHalo": "#00C2FF",
-      "ok": "#15D27E",
-      "error": "#FF5A5A",
-      "redact": "#9AA1A9",
-      "ticksLight": "rgba(0,0,0,0.12)",
-      "ticksDark": "rgba(255,255,255,0.12)"
-    }
-  },
+  // Load config
+  useEffect(() => {
+    fetch('/journeyConfig.json')
+      .then(res => res.json())
+      .then(setConfig)
+      .catch(console.error);
+  }, []);
 
-  "a11y": {
-    "stage_aria": "Visualization of a single EEG waveform being secured by XBrainer in five steps.",
-    "step_regions_role": "region"
-  },
+  // Scroll binding
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start start", "end end"]
+  });
 
-  "eeg": {
-    "duration_s": 4,
-    "fs_hz": 512,
-    "amp_uv": 80,
-    "map": { "x_px_start": 60, "x_px_end": 1040, "y_px_center": 130, "y_px_scale": 90 },
-    "components": [
-      { "type": "sine", "freq_hz": 10, "amp_uv": 22, "phase": 0 },
-      { "type": "sine", "freq_hz": 20, "amp_uv": 8, "phase": 1.2 },
-      { "type": "sine", "freq_hz": 0.4, "amp_uv": 3, "phase": 0 },
-      { "type": "pink_noise", "sigma_uv": 3 }
-    ],
-    "bandpass_visual": { "low_hz": 1, "high_hz": 45, "smoothness": 0.5 }
-  },
+  const validationProgress = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const encryptionProgress = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
+  const consentProgress = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
+  const aeProgress = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
+  const downstreamProgress = useTransform(scrollYProgress, [0.8, 1.0], [0, 1]);
 
-  "artifacts": [
-    { "kind": "spike", "t_s": 0.82, "peak_uv": 120, "width_ms": 12 },
-    { "kind": "dropout", "t_s": 2.04, "duration_ms": 80 },
-    { "kind": "saturation", "t_s": 3.12, "duration_ms": 60, "clamp_uv": 80 }
-  ],
+  // Update stage
+  useEffect(() => {
+    if (!stageRef.current) return;
+    
+    const unsubscribes = [
+      validationProgress.on('change', (v) => stageRef.current?.setValidation(v)),
+      encryptionProgress.on('change', (v) => stageRef.current?.setEncryption(v)),
+      consentProgress.on('change', (v) => stageRef.current?.setConsent(v)),
+      aeProgress.on('change', (v) => stageRef.current?.setAE(v)),
+      downstreamProgress.on('change', (v) => stageRef.current?.setDownstream(v))
+    ];
+    return () => unsubscribes.forEach(unsub => unsub());
+  }, [validationProgress, encryptionProgress, consentProgress, aeProgress, downstreamProgress]);
 
-  "encryption": {
-    "window_ms": 64,
-    "cipher_filter": { "turbulence_base_freq": 0.8, "displacement_scale": 6 },
-    "show_nonce_indicator_hz": 8,
-    "gcm_tag": { "width_px": 6, "height_px": 4, "offset_px": 6 },
-    "lock_anim_deg": -18
-  },
+  if (!config) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full"></div>
+      </div>
+    );
+  }
 
-  "consent": {
-    "allow_ratio": 0.7,
-    "deny_style": { "hatch_angle_deg": 45, "opacity": 0.6 },
-    "tooltip": "purpose: research • role: PI • consent: valid (TTL 23h)"
-  },
+  const stepProgresses = [
+    validationProgress.get(),
+    encryptionProgress.get(),
+    consentProgress.get(),
+    aeProgress.get(),
+    downstreamProgress.get()
+  ];
 
-  "autoencoder": {
-    "window_ms": 250,
-    "anomaly_rate": 0.05,
-    "sigma_threshold": 3,
-    "residual_colormap": [
-      { "t": 0.0, "color": "rgba(0,0,0,0)" },
-      { "t": 0.6, "color": "rgba(255,193,7,0.45)" },
-      { "t": 1.0, "color": "rgba(255,90,90,0.75)" }
-    ],
-    "quarantine": { "tray_y_px": 220, "slot_px": 22 }
-  },
-
-  "downstream": {
-    "destinations": [
-      { "id": "dashboard", "icon": "xbr-dashboard", "label": "Dashboard" },
-      { "id": "lab",       "icon": "xbr-lab",       "label": "Lab Tool" },
-      { "id": "therapy",   "icon": "xbr-therapy",   "label": "Therapeutic App" }
-    ],
-    "shield_pulse_ms": 700,
-    "latency_label": "<150ms",
-    "show_hash_chain": true,
-    "hash_icon": "xbr-hashchain"
-  },
-
-  "steps": [
-    {
-      "id": "validation",
-      "side": "left",
-      "title": "Validation",
-      "body": "Timestamp, channel count, and spectral integrity checks. Malformed or late frames are flagged and dropped.",
-      "animations": { "defects_blink_times": 2, "defects_blink_ms": 160, "clean_crossfade_range": [0.5, 1.0], "mark_colors": { "flag": "#FF5A5A", "fixed": "#15D27E" }, "dotted_rejected": "6 8" }
-    },
-    {
-      "id": "encryption",
-      "side": "right",
-      "title": "AES encryption",
-      "body": "Per-packet AES-256-GCM with ECDH session keys; anti-tamper & anti-replay.",
-      "animations": { "slicer_opacity": 0.2, "capsule_corner_px": 6, "base_path_dim": [0.9, 0.25], "nonce_dot_hz": 8, "lock_close_range": [0.6, 1.0] }
-    },
-    {
-      "id": "consent",
-      "side": "left",
-      "title": "Consent enforcement",
-      "body": "Purpose- and role-aware policy gate; only permitted views flow.",
-      "animations": { "allow_halo_opacity": [0.0, 0.6], "deny_opacity": 0.6, "allow_underpath_opacity": [0.25, 0.8], "deny_underpath_opacity": 0.15 }
-    },
-    {
-      "id": "autoencoder",
-      "side": "right",
-      "title": "Autoencoder rejection",
-      "body": "Rolling 250ms windows; frames with reconstruction error > 3σ are quarantined.",
-      "animations": { "ghost_opacity": [0.0, 0.7], "residual_band_range": [0.2, 0.6], "drop_arc_ms": 420, "dotted_removed": "3 6", "safe_halo_opacity": [0.0, 0.3] }
-    },
-    {
-      "id": "downstream",
-      "side": "left",
-      "title": "Safely sent to downstream application",
-      "body": "Authorized, policy-checked data delivered to dashboards, research tools, and therapeutic apps with full traceability.",
-      "animations": { "restore_clean_opacity": 0.9, "shield_pulse_ms": 700, "breathing_glow": { "enabled": true, "period_ms": 5000, "max_opacity": 0.15 } }
-    }
-  ],
-
-  "reduced_motion": { "enabled": true, "disable": ["jitter", "rotation", "displacement", "large_morphs"], "fallbacks": { "use_opacity": true, "use_color": true } }
-};
+  return (
+    <div ref={scrollRef} style={{ height: '500vh' }}>
+      <section 
+        id="xbr-journey"
+        className="relative"
+        style={{ height: '500vh' }}
+      >
+        <div
+          id="eeg-stage"
+          style={{
+            position: 'sticky',
+            top: 'calc(50vh - 160px)',
+            height: '320px',
+            display: 'grid',
+            placeItems: 'center',
+            zIndex: 2
+          }}
+        >
+          <EEGStage ref={stageRef} config={config} />
+        </div>
+        <JourneyPanels config={config} stepProgresses={stepProgresses} />
+      </section>
+    </div>
+  );
+}
 
 // Seeded random function for deterministic results
 const seededRandom = (seed: number) => {
