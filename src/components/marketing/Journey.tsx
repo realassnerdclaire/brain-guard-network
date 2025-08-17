@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useScroll, useTransform } from 'framer-motion';
 import EEGStage, { type EEGStageHandle } from '@/components/journey/EEGStage';
 import JourneyPanels from '@/components/journey/JourneyPanels';
+import ClientOnlyJourney from '@/components/journey/ClientOnlyJourney';
 import type { JourneyConfig } from '@/components/journey/EEGEngine';
 
 export default function Journey() {
@@ -66,27 +67,29 @@ export default function Journey() {
   ];
 
   return (
-    <div ref={scrollRef} style={{ height: '500vh' }}>
-      <section 
-        id="xbr-journey"
-        className="relative"
-        style={{ height: '500vh' }}
-      >
-        <div
-          id="eeg-stage"
-          style={{
-            position: 'sticky',
-            top: 'calc(50vh - 160px)',
-            height: '320px',
-            display: 'grid',
-            placeItems: 'center',
-            zIndex: 2
-          }}
+    <ClientOnlyJourney>
+      <div ref={scrollRef} style={{ height: '500vh' }}>
+        <section 
+          id="xbr-journey"
+          className="relative"
+          style={{ height: '500vh' }}
         >
-          <EEGStage ref={stageRef} config={config} />
-        </div>
-        <JourneyPanels config={config} stepProgresses={stepProgresses} />
-      </section>
-    </div>
+          <div
+            id="eeg-stage"
+            style={{
+              position: 'sticky',
+              top: 'calc(50vh - 160px)',
+              height: '320px',
+              display: 'grid',
+              placeItems: 'center',
+              zIndex: 2
+            }}
+          >
+            <EEGStage ref={stageRef} config={config} />
+          </div>
+          <JourneyPanels config={config} stepProgresses={stepProgresses} />
+        </section>
+      </div>
+    </ClientOnlyJourney>
   );
 }

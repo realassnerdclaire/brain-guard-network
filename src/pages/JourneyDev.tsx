@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useScroll, useTransform } from 'framer-motion';
 import EEGStage, { type EEGStageHandle } from '@/components/journey/EEGStage';
 import JourneyPanels from '@/components/journey/JourneyPanels';
+import ClientOnlyJourney from '@/components/journey/ClientOnlyJourney';
 import type { JourneyConfig } from '@/components/journey/EEGEngine';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -120,7 +121,8 @@ export default function JourneyDevPage() {
       ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <ClientOnlyJourney>
+      <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <header className="border-b border-border/50 sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
         <div className="container py-4">
@@ -257,6 +259,7 @@ export default function JourneyDevPage() {
           )}
         </main>
       </div>
-    </div>
+      </div>
+    </ClientOnlyJourney>
   );
 }

@@ -42,6 +42,12 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
+  // Reduced motion overrides
+  const shouldDisableAnimation = (animationType: string) => {
+    return isReducedMotion && cfg.reduced_motion.enabled && 
+           cfg.reduced_motion.disable.includes(animationType);
+  };
+
   useImperativeHandle(ref, () => ({
     setValidation: (p) => setPValidation(clamp01(p)),
     setEncryption: (p) => setPEncryption(clamp01(p)),
@@ -50,39 +56,99 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
     setDownstream: (p) => setPDown(clamp01(p)),
   }), []);
 
-  // Precompute windows
+  // Precompute windows and masks
   const encWins = useMemo(() => windowsByMs(cfg, cfg.encryption.window_ms), [cfg]);
   const aeWins = useMemo(() => windowsByMs(cfg, cfg.autoencoder.window_ms), [cfg]);
   const consentMask = useMemo(() => seededMask(encWins.length, cfg.consent.allow_ratio, cfg.seed), [cfg, encWins.length]);
   const anomalyMask = useMemo(() => seededMask(aeWins.length, cfg.autoencoder.anomaly_rate, cfg.seed + 1000), [cfg, aeWins.length]);
 
-  // Colors
+  // Colors from config
   const c = {
     eeg: colors?.eeg ?? cfg.theme.colors.eeg,
     ghost: colors?.ghost ?? cfg.theme.colors.ghost,
     error: colors?.error ?? cfg.theme.colors.error,
     allowedHalo: colors?.allowedHalo ?? cfg.theme.colors.allowedHalo,
     redact: colors?.redact ?? cfg.theme.colors.redact,
+    ok: cfg.theme.colors.ok,
   };
 
-  // Animation calculations
-  const validationArtifactsVisible = pValidation > 0 && pValidation < 0.5;
-  const validationCheckmarksVisible = pValidation > 0.5;
-  const rawOpacity = pValidation < 0.5 ? 1.0 : 0.2;
-  const cleanOpacity = pValidation > 0.5 ? 0.9 : lerp(0.25, 0.8, pConsent);
-  const basePathOpacity = lerp(1.0, 0.25, Math.max(0, Math.min(1, pEncryption * 0.8)));
-  const ghostOpacity = Math.min(0.7, pAE);
+  // Get step animations from config
+  const validationStep = cfg.steps.find(s => s.id === 'validation')?.animations;
+  const encryptionStep = cfg.steps.find(s => s.id === 'encryption')?.animations;
+  const consentStep = cfg.steps.find(s => s.id === 'consent')?.animations;
+  const aeStep = cfg.steps.find(s => s.id === 'autoencoder')?.animations;
+  const downstreamStep = cfg.steps.find(s => s.id === 'downstream')?.animations;
+
+  // Config-driven animation calculations
+  const validationArtifactsVisible = pValidation > 0 && pValidation < (validationStep?.clean_crossfade_range?.[0] ?? 0.5);
+  const validationCheckmarksVisible = pValidation > (validationStep?.clean_crossfade_range?.[0] ?? 0.5);
+  
+  // Raw path opacity and stroke
+  const rawOpacity = pValidation < (validationStep?.clean_crossfade_range?.[0] ?? 0.5) ? 1.0 : 0.2;
+  const rawStrokeDash = pValidation > (validationStep?.clean_crossfade_range?.[0] ?? 0.5) ? 
+    (validationStep?.dotted_rejected ?? "6 8") : "none";
+  
+  // Clean path opacity based on stage
+  let cleanOpacity = 0.9;
+  if (pValidation <= (validationStep?.clean_crossfade_range?.[0] ?? 0.5)) {
+    cleanOpacity = 0;
+  } else if (pEncryption > 0) {
+    cleanOpacity = lerp(
+      encryptionStep?.base_path_dim?.[0] ?? 0.9, 
+      encryptionStep?.base_path_dim?.[1] ?? 0.25, 
+      Math.min(1, pEncryption * 1.25)
+    );
+  } else if (pConsent > 0) {
+    cleanOpacity = lerp(
+      consentStep?.allow_underpath_opacity?.[0] ?? 0.25, 
+      consentStep?.allow_underpath_opacity?.[1] ?? 0.8, 
+      pConsent
+    );
+  } else if (pDown > 0) {
+    cleanOpacity = downstreamStep?.restore_clean_opacity ?? 0.9;
+  }
+  
+  // Clean path stroke dash for AE step
+  const cleanStrokeDash = pAE > (aeStep?.residual_band_range?.[1] ?? 0.6) ? 
+    (aeStep?.dotted_removed ?? "3 6") : "none";
+  
+  // Ghost opacity
+  const ghostOpacity = pAE > 0 ? 
+    lerp(0, aeStep?.ghost_opacity?.[1] ?? 0.7, Math.min(1, pAE * 1.5)) : 0;
 
   return (
     <svg width={1100} height={260} viewBox="0 0 1100 260" role="img" aria-label={cfg.a11y.stage_aria}>
       {/* defs */}
       <defs>
         <filter id="xbr-cipher" x="-5%" y="-5%" width="110%" height="110%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" seed="7" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+          <feTurbulence 
+            type="fractalNoise" 
+            baseFrequency={cfg.encryption.cipher_filter.turbulence_base_freq} 
+            numOctaves="1" 
+            seed="7" 
+            result="noise" 
+          />
+          <feDisplacementMap 
+            in="SourceGraphic" 
+            in2="noise" 
+            scale={cfg.encryption.cipher_filter.displacement_scale} 
+            xChannelSelector="R" 
+            yChannelSelector="G" 
+          />
         </filter>
-        <pattern id="xbr-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
-          <line x1="0" y1="0" x2="0" y2="8" stroke={c.redact} strokeWidth="2" strokeOpacity="0.6" />
+        <pattern 
+          id="xbr-hatch" 
+          patternUnits="userSpaceOnUse" 
+          width="8" 
+          height="8" 
+          patternTransform={`rotate(${cfg.consent.deny_style.hatch_angle_deg})`}
+        >
+          <line 
+            x1="0" y1="0" x2="0" y2="8" 
+            stroke={c.redact} 
+            strokeWidth="2" 
+            strokeOpacity={cfg.consent.deny_style.opacity} 
+          />
         </pattern>
         <filter id="glow">
           <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -102,7 +168,7 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
       </g>
 
       {/* encryption slicers */}
-      <g id="slicers" opacity={pEncryption > 0 ? 0.2 : 0}>
+      <g id="slicers" opacity={pEncryption > 0 ? (encryptionStep?.slicer_opacity ?? 0.2) : 0}>
         {encWins.map((w, idx) => (
           <motion.line
             key={idx}
@@ -111,9 +177,9 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
             x2={w.x}
             y2={230}
             stroke="currentColor"
-            strokeOpacity="0.2"
+            strokeOpacity={encryptionStep?.slicer_opacity ?? 0.2}
             initial={{ opacity: 0 }}
-            animate={{ opacity: pEncryption > 0 ? 0.2 : 0 }}
+            animate={{ opacity: pEncryption > 0 ? (encryptionStep?.slicer_opacity ?? 0.2) : 0 }}
             transition={{ delay: idx * 0.01 }}
           />
         ))}
@@ -139,8 +205,8 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
                   }}
                   transition={{ 
                     opacity: { 
-                      duration: 0.16,
-                      repeat: 2,
+                      duration: (validationStep?.defects_blink_ms ?? 160) / 1000,
+                      repeat: validationStep?.defects_blink_times ?? 2,
                       repeatType: "reverse"
                     },
                     scale: { duration: 0.2 }
@@ -165,7 +231,7 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
                   y={cfg.eeg.map.y_px_center - 40}
                   textAnchor="middle"
                   fontSize="16"
-                  fill={cfg.theme.colors.ok}
+                  fill={validationStep?.mark_colors?.fixed ?? cfg.theme.colors.ok}
                   initial={{ scale: 0.7, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: i * 0.1 + 0.2 }}
@@ -187,7 +253,7 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
         strokeLinecap="round"
         fill="none"
         opacity={rawOpacity}
-        strokeDasharray={pValidation > 0.5 ? "6 8" : "none"}
+        strokeDasharray={rawStrokeDash}
         animate={{ opacity: rawOpacity }}
         transition={{ duration: 0.3 }}
       />
@@ -199,10 +265,10 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
         strokeWidth={2.5}
         strokeLinecap="round"
         fill="none"
-        opacity={pEncryption > 0 ? basePathOpacity : cleanOpacity}
-        strokeDasharray={pAE > 0.6 ? "3 6" : "none"}
+        opacity={cleanOpacity}
+        strokeDasharray={cleanStrokeDash}
         animate={{ 
-          opacity: pEncryption > 0 ? basePathOpacity : cleanOpacity 
+          opacity: cleanOpacity 
         }}
         transition={{ duration: 0.3 }}
       />
@@ -218,12 +284,12 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
                 y={w.y}
                 width={w.w}
                 height={w.h}
-                rx={6}
-                ry={6}
+                rx={encryptionStep?.capsule_corner_px ?? 6}
+                ry={encryptionStep?.capsule_corner_px ?? 6}
                 fill="rgba(110, 226, 255, 0.1)"
                 stroke={c.eeg}
                 strokeWidth={1}
-                filter={pEncryption > 0.4 ? "url(#xbr-cipher)" : undefined}
+                filter={pEncryption > 0.4 && !shouldDisableAnimation('displacement') ? "url(#xbr-cipher)" : undefined}
                 initial={{ opacity: 0, scaleY: 0 }}
                 animate={{ opacity: 0.6, scaleY: 1 }}
                 transition={{ delay: idx * 0.02, duration: 0.3 }}
@@ -237,10 +303,10 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
         {pEncryption > 0.4 && encWins.slice(0, Math.floor(encWins.length * Math.min(1, pEncryption * 2))).map((w, idx) => (
           <motion.rect
             key={idx}
-            x={w.x + w.w - 6}
-            y={w.y + w.h - 8}
-            width={6}
-            height={4}
+            x={w.x + w.w - (cfg.encryption.gcm_tag.width_px)}
+            y={w.y + w.h - (cfg.encryption.gcm_tag.height_px + cfg.encryption.gcm_tag.offset_px)}
+            width={cfg.encryption.gcm_tag.width_px}
+            height={cfg.encryption.gcm_tag.height_px}
             fill={c.allowedHalo}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
@@ -266,7 +332,11 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
                   strokeWidth={2}
                   filter="url(#glow)"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: lerp(0, 0.6, pConsent) }}
+                  animate={{ opacity: lerp(
+                    consentStep?.allow_halo_opacity?.[0] ?? 0, 
+                    consentStep?.allow_halo_opacity?.[1] ?? 0.6, 
+                    pConsent
+                  ) }}
                   transition={{ delay: idx * 0.01 }}
                 />
               ) : (
@@ -276,9 +346,9 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
                   width={w.w}
                   height={w.h}
                   fill="url(#xbr-hatch)"
-                  opacity={0.6}
+                  opacity={consentStep?.deny_opacity ?? 0.6}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.6 }}
+                  animate={{ opacity: consentStep?.deny_opacity ?? 0.6 }}
                   transition={{ delay: idx * 0.01 }}
                 />
               )}
@@ -304,8 +374,14 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
       )}
 
       <g id="residualBand">
-        {pAE > 0.2 && pAE <= 0.6 && aeWins.map((w, idx) => {
+        {pAE > (aeStep?.residual_band_range?.[0] ?? 0.2) && 
+         pAE <= (aeStep?.residual_band_range?.[1] ?? 0.6) && 
+         aeWins.map((w, idx) => {
           const isAnomalous = anomalyMask[idx];
+          const colormap = cfg.autoencoder.residual_colormap;
+          const normalColor = colormap.find(c => c.t <= 0.6)?.color ?? "rgba(255,193,7,0.45)";
+          const anomalyColor = colormap.find(c => c.t >= 1.0)?.color ?? "rgba(255,90,90,0.75)";
+          
           return (
             <motion.rect
               key={idx}
@@ -313,9 +389,16 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
               y={w.y}
               width={w.w}
               height={w.h}
-              fill={isAnomalous ? "rgba(255,90,90,0.75)" : "rgba(255,193,7,0.45)"}
+              fill={isAnomalous ? anomalyColor : normalColor}
               initial={{ opacity: 0 }}
-              animate={{ opacity: lerp(0, 0.6, (pAE - 0.2) / 0.4) }}
+              animate={{ 
+                opacity: lerp(
+                  0, 
+                  0.6, 
+                  (pAE - (aeStep?.residual_band_range?.[0] ?? 0.2)) / 
+                  ((aeStep?.residual_band_range?.[1] ?? 0.6) - (aeStep?.residual_band_range?.[0] ?? 0.2))
+                ) 
+              }}
               transition={{ delay: idx * 0.01 }}
             />
           );
@@ -330,7 +413,7 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
           return (
             <motion.rect
               key={idx}
-              x={60 + idx * 22}
+              x={60 + idx * (cfg.autoencoder.quarantine.slot_px)}
               y={0}
               width={20}
               height={30}
@@ -342,7 +425,8 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
                 type: "spring",
                 damping: 20,
                 stiffness: 300,
-                delay: idx * 0.05 
+                delay: idx * 0.05,
+                duration: (aeStep?.drop_arc_ms ?? 420) / 1000
               }}
             />
           );
@@ -432,22 +516,29 @@ const EEGStage = forwardRef<EEGStageHandle, Props>(function EEGStage({ config, c
             opacity: [0.5, 0.8, 0.5]
           }}
           transition={{ 
-            duration: 0.7,
+            duration: (cfg.downstream.shield_pulse_ms) / 1000,
             times: [0, 0.5, 1],
-            ease: "easeInOut"
+            ease: "easeInOut",
+            repeat: Infinity
           }}
         />
       )}
 
       {/* Lock icon for encryption */}
-      {pEncryption > 0.6 && (
+      {pEncryption > (encryptionStep?.lock_close_range?.[0] ?? 0.6) && (
         <motion.g transform="translate(550, 80)">
           <motion.foreignObject
             width={18}
             height={18}
-            initial={{ opacity: 0, rotateY: -18 }}
+            initial={{ 
+              opacity: 0, 
+              rotateY: shouldDisableAnimation('rotation') ? 0 : cfg.encryption.lock_anim_deg 
+            }}
             animate={{ opacity: 1, rotateY: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ 
+              duration: shouldDisableAnimation('rotation') ? 0 : 0.25,
+              ease: "easeOut"
+            }}
           >
             <svg width="18" height="18" aria-hidden="true">
               <use href="#xbr-lock"/>
