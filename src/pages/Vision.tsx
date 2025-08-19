@@ -164,99 +164,65 @@ const Vision = () => {
       >
         {/* North Star Section */}
         <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <Target className="text-[#6C63FF]" size={60} />
-              <h2 className="text-5xl md:text-6xl font-bold text-white">North Star</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-8">
+              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">01 / NORTH STAR</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">North Star</h2>
             </div>
-            <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-3xl p-12 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#6C63FF]/10 to-transparent"></div>
-              <div className="relative z-10">
-                <div className="text-6xl mb-6">🎯</div>
-                <p className="text-2xl md:text-3xl text-white font-semibold leading-relaxed">
-                  Make neural data security a <span className="text-[#6C63FF]">default standard</span>
-                </p>
-                <p className="text-lg text-white/80 mt-4">Across all devices, applications, and settings</p>
-              </div>
+            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+              <p className="text-xl md:text-2xl leading-relaxed">
+                Make neural data security a <strong>default standard</strong> across devices, applications, and settings.
+              </p>
             </div>
           </div>
         </section>
 
         {/* 5-year targets Section */}
-        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-12">
-              <Calendar className="text-[#A855F7]" size={50} />
-              <h2 className="text-4xl md:text-5xl font-bold text-center text-white">5-Year Targets</h2>
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start overflow-y-auto">
+          <div className="max-w-4xl mx-auto py-16">
+            <div className="mb-8">
+              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">02 / TARGETS</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">5-year targets</h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:scale-105 transition-transform">
-                <Users className="text-[#A855F7] mb-4" size={40} />
-                <h3 className="text-xl font-bold text-white mb-2">Adoption</h3>
-                <p className="text-white/90">10+ EEG/BCI vendors</p>
-                <p className="text-white/90">50+ labs & clinical sites</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:scale-105 transition-transform">
-                <Settings className="text-[#3B82F6] mb-4" size={40} />
-                <h3 className="text-xl font-bold text-white mb-2">Standards</h3>
-                <p className="text-white/90">Open policy framework</p>
-                <p className="text-white/90">Conformance test suite</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:scale-105 transition-transform">
-                <Zap className="text-[#10B981] mb-4" size={40} />
-                <h3 className="text-xl font-bold text-white mb-2">Performance</h3>
-                <p className="text-white/90">&lt;150ms @ 512Hz</p>
-                <p className="text-white/90">99.95% uptime SLO</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:scale-105 transition-transform">
-                <Shield className="text-[#F59E0B] mb-4" size={40} />
-                <h3 className="text-xl font-bold text-white mb-2">Compliance</h3>
-                <p className="text-white/90">SOC 2 Type II</p>
-                <p className="text-white/90">HIPAA & GDPR ready</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:scale-105 transition-transform md:col-span-2 lg:col-span-1">
-                <Eye className="text-[#EF4444] mb-4" size={40} />
-                <h3 className="text-xl font-bold text-white mb-2">Privacy</h3>
-                <p className="text-white/90">No raw-signal retention</p>
-                <p className="text-white/90">Consent-scoped access</p>
+            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+              <div className="space-y-6">
+                <div>
+                  <strong className="text-green-600">Adoption:</strong> 10+ EEG/BCI vendors and 50+ labs or clinical sites.
+                </div>
+                <div>
+                  <strong className="text-green-600">Standardization:</strong> publish an open policy + audit schema with a conformance test suite.
+                </div>
+                <div>
+                  <strong className="text-green-600">Deployment:</strong> support edge, cloud, and on-prem with p95 &lt;150 ms end-to-end at 512 Hz and 99.95% uptime SLO.
+                </div>
+                <div>
+                  <strong className="text-green-600">Compliance posture:</strong> SOC 2 Type II, HIPAA BAAs available, GDPR mappings documented.
+                </div>
+                <div>
+                  <strong className="text-green-600">Data posture:</strong> no default raw-signal retention; consent-scoped access by design.
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* 10-15 year direction Section */}
-        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-12">
-              <Telescope className="text-[#6C63FF]" size={50} />
-              <h2 className="text-4xl md:text-5xl font-bold text-center text-white">Long-term Vision</h2>
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start overflow-y-auto">
+          <div className="max-w-4xl mx-auto py-16">
+            <div className="mb-8">
+              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">03 / FUTURE</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">10–15 year direction</h2>
             </div>
-            <div className="space-y-8">
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:scale-105 transition-transform">
-                <div className="flex items-start gap-6">
-                  <div className="text-5xl">🧠</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-[#6C63FF] mb-2">Neural Expansion</h3>
-                    <p className="text-lg text-white/90">From EEG/IMU to implant interfaces and OS-level neural I/O guards</p>
-                  </div>
+            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+              <div className="space-y-6">
+                <div>
+                  Extend from EEG/IMU to <strong className="text-green-600">implant interfaces</strong> and OS-level neural I/O guards.
                 </div>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:scale-105 transition-transform">
-                <div className="flex items-start gap-6">
-                  <div className="text-5xl">🏆</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-[#8B5CF6] mb-2">Industry Standard</h3>
-                    <p className="text-lg text-white/90">Independent neural data security certification for journals, vendors, and regulators</p>
-                  </div>
+                <div>
+                  Establish an <strong className="text-green-600">independent neural data security certification</strong> referenced by journals, vendors, and regulators.
                 </div>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:scale-105 transition-transform">
-                <div className="flex items-start gap-6">
-                  <div className="text-5xl">🔐</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-[#06B6D4] mb-2">Universal Privacy</h3>
-                    <p className="text-lg text-white/90">User-portable consent records across vendors and institutions</p>
-                  </div>
+                <div>
+                  Provide <strong className="text-green-600">user-portable consent records</strong> that work across vendors and institutions.
                 </div>
               </div>
             </div>
@@ -265,31 +231,17 @@ const Vision = () => {
 
         {/* Principles Section */}
         <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-12">
-              <Shield className="text-[#10B981]" size={50} />
-              <h2 className="text-4xl md:text-5xl font-bold text-center text-white">Core Principles</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-8">
+              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">04 / PRINCIPLES</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Principles</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">🛡️</div>
-                <h3 className="text-xl font-bold text-[#10B981] mb-2">Signal-Level Security</h3>
-                <p className="text-white/90">No decoding required</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">🔧</div>
-                <h3 className="text-xl font-bold text-[#3B82F6] mb-2">Hardware Agnostic</h3>
-                <p className="text-white/90">Universal integration</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">⚡</div>
-                <h3 className="text-xl font-bold text-[#A855F7] mb-2">Real-Time</h3>
-                <p className="text-white/90">Instant verification & audit</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">🎯</div>
-                <h3 className="text-xl font-bold text-[#F59E0B] mb-2">Minimal Retention</h3>
-                <p className="text-white/90">Explicit consent boundaries</p>
+            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+              <div className="space-y-4">
+                <div>Security at the signal layer; no decoding.</div>
+                <div>Hardware-agnostic integration.</div>
+                <div>Real-time verification and auditability.</div>
+                <div>Minimal retention; explicit consent boundaries.</div>
               </div>
             </div>
           </div>
@@ -297,36 +249,16 @@ const Vision = () => {
 
         {/* Success metrics Section */}
         <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-12">
-              <TrendingUp className="text-[#F59E0B]" size={50} />
-              <h2 className="text-4xl md:text-5xl font-bold text-center text-white">Success Metrics</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-8">
+              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">05 / METRICS</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Success metrics</h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-                <div className="text-4xl mb-3">📈</div>
-                <h3 className="text-lg font-bold text-white">Adoption Rate</h3>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-                <div className="text-4xl mb-3">⚡</div>
-                <h3 className="text-lg font-bold text-white">Latency SLO</h3>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-                <div className="text-4xl mb-3">✅</div>
-                <h3 className="text-lg font-bold text-white">Pass Rate</h3>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-                <div className="text-4xl mb-3">🔒</div>
-                <h3 className="text-lg font-bold text-white">Zero Breaches</h3>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-                <div className="text-4xl mb-3">🔍</div>
-                <h3 className="text-lg font-bold text-white">Audit Speed</h3>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-                <div className="text-4xl mb-3">🚀</div>
-                <h3 className="text-lg font-bold text-white">&lt;1 Day Setup</h3>
-              </div>
+            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+              <p className="text-lg leading-relaxed">
+                Vendor/site adoption, latency SLO attainment, conformance pass rate, incident count (target zero material breaches), 
+                audit-query latency, and integration time (target &lt;1 day from SDK install to first protected stream).
+              </p>
             </div>
           </div>
         </section>
