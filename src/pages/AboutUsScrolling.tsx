@@ -168,13 +168,13 @@ const AboutUsScrolling = () => {
         onScroll={handleScroll}
       >
         {/* What is XBrainer AI Section */}
-        <section className="min-w-full h-full bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center relative overflow-y-auto snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-green-800 animate-fade-in">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
               What is XBrainer AI?
             </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto mb-6 animate-pulse" />
-            <div className="bg-white/80 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
+            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-400 to-green-500 mx-auto mb-6 animate-pulse" />
+            <div className="bg-gradient-to-br from-green-50 to-green-100 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
               <p className="text-gray-800 text-base sm:text-lg leading-relaxed mb-4">
                 Real-time security layer for brain–computer interfaces. Encrypts streams, validates packets, manages consent-based access, and maintains audit logs between EEG/IMU devices and applications.
               </p>
@@ -189,13 +189,13 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why it matters Section */}
-        <section className="min-w-full h-full bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center relative overflow-y-auto snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-cyan-800 animate-fade-in">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
               Why it matters?
             </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-600 to-cyan-700 mx-auto mb-6 animate-pulse" />
-            <div className="bg-white/80 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto">
+            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 mx-auto mb-6 animate-pulse" />
+            <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto">
               <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
                 EEG/BCI pipelines lack encryption, packet validation, consent controls, and audit logs. Missing security creates <span className="text-red-600 font-semibold">exposed data</span>, <span className="text-red-600 font-semibold">corrupted results</span>, and <span className="text-red-600 font-semibold">delayed approvals</span> as projects scale to production.
               </p>
@@ -204,13 +204,13 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Founder Team Section */}
-        <section className="min-w-full h-full bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center relative overflow-y-auto snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-green-800 animate-fade-in">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
               Founder Team
             </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto mb-6 animate-pulse" />
-            <div className="bg-white/80 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
+            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-400 to-green-500 mx-auto mb-6 animate-pulse" />
+            <div className="bg-gradient-to-br from-green-50 to-green-100 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
               <div className="space-y-4">
                 <div className="border-l-4 border-green-600 pl-4 text-left">
                   <h3 className="text-lg font-semibold text-green-700 mb-1">Claire Kwon - Founder</h3>
@@ -236,13 +236,13 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why we started Section */}
-        <section className="min-w-full h-full bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center relative overflow-y-auto snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-cyan-800 animate-fade-in">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
               Why we started XBrainer AI
             </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-600 to-cyan-700 mx-auto mb-6 animate-pulse" />
-            <div className="bg-white/80 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto">
+            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 mx-auto mb-6 animate-pulse" />
+            <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto">
               <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
                 Claire's stroke left her exposed and vulnerable—neural signals needed protection at capture. Owen saw timing errors destroy Cleveland Clinic results. Angelina witnessed corrupted Mount Sinai sessions that should have been stopped upstream. We're building the missing security layer: lock, check, gate, log—so when biology wavers, data doesn't.
               </p>
@@ -251,13 +251,13 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Our Mission Section */}
-        <section className="min-w-full h-full bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center relative overflow-y-auto snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-green-800 animate-fade-in">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
               Our Mission
             </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto mb-6 animate-pulse" />
-            <div className="bg-white/80 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
+            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-400 to-green-500 mx-auto mb-6 animate-pulse" />
+            <div className="bg-gradient-to-br from-green-50 to-green-100 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
               <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
                 Protect brain data at the source. We secure EEG and BCI streams in real time so only valid, consented signals reach applications.
               </p>
@@ -266,13 +266,13 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Who it's for Section */}
-        <section className="min-w-full h-full bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center relative overflow-y-auto snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-cyan-800 animate-fade-in">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
               Who it's for
             </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-600 to-cyan-700 mx-auto mb-6 animate-pulse" />
-            <div className="bg-white/80 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto">
+            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 mx-auto mb-6 animate-pulse" />
+            <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto">
               <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
                 BCI companies, EEG device makers, hospitals, defense programs, university labs, and medical faculty.
               </p>
@@ -281,13 +281,13 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why now Section */}
-        <section className="min-w-full h-full bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center relative overflow-y-auto snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-green-800 animate-fade-in">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
               Why now
             </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto mb-6 animate-pulse" />
-            <div className="bg-white/80 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
+            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-400 to-green-500 mx-auto mb-6 animate-pulse" />
+            <div className="bg-gradient-to-br from-green-50 to-green-100 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
               <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
                 EEG and BCI are leaving the lab and entering clinics, homes, and defense uses. Many stacks still lack encryption, packet checks, consent control, and audit trails. That gap creates near-term risk: exposed data, altered results, and slower approvals.
               </p>
@@ -296,13 +296,13 @@ const AboutUsScrolling = () => {
         </section>
 
         {/* Why we win Section */}
-        <section className="min-w-full h-full bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center relative overflow-y-auto snap-start">
+        <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-cyan-800 animate-fade-in">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
               Why we win
             </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-600 to-cyan-700 mx-auto mb-6 animate-pulse" />
-            <div className="bg-white/80 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto text-left space-y-4">
+            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 mx-auto mb-6 animate-pulse" />
+            <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto text-left space-y-4">
               <div className="border-l-4 border-cyan-600 pl-4">
                 <h3 className="text-base font-semibold text-cyan-700 mb-1">Source layer</h3>
                 <p className="text-gray-700 text-sm">Packet checks for timing, range, and artifacts. Encrypted transport. Consent-gated reads. Write-once audit log before any app or cloud sees data.</p>
