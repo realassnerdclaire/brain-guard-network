@@ -136,8 +136,7 @@ const HeroXBrainer = () => {
             <button 
               className="rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 px-8 lg:px-12 xl:px-16 py-4 lg:py-6 xl:py-7 text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 opacity-0"
               style={{
-                animation: 'fade-in 0.8s ease-out 1.5s both, scale-in 0.6s ease-out 1.5s both, buttonPulse 2s ease-in-out infinite',
-                filter: 'drop-shadow(0 0 15px rgba(6, 182, 212, 0.6))',
+                animation: 'fade-in 0.8s ease-out 1.5s both, scale-in 0.6s ease-out 1.5s both',
                 transformOrigin: 'center'
               }}
               onMouseEnter={(e) => {
@@ -159,8 +158,7 @@ const HeroXBrainer = () => {
             <button 
               className="rounded-full border border-cyan-300/50 bg-cyan-600/20 text-cyan-100 backdrop-blur-sm hover:bg-cyan-500/30 px-8 lg:px-12 xl:px-16 py-4 lg:py-6 xl:py-7 text-lg lg:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300 opacity-0"
               style={{
-                animation: 'fade-in 0.8s ease-out 1.8s both, scale-in 0.6s ease-out 1.8s both, buttonGlow 2.5s ease-in-out infinite',
-                filter: 'drop-shadow(0 0 15px rgba(103, 232, 249, 0.6))',
+                animation: 'fade-in 0.8s ease-out 1.8s both, scale-in 0.6s ease-out 1.8s both',
                 transformOrigin: 'center'
               }}
               onMouseEnter={(e) => {
