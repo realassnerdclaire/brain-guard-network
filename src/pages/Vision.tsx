@@ -167,11 +167,11 @@ const Vision = () => {
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <div className="text-green-400 text-sm font-medium tracking-widest mb-4">01 / NORTH STAR</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">North Star</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">North star</h2>
             </div>
             <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
               <p className="text-xl md:text-2xl leading-relaxed">
-                Make neural data security a <strong>default standard</strong> across devices, applications, and settings.
+                Make neural data security a default standard across devices, applications, and settings.
               </p>
             </div>
           </div>
@@ -185,22 +185,12 @@ const Vision = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">5-year targets</h2>
             </div>
             <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
-              <div className="space-y-6">
-                <div>
-                  <strong className="text-green-600">Adoption:</strong> 10+ EEG/BCI vendors and 50+ labs or clinical sites.
-                </div>
-                <div>
-                  <strong className="text-green-600">Standardization:</strong> publish an open policy + audit schema with a conformance test suite.
-                </div>
-                <div>
-                  <strong className="text-green-600">Deployment:</strong> support edge, cloud, and on-prem with p95 &lt;150 ms end-to-end at 512 Hz and 99.95% uptime SLO.
-                </div>
-                <div>
-                  <strong className="text-green-600">Compliance posture:</strong> SOC 2 Type II, HIPAA BAAs available, GDPR mappings documented.
-                </div>
-                <div>
-                  <strong className="text-green-600">Data posture:</strong> no default raw-signal retention; consent-scoped access by design.
-                </div>
+              <div className="space-y-4 text-lg">
+                <div>• <strong>Adoption:</strong> 10+ EEG/BCI vendors and 50+ labs or clinical sites.</div>
+                <div>• <strong>Standardization:</strong> publish an open policy + audit schema with a conformance test suite.</div>
+                <div>• <strong>Deployment:</strong> support edge, cloud, and on-prem with p95 &lt;150 ms end-to-end at 512 Hz and 99.95% uptime SLO.</div>
+                <div>• <strong>Compliance posture:</strong> SOC 2 Type II, HIPAA BAAs available, GDPR mappings documented.</div>
+                <div>• <strong>Data posture:</strong> no default raw-signal retention; consent-scoped access by design.</div>
               </div>
             </div>
           </div>
@@ -214,16 +204,10 @@ const Vision = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">10–15 year direction</h2>
             </div>
             <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
-              <div className="space-y-6">
-                <div>
-                  Extend from EEG/IMU to <strong className="text-green-600">implant interfaces</strong> and OS-level neural I/O guards.
-                </div>
-                <div>
-                  Establish an <strong className="text-green-600">independent neural data security certification</strong> referenced by journals, vendors, and regulators.
-                </div>
-                <div>
-                  Provide <strong className="text-green-600">user-portable consent records</strong> that work across vendors and institutions.
-                </div>
+              <div className="space-y-4 text-lg">
+                <div>• Extend from EEG/IMU to implant interfaces and OS-level neural I/O guards.</div>
+                <div>• Establish an independent neural data security certification referenced by journals, vendors, and regulators.</div>
+                <div>• Provide user-portable consent records that work across vendors and institutions.</div>
               </div>
             </div>
           </div>
@@ -237,11 +221,11 @@ const Vision = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Principles</h2>
             </div>
             <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
-              <div className="space-y-4">
-                <div>Security at the signal layer; no decoding.</div>
-                <div>Hardware-agnostic integration.</div>
-                <div>Real-time verification and auditability.</div>
-                <div>Minimal retention; explicit consent boundaries.</div>
+              <div className="space-y-4 text-lg">
+                <div>• Security at the signal layer; no decoding.</div>
+                <div>• Hardware-agnostic integration.</div>
+                <div>• Real-time verification and auditability.</div>
+                <div>• Minimal retention; explicit consent boundaries.</div>
               </div>
             </div>
           </div>
@@ -256,8 +240,7 @@ const Vision = () => {
             </div>
             <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
               <p className="text-lg leading-relaxed">
-                Vendor/site adoption, latency SLO attainment, conformance pass rate, incident count (target zero material breaches), 
-                audit-query latency, and integration time (target &lt;1 day from SDK install to first protected stream).
+                Vendor/site adoption, latency SLO attainment, conformance pass rate, incident count (target zero material breaches), audit-query latency, and integration time (target &lt;1 day from SDK install to first protected stream).
               </p>
             </div>
           </div>
