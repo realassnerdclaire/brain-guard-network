@@ -163,14 +163,14 @@ const Vision = () => {
         onScroll={handleScroll}
       >
         {/* North Star Section */}
-        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">01 / NORTH STAR</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">North star</h2>
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-6 snap-start">
+          <div className="max-w-3xl mx-auto">
+            <div className="mb-6">
+              <div className="text-green-400 text-xs font-medium tracking-widest mb-3">01 / NORTH STAR</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">North star</h2>
             </div>
-            <div className="bg-green-100 rounded-2xl p-8 text-gray-800">
-              <p className="text-xl md:text-2xl leading-relaxed">
+            <div className="bg-green-100 rounded-xl p-6 text-gray-800">
+              <p className="text-lg md:text-xl leading-relaxed">
                 Make neural data security a default standard across devices, applications, and settings.
               </p>
             </div>
@@ -178,10 +178,10 @@ const Vision = () => {
         </section>
 
         {/* 5-year targets Section */}
-        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start overflow-y-auto">
-          <div className="max-w-4xl mx-auto py-16">
-            <div className="bg-cyan-100 rounded-2xl p-8 text-gray-800 mb-8">
-              <div className="space-y-4 text-lg">
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-6 snap-start">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-cyan-100 rounded-xl p-6 text-gray-800 mb-6">
+              <div className="space-y-3 text-sm md:text-base">
                 <div>• <strong>Adoption:</strong> 10+ EEG/BCI vendors and 50+ labs or clinical sites.</div>
                 <div>• <strong>Standardization:</strong> publish an open policy + audit schema with a conformance test suite.</div>
                 <div>• <strong>Deployment:</strong> support edge, cloud, and on-prem with p95 &lt;150 ms end-to-end at 512 Hz and 99.95% uptime SLO.</div>
@@ -190,21 +190,21 @@ const Vision = () => {
               </div>
             </div>
             <div className="text-right">
-              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">02 / TARGETS</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white">5-year targets</h2>
+              <div className="text-green-400 text-xs font-medium tracking-widest mb-3">02 / TARGETS</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">5-year targets</h2>
             </div>
           </div>
         </section>
 
         {/* 10-15 year direction Section */}
-        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start overflow-y-auto">
-          <div className="max-w-4xl mx-auto py-16">
-            <div className="mb-8">
-              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">03 / FUTURE</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">10–15 year direction</h2>
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-6 snap-start">
+          <div className="max-w-3xl mx-auto">
+            <div className="mb-6">
+              <div className="text-green-400 text-xs font-medium tracking-widest mb-3">03 / FUTURE</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">10–15 year direction</h2>
             </div>
-            <div className="bg-green-100 rounded-2xl p-8 text-gray-800">
-              <div className="space-y-4 text-lg">
+            <div className="bg-green-100 rounded-xl p-6 text-gray-800">
+              <div className="space-y-3 text-sm md:text-base">
                 <div>• Extend from EEG/IMU to implant interfaces and OS-level neural I/O guards.</div>
                 <div>• Establish an independent neural data security certification referenced by journals, vendors, and regulators.</div>
                 <div>• Provide user-portable consent records that work across vendors and institutions.</div>
@@ -214,10 +214,10 @@ const Vision = () => {
         </section>
 
         {/* Principles Section */}
-        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-cyan-100 rounded-2xl p-8 text-gray-800 mb-8">
-              <div className="space-y-4 text-lg">
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-6 snap-start">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-cyan-100 rounded-xl p-6 text-gray-800 mb-6">
+              <div className="space-y-3 text-sm md:text-base">
                 <div>• Security at the signal layer; no decoding.</div>
                 <div>• Hardware-agnostic integration.</div>
                 <div>• Real-time verification and auditability.</div>
@@ -225,21 +225,21 @@ const Vision = () => {
               </div>
             </div>
             <div className="text-right">
-              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">04 / PRINCIPLES</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white">Principles</h2>
+              <div className="text-green-400 text-xs font-medium tracking-widest mb-3">04 / PRINCIPLES</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Principles</h2>
             </div>
           </div>
         </section>
 
         {/* Success metrics Section */}
-        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">05 / METRICS</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Success metrics</h2>
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-6 snap-start">
+          <div className="max-w-3xl mx-auto">
+            <div className="mb-6">
+              <div className="text-green-400 text-xs font-medium tracking-widest mb-3">05 / METRICS</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Success metrics</h2>
             </div>
-            <div className="bg-green-100 rounded-2xl p-8 text-gray-800">
-              <p className="text-lg leading-relaxed">
+            <div className="bg-green-100 rounded-xl p-6 text-gray-800">
+              <p className="text-sm md:text-base leading-relaxed">
                 Vendor/site adoption, latency SLO attainment, conformance pass rate, incident count (target zero material breaches), audit-query latency, and integration time (target &lt;1 day from SDK install to first protected stream).
               </p>
             </div>
