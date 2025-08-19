@@ -169,7 +169,7 @@ const Vision = () => {
               <div className="text-green-400 text-sm font-medium tracking-widest mb-4">01 / NORTH STAR</div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">North star</h2>
             </div>
-            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+            <div className="bg-green-100 rounded-2xl p-8 text-gray-800">
               <p className="text-xl md:text-2xl leading-relaxed">
                 Make neural data security a default standard across devices, applications, and settings.
               </p>
@@ -180,11 +180,7 @@ const Vision = () => {
         {/* 5-year targets Section */}
         <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start overflow-y-auto">
           <div className="max-w-4xl mx-auto py-16">
-            <div className="mb-8">
-              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">02 / TARGETS</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">5-year targets</h2>
-            </div>
-            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+            <div className="bg-cyan-100 rounded-2xl p-8 text-gray-800 mb-8">
               <div className="space-y-4 text-lg">
                 <div>• <strong>Adoption:</strong> 10+ EEG/BCI vendors and 50+ labs or clinical sites.</div>
                 <div>• <strong>Standardization:</strong> publish an open policy + audit schema with a conformance test suite.</div>
@@ -192,6 +188,10 @@ const Vision = () => {
                 <div>• <strong>Compliance posture:</strong> SOC 2 Type II, HIPAA BAAs available, GDPR mappings documented.</div>
                 <div>• <strong>Data posture:</strong> no default raw-signal retention; consent-scoped access by design.</div>
               </div>
+            </div>
+            <div className="text-right">
+              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">02 / TARGETS</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white">5-year targets</h2>
             </div>
           </div>
         </section>
@@ -203,7 +203,7 @@ const Vision = () => {
               <div className="text-green-400 text-sm font-medium tracking-widest mb-4">03 / FUTURE</div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">10–15 year direction</h2>
             </div>
-            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+            <div className="bg-green-100 rounded-2xl p-8 text-gray-800">
               <div className="space-y-4 text-lg">
                 <div>• Extend from EEG/IMU to implant interfaces and OS-level neural I/O guards.</div>
                 <div>• Establish an independent neural data security certification referenced by journals, vendors, and regulators.</div>
@@ -216,17 +216,17 @@ const Vision = () => {
         {/* Principles Section */}
         <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">04 / PRINCIPLES</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Principles</h2>
-            </div>
-            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+            <div className="bg-cyan-100 rounded-2xl p-8 text-gray-800 mb-8">
               <div className="space-y-4 text-lg">
                 <div>• Security at the signal layer; no decoding.</div>
                 <div>• Hardware-agnostic integration.</div>
                 <div>• Real-time verification and auditability.</div>
                 <div>• Minimal retention; explicit consent boundaries.</div>
               </div>
+            </div>
+            <div className="text-right">
+              <div className="text-green-400 text-sm font-medium tracking-widest mb-4">04 / PRINCIPLES</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white">Principles</h2>
             </div>
           </div>
         </section>
@@ -238,7 +238,7 @@ const Vision = () => {
               <div className="text-green-400 text-sm font-medium tracking-widest mb-4">05 / METRICS</div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Success metrics</h2>
             </div>
-            <div className="bg-gray-200 rounded-2xl p-8 text-gray-800">
+            <div className="bg-green-100 rounded-2xl p-8 text-gray-800">
               <p className="text-lg leading-relaxed">
                 Vendor/site adoption, latency SLO attainment, conformance pass rate, incident count (target zero material breaches), audit-query latency, and integration time (target &lt;1 day from SDK install to first protected stream).
               </p>
