@@ -169,20 +169,32 @@ const AboutUsScrolling = () => {
       >
         {/* What is XBrainer AI Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
-          <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
-              What is XBrainer AI?
-            </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-400 to-green-500 mx-auto mb-6 animate-pulse" />
-            <div className="bg-gradient-to-br from-green-50 to-green-100 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
-              <p className="text-gray-800 text-base sm:text-lg leading-relaxed mb-4">
-                Real-time security layer for brain–computer interfaces. Encrypts streams, validates packets, manages consent-based access, and maintains audit logs between EEG/IMU devices and applications.
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs sm:text-sm text-green-700">
-                <span className="px-2 py-1.5 bg-green-100 rounded-lg">Hardware-agnostic</span>
-                <span className="px-2 py-1.5 bg-green-100 rounded-lg">Low-latency</span>
-                <span className="px-2 py-1.5 bg-green-100 rounded-lg">Validated data</span>
-                <span className="px-2 py-1.5 bg-green-100 rounded-lg">Access-controlled</span>
+          <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-4">
+                <div className="text-left space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-green-400 text-sm font-mono tracking-widest uppercase">01 / Introduction</span>
+                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                      What is<br/>
+                      <span className="font-semibold">XBrainer AI?</span>
+                    </h2>
+                  </div>
+                  <div className="w-12 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
+                </div>
+              </div>
+              <div className="md:col-span-8">
+                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-8 shadow-xl">
+                  <p className="text-gray-800 text-lg leading-relaxed font-light mb-6">
+                    Real-time security layer for brain–computer interfaces. Encrypts streams, validates packets, manages consent-based access, and maintains audit logs between EEG/IMU devices and applications.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-green-200/60 text-green-800 rounded-full text-sm font-medium">Hardware-agnostic</span>
+                    <span className="px-3 py-1 bg-green-200/60 text-green-800 rounded-full text-sm font-medium">Low-latency</span>
+                    <span className="px-3 py-1 bg-green-200/60 text-green-800 rounded-full text-sm font-medium">Validated data</span>
+                    <span className="px-3 py-1 bg-green-200/60 text-green-800 rounded-full text-sm font-medium">Access-controlled</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -190,45 +202,81 @@ const AboutUsScrolling = () => {
 
         {/* Why it matters Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
-          <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
-              Why it matters?
-            </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 mx-auto mb-6 animate-pulse" />
-            <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto">
-              <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
-                EEG/BCI pipelines lack encryption, packet validation, consent controls, and audit logs. Missing security creates <span className="text-red-600 font-semibold">exposed data</span>, <span className="text-red-600 font-semibold">corrupted results</span>, and <span className="text-red-600 font-semibold">delayed approvals</span> as projects scale to production.
-              </p>
+          <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-8">
+                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-8 shadow-xl">
+                  <p className="text-gray-800 text-lg leading-relaxed font-light">
+                    EEG/BCI pipelines lack encryption, packet validation, consent controls, and audit logs. Missing security creates <span className="text-red-600 font-medium bg-red-50 px-1 rounded">exposed data</span>, <span className="text-red-600 font-medium bg-red-50 px-1 rounded">corrupted results</span>, and <span className="text-red-600 font-medium bg-red-50 px-1 rounded">delayed approvals</span> as projects scale to production.
+                  </p>
+                </div>
+              </div>
+              <div className="md:col-span-4">
+                <div className="text-right space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">02 / Problem</span>
+                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                      Why it<br/>
+                      <span className="font-semibold">matters?</span>
+                    </h2>
+                  </div>
+                  <div className="w-12 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Founder Team Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
-          <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
-              Founder Team
-            </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-400 to-green-500 mx-auto mb-6 animate-pulse" />
-            <div className="bg-gradient-to-br from-green-50 to-green-100 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
-              <div className="space-y-4">
-                <div className="border-l-4 border-green-600 pl-4 text-left">
-                  <h3 className="text-lg font-semibold text-green-700 mb-1">Claire Kwon - Founder</h3>
-                  <p className="text-gray-700 text-sm">
-                    Applied Mathematics • Amazon, Microsoft, Goldman Sachs • AI architect leading signal capture, encryption, packet verification, CI/CD, observability
-                  </p>
+          <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-4">
+                <div className="text-left space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-green-400 text-sm font-mono tracking-widest uppercase">03 / Team</span>
+                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                      Founder<br/>
+                      <span className="font-semibold">Team</span>
+                    </h2>
+                  </div>
+                  <div className="w-12 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
                 </div>
-                <div className="border-l-4 border-green-600 pl-4 text-left">
-                  <h3 className="text-lg font-semibold text-green-700 mb-1">Owen Anderson - Co-founder</h3>
-                  <p className="text-gray-700 text-sm">
-                    Neural signal researcher • Cleveland Clinic • Journal of Neurophysiology first author • EEG-controlled prosthetics • Device integration, real-time validation
-                  </p>
-                </div>
-                <div className="border-l-4 border-green-600 pl-4 text-left">
-                  <h3 className="text-lg font-semibold text-green-700 mb-1">Angelina Liu — Co-Founder</h3>
-                  <p className="text-gray-700 text-sm">
-                    Neuroscience researcher • Columbia & Mount Sinai • EEG acquisition, preprocessing, artifact correction • Signal-quality models, dataset curation
-                  </p>
+              </div>
+              <div className="md:col-span-8">
+                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-8 shadow-xl">
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4 p-4 bg-white/60 rounded-xl">
+                      <div className="w-1 h-16 bg-green-600 rounded-full flex-shrink-0"></div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-green-700 mb-1">Claire Kwon</h3>
+                        <p className="text-xs text-green-600 font-mono uppercase tracking-wide mb-2">Founder</p>
+                        <p className="text-gray-700 text-sm font-light leading-relaxed">
+                          Applied Mathematics • Amazon, Microsoft, Goldman Sachs • AI architect leading signal capture, encryption, packet verification, CI/CD, observability
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4 p-4 bg-white/60 rounded-xl">
+                      <div className="w-1 h-16 bg-green-600 rounded-full flex-shrink-0"></div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-green-700 mb-1">Owen Anderson</h3>
+                        <p className="text-xs text-green-600 font-mono uppercase tracking-wide mb-2">Co-founder</p>
+                        <p className="text-gray-700 text-sm font-light leading-relaxed">
+                          Neural signal researcher • Cleveland Clinic • Journal of Neurophysiology first author • EEG-controlled prosthetics • Device integration, real-time validation
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4 p-4 bg-white/60 rounded-xl">
+                      <div className="w-1 h-16 bg-green-600 rounded-full flex-shrink-0"></div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-green-700 mb-1">Angelina Liu</h3>
+                        <p className="text-xs text-green-600 font-mono uppercase tracking-wide mb-2">Co-Founder</p>
+                        <p className="text-gray-700 text-sm font-light leading-relaxed">
+                          Neuroscience researcher • Columbia & Mount Sinai • EEG acquisition, preprocessing, artifact correction • Signal-quality models, dataset curation
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -237,91 +285,158 @@ const AboutUsScrolling = () => {
 
         {/* Why we started Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
-          <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
-              Why we started XBrainer AI
-            </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 mx-auto mb-6 animate-pulse" />
-            <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto">
-              <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
-                Claire's stroke left her exposed and vulnerable—neural signals needed protection at capture. Owen saw timing errors destroy Cleveland Clinic results. Angelina witnessed corrupted Mount Sinai sessions that should have been stopped upstream. We're building the missing security layer: lock, check, gate, log—so when biology wavers, data doesn't.
-              </p>
+          <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-8">
+                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-8 shadow-xl">
+                  <p className="text-gray-800 text-lg leading-relaxed font-light">
+                    Claire's stroke left her exposed and vulnerable—neural signals needed protection at capture. Owen saw timing errors destroy Cleveland Clinic results. Angelina witnessed corrupted Mount Sinai sessions that should have been stopped upstream. We're building the missing security layer: <span className="font-mono text-cyan-700 bg-cyan-100 px-2 py-1 rounded">lock, check, gate, log</span>—so when biology wavers, data doesn't.
+                  </p>
+                </div>
+              </div>
+              <div className="md:col-span-4">
+                <div className="text-right space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">04 / Origin</span>
+                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                      Why we<br/>
+                      <span className="font-semibold">started</span>
+                    </h2>
+                  </div>
+                  <div className="w-12 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Our Mission Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
-          <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
-              Our Mission
-            </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-400 to-green-500 mx-auto mb-6 animate-pulse" />
-            <div className="bg-gradient-to-br from-green-50 to-green-100 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
-              <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
-                Protect brain data at the source. We secure EEG and BCI streams in real time so only valid, consented signals reach applications.
-              </p>
+          <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-4">
+                <div className="text-left space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-green-400 text-sm font-mono tracking-widest uppercase">05 / Mission</span>
+                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                      Our<br/>
+                      <span className="font-semibold">Mission</span>
+                    </h2>
+                  </div>
+                  <div className="w-12 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
+                </div>
+              </div>
+              <div className="md:col-span-8">
+                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-8 shadow-xl">
+                  <p className="text-gray-800 text-xl leading-relaxed font-light">
+                    Protect brain data at the source. We secure EEG and BCI streams in real time so only valid, consented signals reach applications.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Who it's for Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
-          <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
-              Who it's for
-            </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 mx-auto mb-6 animate-pulse" />
-            <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto">
-              <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
-                BCI companies, EEG device makers, hospitals, defense programs, university labs, and medical faculty.
-              </p>
+          <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-8">
+                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-8 shadow-xl">
+                  <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">BCI companies</span>
+                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">EEG device makers</span>
+                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">Hospitals</span>
+                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">Defense programs</span>
+                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">University labs</span>
+                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">Medical faculty</span>
+                  </div>
+                </div>
+              </div>
+              <div className="md:col-span-4">
+                <div className="text-right space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">06 / Audience</span>
+                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                      Who it's<br/>
+                      <span className="font-semibold">for</span>
+                    </h2>
+                  </div>
+                  <div className="w-12 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Why now Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
-          <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
-              Why now
-            </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-green-400 to-green-500 mx-auto mb-6 animate-pulse" />
-            <div className="bg-gradient-to-br from-green-50 to-green-100 backdrop-blur-sm border border-green-200 rounded-xl p-6 max-w-3xl mx-auto">
-              <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
-                EEG and BCI are leaving the lab and entering clinics, homes, and defense uses. Many stacks still lack encryption, packet checks, consent control, and audit trails. That gap creates near-term risk: exposed data, altered results, and slower approvals.
-              </p>
+          <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-4">
+                <div className="text-left space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-green-400 text-sm font-mono tracking-widest uppercase">07 / Timing</span>
+                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                      Why<br/>
+                      <span className="font-semibold">now</span>
+                    </h2>
+                  </div>
+                  <div className="w-12 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
+                </div>
+              </div>
+              <div className="md:col-span-8">
+                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-8 shadow-xl">
+                  <p className="text-gray-800 text-lg leading-relaxed font-light">
+                    EEG and BCI are leaving the lab and entering clinics, homes, and defense uses. Many stacks still lack encryption, packet checks, consent control, and audit trails. That gap creates near-term risk: <span className="text-red-600 font-medium bg-red-50 px-1 rounded">exposed data</span>, <span className="text-red-600 font-medium bg-red-50 px-1 rounded">altered results</span>, and <span className="text-red-600 font-medium bg-red-50 px-1 rounded">slower approvals</span>.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Why we win Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
-          <div className="container relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white animate-fade-in">
-              Why we win
-            </h2>
-            <div className="w-12 md:w-20 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 mx-auto mb-6 animate-pulse" />
-            <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 backdrop-blur-sm border border-cyan-200 rounded-xl p-6 max-w-3xl mx-auto text-left space-y-4">
-              <div className="border-l-4 border-cyan-600 pl-4">
-                <h3 className="text-base font-semibold text-cyan-700 mb-1">Source layer</h3>
-                <p className="text-gray-700 text-sm">Packet checks for timing, range, and artifacts. Encrypted transport. Consent-gated reads. Write-once audit log before any app or cloud sees data.</p>
+          <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-8">
+                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-8 shadow-xl">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="p-4 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                      <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Source layer</h3>
+                      <p className="text-gray-700 text-sm font-light">Packet checks for timing, range, and artifacts. Encrypted transport. Consent-gated reads.</p>
+                    </div>
+                    <div className="p-4 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                      <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Drop in</h3>
+                      <p className="text-gray-700 text-sm font-light">Light SDK in Python and TypeScript. No firmware changes. Runs on edge or cloud.</p>
+                    </div>
+                    <div className="p-4 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                      <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Fast</h3>
+                      <p className="text-gray-700 text-sm font-light">Under 150 ms end to end at 512 Hz on recorded and hardware-in-the-loop tests.</p>
+                    </div>
+                    <div className="p-4 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                      <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Coverage</h3>
+                      <p className="text-gray-700 text-sm font-light">Works with common EEG headsets. New adapters added without rework.</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 p-4 bg-white/80 rounded-xl border border-cyan-200">
+                    <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Team</h3>
+                    <p className="text-gray-700 text-sm font-light">Claire covers infra and ML. Owen covers clinical EEG validation. Angela covers artifact and signal quality research.</p>
+                  </div>
+                </div>
               </div>
-              <div className="border-l-4 border-cyan-600 pl-4">
-                <h3 className="text-base font-semibold text-cyan-700 mb-1">Drop in</h3>
-                <p className="text-gray-700 text-sm">Light SDK in Python and TypeScript with a small runtime. No firmware changes. Runs on edge or cloud.</p>
-              </div>
-              <div className="border-l-4 border-cyan-600 pl-4">
-                <h3 className="text-base font-semibold text-cyan-700 mb-1">Fast</h3>
-                <p className="text-gray-700 text-sm">Current prototype runs under 150 ms end to end at 512 Hz on recorded and hardware-in-the-loop tests.</p>
-              </div>
-              <div className="border-l-4 border-cyan-600 pl-4">
-                <h3 className="text-base font-semibold text-cyan-700 mb-1">Device coverage</h3>
-                <p className="text-gray-700 text-sm">Works with common EEG headsets. New adapters added without rework.</p>
-              </div>
-              <div className="border-l-4 border-cyan-600 pl-4">
-                <h3 className="text-base font-semibold text-cyan-700 mb-1">Team</h3>
-                <p className="text-gray-700 text-sm">Claire covers infra and ML. Owen covers clinical EEG validation. Angela covers artifact and signal quality research.</p>
+              <div className="md:col-span-4">
+                <div className="text-right space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">08 / Advantage</span>
+                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                      Why we<br/>
+                      <span className="font-semibold">win</span>
+                    </h2>
+                  </div>
+                  <div className="w-12 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
+                </div>
               </div>
             </div>
           </div>
