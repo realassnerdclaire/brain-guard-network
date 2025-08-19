@@ -104,46 +104,54 @@ const Vision = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Our Vision</h1>
           
           <div className="space-y-8 text-lg leading-relaxed">
+            {/* North Star */}
             <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center">
-              <h2 className="text-3xl font-bold mb-6 text-[#6C63FF]">A Secure Neural Future</h2>
+              <h2 className="text-3xl font-bold mb-6 text-[#6C63FF]">North Star</h2>
               <p className="text-xl text-white/90 leading-relaxed">
-                We envision a world where brain-computer interfaces enhance human capabilities 
-                without compromising privacy or security.
+                Make neural data security a default standard across devices, applications, and settings.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-4 text-[#A855F7]">Privacy by Design</h3>
-                <p className="text-white/90">
-                  Neural data protection built into every layer of technology, ensuring user privacy 
-                  from the moment data is captured to its final processing.
-                </p>
-              </div>
+            {/* 5-year targets */}
+            <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#A855F7]">5-year targets</h2>
+              <ul className="space-y-4 text-white/90">
+                <li><strong>Adoption:</strong> 10+ EEG/BCI vendors and 50+ labs or clinical sites.</li>
+                <li><strong>Standardization:</strong> publish an open policy + audit schema with a conformance test suite.</li>
+                <li><strong>Deployment:</strong> support edge, cloud, and on-prem with p95 &lt;150 ms end-to-end at 512 Hz and 99.95% uptime SLO.</li>
+                <li><strong>Compliance posture:</strong> SOC 2 Type II, HIPAA BAAs available, GDPR mappings documented.</li>
+                <li><strong>Data posture:</strong> no default raw-signal retention; consent-scoped access by design.</li>
+              </ul>
+            </div>
 
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-4 text-[#3B82F6]">Real-Time Security</h3>
-                <p className="text-white/90">
-                  Instantaneous threat detection and response systems that protect neural data 
-                  without introducing latency or disrupting user experience.
-                </p>
-              </div>
+            {/* 10-15 year direction */}
+            <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#3B82F6]">10–15 year direction</h2>
+              <ul className="space-y-4 text-white/90">
+                <li>Extend from EEG/IMU to implant interfaces and OS-level neural I/O guards.</li>
+                <li>Establish an independent neural data security certification referenced by journals, vendors, and regulators.</li>
+                <li>Provide user-portable consent records that work across vendors and institutions.</li>
+              </ul>
+            </div>
 
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-4 text-[#10B981]">Universal Standards</h3>
-                <p className="text-white/90">
-                  Establishing industry-wide security protocols for neural interfaces that ensure 
-                  interoperability while maintaining the highest security standards.
-                </p>
-              </div>
+            {/* Principles */}
+            <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#10B981]">Principles</h2>
+              <ul className="space-y-3 text-white/90">
+                <li>Security at the signal layer; no decoding.</li>
+                <li>Hardware-agnostic integration.</li>
+                <li>Real-time verification and auditability.</li>
+                <li>Minimal retention; explicit consent boundaries.</li>
+              </ul>
+            </div>
 
-              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-4 text-[#F59E0B]">Ethical Innovation</h3>
-                <p className="text-white/90">
-                  Advancing neural technology responsibly, with transparency, user consent, 
-                  and ethical considerations at the core of every decision.
-                </p>
-              </div>
+            {/* Success metrics */}
+            <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-[#F59E0B]">Success metrics</h2>
+              <p className="text-white/90">
+                Vendor/site adoption, latency SLO attainment, conformance pass rate, incident count (target zero material breaches), 
+                audit-query latency, and integration time (target &lt;1 day from SDK install to first protected stream).
+              </p>
             </div>
           </div>
         </div>
