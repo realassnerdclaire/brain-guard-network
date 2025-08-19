@@ -1,9 +1,11 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Vision = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
     { name: "HOME", path: "/" },
@@ -19,22 +21,39 @@ const Vision = () => {
     { name: "FAQ", path: "/faq" }
   ];
 
-  return (
-    <div 
-      className="dark min-h-screen bg-background text-foreground" 
-      style={{
-        contain: 'layout style',
-        willChange: 'transform'
-      }}
-    >
-      <div 
-        className="min-h-screen w-full" 
-        style={{
-          transform: 'translateZ(0)',
-          backfaceVisibility: 'hidden'
-        }}
-      >
+  const sections = [
+    "North Star",
+    "5-year targets",
+    "10-15 year direction",
+    "Principles",
+    "Success metrics"
+  ];
 
+  const scrollToSection = (index: number) => {
+    if (scrollContainerRef.current) {
+      const sectionWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: index * sectionWidth,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const sectionWidth = scrollContainerRef.current.clientWidth;
+      const newSection = Math.round(scrollLeft / sectionWidth);
+      setCurrentSection(newSection);
+    }
+  };
+
+  useEffect(() => {
+    document.title = "Vision - XBrainer AI";
+  }, []);
+
+  return (
+    <div className="dark min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Fixed Header Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/20">
         <div className="flex items-center justify-between p-4 md:p-6">
@@ -98,63 +117,156 @@ const Vision = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-20 min-h-screen flex flex-col pt-32 px-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Our Vision</h1>
-          
-          <div className="space-y-8 text-lg leading-relaxed">
-            {/* North Star */}
-            <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center">
-              <h2 className="text-3xl font-bold mb-6 text-[#6C63FF]">North Star</h2>
-              <p className="text-xl text-white/90 leading-relaxed">
+      {/* Navigation Arrows */}
+      <button 
+        onClick={() => scrollToSection(Math.max(0, currentSection - 1))}
+        className="fixed left-4 top-1/2 -translate-y-1/2 z-30 bg-black/60 backdrop-blur-md border border-blue-600/30 text-white p-2 rounded-full hover:bg-blue-900/20 hover:border-blue-500/50 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled={currentSection === 0}
+        style={{
+          boxShadow: '0 0 15px rgba(37, 99, 235, 0.3)'
+        }}
+      >
+        <ChevronLeft size={20} />
+      </button>
+
+      <button 
+        onClick={() => scrollToSection(Math.min(sections.length - 1, currentSection + 1))}
+        className="fixed right-4 top-1/2 -translate-y-1/2 z-30 bg-black/60 backdrop-blur-md border border-blue-600/30 text-white p-2 rounded-full hover:bg-blue-900/20 hover:border-blue-500/50 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled={currentSection === sections.length - 1}
+        style={{
+          boxShadow: '0 0 15px rgba(37, 99, 235, 0.3)'
+        }}
+      >
+        <ChevronRight size={20} />
+      </button>
+
+      {/* Section Indicators */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+        {sections.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToSection(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              currentSection === index 
+                ? 'bg-blue-500 w-6' 
+                : 'bg-white/30 hover:bg-white/50'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Main Scrolling Container */}
+      <div 
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        onScroll={handleScroll}
+      >
+        {/* North Star Section */}
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">North Star</h2>
+            <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
                 Make neural data security a default standard across devices, applications, and settings.
               </p>
             </div>
+          </div>
+        </section>
 
-            {/* 5-year targets */}
+        {/* 5-year targets Section */}
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">5-year targets</h2>
             <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-6 text-[#A855F7]">5-year targets</h2>
-              <ul className="space-y-4 text-white/90">
-                <li><strong>Adoption:</strong> 10+ EEG/BCI vendors and 50+ labs or clinical sites.</li>
-                <li><strong>Standardization:</strong> publish an open policy + audit schema with a conformance test suite.</li>
-                <li><strong>Deployment:</strong> support edge, cloud, and on-prem with p95 &lt;150 ms end-to-end at 512 Hz and 99.95% uptime SLO.</li>
-                <li><strong>Compliance posture:</strong> SOC 2 Type II, HIPAA BAAs available, GDPR mappings documented.</li>
-                <li><strong>Data posture:</strong> no default raw-signal retention; consent-scoped access by design.</li>
-              </ul>
+              <div className="space-y-6 text-lg md:text-xl text-white/90">
+                <div className="flex items-start gap-4">
+                  <span className="text-[#A855F7] font-bold text-xl">•</span>
+                  <div><strong>Adoption:</strong> 10+ EEG/BCI vendors and 50+ labs or clinical sites.</div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#3B82F6] font-bold text-xl">•</span>
+                  <div><strong>Standardization:</strong> publish an open policy + audit schema with a conformance test suite.</div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#10B981] font-bold text-xl">•</span>
+                  <div><strong>Deployment:</strong> support edge, cloud, and on-prem with p95 &lt;150 ms end-to-end at 512 Hz and 99.95% uptime SLO.</div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#F59E0B] font-bold text-xl">•</span>
+                  <div><strong>Compliance posture:</strong> SOC 2 Type II, HIPAA BAAs available, GDPR mappings documented.</div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#EF4444] font-bold text-xl">•</span>
+                  <div><strong>Data posture:</strong> no default raw-signal retention; consent-scoped access by design.</div>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
 
-            {/* 10-15 year direction */}
+        {/* 10-15 year direction Section */}
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">10–15 year direction</h2>
             <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-6 text-[#3B82F6]">10–15 year direction</h2>
-              <ul className="space-y-4 text-white/90">
-                <li>Extend from EEG/IMU to implant interfaces and OS-level neural I/O guards.</li>
-                <li>Establish an independent neural data security certification referenced by journals, vendors, and regulators.</li>
-                <li>Provide user-portable consent records that work across vendors and institutions.</li>
-              </ul>
+              <div className="space-y-6 text-lg md:text-xl text-white/90">
+                <div className="flex items-start gap-4">
+                  <span className="text-[#6C63FF] font-bold text-xl">•</span>
+                  <div>Extend from EEG/IMU to implant interfaces and OS-level neural I/O guards.</div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#8B5CF6] font-bold text-xl">•</span>
+                  <div>Establish an independent neural data security certification referenced by journals, vendors, and regulators.</div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#06B6D4] font-bold text-xl">•</span>
+                  <div>Provide user-portable consent records that work across vendors and institutions.</div>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
 
-            {/* Principles */}
+        {/* Principles Section */}
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">Principles</h2>
             <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-6 text-[#10B981]">Principles</h2>
-              <ul className="space-y-3 text-white/90">
-                <li>Security at the signal layer; no decoding.</li>
-                <li>Hardware-agnostic integration.</li>
-                <li>Real-time verification and auditability.</li>
-                <li>Minimal retention; explicit consent boundaries.</li>
-              </ul>
+              <div className="space-y-6 text-lg md:text-xl text-white/90">
+                <div className="flex items-start gap-4">
+                  <span className="text-[#10B981] font-bold text-xl">•</span>
+                  <div>Security at the signal layer; no decoding.</div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#3B82F6] font-bold text-xl">•</span>
+                  <div>Hardware-agnostic integration.</div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#A855F7] font-bold text-xl">•</span>
+                  <div>Real-time verification and auditability.</div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#F59E0B] font-bold text-xl">•</span>
+                  <div>Minimal retention; explicit consent boundaries.</div>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
 
-            {/* Success metrics */}
+        {/* Success metrics Section */}
+        <section className="min-w-full h-screen flex flex-col items-center justify-center px-8 snap-start">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">Success metrics</h2>
             <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-6 text-[#F59E0B]">Success metrics</h2>
-              <p className="text-white/90">
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                 Vendor/site adoption, latency SLO attainment, conformance pass rate, incident count (target zero material breaches), 
                 audit-query latency, and integration time (target &lt;1 day from SDK install to first protected stream).
               </p>
             </div>
           </div>
-        </div>
+        </section>
       </div>
 
       {/* Overlay to close menu */}
@@ -164,7 +276,6 @@ const Vision = () => {
           onClick={() => setIsMenuOpen(false)}
         />
       )}
-      </div>
     </div>
   );
 };
