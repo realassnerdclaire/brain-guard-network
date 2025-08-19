@@ -170,29 +170,29 @@ const AboutUsScrolling = () => {
         {/* What is XBrainer AI Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="grid md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-4">
-                <div className="text-left space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-green-400 text-sm font-mono tracking-widest uppercase">01 / Introduction</span>
-                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                <div className="text-left space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-green-400 text-xs font-mono tracking-widest uppercase">01 / Introduction</span>
+                    <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
                       What is<br/>
                       <span className="font-semibold">XBrainer AI?</span>
                     </h2>
                   </div>
-                  <div className="w-12 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
+                  <div className="w-10 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
                 </div>
               </div>
               <div className="md:col-span-8">
-                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-8 shadow-xl">
-                  <p className="text-gray-800 text-lg leading-relaxed font-light mb-6">
+                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-6 shadow-xl">
+                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed font-light mb-4">
                     Real-time security layer for brain–computer interfaces. Encrypts streams, validates packets, manages consent-based access, and maintains audit logs between EEG/IMU devices and applications.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-green-200/60 text-green-800 rounded-full text-sm font-medium">Hardware-agnostic</span>
-                    <span className="px-3 py-1 bg-green-200/60 text-green-800 rounded-full text-sm font-medium">Low-latency</span>
-                    <span className="px-3 py-1 bg-green-200/60 text-green-800 rounded-full text-sm font-medium">Validated data</span>
-                    <span className="px-3 py-1 bg-green-200/60 text-green-800 rounded-full text-sm font-medium">Access-controlled</span>
+                    <span className="px-2 py-1 bg-green-200/60 text-green-800 rounded-full text-xs font-medium">Hardware-agnostic</span>
+                    <span className="px-2 py-1 bg-green-200/60 text-green-800 rounded-full text-xs font-medium">Low-latency</span>
+                    <span className="px-2 py-1 bg-green-200/60 text-green-800 rounded-full text-xs font-medium">Validated data</span>
+                    <span className="px-2 py-1 bg-green-200/60 text-green-800 rounded-full text-xs font-medium">Access-controlled</span>
                   </div>
                 </div>
               </div>
@@ -203,24 +203,24 @@ const AboutUsScrolling = () => {
         {/* Why it matters Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="grid md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-8">
-                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-8 shadow-xl">
-                  <p className="text-gray-800 text-lg leading-relaxed font-light">
+                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-6 shadow-xl">
+                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed font-light">
                     EEG/BCI pipelines lack encryption, packet validation, consent controls, and audit logs. Missing security creates <span className="text-red-600 font-medium bg-red-50 px-1 rounded">exposed data</span>, <span className="text-red-600 font-medium bg-red-50 px-1 rounded">corrupted results</span>, and <span className="text-red-600 font-medium bg-red-50 px-1 rounded">delayed approvals</span> as projects scale to production.
                   </p>
                 </div>
               </div>
               <div className="md:col-span-4">
-                <div className="text-right space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">02 / Problem</span>
-                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                <div className="text-right space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-cyan-400 text-xs font-mono tracking-widest uppercase">02 / Problem</span>
+                    <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
                       Why it<br/>
                       <span className="font-semibold">matters?</span>
                     </h2>
                   </div>
-                  <div className="w-12 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
+                  <div className="w-10 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
                 </div>
               </div>
             </div>
@@ -230,48 +230,48 @@ const AboutUsScrolling = () => {
         {/* Founder Team Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="grid md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-4">
-                <div className="text-left space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-green-400 text-sm font-mono tracking-widest uppercase">03 / Team</span>
-                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                <div className="text-left space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-green-400 text-xs font-mono tracking-widest uppercase">03 / Team</span>
+                    <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
                       Founder<br/>
                       <span className="font-semibold">Team</span>
                     </h2>
                   </div>
-                  <div className="w-12 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
+                  <div className="w-10 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
                 </div>
               </div>
               <div className="md:col-span-8">
-                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-8 shadow-xl">
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4 p-4 bg-white/60 rounded-xl">
-                      <div className="w-1 h-16 bg-green-600 rounded-full flex-shrink-0"></div>
+                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-6 shadow-xl">
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl">
+                      <div className="w-1 h-12 bg-green-600 rounded-full flex-shrink-0"></div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-700 mb-1">Claire Kwon</h3>
-                        <p className="text-xs text-green-600 font-mono uppercase tracking-wide mb-2">Founder</p>
-                        <p className="text-gray-700 text-sm font-light leading-relaxed">
+                        <h3 className="text-base font-semibold text-green-700 mb-0.5">Claire Kwon</h3>
+                        <p className="text-xs text-green-600 font-mono uppercase tracking-wide mb-1">Founder</p>
+                        <p className="text-gray-700 text-xs font-light leading-relaxed">
                           Applied Mathematics • Amazon, Microsoft, Goldman Sachs • AI architect leading signal capture, encryption, packet verification, CI/CD, observability
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-4 p-4 bg-white/60 rounded-xl">
-                      <div className="w-1 h-16 bg-green-600 rounded-full flex-shrink-0"></div>
+                    <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl">
+                      <div className="w-1 h-12 bg-green-600 rounded-full flex-shrink-0"></div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-700 mb-1">Owen Anderson</h3>
-                        <p className="text-xs text-green-600 font-mono uppercase tracking-wide mb-2">Co-founder</p>
-                        <p className="text-gray-700 text-sm font-light leading-relaxed">
+                        <h3 className="text-base font-semibold text-green-700 mb-0.5">Owen Anderson</h3>
+                        <p className="text-xs text-green-600 font-mono uppercase tracking-wide mb-1">Co-founder</p>
+                        <p className="text-gray-700 text-xs font-light leading-relaxed">
                           Neural signal researcher • Cleveland Clinic • Journal of Neurophysiology first author • EEG-controlled prosthetics • Device integration, real-time validation
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-4 p-4 bg-white/60 rounded-xl">
-                      <div className="w-1 h-16 bg-green-600 rounded-full flex-shrink-0"></div>
+                    <div className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl">
+                      <div className="w-1 h-12 bg-green-600 rounded-full flex-shrink-0"></div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-700 mb-1">Angelina Liu</h3>
-                        <p className="text-xs text-green-600 font-mono uppercase tracking-wide mb-2">Co-Founder</p>
-                        <p className="text-gray-700 text-sm font-light leading-relaxed">
+                        <h3 className="text-base font-semibold text-green-700 mb-0.5">Angelina Liu</h3>
+                        <p className="text-xs text-green-600 font-mono uppercase tracking-wide mb-1">Co-Founder</p>
+                        <p className="text-gray-700 text-xs font-light leading-relaxed">
                           Neuroscience researcher • Columbia & Mount Sinai • EEG acquisition, preprocessing, artifact correction • Signal-quality models, dataset curation
                         </p>
                       </div>
@@ -286,24 +286,24 @@ const AboutUsScrolling = () => {
         {/* Why we started Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="grid md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-8">
-                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-8 shadow-xl">
-                  <p className="text-gray-800 text-lg leading-relaxed font-light">
-                    Claire's stroke left her exposed and vulnerable—neural signals needed protection at capture. Owen saw timing errors destroy Cleveland Clinic results. Angelina witnessed corrupted Mount Sinai sessions that should have been stopped upstream. We're building the missing security layer: <span className="font-mono text-cyan-700 bg-cyan-100 px-2 py-1 rounded">lock, check, gate, log</span>—so when biology wavers, data doesn't.
+                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-6 shadow-xl">
+                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed font-light">
+                    Claire's stroke left her exposed and vulnerable—neural signals needed protection at capture. Owen saw timing errors destroy Cleveland Clinic results. Angelina witnessed corrupted Mount Sinai sessions that should have been stopped upstream. We're building the missing security layer: <span className="font-mono text-cyan-700 bg-cyan-100 px-2 py-1 rounded text-xs">lock, check, gate, log</span>—so when biology wavers, data doesn't.
                   </p>
                 </div>
               </div>
               <div className="md:col-span-4">
-                <div className="text-right space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">04 / Origin</span>
-                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                <div className="text-right space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-cyan-400 text-xs font-mono tracking-widest uppercase">04 / Origin</span>
+                    <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
                       Why we<br/>
                       <span className="font-semibold">started</span>
                     </h2>
                   </div>
-                  <div className="w-12 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
+                  <div className="w-10 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
                 </div>
               </div>
             </div>
@@ -313,22 +313,22 @@ const AboutUsScrolling = () => {
         {/* Our Mission Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="grid md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-4">
-                <div className="text-left space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-green-400 text-sm font-mono tracking-widest uppercase">05 / Mission</span>
-                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                <div className="text-left space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-green-400 text-xs font-mono tracking-widest uppercase">05 / Mission</span>
+                    <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
                       Our<br/>
                       <span className="font-semibold">Mission</span>
                     </h2>
                   </div>
-                  <div className="w-12 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
+                  <div className="w-10 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
                 </div>
               </div>
               <div className="md:col-span-8">
-                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-8 shadow-xl">
-                  <p className="text-gray-800 text-xl leading-relaxed font-light">
+                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-6 shadow-xl">
+                  <p className="text-gray-800 text-base sm:text-lg leading-relaxed font-light">
                     Protect brain data at the source. We secure EEG and BCI streams in real time so only valid, consented signals reach applications.
                   </p>
                 </div>
@@ -340,29 +340,29 @@ const AboutUsScrolling = () => {
         {/* Who it's for Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="grid md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-8">
-                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-8 shadow-xl">
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">BCI companies</span>
-                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">EEG device makers</span>
-                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">Hospitals</span>
-                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">Defense programs</span>
-                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">University labs</span>
-                    <span className="px-4 py-2 bg-cyan-200/60 text-cyan-800 rounded-full text-sm font-medium">Medical faculty</span>
+                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-6 shadow-xl">
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1.5 bg-cyan-200/60 text-cyan-800 rounded-full text-xs font-medium">BCI companies</span>
+                    <span className="px-3 py-1.5 bg-cyan-200/60 text-cyan-800 rounded-full text-xs font-medium">EEG device makers</span>
+                    <span className="px-3 py-1.5 bg-cyan-200/60 text-cyan-800 rounded-full text-xs font-medium">Hospitals</span>
+                    <span className="px-3 py-1.5 bg-cyan-200/60 text-cyan-800 rounded-full text-xs font-medium">Defense programs</span>
+                    <span className="px-3 py-1.5 bg-cyan-200/60 text-cyan-800 rounded-full text-xs font-medium">University labs</span>
+                    <span className="px-3 py-1.5 bg-cyan-200/60 text-cyan-800 rounded-full text-xs font-medium">Medical faculty</span>
                   </div>
                 </div>
               </div>
               <div className="md:col-span-4">
-                <div className="text-right space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">06 / Audience</span>
-                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                <div className="text-right space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-cyan-400 text-xs font-mono tracking-widest uppercase">06 / Audience</span>
+                    <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
                       Who it's<br/>
                       <span className="font-semibold">for</span>
                     </h2>
                   </div>
-                  <div className="w-12 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
+                  <div className="w-10 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
                 </div>
               </div>
             </div>
@@ -372,22 +372,22 @@ const AboutUsScrolling = () => {
         {/* Why now Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="grid md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-4">
-                <div className="text-left space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-green-400 text-sm font-mono tracking-widest uppercase">07 / Timing</span>
-                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                <div className="text-left space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-green-400 text-xs font-mono tracking-widest uppercase">07 / Timing</span>
+                    <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
                       Why<br/>
                       <span className="font-semibold">now</span>
                     </h2>
                   </div>
-                  <div className="w-12 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
+                  <div className="w-10 h-px bg-gradient-to-r from-green-400 to-transparent"></div>
                 </div>
               </div>
               <div className="md:col-span-8">
-                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-8 shadow-xl">
-                  <p className="text-gray-800 text-lg leading-relaxed font-light">
+                <div className="bg-gradient-to-br from-green-50/95 to-green-100/95 backdrop-blur-sm border border-green-200/50 rounded-2xl p-6 shadow-xl">
+                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed font-light">
                     EEG and BCI are leaving the lab and entering clinics, homes, and defense uses. Many stacks still lack encryption, packet checks, consent control, and audit trails. That gap creates near-term risk: <span className="text-red-600 font-medium bg-red-50 px-1 rounded">exposed data</span>, <span className="text-red-600 font-medium bg-red-50 px-1 rounded">altered results</span>, and <span className="text-red-600 font-medium bg-red-50 px-1 rounded">slower approvals</span>.
                   </p>
                 </div>
@@ -399,43 +399,43 @@ const AboutUsScrolling = () => {
         {/* Why we win Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="grid md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-8">
-                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-8 shadow-xl">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="p-4 bg-white/60 rounded-xl border-l-2 border-cyan-500">
-                      <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Source layer</h3>
-                      <p className="text-gray-700 text-sm font-light">Packet checks for timing, range, and artifacts. Encrypted transport. Consent-gated reads.</p>
+                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-6 shadow-xl">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                      <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Source layer</h3>
+                      <p className="text-gray-700 text-xs font-light">Packet checks for timing, range, and artifacts. Encrypted transport. Consent-gated reads.</p>
                     </div>
-                    <div className="p-4 bg-white/60 rounded-xl border-l-2 border-cyan-500">
-                      <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Drop in</h3>
-                      <p className="text-gray-700 text-sm font-light">Light SDK in Python and TypeScript. No firmware changes. Runs on edge or cloud.</p>
+                    <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                      <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Drop in</h3>
+                      <p className="text-gray-700 text-xs font-light">Light SDK in Python and TypeScript. No firmware changes. Runs on edge or cloud.</p>
                     </div>
-                    <div className="p-4 bg-white/60 rounded-xl border-l-2 border-cyan-500">
-                      <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Fast</h3>
-                      <p className="text-gray-700 text-sm font-light">Under 150 ms end to end at 512 Hz on recorded and hardware-in-the-loop tests.</p>
+                    <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                      <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Fast</h3>
+                      <p className="text-gray-700 text-xs font-light">Under 150 ms end to end at 512 Hz on recorded and hardware-in-the-loop tests.</p>
                     </div>
-                    <div className="p-4 bg-white/60 rounded-xl border-l-2 border-cyan-500">
-                      <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Coverage</h3>
-                      <p className="text-gray-700 text-sm font-light">Works with common EEG headsets. New adapters added without rework.</p>
+                    <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                      <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Coverage</h3>
+                      <p className="text-gray-700 text-xs font-light">Works with common EEG headsets. New adapters added without rework.</p>
                     </div>
                   </div>
-                  <div className="mt-6 p-4 bg-white/80 rounded-xl border border-cyan-200">
-                    <h3 className="text-sm font-mono uppercase tracking-wide text-cyan-600 mb-2">Team</h3>
-                    <p className="text-gray-700 text-sm font-light">Claire covers infra and ML. Owen covers clinical EEG validation. Angela covers artifact and signal quality research.</p>
+                  <div className="mt-4 p-3 bg-white/80 rounded-xl border border-cyan-200">
+                    <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Team</h3>
+                    <p className="text-gray-700 text-xs font-light">Claire covers infra and ML. Owen covers clinical EEG validation. Angela covers artifact and signal quality research.</p>
                   </div>
                 </div>
               </div>
               <div className="md:col-span-4">
-                <div className="text-right space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">08 / Advantage</span>
-                    <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+                <div className="text-right space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-cyan-400 text-xs font-mono tracking-widest uppercase">08 / Advantage</span>
+                    <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
                       Why we<br/>
                       <span className="font-semibold">win</span>
                     </h2>
                   </div>
-                  <div className="w-12 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
+                  <div className="w-10 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
                 </div>
               </div>
             </div>
