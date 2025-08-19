@@ -163,8 +163,8 @@ const AboutUsScrolling = () => {
       {/* Horizontal Scrolling Container */}
       <div 
         ref={scrollContainerRef}
-        className="flex overflow-x-auto snap-x snap-mandatory pt-20"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', height: '100vh' }}
+        className="flex overflow-x-auto overflow-y-auto snap-x snap-mandatory pt-24 min-h-screen"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         onScroll={handleScroll}
       >
         {/* What is XBrainer AI Section */}
@@ -399,44 +399,38 @@ const AboutUsScrolling = () => {
         {/* Why we win Section */}
         <section className="min-w-full h-full bg-background flex items-center justify-center relative overflow-y-auto snap-start">
           <div className="container relative z-10 px-4 sm:px-6 max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-6 items-center">
-              <div className="md:col-span-8">
-                <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-6 shadow-xl">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
-                      <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Source layer</h3>
-                      <p className="text-gray-700 text-xs font-light">Packet checks for timing, range, and artifacts. Encrypted transport. Consent-gated reads.</p>
-                    </div>
-                    <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
-                      <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Drop in</h3>
-                      <p className="text-gray-700 text-xs font-light">Light SDK in Python and TypeScript. No firmware changes. Runs on edge or cloud.</p>
-                    </div>
-                    <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
-                      <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Fast</h3>
-                      <p className="text-gray-700 text-xs font-light">Under 150 ms end to end at 512 Hz on recorded and hardware-in-the-loop tests.</p>
-                    </div>
-                    <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
-                      <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Coverage</h3>
-                      <p className="text-gray-700 text-xs font-light">Works with common EEG headsets. New adapters added without rework.</p>
-                    </div>
-                  </div>
-                  <div className="mt-4 p-3 bg-white/80 rounded-xl border border-cyan-200">
-                    <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Team</h3>
-                    <p className="text-gray-700 text-xs font-light">Claire covers infra and ML. Owen covers clinical EEG validation. Angela covers artifact and signal quality research.</p>
-                  </div>
+            {/* Top heading */}
+            <div className="space-y-1 mb-4">
+              <span className="text-cyan-400 text-xs font-mono tracking-widest uppercase">08 / Advantage</span>
+              <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
+                Why we <span className="font-semibold">win</span>
+              </h2>
+              <div className="w-10 h-px bg-gradient-to-r from-cyan-400 to-transparent"></div>
+            </div>
+
+            {/* Content cards */}
+            <div className="bg-gradient-to-br from-cyan-50/95 to-cyan-100/95 backdrop-blur-sm border border-cyan-200/50 rounded-2xl p-6 shadow-xl">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                  <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Source layer</h3>
+                  <p className="text-gray-700 text-xs font-light">Packet checks for timing, range, and artifacts. Encrypted transport. Consent-gated reads.</p>
+                </div>
+                <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                  <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Drop in</h3>
+                  <p className="text-gray-700 text-xs font-light">Light SDK in Python and TypeScript. No firmware changes. Runs on edge or cloud.</p>
+                </div>
+                <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                  <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Fast</h3>
+                  <p className="text-gray-700 text-xs font-light">Under 150 ms end to end at 512 Hz on recorded and hardware-in-the-loop tests.</p>
+                </div>
+                <div className="p-3 bg-white/60 rounded-xl border-l-2 border-cyan-500">
+                  <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Coverage</h3>
+                  <p className="text-gray-700 text-xs font-light">Works with common EEG headsets. New adapters added without rework.</p>
                 </div>
               </div>
-              <div className="md:col-span-4">
-                <div className="text-right space-y-4">
-                  <div className="space-y-1">
-                    <span className="text-cyan-400 text-xs font-mono tracking-widest uppercase">08 / Advantage</span>
-                    <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
-                      Why we<br/>
-                      <span className="font-semibold">win</span>
-                    </h2>
-                  </div>
-                  <div className="w-10 h-px bg-gradient-to-l from-cyan-400 to-transparent ml-auto"></div>
-                </div>
+              <div className="mt-4 p-3 bg-white/80 rounded-xl border border-cyan-200">
+                <h3 className="text-xs font-mono uppercase tracking-wide text-cyan-600 mb-1">Team</h3>
+                <p className="text-gray-700 text-xs font-light">Claire covers infra and ML. Owen covers clinical EEG validation. Angela covers artifact and signal quality research.</p>
               </div>
             </div>
           </div>
